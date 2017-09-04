@@ -3,7 +3,7 @@ layout: post
 title: "Setting up GitHub Pages and reveal.js presentations"
 date: 2017-09-04
 excerpt: "With GitHub pages and reveal.js you can create amazing websites and presentations"
-tags: [reveal.js, presentations, websites, github]
+tags: [revealjs, presentations, websites, github]
 comments: true
 ---
 
