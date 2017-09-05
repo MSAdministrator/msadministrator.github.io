@@ -4,7 +4,7 @@ title: "Setting up GitHub Pages and reveal.js presentations"
 date: 2017-09-04
 excerpt: "With GitHub pages and reveal.js you can create amazing websites and presentations"
 tags: [revealjs, presentations, websites, github]
-comments: true
+comments: false
 ---
 
 Using GitHub Pages and reveal.js you can create amazing websites, and portable presentations that are beautiful.  To get started creating amazing presentations and a website using GitHub Pages you will need the following:
