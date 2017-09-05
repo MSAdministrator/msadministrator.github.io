@@ -33,3 +33,8 @@ Okay, here we go.  I want to say, if you run into any issues while following thi
 7. Next, we run `git push origin`
 
 You should now be able to go (after a few minutes) to your customized URL.  This should be accessible by navigating to `username.github.io` in your web browser.  For instance, mine is `msadministrator.github.io`
+
+## Some Gotchas
+So, once you push your code to your `username.github.io` master branch, it should build successfully.  But, if it doesn't you may have some issues with your `_config.yml` file.  So, I recommend you use the following linter to verify that your yaml file is correct: https://codebeautify.org/yaml-validator.  I had an issue with using an apostrophe in my `description` key: value pair.
+
+
