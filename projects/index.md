@@ -1,7 +1,9 @@
 ---
-layout: project
-title: All Projects
-excerpt: "A List of Projects"
+title:  "MSAdministrator Projects"
+date:   2017-09-09
+excerpt: "Projects"
+project: true
+tags: [windows, security, powershell, phishing]
 comments: false
 ---
 <center><a href="http://taylantatli.github.io/Moon"><b>MSAdministrator</b></a></center>
