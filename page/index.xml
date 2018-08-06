@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on MSAdministrator</title>
-    <link>msadministrator.github.io/page/</link>
+    <link>/page/</link>
     <description>Recent content in Pages on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Aug 2018 12:51:23 -0400</lastBuildDate>
     
-	<atom:link href="msadministrator.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>msadministrator.github.io/page/about/</link>
+      <link>/page/about/</link>
       <pubDate>Sun, 05 Aug 2018 12:51:23 -0400</pubDate>
       
-      <guid>msadministrator.github.io/page/about/</guid>
+      <guid>/page/about/</guid>
       <description>Josh&amp;rsquo;s primary focus is in Windows security and PowerShell automation. He is a GIAC Certified Windows Security Administrator (GCWN) and GIAC Certified Forensic Analyst (GCFA). You can reach Josh at MSAdministrator.com or on Twitter at @MS_dministrator.</description>
     </item>
     
