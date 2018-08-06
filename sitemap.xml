@@ -3,12 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>msadministrator.github.io/article/moving-away-from-wordpress/</loc>
+    <lastmod>2018-08-05T12:55:27-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>msadministrator.github.io/page/about/</loc>
     <lastmod>2018-08-05T12:51:23-04:00</lastmod>
   </url>
   
   <url>
     <loc>msadministrator.github.io/author/</loc>
+    <lastmod>2018-08-05T12:55:27-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>msadministrator.github.io/article/</loc>
+    <lastmod>2018-08-05T12:55:27-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>msadministrator.github.io/author/</loc>
+    <lastmod>2018-08-05T12:55:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -19,7 +37,7 @@
   
   <url>
     <loc>msadministrator.github.io/</loc>
-    <lastmod>2018-08-05T12:51:23-04:00</lastmod>
+    <lastmod>2018-08-05T12:55:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   

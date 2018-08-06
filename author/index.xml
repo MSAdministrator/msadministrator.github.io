@@ -6,9 +6,24 @@
     <description>Recent content in Author on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 05 Aug 2018 12:55:27 -0400</lastBuildDate>
     
 	<atom:link href="msadministrator.github.io/author/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>msadministrator.github.io/author/</link>
+      <pubDate>Sun, 05 Aug 2018 12:55:27 -0400</pubDate>
+      
+      <guid>msadministrator.github.io/author/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>escription>Hello Everyone, I have decided this past weekend to final move completely away from WordPress for my blog; and I&amp;rsquo;m 100% excited for this transition! I have decided to use GitHub Pages for my new blog.
+I plan on migrating content to this new locaton, but in the meantime if you find any missing content that you have seen previously then please let me know and I will get it moved over ASAP.</description>
+    </item>
     
   </channel>
 </rss>
