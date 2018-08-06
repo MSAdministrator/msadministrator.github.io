@@ -6,10 +6,29 @@
     <description>Recent content in Pages on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Aug 2018 12:51:23 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 05 Aug 2018 21:49:16 -0400</lastBuildDate>
     
 	<atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Projects</title>
+      <link>/page/projects/</link>
+      <pubDate>Sun, 05 Aug 2018 21:49:16 -0400</pubDate>
+      
+      <guid>/page/projects/</guid>
+      <description> WriteLogEntry: A PowerShell helper function to create and write information to a log file PowerShell Phishing Response Toolkit: This PowerShell Module is designed to send notifications to hosting companies that host phishing URLs by utilizing the major WHOIS/RDAP Abuse Point of Contact (POC) information CreateProfile: PowerShell Module that uses WINAPI to create system profiles GetGithubRepository: This PowerShell function will download Github files without using Git PoshZD: A PowerShell Module to interact with the ZenDesk ticketing system PSRegistry: A PowerShell Module that replaces the reg commands using the WIN_API POSH-NotifyGroupOwnerManager  </description>
+    </item>
+    
+    <item>
+      <title>Presentations</title>
+      <link>/page/presentations/</link>
+      <pubDate>Sun, 05 Aug 2018 21:47:39 -0400</pubDate>
+      
+      <guid>/page/presentations/</guid>
+      <description>I have included a list below of my previous presentations and any relevant links. This will be continually updated moving forward:
+ Basics of Incident Handling Securing Windows with Group Policy  </description>
+    </item>
     
     <item>
       <title>About</title>
