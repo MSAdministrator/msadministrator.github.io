@@ -1,0 +1,413 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Josh Rickard">
+        <meta name="description" content="All about Microsoft Automation">
+        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+        <meta name="generator" content="Hugo 0.46" />
+        <title> Windows Security Patch Management | MSAdministrator</title>
+        <meta name="description" content="Windows Security Patch Management - All about Microsoft Automation">
+        <meta itemprop="name" content="Windows Security Patch Management">
+        <meta itemprop="description" content="Windows Security Patch Management - All about Microsoft Automation">
+        <meta property="og:title" content="Windows Security Patch Management">
+        <meta property="og:description" content="Windows Security Patch Management - All about Microsoft Automation">
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+        <meta property="og:url" content="/article/windows-security-patch-management/">
+        <meta property="og:site_name" content="MSAdministrator">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+	
+
+        <link rel="stylesheet" href="/dist/theme.css">
+
+        
+
+        
+            
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        
+<nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="/page/projects/">Projects</a></li>
+                
+            
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fa fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="/">MSAdministrator</a></h3>
+            
+                <span class="subtitle">All about Windows Automation</span>
+            
+        </div>
+
+    
+
+        
+        <div class="toggler">
+        
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="/article/windows-security-patch-management/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/windows-security-patch-management/">Windows Security Patch Management</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fwindows-security-patch-management%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fwindows-security-patch-management%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fwindows-security-patch-management%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fwindows-security-patch-management%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        <p>Recently, at work, I nominated myself to begin a &ldquo;Windows Security&rdquo; course for IT Professionals that I work with.  Being a former IT Pro, and now part of our security department as an Incident Responder, I thought I would create a course surrounding security.  So, i&rsquo;m going to use my blog to layout my plans for this &ldquo;Windows Security&rdquo; course - which will hopefully be useful for others as well.</p>
+
+<p>My first post is going to focus on &ldquo;Patch Management&rdquo;.  Many IT Pro&rsquo;s, SysAdmins, etc. deploy assets (systems, applications, services, etc.) and join them to their domain, all while not being patched.  Having assets that are not fully patched is a major security risk for your organization.  Imagine, you have server that&rsquo;s not fully patched you&rsquo;ve deployed (or someone else) on a Friday afternoon and then you become busy because of another incident.  Monday comes along and your slammed again - once again you forget about this server for some period of time.  We&rsquo;ve all seen this happen or know of someone who does this.</p>
+
+<p>In this situation, your Patch Management strategy is of the utmost importance.  Having this server on your network is a major security risk, but not if you have a fully patched image.  Whether you are using a fat, thin, zero-touch imaging solution, you need to make sure that your images are up to date and ready to deploy.</p>
+
+<p>Using Microsoft Deployment Toolkit or SCCM (System Center Configuration Manager), can solve this problem with little to no interaction needed.  I&rsquo;m personally a fan of MDT (check out my walk-through) in an large, decentralized, environment.  Utilizing MDT for your servers is extremely easy and gives your &ldquo;System Administrators&rdquo; a flexible and reliable solution for the many configurations your environment demands.</p>
+
+<p>You can also use SCCM, if your environment can justify the cost, to automate this process to a complete &ldquo;Zero-Touch&rdquo; solution.  My environment does not allow this because we are not a centralized IT department with a standard &ldquo;image&rdquo; across all departments.  Setting up SCCM is cumbersome unless you have full access to the SCCM &ldquo;site server(s)&rdquo;.  Never-the-less, SCCM is extremely powerful and can manage all systems (servers, workstations, etc.) in an automated way - but again, it&rsquo;s pricey.</p>
+
+<p>If you choose to solely use a &ldquo;fat&rdquo; image and decide to just use a WinPE disc or even Windows Deployment Servers (WDS), just make sure that you update your image every month or at-least quarterly - and do not, I repeat, do not, join it to your domain/network without it being fully patched.</p>
+
+<p>Deploying Operating Systems is a fairly complicated affair, and we need to utilize the tools available to us - but don&rsquo;t forget about our third party applications as well.  In my environment, most malware outbreaks are caused by either two types of incidents:
+<ul>
+    <li>Third party products are out of date and malware droppers are taking advantage (either in advertising sites or plan malicious sites) of these exploits.</li>
+    <li>Phishing attempts</li>
+</ul>
+Maintaining our applications is also a crucial step that cannot be overlooked.  Again, you can utilize SCCM for this process (if you can justify it) or you can use additional third party products (Ninite, Secunia PSI, WSUS, etc.).  No matter what you use, you need to make sure that all of your systems are updated, and be able to report on this.</p>
+
+<p>Having the ability to view your network/systems is a crucial part of a proper &ldquo;Patch Management&rdquo; strategy, so you need to have continual scanning on your network (with the ability to report on systems).  You can either use Nessus, SCCM, QualysGuard, etc., but no matter what, you need this data.  Again, utilize the tools you have - LEARN POWERSHELL!  PowerShell can give you crazy amounts of data - use it, love it, live it.</p>
+
+<p>The last part of this discussion is about anti-virus/malware software.  Depending on the solution, your organization is using, you should be able to alert on infected systems.  If you&rsquo;re using Microsoft ForeFront Endpoint Protection, then well you may not be able to (besides using PowerShell to gather the log files). It would be preferred if you have a anti-virus/malware solution that has an administrative console or the ability to run reports.</p>
+
+<p>If you don&rsquo;t have a A/V solution that has this capability, then you need to rely on your Windows Logs and parse them with either Splunk or LogStash or something similar.  Utilizing a system that can correlate this data for you is of immense help - especially if this repository is the same repository as your IDS/IPS logs, Windows Event Logs, etc.</p>
+
+<p>Having the ability to fully patch a system before it is deployed is crucial in every environment.  One piece of malware (with a C2) can scan your entire network for a new server and then as soon as a &ldquo;SysAdmin&rdquo; logs in&hellip;&hellip; well, the game is over - time to rebuild.</p>
+
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bilberry-hugo-theme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+     
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/article/butcher-block-iron-pipe-desk/">Butcher Block Iron Pipe Desk</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/little-about-myself/"></a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-docker-compose-on-windows/">Using Docker Compose on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-group-policy-adm-and-admx-templates/">Create Group Policy Adm and Admx Templates</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-powershell-to-manage-amazon-ec2-instances/">Using Powershell to Manage Amazon Ec2 Instances</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/manage-amazon-aws-s3-with-powershell/">Manage Amazon Aws S3 With Powershell</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-docker-container-on-windows-with-a-dockerfile/">Create a Docker Container on Windows With a Dockerfile</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/install-docker-and-run-containers-on-windows/">Install Docker and Run Containers on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/powershell-ise-snippets/">Powershell Ise Snippets</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Categories</strong>
+
+            
+        </div>
+
+        <div class="right">
+            
+            <div class="social-media">
+                <strong>Social media</strong>
+
+                
+                
+                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
+                
+                
+                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                    2018
+                
+                by Lednerb
+            </a>
+	    -
+	    
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+        
+
+        
+
+        <script src="/dist/theme.js" type="application/javascript"></script>
+
+        
+            
+        
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "en" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[return]")
+            })
+        </script>
+
+        
+            <script>
+    var client = algoliasearch("Y2C4RWMPXW", "50ea7f8c41c0ad233926e0be2b769ed1");
+    var index = client.initIndex("default-content");
+
+    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
+      [
+        {
+          
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
+          
+          displayKey: function(suggestion) {
+            return suggestion.title || suggestion.author
+          },
+          templates: {
+            suggestion: function(suggestion) {
+                return "<span class='entry " + suggestion.type + "'>"
+                      + "<span class='title'>" + suggestion.title + "</span>"
+                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
+                  + "</span>"
+                ;
+            },
+            empty: function() {
+              return "<span class='empty'>Nothing found.</span>"
+            },
+            footer: function() {
+              return '<div class="branding">Powered by <img src="\/dist\/algolia-logo-light.svg" /></div>'
+            }
+
+          },
+        }
+      ])
+      .on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location = (suggestion.url);
+      })
+      .keypress(function (event, suggestion) {
+        if (event.which == 13) {
+          window.location = (suggestion.url);
+        }
+      });
+</script>
+
+        
+
+
+    </body>
+</html>

@@ -1,0 +1,607 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Josh Rickard">
+        <meta name="description" content="All about Microsoft Automation">
+        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+        <meta name="generator" content="Hugo 0.46" />
+        <title> Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern | MSAdministrator</title>
+        <meta name="description" content="Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern - All about Microsoft Automation">
+        <meta itemprop="name" content="Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern">
+        <meta itemprop="description" content="Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern - All about Microsoft Automation">
+        <meta property="og:title" content="Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern">
+        <meta property="og:description" content="Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern - All about Microsoft Automation">
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+        <meta property="og:url" content="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">
+        <meta property="og:site_name" content="MSAdministrator">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+	
+
+        <link rel="stylesheet" href="/dist/theme.css">
+
+        
+
+        
+            
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        
+<nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="/page/projects/">Projects</a></li>
+                
+            
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fa fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="/">MSAdministrator</a></h3>
+            
+                <span class="subtitle">All about Windows Automation</span>
+            
+        </div>
+
+    
+
+        
+        <div class="toggler">
+        
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fverifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fverifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fverifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fverifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        
+
+<p>Early this evening I sent <a href="https://twitter.com/MS_dministrator/status/962782272826077184">this</a> tweet out regarding a #PowerShell Function I wrote called <a href="https://gist.github.com/MSAdministrator/b2c3ace163c4fbf76069503528de6cf1">Confirm-DateTimeFormatPattern</a> and <a href="https://twitter.com/dan_franciscus">Dan Franciscus (@dan_franciscus</a>) recommend that I should blog about it, so here it goes!</p>
+
+<p><a href="http://msadministrator.com/?attachment_id=448" rel="attachment wp-att-448"><img class="alignnone size-full wp-image-448" src="https://msadministrator.files.wordpress.com/2018/02/screen-shot-2018-02-11-at-10-29-57-pm.png" alt="" width="605" height="417" /></a></p>
+
+<p>To elaborate on that tweet, this Function spawned from a larger initiative that I am working on for a presentation I&rsquo;m giving at <a href="http://sched.co/Cqc6">PowerShell Summit 2018</a> in April.  That presentation will be about a PowerShell Module I have built called PSLogging, which is a logging framework built using PowerShell Classes.</p>
+
+<p>One of the items on my to-do list, which always seems to grow and not shrink, is to add a configuration component.  This configuration component would allow someone to create a config.json or config.yml file that would be referenced when logging within their application/script/function/etc.  Here is a quick example of what the configuration may (work in-progress) look like:</p>
+
+<p><a href="http://msadministrator.com/?attachment_id=449" rel="attachment wp-att-449"><img class="alignnone size-full wp-image-449" src="https://msadministrator.files.wordpress.com/2018/02/screen-shot-2018-02-11-at-10-37-02-pm.png" alt="" width="472" height="390" /></a></p>
+
+<p>Within this configuration file I would allow someone to specify the &ldquo;log level&rdquo; and all the available formatting options.  As you can see in the image above, one such configuration option is that ability to specify the <em>datetime</em> format, a <em>filename</em>, <em>encoding</em>, etc.  But the point of this post is specifically about the <em>datetime</em> format option.</p>
+
+<p>I needed (wanted) a way to identify if the provided format string in the <em>datetime</em> configuration option is an actual valid [DATETIME
+                                        ] format string value.  If you are not familiar with this concept, then please see the below example when using the <em>Get-Date</em> Cmdlet: [code language=&ldquo;powershell&rdquo;]
+PS /Users/josh.rickard&gt; Get-Date -Format &ldquo;yyyy-MM-dd HH:mm:ss&rdquo;
+2018-02-11 22: 43: 05
+[/code
+                                            ]</p>
+
+<p>To further explain, I will show you a snippet of PowerShell code and the corresponding Class that does exactly what I described above and it may shed some light on the &ldquo;why&rdquo;. Imagine you have a JSON configuration file, but it has multiple options available and only certain options are &ldquo;mandatory&rdquo;. You would first need to load the content from that JSON file and then convert it using the <code>ConvertFrom-Json</code> Cmdlet. The next step is that you would need to iterate through the configuration and identify (and verify) each piece of configuration before you rely on it, right? Here&rsquo;s an example of just that:</p>
+
+<p>[code language=&ldquo;powershell&rdquo;]
+$JsonConfigurationFile = &lsquo;C:_Github\PSLogging\PSLogging\config\logging.json&rsquo;
+$JsonConfig = Get-Content -Path $JsonConfigurationFile | ConvertFrom-Json
+$FormatObject = @()</p>
+
+<p>foreach($output in $JsonConfig.outputs)
+{
+    if ($output.PSObject.Properties.Name -eq &lsquo;console&rsquo;)
+    {
+        if ([DateTimeValidation
+                                                        ]: :validateDateTimePatterns($output.console.datetime))
+        {
+                                                            [ConsoleConfiguration
+                                                            ]: :setConsoleConfiguration($output.console.level, $output.console.datetime)
+                                                        }
+        else
+        {
+            Write-Error -Message &lsquo;Error!  Could not Validate Date Time Patterns!&rsquo;
+            Throw
+                                                        }
+                                                    }
+                                                }
+[/code
+                                                ]
+As you can see, we loop through the first time and identify if the <code>console</code> setting was set, if it was then we would need to check and see if the passed in [datetime
+                                                ] format string is correct, if it is then set our console configuration (if you&rsquo;re following along, let me tell you there are other forms of validation this is just an example). :)</p>
+
+<p>Now, to show you the [DateTimeValidation
+                                                ] Class that is doing all the magic. Additionally, I have a ConsoleConfiguration Class and a LogLevel Enum but we won&rsquo;t get into the details of those at this time: [code language=&ldquo;powershell&rdquo;]
+enum LogLevel
+{
+    INFO
+    DEBUG
+    SUCCESS
+    WARNING
+    ERROR
+                                                    }</p>
+
+<p>Class DateTimeValidation
+{
+    static [string
+                                                        ] $DateTimePattern</p>
+
+<pre><code>static [bool
+                                                    ] validateDateTimePatterns([string
+                                                    ]$Pattern)
+{
+    $TimePatterns = [System.Globalization.DateTimeFormatInfo
+                                                        ]: :CurrentInfo
+
+    foreach ($item in $TimePatterns.GetAllDateTimePatterns())
+    {
+        if ($Pattern -eq $item)
+        {
+                                                                [DateTimeValidation
+                                                                ]: :DateTimePattern = $Pattern
+            return $true
+                                                            }
+                                                        }
+    return $false
+                                                    }
+                                                }
+</code></pre>
+
+<h1 id="define-a-class">Define a class</h1>
+
+<p>class ConsoleConfiguration
+{
+   static [LogLevel
+                                                        ] $LogLevel
+   static [DateTimeValidation
+                                                        ] $DateTimeFormat</p>
+
+<p># Static method
+   static [void
+                                                        ] setConsoleConfiguration([LogLevel
+                                                        ]$Level,
+                                                        [string
+                                                        ]$DateTimeFormat)
+   {
+        $DateTimeFormat
+        [ConsoleConfiguration
+                                                            ]: :LogLevel = $Level
+        [ConsoleConfiguration
+                                                            ]: :DateTimeFormat = $DateTimeFormat
+                                                        }
+                                                    }
+[/code
+                                                    ]
+To briefly explain, we call the [DateTimeValidation
+                                                    ] Class from within our If statement above. This call then validates that our passed in [string
+                                                    ] format is valid (or not) based on the current Culture/Globalization settings. Once the provided string data has been validated, then we can proceed to add it to our [ConsoleConfiguration
+                                                    ] Class. The great thing about this class is that I can just reuse it, over and over and over.</p>
+
+<p>Now, let&rsquo;s get back to the actual function and not all this Class non-sense. I ported over the logic from a Class in my PSLogging Module because I thought it would be useful to validate this type of input. In #PowerShell, especially Advanced Functions, we learn/preach/teach that we should always validate our inputs and ensure our outputs are what the user expects - this is crucial in any language. If you are familiar with Parameter Validation on PowerShell Functions then this should come at no surprise to you. <strong>We should ALWAYS validate our data!</strong></p>
+
+<p>This function is no different. You may not have a use case for it now, and this is NOT revolutionary at all, but there may come a time when you need to validate those pesky string formatting rules and I hope this function helps out.</p>
+
+<p>You can find the GIST here: https: //gist.github.com/MSAdministrator/b2c3ace163c4fbf76069503528de6cf1</p>
+
+<p>And the full code here for the lazy: [code language=&ldquo;powershell&rdquo;]
+.Synopsis
+    Confirm if a date time format pattern is valid or not
+.DESCRIPTION
+    Confirm if a date time format pattern is valid or not<br />
+    based on the current culture on the machine that this function<br />
+    is being ran on
+.EXAMPLE 1
+    PS C:&amp;gt; Confirm-DateTimeFormatPattern -Format &ldquo;yyyy-MM-dd HH:mm:ss&rdquo;</p>
+
+<pre><code>Format              Valid
+------              -----
+yyyy-MM-dd HH:mm:ss  True
+</code></pre>
+
+<p>.EXAMPLE 2
+    PS C:&amp;gt; Confirm-DateTimeFormatPattern -Format &ldquo;yyyy-MM-dd HH:mm:ss&rdquo;, &ldquo;xxx-MM/dd/yy&rdquo;</p>
+
+<pre><code>Format              Valid
+------              -----
+yyyy-MM-dd HH:mm:ss  True
+xxx-MM/dd/yy        False
+</code></pre>
+
+<p>.EXAMPLE 3
+    PS C:&amp;gt; &ldquo;yyyy-MM-dd HH:mm:ss&rdquo;, &ldquo;xxx-MM/dd/yy&rdquo;, &ldquo;MMMM d&rdquo;, &ldquo;yyyy&rsquo;-&lsquo;MM&rsquo;-&lsquo;dd&rsquo;T&rsquo;HH&rsquo;:&lsquo;mm&rsquo;:&lsquo;ss.fffffffK&rdquo; | Confirm-DateTimeFormatPattern</p>
+
+<pre><code>Format                                 Valid
+------                                 -----
+yyyy-MM-dd HH:mm:ss                     True
+xxx-MM/dd/yy                           False
+MMMM d                                  True
+yyyy'-'MM'-'dd'T'HH':'mm':'ss.fffffffK  True
+</code></pre>
+
+<p>[/code
+                                                        ]
+[code language=&ldquo;powershell&rdquo;]
+function Confirm-DateTimeFormatPattern
+{
+                                                                [CmdletBinding()
+                                                                ]
+    [Alias()
+                                                                ]
+    [OutputType([PSCustomObject
+                                                                    ])
+                                                                ]
+    Param
+    (
+        # Param1 help description
+        [Parameter(Mandatory=$true,
+                   ValueFromPipeline=$true,
+                   ValueFromPipelineByPropertyName=$true,
+                   Position=0)
+                                                                ]
+        [string[]
+                                                                ]$Format
+    )</p>
+
+<pre><code>Begin
+{
+    $CultureObject = ([System.Globalization.DateTimeFormatInfo
+                                                                ]: :CurrentInfo).GetAllDateTimePatterns()
+                                                            }
+Process
+{
+    foreach ($item in $Format)
+    {
+        if ($CultureObject -contains $item)
+        {
+            $props = [PSCustomObject
+                                                                        ]@{
+                'Format' = $item
+                'Valid'  = $true
+                                                                        }
+            Write-Output $props
+                                                                    }
+        else
+        {
+            $props = [PSCustomObject
+                                                                        ]@{
+                'Format' = $item
+                'Valid'  = $false
+                                                                        }
+            Write-Output $props
+                                                                    }
+                                                                }
+                                                            }
+End
+{
+    # Intentionally Left Blank
+                                                            }
+                                                        }
+</code></pre>
+
+<p>[/code
+                                                            ]</p>
+
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bilberry-hugo-theme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+     
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/article/butcher-block-iron-pipe-desk/">Butcher Block Iron Pipe Desk</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/little-about-myself/"></a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-docker-compose-on-windows/">Using Docker Compose on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-group-policy-adm-and-admx-templates/">Create Group Policy Adm and Admx Templates</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-powershell-to-manage-amazon-ec2-instances/">Using Powershell to Manage Amazon Ec2 Instances</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/manage-amazon-aws-s3-with-powershell/">Manage Amazon Aws S3 With Powershell</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-docker-container-on-windows-with-a-dockerfile/">Create a Docker Container on Windows With a Dockerfile</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/install-docker-and-run-containers-on-windows/">Install Docker and Run Containers on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/powershell-ise-snippets/">Powershell Ise Snippets</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Categories</strong>
+
+            
+        </div>
+
+        <div class="right">
+            
+            <div class="social-media">
+                <strong>Social media</strong>
+
+                
+                
+                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
+                
+                
+                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                    2018
+                
+                by Lednerb
+            </a>
+	    -
+	    
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+        
+
+        
+
+        <script src="/dist/theme.js" type="application/javascript"></script>
+
+        
+            
+        
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "en" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[return]")
+            })
+        </script>
+
+        
+            <script>
+    var client = algoliasearch("Y2C4RWMPXW", "50ea7f8c41c0ad233926e0be2b769ed1");
+    var index = client.initIndex("default-content");
+
+    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
+      [
+        {
+          
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
+          
+          displayKey: function(suggestion) {
+            return suggestion.title || suggestion.author
+          },
+          templates: {
+            suggestion: function(suggestion) {
+                return "<span class='entry " + suggestion.type + "'>"
+                      + "<span class='title'>" + suggestion.title + "</span>"
+                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
+                  + "</span>"
+                ;
+            },
+            empty: function() {
+              return "<span class='empty'>Nothing found.</span>"
+            },
+            footer: function() {
+              return '<div class="branding">Powered by <img src="\/dist\/algolia-logo-light.svg" /></div>'
+            }
+
+          },
+        }
+      ])
+      .on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location = (suggestion.url);
+      })
+      .keypress(function (event, suggestion) {
+        if (event.which == 13) {
+          window.location = (suggestion.url);
+        }
+      });
+</script>
+
+        
+
+
+    </body>
+</html>

@@ -1,0 +1,549 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Josh Rickard">
+        <meta name="description" content="All about Microsoft Automation">
+        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+        <meta name="generator" content="Hugo 0.46" />
+        <title> Mdt 2012 Deployment Guide Step by Step 10 of 11 | MSAdministrator</title>
+        <meta name="description" content="Mdt 2012 Deployment Guide Step by Step 10 of 11 - All about Microsoft Automation">
+        <meta itemprop="name" content="Mdt 2012 Deployment Guide Step by Step 10 of 11">
+        <meta itemprop="description" content="Mdt 2012 Deployment Guide Step by Step 10 of 11 - All about Microsoft Automation">
+        <meta property="og:title" content="Mdt 2012 Deployment Guide Step by Step 10 of 11">
+        <meta property="og:description" content="Mdt 2012 Deployment Guide Step by Step 10 of 11 - All about Microsoft Automation">
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+        <meta property="og:url" content="/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
+        <meta property="og:site_name" content="MSAdministrator">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+	
+
+        <link rel="stylesheet" href="/dist/theme.css">
+
+        
+
+        
+            
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        
+<nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="/page/projects/">Projects</a></li>
+                
+            
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fa fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="/">MSAdministrator</a></h3>
+            
+                <span class="subtitle">All about Windows Automation</span>
+            
+        </div>
+
+    
+
+        
+        <div class="toggler">
+        
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">Mdt 2012 Deployment Guide Step by Step 10 of 11</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fmdt-2012-deployment-guide-step-by-step-10-of-11%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fmdt-2012-deployment-guide-step-by-step-10-of-11%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fmdt-2012-deployment-guide-step-by-step-10-of-11%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fmdt-2012-deployment-guide-step-by-step-10-of-11%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        <p><h1>Automating the Deployment Process</h1>
+<ol>
+    <li>Right-click on the deployment share and select <b><i>Properties</i></b></li>
+</ol>
+<p align="center"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/36/" rel="attachment wp-att-122"><img class="alignnone size-full wp-image-122" alt="36" src="http://msadministrator.files.wordpress.com/2012/12/36.png" width="307" height="294" /></a></p></p>
+
+<p><ol>
+    <li>Select the “<b><i>Rules</i></b>” tab</li>
+    <li>In the main window, edit the settings as required.  A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…</li>
+    <li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/35/" rel="attachment wp-att-121"><img class="alignnone size-full wp-image-121" alt="35" src="http://msadministrator.files.wordpress.com/2012/12/351.png" width="519" height="431" /></a></li>
+</ol>
+<table cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td width="54" height="0"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<b>CUSTOMSETTINGS.INI</b>
+<table width="476" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="top" width="203">[Settings]</p>
+
+<p>Priority=Default</p>
+
+<p>[Default
+                    ]</p>
+
+<p>_SMSTSORGNAME=Customer</p>
+
+<p>SkipBDDWelcome=YES</p>
+
+<p>SkipProductKey=YES</p>
+
+<p>ProductKey= XXXX-XXXX-XXXXX-XXXXX</p>
+
+<p>OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX</p>
+
+<p>SkipDeploymentType=YES</p>
+
+<p>DeploymentType=NEWCOMPUTER</p>
+
+<p>SkipDomainMembership=NO</p>
+
+<p>JoinDomain=domain.com</p>
+
+<p>DomainAdminDomain=domain.com</p>
+
+<p>DomainAdmin=MDTAddComputer</p>
+
+<p>DomainAdminPassword=Pa55w0rd</p>
+
+<p>MachineObjectOU=ou=example,dc=domain,dc=com</p>
+
+<p>OrgName=Customer</p>
+
+<p>SkipUserData=YES</p>
+
+<p>SkipTaskSequence=NO</p>
+
+<p>TaskSequenceID=TASKSEQID</p>
+
+<p>SkipPackageDisplay=YES</p>
+
+<p>SkipLocaleSelection=NO</p>
+
+<p>UILanguage=en-US</p>
+
+<p>UserLocale=en-GB</p>
+
+<p>KeyboardLocale=0809: 00000809</p>
+
+<p>SystemLocale=en-US</p>
+
+<p>SkipTimeZone=NO</p>
+
+<p>TimeZoneName=GMT Standard Time</p>
+
+<p>TimeZone=085</p>
+
+<p>SkipBitLocker=YES</p>
+
+<p>SkipSummary=YES</p>
+
+<p>SkipCapture=YES</p>
+
+<p>SkipAdminPassword=YES</p>
+
+<p>SkipApplications=NO</p>
+
+<p>SkipFinalSummary=NO</p>
+
+<p>WsusServer=http: //wsus.domain.com</p>
+
+<p>Home_page=http: //intranet.domain.com</p>
+
+<p>FinishAction=SHUTDOWN</td>
+<td valign="top" width="272">Sets the Company Name during the deployment</p>
+
+<p>Skips unneeded wizard pages</p>
+
+<p>Skips unneeded wizard pages</p>
+
+<p>The Windows product key to use (only required if using MAK keys)</p>
+
+<p>Sets the deployment type</p>
+
+<p>Skip the domain membership screen</p>
+
+<p></p>
+
+<p>Credentials to use to join computers to the domain</p>
+
+<p>/</p>
+
+<p>Do not perform a user state migration</p>
+
+<p>Do not ask which task sequence to run</p>
+
+<p>Defautl to the task sequenceID you created earlier</p>
+
+<p>Don’t display a list of possible OS packages to install Ask which regional settings to configure</p>
+
+<p>Set the default UI language to English</p>
+
+<p>Set the default user locale to GB English</p>
+
+<p>Set the default keyboard to UK</p>
+
+<p>Ask which time zone the computer is in</p>
+
+<p>Set the default time zone to GMT</p>
+
+<p>Set the default time zone to GMT (legacy support)</p>
+
+<p>Skip the installation of BitLocker</p>
+
+<p>Skip the Summary screen before deployment starts</p>
+
+<p>Skip the “Build and Capture” options during deployment</p>
+
+<p>Don’t ask for a local admin password for new PCs</p>
+
+<p>Do not request local admin password during OS deployment</p>
+
+<p>Pre-sets the admin password to the value specified</p>
+
+<p>Allows you to set the local WSUS server for updates</p>
+
+<p>Sets the default IE homepage for all users of new computers</p>
+
+<p>Tells the computer to shut down once task sequence is completed</td>
+</tr>
+</tbody>
+</table>
+<b> </b>
+<p align="left">If you want to specify the Timezone, Locale or other settings during the deployment, simply change the YES to a NO for the relevant option and you’ll be prompted during deployment.  These settings are injected automatically during deployment into the unattend.xml so you don’t have to worry about messing around with it usually.</p></p>
+
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bilberry-hugo-theme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+     
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/article/butcher-block-iron-pipe-desk/">Butcher Block Iron Pipe Desk</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/little-about-myself/"></a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-docker-compose-on-windows/">Using Docker Compose on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-group-policy-adm-and-admx-templates/">Create Group Policy Adm and Admx Templates</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-powershell-to-manage-amazon-ec2-instances/">Using Powershell to Manage Amazon Ec2 Instances</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/manage-amazon-aws-s3-with-powershell/">Manage Amazon Aws S3 With Powershell</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-docker-container-on-windows-with-a-dockerfile/">Create a Docker Container on Windows With a Dockerfile</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/install-docker-and-run-containers-on-windows/">Install Docker and Run Containers on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/powershell-ise-snippets/">Powershell Ise Snippets</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Categories</strong>
+
+            
+        </div>
+
+        <div class="right">
+            
+            <div class="social-media">
+                <strong>Social media</strong>
+
+                
+                
+                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
+                
+                
+                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                    2018
+                
+                by Lednerb
+            </a>
+	    -
+	    
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+        
+
+        
+
+        <script src="/dist/theme.js" type="application/javascript"></script>
+
+        
+            
+        
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "en" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[return]")
+            })
+        </script>
+
+        
+            <script>
+    var client = algoliasearch("Y2C4RWMPXW", "50ea7f8c41c0ad233926e0be2b769ed1");
+    var index = client.initIndex("default-content");
+
+    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
+      [
+        {
+          
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
+          
+          displayKey: function(suggestion) {
+            return suggestion.title || suggestion.author
+          },
+          templates: {
+            suggestion: function(suggestion) {
+                return "<span class='entry " + suggestion.type + "'>"
+                      + "<span class='title'>" + suggestion.title + "</span>"
+                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
+                  + "</span>"
+                ;
+            },
+            empty: function() {
+              return "<span class='empty'>Nothing found.</span>"
+            },
+            footer: function() {
+              return '<div class="branding">Powered by <img src="\/dist\/algolia-logo-light.svg" /></div>'
+            }
+
+          },
+        }
+      ])
+      .on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location = (suggestion.url);
+      })
+      .keypress(function (event, suggestion) {
+        if (event.which == 13) {
+          window.location = (suggestion.url);
+        }
+      });
+</script>
+
+        
+
+
+    </body>
+</html>

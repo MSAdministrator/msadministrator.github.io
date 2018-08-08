@@ -1,0 +1,392 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Josh Rickard">
+        <meta name="description" content="All about Microsoft Automation">
+        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+        <meta name="generator" content="Hugo 0.46" />
+        <title> Create a Docker Container on Windows With a Dockerfile | MSAdministrator</title>
+        <meta name="description" content="Create a Docker Container on Windows With a Dockerfile - All about Microsoft Automation">
+        <meta itemprop="name" content="Create a Docker Container on Windows With a Dockerfile">
+        <meta itemprop="description" content="Create a Docker Container on Windows With a Dockerfile - All about Microsoft Automation">
+        <meta property="og:title" content="Create a Docker Container on Windows With a Dockerfile">
+        <meta property="og:description" content="Create a Docker Container on Windows With a Dockerfile - All about Microsoft Automation">
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+        <meta property="og:url" content="/article/create-a-docker-container-on-windows-with-a-dockerfile/">
+        <meta property="og:site_name" content="MSAdministrator">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+	
+
+        <link rel="stylesheet" href="/dist/theme.css">
+
+        
+
+        
+            
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        
+<nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="/page/projects/">Projects</a></li>
+                
+            
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fa fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="/">MSAdministrator</a></h3>
+            
+                <span class="subtitle">All about Windows Automation</span>
+            
+        </div>
+
+    
+
+        
+        <div class="toggler">
+        
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="/article/create-a-docker-container-on-windows-with-a-dockerfile/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/create-a-docker-container-on-windows-with-a-dockerfile/">Create a Docker Container on Windows With a Dockerfile</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fcreate-a-docker-container-on-windows-with-a-dockerfile%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fcreate-a-docker-container-on-windows-with-a-dockerfile%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fcreate-a-docker-container-on-windows-with-a-dockerfile%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fcreate-a-docker-container-on-windows-with-a-dockerfile%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        <p>In my last post, I explained <a href="https://msadministrator.com/2018/01/04/install-docker-and-run-containers-on-windows/">how to install docker and how to run containers</a>. Today, we will walk through creating a Docker container using a Dockerfile.</p>
+
+<p>A Dockerfile (no file extension) is a definition file that will build and run a container. That container can be a simple Microsoft IIS web application or Python/Flask application or a simple build/reporting service. A definition file helps us with our operational tasks, especially when we are building services or scripts for the repeatable tasks we face on a daily basis.</p>
+
+<p><a href="https://4sysops.com/archives/create-a-docker-container-on-windows-with-a-dockerfile/">Read More</a></p>
+
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bilberry-hugo-theme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+     
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/article/butcher-block-iron-pipe-desk/">Butcher Block Iron Pipe Desk</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/little-about-myself/"></a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-docker-compose-on-windows/">Using Docker Compose on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-group-policy-adm-and-admx-templates/">Create Group Policy Adm and Admx Templates</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-powershell-to-manage-amazon-ec2-instances/">Using Powershell to Manage Amazon Ec2 Instances</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/manage-amazon-aws-s3-with-powershell/">Manage Amazon Aws S3 With Powershell</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-docker-container-on-windows-with-a-dockerfile/">Create a Docker Container on Windows With a Dockerfile</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/install-docker-and-run-containers-on-windows/">Install Docker and Run Containers on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/powershell-ise-snippets/">Powershell Ise Snippets</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Categories</strong>
+
+            
+        </div>
+
+        <div class="right">
+            
+            <div class="social-media">
+                <strong>Social media</strong>
+
+                
+                
+                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
+                
+                
+                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                    2018
+                
+                by Lednerb
+            </a>
+	    -
+	    
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+        
+
+        
+
+        <script src="/dist/theme.js" type="application/javascript"></script>
+
+        
+            
+        
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "en" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[return]")
+            })
+        </script>
+
+        
+            <script>
+    var client = algoliasearch("Y2C4RWMPXW", "50ea7f8c41c0ad233926e0be2b769ed1");
+    var index = client.initIndex("default-content");
+
+    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
+      [
+        {
+          
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
+          
+          displayKey: function(suggestion) {
+            return suggestion.title || suggestion.author
+          },
+          templates: {
+            suggestion: function(suggestion) {
+                return "<span class='entry " + suggestion.type + "'>"
+                      + "<span class='title'>" + suggestion.title + "</span>"
+                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
+                  + "</span>"
+                ;
+            },
+            empty: function() {
+              return "<span class='empty'>Nothing found.</span>"
+            },
+            footer: function() {
+              return '<div class="branding">Powered by <img src="\/dist\/algolia-logo-light.svg" /></div>'
+            }
+
+          },
+        }
+      ])
+      .on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location = (suggestion.url);
+      })
+      .keypress(function (event, suggestion) {
+        if (event.which == 13) {
+          window.location = (suggestion.url);
+        }
+      });
+</script>
+
+        
+
+
+    </body>
+</html>

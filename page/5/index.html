@@ -1,0 +1,978 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Josh Rickard">
+        <meta name="description" content="All about Microsoft Automation">
+        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+        <meta name="generator" content="Hugo 0.46" />
+        <title> All about Windows Automation | MSAdministrator</title>
+        <meta name="description" content="All about Microsoft Automation">
+        <meta itemprop="name" content="All about Windows Automation">
+        <meta itemprop="description" content="All about Microsoft Automation">
+        <meta property="og:title" content="All about Windows Automation">
+        <meta property="og:description" content="All about Microsoft Automation">
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+        <meta property="og:url" content="/">
+        <meta property="og:site_name" content="MSAdministrator"><meta property="og:type" content="website">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+	
+	  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="MSAdministrator" />
+	  <link href="/index.xml" rel="feed" type="application/rss+xml" title="MSAdministrator" />
+	
+
+        <link rel="stylesheet" href="/dist/theme.css">
+
+        
+
+        
+            
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        
+<nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="/page/projects/">Projects</a></li>
+                
+            
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fa fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="/">MSAdministrator</a></h3>
+            
+                <span class="subtitle">All about Windows Automation</span>
+            
+        </div>
+
+    
+
+        
+        <div class="toggler">
+        
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+    
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/article/windows-security-patch-management/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/windows-security-patch-management/">Windows Security Patch Management</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fwindows-security-patch-management%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fwindows-security-patch-management%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fwindows-security-patch-management%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fwindows-security-patch-management%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Recently, at work, I nominated myself to begin a &ldquo;Windows Security&rdquo; course for IT Professionals that I work with. Being a former IT Pro, and now part of our security department as an Incident Responder, I thought I would create a course surrounding security. So, i&rsquo;m going to use my blog to layout my plans for this &ldquo;Windows Security&rdquo; course - which will hopefully be useful for others as well.
+
+        
+            <a href="/article/windows-security-patch-management/" class="more">Continue reading</a>
+        
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/article/qualys-guard-qualys-in-a-university-environment/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/qualys-guard-qualys-in-a-university-environment/">Qualys Guard Qualys in a University Environment</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fqualys-guard-qualys-in-a-university-environment%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fqualys-guard-qualys-in-a-university-environment%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fqualys-guard-qualys-in-a-university-environment%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fqualys-guard-qualys-in-a-university-environment%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        The University I work for has began using Qualys for our Enterprise Vulnerability Scanning and so far it&rsquo;s been well received. The problem is that every &ldquo;College/School&rdquo; maintains their own systems thus we are decentralized, which makes maintaining Reports/Scans/Maps/etc. very difficult.
+Because I have not found many posts/articles focused on a decentralized environment I decided I would explain the way we are approaching this. This is all a work in progress - if you have any questions or ideas, please get a hold of me.
+
+        
+            <a href="/article/qualys-guard-qualys-in-a-university-environment/" class="more">Continue reading</a>
+        
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/article/mdt-2013-installing-mdt-2013/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/mdt-2013-installing-mdt-2013/">Mdt 2013 Installing Mdt 2013</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fmdt-2013-installing-mdt-2013%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fmdt-2013-installing-mdt-2013%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fmdt-2013-installing-mdt-2013%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fmdt-2013-installing-mdt-2013%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Now we are going to install MDT 2013. This is a simple process but I wanted to show you anyways.
+After you have downloaded MDT 2013 from Microsoft (See This Post)
+When you first Launch the MDT 2013 Installer, you should see the following screen:
+
+Click Next to Continue
+
+Accept the License Agreement and click Next:
+
+Choose the Location that you want MDT 2013 to be installed. This is typically left alone but you are more than welcome to install it on a separate partition/drive.
+
+        
+            <a href="/article/mdt-2013-installing-mdt-2013/" class="more">Continue reading</a>
+        
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/article/mdt-2013-installing-adk-for-8-1/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/mdt-2013-installing-adk-for-8-1/">Mdt 2013 Installing Adk for 8 1</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fmdt-2013-installing-adk-for-8-1%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fmdt-2013-installing-adk-for-8-1%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fmdt-2013-installing-adk-for-8-1%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fmdt-2013-installing-adk-for-8-1%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Once you have all of the necessary files downloaded and saved on your Windows Server 2012 R2 box, then begin by installing the &ldquo;adksetup.exe&rdquo;.
+The first screen that should pop-up is this one:
+
+The Following Screenshots are all based on your own needs but these are the options that I have chosen for this setup:
+I choose to download the ADK instead of installing it. The reason I do this is because I like to keep a backup of the original file, just in case the server crashes or something else happens.
+
+        
+            <a href="/article/mdt-2013-installing-adk-for-8-1/" class="more">Continue reading</a>
+        
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/">Mdt 2013 Setting Up Mdt 2013 With Adk for Windows 7 8 8 1</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fmdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fmdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fmdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fmdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Hello Everyone, in the following few weeks I will creating several new posts about setting MDT 2013 on Windows Server 2012 R2 to enable you to image your Dell OptiPlex &amp; Lattitude machines. This will be similar to my MDT 2012 Update 1 Guide but a bit different as well. I hope you enjoy!
+To Start things off, you need to download the following pieces of software:
+MDT 2013 ADK for Windows 8.
+
+        
+            <a href="/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/" class="more">Continue reading</a>
+        
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/">Mdt 2013 Pin Start Menu Task Bar Shortcuts Through Task Sequence</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fmdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fmdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fmdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fmdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Below is how we stopped modifying the Start Menu &amp; Task Bar shortcuts on our Default Image (GOLD IMAGE) using MDT 2013 Task Sequence. This applies to Windows 7 and I&rsquo;m sure it could be modified to work with Windows 8.1. Check it out below and let me know if you have any questions.
+To do this, you are going to need the following scripts in a folder on your MDT 2013 Server.
+
+        
+            <a href="/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/" class="more">Continue reading</a>
+        
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="/article/script-adding-exchange-resource-accounts-to-your-outlook/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/script-adding-exchange-resource-accounts-to-your-outlook/">Script Adding Exchange Resource Accounts to Your Outlook</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fscript-adding-exchange-resource-accounts-to-your-outlook%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fscript-adding-exchange-resource-accounts-to-your-outlook%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fscript-adding-exchange-resource-accounts-to-your-outlook%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fscript-adding-exchange-resource-accounts-to-your-outlook%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        I work for a large public University and we have many Resource Accounts. We needed a way to move from Public Folders but we wanted it to be seemless as possible. To do this, I created this VBS script that allows anyone to add Resource Accounts to their Outlook 2013&frasl;2010 calendar as a shared calendar. The user in question will have to run this script while Outlook is open and it will pull the Resource Account (add the Resource Account name in the RESOURCEACCOUNTNAME variable below) from the GAL and add it to the users calendar.
+
+        
+            <a href="/article/script-adding-exchange-resource-accounts-to-your-outlook/" class="more">Continue reading</a>
+        
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+            
+        </div>
+    
+
+    
+    <div class="paginator">
+        
+            <a href="/page/6/" class="older"><i class="fa fa-angle-double-left"></i> Older posts</a>
+        
+
+        
+            <a href="/page/4/" class="newer">Newer posts <i class="fa fa-angle-double-right"></i></a>
+        
+    </div>
+
+
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/article/butcher-block-iron-pipe-desk/">Butcher Block Iron Pipe Desk</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/little-about-myself/"></a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-docker-compose-on-windows/">Using Docker Compose on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-group-policy-adm-and-admx-templates/">Create Group Policy Adm and Admx Templates</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-powershell-to-manage-amazon-ec2-instances/">Using Powershell to Manage Amazon Ec2 Instances</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/manage-amazon-aws-s3-with-powershell/">Manage Amazon Aws S3 With Powershell</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-docker-container-on-windows-with-a-dockerfile/">Create a Docker Container on Windows With a Dockerfile</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/install-docker-and-run-containers-on-windows/">Install Docker and Run Containers on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/powershell-ise-snippets/">Powershell Ise Snippets</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Categories</strong>
+
+            
+        </div>
+
+        <div class="right">
+            
+            <div class="social-media">
+                <strong>Social media</strong>
+
+                
+                
+                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
+                
+                
+                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                    2018
+                
+                by Lednerb
+            </a>
+	    -
+	    <a href="/index.xml">RSS</a>
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+        
+
+        
+
+        <script src="/dist/theme.js" type="application/javascript"></script>
+
+        
+            
+        
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "en" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[return]")
+            })
+        </script>
+
+        
+            <script>
+    var client = algoliasearch("Y2C4RWMPXW", "50ea7f8c41c0ad233926e0be2b769ed1");
+    var index = client.initIndex("default-content");
+
+    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
+      [
+        {
+          
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
+          
+          displayKey: function(suggestion) {
+            return suggestion.title || suggestion.author
+          },
+          templates: {
+            suggestion: function(suggestion) {
+                return "<span class='entry " + suggestion.type + "'>"
+                      + "<span class='title'>" + suggestion.title + "</span>"
+                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
+                  + "</span>"
+                ;
+            },
+            empty: function() {
+              return "<span class='empty'>Nothing found.</span>"
+            },
+            footer: function() {
+              return '<div class="branding">Powered by <img src="\/dist\/algolia-logo-light.svg" /></div>'
+            }
+
+          },
+        }
+      ])
+      .on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location = (suggestion.url);
+      })
+      .keypress(function (event, suggestion) {
+        if (event.which == 13) {
+          window.location = (suggestion.url);
+        }
+      });
+</script>
+
+        
+
+
+    </body>
+</html>

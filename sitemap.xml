@@ -3,8 +3,298 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/archive/</loc>
+    <loc>/article/butcher-block-iron-pipe-desk/</loc>
+    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/little-about-myself/</loc>
+    <lastmod>2018-08-07T20:45:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/using-docker-compose-on-windows/</loc>
+    <lastmod>2018-08-07T20:45:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/</loc>
+    <lastmod>2018-08-07T20:45:28-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/create-group-policy-adm-and-admx-templates/</loc>
+    <lastmod>2018-08-07T20:45:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/using-powershell-to-manage-amazon-ec2-instances/</loc>
+    <lastmod>2018-08-07T20:45:24-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/manage-amazon-aws-s3-with-powershell/</loc>
+    <lastmod>2018-08-07T20:45:21-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/create-a-docker-container-on-windows-with-a-dockerfile/</loc>
+    <lastmod>2018-08-07T20:45:19-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/install-docker-and-run-containers-on-windows/</loc>
+    <lastmod>2018-08-07T20:45:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/powershell-ise-snippets/</loc>
+    <lastmod>2018-08-07T20:45:14-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/processing-csv-data-in-powershell/</loc>
+    <lastmod>2018-08-07T20:45:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/manage-user-rights-with-group-policy/</loc>
+    <lastmod>2018-08-07T20:45:08-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/cattle-vs-unicorns/</loc>
+    <lastmod>2018-08-07T20:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/understanding-group-policy-order/</loc>
+    <lastmod>2018-08-07T20:45:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/run-powershell-scripts-as-immediate-scheduled-tasks-with-group-policy/</loc>
+    <lastmod>2018-08-07T20:44:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/add-and-remove-users-to-ad-groups-with-group-policy/</loc>
     <lastmod>2018-08-07T20:44:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/download-files-from-github-without-git-using-powershell/</loc>
+    <lastmod>2018-08-07T20:44:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/logging-to-the-windows-event-log-in-your-powershell-scripts/</loc>
+    <lastmod>2018-08-07T20:44:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/standardize-powershell-logging-with-my-write-logentry-function/</loc>
+    <lastmod>2018-08-07T20:44:46-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/design-before-coding-kanban/</loc>
+    <lastmod>2018-08-07T20:44:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/design-before-coding-gathering-requirements/</loc>
+    <lastmod>2018-08-07T20:44:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/how-i-work/</loc>
+    <lastmod>2018-08-07T20:44:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/powershell-qualys-get-asset-group-info-part-2/</loc>
+    <lastmod>2018-08-07T20:44:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/powershell-qualys-authentication-part-1/</loc>
+    <lastmod>2018-08-07T20:44:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/presentation-securing-windows-with-group-policy/</loc>
+    <lastmod>2018-08-07T20:44:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/qualysguard-decentralized-it-how-to-organize-your-assets/</loc>
+    <lastmod>2018-08-07T20:44:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/windows-security-publicprivate-key-exchange-basics/</loc>
+    <lastmod>2018-08-07T20:44:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/windows-security-server-hardening-security-templates/</loc>
+    <lastmod>2018-08-07T20:44:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/windows-security-patch-management/</loc>
+    <lastmod>2018-08-07T20:44:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/qualys-guard-qualys-in-a-university-environment/</loc>
+    <lastmod>2018-08-07T20:44:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2013-installing-mdt-2013/</loc>
+    <lastmod>2018-08-07T20:44:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2013-installing-adk-for-8-1/</loc>
+    <lastmod>2018-08-07T20:44:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/</loc>
+    <lastmod>2018-08-07T20:44:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/</loc>
+    <lastmod>2018-08-07T20:44:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/script-adding-exchange-resource-accounts-to-your-outlook/</loc>
+    <lastmod>2018-08-07T20:43:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/script-removing-proxy-from-firefox-user-prefs-js/</loc>
+    <lastmod>2018-08-07T20:43:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/powershell-updating-local-admin-passwords-securely-3-of-3/</loc>
+    <lastmod>2018-08-07T20:43:52-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/powershell-updating-local-admin-passwords-securely-2-of-3/</loc>
+    <lastmod>2018-08-07T20:43:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/powershell-updating-local-admin-passwords-securely-1-of-3/</loc>
+    <lastmod>2018-08-07T20:43:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/ipad-lockdown-mobileconfig/</loc>
+    <lastmod>2018-08-07T20:43:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/questions-about-mdt-2012-driver-setup/</loc>
+    <lastmod>2018-08-07T20:43:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/</loc>
+    <lastmod>2018-08-07T20:43:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-11-of-11/</loc>
+    <lastmod>2018-08-07T20:43:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-10-of-11/</loc>
+    <lastmod>2018-08-07T20:43:34-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-9-of-11/</loc>
+    <lastmod>2018-08-07T20:43:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-8-of-11/</loc>
+    <lastmod>2018-08-07T20:43:29-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-7-of-11/</loc>
+    <lastmod>2018-08-07T20:43:27-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-6-of-11/</loc>
+    <lastmod>2018-08-07T20:43:24-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-5-of-11/</loc>
+    <lastmod>2018-08-07T20:43:22-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-4-of-11/</loc>
+    <lastmod>2018-08-07T20:43:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-3-of-11/</loc>
+    <lastmod>2018-08-07T20:43:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-2-of-11/</loc>
+    <lastmod>2018-08-07T20:43:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/mdt-2012-deployment-guide-step-by-step-1-of-11/</loc>
+    <lastmod>2018-08-07T20:42:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/windows-comparison-of-windows-commands-and-linux-commands/</loc>
+    <lastmod>2018-08-07T20:42:53-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/scripting-open-excel-sheets-in-separate-windows/</loc>
+    <lastmod>2018-08-07T20:42:51-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/</loc>
+    <lastmod>2018-08-07T20:42:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/scripting-mount-printer-at-startup-script/</loc>
+    <lastmod>2018-08-07T20:42:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/programming-final-project-for-x86-assembly-language-class-zombie-game/</loc>
+    <lastmod>2018-08-07T20:42:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/article/programming-understanding-binary-and-its-hexadecimal-values/</loc>
+    <lastmod>2018-08-07T20:42:13-04:00</lastmod>
   </url>
   
   <url>
@@ -29,25 +319,25 @@
   
   <url>
     <loc>/author/</loc>
-    <lastmod>2018-08-07T20:44:55-04:00</lastmod>
+    <lastmod>2018-08-05T12:55:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/archive/</loc>
-    <lastmod>2018-08-07T20:44:55-04:00</lastmod>
+    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/article/</loc>
-    <lastmod>2018-08-07T20:44:55-04:00</lastmod>
+    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/author/</loc>
-    <lastmod>2018-08-07T20:44:55-04:00</lastmod>
+    <lastmod>2018-08-05T12:55:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -57,8 +347,14 @@
   </url>
   
   <url>
+    <loc>/author/josh-rickard/</loc>
+    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2018-08-07T20:44:55-04:00</lastmod>
+    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -70,7 +366,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-08-07T20:44:55-04:00</lastmod>
+    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
     <priority>0</priority>
   </url>
   

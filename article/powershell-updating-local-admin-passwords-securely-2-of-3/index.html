@@ -1,0 +1,634 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Josh Rickard">
+        <meta name="description" content="All about Microsoft Automation">
+        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+        <meta name="generator" content="Hugo 0.46" />
+        <title> Powershell Updating Local Admin Passwords Securely 2 of 3 | MSAdministrator</title>
+        <meta name="description" content="Powershell Updating Local Admin Passwords Securely 2 of 3 - All about Microsoft Automation">
+        <meta itemprop="name" content="Powershell Updating Local Admin Passwords Securely 2 of 3">
+        <meta itemprop="description" content="Powershell Updating Local Admin Passwords Securely 2 of 3 - All about Microsoft Automation">
+        <meta property="og:title" content="Powershell Updating Local Admin Passwords Securely 2 of 3">
+        <meta property="og:description" content="Powershell Updating Local Admin Passwords Securely 2 of 3 - All about Microsoft Automation">
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+        <meta property="og:url" content="/article/powershell-updating-local-admin-passwords-securely-2-of-3/">
+        <meta property="og:site_name" content="MSAdministrator">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+	
+
+        <link rel="stylesheet" href="/dist/theme.css">
+
+        
+
+        
+            
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        
+<nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="/page/projects/">Projects</a></li>
+                
+            
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fa fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="/">MSAdministrator</a></h3>
+            
+                <span class="subtitle">All about Windows Automation</span>
+            
+        </div>
+
+    
+
+        
+        <div class="toggler">
+        
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="/article/powershell-updating-local-admin-passwords-securely-2-of-3/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/powershell-updating-local-admin-passwords-securely-2-of-3/">Powershell Updating Local Admin Passwords Securely 2 of 3</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%2farticle%2fpowershell-updating-local-admin-passwords-securely-2-of-3%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=%2farticle%2fpowershell-updating-local-admin-passwords-securely-2-of-3%2f&via=MS_dministrator" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="https://plus.google.com/share?url=%2farticle%2fpowershell-updating-local-admin-passwords-securely-2-of-3%2f" target="_blank" title="Share on Google+">
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <span class="sr-only">Share on Google+</span>
+        </a>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+        <a href="http://www.reddit.com/submit?url=%2farticle%2fpowershell-updating-local-admin-passwords-securely-2-of-3%2f" target="_blank" title="Submit to Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Submit to Reddit</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        
+
+<p><span style="font-size:13px;"> B</span><span style="font-size:13px;">elow is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely.  This is not my script, I received this script along with many others from the SANS SEC 505 course.  I have not altered it in any way.</span>
+<div></p>
+
+<p>Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):</p>
+
+<p>This script will recover the local administrator password that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate.</p>
+
+<p>Copy this text into a PowerShell Script called Recover_PasswordArchive.ps1</p>
+
+<p>[code
+                    ]</p>
+
+<p>####################################################################################
+#.Synopsis</p>
+
+<h1 id="recover-the-plaintext-password-from-an-encrypted-file-originally">Recover the plaintext password from an encrypted file originally</h1>
+
+<h1 id="created-with-the-companion-script-named-update-passwordarchive-ps1">created with the companion script named Update-PasswordArchive.ps1.</h1>
+
+<p>#
+#.Description</p>
+
+<h1 id="recover-the-plaintext-password-from-an-encrypted-file-originally-1">Recover the plaintext password from an encrypted file originally</h1>
+
+<h1 id="created-with-the-companion-script-named-update-passwordarchive-ps1-the">created with the companion script named Update-PasswordArchive.ps1. The</h1>
+
+<h1 id="file-is-encrypted-with-a-public-key-chosen-by-the-administrator-the">file is encrypted with a public key chosen by the administrator. The</h1>
+
+<h1 id="password-generated-by-update-passwordarchive-ps1-is-random-recovery">password generated by Update-PasswordArchive.ps1 is random. Recovery</h1>
+
+<h1 id="of-the-encrypted-password-from-the-file-requires-possession-of-the">of the encrypted password from the file requires possession of the</h1>
+
+<h1 id="private-key-corresponding-to-the-chosen-public-key-certificate">private key corresponding to the chosen public key certificate.</h1>
+
+<p>#
+#.Parameter PasswordArchivePath</p>
+
+<h1 id="the-local-or-unc-path-to-where-the-encrypted-password-files-are-kept">The local or UNC path to where the encrypted password files are kept.</h1>
+
+<p>#
+#.Parameter ComputerName</p>
+
+<h1 id="name-of-the-computer-with-the-local-account-whose-password-was-reset">Name of the computer with the local account whose password was reset</h1>
+
+<h1 id="and-whose-password-was-encrypted-and-saved-to-a-file-the-computer">and whose password was encrypted and saved to a file. The computer</h1>
+
+<h1 id="name-will-match-the-names-of-files-in-the-passwordarchivepath-this">name will match the names of files in the PasswordArchivePath. This</h1>
+
+<h1 id="parameter-can-accept-a-computer-name-with-a-wildcard-in-it">parameter can accept a computer name with a wildcard in it.</h1>
+
+<p>#
+#.Parameter ShowAll</p>
+
+<h1 id="without-this-switch-only-the-most-recent-plaintext-password-is-shown">Without this switch, only the most recent plaintext password is shown.</h1>
+
+<h1 id="with-this-switch-all-archived-passwords-for-the-computer-are-shown">With this switch, all archived passwords for the computer are shown.</h1>
+
+<h1 id="this-might-be-necessary-when-the-passwords-of-multiple-local-user">This might be necessary when the passwords of multiple local user</h1>
+
+<h1 id="accounts-are-being-managed-with-these-scripts">accounts are being managed with these scripts.</h1>
+
+<p>#
+#
+#.Example</p>
+
+<h1 id="recover-passwordarchive-ps1-computername-laptop47">.\Recover-PasswordArchive.ps1 -ComputerName LAPTOP47</h1>
+
+<p>#</p>
+
+<h1 id="displays-in-plaintext-the-last-recorded-password-updated-on-laptop47">Displays in plaintext the last recorded password updated on LAPTOP47.</h1>
+
+<h1 id="the-user-running-this-script-must-have-loaded-into-their-local-cache">The user running this script must have loaded into their local cache</h1>
+
+<h1 id="the-certificate-and-private-key-corresponding-to-the-certificate-used">the certificate AND private key corresponding to the certificate used</h1>
+
+<h1 id="to-originally-encrypt-the-password-archive-files-in-the-present">to originally encrypt the password archive files in the present</h1>
+
+<h1 id="working-directory-a-smart-card-may-be-used-instead">working directory. A smart card may be used instead.</h1>
+
+<p>#
+#.Example</p>
+
+<h1 id="recover-passwordarchive-ps1-passwordarchivepath-server-share-computername-wks">.\Recover-PasswordArchive.ps1 -PasswordArchivePath \server\share -ComputerName WKS*</h1>
+
+<p>#</p>
+
+<h1 id="instead-of-the-present-working-directory-of-the-script-search-the">Instead of the present working directory of the script, search the</h1>
+
+<h1 id="password-archive-files-located-in-server-share-another-local">password archive files located in \server\share. Another local</h1>
+
+<h1 id="folder-can-be-specified-instead-of-a-unc-network-path-the-wildcard">folder can be specified instead of a UNC network path. The wildcard</h1>
+
+<h1 id="in-the-computer-name-will-show-the-most-recent-password-updates-for">in the computer name will show the most recent password updates for</h1>
+
+<h1 id="all-matching-computer-names-in-server-share">all matching computer names in \server\share.</h1>
+
+<p>#
+#.Example</p>
+
+<h1 id="recover-passwordarchive-ps1-passwordarchivepath-server-share-computername-laptop47-showall">.\Recover-PasswordArchive.ps1 -PasswordArchivePath \server\share -ComputerName LAPTOP47 -ShowAll</h1>
+
+<p>#</p>
+
+<h1 id="instead-of-showing-only-the-last-password-update-show-all-archived-passwords">Instead of showing only the last password update, show all archived passwords</h1>
+
+<h1 id="in-the-server-share-folder-for-the-computer-named-laptop47">in the \server\share folder for the computer named LAPTOP47.</h1>
+
+<p>#
+#
+#Requires -Version 2.0
+#
+#.Notes</p>
+
+<h1 id="author-jason-fossen-enclave-consulting-http-www-sans-org-windows-security">Author: Jason Fossen, Enclave Consulting (http: //www.sans.org/windows-security/)</h1>
+
+<h1 id="version-1-0">Version: 1.0</h1>
+
+<h1 id="updated-11-nov-2012">Updated: 11.Nov.2012</h1>
+
+<h1 id="legal-public-domain-script-provided-quot-as-is-quot-with-no-warranties-or-guarantees-of">LEGAL: PUBLIC DOMAIN. SCRIPT PROVIDED &quot;AS IS&quot; WITH NO WARRANTIES OR GUARANTEES OF</h1>
+
+<h1 id="any-kind-including-but-not-limited-to-merchantability-and-or-fitness-for">ANY KIND, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY AND/OR FITNESS FOR</h1>
+
+<h1 id="a-particular-purpose-all-risks-of-damage-remains-with-the-user-even-if">A PARTICULAR PURPOSE. ALL RISKS OF DAMAGE REMAINS WITH THE USER, EVEN IF</h1>
+
+<h1 id="the-author-supplier-or-distributor-has-been-advised-of-the-possibility-of">THE AUTHOR, SUPPLIER OR DISTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF</h1>
+
+<h1 id="any-such-damage-if-your-state-does-not-permit-the-complete-limitation-of">ANY SUCH DAMAGE. IF YOUR STATE DOES NOT PERMIT THE COMPLETE LIMITATION OF</h1>
+
+<h1 id="liability-then-delete-this-file-since-you-are-now-prohibited-to-have-it">LIABILITY, THEN DELETE THIS FILE SINCE YOU ARE NOW PROHIBITED TO HAVE IT.</h1>
+
+<p>####################################################################################
+Param ($PasswordArchivePath = &quot;.&amp;quot;, $ComputerName = &quot;$env:computername&quot;,
+                    [Switch
+                    ] $ShowAll)</p>
+
+<h1 id="construct-and-test-path-to-encrypted-password-files">Construct and test path to encrypted password files.</h1>
+
+<p>$PasswordArchivePath = $(resolve-path -path $PasswordArchivePath).path
+if ($PasswordArchivePath -notlike &quot;*&amp;quot;) { $PasswordArchivePath = $PasswordArchivePath + &quot;&amp;quot;
+                    }
+if (-not $(test-path -path $PasswordArchivePath)) { &quot;<code>nERROR: Cannot find path: &amp;quot; + $PasswordArchivePath + &amp;quot;</code>n&quot; ; exit
+                    }</p>
+
+<h1 id="get-encrypted-password-files-and-sort-by-name-which-sorts-by-tick-number-i-e-by-creation-timestamp">Get encrypted password files and sort by name, which sorts by tick number, i.e., by creation timestamp.</h1>
+
+<p>$files = @(dir ($PasswordArchivePath + &quot;$ComputerName+<em>+</em>+*&quot;) | sort Name)
+if ($files.count -eq 0) { &quot;<code>nERROR: No password archives for &amp;quot; + $ComputerName + &amp;quot;</code>n&quot; ; exit
+                    }</p>
+
+<h1 id="get-the-latest-archive-file-only-unless-showall-is-used">Get the latest archive file only, unless -ShowAll is used.</h1>
+
+<p>if (-not $ShowAll){ $files = @($files[
+                            -1
+                        ])
+                    }</p>
+
+<h1 id="load-the-current-user-s-certificates-and-private-keys">Load the current user&rsquo;s certificates and private keys.</h1>
+
+<p>$flags = new-object System.Security.Cryptography.X509Certificates.OpenFlags #ReadOnly
+$store = new-object System.Security.Cryptography.X509Certificates.X509Store #CurrentUser
+if (-not $? -or ($store.GetType().fullname -notlike &quot;<em>X509Stor</em>&quot;)) { &quot;<code>nERROR: Could not load your certificates and private keys.</code>n&quot; ; exit
+                    }
+$store.open($flags)
+$certstore = $store.Certificates
+$store.close()
+if ($certstore.count -eq 0) { &quot;<code>nERROR: You have no certificates or private keys.</code>n&quot; ; exit
+                    }</p>
+
+<h1 id="process-encrypted-password-archive-files-and-output-objects">Process encrypted password archive files and $output objects.</h1>
+
+<p>foreach ($lastfile in $files) `
+{
+ $output = ($output = &quot; &quot; | select-object ComputerName,FilePath,UserName,TimeStamp,Thumbprint,Valid,Password)</p>
+
+<p>$output.ComputerName = $($lastfile.Name -split &lsquo;+&rsquo;)[
+                            0
+                        ]
+ $output.FilePath = $lastfile.fullname
+ $output.UserName = $($lastfile.Name -split &lsquo;+&rsquo;)[
+                            1
+                        ]
+ $output.TimeStamp = [DateTime
+                        ][Int64
+                        ]$($lastfile.Name -split &lsquo;+&rsquo;)[
+                            2
+                        ]
+ $output.Valid = $false #Assume password recovery will fail.
+ $output.Thumbprint = $($lastfile.Name -split &lsquo;+&rsquo;)[
+                            3
+                        ]
+ # Check for password reset failure files.
+ if ($output.Thumbprint -eq &quot;PASSWORD-RESET-FAILURE&quot;)
+ {
+ $output.Password = &quot;ERROR: Try to use prior password(s) for this computer.&quot;
+ $output
+ continue
+                        }
+ # Read in password archive binary file.
+ [byte[]
+                        ] $ciphertext = get-content -encoding byte -path $lastfile.fullname
+ if (-not $?)
+ {
+ $output.Password = &quot;ERROR: Failed to read &quot; + $lastfile.fullname
+ $output
+ continue
+                        }
+ # Load the correct certificate and test for possession of private key.
+ $certpriv = $certstore | where { $_.thumbprint -eq $output.thumbprint
+                        }
+ if (-not $certpriv.hasprivatekey)
+ {
+ $output.Password = &quot;ERROR: You do not have the private key for this certificate.&quot;
+ $output
+ continue
+                        }
+ # Attempt decryption with private key.
+ $plaintextout = $certpriv.privatekey.decrypt($ciphertext,$false) #Must be $false for my smart card to work.
+ if (-not $?) { $output.Password = &quot;ERROR: Decryption failed.&quot;
+                        }
+ else { $output.Password = ([char[]
+                            ]$plaintextout -join &quot;&quot;)
+                        }
+ # Confirm that archive file name matches the nonce string encrypted into the file.
+ # Nonce helps to thwart attackers and can be used for troubleshooting too.
+ if ($lastfile.name -like $output.Password.substring(0,
+                        60) + &quot;*&quot;)
+ {
+ $output.Password = $output.Password.substring(60) #Strip out the 60-char nonce.
+ $output.Valid = $true
+                        }
+ else
+ {
+ $output.Password = $output.Password.substring(60) #Strip out the 60-char nonce.
+ $output.Password = &quot;ERROR: Integrity check failure: &quot; + $output.Password.substring(60) + &quot; (&quot; + $output.Password + &quot;)&quot;
+                        }
+ $output
+                    }</p>
+
+<p>&amp;nbsp;</p>
+
+<p>[/code
+                    ]</p>
+
+<p></div></p>
+
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bilberry-hugo-theme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+     
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/article/butcher-block-iron-pipe-desk/">Butcher Block Iron Pipe Desk</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/little-about-myself/"></a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-docker-compose-on-windows/">Using Docker Compose on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-group-policy-adm-and-admx-templates/">Create Group Policy Adm and Admx Templates</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-powershell-to-manage-amazon-ec2-instances/">Using Powershell to Manage Amazon Ec2 Instances</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/manage-amazon-aws-s3-with-powershell/">Manage Amazon Aws S3 With Powershell</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-docker-container-on-windows-with-a-dockerfile/">Create a Docker Container on Windows With a Dockerfile</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/install-docker-and-run-containers-on-windows/">Install Docker and Run Containers on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/powershell-ise-snippets/">Powershell Ise Snippets</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Categories</strong>
+
+            
+        </div>
+
+        <div class="right">
+            
+            <div class="social-media">
+                <strong>Social media</strong>
+
+                
+                
+                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
+                
+                
+                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                    2018
+                
+                by Lednerb
+            </a>
+	    -
+	    
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+        
+
+        
+
+        <script src="/dist/theme.js" type="application/javascript"></script>
+
+        
+            
+        
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "en" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[return]")
+            })
+        </script>
+
+        
+            <script>
+    var client = algoliasearch("Y2C4RWMPXW", "50ea7f8c41c0ad233926e0be2b769ed1");
+    var index = client.initIndex("default-content");
+
+    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
+      [
+        {
+          
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
+          
+          displayKey: function(suggestion) {
+            return suggestion.title || suggestion.author
+          },
+          templates: {
+            suggestion: function(suggestion) {
+                return "<span class='entry " + suggestion.type + "'>"
+                      + "<span class='title'>" + suggestion.title + "</span>"
+                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
+                  + "</span>"
+                ;
+            },
+            empty: function() {
+              return "<span class='empty'>Nothing found.</span>"
+            },
+            footer: function() {
+              return '<div class="branding">Powered by <img src="\/dist\/algolia-logo-light.svg" /></div>'
+            }
+
+          },
+        }
+      ])
+      .on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location = (suggestion.url);
+      })
+      .keypress(function (event, suggestion) {
+        if (event.which == 13) {
+          window.location = (suggestion.url);
+        }
+      });
+</script>
+
+        
+
+
+    </body>
+</html>
