@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archive on MSAdministrator</title>
+    <link>/tags/archive/</link>
+    <description>Recent content in Archive on MSAdministrator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Aug 2018 20:44:55 -0400</lastBuildDate>
+    
+	<atom:link href="/tags/archive/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Add and Remove Users to Ad Groups With Group Policy</title>
+      <link>/article/add-and-remove-users-to-ad-groups-with-group-policy/</link>
+      <pubDate>Tue, 07 Aug 2018 20:44:55 -0400</pubDate>
+      
+      <guid>/article/add-and-remove-users-to-ad-groups-with-group-policy/</guid>
+      <description>Group Policy allows you to add and remove users to an Active Directory (AD) group. Using this feature improves security because you can ensure that high-risk security groups only contain the users that you specify via Group Policy.
+Read More</description>
+    </item>
+    
+  </channel>
+</rss>
