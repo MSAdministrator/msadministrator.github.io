@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MSAdministrator</title>
+    <title>Author on MSAdministrator</title>
     <link>/author/</link>
-    <description>Recent content on MSAdministrator</description>
+    <description>Recent content in Author on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Aug 2018 20:44:55 -0400</lastBuildDate>
@@ -12,23 +12,12 @@
     
     
     <item>
-      <title>Add and Remove Users to Ad Groups With Group Policy</title>
-      <link>/article/add-and-remove-users-to-ad-groups-with-group-policy/</link>
+      <title></title>
+      <link>/author/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:55 -0400</pubDate>
       
-      <guid>/article/add-and-remove-users-to-ad-groups-with-group-policy/</guid>
-      <description>Group Policy allows you to add and remove users to an Active Directory (AD) group. Using this feature improves security because you can ensure that high-risk security groups only contain the users that you specify via Group Policy.
-Read More</description>
-    </item>
-    
-    <item>
-      <title>Moving Away From Wordpress</title>
-      <link>/article/moving-away-from-wordpress/</link>
-      <pubDate>Sun, 05 Aug 2018 12:55:27 -0400</pubDate>
-      
-      <guid>/article/moving-away-from-wordpress/</guid>
-      <description>Hello Everyone, I have decided this past weekend to final move completely away from WordPress for my blog; and I&amp;rsquo;m 100% excited for this transition! I have decided to use GitHub Pages for my new blog.
-I plan on migrating content to this new locaton, but in the meantime if you find any missing content that you have seen previously then please let me know and I will get it moved over ASAP.</description>
+      <guid>/author/</guid>
+      <description></description>
     </item>
     
   </channel>

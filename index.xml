@@ -13,10 +13,10 @@
     
     <item>
       <title>Add and Remove Users to Ad Groups With Group Policy</title>
-      <link>/article/add-and-remove-users-to-ad-groups-with-group-policy/</link>
+      <link>/archive/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:55 -0400</pubDate>
       
-      <guid>/article/add-and-remove-users-to-ad-groups-with-group-policy/</guid>
+      <guid>/archive/</guid>
       <description>Group Policy allows you to add and remove users to an Active Directory (AD) group. Using this feature improves security because you can ensure that high-risk security groups only contain the users that you specify via Group Policy.
 Read More</description>
     </item>
