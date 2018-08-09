@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</loc>
+    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/article/butcher-block-iron-pipe-desk/</loc>
     <lastmod>2018-08-07T20:45:35-04:00</lastmod>
   </url>
@@ -324,6 +329,12 @@
   </url>
   
   <url>
+    <loc>https://msadministrator.github.io/tags/.net/</loc>
+    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/tags/archive/</loc>
     <lastmod>2018-08-07T20:45:35-04:00</lastmod>
     <priority>0</priority>
@@ -331,7 +342,7 @@
   
   <url>
     <loc>https://msadministrator.github.io/article/</loc>
-    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
+    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -347,14 +358,26 @@
   </url>
   
   <url>
+    <loc>https://msadministrator.github.io/tags/certificate/</loc>
+    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://msadministrator.github.io/tags/cryptography/</loc>
+    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/author/josh-rickard/</loc>
-    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
+    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://msadministrator.github.io/</loc>
-    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
+    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -365,8 +388,14 @@
   </url>
   
   <url>
+    <loc>https://msadministrator.github.io/categories/powershell/</loc>
+    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/tags/</loc>
-    <lastmod>2018-08-07T20:45:35-04:00</lastmod>
+    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   

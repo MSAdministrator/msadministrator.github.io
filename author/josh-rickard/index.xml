@@ -6,10 +6,20 @@
     <description>Recent content in Josh Rickard on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Aug 2018 20:45:35 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 08 Aug 2018 23:08:02 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/author/josh-rickard/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Adding a Dlls Certificate to Trusted Store</title>
+      <link>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</link>
+      <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</guid>
+      <description>Yesterday I was asked to help with streamling a manual process that some QA folks were running into. They had a debug release of an applicaiton that was signed with a test code signing certificate. Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.
+This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.</description>
+    </item>
     
     <item>
       <title>Butcher Block Iron Pipe Desk</title>

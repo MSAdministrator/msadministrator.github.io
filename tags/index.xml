@@ -6,10 +6,19 @@
     <description>Recent content in Tags on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Aug 2018 20:45:35 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 08 Aug 2018 23:08:02 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>.Net</title>
+      <link>https://msadministrator.github.io/tags/.net/</link>
+      <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/tags/.net/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Archive</title>
@@ -17,6 +26,24 @@
       <pubDate>Tue, 07 Aug 2018 20:45:35 -0400</pubDate>
       
       <guid>https://msadministrator.github.io/tags/archive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Certificate</title>
+      <link>https://msadministrator.github.io/tags/certificate/</link>
+      <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/tags/certificate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cryptography</title>
+      <link>https://msadministrator.github.io/tags/cryptography/</link>
+      <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/tags/cryptography/</guid>
       <description></description>
     </item>
     
