@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Author on MSAdministrator</title>
-    <link>/author/</link>
+    <link>https://msadministrator.github.io/author/</link>
     <description>Recent content in Author on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Aug 2018 12:55:27 -0400</lastBuildDate>
     
-	<atom:link href="/author/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://msadministrator.github.io/author/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>/author/</link>
+      <link>https://msadministrator.github.io/author/</link>
       <pubDate>Sun, 05 Aug 2018 12:55:27 -0400</pubDate>
       
-      <guid>/author/</guid>
+      <guid>https://msadministrator.github.io/author/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Josh Rickard</title>
-      <link>/author/josh-rickard/</link>
+      <link>https://msadministrator.github.io/author/josh-rickard/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:35 -0400</pubDate>
       
-      <guid>/author/josh-rickard/</guid>
+      <guid>https://msadministrator.github.io/author/josh-rickard/</guid>
       <description></description>
     </item>
     

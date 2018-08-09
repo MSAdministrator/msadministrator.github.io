@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on MSAdministrator</title>
-    <link>/tags/</link>
+    <link>https://msadministrator.github.io/tags/</link>
     <description>Recent content in Tags on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Aug 2018 20:45:35 -0400</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://msadministrator.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Archive</title>
-      <link>/tags/archive/</link>
+      <link>https://msadministrator.github.io/tags/archive/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:35 -0400</pubDate>
       
-      <guid>/tags/archive/</guid>
+      <guid>https://msadministrator.github.io/tags/archive/</guid>
       <description></description>
     </item>
     
