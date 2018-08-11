@@ -6,10 +6,20 @@
     <description>Recent content in Articles on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Aug 2018 23:08:02 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 10 Aug 2018 21:28:54 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/article/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Create a Question and Answer Chatbot for Slack in Azure</title>
+      <link>https://msadministrator.github.io/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</link>
+      <pubDate>Fri, 10 Aug 2018 21:28:54 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</guid>
+      <description>Chatbots are all the rage right now, and they have proven to be extremely useful for organizations around the globe. You can have simple bots that take lunch orders or tell you the weather in your location. You can also bots tht act as part of an advanced distributed security alerting system. Whatever the reason, bots are not going anywhere anytime soon.
+To create our chatbot we are going to use a few different services.</description>
+    </item>
     
     <item>
       <title>Adding a Dlls Certificate to a Trusted Store</title>
