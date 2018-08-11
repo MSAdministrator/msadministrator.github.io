@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slack on MSAdministrator</title>
+    <link>https://msadministrator.github.io/categories/slack/</link>
+    <description>Recent content in Slack on MSAdministrator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Aug 2018 22:28:08 -0400</lastBuildDate>
+    
+	<atom:link href="https://msadministrator.github.io/categories/slack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Connect Your Bot to Slack</title>
+      <link>https://msadministrator.github.io/article/connect-your-bot-to-slack/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/connect-your-bot-to-slack/</guid>
+      <description>In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal. Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.
+Please make sure you have a Slack workspace created and you have access to create a Slack application.</description>
+    </item>
+    
+  </channel>
+</rss>

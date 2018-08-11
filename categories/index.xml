@@ -6,7 +6,7 @@
     <description>Recent content in Categories on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Aug 2018 21:55:42 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 10 Aug 2018 22:28:08 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Azure</title>
       <link>https://msadministrator.github.io/categories/azure/</link>
-      <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
       
       <guid>https://msadministrator.github.io/categories/azure/</guid>
       <description></description>
@@ -26,6 +26,15 @@
       <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
       
       <guid>https://msadministrator.github.io/categories/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slack</title>
+      <link>https://msadministrator.github.io/categories/slack/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/categories/slack/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,30 @@
     <description>Recent content on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Aug 2018 21:55:42 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 10 Aug 2018 22:28:08 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Connect Your Bot to Slack</title>
+      <link>https://msadministrator.github.io/article/connect-your-bot-to-slack/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/connect-your-bot-to-slack/</guid>
+      <description>In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal. Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.
+Please make sure you have a Slack workspace created and you have access to create a Slack application.</description>
+    </item>
+    
+    <item>
+      <title>Create a Web App Bot Using Azure Bot Services</title>
+      <link>https://msadministrator.github.io/article/create-a-web-app-bot-using-azure-bot-services/</link>
+      <pubDate>Fri, 10 Aug 2018 22:10:33 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/create-a-web-app-bot-using-azure-bot-services/</guid>
+      <description>In my last post, we create a QnA Maker knowledge base that our Azure Web App Bot will use as it’s repository of questions &amp;amp; answers. Now, we are going to create our bot using Azure’s Bot Services.
+First thing is that we should go ahead and log into the Azure Portal. In the top left-hand corner click the Create a resource button. You will then need to Search the marketplace in the New blade for Web App Bot.</description>
+    </item>
     
     <item>
       <title>Using Qnamaker to Create Chatbot</title>

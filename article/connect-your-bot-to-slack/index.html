@@ -1,0 +1,464 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Josh Rickard">
+        <meta name="description" content="All about Microsoft Automation">
+        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+        <meta name="generator" content="Hugo 0.46" />
+        <title> Connect Your Bot to Slack | MSAdministrator</title>
+        <meta name="description" content="Connect Your Bot to Slack - All about Microsoft Automation">
+        <meta itemprop="name" content="Connect Your Bot to Slack">
+        <meta itemprop="description" content="Connect Your Bot to Slack - All about Microsoft Automation">
+        <meta property="og:title" content="Connect Your Bot to Slack">
+        <meta property="og:description" content="Connect Your Bot to Slack - All about Microsoft Automation">
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+        <meta property="og:url" content="https://msadministrator.github.io/article/connect-your-bot-to-slack/">
+        <meta property="og:site_name" content="MSAdministrator">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://msadministrator.github.io/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://msadministrator.github.io/favicon-16x16.png" sizes="16x16">
+
+	
+
+        <link rel="stylesheet" href="https://msadministrator.github.io/dist/theme.css">
+
+        
+
+        
+            
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        
+<nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="/page/projects/">Projects</a></li>
+                
+            
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fa fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="/">MSAdministrator</a></h3>
+            
+                <span class="subtitle">All about Windows Automation</span>
+            
+        </div>
+
+    
+
+        
+        <div class="toggler">
+        
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="/article/connect-your-bot-to-slack/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/connect-your-bot-to-slack/">Connect Your Bot to Slack</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-10</span>
+        
+            <span class="categories">
+                
+                    <a href="/categories/azure">azure</a>
+                
+                    <a href="/categories/slack">slack</a>
+                
+            </span>
+        
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://msadministrator.github.io/%2farticle%2fconnect-your-bot-to-slack%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="//twitter.com/share?url=https://msadministrator.github.io/%2farticle%2fconnect-your-bot-to-slack%2f&amp;text=Connect%20Your%20Bot%20to%20Slack&amp;hashtags=%5bbot%20slack%20chatbot%5d&amp;via=Josh%20Rickard" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https://msadministrator.github.io/%2farticle%2fconnect-your-bot-to-slack%2f&amp;title=Connect%20Your%20Bot%20to%20Slack" target="_blank" title="LinkedIn">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+        </a>
+    </li>
+    <li>
+        <a href="http://www.reddit.com/submit?url=https://msadministrator.github.io/%2farticle%2fconnect-your-bot-to-slack%2f" target="_blank" title="Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Reddit</span>
+        </a>
+    </li>
+    <li>
+        <a href="mailto:?subject=Check out this post by Josh%20Rickard&amp;body=https://msadministrator.github.io/%2farticle%2fconnect-your-bot-to-slack%2f" target="_blank" title="Email">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <span class="sr-only">Email</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+    </div>
+
+    
+        <p>In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal.  Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.</p>
+
+<p>Please make sure you have a Slack workspace created and you have access to create a Slack application.  <a href="https://api.slack.com/apps">Login to your Slack workspace API</a> and select Create New App in the top right-hand corner.  You will need to give your new application a name and select the appropriate workspace to create your new application.</p>
+
+<p>After your New App is created, select OAuth &amp; Permissions and select Add.  Enter the following Redirect URL: <a href="https://slack.botframework.com">https://slack.botframework.com</a> and click Save.</p>
+
+<p>Next, go to Bot Users and select Add a Bot.  Give your bot a username and toggle the Always Show My Bot as Online button so that it says On.</p>
+
+<p>Go to Events Subscription and select Enable Events.  Once there, enter the following URL and replace the {botname} with the name of your bot.</p>
+
+<p><a href="https://slack.botframework.com/api/Events/{botname">https://slack.botframework.com/api/Events/{botname</a>}</p>
+
+<p>If you are unsure of your bot’s name, you can find it under the My Bots section at <a href="https://slack.botframework.com">https://slack.botframework.com</a>.</p>
+
+<p>Lastly, you will need to subscribe to (at minimum) the following bot events.</p>
+
+<ul>
+<li>member_joined_channel</li>
+<li>member_left_channel</li>
+<li>message.channels</li>
+<li>message.groups</li>
+<li>message.im</li>
+<li>message.mpim</li>
+</ul>
+
+<p>Click Save.</p>
+
+<p>![Add a Request URL and subscribe to bot events](&ldquo;Add a Request URL and subscribe to bot events.png&rdquo; &ldquo;Add a Request URL and subscribe to bot events&rdquo;)</p>
+
+<p>Select the Basic Information section scroll down until you see the App Credentials.  You will need to gather the following information to allow your Azure Web App Bot to be integrated into your Slack workspace.</p>
+
+<ul>
+<li>Client ID</li>
+<li>Client Secret</li>
+<li>Verification Token</li>
+</ul>
+
+<p>![Save your Slack Credentials to integrate into your new Azure Web App Bot](&ldquo;Save your Slack Credentials to integrate into your new Azure Web App Bot.png&rdquo; &ldquo;Save your Slack Credentials to integrate into your new Azure Web App Bot&rdquo;)</p>
+
+<p>Now that you have this information, head back over to your Azure Portal and your Web App Bot.  Once you are back there, select the Channels setting.</p>
+
+<p>I want to point out that you can integrate your bot with many other services besides Slack, and there are several built-in options for doing this with many popular services.  This article will only talk about integrating your bot with Slack.</p>
+
+<p>![Select Channels within your Web App Bot resource page and then select Slack to integrate your bot with Slack](&ldquo;Select Channels within your Web App Bot resource page and then select Slack to integrate your bot with Slack.png&rdquo; &ldquo;Select Channels within your Web App Bot resource page and then select Slack to integrate your bot with Slack&rdquo;)</p>
+
+<p>Enter Application Credentials information from our Slack workspace into the Slack channel integration page on your Web App Bot Resource in the Azure Portal.  You only need to fill out the Client ID, Client Secret, and Verification Token fields.  Click Save.</p>
+
+<p>You should be presented with a Verification page authorizing your bot to interact with your Slack workspace.</p>
+
+<p>NOTE: If you run into an issue, you may need to ensure that you are still authorized/logged in by visiting <a href="https://slack.botframework.com">https://slack.botframework.com</a>.</p>
+
+<p>All you have to do now is login to your Slack workspace and your new bot should be available and ready to answer any and all of your questions!</p>
+
+<p>![Your very own QnA Bot is now integrated into your Slack workspace](&ldquo;Your very own QnA Bot is now integrated into your Slack workspace.png&rdquo; &ldquo;Your very own QnA Bot is now integrated into your Slack workspace&rdquo;)</p>
+
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20bot">bot</a>
+                    
+                    <a href="/%20/tags/%20slack">slack</a>
+                    
+                    <a href="/%20/tags/%20chatbot">chatbot</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+        
+    </div>
+    
+
+     
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/article/connect-your-bot-to-slack/">Connect Your Bot to Slack</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-web-app-bot-using-azure-bot-services/">Create a Web App Bot Using Azure Bot Services</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-question-and-answer-chatbot-for-slack-in-azure/">Create a Question and Answer Chatbot for Slack in Azure</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/adding-a-dlls-certificate-to-trusted-store/">Adding a Dlls Certificate to a Trusted Store</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/butcher-block-iron-pipe-desk/">Butcher Block Iron Pipe Desk</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-docker-compose-on-windows/">Using Docker Compose on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-group-policy-adm-and-admx-templates/">Create Group Policy Adm and Admx Templates</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-powershell-to-manage-amazon-ec2-instances/">Using Powershell to Manage Amazon Ec2 Instances</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Categories</strong>
+
+            
+                <ul>
+                
+                    <li>
+                        <a href="/categories/azure">Azure (4)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/powershell">Powershell (1)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/slack">Slack (1)</a>
+                    </li>
+                
+                </ul>
+            
+        </div>
+
+        <div class="right">
+            
+            <div class="social-media">
+                <strong>Social media</strong>
+
+                
+                
+                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
+                
+                
+                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                    2018
+                
+                by Lednerb
+            </a>
+	    -
+	    
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-35980408-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) };
+    gtag('js', new Date());
+
+    gtag('config', 'UA-35980408-2');
+</script>
+
+
+        
+
+        <script src="https://msadministrator.github.io/dist/theme.js" type="application/javascript"></script>
+
+        
+            
+        
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "en" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[return]")
+            })
+        </script>
+
+        
+            <script>
+    var client = algoliasearch("Y2C4RWMPXW", "50ea7f8c41c0ad233926e0be2b769ed1");
+    var index = client.initIndex("default-content");
+
+    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
+      [
+        {
+          
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
+          
+          displayKey: function(suggestion) {
+            return suggestion.title || suggestion.author
+          },
+          templates: {
+            suggestion: function(suggestion) {
+                return "<span class='entry " + suggestion.type + "'>"
+                      + "<span class='title'>" + suggestion.title + "</span>"
+                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
+                  + "</span>"
+                ;
+            },
+            empty: function() {
+              return "<span class='empty'>Nothing found.</span>"
+            },
+            footer: function() {
+              return '<div class="branding">Powered by <img src="https:\/\/msadministrator.github.io\/dist\/algolia-logo-light.svg" /></div>'
+            }
+
+          },
+        }
+      ])
+      .on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location = (suggestion.url);
+      })
+      .keypress(function (event, suggestion) {
+        if (event.which == 13) {
+          window.location = (suggestion.url);
+        }
+      });
+</script>
+
+        
+
+
+    </body>
+</html>
