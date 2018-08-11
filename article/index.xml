@@ -6,10 +6,20 @@
     <description>Recent content in Articles on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Aug 2018 21:28:54 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 10 Aug 2018 21:55:42 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/article/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Qnamaker to Create Chatbot</title>
+      <link>https://msadministrator.github.io/article/using-qnamaker-to-create-chatbot/</link>
+      <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/using-qnamaker-to-create-chatbot/</guid>
+      <description>The first thing we need to do is login to QnAMaker. QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.
+Login to QnAMaker and navigate to the Create a knowledge base tab. You will need to walkthrough 5 steps to create your knowledge base.</description>
+    </item>
     
     <item>
       <title>Create a Question and Answer Chatbot for Slack in Azure</title>

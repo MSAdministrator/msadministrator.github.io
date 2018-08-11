@@ -1,0 +1,481 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Josh Rickard">
+        <meta name="description" content="All about Microsoft Automation">
+        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+        <meta name="generator" content="Hugo 0.46" />
+        <title> Using Qnamaker to Create Chatbot | MSAdministrator</title>
+        <meta name="description" content="Using Qnamaker to Create Chatbot - All about Microsoft Automation">
+        <meta itemprop="name" content="Using Qnamaker to Create Chatbot">
+        <meta itemprop="description" content="Using Qnamaker to Create Chatbot - All about Microsoft Automation">
+        <meta property="og:title" content="Using Qnamaker to Create Chatbot">
+        <meta property="og:description" content="Using Qnamaker to Create Chatbot - All about Microsoft Automation">
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+        <meta property="og:url" content="https://msadministrator.github.io/article/using-qnamaker-to-create-chatbot/">
+        <meta property="og:site_name" content="MSAdministrator">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://msadministrator.github.io/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://msadministrator.github.io/favicon-16x16.png" sizes="16x16">
+
+	
+
+        <link rel="stylesheet" href="https://msadministrator.github.io/dist/theme.css">
+
+        
+
+        
+            
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        
+<nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="/page/projects/">Projects</a></li>
+                
+            
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fa fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="/">MSAdministrator</a></h3>
+            
+                <span class="subtitle">All about Windows Automation</span>
+            
+        </div>
+
+    
+
+        
+        <div class="toggler">
+        
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="/article/using-qnamaker-to-create-chatbot/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-10</span>
+        
+            <span class="categories">
+                
+                    <a href="/categories/azure">azure</a>
+                
+            </span>
+        
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://msadministrator.github.io/%2farticle%2fusing-qnamaker-to-create-chatbot%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="//twitter.com/share?url=https://msadministrator.github.io/%2farticle%2fusing-qnamaker-to-create-chatbot%2f&amp;text=Using%20Qnamaker%20to%20Create%20Chatbot&amp;hashtags=%5bbot%20qnamaker%20chatbot%5d&amp;via=Josh%20Rickard" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https://msadministrator.github.io/%2farticle%2fusing-qnamaker-to-create-chatbot%2f&amp;title=Using%20Qnamaker%20to%20Create%20Chatbot" target="_blank" title="LinkedIn">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+        </a>
+    </li>
+    <li>
+        <a href="http://www.reddit.com/submit?url=https://msadministrator.github.io/%2farticle%2fusing-qnamaker-to-create-chatbot%2f" target="_blank" title="Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Reddit</span>
+        </a>
+    </li>
+    <li>
+        <a href="mailto:?subject=Check out this post by Josh%20Rickard&amp;body=https://msadministrator.github.io/%2farticle%2fusing-qnamaker-to-create-chatbot%2f" target="_blank" title="Email">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <span class="sr-only">Email</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+    </div>
+
+    
+        
+
+<p>The first thing we need to do is login to <a href="https://qnamaker.ai">QnAMaker</a>.  QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.</p>
+
+<p>Login to QnAMaker and navigate to the Create a knowledge base tab.  You will need to walkthrough 5 steps to create your knowledge base.  Luckily, Microsoft has provided clear instructions to make this as simple as possible.</p>
+
+<p>![Follow the 5 steps provided by Microsoft to create your knowledge base bot](&ldquo;Follow the 5 steps provided by Microsoft to create your knowledge base bot.png&rdquo; &ldquo;Follow the 5 steps provided by Microsoft to create your knowledge base bot&rdquo;)</p>
+
+<p>The 5 steps you will need to follow are:</p>
+
+<ul>
+<li>Create a QnA service in Microsoft Azure</li>
+<li>Connect to QnA service to you KB</li>
+<li>Name your KB</li>
+<li>Populate your KB</li>
+<li>Create your KB</li>
+</ul>
+
+<h2 id="step-1-create-a-qna-service-in-microsoft-azure">Step 1: Create a QnA service in Microsoft Azure</h2>
+
+<p>You will need to have access to a Microsoft Azure account to continue from this point.  If you do not have an Azure account, you can <a href="https://azure.microsoft.com/en-us/offers/ms-azr-0044p/">get a free trial</a> ($200 Azure Credits).  On step 1, click the Create a QnA service button.  You should be directed <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker">here</a>.</p>
+
+<p>Once logged in, you will need to provide some information to create the new QnA service.  Once you have filled out the required fields then click Create.  You will be redirected to your Azure Portal dashboard while the service is being created.</p>
+
+<p>![Create your new QnA Maker service by filling out the required fields](&ldquo;Create your new QnA Maker service by filling out the required fields.png&rdquo; &ldquo;Create your new QnA Maker service by filling out the required fields&rdquo;)</p>
+
+<h2 id="step-2-connect-to-qna-service-to-you-kb">Step 2: Connect to QnA service to you KB</h2>
+
+<p>Navigate back to your previous tab (qnamaker.ai) and scroll down to Step 2.  You will need to select, from the next three dropdown menu’s, the appropriate resources to use.  For me, step 2 looks like the following screenshot.</p>
+
+<p>![Select your Microsoft Azure account, subscription name, and the recently created QnA service](&ldquo;Select your Microsoft Azure account, subscription name, and the recently created QnA service.png&rdquo; &ldquo;Select your Microsoft Azure account, subscription name, and the recently created QnA service&rdquo;)</p>
+
+<p>If for some reason your QnA service is NOT listed in the dropdown, you will need to reload the website to get it to populate correctly.</p>
+
+<h2 id="step-3-name-your-kb">Step 3: Name your KB</h2>
+
+<p>This step is really straightforward; name your knowledge base.</p>
+
+<h2 id="step-4-populate-your-kb">Step 4: Populate your KB</h2>
+
+<p>There are several different ways to populate your knowledge base (KB).  You can point QnAMaker to a URL or upload a document that contains information you would like your bot to use as your questions and answers.</p>
+
+<p>For my example, I am going to be using a FAQ markdown page provided by the PowerShell team.  <a href="https://github.com/PowerShell/PowerShell/blob/master/docs/FAQ.md">Here is the full URL</a></p>
+
+<p>![Populate your knowledge base with either a URL, document, or manually](&ldquo;Populate your knowledge base with either a URL, document, or manually.png&rdquo; &ldquo;Populate your knowledge base with either a URL, document, or manually&rdquo;)</p>
+
+<h2 id="step-5-create-your-kb">Step 5: Create your KB</h2>
+
+<p>After you have selected to populate your knowledge base by a URL, uploaded document, or decided to wait to manually add your knowledge base data, you should now select the Create your KB button.</p>
+
+<p>Depending on how you chose to populate your knowledge base, this may take no time at all or a few minutes.</p>
+
+<p>![Loading screen while your knowledge base is created](&ldquo;Loading screen while your knowledge base is created.png&rdquo; &ldquo;Loading screen while your knowledge base is created&rdquo;)</p>
+
+<p>Once your knowledge base is created, you should be presented with a screen that looks similar to the following screenshot (depending on your knowledge base source).  QnAMaker does a really decent job of parsing input to create your knowledge base “key value pair” (e.g. database).  If you want to add, delete, or modify any of the existing questions and answers you can do so now.</p>
+
+<p>![Your knowledge base is a generated list of key value pairs](&ldquo;Your knowledge base is a generated list of key value pairs.png&rdquo; &ldquo;Your knowledge base is a generated list of key value pairs&rdquo;)</p>
+
+<p>At the top of your knowledge base you have several tabs.  Once you have modified your questions and answers, you should select Save and train.  Again, depending on the changes you made this may take no time or a few minutes.</p>
+
+<p>Once you have saved, you can either go ahead and Publish your QnA knowledge base or you can test it out.  If you select Test it will provide a chat window to test out our bots’ questions and answer’s capabilities.</p>
+
+<p>![Example of QnAMaker bot using an exact match](&ldquo;Example of QnAMaker bot using an exact match.gif&rdquo; &ldquo;Example of QnAMaker bot using an exact match&rdquo;)</p>
+
+<p>![Example of QnAMaker using a similar match](&ldquo;Example of QnAMaker using a similar match.gif&rdquo; &ldquo;Example of QnAMaker using a similar match&rdquo;)</p>
+
+<p>![Type in a message to determine if QnA Maker is working as you desire](&ldquo;Type in a message to determine if QnA Maker is working as you desire.png&rdquo; &ldquo;Type in a message to determine if QnA Maker is working as you desire&rdquo;)</p>
+
+<p>If you enter a question and do NOT receive the expected response, you can modify both the answer and add an alternative question to help train the QnAMaker bot.</p>
+
+<p>![You can inspect a response and make changes to both the expected answer and add an alternative quesiton](&ldquo;You can inspect a response and make changes to both the expected answer and add an alternative quesiton.gif&rdquo; &ldquo;You can inspect a response and make changes to both the expected answer and add an alternative quesiton&rdquo;)</p>
+
+<p>Now, go ahead and select Save and train.  Finally, let’s select Publish to publish our knowledge base to be used by our bot service.</p>
+
+<p>![You will need some information from the Sample HTTP request section on this page](&ldquo;You will need some information from the Sample HTTP request section on this page.png&rdquo; &ldquo;You will need some information from the Sample HTTP request section on this page&rdquo;)</p>
+
+<p>Once completed, you should be redirected to a Success! Your service has been deployed page with some crucial information you will need for the next few steps.</p>
+
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20bot">bot</a>
+                    
+                    <a href="/%20/tags/%20qnamaker">qnamaker</a>
+                    
+                    <a href="/%20/tags/%20chatbot">chatbot</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+        
+    </div>
+    
+
+     
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-question-and-answer-chatbot-for-slack-in-azure/">Create a Question and Answer Chatbot for Slack in Azure</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/adding-a-dlls-certificate-to-trusted-store/">Adding a Dlls Certificate to a Trusted Store</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/butcher-block-iron-pipe-desk/">Butcher Block Iron Pipe Desk</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-docker-compose-on-windows/">Using Docker Compose on Windows</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/">Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-group-policy-adm-and-admx-templates/">Create Group Policy Adm and Admx Templates</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-powershell-to-manage-amazon-ec2-instances/">Using Powershell to Manage Amazon Ec2 Instances</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/manage-amazon-aws-s3-with-powershell/">Manage Amazon Aws S3 With Powershell</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-docker-container-on-windows-with-a-dockerfile/">Create a Docker Container on Windows With a Dockerfile</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Categories</strong>
+
+            
+                <ul>
+                
+                    <li>
+                        <a href="/categories/azure">Azure (2)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/powershell">Powershell (1)</a>
+                    </li>
+                
+                </ul>
+            
+        </div>
+
+        <div class="right">
+            
+            <div class="social-media">
+                <strong>Social media</strong>
+
+                
+                
+                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
+                
+                
+                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                    2018
+                
+                by Lednerb
+            </a>
+	    -
+	    
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-35980408-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) };
+    gtag('js', new Date());
+
+    gtag('config', 'UA-35980408-2');
+</script>
+
+
+        
+
+        <script src="https://msadministrator.github.io/dist/theme.js" type="application/javascript"></script>
+
+        
+            
+        
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "en" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[return]")
+            })
+        </script>
+
+        
+            <script>
+    var client = algoliasearch("Y2C4RWMPXW", "50ea7f8c41c0ad233926e0be2b769ed1");
+    var index = client.initIndex("default-content");
+
+    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
+      [
+        {
+          
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
+          
+          displayKey: function(suggestion) {
+            return suggestion.title || suggestion.author
+          },
+          templates: {
+            suggestion: function(suggestion) {
+                return "<span class='entry " + suggestion.type + "'>"
+                      + "<span class='title'>" + suggestion.title + "</span>"
+                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
+                  + "</span>"
+                ;
+            },
+            empty: function() {
+              return "<span class='empty'>Nothing found.</span>"
+            },
+            footer: function() {
+              return '<div class="branding">Powered by <img src="https:\/\/msadministrator.github.io\/dist\/algolia-logo-light.svg" /></div>'
+            }
+
+          },
+        }
+      ])
+      .on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location = (suggestion.url);
+      })
+      .keypress(function (event, suggestion) {
+        if (event.which == 13) {
+          window.location = (suggestion.url);
+        }
+      });
+</script>
+
+        
+
+
+    </body>
+</html>
