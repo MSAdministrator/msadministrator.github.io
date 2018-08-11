@@ -13,7 +13,7 @@
         <meta itemprop="description" content="Using Qnamaker to Create Chatbot - All about Microsoft Automation">
         <meta property="og:title" content="Using Qnamaker to Create Chatbot">
         <meta property="og:description" content="Using Qnamaker to Create Chatbot - All about Microsoft Automation">
-        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+        <meta property="og:image" content="Follow the 5 steps provided by Microsoft to create your knowledge base bot.png">
         <meta property="og:url" content="https://msadministrator.github.io/article/using-qnamaker-to-create-chatbot/">
         <meta property="og:site_name" content="MSAdministrator">
         <meta property="og:type" content="article">
@@ -101,6 +101,12 @@
 
 <article class="default article">
     
+    <div class="featured-image">
+        <a href="/article/using-qnamaker-to-create-chatbot/">
+            <img src="/Follow%20the%205%20steps%20provided%20by%20Microsoft%20to%20create%20your%20knowledge%20base%20bot.png" alt="">
+        </a>
+    </div>
+
 
     <div class="content">
     <h3><a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a></h3>
@@ -182,7 +188,7 @@
 
 <p>Login to QnAMaker and navigate to the Create a knowledge base tab.  You will need to walkthrough 5 steps to create your knowledge base.  Luckily, Microsoft has provided clear instructions to make this as simple as possible.</p>
 
-<p>![Follow the 5 steps provided by Microsoft to create your knowledge base bot](&ldquo;Follow the 5 steps provided by Microsoft to create your knowledge base bot.png&rdquo; &ldquo;Follow the 5 steps provided by Microsoft to create your knowledge base bot&rdquo;)</p>
+<p><img src="Follow the 5 steps provided by Microsoft to create your knowledge base bot.png" alt="Follow the 5 steps provided by Microsoft to create your knowledge base bot" title="Follow the 5 steps provided by Microsoft to create your knowledge base bot" /></p>
 
 <p>The 5 steps you will need to follow are:</p>
 
@@ -200,13 +206,13 @@
 
 <p>Once logged in, you will need to provide some information to create the new QnA service.  Once you have filled out the required fields then click Create.  You will be redirected to your Azure Portal dashboard while the service is being created.</p>
 
-<p>![Create your new QnA Maker service by filling out the required fields](&ldquo;Create your new QnA Maker service by filling out the required fields.png&rdquo; &ldquo;Create your new QnA Maker service by filling out the required fields&rdquo;)</p>
+<p><img src="Create your new QnA Maker service by filling out the required fields.png" alt="Create your new QnA Maker service by filling out the required fields" title="Create your new QnA Maker service by filling out the required fields" /></p>
 
 <h2 id="step-2-connect-to-qna-service-to-you-kb">Step 2: Connect to QnA service to you KB</h2>
 
 <p>Navigate back to your previous tab (qnamaker.ai) and scroll down to Step 2.  You will need to select, from the next three dropdown menu’s, the appropriate resources to use.  For me, step 2 looks like the following screenshot.</p>
 
-<p>![Select your Microsoft Azure account, subscription name, and the recently created QnA service](&ldquo;Select your Microsoft Azure account, subscription name, and the recently created QnA service.png&rdquo; &ldquo;Select your Microsoft Azure account, subscription name, and the recently created QnA service&rdquo;)</p>
+<p><img src="Select your Microsoft Azure account, subscription name, and the recently created QnA service.png" alt="Select your Microsoft Azure account, subscription name, and the recently created QnA service" title="Select your Microsoft Azure account, subscription name, and the recently created QnA service" /></p>
 
 <p>If for some reason your QnA service is NOT listed in the dropdown, you will need to reload the website to get it to populate correctly.</p>
 
@@ -220,7 +226,7 @@
 
 <p>For my example, I am going to be using a FAQ markdown page provided by the PowerShell team.  <a href="https://github.com/PowerShell/PowerShell/blob/master/docs/FAQ.md">Here is the full URL</a></p>
 
-<p>![Populate your knowledge base with either a URL, document, or manually](&ldquo;Populate your knowledge base with either a URL, document, or manually.png&rdquo; &ldquo;Populate your knowledge base with either a URL, document, or manually&rdquo;)</p>
+<p><img src="Populate your knowledge base with either a URL, document, or manually.png" alt="Populate your knowledge base with either a URL, document, or manually" title="Populate your knowledge base with either a URL, document, or manually" /></p>
 
 <h2 id="step-5-create-your-kb">Step 5: Create your KB</h2>
 
@@ -228,29 +234,29 @@
 
 <p>Depending on how you chose to populate your knowledge base, this may take no time at all or a few minutes.</p>
 
-<p>![Loading screen while your knowledge base is created](&ldquo;Loading screen while your knowledge base is created.png&rdquo; &ldquo;Loading screen while your knowledge base is created&rdquo;)</p>
+<p><img src="Loading screen while your knowledge base is created.png" alt="Loading screen while your knowledge base is created" title="Loading screen while your knowledge base is created" /></p>
 
 <p>Once your knowledge base is created, you should be presented with a screen that looks similar to the following screenshot (depending on your knowledge base source).  QnAMaker does a really decent job of parsing input to create your knowledge base “key value pair” (e.g. database).  If you want to add, delete, or modify any of the existing questions and answers you can do so now.</p>
 
-<p>![Your knowledge base is a generated list of key value pairs](&ldquo;Your knowledge base is a generated list of key value pairs.png&rdquo; &ldquo;Your knowledge base is a generated list of key value pairs&rdquo;)</p>
+<p><img src="Your knowledge base is a generated list of key value pairs.png" alt="Your knowledge base is a generated list of key value pairs" title="Your knowledge base is a generated list of key value pairs" /></p>
 
 <p>At the top of your knowledge base you have several tabs.  Once you have modified your questions and answers, you should select Save and train.  Again, depending on the changes you made this may take no time or a few minutes.</p>
 
 <p>Once you have saved, you can either go ahead and Publish your QnA knowledge base or you can test it out.  If you select Test it will provide a chat window to test out our bots’ questions and answer’s capabilities.</p>
 
-<p>![Example of QnAMaker bot using an exact match](&ldquo;Example of QnAMaker bot using an exact match.gif&rdquo; &ldquo;Example of QnAMaker bot using an exact match&rdquo;)</p>
+<p><img src="Example of QnAMaker bot using an exact match.gif" alt="Example of QnAMaker bot using an exact match" title="Example of QnAMaker bot using an exact match" /></p>
 
-<p>![Example of QnAMaker using a similar match](&ldquo;Example of QnAMaker using a similar match.gif&rdquo; &ldquo;Example of QnAMaker using a similar match&rdquo;)</p>
+<p><img src="Example of QnAMaker using a similar match.gif" alt="Example of QnAMaker using a similar match" title="Example of QnAMaker using a similar match" /></p>
 
-<p>![Type in a message to determine if QnA Maker is working as you desire](&ldquo;Type in a message to determine if QnA Maker is working as you desire.png&rdquo; &ldquo;Type in a message to determine if QnA Maker is working as you desire&rdquo;)</p>
+<p><img src="Type in a message to determine if QnA Maker is working as you desire.png" alt="Type in a message to determine if QnA Maker is working as you desire" title="Type in a message to determine if QnA Maker is working as you desire" /></p>
 
 <p>If you enter a question and do NOT receive the expected response, you can modify both the answer and add an alternative question to help train the QnAMaker bot.</p>
 
-<p>![You can inspect a response and make changes to both the expected answer and add an alternative quesiton](&ldquo;You can inspect a response and make changes to both the expected answer and add an alternative quesiton.gif&rdquo; &ldquo;You can inspect a response and make changes to both the expected answer and add an alternative quesiton&rdquo;)</p>
+<p><img src="You can inspect a response and make changes to both the expected answer and add an alternative quesiton.gif" alt="You can inspect a response and make changes to both the expected answer and add an alternative quesiton" title="You can inspect a response and make changes to both the expected answer and add an alternative quesiton" /></p>
 
 <p>Now, go ahead and select Save and train.  Finally, let’s select Publish to publish our knowledge base to be used by our bot service.</p>
 
-<p>![You will need some information from the Sample HTTP request section on this page](&ldquo;You will need some information from the Sample HTTP request section on this page.png&rdquo; &ldquo;You will need some information from the Sample HTTP request section on this page&rdquo;)</p>
+<p><img src="You will need some information from the Sample HTTP request section on this page.png" alt="You will need some information from the Sample HTTP request section on this page" title="You will need some information from the Sample HTTP request section on this page" /></p>
 
 <p>Once completed, you should be redirected to a Success! Your service has been deployed page with some crucial information you will need for the next few steps.</p>
 
