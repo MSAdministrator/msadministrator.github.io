@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://msadministrator.github.io/article/using-github-to-revive-blog-posts/</loc>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://msadministrator.github.io/artcile/using-github-to-revive-blog-posts/</loc>
+    <lastmod>2018-08-14T10:07:38-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/article/connect-your-bot-to-slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
   </url>
@@ -350,20 +360,38 @@
   </url>
   
   <url>
+    <loc>https://msadministrator.github.io/tags/appveyor/</loc>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/tags/archive/</loc>
     <lastmod>2018-08-07T20:45:35-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://msadministrator.github.io/artcile/</loc>
+    <lastmod>2018-08-14T10:07:38-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/article/</loc>
-    <lastmod>2018-08-10T22:28:08-04:00</lastmod>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://msadministrator.github.io/author/</loc>
     <lastmod>2018-08-05T12:55:27-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://msadministrator.github.io/categories/automation/</loc>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -381,7 +409,7 @@
   
   <url>
     <loc>https://msadministrator.github.io/categories/</loc>
-    <lastmod>2018-08-10T22:28:08-04:00</lastmod>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -404,14 +432,20 @@
   </url>
   
   <url>
+    <loc>https://msadministrator.github.io/tags/github/</loc>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/author/josh-rickard/</loc>
-    <lastmod>2018-08-10T22:28:08-04:00</lastmod>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://msadministrator.github.io/</loc>
-    <lastmod>2018-08-10T22:28:08-04:00</lastmod>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -423,7 +457,7 @@
   
   <url>
     <loc>https://msadministrator.github.io/categories/powershell/</loc>
-    <lastmod>2018-08-08T23:08:02-04:00</lastmod>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -454,6 +488,12 @@
   <url>
     <loc>https://msadministrator.github.io/tags/webapp/</loc>
     <lastmod>2018-08-10T22:10:33-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://msadministrator.github.io/tags/writing/</loc>
+    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
