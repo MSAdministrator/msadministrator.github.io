@@ -1,1 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on MSAdministrator</title>
+    <link>https://msadministrator.github.io/categories/automation/</link>
+    <description>Recent content in Automation on MSAdministrator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Aug 2018 10:08:33 -0400</lastBuildDate>
+    
+	<atom:link href="https://msadministrator.github.io/categories/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Github to Revive Blog Posts</title>
+      <link>https://msadministrator.github.io/article/using-github-to-revive-blog-posts/</link>
+      <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/using-github-to-revive-blog-posts/</guid>
+      <description>I am currently migrating my blog content from Wordpress.com to GitHub pages using Hugo. During this transition, I wanted to have the ability to &amp;ldquo;revive&amp;rdquo; my blog posts on a scheduled basis on social media (e.g. Twitter). With Wordpress, you can use the WordPress Revive Old Posts plugin but with WordPress.com you have to have a premium business account to use plugins.
+If you&amp;rsquo;re in a similar situation of if you want a free way to automate the &amp;ldquo;re-posting&amp;rdquo; of your blog content then you&amp;rsquo;re in luck!</description>
+    </item>
+    
+  </channel>
+</rss>

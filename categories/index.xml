@@ -1,1 +1,51 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on MSAdministrator</title>
+    <link>https://msadministrator.github.io/categories/</link>
+    <description>Recent content in Categories on MSAdministrator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Aug 2018 10:08:33 -0400</lastBuildDate>
+    
+	<atom:link href="https://msadministrator.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automation</title>
+      <link>https://msadministrator.github.io/categories/automation/</link>
+      <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/categories/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure</title>
+      <link>https://msadministrator.github.io/categories/azure/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/categories/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>https://msadministrator.github.io/categories/powershell/</link>
+      <pubDate>Wed, 15 Aug 2018 11:54:36 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/categories/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slack</title>
+      <link>https://msadministrator.github.io/categories/slack/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/categories/slack/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

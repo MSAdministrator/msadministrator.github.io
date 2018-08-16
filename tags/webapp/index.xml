@@ -1,1 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webapp on MSAdministrator</title>
+    <link>https://msadministrator.github.io/tags/webapp/</link>
+    <description>Recent content in Webapp on MSAdministrator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Aug 2018 22:10:33 -0400</lastBuildDate>
+    
+	<atom:link href="https://msadministrator.github.io/tags/webapp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create a Web App Bot Using Azure Bot Services</title>
+      <link>https://msadministrator.github.io/article/create-a-web-app-bot-using-azure-bot-services/</link>
+      <pubDate>Fri, 10 Aug 2018 22:10:33 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/create-a-web-app-bot-using-azure-bot-services/</guid>
+      <description>In my last post, we create a QnA Maker knowledge base that our Azure Web App Bot will use as it’s repository of questions &amp;amp; answers. Now, we are going to create our bot using Azure’s Bot Services.
+First thing is that we should go ahead and log into the Azure Portal. In the top left-hand corner click the Create a resource button. You will then need to Search the marketplace in the New blade for Web App Bot.</description>
+    </item>
+    
+  </channel>
+</rss>
