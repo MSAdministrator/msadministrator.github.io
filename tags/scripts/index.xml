@@ -6,19 +6,19 @@
     <description>Recent content in Scripts on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Aug 2018 11:54:36 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 19 Aug 2018 13:37:36 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Powershell Scripts Functions Modules Cmdlets Oh My</title>
+      <title>Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!</title>
       <link>https://msadministrator.github.io/article/powershell-scripts-functions-modules-cmdlets-oh-my/</link>
-      <pubDate>Wed, 15 Aug 2018 11:54:36 -0400</pubDate>
+      <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
       
       <guid>https://msadministrator.github.io/article/powershell-scripts-functions-modules-cmdlets-oh-my/</guid>
-      <description>PowerShell is unique, but it is also necessary in today&amp;rsquo;s world. I find that newcomers to the language are sometimes confused or don&amp;rsquo;t understand the basic layers of PowerShell scripting. You can use PowerShell in different ways, but I have yet to find an all encompassing article that explains the high-level of how to interact with PowerShell in these ways.
-This post will explain the main advantages and use cases of invoking PowerShell for newcomers to the language.</description>
+      <description>PowerShell is unique, but it is also necessary in today&amp;rsquo;s world. I find that newcomers to the language are sometimes confused or don&amp;rsquo;t understand the basic layers of PowerShell scripting. You can use PowerShell in different ways, but I have yet to find an all encompassing article that explains the high-level of how to interact with PowerShell in these different ways.
+This post will explain the different concepts (or layers) of PowerShell code organization and their main advantages and use cases.</description>
     </item>
     
   </channel>

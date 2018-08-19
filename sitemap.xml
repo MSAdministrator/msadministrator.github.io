@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://msadministrator.github.io/article/powershell-scripts-functions-modules-cmdlets-oh-my/</loc>
+    <lastmod>2018-08-19T13:37:36-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/article/using-github-to-revive-blog-posts/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
   </url>
@@ -368,7 +373,7 @@
   
   <url>
     <loc>https://msadministrator.github.io/article/</loc>
-    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
+    <lastmod>2018-08-19T13:37:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -421,6 +426,12 @@
   </url>
   
   <url>
+    <loc>https://msadministrator.github.io/tags/functions/</loc>
+    <lastmod>2018-08-19T13:37:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/tags/github/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
@@ -428,13 +439,19 @@
   
   <url>
     <loc>https://msadministrator.github.io/author/josh-rickard/</loc>
-    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
+    <lastmod>2018-08-19T13:37:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://msadministrator.github.io/</loc>
-    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
+    <lastmod>2018-08-19T13:37:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://msadministrator.github.io/tags/modules/</loc>
+    <lastmod>2018-08-19T13:37:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -446,13 +463,19 @@
   
   <url>
     <loc>https://msadministrator.github.io/categories/powershell/</loc>
-    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
+    <lastmod>2018-08-19T13:37:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://msadministrator.github.io/tags/qnamaker/</loc>
     <lastmod>2018-08-10T21:55:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://msadministrator.github.io/tags/scripts/</loc>
+    <lastmod>2018-08-19T13:37:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
