@@ -6,10 +6,20 @@
     <description>Recent content in Powershell on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Aug 2018 13:37:36 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 21 Aug 2018 12:50:50 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/categories/powershell/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Traverse Local Certificate Store With Powershell</title>
+      <link>https://msadministrator.github.io/article/traverse-local-certificate-store-with-powershell/</link>
+      <pubDate>Tue, 21 Aug 2018 12:50:50 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/traverse-local-certificate-store-with-powershell/</guid>
+      <description>Windows Certificate Store is typically accessed using the MMC Snap-In, You can view both the Computer or User certificate stores using a traditional MMC console. Sometimes though, you may just want to programmatically access it using PowerShell. Luckily you can do this using a PSDrive that is created on your machine.
+As you can see there is a Cert drive and you can access it using PowerShell&amp;rsquo;s multiple location based Cmdlets.</description>
+    </item>
     
     <item>
       <title>Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!</title>
