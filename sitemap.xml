@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://msadministrator.github.io/link/using-amazon-sqs-with-powershell/</loc>
-    <lastmod>2018-08-23T22:22:39-04:00</lastmod>
+    <loc>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</loc>
+    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
   </url>
   
   <url>
@@ -370,6 +370,12 @@
   </url>
   
   <url>
+    <loc>https://msadministrator.github.io/tags/amazon/</loc>
+    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/tags/appveyor/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
@@ -383,7 +389,7 @@
   
   <url>
     <loc>https://msadministrator.github.io/article/</loc>
-    <lastmod>2018-08-21T12:50:50-04:00</lastmod>
+    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -396,12 +402,6 @@
   <url>
     <loc>https://msadministrator.github.io/categories/automation/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://msadministrator.github.io/tags/aws/</loc>
-    <lastmod>2018-08-23T22:22:39-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -455,19 +455,13 @@
   
   <url>
     <loc>https://msadministrator.github.io/author/josh-rickard/</loc>
-    <lastmod>2018-08-21T12:50:50-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://msadministrator.github.io/link/</loc>
-    <lastmod>2018-08-23T22:22:39-04:00</lastmod>
+    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://msadministrator.github.io/</loc>
-    <lastmod>2018-08-23T22:22:39-04:00</lastmod>
+    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -485,7 +479,7 @@
   
   <url>
     <loc>https://msadministrator.github.io/categories/powershell/</loc>
-    <lastmod>2018-08-23T22:22:39-04:00</lastmod>
+    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -502,20 +496,20 @@
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/slack/</loc>
-    <lastmod>2018-08-10T22:28:08-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://msadministrator.github.io/categories/slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://msadministrator.github.io/tags/slack/</loc>
+    <lastmod>2018-08-10T22:28:08-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/tags/sqs/</loc>
-    <lastmod>2018-08-23T22:22:39-04:00</lastmod>
+    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,18 +6,19 @@
     <description>Recent content on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Aug 2018 22:22:39 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 23 Aug 2018 22:24:59 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using Amazon Sqs With Powershell</title>
-      <link>https://msadministrator.github.io/link/using-amazon-sqs-with-powershell/</link>
-      <pubDate>Thu, 23 Aug 2018 22:22:39 -0400</pubDate>
+      <link>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</link>
+      <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/link/using-amazon-sqs-with-powershell/</guid>
-      <description></description>
+      <guid>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</guid>
+      <description>Amazon SQS is a flexible queue service that has many uses cases, from scalable web applications and processing systems to inter-application communications. This is useful if you need to process lots of data at once or have threads or workers to do a specific action to a large pool of data.
+With the explosion of use cases for PowerShell and Docker in production systems, you can easily scale using queue systems like Amazon SQS.</description>
     </item>
     
     <item>

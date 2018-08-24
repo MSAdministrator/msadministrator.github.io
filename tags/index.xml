@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Amazon</title>
+      <link>https://msadministrator.github.io/tags/amazon/</link>
+      <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/tags/amazon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Appveyor</title>
       <link>https://msadministrator.github.io/tags/appveyor/</link>
       <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
@@ -35,15 +44,6 @@
       <pubDate>Tue, 07 Aug 2018 20:45:35 -0400</pubDate>
       
       <guid>https://msadministrator.github.io/tags/archive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
-      <link>https://msadministrator.github.io/tags/aws/</link>
-      <pubDate>Thu, 23 Aug 2018 22:22:39 -0400</pubDate>
-      
-      <guid>https://msadministrator.github.io/tags/aws/</guid>
       <description></description>
     </item>
     
@@ -140,7 +140,7 @@
     <item>
       <title>Sqs</title>
       <link>https://msadministrator.github.io/tags/sqs/</link>
-      <pubDate>Thu, 23 Aug 2018 22:22:39 -0400</pubDate>
+      <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
       <guid>https://msadministrator.github.io/tags/sqs/</guid>
       <description></description>
