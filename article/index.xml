@@ -6,34 +6,10 @@
     <description>Recent content in Articles on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Aug 2018 16:43:39 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 23 Aug 2018 22:24:59 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/article/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Opt Out From Osinit Websites</title>
-      <link>https://msadministrator.github.io/article/opt-out-from-osinit-websites/</link>
-      <pubDate>Fri, 24 Aug 2018 16:43:39 -0400</pubDate>
-      
-      <guid>https://msadministrator.github.io/article/opt-out-from-osinit-websites/</guid>
-      <description>MyLife.com: Email membersupport@mylife.com &amp;amp; cc removalrequests@mylife.com. Include a link to your public profile to be removed.
-Spokeo: https://t.co/W4q6Hc9Q6G or https://www.spokeo.com/optout
-Provide a link to your public profile(s) and an email. Once you submit you will receive a confirmation email to verify.
-PeopleSmart: https://t.co/vFXUaAnY6c or https://www.peoplesmart.com/optout-go
-Other services or research info: https://inteltechniques.com/data/workbook.pdf https://tisiphone.net/2017/01/25/thwart-my-osint-efforts-while-binging-tv/ https://www.abine.com/optouts.php https://motherboard.vice.com/en_us/article/ne9b3z/how-to-get-off-data-broker-and-people-search-sites-pipl-spokeo
-Someone created this document: https://docs.google.com/document/d/1ElB7VXmr5JEkFaLJpO7YLGrAuasedmq-rZC-8TUMxTM/edit
-Here is it just in case it goes down: Big Ass Data Broker Opt-Out List</description>
-    </item>
-    
-    <item>
-      <title>Test Blog Post</title>
-      <link>https://msadministrator.github.io/article/test-blog-post/</link>
-      <pubDate>Fri, 24 Aug 2018 15:04:30 -0400</pubDate>
-      
-      <guid>https://msadministrator.github.io/article/test-blog-post/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Using Amazon Sqs With Powershell</title>
