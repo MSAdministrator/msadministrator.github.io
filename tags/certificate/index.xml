@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Certificate on Kube for Hugo</title>
-    <link>/tags/certificate/</link>
-    <description>Recent content in Certificate on Kube for Hugo</description>
+    <title>Certificate on MSAdministrator</title>
+    <link>https://msadministrator.github.io/tags/certificate/</link>
+    <description>Recent content in Certificate on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 21 Aug 2018 12:50:50 -0400</lastBuildDate>
     
-	<atom:link href="/tags/certificate/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://msadministrator.github.io/tags/certificate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Traverse Local Certificate Store With Powershell</title>
-      <link>/article/traverse-local-certificate-store-with-powershell/</link>
+      <link>https://msadministrator.github.io/article/traverse-local-certificate-store-with-powershell/</link>
       <pubDate>Tue, 21 Aug 2018 12:50:50 -0400</pubDate>
       
-      <guid>/article/traverse-local-certificate-store-with-powershell/</guid>
+      <guid>https://msadministrator.github.io/article/traverse-local-certificate-store-with-powershell/</guid>
       <description>Windows Certificate Store is typically accessed using the MMC Snap-In, You can view both the Computer or User certificate stores using a traditional MMC console. Sometimes though, you may just want to programmatically access it using PowerShell. Luckily you can do this using a PSDrive that is created on your machine.
 As you can see there is a Cert drive and you can access it using PowerShell&amp;rsquo;s multiple location based Cmdlets.</description>
     </item>
     
     <item>
       <title>Adding a Dlls Certificate to a Trusted Store</title>
-      <link>/article/adding-a-dlls-certificate-to-trusted-store/</link>
+      <link>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</link>
       <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
       
-      <guid>/article/adding-a-dlls-certificate-to-trusted-store/</guid>
+      <guid>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</guid>
       <description>Yesterday I was asked to help with streamling a manual process that some QA folks were running into. They had a debug release of an applicaiton that was signed with a test code signing certificate. Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.
 This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.</description>
     </item>

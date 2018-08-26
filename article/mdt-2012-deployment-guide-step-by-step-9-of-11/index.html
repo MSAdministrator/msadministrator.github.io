@@ -1,120 +1,176 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Josh Rickard">
+        <meta name="description" content="All about Microsoft Automation">
+        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+        <meta name="generator" content="Hugo 0.46" />
+        <title> Mdt 2012 Deployment Guide Step by Step 9 of 11 | MSAdministrator</title>
+        <meta name="description" content="Mdt 2012 Deployment Guide Step by Step 9 of 11 - All about Microsoft Automation">
+        <meta itemprop="name" content="Mdt 2012 Deployment Guide Step by Step 9 of 11">
+        <meta itemprop="description" content="Mdt 2012 Deployment Guide Step by Step 9 of 11 - All about Microsoft Automation">
+        <meta property="og:title" content="Mdt 2012 Deployment Guide Step by Step 9 of 11">
+        <meta property="og:description" content="Mdt 2012 Deployment Guide Step by Step 9 of 11 - All about Microsoft Automation">
+        <meta property="og:image" content="https://msadministrator.github.io/images/default.jpg">
+        <meta property="og:url" content="https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
+        <meta property="og:site_name" content="MSAdministrator">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://msadministrator.github.io/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://msadministrator.github.io/favicon-16x16.png" sizes="16x16">
 
-<head>
-  <meta name="generator" content="Hugo 0.46" />
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Mdt 2012 Deployment Guide Step by Step 9 of 11 </title>
+	
 
-  
-  
-  
-  
-  
-  
+        <link rel="stylesheet" href="https://msadministrator.github.io/dist/theme.css">
 
-  
+        
 
-  <meta name="author" content="Josh Rickard">
+        
+            
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        
+<nav>
 
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                    <li><a href="/page/projects/">Projects</a></li>
+                
+            
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
 
-  <meta property="og:title" content="Mdt 2012 Deployment Guide Step by Step 9 of 11" />
-<meta property="og:description" content="Creating a Deployment Task Sequence  From the Deployment Workbench, expand the customer Deployment Share and right-click on Task Sequences and select New Task Sequence Enter a Task Sequence ID and Name. Make a note of the ID as you may need it later!  
- Accept the default “Standard Client Task Sequence” template Select the relevant OS Image to deploy  
- This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" />
-
-
-
-<meta property="article:published_time" content="2018-08-07T20:43:32-04:00"/>
-
-<meta property="article:modified_time" content="2018-08-07T20:43:32-04:00"/>
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-  
-  
-  
-
-  <link rel="canonical" href="/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">  
-
-  <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAfMklEQVR4Xu3deah1VfkH8MfQNC38SeaIhSVSWKYlDWYpNphDg5RTooZp/n5lmRqOTWQjZGWGaFZEgkmDYaVZlmhkoQ1aYYoVIpKKRUU55ID+WG6v7/W+Z9hneK7rvuuz/yl8z3nu2s855/vZe+1prYc/stvDsdZaEbFWPPK/ff7/2NfGqnpjXzvkbw99Xym9ZJyDXjvV31007rn0oazbo+OdZDzjXrtQc25jXPq59+jD2DEO+j4NqTuu1uL1XO21I/o7U92FnnQfoUUH1sQOrAWAxeHXI/hGhtEgQAGwauMCAGtiiFinldsBADxubwIA3d5Vjz6M27oe+O8AWLlRYeRrYgcAAIAB03UAWDXNuCb+7K2TDjw6O20KyBTQY1M0j221AwAAIrKFDtgDsAdgD2DkwfQWYsA6ttoBAAAAAABoNf+aX28AAAAAAGg+CFttAAAAAAAAtJp/za83AAAAAAA0H4StNgAAAAAAAFrNv+bXGwAAAAAAmg/CVhsAAAAAAACt5l/z6w0AAAAAAM0HYasNAAAAAACAVvOv+fUGAAAAAIDmg7DVBgAAAAAAQKv51/x6AwAAAABA80HYagMAAAAAAKDV/Gt+vQEAAAAAoPkgbLUBAAAAAADQav41v94AAAAAANB8ELbaAAAAAAAAaDX/ml9vAAAAAABoPghbbQAAAAAAALSaf82vNwAAAAAANB+ErTYAAAAAAABazb/m1xsAAAAAAJoPwlYbAAAAAAAAreZf8+sNAAAAAADNB2GrDQAAAAAAgFbzr/n1BgAAAACA5oOw1QYAAAAAAECr+df8egMAAAAAQPNB2GoDAAAAAACg1fxrfr0BAAAAAKD5IGy1AQAAAAAA0Gr+Nb/eAAAAAADQfBC22gAAAAAAAGg1/5pfbwAAAAAAaD4IW20AAAAAAAC0mn/NrzcAAAAAADQfhK02AAAAAAAAWs2/5tcbAAAAAACaD8JWGwAAAAAAAK3mX/PrDQAAAAAAzQdhqw0AAAAAAIBW86/59QYAAAAAgOaDsNUGAAAAAABAq/nX/HoDAAAAAEDzQdhqAwAAAAAAoNX8a369AQAAAACg+SBstQEAAAAAANBq/jW/3gAAAAAA0HwQttoAAAAAAABoNf+aX28AAAAAAGg+CFttAAAAAAAAtJp/za83AAAAAAA0H4StNgAAAAAAAFrNv+bXGwAAAAAAmg/CVhsAAAAAAACt5l/z6w0AAAAAAM0HYasNAAAAAACAVvOv+fUGAAAAAIDmg7DVBgAAAAAAQKv51/x6AwAAAABA80HYagMAAAAAAKDV/Gt+vQEAAAAAoPkgbLUBAAAAAADQav41v94AAAAAANB8ELbaAAAAAAAAaDX/ml9vAAAAAABoPghbbQAAAAAAALSaf82vNwAAAAAANB+ErTYAAAAAAABazb/m1xsAAAAAAJoPwlYbAAAAAAAAreZf8+sNAAAAAADNB2GrDQAAAAAAgFbzr/n1BgAAAACA5oOw1QYAAAAAAECr+df8egMAAAAAQPNB2GoDAAAAAACg1fxrfr0BAAAAAKD5IGy1AQAAAAAA0Gr+Nb/eAAAAAADQfBC22gAAAAAAAGg1/5pfbwAAAAAAaD4IW20AAAAAAAC0mn/NrzcAAAAAADQfhK02AAAAAAAAWs2/5tcbAAAAAACaD8JWGwAAAAAAAK3mX/PrDQAAAAAAzQdhqw0AAAAAAIBW86/59QYAAAAAgOaDsNUGAAAAAABAq/nX/HoDAAAAAEDzQdhqAwAAAAAAoNX8a369AQAAAACg+SBstQEAAAAAANBq/jW/3gAAAAAA0HwQttoAAAAAAABoNf+aX28AAAAAAGg+CFttAAAAAAAAtJp/za83AAAAAAA0H4StNgAAAAAAAFrNv+bXGwAAAAAAmg/CVhsAAAAAAACt5l/z6w0AAAAAAM0HYasNAAAAAACAVvOv+fUGAAAAAIDmg7DVBgAAAAAAQKv51/x6AwAAAABA80HYagMAAAAAAKDV/Gt+vQEAAAAAoPkgbLUBAAAAAADQav41v94AAAAAANB8ELbaAAAAAAAAaDX/ml9vAAAAAABoPghbbQAAAAAAALSaf82vNwAAAIDyHbjn3oj//b+Ib3xjtlB46UsjfvCDiI03nq3Omvrue+6JOPLIiPPPn20N9Xm2/j36bgAAAAAAmEuY9CoCgF5tWq4XAQAAAADAcuVNBACWr9c9/hIAAAAAAPSIijm9BABzauR8ygAAAAAAwHzSpE8VAPTp0rK9BgAAAAAAli1wTAEtX6v7/CUAAAAAAOiTFfN5jT2A+fRxTlUAAAAAAGBOcdKjDAB6NGn5XgIAAABgngDstFPExRdHbLLJ8v2KV9JfAkBVnxYAAACAeQLwrGdF/PCHEc97XlU/9GoGA4BqPooyEAAAAAAAWL5QAsDy9brHXwIAAAAAgB5RMaeXAGBOjZxPGQAAAAAAmE+a9KmSDcD990f84hcRF14Y8fOfR9xwQ8R//9uNbKONuqm5nXeOeN3rIl7+8oinPrXPqKd7zUMPRdx2W8RvfxtxzTXduG6/PeLGGx9fr4zrOc+JeOYzI1784ohXvCLihS+M+J//me7vTvAuAAAAAMsBwLXXRrz+9RF33jnBzzO6g8mXXhqx446r3vf3v0fss0/E1VdPVmvpq9/2tohzz41Yf/3lqV3+ShYAd98dcfbZEZ/5TMQdd/Try3rrRRx7bMQxx0Rsumm/94x71cMPR9x8c8R550V85SsRt9467h3D//0FL4g44oiI/feP2Gyz6euMeCcAAACA5QDgrLMi3v3uyX/Eb3pTFyZPe9ryhHQmLhkAPP3pHYQlKK+/fvL+lneUcP3SlzpUH7k1+BRLCf7y9z/ykYjvfS/igQemKDLkLQWqo46KOOGEiC22mF9dB4HX6j7wRz708r+lt0v/2+J/X/L/e722lFyoP6LW4teMq/vIMOdUa+Df7dGHsWMc1MchdcfVGtmbEf2dpO68bgc96Cygu+6KOOywblpi0uXzn++2UBcvmSGdWXveAHz/+90ZVyUcF6Z5Ju3vwutLyJ5zTsQhh0yOQNn7OO20iM9+dr7Bv3RdylRR2cM5+OCIddeddk0f9z57AACwB5C9B1DmoffcM+KWWyb70Zat/ssuiyj3vgfA43tQrrfYd99ui3teW9sF7/Ish+c/v//nVKZ7yt7H5Zf3f8+srzz00A6bsvcz4wIAAAAgG4CvfjXiHe+Y/Kf62tdGfPObqx8MzNxKz6w9zz2AybvZ7x1lb+KMM/ptYZfwL3sMV13Vr/Y8X7Xrrt3DizbffKaqAAAAAOYJwFZbddMS223X/TBnOej58Y9HnHLK6j/wzJDOrD1rP2aKup5vHrbXtfTt//hHxEEHRfz4xz0LJ7xsDggAAAAAmCcA5Xd+xRUR5cdZlr/8JWKvvSJuummyBChBVM7+KacsLl0yQzqz9koAoIxxGLwLn8ODD0Z84hMRH/7wZJ9pxqtPPjniox+NWHvtqaoDAAAAyATgggu6LcVJl3KO+kUXRTzjGQCYtHezvr7MsZcDwuXA8KDl97/vjumUc/yf6KVsKHzrWxF77DHVSAAAAABkAVAuSjr66O5c+0mXsmVXtkQHnZaYuZWeWXul7AEccEB3Dv8GG6z+qZWt/xNP7A7C1rK8+c0RX/taxIYbTjwiAAAAAFkAlIOEe+/dXY06ybLOOt3ZPwvTSKaABnfvwAMjTj+9Oze+bI0ff3xE2eOadSlnXZWzgTbeePVKf/1rd73AdddN/1e23bYDpkzv3XdfxOc+F3HqqdPXK9+Xcu1BudBwwgUAAABAFgDlttAlLCZdyimOZfpn2EU/mVvpmbXnuQcwCMlpr7Ze+vmMAmDaz3Tx31h6bcff/hZRLvj75S8n/aasev1xx0V8+tMTHwsAAAAAkAFAuZ9L+VGeeebkP+pxP+bMkM6sPU8ABl1wV87MeeMbZz8tcxgA5WrfsqX+yU9O/pkufkfZuyh7hgtLuYitnH769a9PX3fUMaMRVQEAAABkALDNNtNPFSwNCFNAq0fYoJCe5ZTbxX9hGAD/+U933n/ZO5tlWXyW2EKdk07qtuCnXfqevrqkPgAAAIAMAO69t9sanfQq1R126Oaft9xyeBRkbqVn1p7nHsCgkJ7loHsfAOYx/1+mrspVw7vs8vjPd1YASrWyB1GAmmABAAAAMG8AfvKTiEsume5Mkfe8p3vfqPO6M0M6s3Y2AKX+PIJ02B5AudlbOf1zljt8Dnti3LRXiy8O+3J20qc+NUH8eyKYm8G5GVz3HZjXzeDKz6+ciVJuJzDNQb1yTvdb3zr6R5wZ0pm1VzoAV14ZsdtuEwXsai/OBGDQ7b3HjNYegD0AewDzBqBclFN28yed/ikPKylnmWy9NQDGxeywrfTMPYBvfztiv/3GjWz0v2cCMOzeUSNGBAAAAGDeAEwbEYcfHlGeGzDuVr+ZW+mZtVf6HsA8pmkyARh1+uqQ7yQAAACAWgAod3csFzeNWzJDOrM2ACIyAei7B7no+wUAAACgBgCGBcMgDDJDOrM2AHIBmOQ79Oj3CgAAAEANAExyAC8zpDNrAwAAsz/KcMDjEAc9+m+SxwE+diZM+YZ6JGSvR2OO69PAfx/S33G1Bp6ptOgxnov/feRrRzxGc55nAY2bwhn07+XeMOUYQJ8lM6QzawOgz6c7/WvsASx69u4koQKAJc8t7gHhuP4CoP8PudzzpzxEZvvt+70nM6QzawOg3+c77asAAIDV9rDGBbXrAOZ/HcCkP+Ddd48opxiWh373WTJDOrM2APp8utO/BgAAAMCU34Encgpo0h9uZkhn1gbA9OHe552Tfo/KhPfDH9nt4e6hE/Oc+140hTBJ3V7zt44BPPJdeNzB6xFz25P0/7HXmgLq83ub62v6XAG88AczQzqzNgDm+pVZrRgAptz6cwzAMYAncg+g/JL73AMIAKsy74m4EngeF4JlEgAAAJgCmvI78EQDMMn93DO30jNr2wPIjP/hp5iO+KumgFwH4DqAGq4DmOR+7pkhnVkbAACYfe7aMQDHABYf83j0+zDrtSBP9B5A+VCXPipwWFxkhnRmbQAAAAA9DriPO3DrIPCiYxZrEAB9rwbODOnM2gCYapomUw1TQKaATAHVMAVUfuV9b+aVGdKZtQEAAHsA9gDmc6B6DbsVxMJm3rjnAZfXZYZ0Zm0AAAAAAFjjASgPdLn55un23E8+OeLjH390imtIicyQzqwNAAAAAABrPADluazlub533jk5An2e6pQZ0pm1ATAagFmvM3AdwJTngLsQzIVg8zwLqDzY5fTTI37968kB2GSTiEsvjdhxx+HvzQzpzNoAAIA9AHsAa/weQLmzZ0Hg61+fHIDyjnG3hs4M6czaAAAAAACwxgNwxRUR110X8b73TQfAkUdGfPGLEU9+8uD3Z4Z0Zm0AAAAAAGgCgAcfjHjNa6YDYIcdIsrZQFtuCYBhHVyp9wIaNU/vGECfOXxXArsSuPIrgcsewOabR+y1V8Rf/jI5AuusE3HZZRG77goAAPT//jgI3AeQUbe9fuQS2znfannElarTPsrQlcB1XwlcAHjRiyIOOSTioov6/4AXv7KcCnrKKQAAQP/vDwAAMJ/plR4QjoOy5UdCFgBe9aqIE06I+Mxn+v+AF7/yTW+KOO+8iHKTuKVL5jx9Zu2Vfgzgpz+dflpv4TM0BTTi4SUeCLPkdMwhxwvsAdS7B7D4NM4S4IceOh0Ao4IiM6Qza690AK68MmK33ab7PJcDgHHHjgaM3L2A3AvIvYDmeS+gxcF99dUR5cKu//xnutAY9pSwzJDOrL3SAbj++og994y49dbpPs/yrlGwn3HG9GeOldrDDoyPGC0AAACALADKlcB77z3dBWHlRzvsKWGZIZ1ZOxuA//434qijpr/+YiEohwXpX/8asc8+3Sm+0y6jLvQ76aSIT3962soRBxzQXUOywQa9awAAAADIAmDWQBr2lLB//Sti//27M4VmWQbdfnpWtBbGM+zW1vfcE1Guczj//FlGHjFoumNetYcBUPbkZjmwv7DG5RjR0jO8ymnDxx0XceaZ0/dlkseKPvpXAAAAAGQBUH5kn/hExKmnTvejHvaUsMygu+GGbprjllumG/NyAbDVVhHliuvttls1znnBOOx+TA8/3H2Wn/zkbL0ZNLU3j7GPu4LcMYBxF2GVDjkNtLRgbB/G9anVs4CWzvFefHE3bTDtMugpYfMCYNDzB2Y9brFcAJS/U263ceCBqzqbjVf5S7N+nqXGoDu+/upX3fdkmhsIlppbbNGBuP32E33T7AHYA7AHkLkHcNNN018QVn7Kg6ZS7r8/4uijI849d6If+8AXv//9ER/4QMSGG0bcdlvE8cdHXHDB7HWzp4DKCF/xim7Oe9ttI/75z+66iXPOmX3so6ZSSo/KKbrT3OhvYWQbbdR9dqXOk57UHVN473sjrrpq+rEffnjEWWdFrLvuRDUAAAAAZAIw6679sKeEffCDER/72EQ/9mV98XIAkLVCoy7CK9NA5UBt2YqvZSlThd/9bsSrXz3xiAAAAADME4DnPCfikku6rdKyzOPg3qCnhH372xH77TfxD37Z3rCSARj3VLZyGmjZer/22mVr58g/dMwx3QWHa6898XgAAAAAzBOAQWeQzHJB2LA543nNd08cGT3fsFIB6Hs7hXIsYN99Ix54oGdDkl5WDoKX242UDY8pFgAAAADZAMx6YHXQWSn33RfxrndFlDtI1risVAD6zqWXPbvTTov46EefuO6XYwnljKIppn4WBg0AAAAgG4BZLyAadvFQuTdN2Qqd9krjQdG1xx7d84zLwetZlmwAttmmm/K48cZZRvn495ZALdN3L3tZv5p33dVduVsORC/3Uu4YWw54v/3to58fPWZcAAAAALIBmMdpm4PO8S57AWX+dx5nvpSgKBcnfeELEe98Z0TZa5llyQagnL102GERb3nL7FiV9Zw2UO+9t9sTKHPwyzUdtN563Rk/Zf3LWUQzLAAAAACyASg/0FkuCCvvH/aUsNtvjzjooIhyo7JZlnLQ+sILI9Zfv7t9RTnGMMuSDcDCxVR//GN3VXS5T8+0Swn/cipsOY10igOp8dBDET/6UXcq55//PO0o+r2v7PmUjYFXvnKmLf+FPwYAAABgOQCY9QKiUXd6LBcPlesCSihOs+y+e8SXvxyx9dZd8Nd+JfDSq4DLufllKmaa9S/TPuX2CwXRGbem4+67I84+u9sbuOOOaT6J4e8pW/3HHtvt8W266dxqAwAAAFgOAGa9k+S4p4SV6aCyBf+hD/XfCt1ss27PpGytL1xAtBIAGHRQfGEr/MQTI/7wh/EBWfp58MER5XqKZz97/OsneUWZFrr88u5ir7JnUO4JNe1S9syOOKK7B1H5vOa8AAAAABj2ZLZH/vsKW8rZKeUq1UsvjfjZz7ot+oWt0RJ6z31ud0/7N7whYpddIp7ylBW2gmOGWyAo00Lf+U53a4Tf/W5VAJc9nB137M7hf93rUgJ1tdGVq7b/9KeIa66JKLd7+M1vIv7979UPXi98NhtvHLHzzhEveUnETjt1jxZN/B4CAAAAWJMAWLPi3NokdwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3EldwAAAAAAAJJjRvlaOwAAAAAAALXmk3Eld+D/AfhEhmLqHBsfAAAAAElFTkSuQmCC">
-
-
-  <link href="/css/font.css" rel="stylesheet" type="text/css">
-  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
-  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
-  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
-  <link href="/css/master.css" rel="stylesheet" type="text/css">
-  <link href="/css/kube.demo.css" rel="stylesheet" type="text/css">
-
- <link href="/css/custom.css" rel="stylesheet" type="text/css">
-
-  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
-  </script>
-
-  <script type="text/javascript" src="/js/tocbot.min.js"></script>
-</head>
-
-
-<body class="page-kube">
-  <header> <div class="show-sm">
-    <div id="nav-toggle-box">
-      <div id="nav-toggle-brand">
-        <a href="/">Kube for Hugo</a>
-      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+        
+            <div id="search-box" class="search">
+                <i class="fa fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
     </div>
-  </div>
-  <div class="hide-sm" id="top">
-    <div id="top-brand">
-      <a href="/" title="home">Kube for Hugo</a>
+</nav>
+
+
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title"><a href="/">MSAdministrator</a></h3>
+            
+                <span class="subtitle">All about Windows Automation</span>
+            
+        </div>
+
+    
+
+        
+        <div class="toggler">
+        
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
     </div>
-    <nav id="top-nav-main">
-      <ul>
-       
-       
-    <li><a href="/blog/" >Blog</a></li>
-    
-    <li><a href="/docs/" >Docs</a></li>
-    
-    <li><a href="/faq/" >Faq</a></li>
-    
-      </ul>
-    </nav>
-    <nav id="top-nav-extra"> 
-      <ul>
-          
-      </ul>
-    </nav>
-  </div>
- </header>
-  <main>
+</header>
 
-<div id="hero" class="wrap">
-  <h1>Mdt 2012 Deployment Guide Step by Step 9 of 11</h1>
-    <p></p>
-</div>
-<ul id="posts">
 
- <p><h1>Creating a Deployment Task Sequence</h1>
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">Mdt 2012 Deployment Guide Step by Step 9 of 11</a></h3>
+    <div class="meta">
+        <span class="date moment">2018-08-07</span>
+        
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+         <div class="social-media"></div>
+<ul class="share-buttons">
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://msadministrator.github.io/%2farticle%2fmdt-2012-deployment-guide-step-by-step-9-of-11%2f" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Share on Facebook</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="//twitter.com/share?url=https://msadministrator.github.io/%2farticle%2fmdt-2012-deployment-guide-step-by-step-9-of-11%2f&amp;text=Mdt%202012%20Deployment%20Guide%20Step%20by%20Step%209%20of%2011&amp;hashtags=%5barchive%5d&amp;via=Josh%20Rickard" target="_blank" title="Tweet">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Tweet</span>
+        </a>
+    </li>
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https://msadministrator.github.io/%2farticle%2fmdt-2012-deployment-guide-step-by-step-9-of-11%2f&amp;title=Mdt%202012%20Deployment%20Guide%20Step%20by%20Step%209%20of%2011" target="_blank" title="LinkedIn">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+        </a>
+    </li>
+    <li>
+        <a href="http://www.reddit.com/submit?url=https://msadministrator.github.io/%2farticle%2fmdt-2012-deployment-guide-step-by-step-9-of-11%2f" target="_blank" title="Reddit">
+            <i class="fa fa-reddit" aria-hidden="true"></i>
+            <span class="sr-only">Reddit</span>
+        </a>
+    </li>
+    <li>
+        <a href="mailto:?subject=Check out this post by Josh%20Rickard&amp;body=https://msadministrator.github.io/%2farticle%2fmdt-2012-deployment-guide-step-by-step-9-of-11%2f" target="_blank" title="Email">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <span class="sr-only">Email</span>
+        </a>
+    </li>
+</ul>
+
+
+<style>
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.share-buttons li {
+        display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+</style>
+    </div>
+
+    
+        <p><h1>Creating a Deployment Task Sequence</h1>
 <ol>
     <li>From the Deployment Workbench, expand the customer Deployment Share and right-click on <b><i>Task Sequences</i></b> and select <b><i>New Task Sequence</i></b></li>
     <li>Enter a Task Sequence ID and Name.  Make a note of the ID as you may need it later!</li>
@@ -182,39 +238,232 @@ The OS Info Tab’s contents will vary depending on which OS is being installed 
 
 <p><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/34/" rel="attachment wp-att-115"><img class="alignnone size-full wp-image-115" alt="34" src="http://msadministrator.files.wordpress.com/2012/12/34.png" width="519" height="410" /></a></p>
 
-  
-</ul>
-</main>
-  <footer> 
-    <footer id="footer">
-    <nav>
-      <ul>
-        <li><span>Kube</span></li>
-        <li>
-          <a href="/company/">Company</a>
-        </li>
-        <li>
-          <a href="/blog/">Blog</a>
-        </li>
-          <li>
-          <a href="/docs/">Docs</a>
-        </li>
-        <li>
-          <a href="https://twitter.com/">Give a shout-out on Twitter!</a>
-        </li>
-      </ul>
-    </nav>
-    <p>&copy; Licence MIT.</p>
-  </footer> 
+    
+     
+    <div class="footer">
+         
+            <div class="tags">
+                <i class="fa fa-tags"></i>
+                <div class="links">
+                    
+                    <a href="/%20/tags/%20archive">archive</a>
+                    
+                </div>
+            </div>
+            
+</div>
+
+    
+</article>
+        
+    </div>
+    
+
+     
+
+        </div>
+
+        <footer>
+    <div class="container">
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+                <ul>
+                
+                    <li>
+                        <a href="/article/opt-out-from-osinit-websites/">Opt Out From Osinit Websites</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/test-blog-post/">Test Blog Post</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-amazon-sqs-with-powershell/">Using Amazon Sqs With Powershell</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/traverse-local-certificate-store-with-powershell/">Traverse Local Certificate Store With Powershell</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/powershell-scripts-functions-modules-cmdlets-oh-my/">Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-github-to-revive-blog-posts/">Using Github to Revive Blog Posts</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/connect-your-bot-to-slack/">Connect Your Bot to Slack</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-web-app-bot-using-azure-bot-services/">Create a Web App Bot Using Azure Bot Services</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/create-a-question-and-answer-chatbot-for-slack-in-azure/">Create a Question and Answer Chatbot for Slack in Azure</a>
+                    </li>
+                
+                </ul>
+        </div>
+
+        <div class="categories">
+            <strong>Categories</strong>
+
+            
+                <ul>
+                
+                    <li>
+                        <a href="/categories/automation">Automation (1)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/azure">Azure (4)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/powershell">Powershell (5)</a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/slack">Slack (1)</a>
+                    </li>
+                
+                </ul>
+            
+        </div>
+
+        <div class="right">
+            
+            <div class="social-media">
+                <strong>Social media</strong>
+
+                
+                
+                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
+                
+                
+                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
 </footer>
 
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/Lednerb" target="_blank">
+                &copy;
+                
+                    2018
+                
+                by Lednerb
+            </a>
+	    -
+	    
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
 
-  <script src="/js/kube.js" type="text/javascript">
-  </script>
-  <script src="/js/kube.legenda.js" type="text/javascript">
-  </script>
-  <script src="/js/master.js" type="text/javascript">
-  </script>
-</body>
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-35980408-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) };
+    gtag('js', new Date());
 
+    gtag('config', 'UA-35980408-2');
+</script>
+
+
+        
+
+        <script src="https://msadministrator.github.io/dist/theme.js" type="application/javascript"></script>
+
+        
+            
+        
+
+        <script>
+            $(document).ready(function() {
+                $(".moment").each(function() {
+                    $(this).text(
+                        moment( $(this).text() )
+                            .locale( "en" )
+                            .format('LL')
+                    );
+                });
+
+                $(".footnote-return sup").html("[return]")
+            })
+        </script>
+
+        
+            <script>
+    var client = algoliasearch("NLP9E0F1NO", "a4ffdf988b82857fa86f4403da30ec7f");
+    var index = client.initIndex("prod_msadministrator");
+
+    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
+      [
+        {
+          
+            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
+          
+          displayKey: function(suggestion) {
+            return suggestion.title || suggestion.author
+          },
+          templates: {
+            suggestion: function(suggestion) {
+                return "<span class='entry " + suggestion.type + "'>"
+                      + "<span class='title'>" + suggestion.title + "</span>"
+                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
+                  + "</span>"
+                ;
+            },
+            empty: function() {
+              return "<span class='empty'>Nothing found.</span>"
+            },
+            footer: function() {
+              return '<div class="branding">Powered by <img src="https:\/\/msadministrator.github.io\/dist\/algolia-logo-light.svg" /></div>'
+            }
+
+          },
+        }
+      ])
+      .on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location = (suggestion.url);
+      })
+      .keypress(function (event, suggestion) {
+        if (event.which == 13) {
+          window.location = (suggestion.url);
+        }
+      });
+</script>
+
+        
+
+
+    </body>
 </html>
