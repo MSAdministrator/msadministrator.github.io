@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://msadministrator.github.io/article/how-to-setup-a-hugo-website-on-github/</loc>
+    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</loc>
     <lastmod>2018-08-23T22:24:59-04:00</lastmod>
   </url>
@@ -389,13 +394,19 @@
   
   <url>
     <loc>https://msadministrator.github.io/article/</loc>
-    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
+    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://msadministrator.github.io/author/</loc>
     <lastmod>2018-08-05T12:55:27-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://msadministrator.github.io/tags/automation/</loc>
+    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -449,19 +460,31 @@
   
   <url>
     <loc>https://msadministrator.github.io/tags/github/</loc>
-    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
+    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://msadministrator.github.io/categories/how-to/</loc>
+    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://msadministrator.github.io/tags/hugo/</loc>
+    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://msadministrator.github.io/author/josh-rickard/</loc>
-    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
+    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://msadministrator.github.io/</loc>
-    <lastmod>2018-08-23T22:24:59-04:00</lastmod>
+    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -496,13 +519,13 @@
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/categories/slack/</loc>
+    <loc>https://msadministrator.github.io/tags/slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/slack/</loc>
+    <loc>https://msadministrator.github.io/categories/slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>
