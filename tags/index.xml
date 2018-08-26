@@ -1,166 +1,166 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on MSAdministrator</title>
-    <link>https://msadministrator.github.io/tags/</link>
-    <description>Recent content in Tags on MSAdministrator</description>
+    <title>Tags on Kube for Hugo</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Kube for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Aug 2018 23:08:02 -0400</lastBuildDate>
     
-	<atom:link href="https://msadministrator.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>.Net</title>
-      <link>https://msadministrator.github.io/tags/.net/</link>
+      <link>/tags/.net/</link>
       <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/.net/</guid>
+      <guid>/tags/.net/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amazon</title>
-      <link>https://msadministrator.github.io/tags/amazon/</link>
+      <link>/tags/amazon/</link>
       <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/amazon/</guid>
+      <guid>/tags/amazon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Appveyor</title>
-      <link>https://msadministrator.github.io/tags/appveyor/</link>
+      <link>/tags/appveyor/</link>
       <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/appveyor/</guid>
+      <guid>/tags/appveyor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Archive</title>
-      <link>https://msadministrator.github.io/tags/archive/</link>
+      <link>/tags/archive/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:35 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/archive/</guid>
+      <guid>/tags/archive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bot</title>
-      <link>https://msadministrator.github.io/tags/bot/</link>
+      <link>/tags/bot/</link>
       <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/bot/</guid>
+      <guid>/tags/bot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Certificate</title>
-      <link>https://msadministrator.github.io/tags/certificate/</link>
+      <link>/tags/certificate/</link>
       <pubDate>Tue, 21 Aug 2018 12:50:50 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/certificate/</guid>
+      <guid>/tags/certificate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chatbot</title>
-      <link>https://msadministrator.github.io/tags/chatbot/</link>
+      <link>/tags/chatbot/</link>
       <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/chatbot/</guid>
+      <guid>/tags/chatbot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cryptography</title>
-      <link>https://msadministrator.github.io/tags/cryptography/</link>
+      <link>/tags/cryptography/</link>
       <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/cryptography/</guid>
+      <guid>/tags/cryptography/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Functions</title>
-      <link>https://msadministrator.github.io/tags/functions/</link>
+      <link>/tags/functions/</link>
       <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/functions/</guid>
+      <guid>/tags/functions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://msadministrator.github.io/tags/github/</link>
+      <link>/tags/github/</link>
       <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/github/</guid>
+      <guid>/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modules</title>
-      <link>https://msadministrator.github.io/tags/modules/</link>
+      <link>/tags/modules/</link>
       <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/modules/</guid>
+      <guid>/tags/modules/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Qnamaker</title>
-      <link>https://msadministrator.github.io/tags/qnamaker/</link>
+      <link>/tags/qnamaker/</link>
       <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/qnamaker/</guid>
+      <guid>/tags/qnamaker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scripts</title>
-      <link>https://msadministrator.github.io/tags/scripts/</link>
+      <link>/tags/scripts/</link>
       <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/scripts/</guid>
+      <guid>/tags/scripts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Slack</title>
-      <link>https://msadministrator.github.io/tags/slack/</link>
+      <link>/tags/slack/</link>
       <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/slack/</guid>
+      <guid>/tags/slack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sqs</title>
-      <link>https://msadministrator.github.io/tags/sqs/</link>
+      <link>/tags/sqs/</link>
       <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/sqs/</guid>
+      <guid>/tags/sqs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webapp</title>
-      <link>https://msadministrator.github.io/tags/webapp/</link>
+      <link>/tags/webapp/</link>
       <pubDate>Fri, 10 Aug 2018 22:10:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/webapp/</guid>
+      <guid>/tags/webapp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Writing</title>
-      <link>https://msadministrator.github.io/tags/writing/</link>
+      <link>/tags/writing/</link>
       <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/writing/</guid>
+      <guid>/tags/writing/</guid>
       <description></description>
     </item>
     

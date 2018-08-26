@@ -1,112 +1,136 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Articles on MSAdministrator</title>
-    <link>https://msadministrator.github.io/article/</link>
-    <description>Recent content in Articles on MSAdministrator</description>
+    <title>Articles on Kube for Hugo</title>
+    <link>/article/</link>
+    <description>Recent content in Articles on Kube for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Aug 2018 22:24:59 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 24 Aug 2018 16:43:39 -0400</lastBuildDate>
     
-	<atom:link href="https://msadministrator.github.io/article/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/article/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Opt Out From Osinit Websites</title>
+      <link>/article/opt-out-from-osinit-websites/</link>
+      <pubDate>Fri, 24 Aug 2018 16:43:39 -0400</pubDate>
+      
+      <guid>/article/opt-out-from-osinit-websites/</guid>
+      <description>MyLife.com: Email membersupport@mylife.com &amp;amp; cc removalrequests@mylife.com. Include a link to your public profile to be removed.
+Spokeo: https://t.co/W4q6Hc9Q6G or https://www.spokeo.com/optout
+Provide a link to your public profile(s) and an email. Once you submit you will receive a confirmation email to verify.
+PeopleSmart: https://t.co/vFXUaAnY6c or https://www.peoplesmart.com/optout-go
+Other services or research info: https://inteltechniques.com/data/workbook.pdf https://tisiphone.net/2017/01/25/thwart-my-osint-efforts-while-binging-tv/ https://www.abine.com/optouts.php https://motherboard.vice.com/en_us/article/ne9b3z/how-to-get-off-data-broker-and-people-search-sites-pipl-spokeo
+Someone created this document: https://docs.google.com/document/d/1ElB7VXmr5JEkFaLJpO7YLGrAuasedmq-rZC-8TUMxTM/edit
+Here is it just in case it goes down: Big Ass Data Broker Opt-Out List</description>
+    </item>
+    
+    <item>
+      <title>Test Blog Post</title>
+      <link>/article/test-blog-post/</link>
+      <pubDate>Fri, 24 Aug 2018 15:04:30 -0400</pubDate>
+      
+      <guid>/article/test-blog-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Using Amazon Sqs With Powershell</title>
-      <link>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</link>
+      <link>/article/using-amazon-sqs-with-powershell/</link>
       <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</guid>
+      <guid>/article/using-amazon-sqs-with-powershell/</guid>
       <description>Amazon SQS is a flexible queue service that has many uses cases, from scalable web applications and processing systems to inter-application communications. This is useful if you need to process lots of data at once or have threads or workers to do a specific action to a large pool of data.
 With the explosion of use cases for PowerShell and Docker in production systems, you can easily scale using queue systems like Amazon SQS.</description>
     </item>
     
     <item>
       <title>Traverse Local Certificate Store With Powershell</title>
-      <link>https://msadministrator.github.io/article/traverse-local-certificate-store-with-powershell/</link>
+      <link>/article/traverse-local-certificate-store-with-powershell/</link>
       <pubDate>Tue, 21 Aug 2018 12:50:50 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/traverse-local-certificate-store-with-powershell/</guid>
+      <guid>/article/traverse-local-certificate-store-with-powershell/</guid>
       <description>Windows Certificate Store is typically accessed using the MMC Snap-In, You can view both the Computer or User certificate stores using a traditional MMC console. Sometimes though, you may just want to programmatically access it using PowerShell. Luckily you can do this using a PSDrive that is created on your machine.
 As you can see there is a Cert drive and you can access it using PowerShell&amp;rsquo;s multiple location based Cmdlets.</description>
     </item>
     
     <item>
       <title>Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!</title>
-      <link>https://msadministrator.github.io/article/powershell-scripts-functions-modules-cmdlets-oh-my/</link>
+      <link>/article/powershell-scripts-functions-modules-cmdlets-oh-my/</link>
       <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/powershell-scripts-functions-modules-cmdlets-oh-my/</guid>
+      <guid>/article/powershell-scripts-functions-modules-cmdlets-oh-my/</guid>
       <description>PowerShell is unique, but it is also necessary in today&amp;rsquo;s world. I find that newcomers to the language are sometimes confused or don&amp;rsquo;t understand the basic layers of PowerShell scripting. You can use PowerShell in different ways, but I have yet to find an all encompassing article that explains the high-level of how to interact with PowerShell in these different ways.
 This post will explain the different concepts (or layers) of PowerShell code organization and their main advantages and use cases.</description>
     </item>
     
     <item>
       <title>Using Github to Revive Blog Posts</title>
-      <link>https://msadministrator.github.io/article/using-github-to-revive-blog-posts/</link>
+      <link>/article/using-github-to-revive-blog-posts/</link>
       <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/using-github-to-revive-blog-posts/</guid>
+      <guid>/article/using-github-to-revive-blog-posts/</guid>
       <description>I am currently migrating my blog content from Wordpress.com to GitHub pages using Hugo. During this transition, I wanted to have the ability to &amp;ldquo;revive&amp;rdquo; my blog posts on a scheduled basis on social media (e.g. Twitter). With Wordpress, you can use the WordPress Revive Old Posts plugin but with WordPress.com you have to have a premium business account to use plugins.
 If you&amp;rsquo;re in a similar situation of if you want a free way to automate the &amp;ldquo;re-posting&amp;rdquo; of your blog content then you&amp;rsquo;re in luck!</description>
     </item>
     
     <item>
       <title>Connect Your Bot to Slack</title>
-      <link>https://msadministrator.github.io/article/connect-your-bot-to-slack/</link>
+      <link>/article/connect-your-bot-to-slack/</link>
       <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/connect-your-bot-to-slack/</guid>
+      <guid>/article/connect-your-bot-to-slack/</guid>
       <description>In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal. Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.
 Please make sure you have a Slack workspace created and you have access to create a Slack application.</description>
     </item>
     
     <item>
       <title>Create a Web App Bot Using Azure Bot Services</title>
-      <link>https://msadministrator.github.io/article/create-a-web-app-bot-using-azure-bot-services/</link>
+      <link>/article/create-a-web-app-bot-using-azure-bot-services/</link>
       <pubDate>Fri, 10 Aug 2018 22:10:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/create-a-web-app-bot-using-azure-bot-services/</guid>
+      <guid>/article/create-a-web-app-bot-using-azure-bot-services/</guid>
       <description>In my last post, we create a QnA Maker knowledge base that our Azure Web App Bot will use as it’s repository of questions &amp;amp; answers. Now, we are going to create our bot using Azure’s Bot Services.
 First thing is that we should go ahead and log into the Azure Portal. In the top left-hand corner click the Create a resource button. You will then need to Search the marketplace in the New blade for Web App Bot.</description>
     </item>
     
     <item>
       <title>Using Qnamaker to Create Chatbot</title>
-      <link>https://msadministrator.github.io/article/using-qnamaker-to-create-chatbot/</link>
+      <link>/article/using-qnamaker-to-create-chatbot/</link>
       <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/using-qnamaker-to-create-chatbot/</guid>
+      <guid>/article/using-qnamaker-to-create-chatbot/</guid>
       <description>The first thing we need to do is login to QnAMaker. QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.
 Login to QnAMaker and navigate to the Create a knowledge base tab. You will need to walkthrough 5 steps to create your knowledge base.</description>
     </item>
     
     <item>
       <title>Create a Question and Answer Chatbot for Slack in Azure</title>
-      <link>https://msadministrator.github.io/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</link>
+      <link>/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</link>
       <pubDate>Fri, 10 Aug 2018 21:28:54 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</guid>
+      <guid>/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</guid>
       <description>Chatbots are all the rage right now, and they have proven to be extremely useful for organizations around the globe. You can have simple bots that take lunch orders or tell you the weather in your location. You can also bots tht act as part of an advanced distributed security alerting system. Whatever the reason, bots are not going anywhere anytime soon.
 To create our chatbot we are going to use a few different services.</description>
     </item>
     
     <item>
       <title>Adding a Dlls Certificate to a Trusted Store</title>
-      <link>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</link>
+      <link>/article/adding-a-dlls-certificate-to-trusted-store/</link>
       <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</guid>
+      <guid>/article/adding-a-dlls-certificate-to-trusted-store/</guid>
       <description>Yesterday I was asked to help with streamling a manual process that some QA folks were running into. They had a debug release of an applicaiton that was signed with a test code signing certificate. Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.
 This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.</description>
     </item>
     
     <item>
       <title>Butcher Block Iron Pipe Desk</title>
-      <link>https://msadministrator.github.io/article/butcher-block-iron-pipe-desk/</link>
+      <link>/article/butcher-block-iron-pipe-desk/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:35 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/butcher-block-iron-pipe-desk/</guid>
+      <guid>/article/butcher-block-iron-pipe-desk/</guid>
       <description>Recently I built a butcher block and iron pipe desk for my home office. Within this post i&amp;rsquo;ll try and list out how I approached it as best as possible:
 I purchased 2 8ft butcher block countertops from Lumber Liquidators while they were on sale. I paid $150 for each. Next, I researched quite a bit about how to finish them. Here&amp;rsquo;s what I did:
  Sanded using 80 grit sandpaper Sanded using 120 grit sandpaper Sanded using 200 grit sandpaper Sanded using 320 grit sandpaper Sanded using 400 grit sandpaper  Once that was done, I used cheese cloth to wipe away all the debris.</description>
@@ -114,20 +138,20 @@ I purchased 2 8ft butcher block countertops from Lumber Liquidators while they w
     
     <item>
       <title>Using Docker Compose on Windows</title>
-      <link>https://msadministrator.github.io/article/using-docker-compose-on-windows/</link>
+      <link>/article/using-docker-compose-on-windows/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:30 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/using-docker-compose-on-windows/</guid>
+      <guid>/article/using-docker-compose-on-windows/</guid>
       <description>Docker Compose &amp;ldquo;is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application&amp;rsquo;s services.&amp;rdquo; In this post, I will show how you can work with Docker Compose.
 Docker on Windows is now commonplace, and it comes with additional features you may not be familiar with. In my previous posts Install Docker and run containers on Windowsand Create a Docker container on Windows with a Dockerfile, I showed you how to create a single container.</description>
     </item>
     
     <item>
       <title>Verifying a Datetime Format String Is Valid or Not With Confirm Datetimeformatpattern</title>
-      <link>https://msadministrator.github.io/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/</link>
+      <link>/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:28 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/</guid>
+      <guid>/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/</guid>
       <description>Early this evening I sent this tweet out regarding a #PowerShell Function I wrote called Confirm-DateTimeFormatPattern and Dan Franciscus (@dan_franciscus) recommend that I should blog about it, so here it goes!
 
 To elaborate on that tweet, this Function spawned from a larger initiative that I am working on for a presentation I&amp;rsquo;m giving at PowerShell Summit 2018 in April. That presentation will be about a PowerShell Module I have built called PSLogging, which is a logging framework built using PowerShell Classes.</description>
@@ -135,60 +159,60 @@ To elaborate on that tweet, this Function spawned from a larger initiative that 
     
     <item>
       <title>Create Group Policy Adm and Admx Templates</title>
-      <link>https://msadministrator.github.io/article/create-group-policy-adm-and-admx-templates/</link>
+      <link>/article/create-group-policy-adm-and-admx-templates/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:26 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/create-group-policy-adm-and-admx-templates/</guid>
+      <guid>/article/create-group-policy-adm-and-admx-templates/</guid>
       <description>The easiest way to create an ADMX template is to build an ADM template first and then convert the latter with the help of Microsoft&amp;rsquo;s free ADMX Migrator tool.
 Administrative templates let us create custom Group Policy settings. Administrative template files have two different versions. Windows Vista introduced templates with the .ADMX extension. These templates use an XML syntax and can be a lot more difficult to decipher and create by hand.</description>
     </item>
     
     <item>
       <title>Using Powershell to Manage Amazon Ec2 Instances</title>
-      <link>https://msadministrator.github.io/article/using-powershell-to-manage-amazon-ec2-instances/</link>
+      <link>/article/using-powershell-to-manage-amazon-ec2-instances/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:24 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/using-powershell-to-manage-amazon-ec2-instances/</guid>
+      <guid>/article/using-powershell-to-manage-amazon-ec2-instances/</guid>
       <description>With the AWS Tools for PowerShell, you can manage Amazon Elastic Compute Cloud (EC2), the service for virtual machines (EC2 instances) in Amazon&amp;rsquo;s cloud. Using Amazon&amp;rsquo;s PowerShell tools and the AWS API, we can create, manage, and deploy EC2 instances (VMs) from our console.
 Please read my post about the AWS Tools for PowerShell where I talk about the minimum requirements to access AWS. To install the AWS Tools for PowerShell, open up a PowerShell console and run:</description>
     </item>
     
     <item>
       <title>Manage Amazon Aws S3 With Powershell</title>
-      <link>https://msadministrator.github.io/article/manage-amazon-aws-s3-with-powershell/</link>
+      <link>/article/manage-amazon-aws-s3-with-powershell/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:21 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/manage-amazon-aws-s3-with-powershell/</guid>
+      <guid>/article/manage-amazon-aws-s3-with-powershell/</guid>
       <description>You can manage Amazon&amp;rsquo;s Simple Storage Service (S3) cloud storage solution with help of the Amazon Web Services AWS Tools for PowerShell. In this post, I will introduce you to the cmdlets that allow you access S3.
 To follow this guide, you will need an AWS account and access keys. The AWS Tools for PowerShell run on Windows XP or later and PowerShell 2.0 or later. If you want to try the AWS Tools for PowerShell Core, you must have PowerShell 5.</description>
     </item>
     
     <item>
       <title>Create a Docker Container on Windows With a Dockerfile</title>
-      <link>https://msadministrator.github.io/article/create-a-docker-container-on-windows-with-a-dockerfile/</link>
+      <link>/article/create-a-docker-container-on-windows-with-a-dockerfile/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:19 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/create-a-docker-container-on-windows-with-a-dockerfile/</guid>
+      <guid>/article/create-a-docker-container-on-windows-with-a-dockerfile/</guid>
       <description>In my last post, I explained how to install docker and how to run containers. Today, we will walk through creating a Docker container using a Dockerfile.
 A Dockerfile (no file extension) is a definition file that will build and run a container. That container can be a simple Microsoft IIS web application or Python/Flask application or a simple build/reporting service. A definition file helps us with our operational tasks, especially when we are building services or scripts for the repeatable tasks we face on a daily basis.</description>
     </item>
     
     <item>
       <title>Install Docker and Run Containers on Windows</title>
-      <link>https://msadministrator.github.io/article/install-docker-and-run-containers-on-windows/</link>
+      <link>/article/install-docker-and-run-containers-on-windows/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:16 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/install-docker-and-run-containers-on-windows/</guid>
+      <guid>/article/install-docker-and-run-containers-on-windows/</guid>
       <description>Docker is an operating-system level virtualization technology that allows you to isolate applications in so-called containers without the overhead of conventional virtual machines. In this post, you&amp;rsquo;ll learn how to install Docker on Windows and run your first containers.
 Docker allows developers building a specific functionality (and all of its dependencies) into a small reproducible environment. This has evolved over time by enabling the ability to create small microservices that do one thing and do it well.</description>
     </item>
     
     <item>
       <title>Powershell Ise Snippets</title>
-      <link>https://msadministrator.github.io/article/powershell-ise-snippets/</link>
+      <link>/article/powershell-ise-snippets/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:14 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/powershell-ise-snippets/</guid>
+      <guid>/article/powershell-ise-snippets/</guid>
       <description>Whether you are a pro with PowerShell or a beginner, PowerShell ISE snippets can speed up your scripting and assist when you are unsure of formatting.
 Most IT professionals who work with PowerShell to build tools, scripts, or modules use the built-in PowerShell ISE (Integrated Scripting Environment) to build and debug their code.
 Read More</description>
@@ -196,10 +220,10 @@ Read More</description>
     
     <item>
       <title>Processing Csv Data in Powershell</title>
-      <link>https://msadministrator.github.io/article/processing-csv-data-in-powershell/</link>
+      <link>/article/processing-csv-data-in-powershell/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:11 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/processing-csv-data-in-powershell/</guid>
+      <guid>/article/processing-csv-data-in-powershell/</guid>
       <description>In this post, I explain how to create a PowerShell function to process CSV data. This allows you to reuse your code whenever you are working with CSV files in PowerShell.
 CSV (Comma-Separated Values) is used by almost every technology platform that we encounter. Manipulating this data can be cumbersome if you&amp;rsquo;re NOT an Excel wizard, but PowerShell can simplify this job. For example,
 Read More</description>
@@ -207,60 +231,60 @@ Read More</description>
     
     <item>
       <title>Manage User Rights With Group Policy</title>
-      <link>https://msadministrator.github.io/article/manage-user-rights-with-group-policy/</link>
+      <link>/article/manage-user-rights-with-group-policy/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:08 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/manage-user-rights-with-group-policy/</guid>
+      <guid>/article/manage-user-rights-with-group-policy/</guid>
       <description>Group Policy is nothing but flexible and extremely powerful when it comes to both configuration management and installation of software. In addition, Group Policy is one of your best tools for securing your endpoints. You can manage anything and everything from Firewall rules, account privileges, application white-listing, etc. You can also manage user rights as well.
 Computers and Users in your environment have a lot of rights, by default, that they don’t need.</description>
     </item>
     
     <item>
       <title>Cattle vs Unicorns</title>
-      <link>https://msadministrator.github.io/article/cattle-vs-unicorns/</link>
+      <link>/article/cattle-vs-unicorns/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:03 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/cattle-vs-unicorns/</guid>
+      <guid>/article/cattle-vs-unicorns/</guid>
       <description>When organizations begin to think of users as cattle instead of unicorns we begin to remove their pride for, and their responsibility to, an organization. When responsibility for their actions are only out of necessity or self-preservation then you have lost the battle, but not necessarily the war. You can change people’s mindset but it just may take a little more effort.
 I believe that people are the answer to most security problems.</description>
     </item>
     
     <item>
       <title>Understanding Group Policy Order</title>
-      <link>https://msadministrator.github.io/article/understanding-group-policy-order/</link>
+      <link>/article/understanding-group-policy-order/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:00 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/understanding-group-policy-order/</guid>
+      <guid>/article/understanding-group-policy-order/</guid>
       <description>Group Policy order can be confusing. To understand how exactly Windows applies one GPO (Group Policy Object) versus another, you can use the &amp;ldquo;LSD OU&amp;rdquo; rule.
 You should always ask yourself two questions when dealing with Group Policy:  Where are you (local, site, domain, or organizational unit)? What are you (computer or user)?  Read More</description>
     </item>
     
     <item>
       <title>Run Powershell Scripts as Immediate Scheduled Tasks With Group Policy</title>
-      <link>https://msadministrator.github.io/article/run-powershell-scripts-as-immediate-scheduled-tasks-with-group-policy/</link>
+      <link>/article/run-powershell-scripts-as-immediate-scheduled-tasks-with-group-policy/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:57 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/run-powershell-scripts-as-immediate-scheduled-tasks-with-group-policy/</guid>
+      <guid>/article/run-powershell-scripts-as-immediate-scheduled-tasks-with-group-policy/</guid>
       <description>To run a PowerShell script on multiple computers via Group Policy, you can work with an Immediate Scheduled Task. The main advantage over logon scripts is that you can execute your script with admin rights.
 Read More.</description>
     </item>
     
     <item>
       <title>Add and Remove Users to Ad Groups With Group Policy</title>
-      <link>https://msadministrator.github.io/article/add-and-remove-users-to-ad-groups-with-group-policy/</link>
+      <link>/article/add-and-remove-users-to-ad-groups-with-group-policy/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:55 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/add-and-remove-users-to-ad-groups-with-group-policy/</guid>
+      <guid>/article/add-and-remove-users-to-ad-groups-with-group-policy/</guid>
       <description>Group Policy allows you to add and remove users to an Active Directory (AD) group. Using this feature improves security because you can ensure that high-risk security groups only contain the users that you specify via Group Policy.
 Read More</description>
     </item>
     
     <item>
       <title>Download Files From Github Without Git Using Powershell</title>
-      <link>https://msadministrator.github.io/article/download-files-from-github-without-git-using-powershell/</link>
+      <link>/article/download-files-from-github-without-git-using-powershell/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:52 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/download-files-from-github-without-git-using-powershell/</guid>
+      <guid>/article/download-files-from-github-without-git-using-powershell/</guid>
       <description>Have you ever needed to download code or a repository from Github, but didn&amp;rsquo;t want to download and install Git on a machine, create an SSH key, etc. If so, I have something that you may like.
 You can find the entire function here: https://github.com/MSAdministrator/GetGithubRepository
 To use this function, you will need to know the path to the Github repository (of course) you want to download. Once you have that URL, you will need to pass each piece of the URL into a parameter on the function.</description>
@@ -268,48 +292,48 @@ To use this function, you will need to know the path to the Github repository (o
     
     <item>
       <title>Logging to the Windows Event Log in Your Powershell Scripts</title>
-      <link>https://msadministrator.github.io/article/logging-to-the-windows-event-log-in-your-powershell-scripts/</link>
+      <link>/article/logging-to-the-windows-event-log-in-your-powershell-scripts/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:49 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/logging-to-the-windows-event-log-in-your-powershell-scripts/</guid>
+      <guid>/article/logging-to-the-windows-event-log-in-your-powershell-scripts/</guid>
       <description>As I discussed in my previous post, you can log information to a file, but sometimes you may want to log to the Windows Event Log. To log to the Windows Event Log, you will need to use the following cmdlets:  New-EventLog Write-EventLog  Read More</description>
     </item>
     
     <item>
       <title>Standardize Powershell Logging With My Write Logentry Function</title>
-      <link>https://msadministrator.github.io/article/standardize-powershell-logging-with-my-write-logentry-function/</link>
+      <link>/article/standardize-powershell-logging-with-my-write-logentry-function/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:46 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/standardize-powershell-logging-with-my-write-logentry-function/</guid>
+      <guid>/article/standardize-powershell-logging-with-my-write-logentry-function/</guid>
       <description>The PowerShell function Write-LogEntry described in this post allows you to integrate logging in your scripts in a standardized way. This will help you and your script users to troubleshoot and understand the output. Read More</description>
     </item>
     
     <item>
       <title>Design Before Coding Kanban</title>
-      <link>https://msadministrator.github.io/article/design-before-coding-kanban/</link>
+      <link>/article/design-before-coding-kanban/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:44 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/design-before-coding-kanban/</guid>
+      <guid>/article/design-before-coding-kanban/</guid>
       <description>The first post in this three-part series focused on gathering requirements before spending time coding. While it is not necessary, I recommend that everyone read part 1 (Gathering Requirements). Understanding and having clear “User Stories” outlining the intended purpose of a tool is crucial, especially as we move towards building our new tool.
 Once our “User Stories” have been defined and agreed upon by all stakeholders, we then need to begin breaking them down into tasks.</description>
     </item>
     
     <item>
       <title>Design Before Coding Gathering Requirements</title>
-      <link>https://msadministrator.github.io/article/design-before-coding-gathering-requirements/</link>
+      <link>/article/design-before-coding-gathering-requirements/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:41 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/design-before-coding-gathering-requirements/</guid>
+      <guid>/article/design-before-coding-gathering-requirements/</guid>
       <description>If you have worked in IT for any duration, I’m sure you have overheard or been asked to build a tool to complete X or Y. Creating tools with PowerShell is fun, but it can become daunting when you create a tool that does not meet its intended purpose. Without understanding the full requirements, you may waste time and energy on developing a tool that no one will use.
 Creating tools with PowerShell to automate a manual process or to help an internal stakeholder accomplish a desired result, typically does not need to turn into a large initiative with a Project Manager or Project Management Office (PMO).</description>
     </item>
     
     <item>
       <title>How I Work</title>
-      <link>https://msadministrator.github.io/article/how-i-work/</link>
+      <link>/article/how-i-work/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:39 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/how-i-work/</guid>
+      <guid>/article/how-i-work/</guid>
       <description>I recently saw this project shared by Adam Bertram, and decided that some of you may be interested in how I work on a day to day.
 https://github.com/adbertram/HowIWorkIT/blob/master/README.md
 If you&amp;rsquo;re not interested, well then why the hell are you here? You can see others that have participated here: https://github.com/adbertram/HowIWorkIT/blob/master/ThisIsHowIWork.md
@@ -318,10 +342,10 @@ If you&amp;rsquo;re not interested, well then why the hell are you here? You can
     
     <item>
       <title>Powershell Qualys Get Asset Group Info Part 2</title>
-      <link>https://msadministrator.github.io/article/powershell-qualys-get-asset-group-info-part-2/</link>
+      <link>/article/powershell-qualys-get-asset-group-info-part-2/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/powershell-qualys-get-asset-group-info-part-2/</guid>
+      <guid>/article/powershell-qualys-get-asset-group-info-part-2/</guid>
       <description>Today I decided to write another post regarding PowerShell and Qualys Vulnerability Management API. This post will focus on gathering information about your enrolled Asset Groups. You can find the complete script on GitHub: https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation
 We start of by opening up PowerShell ISE and using our handy &amp;ldquo;Snippet&amp;rdquo; shortcut:
 
@@ -330,10 +354,10 @@ We select the &amp;ldquo;Cmdlet (Advanced function) - complete&amp;rdquo; option
     
     <item>
       <title>Powershell Qualys Authentication Part 1</title>
-      <link>https://msadministrator.github.io/article/powershell-qualys-authentication-part-1/</link>
+      <link>/article/powershell-qualys-authentication-part-1/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:31 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/powershell-qualys-authentication-part-1/</guid>
+      <guid>/article/powershell-qualys-authentication-part-1/</guid>
       <description>I always mean to post more on my blog, but as life gets in the way and work keeps me busy, I always seem to push it to the back-burner. This time, I am hoping to make it stick as a regular routine.
 To kick off my new-found motivation to blog more, I am starting a series of posts surrounding PowerShell and Qualys Vulnerability Management API.
 To start this off, first I&amp;rsquo;m going to share some my basic steps with regards to authentication to Qualys VM API v1.</description>
@@ -341,66 +365,66 @@ To start this off, first I&amp;rsquo;m going to share some my basic steps with r
     
     <item>
       <title>Presentation Securing Windows With Group Policy</title>
-      <link>https://msadministrator.github.io/article/presentation-securing-windows-with-group-policy/</link>
+      <link>/article/presentation-securing-windows-with-group-policy/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:26 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/presentation-securing-windows-with-group-policy/</guid>
+      <guid>/article/presentation-securing-windows-with-group-policy/</guid>
       <description>Recently I gave a presentation at MORENet&amp;rsquo;s 2015 Annual Conference about &amp;ldquo;Securing Windows with Group Policy&amp;rdquo;. This presentation was part of their &amp;ldquo;Advanced&amp;rdquo; technology track, and really focused on looking at the current permission levels of your users and deciding if they really need those rights/permissions.
 I hope some people find these slides useful or at least a good reference point. If you have any questions about these slides then please do not hesitate to contact me by leaving a comment below.</description>
     </item>
     
     <item>
       <title>Qualysguard Decentralized It How to Organize Your Assets</title>
-      <link>https://msadministrator.github.io/article/qualysguard-decentralized-it-how-to-organize-your-assets/</link>
+      <link>/article/qualysguard-decentralized-it-how-to-organize-your-assets/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:23 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/qualysguard-decentralized-it-how-to-organize-your-assets/</guid>
+      <guid>/article/qualysguard-decentralized-it-how-to-organize-your-assets/</guid>
       <description>I work for a University with a decentralized IT department: each college, division, department, etc maintains their users. As a security department who maintains QualysGuard, we were wanting each department to scan their own assets and re-mediate all vulnerabilities found in these scans based on the following policy:  Level 4 and Level 5 vulnerabilities must be re-mediated within 15 days Level 3 vulnerabilities must be re-mediated within 30 days Level 2 vulnerabilities must be re-mediated within the next semesters Level 1 vulnerabilities must be re-mediated whenever possible  WIth this policy in mind, we began rolling out our QualysGuard service using the following methods.</description>
     </item>
     
     <item>
       <title>Windows Security Publicprivate Key Exchange Basics</title>
-      <link>https://msadministrator.github.io/article/windows-security-publicprivate-key-exchange-basics/</link>
+      <link>/article/windows-security-publicprivate-key-exchange-basics/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:20 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/windows-security-publicprivate-key-exchange-basics/</guid>
+      <guid>/article/windows-security-publicprivate-key-exchange-basics/</guid>
       <description>My wife and I saw CITIZENFOUR yesterday during a secret screening. If you have not had the chance to see this movie, please do so as soon as you can - it&amp;rsquo;s a great documentary! The only complaint I have about the film is that they do not explain Cryptography or Encryption for the &amp;ldquo;normal&amp;rdquo; folks. When the film ended, I looked around and their were many non-technical people (including older individuals).</description>
     </item>
     
     <item>
       <title>Windows Security Server Hardening Security Templates</title>
-      <link>https://msadministrator.github.io/article/windows-security-server-hardening-security-templates/</link>
+      <link>/article/windows-security-server-hardening-security-templates/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:16 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/windows-security-server-hardening-security-templates/</guid>
+      <guid>/article/windows-security-server-hardening-security-templates/</guid>
       <description>Hardening your systems (Servers, Workstations, Applications, etc.) ensures that every system is secured in accordance to your organizations standards. Microsoft has a &amp;ldquo;Solution Accelerator&amp;rdquo; called Security Compliance Manager that allows System Administrators or IT Pro&amp;rsquo;s to create security templates that help harden their systems in a manageable, repeatable, way. In addition to SCM, you can build your own by using the standard MMC console and adding the Security Templates Snap-In to the console - this gives you a more refined configuration, but can be cumbersome.</description>
     </item>
     
     <item>
       <title>Windows Security Patch Management</title>
-      <link>https://msadministrator.github.io/article/windows-security-patch-management/</link>
+      <link>/article/windows-security-patch-management/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:13 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/windows-security-patch-management/</guid>
+      <guid>/article/windows-security-patch-management/</guid>
       <description>Recently, at work, I nominated myself to begin a &amp;ldquo;Windows Security&amp;rdquo; course for IT Professionals that I work with. Being a former IT Pro, and now part of our security department as an Incident Responder, I thought I would create a course surrounding security. So, i&amp;rsquo;m going to use my blog to layout my plans for this &amp;ldquo;Windows Security&amp;rdquo; course - which will hopefully be useful for others as well.</description>
     </item>
     
     <item>
       <title>Qualys Guard Qualys in a University Environment</title>
-      <link>https://msadministrator.github.io/article/qualys-guard-qualys-in-a-university-environment/</link>
+      <link>/article/qualys-guard-qualys-in-a-university-environment/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:11 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/qualys-guard-qualys-in-a-university-environment/</guid>
+      <guid>/article/qualys-guard-qualys-in-a-university-environment/</guid>
       <description>The University I work for has began using Qualys for our Enterprise Vulnerability Scanning and so far it&amp;rsquo;s been well received. The problem is that every &amp;ldquo;College/School&amp;rdquo; maintains their own systems thus we are decentralized, which makes maintaining Reports/Scans/Maps/etc. very difficult.
 Because I have not found many posts/articles focused on a decentralized environment I decided I would explain the way we are approaching this. This is all a work in progress - if you have any questions or ideas, please get a hold of me.</description>
     </item>
     
     <item>
       <title>Mdt 2013 Installing Mdt 2013</title>
-      <link>https://msadministrator.github.io/article/mdt-2013-installing-mdt-2013/</link>
+      <link>/article/mdt-2013-installing-mdt-2013/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:09 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2013-installing-mdt-2013/</guid>
+      <guid>/article/mdt-2013-installing-mdt-2013/</guid>
       <description>Now we are going to install MDT 2013. This is a simple process but I wanted to show you anyways.
 After you have downloaded MDT 2013 from Microsoft (See This Post)
 When you first Launch the MDT 2013 Installer, you should see the following screen:
@@ -414,10 +438,10 @@ Choose the Location that you want MDT 2013 to be installed. This is typically le
     
     <item>
       <title>Mdt 2013 Installing Adk for 8 1</title>
-      <link>https://msadministrator.github.io/article/mdt-2013-installing-adk-for-8-1/</link>
+      <link>/article/mdt-2013-installing-adk-for-8-1/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:06 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2013-installing-adk-for-8-1/</guid>
+      <guid>/article/mdt-2013-installing-adk-for-8-1/</guid>
       <description>Once you have all of the necessary files downloaded and saved on your Windows Server 2012 R2 box, then begin by installing the &amp;ldquo;adksetup.exe&amp;rdquo;.
 The first screen that should pop-up is this one:
 
@@ -427,10 +451,10 @@ I choose to download the ADK instead of installing it. The reason I do this is b
     
     <item>
       <title>Mdt 2013 Setting Up Mdt 2013 With Adk for Windows 7 8 8 1</title>
-      <link>https://msadministrator.github.io/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/</link>
+      <link>/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:03 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/</guid>
+      <guid>/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/</guid>
       <description>Hello Everyone, in the following few weeks I will creating several new posts about setting MDT 2013 on Windows Server 2012 R2 to enable you to image your Dell OptiPlex &amp;amp; Lattitude machines. This will be similar to my MDT 2012 Update 1 Guide but a bit different as well. I hope you enjoy!
 To Start things off, you need to download the following pieces of software:
 MDT 2013 ADK for Windows 8.</description>
@@ -438,79 +462,79 @@ MDT 2013 ADK for Windows 8.</description>
     
     <item>
       <title>Mdt 2013 Pin Start Menu Task Bar Shortcuts Through Task Sequence</title>
-      <link>https://msadministrator.github.io/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/</link>
+      <link>/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/</link>
       <pubDate>Tue, 07 Aug 2018 20:44:00 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/</guid>
+      <guid>/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/</guid>
       <description>Below is how we stopped modifying the Start Menu &amp;amp; Task Bar shortcuts on our Default Image (GOLD IMAGE) using MDT 2013 Task Sequence. This applies to Windows 7 and I&amp;rsquo;m sure it could be modified to work with Windows 8.1. Check it out below and let me know if you have any questions.
 To do this, you are going to need the following scripts in a folder on your MDT 2013 Server.</description>
     </item>
     
     <item>
       <title>Script Adding Exchange Resource Accounts to Your Outlook</title>
-      <link>https://msadministrator.github.io/article/script-adding-exchange-resource-accounts-to-your-outlook/</link>
+      <link>/article/script-adding-exchange-resource-accounts-to-your-outlook/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:57 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/script-adding-exchange-resource-accounts-to-your-outlook/</guid>
+      <guid>/article/script-adding-exchange-resource-accounts-to-your-outlook/</guid>
       <description>I work for a large public University and we have many Resource Accounts. We needed a way to move from Public Folders but we wanted it to be seemless as possible. To do this, I created this VBS script that allows anyone to add Resource Accounts to their Outlook 2013&amp;frasl;2010 calendar as a shared calendar. The user in question will have to run this script while Outlook is open and it will pull the Resource Account (add the Resource Account name in the RESOURCEACCOUNTNAME variable below) from the GAL and add it to the users calendar.</description>
     </item>
     
     <item>
       <title>Script Removing Proxy From Firefox User Prefs Js</title>
-      <link>https://msadministrator.github.io/article/script-removing-proxy-from-firefox-user-prefs-js/</link>
+      <link>/article/script-removing-proxy-from-firefox-user-prefs-js/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:54 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/script-removing-proxy-from-firefox-user-prefs-js/</guid>
+      <guid>/article/script-removing-proxy-from-firefox-user-prefs-js/</guid>
       <description>So, I was tasked with removing proxy settings from Firefox because of Webroot Desktop Proxy. Removing them from the %Programfiles% directory was easy, the hard part was the user prefs.js. Anyways, here&amp;rsquo;s a little script I created to remove Proxy settings and set them to No Proxy.
 cd /D &amp;ldquo;%APPDATA%\Mozilla\Firefox\Profiles\&amp;rdquo; cd *.default set ffile=%cd% type &amp;ldquo;%ffile%\prefs.js&amp;rdquo; | findstr /v &amp;ldquo;userpref(&amp;ldquo;network.proxy.type&amp;rdquo;, 2);&amp;rdquo;&amp;gt;&amp;rdquo;%ffile%\prefs.js&amp;rdquo; type &amp;ldquo;%ffile%\prefs.js&amp;rdquo; | findstr /v &amp;ldquo;userpref(&amp;ldquo;network.proxy.type&amp;rdquo;, 0);&amp;rdquo;&amp;gt;&amp;rdquo;%ffile%\prefs.js&amp;rdquo; ren &amp;ldquo;prefs.js&amp;rdquo; &amp;ldquo;prefs.</description>
     </item>
     
     <item>
       <title>Powershell Updating Local Admin Passwords Securely 3 of 3</title>
-      <link>https://msadministrator.github.io/article/powershell-updating-local-admin-passwords-securely-3-of-3/</link>
+      <link>/article/powershell-updating-local-admin-passwords-securely-3-of-3/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:52 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/powershell-updating-local-admin-passwords-securely-3-of-3/</guid>
+      <guid>/article/powershell-updating-local-admin-passwords-securely-3-of-3/</guid>
       <description>Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way. 
 Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):</description>
     </item>
     
     <item>
       <title>Powershell Updating Local Admin Passwords Securely 2 of 3</title>
-      <link>https://msadministrator.github.io/article/powershell-updating-local-admin-passwords-securely-2-of-3/</link>
+      <link>/article/powershell-updating-local-admin-passwords-securely-2-of-3/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:49 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/powershell-updating-local-admin-passwords-securely-2-of-3/</guid>
+      <guid>/article/powershell-updating-local-admin-passwords-securely-2-of-3/</guid>
       <description>Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way. 
 Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):</description>
     </item>
     
     <item>
       <title>Powershell Updating Local Admin Passwords Securely 1 of 3</title>
-      <link>https://msadministrator.github.io/article/powershell-updating-local-admin-passwords-securely-1-of-3/</link>
+      <link>/article/powershell-updating-local-admin-passwords-securely-1-of-3/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:47 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/powershell-updating-local-admin-passwords-securely-1-of-3/</guid>
+      <guid>/article/powershell-updating-local-admin-passwords-securely-1-of-3/</guid>
       <description>So I haven&amp;rsquo;t posted in a bit but I&amp;rsquo;ve seen this request many times. Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.
 Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):</description>
     </item>
     
     <item>
       <title>Ipad Lockdown Mobileconfig</title>
-      <link>https://msadministrator.github.io/article/ipad-lockdown-mobileconfig/</link>
+      <link>/article/ipad-lockdown-mobileconfig/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:44 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/ipad-lockdown-mobileconfig/</guid>
+      <guid>/article/ipad-lockdown-mobileconfig/</guid>
       <description>It is possible to put an iPad or iPhone into &amp;lsquo;Store Demo&amp;rsquo; mode so that the home button and swipe to home gesture is disabled. If you have seen the iPads in the Apple Store running the smart sign apps then you will know what I mean.
 It is actually pretty trivial to make this work, all you need to do is install a correctly formatted mobile config plist over the air from a web server.</description>
     </item>
     
     <item>
       <title>Questions About Mdt 2012 Driver Setup</title>
-      <link>https://msadministrator.github.io/article/questions-about-mdt-2012-driver-setup/</link>
+      <link>/article/questions-about-mdt-2012-driver-setup/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:41 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/questions-about-mdt-2012-driver-setup/</guid>
+      <guid>/article/questions-about-mdt-2012-driver-setup/</guid>
       <description>So I&amp;rsquo;ve had a lot of questions about my MDT 2012 Driver setup and hopefully this post will explain a little bit about it. Let me know if you have any questions
 Personally I have a folder on my server called _Source_Drivers. I keep all my drivers here and import them into MDT but keep the original. Here is what my file structure of this folder looks like.
 
@@ -519,29 +543,29 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     
     <item>
       <title>Mdt 2012 Installing a Custom Dictionary in Office 2010</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/</link>
+      <link>/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:39 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/</guid>
+      <guid>/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/</guid>
       <description>So, some might not need this but thought I would share anyways. I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&amp;rsquo;m deploying my new OS. Here are the steps on how to do this, but also how to create a custom Office 2010 Install.  Once you&amp;rsquo;ve setup everything for you OS, go to the Applications folder on your Deployment Share and right click&amp;gt;New Application Once there, put in the relavent information including where your resource CD is located.</description>
     </item>
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 11 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-11-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-11-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:36 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-11-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-11-of-11/</guid>
       <description>Preparing WDS to enable PXE Boot (optional but very useful)  Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version  
  Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.</description>
     </item>
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 10 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-10-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-10-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:34 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-10-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-10-of-11/</guid>
       <description>Automating the Deployment Process  Right-click on the deployment share and select Properties  
  Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…             CUSTOMSETTINGS.INI   [Settings]
 Priority=Default
@@ -558,10 +582,10 @@ SkipDomainMembership=NO</description>
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 9 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-9-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-9-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:32 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-9-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-9-of-11/</guid>
       <description>Creating a Deployment Task Sequence  From the Deployment Workbench, expand the customer Deployment Share and right-click on Task Sequences and select New Task Sequence Enter a Task Sequence ID and Name. Make a note of the ID as you may need it later!  
  Accept the default “Standard Client Task Sequence” template Select the relevant OS Image to deploy  
  This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.</description>
@@ -569,19 +593,19 @@ SkipDomainMembership=NO</description>
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 8 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-8-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-8-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:29 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-8-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-8-of-11/</guid>
       <description>Importing a Customer Reference Image  From the Deployment Workbench, expand the customer Deployment Share and right-click on Operating Systems and select Import Operating System From the Import Operating System Wizard, select Custom Image File and click Next Browse to the path of the WIM file. For captured images, this would by default be the \Captures folder in the Deployment Share Select “Copy Windows Vista, Windows Server 2008, or later setup files from specified path” and enter the path to the relevant OS installation media.</description>
     </item>
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 7 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-7-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-7-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:27 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-7-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-7-of-11/</guid>
       <description>Capturing a Windows 7 Image from a reference PC The reference computer should be connected to the same network as the MDT Deployment server and should be set to get an IP address via DHCP.
 &amp;nbsp;
 THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN!
@@ -590,19 +614,19 @@ THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN!
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 6 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-6-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-6-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:24 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-6-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-6-of-11/</guid>
       <description>Completing the Deployment Share Configuration Now you have imported an OS (from source media) and some WinPE drivers, we can go ahead and complete the configuration of the Deployment Share. 6.1 Advanced Configuration The Advanced Configuration section of MDT consists of four separate areas although, we only use the Selection Profiles section for now. The rest are advanced topics which you can explore later! Advanced Configuration – Selection Profiles Created a single additional selection profile – “WinPE Drivers” and configured it to contain only the drivers which Windows PE will use.</description>
     </item>
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 5 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-5-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-5-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:22 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-5-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-5-of-11/</guid>
       <description>Creating a Sysprep &amp;amp; Capture Task Sequence The “Task Sequence” is the heart of the MDT deployment solution. It is a list of steps which need to be taken to successfully deploy an Operating System.
 &amp;nbsp;
 Initially you need to create a “Sysprep and Capture” task sequence. Go ahead and do this now. You don’t need to worry too much about which choice of OS you make as it doesn’t matter.</description>
@@ -610,10 +634,10 @@ Initially you need to create a “Sysprep and Capture” task sequence. Go ahea
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 4 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-4-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-4-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:20 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-4-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-4-of-11/</guid>
       <description>4. Importing an OS Image The Operating Systems section of MDT lists all of the Operating Systems which are available to deploy from a Deployment Share. The deployment itself is controlled by a Task Sequence but the operating system source files need to be available.
 &amp;nbsp;
 Simply right-click on Operating Systems on the left and Import your Windows 7 source media from either DVD or a network share. If you are planning to deploy both 32 and 64 bit versions, import both!</description>
@@ -621,76 +645,76 @@ Simply right-click on Operating Systems on the left and Import your Windows 7 so
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 3 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-3-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-3-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:17 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-3-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-3-of-11/</guid>
       <description>Device Driver Management 3.1 Obtaining Device Drivers for a Deployment In order to deploy a single image to multiple hardware types, MDT performs a “driver injection” during the OS load process. For this to work, any and all relevant drivers need to be imported into the deployment share in advance. Depending on the hardware vendor, the process for obtaining these drivers may vary but will generally involve going to the vendor website and downloading the drivers for specific hardware models.</description>
     </item>
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 2 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-2-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-2-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:43:01 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-2-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-2-of-11/</guid>
       <description>2.1 Creating an MDT Deployment Share An MDT Deployment Share is the specific deployment environment which will be used for OS deployment. The share contains all elements of the deployment including drivers, applications, OS images etc.  Log on to the MDT server and open the “Deployment Workbench” Right-click on “Deployment Shares” in the left pane of the workbench and select New Deployment Share  
  In the New Deployment Share Wizard, choose a location for the new share.</description>
     </item>
     
     <item>
       <title>Mdt 2012 Deployment Guide Step by Step 1 of 11</title>
-      <link>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-1-of-11/</link>
+      <link>/article/mdt-2012-deployment-guide-step-by-step-1-of-11/</link>
       <pubDate>Tue, 07 Aug 2018 20:42:57 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-1-of-11/</guid>
+      <guid>/article/mdt-2012-deployment-guide-step-by-step-1-of-11/</guid>
       <description>1.0 Deployment Infrastructure Overview The new OS Deployment Infrastructure for the Configuration Centre is based around Microsoft Deployment Toolkit 2010 with Update 1. MDT relies on a number of underlying software components and is able to deploy a number of different Operating Systems including Windows XP, Windows Vista and Windows 7 on the client side and Windows Server 2003, 2008 and 2008 R2 on the server side. This document is focused on deployment of Windows 7 clients.</description>
     </item>
     
     <item>
       <title>Windows Comparison of Windows Commands and Linux Commands</title>
-      <link>https://msadministrator.github.io/article/windows-comparison-of-windows-commands-and-linux-commands/</link>
+      <link>/article/windows-comparison-of-windows-commands-and-linux-commands/</link>
       <pubDate>Tue, 07 Aug 2018 20:42:53 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/windows-comparison-of-windows-commands-and-linux-commands/</guid>
+      <guid>/article/windows-comparison-of-windows-commands-and-linux-commands/</guid>
       <description>So I went to this conference awhile back and sat through a presentation. Not really interesting, but since I am new to the whole Linux world I thought I would pass this along. Here is a PowerPoint presentation explaining the difference&amp;rsquo;s between Windows and Linux commands, at least common ones. Enjoy!
 Linux-Windows - Comparison of Commands</description>
     </item>
     
     <item>
       <title>Scripting Open Excel Sheets in Separate Windows</title>
-      <link>https://msadministrator.github.io/article/scripting-open-excel-sheets-in-separate-windows/</link>
+      <link>/article/scripting-open-excel-sheets-in-separate-windows/</link>
       <pubDate>Tue, 07 Aug 2018 20:42:51 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/scripting-open-excel-sheets-in-separate-windows/</guid>
+      <guid>/article/scripting-open-excel-sheets-in-separate-windows/</guid>
       <description>If you work in an environment similar to my previous position, then you would know how often you hear certain complaints after upgrading people to new applications or Operating Systems. Well one of those complaints came from individuals that we upgraded to Office 2010. They were use to the option of opening up Excel Spreadsheets in separate windows, but in Office 2010 you can&amp;rsquo;t do this by default you have to make a few tweaks.</description>
     </item>
     
     <item>
       <title>Scripting Clean Java Temporary Install Files From User Profiles Win 7 Xp</title>
-      <link>https://msadministrator.github.io/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/</link>
+      <link>/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/</link>
       <pubDate>Tue, 07 Aug 2018 20:42:48 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/</guid>
+      <guid>/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/</guid>
       <description>So I had an issue awhile back that need to be rectified and the fix was to clean out temporary install files from the Sun/Java folder in User profiles. This had to be done on about 700 machines, so I created this little script that cleans out these files and pushed it out to via AD. I hope you enjoy&amp;hellip;..
 Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary install files from the REM *** SUN/JAVA folder in User Profiles.</description>
     </item>
     
     <item>
       <title>Scripting Mount Printer at Startup Script</title>
-      <link>https://msadministrator.github.io/article/scripting-mount-printer-at-startup-script/</link>
+      <link>/article/scripting-mount-printer-at-startup-script/</link>
       <pubDate>Tue, 07 Aug 2018 20:42:35 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/scripting-mount-printer-at-startup-script/</guid>
+      <guid>/article/scripting-mount-printer-at-startup-script/</guid>
       <description>So I had to come up with a batch script that would allow the user (in a lab) to select the printer that they wanted to use during that login session. Pretty much this was placed in the startup folder on a few lab machines and every time someone would login (Deep Freeze Machines) it would ask them to select the printer that they wanted to print to. It worked pretty well, I hope someone makes use of it.</description>
     </item>
     
     <item>
       <title>Programming Final Project for X86 Assembly Language Class Zombie Game</title>
-      <link>https://msadministrator.github.io/article/programming-final-project-for-x86-assembly-language-class-zombie-game/</link>
+      <link>/article/programming-final-project-for-x86-assembly-language-class-zombie-game/</link>
       <pubDate>Tue, 07 Aug 2018 20:42:31 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/programming-final-project-for-x86-assembly-language-class-zombie-game/</guid>
+      <guid>/article/programming-final-project-for-x86-assembly-language-class-zombie-game/</guid>
       <description>So a few years ago I had to create a Zombie game for one of my Assembly Language classes and it was fun as heck. Sorry for the bad formatting and probably bad code in general, but I wanted to post it because it was fun to create!
 &amp;nbsp;
 Final Project - Assembly Language</description>
@@ -698,19 +722,19 @@ Final Project - Assembly Language</description>
     
     <item>
       <title>Programming Understanding Binary and Its Hexadecimal Values</title>
-      <link>https://msadministrator.github.io/article/programming-understanding-binary-and-its-hexadecimal-values/</link>
+      <link>/article/programming-understanding-binary-and-its-hexadecimal-values/</link>
       <pubDate>Tue, 07 Aug 2018 20:42:13 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/programming-understanding-binary-and-its-hexadecimal-values/</guid>
+      <guid>/article/programming-understanding-binary-and-its-hexadecimal-values/</guid>
       <description>So one crucial concept that every programmer that enjoys or endures Assembly Language programming is the concept of Binary arthimetic and their corresponding Hexadecimal values. Here is a great example that you can use to make sure that you understand their values and thus it will help you understand IP addressing as well.</description>
     </item>
     
     <item>
       <title>Moving Away From Wordpress</title>
-      <link>https://msadministrator.github.io/article/moving-away-from-wordpress/</link>
+      <link>/article/moving-away-from-wordpress/</link>
       <pubDate>Sun, 05 Aug 2018 12:55:27 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/moving-away-from-wordpress/</guid>
+      <guid>/article/moving-away-from-wordpress/</guid>
       <description>Hello Everyone, I have decided this past weekend to final move completely away from WordPress for my blog; and I&amp;rsquo;m 100% excited for this transition! I have decided to use GitHub Pages for my new blog.
 I plan on migrating content to this new locaton, but in the meantime if you find any missing content that you have seen previously then please let me know and I will get it moved over ASAP.</description>
     </item>

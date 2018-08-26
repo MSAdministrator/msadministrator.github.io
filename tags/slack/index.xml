@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Slack on MSAdministrator</title>
-    <link>https://msadministrator.github.io/tags/slack/</link>
-    <description>Recent content in Slack on MSAdministrator</description>
+    <title>Slack on Kube for Hugo</title>
+    <link>/tags/slack/</link>
+    <description>Recent content in Slack on Kube for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Aug 2018 22:28:08 -0400</lastBuildDate>
     
-	<atom:link href="https://msadministrator.github.io/tags/slack/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/slack/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Connect Your Bot to Slack</title>
-      <link>https://msadministrator.github.io/article/connect-your-bot-to-slack/</link>
+      <link>/article/connect-your-bot-to-slack/</link>
       <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/connect-your-bot-to-slack/</guid>
+      <guid>/article/connect-your-bot-to-slack/</guid>
       <description>In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal. Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.
 Please make sure you have a Slack workspace created and you have access to create a Slack application.</description>
     </item>
     
     <item>
       <title>Create a Question and Answer Chatbot for Slack in Azure</title>
-      <link>https://msadministrator.github.io/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</link>
+      <link>/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</link>
       <pubDate>Fri, 10 Aug 2018 21:28:54 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</guid>
+      <guid>/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</guid>
       <description>Chatbots are all the rage right now, and they have proven to be extremely useful for organizations around the globe. You can have simple bots that take lunch orders or tell you the weather in your location. You can also bots tht act as part of an advanced distributed security alerting system. Whatever the reason, bots are not going anywhere anytime soon.
 To create our chatbot we are going to use a few different services.</description>
     </item>

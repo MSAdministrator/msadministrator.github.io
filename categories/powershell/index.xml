@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Powershell on MSAdministrator</title>
-    <link>https://msadministrator.github.io/categories/powershell/</link>
-    <description>Recent content in Powershell on MSAdministrator</description>
+    <title>Powershell on Kube for Hugo</title>
+    <link>/categories/powershell/</link>
+    <description>Recent content in Powershell on Kube for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 23 Aug 2018 22:24:59 -0400</lastBuildDate>
     
-	<atom:link href="https://msadministrator.github.io/categories/powershell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/powershell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using Amazon Sqs With Powershell</title>
-      <link>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</link>
+      <link>/article/using-amazon-sqs-with-powershell/</link>
       <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</guid>
+      <guid>/article/using-amazon-sqs-with-powershell/</guid>
       <description>Amazon SQS is a flexible queue service that has many uses cases, from scalable web applications and processing systems to inter-application communications. This is useful if you need to process lots of data at once or have threads or workers to do a specific action to a large pool of data.
 With the explosion of use cases for PowerShell and Docker in production systems, you can easily scale using queue systems like Amazon SQS.</description>
     </item>
     
     <item>
       <title>Traverse Local Certificate Store With Powershell</title>
-      <link>https://msadministrator.github.io/article/traverse-local-certificate-store-with-powershell/</link>
+      <link>/article/traverse-local-certificate-store-with-powershell/</link>
       <pubDate>Tue, 21 Aug 2018 12:50:50 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/traverse-local-certificate-store-with-powershell/</guid>
+      <guid>/article/traverse-local-certificate-store-with-powershell/</guid>
       <description>Windows Certificate Store is typically accessed using the MMC Snap-In, You can view both the Computer or User certificate stores using a traditional MMC console. Sometimes though, you may just want to programmatically access it using PowerShell. Luckily you can do this using a PSDrive that is created on your machine.
 As you can see there is a Cert drive and you can access it using PowerShell&amp;rsquo;s multiple location based Cmdlets.</description>
     </item>
     
     <item>
       <title>Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!</title>
-      <link>https://msadministrator.github.io/article/powershell-scripts-functions-modules-cmdlets-oh-my/</link>
+      <link>/article/powershell-scripts-functions-modules-cmdlets-oh-my/</link>
       <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/powershell-scripts-functions-modules-cmdlets-oh-my/</guid>
+      <guid>/article/powershell-scripts-functions-modules-cmdlets-oh-my/</guid>
       <description>PowerShell is unique, but it is also necessary in today&amp;rsquo;s world. I find that newcomers to the language are sometimes confused or don&amp;rsquo;t understand the basic layers of PowerShell scripting. You can use PowerShell in different ways, but I have yet to find an all encompassing article that explains the high-level of how to interact with PowerShell in these different ways.
 This post will explain the different concepts (or layers) of PowerShell code organization and their main advantages and use cases.</description>
     </item>
     
     <item>
       <title>Using Github to Revive Blog Posts</title>
-      <link>https://msadministrator.github.io/article/using-github-to-revive-blog-posts/</link>
+      <link>/article/using-github-to-revive-blog-posts/</link>
       <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/using-github-to-revive-blog-posts/</guid>
+      <guid>/article/using-github-to-revive-blog-posts/</guid>
       <description>I am currently migrating my blog content from Wordpress.com to GitHub pages using Hugo. During this transition, I wanted to have the ability to &amp;ldquo;revive&amp;rdquo; my blog posts on a scheduled basis on social media (e.g. Twitter). With Wordpress, you can use the WordPress Revive Old Posts plugin but with WordPress.com you have to have a premium business account to use plugins.
 If you&amp;rsquo;re in a similar situation of if you want a free way to automate the &amp;ldquo;re-posting&amp;rdquo; of your blog content then you&amp;rsquo;re in luck!</description>
     </item>
     
     <item>
       <title>Adding a Dlls Certificate to a Trusted Store</title>
-      <link>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</link>
+      <link>/article/adding-a-dlls-certificate-to-trusted-store/</link>
       <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</guid>
+      <guid>/article/adding-a-dlls-certificate-to-trusted-store/</guid>
       <description>Yesterday I was asked to help with streamling a manual process that some QA folks were running into. They had a debug release of an applicaiton that was signed with a test code signing certificate. Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.
 This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.</description>
     </item>
