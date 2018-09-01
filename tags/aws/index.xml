@@ -6,18 +6,19 @@
     <description>Recent content in Aws on MSAdministrator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Aug 2018 22:22:39 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 31 Aug 2018 20:51:46 -0400</lastBuildDate>
     
 	<atom:link href="https://msadministrator.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Using Amazon Sqs With Powershell</title>
-      <link>https://msadministrator.github.io/link/using-amazon-sqs-with-powershell/</link>
-      <pubDate>Thu, 23 Aug 2018 22:22:39 -0400</pubDate>
+      <title>Using Amazon SNS With Powershell</title>
+      <link>https://msadministrator.github.io/article/using-amazon-sns-with-powershell/</link>
+      <pubDate>Fri, 31 Aug 2018 20:51:46 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/link/using-amazon-sqs-with-powershell/</guid>
-      <description></description>
+      <guid>https://msadministrator.github.io/article/using-amazon-sns-with-powershell/</guid>
+      <description>Simple Notification Service (SNS) from Amazon Web Services (AWS) can work in conjunction with AWS Simple Queue Service (SQS), Lambda Functions, HTTP APIs/endpoints, Elastic Compute Cloud (EC2), Simple Storage Service (S3), and so on. As PowerShell continues to gain attraction with IT professionals around the globe, you can use SNS along with other services to create powerful applications to help your business win.
+Amazon SNS lets your application deliver notifications to additional services or applications, depending on your use case.</description>
     </item>
     
   </channel>
