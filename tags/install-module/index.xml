@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Install Module on MSAdministrator</title>
+    <link>https://msadministrator.github.io/tags/install-module/</link>
+    <description>Recent content in Install Module on MSAdministrator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Sep 2018 21:20:15 -0400</lastBuildDate>
+    
+	<atom:link href="https://msadministrator.github.io/tags/install-module/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python vs Powershell Part 1: Versioning</title>
+      <link>https://msadministrator.github.io/article/python-vs-powershell-part-1-basic-usage/</link>
+      <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
+      
+      <guid>https://msadministrator.github.io/article/python-vs-powershell-part-1-basic-usage/</guid>
+      <description>I posted a tweet earlier this week asking if anyone would be interested in a small series of posts that explain the differences between Python and PowerShell.
+So, here we go!
+Python on macOS Python and PowerShell are quite a bit different from each other. Python has been around for several years and works on multiple operating systems. Additionally, Python is beloved by it&amp;rsquo;s extremely supportive open-source community; rightfully so!</description>
+    </item>
+    
+  </channel>
+</rss>
