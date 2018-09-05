@@ -1,220 +1,220 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on MSAdministrator</title>
-    <link>https://msadministrator.github.io/tags/</link>
-    <description>Recent content in Tags on MSAdministrator</description>
+    <title>Tags on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/</link>
+    <description>Recent content in Tags on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Aug 2018 23:08:02 -0400</lastBuildDate>
     
-	<atom:link href="https://msadministrator.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>.Net</title>
-      <link>https://msadministrator.github.io/tags/.net/</link>
+      <link>https://letsautomate.it/tags/.net/</link>
       <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/.net/</guid>
+      <guid>https://letsautomate.it/tags/.net/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amazon</title>
-      <link>https://msadministrator.github.io/tags/amazon/</link>
+      <link>https://letsautomate.it/tags/amazon/</link>
       <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/amazon/</guid>
+      <guid>https://letsautomate.it/tags/amazon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Appveyor</title>
-      <link>https://msadministrator.github.io/tags/appveyor/</link>
+      <link>https://letsautomate.it/tags/appveyor/</link>
       <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/appveyor/</guid>
+      <guid>https://letsautomate.it/tags/appveyor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Archive</title>
-      <link>https://msadministrator.github.io/tags/archive/</link>
+      <link>https://letsautomate.it/tags/archive/</link>
       <pubDate>Tue, 07 Aug 2018 20:45:35 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/archive/</guid>
+      <guid>https://letsautomate.it/tags/archive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Automation</title>
-      <link>https://msadministrator.github.io/tags/automation/</link>
+      <link>https://letsautomate.it/tags/automation/</link>
       <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/automation/</guid>
+      <guid>https://letsautomate.it/tags/automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Aws</title>
-      <link>https://msadministrator.github.io/tags/aws/</link>
+      <link>https://letsautomate.it/tags/aws/</link>
       <pubDate>Fri, 31 Aug 2018 20:51:46 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/aws/</guid>
+      <guid>https://letsautomate.it/tags/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bot</title>
-      <link>https://msadministrator.github.io/tags/bot/</link>
+      <link>https://letsautomate.it/tags/bot/</link>
       <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/bot/</guid>
+      <guid>https://letsautomate.it/tags/bot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Certificate</title>
-      <link>https://msadministrator.github.io/tags/certificate/</link>
+      <link>https://letsautomate.it/tags/certificate/</link>
       <pubDate>Tue, 21 Aug 2018 12:50:50 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/certificate/</guid>
+      <guid>https://letsautomate.it/tags/certificate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chatbot</title>
-      <link>https://msadministrator.github.io/tags/chatbot/</link>
+      <link>https://letsautomate.it/tags/chatbot/</link>
       <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/chatbot/</guid>
+      <guid>https://letsautomate.it/tags/chatbot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cryptography</title>
-      <link>https://msadministrator.github.io/tags/cryptography/</link>
+      <link>https://letsautomate.it/tags/cryptography/</link>
       <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/cryptography/</guid>
+      <guid>https://letsautomate.it/tags/cryptography/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Functions</title>
-      <link>https://msadministrator.github.io/tags/functions/</link>
+      <link>https://letsautomate.it/tags/functions/</link>
       <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/functions/</guid>
+      <guid>https://letsautomate.it/tags/functions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://msadministrator.github.io/tags/github/</link>
+      <link>https://letsautomate.it/tags/github/</link>
       <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/github/</guid>
+      <guid>https://letsautomate.it/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://msadministrator.github.io/tags/hugo/</link>
+      <link>https://letsautomate.it/tags/hugo/</link>
       <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/hugo/</guid>
+      <guid>https://letsautomate.it/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Install Module</title>
-      <link>https://msadministrator.github.io/tags/install-module/</link>
+      <link>https://letsautomate.it/tags/install-module/</link>
       <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/install-module/</guid>
+      <guid>https://letsautomate.it/tags/install-module/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modules</title>
-      <link>https://msadministrator.github.io/tags/modules/</link>
+      <link>https://letsautomate.it/tags/modules/</link>
       <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/modules/</guid>
+      <guid>https://letsautomate.it/tags/modules/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pip</title>
-      <link>https://msadministrator.github.io/tags/pip/</link>
+      <link>https://letsautomate.it/tags/pip/</link>
       <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/pip/</guid>
+      <guid>https://letsautomate.it/tags/pip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Qnamaker</title>
-      <link>https://msadministrator.github.io/tags/qnamaker/</link>
+      <link>https://letsautomate.it/tags/qnamaker/</link>
       <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/qnamaker/</guid>
+      <guid>https://letsautomate.it/tags/qnamaker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scripts</title>
-      <link>https://msadministrator.github.io/tags/scripts/</link>
+      <link>https://letsautomate.it/tags/scripts/</link>
       <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/scripts/</guid>
+      <guid>https://letsautomate.it/tags/scripts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Slack</title>
-      <link>https://msadministrator.github.io/tags/slack/</link>
+      <link>https://letsautomate.it/tags/slack/</link>
       <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/slack/</guid>
+      <guid>https://letsautomate.it/tags/slack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sns</title>
-      <link>https://msadministrator.github.io/tags/sns/</link>
+      <link>https://letsautomate.it/tags/sns/</link>
       <pubDate>Fri, 31 Aug 2018 20:51:46 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/sns/</guid>
+      <guid>https://letsautomate.it/tags/sns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sqs</title>
-      <link>https://msadministrator.github.io/tags/sqs/</link>
+      <link>https://letsautomate.it/tags/sqs/</link>
       <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/sqs/</guid>
+      <guid>https://letsautomate.it/tags/sqs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webapp</title>
-      <link>https://msadministrator.github.io/tags/webapp/</link>
+      <link>https://letsautomate.it/tags/webapp/</link>
       <pubDate>Fri, 10 Aug 2018 22:10:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/webapp/</guid>
+      <guid>https://letsautomate.it/tags/webapp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Writing</title>
-      <link>https://msadministrator.github.io/tags/writing/</link>
+      <link>https://letsautomate.it/tags/writing/</link>
       <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/tags/writing/</guid>
+      <guid>https://letsautomate.it/tags/writing/</guid>
       <description></description>
     </item>
     

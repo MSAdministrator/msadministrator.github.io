@@ -3,593 +3,593 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://msadministrator.github.io/article/python-vs-powershell-part-1-versioning/</loc>
+    <loc>https://letsautomate.it/article/python-vs-powershell-part-1-versioning/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/using-amazon-sns-with-powershell/</loc>
+    <loc>https://letsautomate.it/article/using-amazon-sns-with-powershell/</loc>
     <lastmod>2018-08-31T20:51:46-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/how-to-setup-a-hugo-website-on-github/</loc>
+    <loc>https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</loc>
+    <loc>https://letsautomate.it/article/using-amazon-sqs-with-powershell/</loc>
     <lastmod>2018-08-23T22:24:59-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/traverse-local-certificate-store-with-powershell/</loc>
+    <loc>https://letsautomate.it/article/traverse-local-certificate-store-with-powershell/</loc>
     <lastmod>2018-08-21T12:50:50-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/powershell-scripts-functions-modules-cmdlets-oh-my/</loc>
+    <loc>https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/</loc>
     <lastmod>2018-08-19T13:37:36-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/using-github-to-revive-blog-posts/</loc>
+    <loc>https://letsautomate.it/article/using-github-to-revive-blog-posts/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/connect-your-bot-to-slack/</loc>
+    <loc>https://letsautomate.it/article/connect-your-bot-to-slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/create-a-web-app-bot-using-azure-bot-services/</loc>
+    <loc>https://letsautomate.it/article/create-a-web-app-bot-using-azure-bot-services/</loc>
     <lastmod>2018-08-10T22:10:33-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/using-qnamaker-to-create-chatbot/</loc>
+    <loc>https://letsautomate.it/article/using-qnamaker-to-create-chatbot/</loc>
     <lastmod>2018-08-10T21:55:42-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</loc>
+    <loc>https://letsautomate.it/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</loc>
     <lastmod>2018-08-10T21:28:54-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/adding-a-dlls-certificate-to-trusted-store/</loc>
+    <loc>https://letsautomate.it/article/adding-a-dlls-certificate-to-trusted-store/</loc>
     <lastmod>2018-08-08T23:08:02-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/butcher-block-iron-pipe-desk/</loc>
+    <loc>https://letsautomate.it/article/butcher-block-iron-pipe-desk/</loc>
     <lastmod>2018-08-07T20:45:35-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/using-docker-compose-on-windows/</loc>
+    <loc>https://letsautomate.it/article/using-docker-compose-on-windows/</loc>
     <lastmod>2018-08-07T20:45:30-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/</loc>
+    <loc>https://letsautomate.it/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/</loc>
     <lastmod>2018-08-07T20:45:28-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/create-group-policy-adm-and-admx-templates/</loc>
+    <loc>https://letsautomate.it/article/create-group-policy-adm-and-admx-templates/</loc>
     <lastmod>2018-08-07T20:45:26-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/using-powershell-to-manage-amazon-ec2-instances/</loc>
+    <loc>https://letsautomate.it/article/using-powershell-to-manage-amazon-ec2-instances/</loc>
     <lastmod>2018-08-07T20:45:24-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/manage-amazon-aws-s3-with-powershell/</loc>
+    <loc>https://letsautomate.it/article/manage-amazon-aws-s3-with-powershell/</loc>
     <lastmod>2018-08-07T20:45:21-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/create-a-docker-container-on-windows-with-a-dockerfile/</loc>
+    <loc>https://letsautomate.it/article/create-a-docker-container-on-windows-with-a-dockerfile/</loc>
     <lastmod>2018-08-07T20:45:19-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/install-docker-and-run-containers-on-windows/</loc>
+    <loc>https://letsautomate.it/article/install-docker-and-run-containers-on-windows/</loc>
     <lastmod>2018-08-07T20:45:16-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/powershell-ise-snippets/</loc>
+    <loc>https://letsautomate.it/article/powershell-ise-snippets/</loc>
     <lastmod>2018-08-07T20:45:14-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/processing-csv-data-in-powershell/</loc>
+    <loc>https://letsautomate.it/article/processing-csv-data-in-powershell/</loc>
     <lastmod>2018-08-07T20:45:11-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/manage-user-rights-with-group-policy/</loc>
+    <loc>https://letsautomate.it/article/manage-user-rights-with-group-policy/</loc>
     <lastmod>2018-08-07T20:45:08-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/cattle-vs-unicorns/</loc>
+    <loc>https://letsautomate.it/article/cattle-vs-unicorns/</loc>
     <lastmod>2018-08-07T20:45:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/understanding-group-policy-order/</loc>
+    <loc>https://letsautomate.it/article/understanding-group-policy-order/</loc>
     <lastmod>2018-08-07T20:45:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/run-powershell-scripts-as-immediate-scheduled-tasks-with-group-policy/</loc>
+    <loc>https://letsautomate.it/article/run-powershell-scripts-as-immediate-scheduled-tasks-with-group-policy/</loc>
     <lastmod>2018-08-07T20:44:57-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/add-and-remove-users-to-ad-groups-with-group-policy/</loc>
+    <loc>https://letsautomate.it/article/add-and-remove-users-to-ad-groups-with-group-policy/</loc>
     <lastmod>2018-08-07T20:44:55-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/download-files-from-github-without-git-using-powershell/</loc>
+    <loc>https://letsautomate.it/article/download-files-from-github-without-git-using-powershell/</loc>
     <lastmod>2018-08-07T20:44:52-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/logging-to-the-windows-event-log-in-your-powershell-scripts/</loc>
+    <loc>https://letsautomate.it/article/logging-to-the-windows-event-log-in-your-powershell-scripts/</loc>
     <lastmod>2018-08-07T20:44:49-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/standardize-powershell-logging-with-my-write-logentry-function/</loc>
+    <loc>https://letsautomate.it/article/standardize-powershell-logging-with-my-write-logentry-function/</loc>
     <lastmod>2018-08-07T20:44:46-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/design-before-coding-kanban/</loc>
+    <loc>https://letsautomate.it/article/design-before-coding-kanban/</loc>
     <lastmod>2018-08-07T20:44:44-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/design-before-coding-gathering-requirements/</loc>
+    <loc>https://letsautomate.it/article/design-before-coding-gathering-requirements/</loc>
     <lastmod>2018-08-07T20:44:41-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/how-i-work/</loc>
+    <loc>https://letsautomate.it/article/how-i-work/</loc>
     <lastmod>2018-08-07T20:44:39-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/powershell-qualys-get-asset-group-info-part-2/</loc>
+    <loc>https://letsautomate.it/article/powershell-qualys-get-asset-group-info-part-2/</loc>
     <lastmod>2018-08-07T20:44:33-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/powershell-qualys-authentication-part-1/</loc>
+    <loc>https://letsautomate.it/article/powershell-qualys-authentication-part-1/</loc>
     <lastmod>2018-08-07T20:44:31-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/presentation-securing-windows-with-group-policy/</loc>
+    <loc>https://letsautomate.it/article/presentation-securing-windows-with-group-policy/</loc>
     <lastmod>2018-08-07T20:44:26-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/qualysguard-decentralized-it-how-to-organize-your-assets/</loc>
+    <loc>https://letsautomate.it/article/qualysguard-decentralized-it-how-to-organize-your-assets/</loc>
     <lastmod>2018-08-07T20:44:23-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/windows-security-publicprivate-key-exchange-basics/</loc>
+    <loc>https://letsautomate.it/article/windows-security-publicprivate-key-exchange-basics/</loc>
     <lastmod>2018-08-07T20:44:20-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/windows-security-server-hardening-security-templates/</loc>
+    <loc>https://letsautomate.it/article/windows-security-server-hardening-security-templates/</loc>
     <lastmod>2018-08-07T20:44:16-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/windows-security-patch-management/</loc>
+    <loc>https://letsautomate.it/article/windows-security-patch-management/</loc>
     <lastmod>2018-08-07T20:44:13-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/qualys-guard-qualys-in-a-university-environment/</loc>
+    <loc>https://letsautomate.it/article/qualys-guard-qualys-in-a-university-environment/</loc>
     <lastmod>2018-08-07T20:44:11-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2013-installing-mdt-2013/</loc>
+    <loc>https://letsautomate.it/article/mdt-2013-installing-mdt-2013/</loc>
     <lastmod>2018-08-07T20:44:09-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2013-installing-adk-for-8-1/</loc>
+    <loc>https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/</loc>
     <lastmod>2018-08-07T20:44:06-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/</loc>
+    <loc>https://letsautomate.it/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/</loc>
     <lastmod>2018-08-07T20:44:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/</loc>
+    <loc>https://letsautomate.it/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/</loc>
     <lastmod>2018-08-07T20:44:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/script-adding-exchange-resource-accounts-to-your-outlook/</loc>
+    <loc>https://letsautomate.it/article/script-adding-exchange-resource-accounts-to-your-outlook/</loc>
     <lastmod>2018-08-07T20:43:57-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/script-removing-proxy-from-firefox-user-prefs-js/</loc>
+    <loc>https://letsautomate.it/article/script-removing-proxy-from-firefox-user-prefs-js/</loc>
     <lastmod>2018-08-07T20:43:54-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/powershell-updating-local-admin-passwords-securely-3-of-3/</loc>
+    <loc>https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/</loc>
     <lastmod>2018-08-07T20:43:52-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/powershell-updating-local-admin-passwords-securely-2-of-3/</loc>
+    <loc>https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-2-of-3/</loc>
     <lastmod>2018-08-07T20:43:49-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/powershell-updating-local-admin-passwords-securely-1-of-3/</loc>
+    <loc>https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-1-of-3/</loc>
     <lastmod>2018-08-07T20:43:47-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/ipad-lockdown-mobileconfig/</loc>
+    <loc>https://letsautomate.it/article/ipad-lockdown-mobileconfig/</loc>
     <lastmod>2018-08-07T20:43:44-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/questions-about-mdt-2012-driver-setup/</loc>
+    <loc>https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/</loc>
     <lastmod>2018-08-07T20:43:41-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/</loc>
     <lastmod>2018-08-07T20:43:39-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-11-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/</loc>
     <lastmod>2018-08-07T20:43:36-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-10-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/</loc>
     <lastmod>2018-08-07T20:43:34-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-9-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/</loc>
     <lastmod>2018-08-07T20:43:32-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-8-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/</loc>
     <lastmod>2018-08-07T20:43:29-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-7-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/</loc>
     <lastmod>2018-08-07T20:43:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-6-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/</loc>
     <lastmod>2018-08-07T20:43:24-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-5-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/</loc>
     <lastmod>2018-08-07T20:43:22-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-4-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/</loc>
     <lastmod>2018-08-07T20:43:20-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-3-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/</loc>
     <lastmod>2018-08-07T20:43:17-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-2-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/</loc>
     <lastmod>2018-08-07T20:43:01-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/mdt-2012-deployment-guide-step-by-step-1-of-11/</loc>
+    <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/</loc>
     <lastmod>2018-08-07T20:42:57-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/windows-comparison-of-windows-commands-and-linux-commands/</loc>
+    <loc>https://letsautomate.it/article/windows-comparison-of-windows-commands-and-linux-commands/</loc>
     <lastmod>2018-08-07T20:42:53-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/scripting-open-excel-sheets-in-separate-windows/</loc>
+    <loc>https://letsautomate.it/article/scripting-open-excel-sheets-in-separate-windows/</loc>
     <lastmod>2018-08-07T20:42:51-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/</loc>
+    <loc>https://letsautomate.it/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/</loc>
     <lastmod>2018-08-07T20:42:48-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/scripting-mount-printer-at-startup-script/</loc>
+    <loc>https://letsautomate.it/article/scripting-mount-printer-at-startup-script/</loc>
     <lastmod>2018-08-07T20:42:35-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/programming-final-project-for-x86-assembly-language-class-zombie-game/</loc>
+    <loc>https://letsautomate.it/article/programming-final-project-for-x86-assembly-language-class-zombie-game/</loc>
     <lastmod>2018-08-07T20:42:31-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/programming-understanding-binary-and-its-hexadecimal-values/</loc>
+    <loc>https://letsautomate.it/article/programming-understanding-binary-and-its-hexadecimal-values/</loc>
     <lastmod>2018-08-07T20:42:13-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/page/projects/</loc>
+    <loc>https://letsautomate.it/page/projects/</loc>
     <lastmod>2018-08-05T21:49:16-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/page/presentations/</loc>
+    <loc>https://letsautomate.it/page/presentations/</loc>
     <lastmod>2018-08-05T21:47:39-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/moving-away-from-wordpress/</loc>
+    <loc>https://letsautomate.it/article/moving-away-from-wordpress/</loc>
     <lastmod>2018-08-05T12:55:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/page/about/</loc>
+    <loc>https://letsautomate.it/page/about/</loc>
     <lastmod>2018-08-05T12:51:23-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/author/</loc>
+    <loc>https://letsautomate.it/author/</loc>
     <lastmod>2018-08-05T12:55:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/.net/</loc>
+    <loc>https://letsautomate.it/tags/.net/</loc>
     <lastmod>2018-08-08T23:08:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/amazon/</loc>
+    <loc>https://letsautomate.it/tags/amazon/</loc>
     <lastmod>2018-08-23T22:24:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/appveyor/</loc>
+    <loc>https://letsautomate.it/tags/appveyor/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/archive/</loc>
+    <loc>https://letsautomate.it/tags/archive/</loc>
     <lastmod>2018-08-07T20:45:35-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/article/</loc>
+    <loc>https://letsautomate.it/article/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/author/</loc>
+    <loc>https://letsautomate.it/author/</loc>
     <lastmod>2018-08-05T12:55:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/automation/</loc>
+    <loc>https://letsautomate.it/tags/automation/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/categories/automation/</loc>
+    <loc>https://letsautomate.it/categories/automation/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/aws/</loc>
+    <loc>https://letsautomate.it/tags/aws/</loc>
     <lastmod>2018-08-31T20:51:46-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/categories/azure/</loc>
+    <loc>https://letsautomate.it/categories/azure/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/bot/</loc>
+    <loc>https://letsautomate.it/tags/bot/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/categories/</loc>
+    <loc>https://letsautomate.it/categories/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/certificate/</loc>
+    <loc>https://letsautomate.it/tags/certificate/</loc>
     <lastmod>2018-08-21T12:50:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/chatbot/</loc>
+    <loc>https://letsautomate.it/tags/chatbot/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/cryptography/</loc>
+    <loc>https://letsautomate.it/tags/cryptography/</loc>
     <lastmod>2018-08-08T23:08:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/functions/</loc>
+    <loc>https://letsautomate.it/tags/functions/</loc>
     <lastmod>2018-08-19T13:37:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/github/</loc>
+    <loc>https://letsautomate.it/tags/github/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/categories/how-to/</loc>
+    <loc>https://letsautomate.it/categories/how-to/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/hugo/</loc>
+    <loc>https://letsautomate.it/tags/hugo/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/install-module/</loc>
+    <loc>https://letsautomate.it/tags/install-module/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/author/josh-rickard/</loc>
+    <loc>https://letsautomate.it/author/josh-rickard/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/</loc>
+    <loc>https://letsautomate.it/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/modules/</loc>
+    <loc>https://letsautomate.it/tags/modules/</loc>
     <lastmod>2018-08-19T13:37:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/page/</loc>
+    <loc>https://letsautomate.it/page/</loc>
     <lastmod>2018-08-05T21:49:16-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/pip/</loc>
+    <loc>https://letsautomate.it/tags/pip/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/categories/powershell/</loc>
+    <loc>https://letsautomate.it/categories/powershell/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/categories/python/</loc>
+    <loc>https://letsautomate.it/categories/python/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/qnamaker/</loc>
+    <loc>https://letsautomate.it/tags/qnamaker/</loc>
     <lastmod>2018-08-10T21:55:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/scripts/</loc>
+    <loc>https://letsautomate.it/tags/scripts/</loc>
     <lastmod>2018-08-19T13:37:36-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/slack/</loc>
+    <loc>https://letsautomate.it/tags/slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/categories/slack/</loc>
+    <loc>https://letsautomate.it/categories/slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/sns/</loc>
+    <loc>https://letsautomate.it/tags/sns/</loc>
     <lastmod>2018-08-31T20:51:46-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/sqs/</loc>
+    <loc>https://letsautomate.it/tags/sqs/</loc>
     <lastmod>2018-08-23T22:24:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/</loc>
+    <loc>https://letsautomate.it/tags/</loc>
     <lastmod>2018-08-08T23:08:02-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/webapp/</loc>
+    <loc>https://letsautomate.it/tags/webapp/</loc>
     <lastmod>2018-08-10T22:10:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://msadministrator.github.io/tags/writing/</loc>
+    <loc>https://letsautomate.it/tags/writing/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
     <priority>0</priority>
   </url>
