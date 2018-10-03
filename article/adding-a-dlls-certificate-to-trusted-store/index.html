@@ -223,30 +223,7 @@ $certStore.Close()
 </article>
         
     </div>
-    <p>Yesterday I was asked to help with streamling a manual process that some QA folks were running into.  They had a debug release of an applicaiton that was signed with a test code signing certificate.  Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.</p>
-
-<p>This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.</p>
-
-<pre><code class="language-powershell">$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate]::CreateFromSignedFile('C:\some\path\to\a\file.dll')
-$cert2 = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certificate)
-
-$certStore = [System.Security.Cryptography.X509Certificates.X509Store]::new([System.Security.Cryptography.X509Certificates.StoreName]::Root, [System.Security.Cryptography.X509Certificates.StoreLocation]::LocalMachine)
-
-$certStore.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
-$certStore.Add($cert2)
-$certStore.Close()
-</code></pre>
-
-<p>To break this down further, the first thing that we do is call a the <code>CreateFromSignedFile</code> method.  THis method takes a filepath as a parameter and will create a <code>$certificate</code> object with information stored in the dll.  The next thing is that we now need to take that object and create a new <code>Certificate2</code> from that existing <code>$certificate</code> metadata.</p>
-
-<p>Next, we create a <code>X509Store</code> object by specifying the <code>StoreName</code> we want to store the certiicate in.  Depending on where you want to store this certificate, your value may be different, but for this example we are storing the certificate in our Trusted Root Publishers store.  We also need to pass in if we want to store this in the <code>LocalMachine</code> or <code>User</code> portion of our certificate store.</p>
-
-<p>Lastly, we simply open our certificate store with the <code>ReadWrite</code> permissions. After this, we then simply add our created certificate into the store using the <code>$certStore.Add()</code> method.</p>
-
-<p>Once we are done, we simply close the store and go on our mary little way.</p>
-
-<p>I hope this helps breakdown how to recreate a DLLs signed certificate and store it in local certificate store.</p>
-
+    {0xc00015c0e0 0xc00024c900}
     
 
      

@@ -258,63 +258,7 @@
 </article>
         
     </div>
-    <p>In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal.  Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.</p>
-
-<p>Please make sure you have a Slack workspace created and you have access to create a Slack application.  <a href="https://api.slack.com/apps">Login to your Slack workspace API</a> and select Create New App in the top right-hand corner.  You will need to give your new application a name and select the appropriate workspace to create your new application.</p>
-
-<p>After your New App is created, select OAuth &amp; Permissions and select Add.  Enter the following Redirect URL: <a href="https://slack.botframework.com">https://slack.botframework.com</a> and click Save.</p>
-
-<p>Next, go to Bot Users and select Add a Bot.  Give your bot a username and toggle the Always Show My Bot as Online button so that it says On.</p>
-
-<p>Go to Events Subscription and select Enable Events.  Once there, enter the following URL and replace the {botname} with the name of your bot.</p>
-
-<p><a href="https://slack.botframework.com/api/Events/{botname">https://slack.botframework.com/api/Events/{botname</a>}</p>
-
-<p>If you are unsure of your bot’s name, you can find it under the My Bots section at <a href="https://slack.botframework.com">https://slack.botframework.com</a>.</p>
-
-<p>Lastly, you will need to subscribe to (at minimum) the following bot events.</p>
-
-<ul>
-<li>member_joined_channel</li>
-<li>member_left_channel</li>
-<li>message.channels</li>
-<li>message.groups</li>
-<li>message.im</li>
-<li>message.mpim</li>
-</ul>
-
-<p>Click Save.</p>
-
-<p><img src="Add a Request URL and subscribe to bot events.png" style="max-width:100%;" alt="Add a Request URL and subscribe to bot events"></p>
-
-<p><img src="Add a Request URL and subscribe to bot events.png" style="max-width:100%;" alt="Add a Request URL and subscribe to bot event"></p>
-
-<p>Select the Basic Information section scroll down until you see the App Credentials.  You will need to gather the following information to allow your Azure Web App Bot to be integrated into your Slack workspace.</p>
-
-<ul>
-<li>Client ID</li>
-<li>Client Secret</li>
-<li>Verification Token</li>
-</ul>
-
-<p><img src="Save your Slack Credentials to integrate into your new Azure Web App Bot.png" style="max-width:100%;" alt="Save your Slack Credentials to integrate into your new Azure Web App Bot"></p>
-
-<p>Now that you have this information, head back over to your Azure Portal and your Web App Bot.  Once you are back there, select the Channels setting.</p>
-
-<p>I want to point out that you can integrate your bot with many other services besides Slack, and there are several built-in options for doing this with many popular services.  This article will only talk about integrating your bot with Slack.</p>
-
-<p><img src="Select Channels within your Web App Bot resource page and then select Slack to integrate your bot with Slack.png" style="max-width:100%;" alt="Select Channels within your Web App Bot resource page and then select Slack to integrate your bot with Slack"></p>
-
-<p>Enter Application Credentials information from our Slack workspace into the Slack channel integration page on your Web App Bot Resource in the Azure Portal.  You only need to fill out the Client ID, Client Secret, and Verification Token fields.  Click Save.</p>
-
-<p>You should be presented with a Verification page authorizing your bot to interact with your Slack workspace.</p>
-
-<p>NOTE: If you run into an issue, you may need to ensure that you are still authorized/logged in by visiting <a href="https://slack.botframework.com">https://slack.botframework.com</a>.</p>
-
-<p>All you have to do now is login to your Slack workspace and your new bot should be available and ready to answer any and all of your questions!</p>
-
-<p><img src="Your very own QnA Bot is now integrated into your Slack workspace.png" style="max-width:100%;" alt="Your very own QnA Bot is now integrated into your Slack workspace"></p>
-
+    {0xc00015c0e0 0xc00024c900}
     
 
      
