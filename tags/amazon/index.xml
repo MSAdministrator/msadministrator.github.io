@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Amazon on MSAdministrator</title>
-    <link>https://msadministrator.github.io/tags/amazon/</link>
-    <description>Recent content in Amazon on MSAdministrator</description>
+    <title>Amazon on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/amazon/</link>
+    <description>Recent content in Amazon on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 23 Aug 2018 22:24:59 -0400</lastBuildDate>
     
-	<atom:link href="https://msadministrator.github.io/tags/amazon/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://letsautomate.it/tags/amazon/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using Amazon Sqs With Powershell</title>
-      <link>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</link>
+      <link>https://letsautomate.it/article/using-amazon-sqs-with-powershell/</link>
       <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
-      <guid>https://msadministrator.github.io/article/using-amazon-sqs-with-powershell/</guid>
+      <guid>https://letsautomate.it/article/using-amazon-sqs-with-powershell/</guid>
       <description>Amazon SQS is a flexible queue service that has many uses cases, from scalable web applications and processing systems to inter-application communications. This is useful if you need to process lots of data at once or have threads or workers to do a specific action to a large pool of data.
 With the explosion of use cases for PowerShell and Docker in production systems, you can easily scale using queue systems like Amazon SQS.</description>
     </item>
