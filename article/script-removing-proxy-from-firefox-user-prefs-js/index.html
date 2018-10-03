@@ -202,8 +202,7 @@ cd %windir%</p>
 
     
 </article>
-        
-        <p>So, I was tasked with removing proxy settings from Firefox because of Webroot Desktop Proxy.  Removing them from the %Programfiles% directory was easy, the hard part was the user prefs.js.  Anyways, here&rsquo;s a little script I created to remove Proxy settings and set them to No Proxy.</p>
+            <p>So, I was tasked with removing proxy settings from Firefox because of Webroot Desktop Proxy.  Removing them from the %Programfiles% directory was easy, the hard part was the user prefs.js.  Anyways, here&rsquo;s a little script I created to remove Proxy settings and set them to No Proxy.</p>
 
 <p>cd /D &ldquo;%APPDATA%\Mozilla\Firefox\Profiles\&rdquo;
 cd *.default
@@ -218,6 +217,7 @@ echo user_pref(&ldquo;network.proxy.type&rdquo;, 0);&gt;&gt;&rdquo;%ffile%\prefs
 set ffile=
 cd %windir%</p>
 
+        
     </div>
     
 
