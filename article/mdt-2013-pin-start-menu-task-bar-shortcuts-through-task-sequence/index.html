@@ -94,6 +94,641 @@
             
      
     <div class="article-wrapper u-cf single">
+        <p>Below is how we stopped modifying the Start Menu &amp; Task Bar shortcuts on our Default Image (GOLD IMAGE) using MDT 2013 Task Sequence.  This applies to Windows 7 and I&rsquo;m sure it could be modified to work with Windows 8.1.  Check it out below and let me know if you have any questions.</p>
+
+<p>To do this, you are going to need the following scripts in a folder on your MDT 2013 Server.</p>
+
+<p>Copy_To_Default_User_Startup.cmd</p>
+
+<p>[code
+                    ]
+copy &quot;\mdtserver01\DeploymentShare$\Applications\Set<em>TaskBar</em>&amp;amp;_StartMenu_Shortcuts\RunDefaultUserStartupScripts.vbs&quot; &quot;C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&quot; /Y
+copy &quot;\mdtserver01\DeploymentShare$\Applications\Set<em>TaskBar</em>&amp;amp;_StartMenu_Shortcuts\SetTaskBar.vbs&quot; &quot;C:\Users\Public\Downloads&quot; /Y
+copy &quot;\mdtserver01\DeploymentShare$\Applications\Set<em>TaskBar</em>&amp;amp;_StartMenu_Shortcuts\PinStartMenuShortcuts.bat&quot; &quot;C:\Users\Public\Downloads&quot; /Y
+copy &quot;\mdtserver01\DeploymentShare$\Applications\Set<em>TaskBar</em>&amp;amp;_StartMenu_Shortcuts\PinItem.vbs&quot; &quot;C:\Users\Public\Downloads&quot; /Y
+[/code
+                    ]</p>
+
+<p>RunDefaultUserStartupScript.vbs</p>
+
+<p>[code
+                    ]
+&lsquo;HideCMDWindow Script
+CreateObject(&quot;Wscript.Shell&quot;).Run &quot;C:\Users\Public\Downloads\SetTaskBar.vbs&quot;,
+                    0, True
+CreateObject(&quot;Wscript.Shell&quot;).Run &quot;C:\Users\Public\Downloads\PinStartMenuShortcuts.bat&quot;,
+                    0,
+                    true
+[/code
+                    ]</p>
+
+<p>SetTaskBar.vbs (I got this from somewhere online and modified it a bit, sorry I can&rsquo;t give credit where credit is due)</p>
+
+<p>[code
+                    ]
+Option Explicit</p>
+
+<p>Const CSIDL_COMMON_PROGRAMS = &amp;H17
+Const CSIDL_PROGRAMS = &amp;H2
+Const CSIDL_STARTMENU = &amp;HB</p>
+
+<p>Dim objShell, objFSO
+Dim objCurrentUserStartFolder
+Dim strCurrentUserStartFolderPath
+Dim objAllUsersProgramsFolder
+Dim strAllUsersProgramsPath
+Dim objFolder
+Dim objFolderItem
+Dim colVerbs
+Dim objVerb</p>
+
+<p>Set objShell = CreateObject(&quot;Shell.Application&quot;)
+Set objFSO = CreateObject(&quot;Scripting.FileSystemObject&quot;)
+Set objCurrentUserStartFolder = objShell.NameSpace (CSIDL_STARTMENU)
+strCurrentUserStartFolderPath = objCurrentUserStartFolder.Self.Path
+Set objAllUsersProgramsFolder = objShell.NameSpace(CSIDL_COMMON_PROGRAMS)
+strAllUsersProgramsPath = objAllUsersProgramsFolder.Self.Path</p>
+
+<p>&rsquo; - Remove pinned items -</p>
+
+<p>&lsquo;Internet Explorer
+If objFSO.FileExists(strCurrentUserStartFolderPath &amp; &quot;\Programs\Internet Explorer.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strCurrentUserStartFolderPath &amp; &quot;\Programs&quot;)
+    Set objFolderItem = objFolder.ParseName(&quot;Internet Explorer.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Unpin from Taskbar&quot; Then objVerb.DoIt
+    Next
+End If</p>
+
+<p>&lsquo;Windows Explorer
+If objFSO.FileExists(strCurrentUserStartFolderPath &amp; &quot;\Programs\Accessories\Windows Explorer.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strCurrentUserStartFolderPath &amp; &quot;\Programs\Accessories&quot;)
+    Set objFolderItem = objFolder.ParseName(&quot;Windows Explorer.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Unpin from Taskbar&quot; Then objVerb.DoIt
+    Next
+End If
+&lsquo;Windows Media Player
+If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Windows Media Player.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strAllUsersProgramsPath)
+    Set objFolderItem = objFolder.ParseName(&quot;Windows Media Player.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Unpin from Taskbar&quot; Then objVerb.DoIt
+    Next
+End If</p>
+
+<p>&rsquo; - Pin to Taskbar -</p>
+
+<p>&lsquo;Google Chrome C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Google Chrome
+If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Google Chrome\Google Chrome.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Google Chrome&quot;)
+    Set objFolderItem = objFolder.ParseName(&quot;Google Chrome.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
+    Next
+End If</p>
+
+<p>&lsquo;Mozilla Firefox
+If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Mozilla Firefox.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strAllUsersProgramsPath)
+    Set objFolderItem = objFolder.ParseName(&quot;Mozilla Firefox.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
+    Next
+End If</p>
+
+<p>&lsquo;Internet Explorer
+If objFSO.FileExists(strCurrentUserStartFolderPath &amp; &quot;\Programs\Internet Explorer.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strCurrentUserStartFolderPath &amp; &quot;\Programs&quot;)
+    Set objFolderItem = objFolder.ParseName(&quot;Internet Explorer.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
+    Next
+End If</p>
+
+<p>&lsquo;Microsoft Outlook 2013
+If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013\Outlook 2013.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013&quot;)
+    Set objFolderItem = objFolder.ParseName(&quot;Outlook 2013.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
+    Next
+End If</p>
+
+<p>&lsquo;Microsoft Word 2013
+If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013\Word 2013.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013&quot;)
+    Set objFolderItem = objFolder.ParseName(&quot;Word 2013.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
+    Next
+End If</p>
+
+<p>&lsquo;Microsoft Excel 2013
+If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013\Excel 2013.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013&quot;)
+    Set objFolderItem = objFolder.ParseName(&quot;Excel 2013.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
+    Next
+End If</p>
+
+<p>&lsquo;Microsoft PowerPoint 2013
+If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013\PowerPoint 2013.lnk&quot;) Then
+    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013&quot;)
+    Set objFolderItem = objFolder.ParseName(&quot;PowerPoint 2013.lnk&quot;)
+    Set colVerbs = objFolderItem.Verbs
+    For Each objVerb in colVerbs
+        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
+    Next
+End If</p>
+
+<p>&lsquo;Delete the script
+DeleteSelf</p>
+
+<p>Sub DeleteSelf()</p>
+
+<p>End Sub
+[/code
+                    ]</p>
+
+<p>PinStartMenuShortcuts.bat</p>
+
+<p>[code
+                    ]cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Outlook 2013.lnk&quot;
+cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Mozilla Firefox.lnk&quot;
+cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Excel 2013.lnk&quot;
+cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\PowerPoint 2013.lnk&quot;
+cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Word 2013.lnk&quot;
+cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Publisher 2013.lnk&quot;
+cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\iTunes.lnk&quot;
+[/code
+                    ]</p>
+
+<p>PinItem.vbs (same with this one, I can&rsquo;t remember where I found it but who ever they are, they are awesome!)</p>
+
+<p>[code
+                    ]&rsquo; Windows Script Host Sample Script
+&lsquo;
+&lsquo; &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+&lsquo;               Copyright &copy; 2009 Microsoft Corporation
+&lsquo;
+&lsquo; You have a royalty-free right to use, modify, reproduce and distribute
+&lsquo; the Sample Application Files (and/or any modified version) in any way
+&lsquo; you find useful, provided that you agree that Microsoft and the author
+&lsquo; have no warranty, obligations or liability for any Sample Application Files.
+&lsquo; &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p>&lsquo;********************************************************************
+&lsquo;*
+&lsquo;* File:           PinItem.vbs
+&lsquo;* Date: 03/04/2009
+&lsquo;* Version: 1.0.2
+&lsquo;*
+&lsquo;* Main Function:  VBScipt to pin an item to the Start Menu or Taskbar
+&lsquo;*
+&lsquo;* Usage:  cscript PinItem.vbs /item:&lt;path to exe&gt;
+&lsquo;*                 [/taskbar
+                    ] [/?
+                    ]
+&lsquo;*
+&lsquo;* Copyright &copy; 2009 Microsoft Corporation
+&lsquo;*
+&lsquo;* Revisions:
+&lsquo;*
+&lsquo;* 1.0.0 - 04/03/2008 - Created.
+&lsquo;* 1.0.1 - 03/02/2009 - Used Replace in PinItem function to remove &quot;&amp;&quot;
+&lsquo;*                      from verb.
+&lsquo;* 1.0.2 - 03/04/2009 - Script name was PinToStartMenu.vbs.  Added
+&lsquo;*                      /taskbar switch to pin items to taskbar on
+&lsquo;*                      Win7.
+&lsquo;*
+&lsquo;********************************************************************</p>
+
+<p>&lsquo;*****************************************************************************
+&lsquo;* Declare Variables
+&lsquo;*****************************************************************************</p>
+
+<p>Option Explicit
+&lsquo;On Error Resume Next</p>
+
+<p>Dim blnPinned
+Dim blnTaskbar</p>
+
+<p>Dim i
+Dim intOpMode</p>
+
+<p>Dim objWshShell
+Dim objFSO
+Dim objShell</p>
+
+<p>Dim strPath
+Dim strArguments
+Dim strOptionsMessage</p>
+
+<p>&rsquo; Define constants
+Const CONST_ERROR               = 0
+Const CONST_WSCRIPT             = 1
+Const CONST_CSCRIPT             = 2
+Const CONST_SHOW_USAGE          = 3
+Const CONST_PROCEED             = 4
+Const CONST_STRING_NOT_FOUND    = -1
+Const CONST_FOR_READING         = 1
+Const CONST_FOR_WRITING         = 2
+Const CONST_FOR_APPENDING       = 8
+Const CONST_Success             = 0
+Const CONST_Failure             = 1</p>
+
+<p>Const TRISTATE_USE_DEFAULT      = -2
+Const TRISTATE_TRUE             = -1  &lsquo;Open the file as Unicode.
+Const TRISTATE_FALSE            = 0   &lsquo;Open the file as ASCII.</p>
+
+<p>blnTaskbar = False</p>
+
+<p>&lsquo;*****************************************************************************
+&lsquo;* Create Objects
+&lsquo;*****************************************************************************</p>
+
+<p>Set objWshShell = CreateObject(&quot;Wscript.Shell&quot;)
+Set objFSO = CreateObject(&quot;Scripting.FileSystemObject&quot;)
+Set objShell = CreateObject(&quot;Shell.Application&quot;)</p>
+
+<p>&lsquo;********************************************************************
+&lsquo;* Check script host exe and parse command line
+&lsquo;********************************************************************</p>
+
+<p>&lsquo;Get the command line arguments
+For i = 0 to Wscript.arguments.count - 1
+    ReDim Preserve arrArguments(i)
+    arrArguments(i) = Wscript.arguments.item(i)
+Next</p>
+
+<p>&lsquo;Check whether the script is run using CScript
+Select Case intChkProgram()
+    Case CONST_CSCRIPT
+        &lsquo;Do Nothing
+    Case CONST_WSCRIPT
+        WScript.Echo &quot;Please run this script using CScript.&quot; &amp; vbCRLF &amp; _
+            &quot;This can be achieved by&quot; &amp; vbCRLF &amp; _
+            &quot;1. Using &quot;&quot;CScript MODIFYUSERS.vbs arguments&quot;&quot; for Windows <sup>95</sup>&frasl;<sub>98</sub> or&quot; &amp; VbCrLf &amp; _
+            &quot;2. Changing the default Windows Scripting Host setting to CScript&quot; &amp; vbCRLF &amp; _
+            &quot;    using &quot;&quot;CScript //H:CScript //S&quot;&quot; and running the script using&quot; &amp; vbCRLF &amp; _
+            &quot;    &quot;&quot;MODIFYUSERS.vbs arguments&quot;&quot; for Windows NT.&quot;
+        WScript.Quit
+    Case Else
+        WScript.Quit
+End Select</p>
+
+<p>&lsquo;Parse the command line
+Err.Clear()
+intOpMode = intParseCmdLine(arrArguments, strPath, blnTaskbar, strOptionsMessage)</p>
+
+<p>If Err.Number Then
+    Wscript.Echo &quot;Error 0X&quot; &amp; CStr(Hex(Err.Number)) &amp; &quot; occurred in parsing the command line.&quot;
+    If Err.Description &lt;&gt; &quot;&quot; Then
+        Wscript.Echo &quot;Error description: &quot; &amp; Err.Description &amp; &quot;.&quot;
+    End If
+    &lsquo;WScript.quit
+End If</p>
+
+<p>Select Case intOpMode
+    Case CONST_SHOW_USAGE
+        Call ShowUsage()
+        WScript.quit
+    Case CONST_PROCEED
+        &lsquo;Do nothing.
+    Case CONST_ERROR
+        WScript.quit
+    Case Else
+        Wscript.Echo &quot;Error occurred in passing parameters.&quot;
+End Select</p>
+
+<p>&lsquo;********************************************************************
+&lsquo;* Main Script
+&lsquo;********************************************************************</p>
+
+<p>WScript.Echo strOptionsMessage</p>
+
+<p>blnPinned = PinItem(strPath, blnTaskbar)
+WScript.Echo &quot;Item pinned: &quot; &amp; CStr(blnPinned)</p>
+
+<p>If blnPinned Then
+    WScript.Quit(0)
+Else
+    WScript.Quit(1)
+End If</p>
+
+<p>&lsquo;********************************************************************
+&lsquo;*
+&lsquo;* Function intChkProgram()
+&lsquo;*
+&lsquo;* Purpose:  Determines which program is used to run this script.
+&lsquo;*
+&lsquo;* Input:    None
+&lsquo;*
+&lsquo;* Returns:  intChkProgram is set to one of CONST_ERROR, CONST_WSCRIPT,
+&lsquo;*           and CONST_CSCRIPT.
+&lsquo;*
+&lsquo;********************************************************************
+Private Function intChkProgram()</p>
+
+<pre><code>ON ERROR RESUME NEXT
+
+Dim i
+Dim j
+Dim strFullName
+Dim strCommand
+
+'strFullName should be something like C:\WINDOWS\COMMAND\CSCRIPT.EXE
+strFullName = WScript.FullName
+If Err.Number then
+    Wscript.Echo &amp;quot;Error 0x&amp;quot; &amp;amp; CStr(Hex(Err.Number)) &amp;amp; &amp;quot; occurred.&amp;quot;
+    If Err.Description &amp;lt;&amp;gt; &amp;quot;&amp;quot; Then
+        Wscript.Echo &amp;quot;Error description: &amp;quot; &amp;amp; Err.Description &amp;amp; &amp;quot;.&amp;quot;
+    End If
+    intChkProgram =  CONST_ERROR
+    Exit Function
+End If
+
+i = InStr(1, strFullName, &amp;quot;.exe&amp;quot;,
+                1)
+If i = 0 Then
+    intChkProgram =  CONST_ERROR
+    Exit Function
+Else
+    j = InStrRev(strFullName, &amp;quot;\&amp;quot;, i,
+                1)
+    If j = 0 Then
+        intChkProgram =  CONST_ERROR
+        Exit Function
+    Else
+        strCommand = Mid(strFullName, j+1, i-j-1)
+        Select Case LCase(strCommand)
+            Case &amp;quot;cscript&amp;quot;
+                intChkProgram = CONST_CSCRIPT
+            Case &amp;quot;wscript&amp;quot;
+                intChkProgram = CONST_WSCRIPT
+            Case Else       'should never happen
+                Wscript.Echo &amp;quot;An unexpected program is used to run this script.&amp;quot;
+                Wscript.Echo &amp;quot;Only CScript.Exe or WScript.Exe can be used to run this script.&amp;quot;
+                intChkProgram = CONST_ERROR
+        End Select
+    End If
+End If
+</code></pre>
+
+<p>End Function</p>
+
+<p>&lsquo;********************************************************************
+&lsquo;*
+&lsquo;* Function intParseCmdLine()
+&lsquo;*
+&lsquo;* Purpose:  Parses the command line.
+&lsquo;*
+&lsquo;* Input:    arrArguments              An array containing input from the command line
+&lsquo;*
+&lsquo;* Input:    strPath                   Path of exe to pin
+&lsquo;*           strOptionsMessage         String containing options selected
+&lsquo;*
+&lsquo;* Returns:  intParseCmdLine is set to one of CONST_ERROR, CONST_SHOW_USAGE,
+&lsquo;*           and CONST_PROCEED.
+&lsquo;*
+&lsquo;********************************************************************
+Private Function intParseCmdLine(arrArguments, strPath, blnTaskbar, strOptionsMessage)</p>
+
+<pre><code>ON ERROR RESUME NEXT
+
+Dim i
+Dim strFlag
+Dim strSwitchValue
+
+strFlag = arrArguments(0)
+Err.Clear()
+
+'Help is needed
+If (strFlag = &amp;quot;&amp;quot;) OR (strFlag=&amp;quot;help&amp;quot;) OR (strFlag=&amp;quot;/h&amp;quot;) OR (strFlag=&amp;quot;\h&amp;quot;) OR (strFlag=&amp;quot;-h&amp;quot;) _
+    OR (strFlag = &amp;quot;\?&amp;quot;) OR (strFlag = &amp;quot;/?&amp;quot;) OR (strFlag = &amp;quot;?&amp;quot;) OR (strFlag=&amp;quot;h&amp;quot;) Then
+    intParseCmdLine = CONST_SHOW_USAGE
+    Exit Function
+End If
+
+strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;&amp;quot;  &amp;amp; VbCrLf
+strOptionsMessage = strOptionsMessage &amp;amp; WScript.ScriptName  &amp;amp; VbCrLf
+strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;&amp;quot;  &amp;amp; VbCrLf
+strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;Command Line Options:&amp;quot;  &amp;amp; vbCrLf
+strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;=======================================&amp;quot;  &amp;amp; VbCrLf
+
+For i = 0 to UBound(arrArguments)
+    strFlag = Left(arrArguments(i), InStr(1, arrArguments(i), &amp;quot;:&amp;quot;)-1)
+    If Err.Number Then            'An error occurs if there is no : in the string
+        Err.Clear
+        Select Case LCase(arrArguments(i))
+            Case &amp;quot;/q&amp;quot;
+                blnQuiet = True
+                strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;Supress Console Output: &amp;quot; &amp;amp; blnQuiet &amp;amp; VbCrLf
+            Case &amp;quot;/taskbar&amp;quot;
+                blnTaskbar = True
+                strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;Pin to Taskbar instead of Start Menu: &amp;quot; &amp;amp; blnTaskbar &amp;amp; VbCrLf
+            Case Else
+                Wscript.Echo arrArguments(i) &amp;amp; &amp;quot; is not recognized as a valid input.&amp;quot;
+                intParseCmdLine = CONST_ERROR
+                Exit Function
+        End Select
+    Else
+        strSwitchValue = Right(arrArguments(i), Len(arrArguments(i))-(Len(strFlag)+1))
+        Select Case LCase(strFlag)
+            Case &amp;quot;/item&amp;quot;
+                strPath = strSwitchValue
+                strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;Item to pin to Start Menu or Taskbar: &amp;quot; &amp;amp; strPath &amp;amp; VbCrLf
+            Case else
+                Wscript.Echo &amp;quot;Invalid flag &amp;quot; &amp;amp; strFlag &amp;amp; &amp;quot;.&amp;quot;
+                Wscript.Echo &amp;quot;Please check the input and try again.&amp;quot;
+                intParseCmdLine = CONST_ERROR
+                Exit Function
+        End Select
+    End If
+Next
+
+If (strPath = &amp;quot;&amp;quot;) Then
+    Wscript.Echo &amp;quot;The /item switch is required&amp;quot;
+    Wscript.Echo &amp;quot;Please check the input and try again.&amp;quot;
+    intParseCmdLine = CONST_ERROR
+    Exit Function
+End If
+
+intParseCmdLine = CONST_PROCEED
+</code></pre>
+
+<p>End Function</p>
+
+<p>&lsquo;********************************************************************
+&lsquo;*
+&lsquo;* Function PinItem()
+&lsquo;*
+&lsquo;* Purpose:  Pin item to the Start Menu.
+&lsquo;*
+&lsquo;* Input:          strlPath          Path of exe to pin
+&lsquo;*                 blnTaskbar        Pin item to Taskbar instead of Start Menu if true
+&lsquo;*
+&lsquo;* Dependencies:   objShell          Shell.Application object
+&lsquo;*                 objFSO            File System object
+&lsquo;*
+&lsquo;* Returns:        True if the shortcut is created, else false
+&lsquo;*
+&lsquo;********************************************************************
+Function PinItem(strlPath, blnTaskbar)
+    On Error Resume Next</p>
+
+<pre><code>Dim colVerbs
+Dim itemverb
+
+Dim objFolder
+Dim objFolderItem
+
+Dim strFolder
+Dim strFile
+
+If objFSO.FileExists(strlPath) Then
+    '***** Do nothing, folder exists
+Else
+    '***** Folder does not exist
+    PinItem = False
+    WScript.Echo &amp;quot;File to pin does not exist.&amp;quot;
+    WScript.Echo &amp;quot;Please check the input and try again.&amp;quot;
+    Exit Function
+End If
+
+strFolder = objFSO.GetParentFolderName(strlPath)
+strFile = objFSO.GetFileName(strlPath)
+
+WScript.Echo &amp;quot;Folder: &amp;quot; &amp;amp; strFolder
+WScript.Echo &amp;quot;File: &amp;quot; &amp;amp; strFile
+
+Err.Clear
+Set objFolder = objShell.Namespace(strFolder)
+Set objFolderItem = objFolder.ParseName(strFile)
+
+' ***** InvokeVerb for this does not work on Vista/WS2008
+'objFolderItem.InvokeVerb(&amp;quot;P&amp;amp;in to Start Menu&amp;quot;)
+
+' ***** This code works on Vista/WS2008
+Set colVerbs = objFolderItem.Verbs
+
+If blnTaskbar Then
+    For each itemverb in objFolderItem.verbs
+        If Replace(itemverb.name, &amp;quot;&amp;amp;&amp;quot;, &amp;quot;&amp;quot;) = &amp;quot;Pin to Taskbar&amp;quot; Then itemverb.DoIt
+    Next 
+Else
+    For each itemverb in objFolderItem.verbs
+        If Replace(itemverb.name, &amp;quot;&amp;amp;&amp;quot;, &amp;quot;&amp;quot;) = &amp;quot;Pin to Start Menu&amp;quot; Then itemverb.DoIt
+    Next 
+End If
+
+If Err.Number = 0 Then
+    PinItem = True
+Else
+    PinItem = False
+End If
+</code></pre>
+
+<p>End Function</p>
+
+<p>&lsquo;********************************************************************
+&lsquo;*
+&lsquo;* Sub ShowUsage()
+&lsquo;*
+&lsquo;* Purpose:   Shows the correct usage to the user.
+&lsquo;*
+&lsquo;* Input:     None
+&lsquo;*
+&lsquo;* Output:    Help messages are displayed on screen.
+&lsquo;*
+&lsquo;********************************************************************
+Sub ShowUsage()
+    WScript.Echo &quot;This script is used to Pin items to the Start Menu or Taskbar.&quot;
+    WScript.Echo &quot;&quot;
+    WScript.Echo &quot;Usage: cscript &quot; &amp; WScript.ScriptName &amp; &quot; [options
+                    ]&quot;
+    WScript.Echo &quot;&quot;
+    WScript.Echo &quot;Options:&quot;
+    WScript.Echo &quot;&quot;
+    WScript.Echo &quot; /item:&lt;PathName&gt;       Path of item to pin.&quot;
+    WScript.Echo &quot;&quot;
+    WScript.Echo &quot; /taskbar               (Optional) Pin to Taskbar instead of Start Menu.&quot;
+    WScript.Echo &quot;&quot;
+    WScript.Echo &quot; /?                     (Optional) Displays this help text.&quot;
+    WScript.Echo &quot;&quot;
+    WScript.Echo &quot;&quot;
+    WScript.Echo &quot;&quot;
+End Sub
+[/code
+                    ]</p>
+
+<p>&nbsp;</p>
+
+<p>MDT 2013:</p>
+
+<p>On your MDT 2013 DeploymentShare$, add an application by right clicking the &ldquo;Applications&rdquo; node and selecting &ldquo;New Application&rdquo;</p>
+
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_1.png"><img id="i-191" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_1.png?w=250" alt="Image" /></a></p>
+
+<p>In the new dialogue box, select &ldquo;Application without source files or elsewhere on the network&rdquo; radius button.</p>
+
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_2.png"><img id="i-195" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_2.png?w=650" alt="Image" /></a></p>
+
+<p>Select Next and fill out the information as you would like it to appear (I choose to name my Application as <strong>&ldquo;Set<em>TaskBar</em>&amp;_StartMenu_Shortcuts&rdquo;</strong> but it&rsquo;s up to you.  If you use something else, then change the first script above accordingly)</p>
+
+<p>Select Next, then in the Command Line field type &ldquo;Copy_To_Default_User_Startup.cmd&rdquo;</p>
+
+<p>In the &ldquo;Working directory&rdquo; field, type: &ldquo;.\Applications\Set<em>TaskBar</em>&amp;_StartMenu_Shortcuts&rdquo;</p>
+
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_3.png"><img id="i-214" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_3.png?w=560" alt="Image" /></a></p>
+
+<p>Select Next, then Finish.</p>
+
+<p>Now, right click your newly created application and select properties</p>
+
+<p>Select the check box on the bottom left hand corner of the &ldquo;General&rdquo; tab that says &ldquo;Hide this application in the Deployment Wizard&rdquo;</p>
+
+<p>Next, add all the scripts above to your %DeployRoot%\Applications\Set<em>TaskBar</em>&amp;_StartMenu_Shortcuts folder.</p>
+
+<p>After adding the scripts to this folder, go back to the Deployment Workbench and right click your Task Sequence for Windows 7 and select Properties</p>
+
+<p>Under the State Restore section of the Task Sequence, add a &ldquo;Custom Task&rdquo; after your &ldquo;Install Applications&rdquo; item in the Task Sequence.</p>
+
+<p>You can add the &ldquo;Custom Task&rdquo; in many different ways but I like to create a &ldquo;New Group&rdquo; after either my &ldquo;Install Applications&rdquo; or &ldquo;Windows Update (Post-Application Installation)&rdquo;:  Please see below:</p>
+
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_4.png"><img id="i-225" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_4.png?w=227" alt="Image" /></a></p>
+
+<p>After creating the &ldquo;New Group&rdquo; you can name it anything but I choose to name mine as &ldquo;Custom Task&rdquo;.</p>
+
+<p>Next, you need to add the application to your Task Sequence by selecting the &ldquo;New Group&rdquo; and clicking on Add-&gt;General-&gt;Install Application.</p>
+
+<p>Configure your new Application as the screenshot</p>
+
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_5.png"><img class="alignnone size-full wp-image-230" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_5.png" alt="MDT2013_New_Application_5" width="405" height="516" /></a></p>
+
+<p>Press Apply, then Ok.</p>
+
+<p>When ever I make changes to my DeploymentShare I always update my Deployment Share for safe measures.  It&rsquo;s also because I never want to forgot to do it when I really need too.</p>
+
+<p>You should now have a new application that will set the Task Bar and your Start Menu Shortcuts without having to set them in your base image.</p>
+
+<p>&nbsp;</p>
+
+<p>Enjoy!</p>
+
+<p>p.s. I know there is probably a better way of organizing these scripts but in a pinch they worked and I haven&rsquo;t gone back to look at other ways of doing it.</p>
+
         
             <a class="bubble" href="/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/">
     <i class="fa fa-fw fa-pencil"></i>
@@ -822,641 +1457,6 @@ End Sub
 
     
 </article>
-            <p>Below is how we stopped modifying the Start Menu &amp; Task Bar shortcuts on our Default Image (GOLD IMAGE) using MDT 2013 Task Sequence.  This applies to Windows 7 and I&rsquo;m sure it could be modified to work with Windows 8.1.  Check it out below and let me know if you have any questions.</p>
-
-<p>To do this, you are going to need the following scripts in a folder on your MDT 2013 Server.</p>
-
-<p>Copy_To_Default_User_Startup.cmd</p>
-
-<p>[code
-                    ]
-copy &quot;\mdtserver01\DeploymentShare$\Applications\Set<em>TaskBar</em>&amp;amp;_StartMenu_Shortcuts\RunDefaultUserStartupScripts.vbs&quot; &quot;C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&quot; /Y
-copy &quot;\mdtserver01\DeploymentShare$\Applications\Set<em>TaskBar</em>&amp;amp;_StartMenu_Shortcuts\SetTaskBar.vbs&quot; &quot;C:\Users\Public\Downloads&quot; /Y
-copy &quot;\mdtserver01\DeploymentShare$\Applications\Set<em>TaskBar</em>&amp;amp;_StartMenu_Shortcuts\PinStartMenuShortcuts.bat&quot; &quot;C:\Users\Public\Downloads&quot; /Y
-copy &quot;\mdtserver01\DeploymentShare$\Applications\Set<em>TaskBar</em>&amp;amp;_StartMenu_Shortcuts\PinItem.vbs&quot; &quot;C:\Users\Public\Downloads&quot; /Y
-[/code
-                    ]</p>
-
-<p>RunDefaultUserStartupScript.vbs</p>
-
-<p>[code
-                    ]
-&lsquo;HideCMDWindow Script
-CreateObject(&quot;Wscript.Shell&quot;).Run &quot;C:\Users\Public\Downloads\SetTaskBar.vbs&quot;,
-                    0, True
-CreateObject(&quot;Wscript.Shell&quot;).Run &quot;C:\Users\Public\Downloads\PinStartMenuShortcuts.bat&quot;,
-                    0,
-                    true
-[/code
-                    ]</p>
-
-<p>SetTaskBar.vbs (I got this from somewhere online and modified it a bit, sorry I can&rsquo;t give credit where credit is due)</p>
-
-<p>[code
-                    ]
-Option Explicit</p>
-
-<p>Const CSIDL_COMMON_PROGRAMS = &amp;H17
-Const CSIDL_PROGRAMS = &amp;H2
-Const CSIDL_STARTMENU = &amp;HB</p>
-
-<p>Dim objShell, objFSO
-Dim objCurrentUserStartFolder
-Dim strCurrentUserStartFolderPath
-Dim objAllUsersProgramsFolder
-Dim strAllUsersProgramsPath
-Dim objFolder
-Dim objFolderItem
-Dim colVerbs
-Dim objVerb</p>
-
-<p>Set objShell = CreateObject(&quot;Shell.Application&quot;)
-Set objFSO = CreateObject(&quot;Scripting.FileSystemObject&quot;)
-Set objCurrentUserStartFolder = objShell.NameSpace (CSIDL_STARTMENU)
-strCurrentUserStartFolderPath = objCurrentUserStartFolder.Self.Path
-Set objAllUsersProgramsFolder = objShell.NameSpace(CSIDL_COMMON_PROGRAMS)
-strAllUsersProgramsPath = objAllUsersProgramsFolder.Self.Path</p>
-
-<p>&rsquo; - Remove pinned items -</p>
-
-<p>&lsquo;Internet Explorer
-If objFSO.FileExists(strCurrentUserStartFolderPath &amp; &quot;\Programs\Internet Explorer.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strCurrentUserStartFolderPath &amp; &quot;\Programs&quot;)
-    Set objFolderItem = objFolder.ParseName(&quot;Internet Explorer.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Unpin from Taskbar&quot; Then objVerb.DoIt
-    Next
-End If</p>
-
-<p>&lsquo;Windows Explorer
-If objFSO.FileExists(strCurrentUserStartFolderPath &amp; &quot;\Programs\Accessories\Windows Explorer.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strCurrentUserStartFolderPath &amp; &quot;\Programs\Accessories&quot;)
-    Set objFolderItem = objFolder.ParseName(&quot;Windows Explorer.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Unpin from Taskbar&quot; Then objVerb.DoIt
-    Next
-End If
-&lsquo;Windows Media Player
-If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Windows Media Player.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strAllUsersProgramsPath)
-    Set objFolderItem = objFolder.ParseName(&quot;Windows Media Player.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Unpin from Taskbar&quot; Then objVerb.DoIt
-    Next
-End If</p>
-
-<p>&rsquo; - Pin to Taskbar -</p>
-
-<p>&lsquo;Google Chrome C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Google Chrome
-If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Google Chrome\Google Chrome.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Google Chrome&quot;)
-    Set objFolderItem = objFolder.ParseName(&quot;Google Chrome.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
-    Next
-End If</p>
-
-<p>&lsquo;Mozilla Firefox
-If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Mozilla Firefox.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strAllUsersProgramsPath)
-    Set objFolderItem = objFolder.ParseName(&quot;Mozilla Firefox.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
-    Next
-End If</p>
-
-<p>&lsquo;Internet Explorer
-If objFSO.FileExists(strCurrentUserStartFolderPath &amp; &quot;\Programs\Internet Explorer.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strCurrentUserStartFolderPath &amp; &quot;\Programs&quot;)
-    Set objFolderItem = objFolder.ParseName(&quot;Internet Explorer.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
-    Next
-End If</p>
-
-<p>&lsquo;Microsoft Outlook 2013
-If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013\Outlook 2013.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013&quot;)
-    Set objFolderItem = objFolder.ParseName(&quot;Outlook 2013.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
-    Next
-End If</p>
-
-<p>&lsquo;Microsoft Word 2013
-If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013\Word 2013.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013&quot;)
-    Set objFolderItem = objFolder.ParseName(&quot;Word 2013.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
-    Next
-End If</p>
-
-<p>&lsquo;Microsoft Excel 2013
-If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013\Excel 2013.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013&quot;)
-    Set objFolderItem = objFolder.ParseName(&quot;Excel 2013.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
-    Next
-End If</p>
-
-<p>&lsquo;Microsoft PowerPoint 2013
-If objFSO.FileExists(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013\PowerPoint 2013.lnk&quot;) Then
-    Set objFolder = objShell.Namespace(strAllUsersProgramsPath &amp; &quot;\Microsoft Office 2013&quot;)
-    Set objFolderItem = objFolder.ParseName(&quot;PowerPoint 2013.lnk&quot;)
-    Set colVerbs = objFolderItem.Verbs
-    For Each objVerb in colVerbs
-        If Replace(objVerb.name, &quot;&amp;&quot;, &quot;&quot;) = &quot;Pin to Taskbar&quot; Then objVerb.DoIt
-    Next
-End If</p>
-
-<p>&lsquo;Delete the script
-DeleteSelf</p>
-
-<p>Sub DeleteSelf()</p>
-
-<p>End Sub
-[/code
-                    ]</p>
-
-<p>PinStartMenuShortcuts.bat</p>
-
-<p>[code
-                    ]cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Outlook 2013.lnk&quot;
-cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Mozilla Firefox.lnk&quot;
-cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Excel 2013.lnk&quot;
-cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\PowerPoint 2013.lnk&quot;
-cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Word 2013.lnk&quot;
-cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Publisher 2013.lnk&quot;
-cscript C:\Users\Public\Downloads\PinItem.vbs /item:&quot;C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\iTunes.lnk&quot;
-[/code
-                    ]</p>
-
-<p>PinItem.vbs (same with this one, I can&rsquo;t remember where I found it but who ever they are, they are awesome!)</p>
-
-<p>[code
-                    ]&rsquo; Windows Script Host Sample Script
-&lsquo;
-&lsquo; &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-&lsquo;               Copyright &copy; 2009 Microsoft Corporation
-&lsquo;
-&lsquo; You have a royalty-free right to use, modify, reproduce and distribute
-&lsquo; the Sample Application Files (and/or any modified version) in any way
-&lsquo; you find useful, provided that you agree that Microsoft and the author
-&lsquo; have no warranty, obligations or liability for any Sample Application Files.
-&lsquo; &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
-
-<p>&lsquo;********************************************************************
-&lsquo;*
-&lsquo;* File:           PinItem.vbs
-&lsquo;* Date: 03/04/2009
-&lsquo;* Version: 1.0.2
-&lsquo;*
-&lsquo;* Main Function:  VBScipt to pin an item to the Start Menu or Taskbar
-&lsquo;*
-&lsquo;* Usage:  cscript PinItem.vbs /item:&lt;path to exe&gt;
-&lsquo;*                 [/taskbar
-                    ] [/?
-                    ]
-&lsquo;*
-&lsquo;* Copyright &copy; 2009 Microsoft Corporation
-&lsquo;*
-&lsquo;* Revisions:
-&lsquo;*
-&lsquo;* 1.0.0 - 04/03/2008 - Created.
-&lsquo;* 1.0.1 - 03/02/2009 - Used Replace in PinItem function to remove &quot;&amp;&quot;
-&lsquo;*                      from verb.
-&lsquo;* 1.0.2 - 03/04/2009 - Script name was PinToStartMenu.vbs.  Added
-&lsquo;*                      /taskbar switch to pin items to taskbar on
-&lsquo;*                      Win7.
-&lsquo;*
-&lsquo;********************************************************************</p>
-
-<p>&lsquo;*****************************************************************************
-&lsquo;* Declare Variables
-&lsquo;*****************************************************************************</p>
-
-<p>Option Explicit
-&lsquo;On Error Resume Next</p>
-
-<p>Dim blnPinned
-Dim blnTaskbar</p>
-
-<p>Dim i
-Dim intOpMode</p>
-
-<p>Dim objWshShell
-Dim objFSO
-Dim objShell</p>
-
-<p>Dim strPath
-Dim strArguments
-Dim strOptionsMessage</p>
-
-<p>&rsquo; Define constants
-Const CONST_ERROR               = 0
-Const CONST_WSCRIPT             = 1
-Const CONST_CSCRIPT             = 2
-Const CONST_SHOW_USAGE          = 3
-Const CONST_PROCEED             = 4
-Const CONST_STRING_NOT_FOUND    = -1
-Const CONST_FOR_READING         = 1
-Const CONST_FOR_WRITING         = 2
-Const CONST_FOR_APPENDING       = 8
-Const CONST_Success             = 0
-Const CONST_Failure             = 1</p>
-
-<p>Const TRISTATE_USE_DEFAULT      = -2
-Const TRISTATE_TRUE             = -1  &lsquo;Open the file as Unicode.
-Const TRISTATE_FALSE            = 0   &lsquo;Open the file as ASCII.</p>
-
-<p>blnTaskbar = False</p>
-
-<p>&lsquo;*****************************************************************************
-&lsquo;* Create Objects
-&lsquo;*****************************************************************************</p>
-
-<p>Set objWshShell = CreateObject(&quot;Wscript.Shell&quot;)
-Set objFSO = CreateObject(&quot;Scripting.FileSystemObject&quot;)
-Set objShell = CreateObject(&quot;Shell.Application&quot;)</p>
-
-<p>&lsquo;********************************************************************
-&lsquo;* Check script host exe and parse command line
-&lsquo;********************************************************************</p>
-
-<p>&lsquo;Get the command line arguments
-For i = 0 to Wscript.arguments.count - 1
-    ReDim Preserve arrArguments(i)
-    arrArguments(i) = Wscript.arguments.item(i)
-Next</p>
-
-<p>&lsquo;Check whether the script is run using CScript
-Select Case intChkProgram()
-    Case CONST_CSCRIPT
-        &lsquo;Do Nothing
-    Case CONST_WSCRIPT
-        WScript.Echo &quot;Please run this script using CScript.&quot; &amp; vbCRLF &amp; _
-            &quot;This can be achieved by&quot; &amp; vbCRLF &amp; _
-            &quot;1. Using &quot;&quot;CScript MODIFYUSERS.vbs arguments&quot;&quot; for Windows <sup>95</sup>&frasl;<sub>98</sub> or&quot; &amp; VbCrLf &amp; _
-            &quot;2. Changing the default Windows Scripting Host setting to CScript&quot; &amp; vbCRLF &amp; _
-            &quot;    using &quot;&quot;CScript //H:CScript //S&quot;&quot; and running the script using&quot; &amp; vbCRLF &amp; _
-            &quot;    &quot;&quot;MODIFYUSERS.vbs arguments&quot;&quot; for Windows NT.&quot;
-        WScript.Quit
-    Case Else
-        WScript.Quit
-End Select</p>
-
-<p>&lsquo;Parse the command line
-Err.Clear()
-intOpMode = intParseCmdLine(arrArguments, strPath, blnTaskbar, strOptionsMessage)</p>
-
-<p>If Err.Number Then
-    Wscript.Echo &quot;Error 0X&quot; &amp; CStr(Hex(Err.Number)) &amp; &quot; occurred in parsing the command line.&quot;
-    If Err.Description &lt;&gt; &quot;&quot; Then
-        Wscript.Echo &quot;Error description: &quot; &amp; Err.Description &amp; &quot;.&quot;
-    End If
-    &lsquo;WScript.quit
-End If</p>
-
-<p>Select Case intOpMode
-    Case CONST_SHOW_USAGE
-        Call ShowUsage()
-        WScript.quit
-    Case CONST_PROCEED
-        &lsquo;Do nothing.
-    Case CONST_ERROR
-        WScript.quit
-    Case Else
-        Wscript.Echo &quot;Error occurred in passing parameters.&quot;
-End Select</p>
-
-<p>&lsquo;********************************************************************
-&lsquo;* Main Script
-&lsquo;********************************************************************</p>
-
-<p>WScript.Echo strOptionsMessage</p>
-
-<p>blnPinned = PinItem(strPath, blnTaskbar)
-WScript.Echo &quot;Item pinned: &quot; &amp; CStr(blnPinned)</p>
-
-<p>If blnPinned Then
-    WScript.Quit(0)
-Else
-    WScript.Quit(1)
-End If</p>
-
-<p>&lsquo;********************************************************************
-&lsquo;*
-&lsquo;* Function intChkProgram()
-&lsquo;*
-&lsquo;* Purpose:  Determines which program is used to run this script.
-&lsquo;*
-&lsquo;* Input:    None
-&lsquo;*
-&lsquo;* Returns:  intChkProgram is set to one of CONST_ERROR, CONST_WSCRIPT,
-&lsquo;*           and CONST_CSCRIPT.
-&lsquo;*
-&lsquo;********************************************************************
-Private Function intChkProgram()</p>
-
-<pre><code>ON ERROR RESUME NEXT
-
-Dim i
-Dim j
-Dim strFullName
-Dim strCommand
-
-'strFullName should be something like C:\WINDOWS\COMMAND\CSCRIPT.EXE
-strFullName = WScript.FullName
-If Err.Number then
-    Wscript.Echo &amp;quot;Error 0x&amp;quot; &amp;amp; CStr(Hex(Err.Number)) &amp;amp; &amp;quot; occurred.&amp;quot;
-    If Err.Description &amp;lt;&amp;gt; &amp;quot;&amp;quot; Then
-        Wscript.Echo &amp;quot;Error description: &amp;quot; &amp;amp; Err.Description &amp;amp; &amp;quot;.&amp;quot;
-    End If
-    intChkProgram =  CONST_ERROR
-    Exit Function
-End If
-
-i = InStr(1, strFullName, &amp;quot;.exe&amp;quot;,
-                1)
-If i = 0 Then
-    intChkProgram =  CONST_ERROR
-    Exit Function
-Else
-    j = InStrRev(strFullName, &amp;quot;\&amp;quot;, i,
-                1)
-    If j = 0 Then
-        intChkProgram =  CONST_ERROR
-        Exit Function
-    Else
-        strCommand = Mid(strFullName, j+1, i-j-1)
-        Select Case LCase(strCommand)
-            Case &amp;quot;cscript&amp;quot;
-                intChkProgram = CONST_CSCRIPT
-            Case &amp;quot;wscript&amp;quot;
-                intChkProgram = CONST_WSCRIPT
-            Case Else       'should never happen
-                Wscript.Echo &amp;quot;An unexpected program is used to run this script.&amp;quot;
-                Wscript.Echo &amp;quot;Only CScript.Exe or WScript.Exe can be used to run this script.&amp;quot;
-                intChkProgram = CONST_ERROR
-        End Select
-    End If
-End If
-</code></pre>
-
-<p>End Function</p>
-
-<p>&lsquo;********************************************************************
-&lsquo;*
-&lsquo;* Function intParseCmdLine()
-&lsquo;*
-&lsquo;* Purpose:  Parses the command line.
-&lsquo;*
-&lsquo;* Input:    arrArguments              An array containing input from the command line
-&lsquo;*
-&lsquo;* Input:    strPath                   Path of exe to pin
-&lsquo;*           strOptionsMessage         String containing options selected
-&lsquo;*
-&lsquo;* Returns:  intParseCmdLine is set to one of CONST_ERROR, CONST_SHOW_USAGE,
-&lsquo;*           and CONST_PROCEED.
-&lsquo;*
-&lsquo;********************************************************************
-Private Function intParseCmdLine(arrArguments, strPath, blnTaskbar, strOptionsMessage)</p>
-
-<pre><code>ON ERROR RESUME NEXT
-
-Dim i
-Dim strFlag
-Dim strSwitchValue
-
-strFlag = arrArguments(0)
-Err.Clear()
-
-'Help is needed
-If (strFlag = &amp;quot;&amp;quot;) OR (strFlag=&amp;quot;help&amp;quot;) OR (strFlag=&amp;quot;/h&amp;quot;) OR (strFlag=&amp;quot;\h&amp;quot;) OR (strFlag=&amp;quot;-h&amp;quot;) _
-    OR (strFlag = &amp;quot;\?&amp;quot;) OR (strFlag = &amp;quot;/?&amp;quot;) OR (strFlag = &amp;quot;?&amp;quot;) OR (strFlag=&amp;quot;h&amp;quot;) Then
-    intParseCmdLine = CONST_SHOW_USAGE
-    Exit Function
-End If
-
-strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;&amp;quot;  &amp;amp; VbCrLf
-strOptionsMessage = strOptionsMessage &amp;amp; WScript.ScriptName  &amp;amp; VbCrLf
-strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;&amp;quot;  &amp;amp; VbCrLf
-strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;Command Line Options:&amp;quot;  &amp;amp; vbCrLf
-strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;=======================================&amp;quot;  &amp;amp; VbCrLf
-
-For i = 0 to UBound(arrArguments)
-    strFlag = Left(arrArguments(i), InStr(1, arrArguments(i), &amp;quot;:&amp;quot;)-1)
-    If Err.Number Then            'An error occurs if there is no : in the string
-        Err.Clear
-        Select Case LCase(arrArguments(i))
-            Case &amp;quot;/q&amp;quot;
-                blnQuiet = True
-                strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;Supress Console Output: &amp;quot; &amp;amp; blnQuiet &amp;amp; VbCrLf
-            Case &amp;quot;/taskbar&amp;quot;
-                blnTaskbar = True
-                strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;Pin to Taskbar instead of Start Menu: &amp;quot; &amp;amp; blnTaskbar &amp;amp; VbCrLf
-            Case Else
-                Wscript.Echo arrArguments(i) &amp;amp; &amp;quot; is not recognized as a valid input.&amp;quot;
-                intParseCmdLine = CONST_ERROR
-                Exit Function
-        End Select
-    Else
-        strSwitchValue = Right(arrArguments(i), Len(arrArguments(i))-(Len(strFlag)+1))
-        Select Case LCase(strFlag)
-            Case &amp;quot;/item&amp;quot;
-                strPath = strSwitchValue
-                strOptionsMessage = strOptionsMessage &amp;amp; &amp;quot;Item to pin to Start Menu or Taskbar: &amp;quot; &amp;amp; strPath &amp;amp; VbCrLf
-            Case else
-                Wscript.Echo &amp;quot;Invalid flag &amp;quot; &amp;amp; strFlag &amp;amp; &amp;quot;.&amp;quot;
-                Wscript.Echo &amp;quot;Please check the input and try again.&amp;quot;
-                intParseCmdLine = CONST_ERROR
-                Exit Function
-        End Select
-    End If
-Next
-
-If (strPath = &amp;quot;&amp;quot;) Then
-    Wscript.Echo &amp;quot;The /item switch is required&amp;quot;
-    Wscript.Echo &amp;quot;Please check the input and try again.&amp;quot;
-    intParseCmdLine = CONST_ERROR
-    Exit Function
-End If
-
-intParseCmdLine = CONST_PROCEED
-</code></pre>
-
-<p>End Function</p>
-
-<p>&lsquo;********************************************************************
-&lsquo;*
-&lsquo;* Function PinItem()
-&lsquo;*
-&lsquo;* Purpose:  Pin item to the Start Menu.
-&lsquo;*
-&lsquo;* Input:          strlPath          Path of exe to pin
-&lsquo;*                 blnTaskbar        Pin item to Taskbar instead of Start Menu if true
-&lsquo;*
-&lsquo;* Dependencies:   objShell          Shell.Application object
-&lsquo;*                 objFSO            File System object
-&lsquo;*
-&lsquo;* Returns:        True if the shortcut is created, else false
-&lsquo;*
-&lsquo;********************************************************************
-Function PinItem(strlPath, blnTaskbar)
-    On Error Resume Next</p>
-
-<pre><code>Dim colVerbs
-Dim itemverb
-
-Dim objFolder
-Dim objFolderItem
-
-Dim strFolder
-Dim strFile
-
-If objFSO.FileExists(strlPath) Then
-    '***** Do nothing, folder exists
-Else
-    '***** Folder does not exist
-    PinItem = False
-    WScript.Echo &amp;quot;File to pin does not exist.&amp;quot;
-    WScript.Echo &amp;quot;Please check the input and try again.&amp;quot;
-    Exit Function
-End If
-
-strFolder = objFSO.GetParentFolderName(strlPath)
-strFile = objFSO.GetFileName(strlPath)
-
-WScript.Echo &amp;quot;Folder: &amp;quot; &amp;amp; strFolder
-WScript.Echo &amp;quot;File: &amp;quot; &amp;amp; strFile
-
-Err.Clear
-Set objFolder = objShell.Namespace(strFolder)
-Set objFolderItem = objFolder.ParseName(strFile)
-
-' ***** InvokeVerb for this does not work on Vista/WS2008
-'objFolderItem.InvokeVerb(&amp;quot;P&amp;amp;in to Start Menu&amp;quot;)
-
-' ***** This code works on Vista/WS2008
-Set colVerbs = objFolderItem.Verbs
-
-If blnTaskbar Then
-    For each itemverb in objFolderItem.verbs
-        If Replace(itemverb.name, &amp;quot;&amp;amp;&amp;quot;, &amp;quot;&amp;quot;) = &amp;quot;Pin to Taskbar&amp;quot; Then itemverb.DoIt
-    Next 
-Else
-    For each itemverb in objFolderItem.verbs
-        If Replace(itemverb.name, &amp;quot;&amp;amp;&amp;quot;, &amp;quot;&amp;quot;) = &amp;quot;Pin to Start Menu&amp;quot; Then itemverb.DoIt
-    Next 
-End If
-
-If Err.Number = 0 Then
-    PinItem = True
-Else
-    PinItem = False
-End If
-</code></pre>
-
-<p>End Function</p>
-
-<p>&lsquo;********************************************************************
-&lsquo;*
-&lsquo;* Sub ShowUsage()
-&lsquo;*
-&lsquo;* Purpose:   Shows the correct usage to the user.
-&lsquo;*
-&lsquo;* Input:     None
-&lsquo;*
-&lsquo;* Output:    Help messages are displayed on screen.
-&lsquo;*
-&lsquo;********************************************************************
-Sub ShowUsage()
-    WScript.Echo &quot;This script is used to Pin items to the Start Menu or Taskbar.&quot;
-    WScript.Echo &quot;&quot;
-    WScript.Echo &quot;Usage: cscript &quot; &amp; WScript.ScriptName &amp; &quot; [options
-                    ]&quot;
-    WScript.Echo &quot;&quot;
-    WScript.Echo &quot;Options:&quot;
-    WScript.Echo &quot;&quot;
-    WScript.Echo &quot; /item:&lt;PathName&gt;       Path of item to pin.&quot;
-    WScript.Echo &quot;&quot;
-    WScript.Echo &quot; /taskbar               (Optional) Pin to Taskbar instead of Start Menu.&quot;
-    WScript.Echo &quot;&quot;
-    WScript.Echo &quot; /?                     (Optional) Displays this help text.&quot;
-    WScript.Echo &quot;&quot;
-    WScript.Echo &quot;&quot;
-    WScript.Echo &quot;&quot;
-End Sub
-[/code
-                    ]</p>
-
-<p>&nbsp;</p>
-
-<p>MDT 2013:</p>
-
-<p>On your MDT 2013 DeploymentShare$, add an application by right clicking the &ldquo;Applications&rdquo; node and selecting &ldquo;New Application&rdquo;</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_1.png"><img id="i-191" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_1.png?w=250" alt="Image" /></a></p>
-
-<p>In the new dialogue box, select &ldquo;Application without source files or elsewhere on the network&rdquo; radius button.</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_2.png"><img id="i-195" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_2.png?w=650" alt="Image" /></a></p>
-
-<p>Select Next and fill out the information as you would like it to appear (I choose to name my Application as <strong>&ldquo;Set<em>TaskBar</em>&amp;_StartMenu_Shortcuts&rdquo;</strong> but it&rsquo;s up to you.  If you use something else, then change the first script above accordingly)</p>
-
-<p>Select Next, then in the Command Line field type &ldquo;Copy_To_Default_User_Startup.cmd&rdquo;</p>
-
-<p>In the &ldquo;Working directory&rdquo; field, type: &ldquo;.\Applications\Set<em>TaskBar</em>&amp;_StartMenu_Shortcuts&rdquo;</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_3.png"><img id="i-214" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_3.png?w=560" alt="Image" /></a></p>
-
-<p>Select Next, then Finish.</p>
-
-<p>Now, right click your newly created application and select properties</p>
-
-<p>Select the check box on the bottom left hand corner of the &ldquo;General&rdquo; tab that says &ldquo;Hide this application in the Deployment Wizard&rdquo;</p>
-
-<p>Next, add all the scripts above to your %DeployRoot%\Applications\Set<em>TaskBar</em>&amp;_StartMenu_Shortcuts folder.</p>
-
-<p>After adding the scripts to this folder, go back to the Deployment Workbench and right click your Task Sequence for Windows 7 and select Properties</p>
-
-<p>Under the State Restore section of the Task Sequence, add a &ldquo;Custom Task&rdquo; after your &ldquo;Install Applications&rdquo; item in the Task Sequence.</p>
-
-<p>You can add the &ldquo;Custom Task&rdquo; in many different ways but I like to create a &ldquo;New Group&rdquo; after either my &ldquo;Install Applications&rdquo; or &ldquo;Windows Update (Post-Application Installation)&rdquo;:  Please see below:</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_4.png"><img id="i-225" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_4.png?w=227" alt="Image" /></a></p>
-
-<p>After creating the &ldquo;New Group&rdquo; you can name it anything but I choose to name mine as &ldquo;Custom Task&rdquo;.</p>
-
-<p>Next, you need to add the application to your Task Sequence by selecting the &ldquo;New Group&rdquo; and clicking on Add-&gt;General-&gt;Install Application.</p>
-
-<p>Configure your new Application as the screenshot</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_5.png"><img class="alignnone size-full wp-image-230" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_5.png" alt="MDT2013_New_Application_5" width="405" height="516" /></a></p>
-
-<p>Press Apply, then Ok.</p>
-
-<p>When ever I make changes to my DeploymentShare I always update my Deployment Share for safe measures.  It&rsquo;s also because I never want to forgot to do it when I really need too.</p>
-
-<p>You should now have a new application that will set the Task Bar and your Start Menu Shortcuts without having to set them in your base image.</p>
-
-<p>&nbsp;</p>
-
-<p>Enjoy!</p>
-
-<p>p.s. I know there is probably a better way of organizing these scripts but in a pinch they worked and I haven&rsquo;t gone back to look at other ways of doing it.</p>
-
         
     </div>
     

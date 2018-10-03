@@ -94,6 +94,21 @@
             
      
     <div class="article-wrapper u-cf single">
+        <p>So, I was tasked with removing proxy settings from Firefox because of Webroot Desktop Proxy.  Removing them from the %Programfiles% directory was easy, the hard part was the user prefs.js.  Anyways, here&rsquo;s a little script I created to remove Proxy settings and set them to No Proxy.</p>
+
+<p>cd /D &ldquo;%APPDATA%\Mozilla\Firefox\Profiles\&rdquo;
+cd *.default
+set ffile=%cd%
+type &ldquo;%ffile%\prefs.js&rdquo; | findstr /v &ldquo;user<em>pref(&ldquo;network.proxy.type&rdquo;, 2);&rdquo;&gt;&rdquo;%ffile%\prefs</em>.js&rdquo;
+type &ldquo;%ffile%\prefs.js&rdquo; | findstr /v &ldquo;user<em>pref(&ldquo;network.proxy.type&rdquo;, 0);&rdquo;&gt;&rdquo;%ffile%\prefs</em>.js&rdquo;
+ren &ldquo;prefs.js&rdquo; &ldquo;prefs<em>.js&rdquo;
+del &ldquo;%ffile%\prefs.js&rdquo;
+ren &ldquo;prefs</em>.js&rdquo; &ldquo;prefs.js&rdquo;
+del &ldquo;%ffile%\prefs_.js&rdquo;
+echo user_pref(&ldquo;network.proxy.type&rdquo;, 0);&gt;&gt;&rdquo;%ffile%\prefs.js&rdquo;
+set ffile=
+cd %windir%</p>
+
         
             <a class="bubble" href="/article/script-removing-proxy-from-firefox-user-prefs-js/">
     <i class="fa fa-fw fa-pencil"></i>
@@ -202,21 +217,6 @@ cd %windir%</p>
 
     
 </article>
-            <p>So, I was tasked with removing proxy settings from Firefox because of Webroot Desktop Proxy.  Removing them from the %Programfiles% directory was easy, the hard part was the user prefs.js.  Anyways, here&rsquo;s a little script I created to remove Proxy settings and set them to No Proxy.</p>
-
-<p>cd /D &ldquo;%APPDATA%\Mozilla\Firefox\Profiles\&rdquo;
-cd *.default
-set ffile=%cd%
-type &ldquo;%ffile%\prefs.js&rdquo; | findstr /v &ldquo;user<em>pref(&ldquo;network.proxy.type&rdquo;, 2);&rdquo;&gt;&rdquo;%ffile%\prefs</em>.js&rdquo;
-type &ldquo;%ffile%\prefs.js&rdquo; | findstr /v &ldquo;user<em>pref(&ldquo;network.proxy.type&rdquo;, 0);&rdquo;&gt;&rdquo;%ffile%\prefs</em>.js&rdquo;
-ren &ldquo;prefs.js&rdquo; &ldquo;prefs<em>.js&rdquo;
-del &ldquo;%ffile%\prefs.js&rdquo;
-ren &ldquo;prefs</em>.js&rdquo; &ldquo;prefs.js&rdquo;
-del &ldquo;%ffile%\prefs_.js&rdquo;
-echo user_pref(&ldquo;network.proxy.type&rdquo;, 0);&gt;&gt;&rdquo;%ffile%\prefs.js&rdquo;
-set ffile=
-cd %windir%</p>
-
         
     </div>
     
