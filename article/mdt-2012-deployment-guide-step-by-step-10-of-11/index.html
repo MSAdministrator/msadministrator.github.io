@@ -351,6 +351,169 @@
     
 </article>
         
+        <p><h1>Automating the Deployment Process</h1>
+<ol>
+    <li>Right-click on the deployment share and select <b><i>Properties</i></b></li>
+</ol>
+<p align="center"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/36/" rel="attachment wp-att-122"><img class="alignnone size-full wp-image-122" alt="36" src="http://msadministrator.files.wordpress.com/2012/12/36.png" width="307" height="294" /></a></p></p>
+
+<p><ol>
+    <li>Select the “<b><i>Rules</i></b>” tab</li>
+    <li>In the main window, edit the settings as required.  A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…</li>
+    <li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/35/" rel="attachment wp-att-121"><img class="alignnone size-full wp-image-121" alt="35" src="http://msadministrator.files.wordpress.com/2012/12/351.png" width="519" height="431" /></a></li>
+</ol>
+<table cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td width="54" height="0"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<b>CUSTOMSETTINGS.INI</b>
+<table width="476" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="top" width="203">[Settings]</p>
+
+<p>Priority=Default</p>
+
+<p>[Default
+                    ]</p>
+
+<p>_SMSTSORGNAME=Customer</p>
+
+<p>SkipBDDWelcome=YES</p>
+
+<p>SkipProductKey=YES</p>
+
+<p>ProductKey= XXXX-XXXX-XXXXX-XXXXX</p>
+
+<p>OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX</p>
+
+<p>SkipDeploymentType=YES</p>
+
+<p>DeploymentType=NEWCOMPUTER</p>
+
+<p>SkipDomainMembership=NO</p>
+
+<p>JoinDomain=domain.com</p>
+
+<p>DomainAdminDomain=domain.com</p>
+
+<p>DomainAdmin=MDTAddComputer</p>
+
+<p>DomainAdminPassword=Pa55w0rd</p>
+
+<p>MachineObjectOU=ou=example,dc=domain,dc=com</p>
+
+<p>OrgName=Customer</p>
+
+<p>SkipUserData=YES</p>
+
+<p>SkipTaskSequence=NO</p>
+
+<p>TaskSequenceID=TASKSEQID</p>
+
+<p>SkipPackageDisplay=YES</p>
+
+<p>SkipLocaleSelection=NO</p>
+
+<p>UILanguage=en-US</p>
+
+<p>UserLocale=en-GB</p>
+
+<p>KeyboardLocale=0809: 00000809</p>
+
+<p>SystemLocale=en-US</p>
+
+<p>SkipTimeZone=NO</p>
+
+<p>TimeZoneName=GMT Standard Time</p>
+
+<p>TimeZone=085</p>
+
+<p>SkipBitLocker=YES</p>
+
+<p>SkipSummary=YES</p>
+
+<p>SkipCapture=YES</p>
+
+<p>SkipAdminPassword=YES</p>
+
+<p>SkipApplications=NO</p>
+
+<p>SkipFinalSummary=NO</p>
+
+<p>WsusServer=http: //wsus.domain.com</p>
+
+<p>Home_page=http: //intranet.domain.com</p>
+
+<p>FinishAction=SHUTDOWN</td>
+<td valign="top" width="272">Sets the Company Name during the deployment</p>
+
+<p>Skips unneeded wizard pages</p>
+
+<p>Skips unneeded wizard pages</p>
+
+<p>The Windows product key to use (only required if using MAK keys)</p>
+
+<p>Sets the deployment type</p>
+
+<p>Skip the domain membership screen</p>
+
+<p></p>
+
+<p>Credentials to use to join computers to the domain</p>
+
+<p>/</p>
+
+<p>Do not perform a user state migration</p>
+
+<p>Do not ask which task sequence to run</p>
+
+<p>Defautl to the task sequenceID you created earlier</p>
+
+<p>Don’t display a list of possible OS packages to install Ask which regional settings to configure</p>
+
+<p>Set the default UI language to English</p>
+
+<p>Set the default user locale to GB English</p>
+
+<p>Set the default keyboard to UK</p>
+
+<p>Ask which time zone the computer is in</p>
+
+<p>Set the default time zone to GMT</p>
+
+<p>Set the default time zone to GMT (legacy support)</p>
+
+<p>Skip the installation of BitLocker</p>
+
+<p>Skip the Summary screen before deployment starts</p>
+
+<p>Skip the “Build and Capture” options during deployment</p>
+
+<p>Don’t ask for a local admin password for new PCs</p>
+
+<p>Do not request local admin password during OS deployment</p>
+
+<p>Pre-sets the admin password to the value specified</p>
+
+<p>Allows you to set the local WSUS server for updates</p>
+
+<p>Sets the default IE homepage for all users of new computers</p>
+
+<p>Tells the computer to shut down once task sequence is completed</td>
+</tr>
+</tbody>
+</table>
+<b> </b>
+<p align="left">If you want to specify the Timezone, Locale or other settings during the deployment, simply change the YES to a NO for the relevant option and you’ll be prompted during deployment.  These settings are injected automatically during deployment into the unattend.xml so you don’t have to worry about messing around with it usually.</p></p>
+
     </div>
     
 

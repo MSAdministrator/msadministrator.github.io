@@ -351,6 +351,159 @@ brew cask upgrade powershell
     
 </article>
         
+        
+
+<p>I posted a tweet earlier this week asking if anyone would be interested in a small series of posts that explain the differences between Python and PowerShell.</p>
+
+<p><img src="python-vs-powershell-twitter-post.png" style="max-width:100%;" alt="python-vs-powershell-twitter-post"></p>
+
+<p>So, here we go!</p>
+
+<h2 id="python-on-macos">Python on macOS</h2>
+
+<p>Python and PowerShell are quite a bit different from each other.  Python has been around for several years and works on multiple operating systems.  Additionally, Python is beloved by it&rsquo;s extremely supportive open-source community; rightfully so!  Python is fast and portable, and is a go to for most developers.</p>
+
+<p>At the time of writing this post, there are two distinct release branches.  These are Python 2.x and 3.x.  <strong>This entire blog series will focus only on Python 3.x.</strong>  The current version of [Python is 3.7.0 for macOS(<a href="https://www.python.org/downloads/)">https://www.python.org/downloads/)</a>], but luckily if you have a modern OS X system Python is already installed by Apple.  Even though it is installed by default on Mac OS X, we should make sure that we have the latest version installed.</p>
+
+<p>The first step if you are on a Mac OS X system is to open up your Terminal app and run the following command.</p>
+
+<p>Please note, that if you are on a Windows system then you will need to download Python 3.x from <a href="https://www.python.org/downloads/windows/">here</a>. Additionally, <a href="https://www.howtogeek.com/197947/how-to-install-python-on-windows/">here is a great article that walks through installing Python on Windows</a>.  Once you have installed Python then these commands should work the same whether on Mac OS X or Windows.</p>
+
+<pre><code class="language-python"># Try both python and python3 if you have two seperate branches of Python installed
+python -V
+# or
+python3 -V
+</code></pre>
+
+<p>This will output the current version of Python installed on your system.  If it is not Python 3.x, then you will need to install it using your choice of package manager or straight from the <a href="https://python.org">https://pythong.org</a> website.</p>
+
+<p>If you use <code>brew</code> as your package manager, then you can simply install <code>python3</code> by calling:</p>
+
+<pre><code class="language-bash">brew install python3
+</code></pre>
+
+<p>While we have our Terminal app open, let&rsquo;s also check to make sure that we have the latest version of <code>pip</code> installed.  <a href="https://pip.readthedocs.io/en/stable/installing/">Pip</a> is Python&rsquo;s package manager.  This is how Python installs additional libraries or <code>requirements</code> needed to work with a library or package.  Let&rsquo;s check to make sure that we have pip installed and it is running.</p>
+
+<p>Please note, that if you are installing Python on Windows then <code>pip</code> is installed by default.  Either way, it is still good to check which pip commands works for your system.</p>
+
+<pre><code class="language-python"># The same with Python, you can have two versions of pip intalled
+pip -V
+# or
+pip3 -V
+</code></pre>
+
+<h2 id="powershell-on-windows">PowerShell on Windows</h2>
+
+<p>PowerShell is natively installed on Windows machines since Windows 7 (give or take).  As new features are released by the PowerShell Team, you can upgrade your version of PowerShell as well.  But, this has potential drawbacks as PowerShell has different version functionality depending on your operating system.  For example, PowerShell 5.0 is more full featured on a Windows 10 operating system than it is on a Windows 7 operating system.  Most of the features are present, but there are differences.</p>
+
+<p>You can upgrade PowerShell on any Windows 7 or higher system, but to do this you will need to install a new version of the Windows Management Framework (WMF) (sometimes multiple versions) to upgrade.  Before we do that, you can find out the specific version you are on by opening up a PowerShell console and running:</p>
+
+<pre><code class="language-powershell">$PSVersionTable
+</code></pre>
+
+<p>This should output your version of PowerShell.  If you are on a brand-new Windows 7 machine, then you will be on PowerShell 2.  To upgrade you will need to first install WMF 3.0, then you can install WMF 5.0 (skipping WMF 4.0).</p>
+
+<p>I have compiled a json file that has all the download links for all the versions of WMF that you can install:</p>
+
+<pre><code class="language-json">{
+   &quot;WMF3&quot;: {
+      &quot;Win7&quot;: {
+        &quot;x86&quot;: &quot;https://download.microsoft.com/download/E/7/6/E76850B8-DA6E-4FF5-8CCE-A24FC513FD16/Windows6.1-KB2506143-x86.msu&quot;,
+        &quot;x64&quot;: &quot;https://download.microsoft.com/download/E/7/6/E76850B8-DA6E-4FF5-8CCE-A24FC513FD16/Windows6.1-KB2506143-x64.msu&quot;
+      }
+   },
+   &quot;DotNet4&quot;: &quot;https://download.microsoft.com/download/1/B/E/1BE39E79-7E39-46A3-96FF-047F95396215/dotNetFx40_Full_setup.exe&quot;,
+   &quot;WMF4&quot;: {
+      &quot;Win7&quot;: {
+        &quot;x64&quot;: &quot;https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x64-MultiPkg.msu&quot;,
+        &quot;x86&quot;: &quot;https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x86-MultiPkg.msu&quot;
+      },
+      &quot;Server2012&quot;: &quot;https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows8-RT-KB2799888-x64.msu&quot;
+   },
+   &quot;WMF5&quot;: {
+      &quot;Server2008R2&quot;: &quot;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win7AndW2K8R2-KB3134760-x64.msu&quot;,
+      &quot;Server2012&quot;: &quot;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/W2K12-KB3134759-x64.msu&quot;,
+      &quot;Server2012R2&quot;: &quot;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win8.1AndW2K12R2-KB3134758-x64.msu&quot;,
+      &quot;Win7&quot;: {
+         &quot;x64&quot;: &quot;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win7AndW2K8R2-KB3134760-x64.msu&quot;,
+         &quot;x86&quot;: &quot;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win7-KB3134760-x86.msu&quot;
+      },
+      &quot;Win81&quot;: {
+         &quot;x64&quot;: &quot;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win8.1AndW2K12R2-KB3134758-x64.msu&quot;,
+         &quot;x86&quot;: &quot;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win8.1-KB3134758-x86.msu&quot;
+      }
+   },
+   &quot;WMF51&quot;: {
+      &quot;Server2012&quot;: &quot;https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/W2K12-KB3191565-x64.msu&quot;,
+      &quot;Server2012R2&quot;: &quot;https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/Win8.1AndW2K12R2-KB3191564-x64.msu&quot;,
+      &quot;Win81&quot;: {
+         &quot;x64&quot;: &quot;https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/Win8.1AndW2K12R2-KB3191564-x64.msu&quot;,
+         &quot;x86&quot;: &quot;https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/Win8.1-KB3191564-x86.msu&quot;
+      }
+   }
+}
+</code></pre>
+
+<p>Once you have installed or upgraded to atleast PowerShell 5.0, then you can again check to ensure that your <code>$PSVersionTable</code> environmental variable states 5 or higher.</p>
+
+<h2 id="powershell-core-on-macos">PowerShell Core on macOS</h2>
+
+<p>Since the release of PowerShell Core, you can have the power of PowerShell on your macOS (or linux) systems.  To install PowerShell Core on a macOS system, you can use <code>brew</code> to install PowerShell Core:</p>
+
+<pre><code class="language-bash"># first make sure that brew is updated
+brew tap
+brew update
+
+# next install PowerShell Core
+brew cask install powershell
+</code></pre>
+
+<p>Once PowerShell Core is installed, you would typically think that you would access it by running <code>powershell</code> in our terminal, but it is actually <code>pwsh</code> in PowerShell Core.</p>
+
+<p>Microsoft decided to change the name of the PowerShell CLI application to <code>pwsh</code> over the traditional <code>powershell.exe</code> for cross platform compatibility (among other reasons).  To see if PowerShell Core is working correctly, you should open your terminal application and launch powershell:</p>
+
+<pre><code class="language-bash"># run PowerShell Core as normal user
+pwsh
+
+# run PowerShell Core as a sudo user
+sudo pwsh
+</code></pre>
+
+<p>Once you are in a PowerShell session you can identify the version of your current PowerShell Core install by using the same environmental variable:</p>
+
+<pre><code class="language-powershell">$PSVersionTable
+</code></pre>
+
+<pre><code class="language-output">Name                       Value                                  
+----                       -----                               
+PSVersion                  6.0.2                              
+PSEdition                  Core                            
+GitCommitId                v6.0.2                         
+OS                         Darwin 17.7.0 Darwin Kernel Version
+Platform                   Unix                                       
+PSCompatibleVersions       {1.0, 2.0, 3.0, 4.0...}                    
+PSRemotingProtocolVersion  2.3                                        
+SerializationVersion       1.1.0.1                                    
+WSManStackVersion          3.0                                        
+</code></pre>
+
+<p>If a new version of PowerShell Core is released, you can use brew to upgrade your current version of PowerShell:</p>
+
+<pre><code class="language-bash">brew update
+brew cask upgrade powershell
+</code></pre>
+
+<p>If you do not have or use <code>brew</code> you can also install PowerShell Core directly from the PowerShell GitHub repository.  These are located on the <a href="https://github.com/PowerShell/PowerShell/releases/latest">Releases</a> page.</p>
+
+<p>You download the version of PowerShell Core you want, but please make sure that you download the <code>pkg</code> of the selected version of PowerShell Core.</p>
+
+<p>You can double click the <code>pkg</code> and follow the on-screen instructions or you can run the following via terminal:</p>
+
+<pre><code class="language-bash">sudo installer -pkg powershell-6.0.2-osx.10.12-x64.pkg -target /
+</code></pre>
+
+<p>That&rsquo;s it!  I hope you enjoyed the first part of this series explaining the differences between <code>PowerShell</code> and <code>Python</code> for beginners.</p>
+
     </div>
     
 

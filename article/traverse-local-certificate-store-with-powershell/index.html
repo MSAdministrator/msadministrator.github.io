@@ -213,6 +213,25 @@ cd .\\LocalMachine\My\
     
 </article>
         
+        <p>Windows Certificate Store is typically accessed using the MMC Snap-In,  You can view both the Computer or User certificate stores using a traditional MMC console.  Sometimes though, you may just want to programmatically access it using PowerShell.  Luckily you can do this using a PSDrive that is created on your machine.</p>
+
+<p><img src="Use Get-PSDrive to view all your PSDrives.png" style="max-width:100%;" alt="Use Get-PSDrive to view all your PSDrives"></p>
+
+<p>As you can see there is a <code>Cert</code> drive and you can access it using PowerShell&rsquo;s multiple location based Cmdlets.  For example, if you can use <code>cd Cert:\</code> and it will change your current directory to the certificate PSDrive.  You can also use <code>Set-Location</code>,<code>Push-Location</code>, <code>Pop-Location</code> etc. when access your PSDrives.</p>
+
+<p>Once you have changed your directory to <code>PS Cert:\&gt;</code> you can use your normal tools like <code>ls</code> or <code>dir</code> to identify what is in your certificate stores.</p>
+
+<pre><code class="language-powershell">cd Cert:\
+ls
+# View your current local user certificate store
+cd .\\CurrentUser\My\
+
+# View your current local machine certificate store
+cd .\\LocalMachine\My\
+</code></pre>
+
+<p>Using PowerShell you can access all your certificates and the certificate store using PowerShell.</p>
+
     </div>
     
 
