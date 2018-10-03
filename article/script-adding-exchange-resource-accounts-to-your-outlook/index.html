@@ -94,87 +94,6 @@
             
      
     <div class="article-wrapper u-cf single">
-        <p>I work for a large public University and we have many Resource Accounts.  We needed a way to move from Public Folders but we wanted it to be seemless as possible.  To do this, I created this VBS script that allows anyone to add Resource Accounts to their Outlook <sup>2013</sup>&frasl;<sub>2010</sub> calendar as a shared calendar.  The user in question will have to run this script while Outlook is open and it will pull the Resource Account (add the Resource Account name in the RESOURCEACCOUNTNAME variable below) from the GAL and add it to the users calendar.  I hope this helps anyone interested in doing the same.</p>
-
-<p>[code
-                    ]</p>
-
-<p>&lsquo;**************************************************************************
-&lsquo; Script Name: ADDCALENDAR.vbs
-&lsquo; Version: 1.0
-&lsquo; Author: Josh Rickard
-&lsquo;Last Updated: 4.Nov.2013
-&lsquo; Purpose: This program is used to add Room Resource Calendars to
-&lsquo; someones Microsoft Office 2013 Shared Calendars group.
-&lsquo; Outlook 2013 has to be open for this script to continue.
-&lsquo; This script was originally created for the Trulaske
-&lsquo; University of REDACTED Technology Services Department.
-&lsquo; Legal: Script provided &quot;AS IS&quot; without warranties or guarantees
-&lsquo; of any kind. USE AT YOUR OWN RISK. Public domain.
-&lsquo;**************************************************************************
- Dim objApp
- Dim objNS
- Dim objFolder
- Dim strName(3)
- Dim objDummy
- Dim objRecip
- Dim calendar
- strName(0) = &quot;RESOURCEACCOUNTNAME&quot;
- strName(1) = &quot;RESOURCEACCOUNTNAME&quot;
- strName(2) = &quot;RESOURCEACCOUNTNAME&quot;
- strName(3) = &quot;RESOURCEACCOUNTNAME&quot;</p>
-
-<p>Const olMailItem = 0
- Const olFolderCalendar = 9</p>
-
-<p>&amp;nbsp;</p>
-
-<p>&rsquo; This section checks to see if Outlook 2013 is open. If it is not
-&lsquo; It will return &quot;Please Open Outlook and run this program again&quot;</p>
-
-<p>&lsquo;Change &quot;Outlook.Application.15&quot; to &quot;Outlook.Application.14&quot; for Outlook 2010
-On Error Resume Next
-Dim Outlook: Set Outlook = GetObject(, &quot;Outlook.Application.15&quot;)</p>
-
-<p>If Err.Number = 0 Then
- MsgBox &quot;This program will add Room Calendars to your mailbox.&quot;
-Else
- MsgBox &quot;Please Open Outlook and run this program again.&quot;
- Err.Clear
-End If</p>
-
-<p>&amp;nbsp;
-&lsquo; For Each Next Loop while adds each calendar from strName(array) to the users Shared Calendars</p>
-
-<p>For Each calendar In strName</p>
-
-<p>Set objApp = CreateObject(&quot;Outlook.Application.15&quot;)
- Set objNS = objApp.GetNamespace(&quot;MAPI&quot;)
- Set objFolder = Nothing</p>
-
-<p>Set objDummy = objApp.CreateItem(olMailItem)
- Set objRecip = objDummy.Recipients.Add(calendar)
- objRecip.Resolve
- If objRecip.Resolved = True Then
- On Error Resume Next
- Set objFolder = objNS.GetSharedDefaultFolder(objRecip, olFolderCalendar)
- On Error GoTo 0
- Else
- MsgBox &quot;Could not find &quot;,
-                    , _
- &quot;User not found&quot;
- End If</p>
-
-<p>Next</p>
-
-<p>Set GetOtherUserCalendar = objFolder
- Set objApp = Nothing
- Set objNS = Nothing
- Set objFolder = Nothing</p>
-
-<p>[/code
-                    ]</p>
-
         
             <a class="bubble" href="/article/script-adding-exchange-resource-accounts-to-your-outlook/">
     <i class="fa fa-fw fa-pencil"></i>
@@ -351,6 +270,87 @@ End If</p>
 </article>
         
     </div>
+    <p>I work for a large public University and we have many Resource Accounts.  We needed a way to move from Public Folders but we wanted it to be seemless as possible.  To do this, I created this VBS script that allows anyone to add Resource Accounts to their Outlook <sup>2013</sup>&frasl;<sub>2010</sub> calendar as a shared calendar.  The user in question will have to run this script while Outlook is open and it will pull the Resource Account (add the Resource Account name in the RESOURCEACCOUNTNAME variable below) from the GAL and add it to the users calendar.  I hope this helps anyone interested in doing the same.</p>
+
+<p>[code
+                    ]</p>
+
+<p>&lsquo;**************************************************************************
+&lsquo; Script Name: ADDCALENDAR.vbs
+&lsquo; Version: 1.0
+&lsquo; Author: Josh Rickard
+&lsquo;Last Updated: 4.Nov.2013
+&lsquo; Purpose: This program is used to add Room Resource Calendars to
+&lsquo; someones Microsoft Office 2013 Shared Calendars group.
+&lsquo; Outlook 2013 has to be open for this script to continue.
+&lsquo; This script was originally created for the Trulaske
+&lsquo; University of REDACTED Technology Services Department.
+&lsquo; Legal: Script provided &quot;AS IS&quot; without warranties or guarantees
+&lsquo; of any kind. USE AT YOUR OWN RISK. Public domain.
+&lsquo;**************************************************************************
+ Dim objApp
+ Dim objNS
+ Dim objFolder
+ Dim strName(3)
+ Dim objDummy
+ Dim objRecip
+ Dim calendar
+ strName(0) = &quot;RESOURCEACCOUNTNAME&quot;
+ strName(1) = &quot;RESOURCEACCOUNTNAME&quot;
+ strName(2) = &quot;RESOURCEACCOUNTNAME&quot;
+ strName(3) = &quot;RESOURCEACCOUNTNAME&quot;</p>
+
+<p>Const olMailItem = 0
+ Const olFolderCalendar = 9</p>
+
+<p>&amp;nbsp;</p>
+
+<p>&rsquo; This section checks to see if Outlook 2013 is open. If it is not
+&lsquo; It will return &quot;Please Open Outlook and run this program again&quot;</p>
+
+<p>&lsquo;Change &quot;Outlook.Application.15&quot; to &quot;Outlook.Application.14&quot; for Outlook 2010
+On Error Resume Next
+Dim Outlook: Set Outlook = GetObject(, &quot;Outlook.Application.15&quot;)</p>
+
+<p>If Err.Number = 0 Then
+ MsgBox &quot;This program will add Room Calendars to your mailbox.&quot;
+Else
+ MsgBox &quot;Please Open Outlook and run this program again.&quot;
+ Err.Clear
+End If</p>
+
+<p>&amp;nbsp;
+&lsquo; For Each Next Loop while adds each calendar from strName(array) to the users Shared Calendars</p>
+
+<p>For Each calendar In strName</p>
+
+<p>Set objApp = CreateObject(&quot;Outlook.Application.15&quot;)
+ Set objNS = objApp.GetNamespace(&quot;MAPI&quot;)
+ Set objFolder = Nothing</p>
+
+<p>Set objDummy = objApp.CreateItem(olMailItem)
+ Set objRecip = objDummy.Recipients.Add(calendar)
+ objRecip.Resolve
+ If objRecip.Resolved = True Then
+ On Error Resume Next
+ Set objFolder = objNS.GetSharedDefaultFolder(objRecip, olFolderCalendar)
+ On Error GoTo 0
+ Else
+ MsgBox &quot;Could not find &quot;,
+                    , _
+ &quot;User not found&quot;
+ End If</p>
+
+<p>Next</p>
+
+<p>Set GetOtherUserCalendar = objFolder
+ Set objApp = Nothing
+ Set objNS = Nothing
+ Set objFolder = Nothing</p>
+
+<p>[/code
+                    ]</p>
+
     
 
      
