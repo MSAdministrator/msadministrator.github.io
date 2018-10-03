@@ -6,11 +6,7 @@
         <meta name="author" content="Josh Rickard">
         <meta name="description" content="Lets Automate It">
         <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-<<<<<<< HEAD
         <meta name="generator" content="Hugo 0.49" />
-=======
-        <meta name="generator" content="Hugo 0.46" />
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
         <title> Powershell Updating Local Admin Passwords Securely 1 of 3 | Lets Automate It</title>
         <meta name="description" content="Powershell Updating Local Admin Passwords Securely 1 of 3 - Lets Automate It">
         <meta itemprop="name" content="Powershell Updating Local Admin Passwords Securely 1 of 3">
@@ -33,14 +29,6 @@
         
             
         
-        
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-1514695391372140",
-    enable_page_level_ads: true
-  });
-</script>
     </head>
     <body class="bilberry-hugo-theme">
         
@@ -699,6 +687,502 @@ else
     </div>
     
 
+<p>So I haven&rsquo;t posted in a bit but I&rsquo;ve seen this request many times.  Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely.  This is not my script, I received this script along with many others from the SANS SEC 505 course.  I have not altered it in any way.</p>
+
+<p>Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):</p>
+
+<p>This script will update the local administrator password with a unique 15 character, random, complex password, which is encrypted by your Public Key Certificate.</p>
+
+<p>Copy this text into a PowerShell Script called Update_PasswordArchive.ps1</p>
+
+<p><strong>Also, see below for a readme file for more explanation!</strong></p>
+
+<p>[code
+                    ]</p>
+
+<p>####################################################################################
+#.Synopsis</p>
+
+<h1 id="resets-the-password-of-a-local-user-account-with-a-15-character-random">Resets the password of a local user account with a 15-character, random,</h1>
+
+<h1 id="complex-password-which-is-encrytped-with-a-chosen-pubic-key-certificate-the">complex password, which is encrytped with a chosen pubic key certificate. The</h1>
+
+<h1 id="plaintext-password-is-displayed-with-the-recover-passwordarchive-ps1-script">plaintext password is displayed with the Recover-PasswordArchive.ps1 script.</h1>
+
+<p>#
+#.Description</p>
+
+<h1 id="resets-the-password-of-a-local-user-account-with-a-15-character-random-1">Resets the password of a local user account with a 15-character, random,</h1>
+
+<h1 id="complex-password-which-is-encrytped-with-a-chosen-pubic-key-certificate">complex password, which is encrytped with a chosen pubic key certificate.</h1>
+
+<h1 id="recovery-of-the-encrypted-password-from-the-file-requires-possession-of-the">Recovery of the encrypted password from the file requires possession of the</h1>
+
+<h1 id="private-key-corresponding-to-the-chosen-public-key-certificate-the-password">private key corresponding to the chosen public key certificate. The password</h1>
+
+<h1 id="is-never-transmitted-or-stored-in-plaintext-anywhere-the-plaintext-password">is never transmitted or stored in plaintext anywhere. The plaintext password</h1>
+
+<h1 id="is-recovered-with-the-companion-recover-passwordarchive-ps1-script-the">is recovered with the companion Recover-PasswordArchive.ps1 script. The</h1>
+
+<h1 id="script-must-be-run-with-administrative-or-local-system-privileges">script must be run with administrative or Local System privileges.</h1>
+
+<p>#
+#.Parameter CertificateFilePath</p>
+
+<h1 id="the-local-or-unc-path-to-the-cer-file-containing-the-public-key">The local or UNC path to the .CER file containing the public key</h1>
+
+<h1 id="certificate-which-will-be-used-to-encrypt-the-password-the-cer">certificate which will be used to encrypt the password. The .CER</h1>
+
+<h1 id="file-can-be-der-or-base64-encoded-any-certificate-with-any">file can be DER- or Base64-encoded. Any certificate with any</h1>
+
+<h1 id="purpose-s-from-any-template-can-be-used">purpose(s) from any template can be used.</h1>
+
+<p>#
+#.Parameter LocalUserName</p>
+
+<h1 id="name-of-the-local-user-account-on-the-computer-where-this-script-is-run">Name of the local user account on the computer where this script is run</h1>
+
+<h1 id="whose-password-should-be-reset-to-a-15-character-complex-random-password">whose password should be reset to a 15-character, complex, random password.</h1>
+
+<h1 id="do-not-include-a-quot-quot-or-quot-quot-character-only-local-accounts-are-supported">Do not include a &quot;&amp;quot; or &quot;@&quot; character, only local accounts are supported.</h1>
+
+<h1 id="defaults-to-quot-administrator-quot-but-any-name-can-be-specified">Defaults to &quot;Administrator&quot;, but any name can be specified.</h1>
+
+<p>#
+#.Parameter PasswordArchivePath</p>
+
+<h1 id="the-local-or-unc-path-to-the-folder-where-the-archive-files-containing">The local or UNC path to the folder where the archive files containing</h1>
+
+<h1 id="encrypted-passwords-will-be-stored">encrypted passwords will be stored.</h1>
+
+<p>#
+#
+#.Example</p>
+
+<h1 id="update-passwordarchive-ps1-certificatefilepath-c-certificate-cer-passwordarchivepath-c-folder">.\Update-PasswordArchive.ps1 -CertificateFilePath C:\certificate.cer -PasswordArchivePath C:\folder</h1>
+
+<p>#</p>
+
+<h1 id="resets-the-password-of-the-administrator-account-encrypts-that-password">Resets the password of the Administrator account, encrypts that password</h1>
+
+<h1 id="with-the-public-key-in-the-certificate-cer-file-and-saves-the-encrypted">with the public key in the certificate.cer file, and saves the encrypted</h1>
+
+<h1 id="archive-file-in-c-folder">archive file in C:\folder.</h1>
+
+<p>#
+#.Example</p>
+
+<h1 id="update-passwordarchive-ps1-certificatefilepath-server-share-certificate-cer-passwordarchivepath-server-share">.\Update-PasswordArchive.ps1 -CertificateFilePath \server\share\certificate.cer -PasswordArchivePath \server\share</h1>
+
+<p>#</p>
+
+<h1 id="unc-network-paths-can-be-used-instead-of-local-file-system-paths-password">UNC network paths can be used instead of local file system paths. Password</h1>
+
+<h1 id="is-not-reset-until-after-network-access-to-the-shared-folder-is-confirmed">is not reset until after network access to the shared folder is confirmed.</h1>
+
+<h1 id="the-certificate-and-archive-folders-do-not-have-to-be-the-same">The certificate and archive folders do not have to be the same.</h1>
+
+<p>#
+#.Example</p>
+
+<h1 id="update-passwordarchive-ps1-localusername-helpdeskuser-certificatefilepath-server-share-certificate-cer-passwordarchivepath-server-share">.\Update-PasswordArchive.ps1 -LocalUserName HelpDeskUser -CertificateFilePath \server\share\certificate.cer -PasswordArchivePath \server\share</h1>
+
+<p>#</p>
+
+<h1 id="the-local-administrator-account-s-password-is-reset-by-default-but-any">The local Administrator account&rsquo;s password is reset by default, but any</h1>
+
+<h1 id="local-user-name-can-be-specified-instead">local user name can be specified instead.</h1>
+
+<p>#
+#
+#Requires -Version 2.0
+#
+#.Notes</p>
+
+<h1 id="author-jason-fossen-enclave-consulting-http-www-sans-org-windows-security">Author: Jason Fossen, Enclave Consulting (http: //www.sans.org/windows-security/)</h1>
+
+<h1 id="version-1-0">Version: 1.0</h1>
+
+<h1 id="updated-11-nov-2012">Updated: 11.Nov.2012</h1>
+
+<h1 id="legal-public-domain-script-provided-quot-as-is-quot-with-no-warranties-or-guarantees-of">LEGAL: PUBLIC DOMAIN. SCRIPT PROVIDED &quot;AS IS&quot; WITH NO WARRANTIES OR GUARANTEES OF</h1>
+
+<h1 id="any-kind-including-but-not-limited-to-merchantability-and-or-fitness-for">ANY KIND, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY AND/OR FITNESS FOR</h1>
+
+<h1 id="a-particular-purpose-all-risks-of-damage-remains-with-the-user-even-if">A PARTICULAR PURPOSE. ALL RISKS OF DAMAGE REMAINS WITH THE USER, EVEN IF</h1>
+
+<h1 id="the-author-supplier-or-distributor-has-been-advised-of-the-possibility-of">THE AUTHOR, SUPPLIER OR DISTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF</h1>
+
+<h1 id="any-such-damage-if-your-state-does-not-permit-the-complete-limitation-of">ANY SUCH DAMAGE. IF YOUR STATE DOES NOT PERMIT THE COMPLETE LIMITATION OF</h1>
+
+<h1 id="liability-then-delete-this-file-since-you-are-now-prohibited-to-have-it">LIABILITY, THEN DELETE THIS FILE SINCE YOU ARE NOW PROHIBITED TO HAVE IT.</h1>
+
+<p>####################################################################################
+Param ($CertificateFilePath = &quot;.\PublicKeyCert.cer&quot;, $LocalUserName = &quot;Administrator&quot;, $PasswordArchivePath = &quot;.&amp;quot;)
+####################################################################################</p>
+
+<h1 id="function-name-generate-randompassword">Function Name: Generate-RandomPassword</h1>
+
+<h1 id="argument-s-a-single-argument-an-integer-for-the-desired-length-of-password">Argument(s): A single argument, an integer for the desired length of password.</h1>
+
+<h1 id="returns-pseudo-random-complex-password-that-has-at">Returns: Pseudo-random complex password that has at</h1>
+
+<h1 id="least-one-of-each-of-the-following-character-types">least one of each of the following character types:</h1>
+
+<h1 id="uppercase-letter-lowercase-letter-number-and">uppercase letter, lowercase letter, number, and</h1>
+
+<h1 id="legal-non-alphanumeric">legal non-alphanumeric.</h1>
+
+<h1 id="note-and-quot-and-lt-space-gt-are-excluded-to-make-the">Note: # and &quot; and &lt;space&gt; are excluded to make the</h1>
+
+<h1 id="function-play-nice-with-other-scripts-extended">function play nice with other scripts. Extended</h1>
+
+<h1 id="ascii-characters-are-not-included-either-zero-and">ASCII characters are not included either. Zero and</h1>
+
+<h1 id="capital-o-are-excluded-to-make-it-play-nice-with-humans">capital O are excluded to make it play nice with humans.</h1>
+
+<h1 id="note-if-the-argument-password-is-less-than-4-characters">Note: If the argument/password is less than 4 characters</h1>
+
+<h1 id="long-the-function-will-return-a-4-character-password">long, the function will return a 4-character password</h1>
+
+<h1 id="anyway-otherwise-the-complexity-requirements-won-t">anyway. Otherwise, the complexity requirements won&rsquo;t</h1>
+
+<h1 id="be-satisfiable">be satisfiable.</h1>
+
+<p>####################################################################################
+Function Generate-RandomPassword ($length = 15)
+{
+ If ($length -lt 4) { $length = 4
+                        } #Password must be at least 4 characters long in order to satisfy complexity requirements.</p>
+
+<p>Do {
+ $password = $null
+ $hasupper = $false #Has uppercase letter character flag.
+ $haslower = $false #Has lowercase letter character flag.
+ $hasnumber = $false #Has number character flag.
+ $hasnonalpha = $false #Has non-alphanumeric character flag.
+ $isstrong = $false #Assume password is not strong until tested otherwise.</p>
+
+<p>For ($i = $length; $i -gt 0; $i&ndash;)
+ {
+ $x = get-random -min 33 -max 126 #Random ASCII number for valid range of password characters.
+ #The range eliminates the space character, which causes problems in other scripts.
+ If ($x -eq 34) { $x&ndash;
+                                } #Eliminates double-quote. This is also how it is possible to get &quot;!&quot; in a password character.
+ If ($x -eq 39) { $x&ndash;
+                                } #Eliminates single-quote, also causes problems in scripts.
+ If ($x -eq 48 -or $x -eq 79) { $x++
+                                } #Eliminates zero and capital O, which causes problems for humans.</p>
+
+<p>$password = $password + [System.Char
+                                ] $x #Convert number to an ASCII character, append to password string.</p>
+
+<p>If ($x -ge 65 -And $x -le 90) { $hasupper = $true
+                                }
+ If ($x -ge 97 -And $x -le 122) { $haslower = $true
+                                }
+ If ($x -ge 48 -And $x -le 57) { $hasnumber = $true
+                                }
+ If (($x -ge 33 -And $x -le 47) -Or ($x -ge 58 -And $x -le 64) -Or ($x -ge 91 -And $x -le 96) -Or ($x -ge 123 -And $x -le 126)) { $hasnonalpha = $true
+                                }
+ If ($hasupper -And $haslower -And $hasnumber -And $hasnonalpha) { $isstrong = $true
+                                }
+                            }
+                        } While ($isstrong -eq $false)</p>
+
+<p>$password
+                    }</p>
+
+<p>&amp;nbsp;</p>
+
+<p>####################################################################################</p>
+
+<h1 id="writes-to-console-writes-to-application-event-log-optionally-exits">Writes to console, writes to Application event log, optionally exits.</h1>
+
+<h1 id="event-log-application-source-quot-passwordarchive-quot-event-id-9013">Event log: Application, Source: &quot;PasswordArchive&quot;, Event ID: 9013</h1>
+
+<p>####################################################################################
+function Write-StatusLog ( $Message,
+                    [Switch
+                    ] $Exit )
+{
+ # Define the Source attribute for when this script writes to the Application event log.
+ New-EventLog -LogName Application -Source PasswordArchive -ErrorAction SilentlyContinue</p>
+
+<p>&quot;<code>n&amp;quot; + $Message + &amp;quot;</code>n&quot;</p>
+
+<p>#The following here-string is written to the Application log only when there is an error,
+#but it contains information that could be useful to an attacker with access to the log.
+#The data is written for troubleshooting purposes, but feel free change it if concerned.
+$ErrorOnlyLogMessage = @&quot;
+$Message</p>
+
+<p>CurrentPrincipal = $($CurrentPrincipal.Identity.Name)</p>
+
+<p>CertificateFilePath = $CertificateFilePath</p>
+
+<p>LocalUserName = $LocalUserName</p>
+
+<p>PasswordArchivePath = $PasswordArchivePath</p>
+
+<p>ArchiveFileName = $filename</p>
+
+<p>NET.EXE Output = $netout
+&quot;@</p>
+
+<p>if ($Exit)
+ { write-eventlog -logname Application -source PasswordArchive -eventID 9013 -message $ErrorOnlyLogMessage -EntryType Error
+                        }
+ else
+ { write-eventlog -logname Application -source PasswordArchive -eventID 9013 -message $Message -EntryType Information
+                        }</p>
+
+<p>if ($Exit) { exit
+                        }
+                    }</p>
+
+<p>&amp;nbsp;</p>
+
+<h1 id="confirm-that-this-process-has-administrative-privileges-to-reset-a-local-password">Confirm that this process has administrative privileges to reset a local password.</h1>
+
+<p>$CurrentWindowsID = [System.Security.Principal.WindowsIdentity
+                    ]: :GetCurrent()
+$CurrentPrincipal = new-object System.Security.Principal.WindowsPrincipal($CurrentWindowsID)
+if (-not $? -or -not $CurrentPrincipal.IsInRole(&quot;Administrators&quot;))
+ { write-statuslog -m &quot;ERROR: This process lacks the privileges necessary to reset a password.&quot; -exit
+                    }</p>
+
+<p>&amp;nbsp;</p>
+
+<h1 id="confirm-that-the-target-local-account-exists-and-that-net-exe-is-executable-by-this-process">Confirm that the target local account exists and that NET.EXE is executable by this process.</h1>
+
+<p>if ($LocalUserName -match &lsquo;[\@
+                    ]&lsquo;) { write-statuslog -m &quot;ERROR: This script can only be used to reset the passwords of LOCAL user accounts, please specify a simple username without an &lsquo;@&rsquo; or &lsquo;\&rsquo; character in it.&quot; -exit
+                    }
+$netusers = invoke-expression -Command $($env:systemroot + &quot;\system32\net.exe user&quot;)
+if (-not $($netusers | select-string &quot;$LocalUserName&quot; -quiet)) { write-statuslog -m &quot;ERROR: Local user does not exist: $LocalUserName&quot; -exit
+                    }</p>
+
+<p>&amp;nbsp;</p>
+
+<h1 id="get-the-public-key-certificate">Get the public key certificate.</h1>
+
+<p>if (Resolve-Path -Path $CertificateFilePath)
+{ $CertificateFilePath = $(Resolve-Path -Path $CertificateFilePath).Path
+                    }
+else
+{ write-statuslog -m &quot;ERROR: Cannot resolve path to certificate file: $CertificateFilePath&quot; -exit
+                    }
+if ($CertificateFilePath -ne $null -and $(test-path -path $CertificateFilePath))
+{
+                        [Byte[]
+                        ] $certbytes = get-content -encoding byte -path $CertificateFilePath #Trick to support UNC paths here.
+ $cert = new-object System.Security.Cryptography.X509Certificates.X509Certificate2(,$certbytes)
+ if (-not $? -or ($cert.GetType().fullname -notlike &quot;<em>X509</em>&quot;))
+ { write-statuslog -m &quot;ERROR: Invalid or corrupt certificate file: $CertificateFilePath&quot; -exit
+                        }
+                    }
+else
+{ write-statuslog -m &quot;ERROR: Could not find the certificate file: $CertificateFilePath&quot; -exit
+                    }</p>
+
+<p>&amp;nbsp;</p>
+
+<h1 id="construct-name-of-the-archive-file-whose-name-will-also-be-used-as-a-nonce">Construct name of the archive file, whose name will also be used as a nonce.</h1>
+
+<p>$filename = $env:computername + &quot;+&quot; + $LocalUserName + &quot;+&quot; + $(get-date).ticks + &quot;+&quot; + $cert.thumbprint
+if ($filename.length -le 60) { write-statuslog -m &quot;ERROR: The archive file name is invalid (too short): $filename &quot; -exit
+                    }</p>
+
+<p>&amp;nbsp;</p>
+
+<h1 id="prepend-first-60-characters-of-the-filename-as-a-nonce-to-the-new-password-as-a-byte-array">Prepend first 60 characters of the $filename as a nonce to the new password (as a byte array).</h1>
+
+<p>$newpassword = &quot;ConfirmThatNewPasswordIsRandom&quot;
+$newpassword = Generate-RandomPassword
+if ($newpassword -eq &quot;ConfirmThatNewPasswordIsRandom&quot;) { write-statuslog -m &quot;ERROR: Password generation failure, password not reset.&quot; -exit
+                    }
+$bytes = [byte[]
+                    ][char[]
+                    ] $filename.substring(0,
+                    60)
+$bytes += [byte[]
+                    ][char[]
+                    ] $newpassword</p>
+
+<p>&amp;nbsp;</p>
+
+<h1 id="encrypt-the-nonce-password-string">Encrypt the nonce+password string.</h1>
+
+<p>$cipherbytes = $cert.publickey.key.encrypt($bytes,$false) #Must be $false for my smart card to work.
+if (-not $? -or $cipherbytes.count -lt 60) { write-statuslog -m &quot;ERROR: Encryption failed, password not reset.&quot; -exit
+                    }</p>
+
+<p>&amp;nbsp;</p>
+
+<h1 id="must-save-encrypted-password-before-resetting-confirm-that-it-actually-worked">Must save encrypted password before resetting, confirm that it actually worked.</h1>
+
+<p>if (Resolve-Path -Path $PasswordArchivePath)
+{ $PasswordArchivePath = $(Resolve-Path -Path $PasswordArchivePath).Path
+                    }
+else
+{ write-statuslog -m &quot;ERROR: Cannot resolve path to archive folder: $PasswordArchivePath&quot; -exit
+                    }</p>
+
+<p>if (-not $(test-path -pathtype container -path $PasswordArchivePath))
+{ write-statuslog -m &quot;ERROR: Archive path not accessible: $PasswordArchivePath&quot; -exit
+                    }</p>
+
+<p>if ($PasswordArchivePath -notlike &quot;*&amp;quot;) { $PasswordArchivePath = $PasswordArchivePath + &quot;&amp;quot;
+                    }</p>
+
+<p>$cipherbytes | set-content -encoding byte -path ($PasswordArchivePath + $filename)</p>
+
+<p>if (-not $?) { write-statuslog -m &quot;ERROR: Failed to save archive file, password not reset.&quot; -exit
+                    }</p>
+
+<p>if (-not $(test-path -pathtype leaf -path $($PasswordArchivePath + $filename))){ write-statuslog -m &quot;ERROR: Failed to find archive file, password not reset.&quot; -exit
+                    }</p>
+
+<p>&amp;nbsp;</p>
+
+<h1 id="attempt-to-reset-password-by-hopefully-satisfying-length-and-complexity-requirements">Attempt to reset password by hopefully satisfying length and complexity requirements.</h1>
+
+<p>$netout = Invoke-Expression -Command $($env:systemroot + &quot;\system32\net.exe user $LocalUserName &quot; + &lsquo;&quot;&rsquo; + $newpassword + &lsquo;&quot;&rsquo;)
+if (-not $? -or ($LASTEXITCODE -ne 0) -or ($netout -notlike &quot;<em>success</em>&quot;))
+{
+ # Write failure file to the archive path.
+ $filename = $env:computername + &quot;+&quot; + $LocalUserName + &quot;+&quot; + $(get-date).ticks + &quot;+PASSWORD-RESET-FAILURE&quot;
+ &quot;ERROR: Failed to reset password after creating a success file:<code>n&amp;quot; + $netout | set-content -path ($PasswordArchivePath + $filename)
+ write-statuslog -m &amp;quot;ERROR: Failed to reset password after creating a success file:</code>n $netout&quot; -exit
+                    }
+else
+{
+ remove-variable -name newpassword #Just tidying up, not really necessary at this point&hellip;
+ write-statuslog -m &quot;SUCCESS: $LocalUserName password reset and archive file saved.&quot;
+                    }</p>
+
+<p>[/code
+                    ]</p>
+
+<p>README.TXT</p>
+
+<p>[code
+                    ]&lt;/pre&gt;</p>
+
+<hr />
+
+<p>Background:</p>
+
+<hr />
+
+<p>The passwords of local administrative accounts should be changed regularly and be different from one computer to the next. But how can this been done securely and conveniently?</p>
+
+<p>The scripts in this project demonstrate how it can be done without spending a penny. The scripts are intended to be relatively easy to understand and modify (you don&rsquo;t have to be a PowerShell guru, only intermediate skills required). Error-checking was kept to a minimum to reduce clutter, but should be adequate for troubleshooting and preventing passwords from being reset when an archive file cannot be saved for it. All scripts are in the public domain. A sample certificate (CER) and private key file (PFX) are included for testing.</p>
+
+<p>&amp;nbsp;</p>
+
+<hr />
+
+<p>Solution:</p>
+
+<hr />
+
+<p>A trusted administrator should obtain a certificate and private key, then export that certificate to a .CER file into a shared folder (\server\share\cert.cer).</p>
+
+<p>Copy the Update-PasswordArchive.ps1 script into that shared folder (\server\share).</p>
+
+<p>Using Group Policy, SCCM, a third-party EMS, SCHTASKS.EXE or some other technique, create a scheduled job on every computer that runs once per week (or every night) under Local System context that executes the following command: &quot;powershell.exe \server\share\update-passwordarchive.ps1 -certificatefilepath \server\share\cert.cer -passwordarchivepath \server\share&quot;. This resets the password on the local Administrator account, or whatever account is specified, with a 15-character, random complex password. The password is encrypted in memory with the public key of the certificate (cert.cer) and saved to an archive file to the specified share (\server\share).</p>
+
+<p>When a password for a computer (laptop47) needs to be recovered, the trusted administrator should run from their own local computer the following PowerShell script: &quot;recover-passwordarchive.ps1 -passwordarchivepath \server\share -computername laptop47&quot;. This downloads the necessary encrypted files and decrypts them locally in memory using the private key of the administrator, displaying the plaintext password within PowerShell.</p>
+
+<p>&amp;nbsp;</p>
+
+<hr />
+
+<p>Notes:</p>
+
+<hr />
+
+<p>The password is never sent over the network in plaintext, never saved to disk in plaintext, and never exposed as a command-line argument, either when resetting the password or when recovering it later. The new password is generated randomly in the memory of the PowerShell process running on the computer where the password is reset. The process runs for less than a second in the background as Local System.</p>
+
+<p>Different certificates can be used at different times, as long as their private keys are available to the administrator. When recovering a password, the correct certificate and private key will be used automatically. A smart card can be used.</p>
+
+<p>If the shared folder is not accessible to the computer when the scheduled job runs, the password is not reset.</p>
+
+<p>If multiple administrators must be able to recover the plaintext passwords, export the relevant certificate and private key to a PFX file and import it into each administrator&rsquo;s local profile.</p>
+
+<p>&amp;nbsp;</p>
+
+<hr />
+
+<p>Threats and Recommendations:</p>
+
+<hr />
+
+<p>Keep the private key for the certificate used to encrypt the password archive files secure, such as on a smart card. This is the most important factor.</p>
+
+<p>Prevent modification of the Update-PasswordArchive.ps1 script itself by digitally signing the script, enforcing script signature requirements, and using restrictive NTFS permissions. Only allow NTFS read access to the script to those identities (computer accounts) which need to run it or to edit it.</p>
+
+<p>Attackers may try to delete or corrupt the existing password archive files to prevent access to current passwords. It&rsquo;s best to store the certificate and archive files in a shared folder whose NTFS permissions only allow the client computer accounts the following permissions:</p>
+
+<p>Principal: Domain Computers
+ Apply to: This folder, subfolders and files
+ Allow: Full Control
+ Deny: Delete subfolders and files
+ Deny: Delete
+ Deny: Change permissions
+ Deny: Take ownership
+ Deny: Create folders/append data</p>
+
+<p>Principal: Domain Computers
+ Apply to: Files only
+ Deny: Create files/write data</p>
+
+<p>The trusted administrator(s) can be granted Full Control to the archive files, certificates, and scripts as needed.</p>
+
+<p>Attackers might also try to generate spoofed archive files and add them to the shared folder. The files are not digitally signed, but there is a crude integrity checking feature (signature-security through obscurity?) built into the scripts: the name of the archive file is also encrypted into the contents of the file along with the password. The Recover-PasswordArchive.ps1 script outputs objects which include a &quot;Valid&quot; property, which if false, indicates verification failure. To deal with spoofed files, you can delete all files with timestamps after the beginning of the attack which are Valid = False. NTFS auditing on the share will also log which computer(s) added the suspicious files and when, which provides another source of information to determine which new files are spoofed. Because attackers can presumably run commands as Local System on the machine(s) taken over, the attackers will be able to read the Update-PasswordArchive.ps1 script and the public key CER file out of the shared folder too, hence, the attackers will be able to defeat this crude integrity check if they wish to spoof the creation of new archive files. Adding true digital signatures to the archive files would add significant complexity with little benefit because we must assume the attackers can extract any signing keys from kernel memory on the computers they have already compromised. Realistically, though, this DoS attack would likely be of low value for an adversary expending this much effort, it would tip their hand, and the benefit to us of managing local administrative account passwords correctly far exceeds the potential negative of this sort of DoS attack.</p>
+
+<p>Whole drive encryption of the server is recommended, but not really necessary since each password archive file is already encrypted.</p>
+
+<p>IPSec or SMB encryption to the server is recommended, but not really necessary since each password archive file is already encrypted. On the other hand, IPSec port permissions which limit access to the SMB ports (TCP <sup>139</sup>&frasl;<sub>445</sub>) is recommended, but not primarily for the encryption, but for restricting access based on group memberhips.</p>
+
+<p>Back up the server with the shared folder every night and keep at least 30 days of prior backups to help deal with the threat of spoofing new archive files to flush out the current valid ones.</p>
+
+<p>If the private key for the certificate is compromised, create a new key pair, replace the certificate file (.CER) in the shared folder, and immediately remotely trigger the scheduled job on all machines using Group Policy, SCHTASKS.EXE or some other technique.</p>
+
+<p>&amp;nbsp;</p>
+
+<hr />
+
+<p>Tips:</p>
+
+<hr />
+
+<p>Keep the number of files in the archive folder manageable by using the CleanUp-PasswordArchives.ps1 script. Perhaps running this script as a scheduled job every two or four weeks.</p>
+
+<p>To optimize the performance of the Recover-PasswordArchive.ps1 script when there are more than 100,
+                    000 files in the folder containing the password archives, disable 8.3 file name generation and strip all current 8.3 names on the volume containing that folder. Search the Internet on &quot;fsutil.exe 8dot3name&quot; to see how.</p>
+
+<p>To maximize fault tolerance, use Distributed File System (DFS) shared folders across two or more servers.</p>
+
+<p>The output of the Recover-PasswordArchive.ps1 script can be piped into other scripts to automate other tasks which require the plaintext password, such as executing commands, doing WMI queries, opening an RDP session, or immediately resetting the password again when finished.</p>
+
+<p>You can also perform an immediate password update with commands like these wrapped in a function:</p>
+
+<p>Copy-Item -Path .\PublicKeyCert.cer -Destination \laptop47\c$
+ Invoke-Command -ComputerName laptop47 -filepath .\Update-PasswordArchive.ps1 -argumentlist &quot;C:\publickeycert.cer&quot;,&quot;Administrator&quot;,&quot;c:&amp;quot;
+ Copy-Item -Path \laptop47\c$\laptop47+Administrator+* -Destination C:\LocalFolder
+ Remove-Item -Path \laptop47\c$\PublicKeyCert.cer
+ Remove-Item -Path \laptop47\c$\laptop47+Administrator+*</p>
+
+<p>The above Invoke-Command can be done by specifying UNC paths, but this requires delegation of credentials to the remote computer, which is not ideal, so the certificate and archive files have to be copied back-and-forth manually.</p>
+
+<p>[/code
+                    ]</p>
+
+    
+
      
 
         </div>
@@ -708,10 +1192,6 @@ else
         <div class="recent-posts">
             <strong>Latest posts</strong>
                 <ul>
-                
-                    <li>
-                        <a href="/article/a-powershell-implementation-of-netstat/">A Powershell Implementation of Netstat.exe</a>
-                    </li>
                 
                     <li>
                         <a href="/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>
@@ -749,6 +1229,10 @@ else
                         <a href="/article/create-a-web-app-bot-using-azure-bot-services/">Create a Web App Bot Using Azure Bot Services</a>
                     </li>
                 
+                    <li>
+                        <a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a>
+                    </li>
+                
                 </ul>
         </div>
 
@@ -771,7 +1255,7 @@ else
                     </li>
                 
                     <li>
-                        <a href="/categories/powershell">Powershell (8)</a>
+                        <a href="/categories/powershell">Powershell (7)</a>
                     </li>
                 
                     <li>

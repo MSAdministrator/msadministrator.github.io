@@ -6,11 +6,7 @@
         <meta name="author" content="Josh Rickard">
         <meta name="description" content="Lets Automate It">
         <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-<<<<<<< HEAD
         <meta name="generator" content="Hugo 0.49" />
-=======
-        <meta name="generator" content="Hugo 0.46" />
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
         <title> Mdt 2012 Deployment Guide Step by Step 7 of 11 | Lets Automate It</title>
         <meta name="description" content="Mdt 2012 Deployment Guide Step by Step 7 of 11 - Lets Automate It">
         <meta itemprop="name" content="Mdt 2012 Deployment Guide Step by Step 7 of 11">
@@ -33,14 +29,6 @@
         
             
         
-        
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-1514695391372140",
-    enable_page_level_ads: true
-  });
-</script>
     </head>
     <body class="bilberry-hugo-theme">
         
@@ -238,6 +226,43 @@ The reference computer should be connected to the same network as the MDT Deploy
 </article>
         
     </div>
+    <p><h1>            Capturing a Windows 7 Image from a reference PC</h1>
+The reference computer should be connected to the same network as the MDT Deployment server and should be set to get an IP address via DHCP.</p>
+
+<p>&nbsp;</p>
+
+<p><b>THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN!</b></p>
+
+<p>&nbsp;
+<ol>
+    <li>Boot the reference computer and ensure network connectivity</li>
+    <li>Make any last-minute modifications (additional software, Windows Updates, etc.)</li>
+    <li>Click <b><i>Start</i></b> and type <b><i>\&lt;MDTSERVER&gt;\share$\scripts\litetouch.vbs </i></b>and press Enter
+<ol>
+    <li>If prompted for credentials, enter a domain account with access to that share:</li>
+    <li>If prompted with a Security Warning like the one below, click <b><i>Open</i></b></li>
+    <li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-7-of-11/attachment/21/" rel="attachment wp-att-96"><img class="alignnone size-full wp-image-96" alt="21" src="http://msadministrator.files.wordpress.com/2012/12/21.png" width="409" height="290" /></a></li>
+</ol>
+</li>
+</ol>
+<ol>
+    <li>Select <b><i>Sysprep &amp; Capture Win7 Reference Image </i></b>from the Task Sequence selection screen</li>
+    <li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-7-of-11/attachment/22/" rel="attachment wp-att-97"><img class="alignnone size-full wp-image-97" alt="22" src="http://msadministrator.files.wordpress.com/2012/12/22.png" width="456" height="325" /></a></li>
+</ol>
+<ol>
+    <li>Select <b><i>Capture an image of this reference computer </i></b>from the Capture an Image selection screen and enter an appropriate file name.</li>
+    <li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-7-of-11/attachment/23/" rel="attachment wp-att-98"><img class="alignnone size-full wp-image-98" alt="23" src="http://msadministrator.files.wordpress.com/2012/12/23.png" width="519" height="370" /></a></li>
+</ol>
+<ol>
+    <li>Wait while the Windows PE environment is copied to the reference computer and SYSPREP is run</li>
+</ol>
+<p align="left"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-7-of-11/attachment/24/" rel="attachment wp-att-99"><img class="alignnone size-full wp-image-99" alt="24" src="http://msadministrator.files.wordpress.com/2012/12/24.png" width="519" height="389" /></a></p></p>
+
+<p><ol>
+    <li>Once SYSPREP has completed, the computer will automatically reboot into a Windows PE environment and the image will be captured to the server.  This capture process may take some time depending on the size of the image.</li>
+</ol>
+<p align="left"></p></p>
+
     
 
      
@@ -249,10 +274,6 @@ The reference computer should be connected to the same network as the MDT Deploy
         <div class="recent-posts">
             <strong>Latest posts</strong>
                 <ul>
-                
-                    <li>
-                        <a href="/article/a-powershell-implementation-of-netstat/">A Powershell Implementation of Netstat.exe</a>
-                    </li>
                 
                     <li>
                         <a href="/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>
@@ -290,6 +311,10 @@ The reference computer should be connected to the same network as the MDT Deploy
                         <a href="/article/create-a-web-app-bot-using-azure-bot-services/">Create a Web App Bot Using Azure Bot Services</a>
                     </li>
                 
+                    <li>
+                        <a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a>
+                    </li>
+                
                 </ul>
         </div>
 
@@ -312,7 +337,7 @@ The reference computer should be connected to the same network as the MDT Deploy
                     </li>
                 
                     <li>
-                        <a href="/categories/powershell">Powershell (8)</a>
+                        <a href="/categories/powershell">Powershell (7)</a>
                     </li>
                 
                     <li>

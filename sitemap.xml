@@ -3,14 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-<<<<<<< HEAD
-=======
-    <loc>https://letsautomate.it/article/a-powershell-implementation-of-netstat/</loc>
-    <lastmod>2018-09-06T19:06:51-04:00</lastmod>
-  </url>
-  
-  <url>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <loc>https://letsautomate.it/article/python-vs-powershell-part-1-versioning/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
   </url>
@@ -393,15 +385,6 @@
   </url>
   
   <url>
-<<<<<<< HEAD
-=======
-    <loc>https://letsautomate.it/tags/4sysops/</loc>
-    <lastmod>2018-09-06T19:06:51-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <loc>https://letsautomate.it/tags/amazon/</loc>
     <lastmod>2018-08-23T22:24:59-04:00</lastmod>
     <priority>0</priority>
@@ -421,11 +404,7 @@
   
   <url>
     <loc>https://letsautomate.it/article/</loc>
-<<<<<<< HEAD
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-=======
-    <lastmod>2018-09-06T19:06:51-04:00</lastmod>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <priority>0</priority>
   </url>
   
@@ -436,24 +415,14 @@
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://letsautomate.it/tags/automation/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
-=======
-    <loc>https://letsautomate.it/categories/automation/</loc>
-    <lastmod>2018-08-14T10:08:33-04:00</lastmod>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <priority>0</priority>
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://letsautomate.it/categories/automation/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
-=======
-    <loc>https://letsautomate.it/tags/automation/</loc>
-    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <priority>0</priority>
   </url>
   
@@ -531,21 +500,13 @@
   
   <url>
     <loc>https://letsautomate.it/author/josh-rickard/</loc>
-<<<<<<< HEAD
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-=======
-    <lastmod>2018-09-06T19:06:51-04:00</lastmod>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://letsautomate.it/</loc>
-<<<<<<< HEAD
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-=======
-    <lastmod>2018-09-06T19:06:51-04:00</lastmod>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <priority>0</priority>
   </url>
   
@@ -569,11 +530,7 @@
   
   <url>
     <loc>https://letsautomate.it/categories/powershell/</loc>
-<<<<<<< HEAD
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-=======
-    <lastmod>2018-09-06T19:06:51-04:00</lastmod>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <priority>0</priority>
   </url>
   
@@ -596,21 +553,13 @@
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://letsautomate.it/tags/slack/</loc>
-=======
-    <loc>https://letsautomate.it/categories/slack/</loc>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://letsautomate.it/categories/slack/</loc>
-=======
-    <loc>https://letsautomate.it/tags/slack/</loc>
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
     <priority>0</priority>
   </url>

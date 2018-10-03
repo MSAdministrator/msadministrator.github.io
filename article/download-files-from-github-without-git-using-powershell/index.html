@@ -6,11 +6,7 @@
         <meta name="author" content="Josh Rickard">
         <meta name="description" content="Lets Automate It">
         <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-<<<<<<< HEAD
         <meta name="generator" content="Hugo 0.49" />
-=======
-        <meta name="generator" content="Hugo 0.46" />
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
         <title> Download Files From Github Without Git Using Powershell | Lets Automate It</title>
         <meta name="description" content="Download Files From Github Without Git Using Powershell - Lets Automate It">
         <meta itemprop="name" content="Download Files From Github Without Git Using Powershell">
@@ -33,14 +29,6 @@
         
             
         
-        
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-1514695391372140",
-    enable_page_level_ads: true
-  });
-</script>
     </head>
     <body class="bilberry-hugo-theme">
         
@@ -234,6 +222,39 @@ Get-GithubRepository -Owner MSAdministrator -Repository WriteLogEntry -Verbose -
 </article>
         
     </div>
+    <p>Have you ever needed to download code or a repository from Github, but didn&rsquo;t want to download and install Git on a machine, create an SSH key, etc. If so, I have something that you may like.</p>
+
+<p>You can find the entire function here: <a href="https://github.com/MSAdministrator/GetGithubRepository">https://github.com/MSAdministrator/GetGithubRepository</a></p>
+
+<p>To use this function, you will need to know the path to the Github repository (of course) you want to download.  Once you have that URL, you will need to pass each piece of the URL into a parameter on the function.</p>
+
+<p>For example, let&rsquo;s take a URL like https: //github.com/MSAdministrator/WriteLogEntry.  This URL can be broken down as follows
+<ul>
+    <li>MSAdministrator = Owner</li>
+    <li>WriteLogEntry = Repository</li>
+</ul>
+We also know that we want to download the &ldquo;master&rdquo; branch of this repository.  The next part is that we need to gather a list of files/paths that we need to download as well.  These will be passed as an array of strings to the FilePath parameter.
+<ul>
+    <li>Branch = Master (unless you want a different branch)</li>
+    <li>FilePath = (Files and paths you want to download)</li>
+</ul>
+By default this function will always get the master branch of the repository you are wanting to download, but you can specify a different branch if wanted.  Additionally, this function will download the specified files to your user profiles Module Path (C:\users\some_user\Documents\WindowsPowerShell\Modules)</p>
+
+<p>To use this function, you will need to pass the following values as parameters to the function.  For example, to download my WriteLogEntry repository you will need to call the function like so:<code>
+Get-GithubRepository -Owner MSAdministrator -Repository WriteLogEntry -Verbose -FilePath `
+&lsquo;WriteLogEntry.psm1&rsquo;,
+&lsquo;WriteLogEntry.psd1&rsquo;,
+&lsquo;Public&rsquo;,
+&lsquo;en-US&rsquo;,
+&lsquo;en-US\about_WriteLogEntry.help.txt&rsquo;,
+&lsquo;Public\Write-LogEntry.ps1&rsquo;</code></p>
+
+<p>I hope that this function helps some of you who want to quickly download a Github repository without installing or using Git.  If you have issues or like this function, please submit issues or fork requests to my Github.</p>
+
+<p>Enjoy!</p>
+
+<p>Original Image here: <img src="http://s.quickmeme.com/img/e0/e0d4afacba74c1b28ae4caad6f98e9d2d1689fe8e43dc1ee680214c75eb24e17.jpg" /></p>
+
     
 
      
@@ -245,10 +266,6 @@ Get-GithubRepository -Owner MSAdministrator -Repository WriteLogEntry -Verbose -
         <div class="recent-posts">
             <strong>Latest posts</strong>
                 <ul>
-                
-                    <li>
-                        <a href="/article/a-powershell-implementation-of-netstat/">A Powershell Implementation of Netstat.exe</a>
-                    </li>
                 
                     <li>
                         <a href="/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>
@@ -286,6 +303,10 @@ Get-GithubRepository -Owner MSAdministrator -Repository WriteLogEntry -Verbose -
                         <a href="/article/create-a-web-app-bot-using-azure-bot-services/">Create a Web App Bot Using Azure Bot Services</a>
                     </li>
                 
+                    <li>
+                        <a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a>
+                    </li>
+                
                 </ul>
         </div>
 
@@ -308,7 +329,7 @@ Get-GithubRepository -Owner MSAdministrator -Repository WriteLogEntry -Verbose -
                     </li>
                 
                     <li>
-                        <a href="/categories/powershell">Powershell (8)</a>
+                        <a href="/categories/powershell">Powershell (7)</a>
                     </li>
                 
                     <li>

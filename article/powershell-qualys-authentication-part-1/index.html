@@ -6,11 +6,7 @@
         <meta name="author" content="Josh Rickard">
         <meta name="description" content="Lets Automate It">
         <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-<<<<<<< HEAD
         <meta name="generator" content="Hugo 0.49" />
-=======
-        <meta name="generator" content="Hugo 0.46" />
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
         <title> Powershell Qualys Authentication Part 1 | Lets Automate It</title>
         <meta name="description" content="Powershell Qualys Authentication Part 1 - Lets Automate It">
         <meta itemprop="name" content="Powershell Qualys Authentication Part 1">
@@ -33,14 +29,6 @@
         
             
         
-        
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-1514695391372140",
-    enable_page_level_ads: true
-  });
-</script>
     </head>
     <body class="bilberry-hugo-theme">
         
@@ -285,6 +273,90 @@ C:\PS&gt; Test-QualysAuthentication -credential $cred</p>
 </article>
         
     </div>
+    <p>I always mean to post more on my blog, but as life gets in the way and work keeps me busy, I always seem to push it to the back-burner. This time, I am hoping to make it stick as a regular routine.</p>
+
+<p>To kick off my new-found motivation to blog more, I am starting a series of posts surrounding PowerShell and Qualys Vulnerability Management API.</p>
+
+<p>To start this off, first I&rsquo;m going to share some my basic steps with regards to authentication to Qualys VM API v1. This is really basic, but I see a lot of posts around that seem to try to create some &ldquo;advanced&rdquo; way of authenticating to Qualys API. You don&rsquo;t need to do anything fancy.</p>
+
+<p>As with all scripts/modules/etc., I suggest that you get into the habit of using PowerShell ISE and it&rsquo;s many great keyboard shortcuts to help you get on the right path.</p>
+
+<p>First, open PowerShell ISE and enter the following keyboard shortcut: [code
+                    ]</p>
+
+<p>CRT + J</p>
+
+<p>[/code
+                    ]</p>
+
+<p>Once the &ldquo;Show Snippets&rdquo; context menu shows up, select &ldquo;Advanced Function (Complete)&rdquo;. I always recommend that you start with a &lsquo;Complete&rsquo; Advanced FUnction. This makes your script look much better, and it&rsquo;s all around a good idea.</p>
+
+<p>Once you have the Snippet loaded, I would begin by coming up with a name; following Microsoft&rsquo;s approved Verb-Noun naming convention:</p>
+
+<p>Approved Verbs - <a href="https://technet.microsoft.com/en-us/library/ms714428(v=vs.85).aspx">https://technet.microsoft.com/en-us/library/ms714428(v=vs.85).aspx</a>
+Get-Verb Documentation: <a href="https://technet.microsoft.com/en-us/library/hh852690.aspx">https://technet.microsoft.com/en-us/library/hh852690.aspx</a></p>
+
+<p>Next, start adding a &ldquo;Credential&rdquo; object parameter to your code. Qualys uses &ldquo;Basic&rdquo; authentication, so using Invoke-RestMethod in combination with a &ldquo;Credential&rdquo; object is extremely easy.</p>
+
+<p>To capture your credentials into a Credential Object used by Invoke-RestMethod, you simply need the following before you run your function or within your function: [code
+                    ]</p>
+
+<p>$cred = Get-Credential</p>
+
+<p>[/code
+                    ]</p>
+
+<p>Enter your Qualys API username and password.</p>
+
+<p>*NOTE: Do not try to save this credential object to disk or to a file. It&rsquo;s NOT hard to enter your username and password every time you connect to Qualys API.</p>
+
+<p>Next, you should have the following code in your function: [code
+                    ]</p>
+
+<p>[xml
+                    ]$hostinfo = Invoke-RestMethod -Uri &quot;https: //qualysapi.qualys.com/msp/get_host_info.php?host_netbios=$netbios&amp;general_info=1&quot;-Credential $credential [/code
+                    ]</p>
+
+<p>I recommend that your $credential object should be passed into your function as a parameter. This will help when you move into more advanced interaction and multiple calls to Qualys VM API.</p>
+
+<p>Now that you have your XML (Type cast) $hostinfo variable, you can then parse the data very, very, very easily.</p>
+
+<p>In my next post I will share with you how to do this to gather some very important data for any Qualys Vulnerability Management Administrator.</p>
+
+<p>If you have any questions, then please leave a comment.</p>
+
+<p>[code
+                    ]</p>
+
+<p>function Test-QualysAuthentication ()
+{
+                        [cmdletbinding()
+                        ]
+param (
+[parameter(Mandatory=$true,
+ValueFromPipelineByPropertyName=$true,
+HelpMessage=&quot;Please provide a credential obejct&quot;)
+                        ]
+[ValidateNotNullOrEmpty()
+                        ]
+[System.Management.Automation.CredentialAttribute()
+                        ]$credential
+)</p>
+
+<p>&lt;# .SYNOPSIS This function tests your Qualys VM API Credentials .PARAMETER Credential Specifices a set of credentials used to query the QualysGuard API .EXAMPLE C:\PS&gt; $cred = Get-Credential
+C:\PS&gt; Test-QualysAuthentication -credential $cred</p>
+
+<p>#&gt;</p>
+
+<p>[xml
+                        ]$hostinfo = Invoke-RestMethod -Uri &quot;https: //qualysapi.qualys.com/msp/get_host_info.php?host_netbios=$netbios&amp;general_info=1&quot; -Credential $credential</p>
+
+<p>return $hostinfo
+                    }</p>
+
+<p>[/code
+                    ]</p>
+
     
 
      
@@ -296,10 +368,6 @@ C:\PS&gt; Test-QualysAuthentication -credential $cred</p>
         <div class="recent-posts">
             <strong>Latest posts</strong>
                 <ul>
-                
-                    <li>
-                        <a href="/article/a-powershell-implementation-of-netstat/">A Powershell Implementation of Netstat.exe</a>
-                    </li>
                 
                     <li>
                         <a href="/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>
@@ -337,6 +405,10 @@ C:\PS&gt; Test-QualysAuthentication -credential $cred</p>
                         <a href="/article/create-a-web-app-bot-using-azure-bot-services/">Create a Web App Bot Using Azure Bot Services</a>
                     </li>
                 
+                    <li>
+                        <a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a>
+                    </li>
+                
                 </ul>
         </div>
 
@@ -359,7 +431,7 @@ C:\PS&gt; Test-QualysAuthentication -credential $cred</p>
                     </li>
                 
                     <li>
-                        <a href="/categories/powershell">Powershell (8)</a>
+                        <a href="/categories/powershell">Powershell (7)</a>
                     </li>
                 
                     <li>

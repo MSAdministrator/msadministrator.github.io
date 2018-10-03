@@ -6,20 +6,10 @@
     <description>Recent content in Articles on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Sep 2018 19:06:51 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 04 Sep 2018 21:20:15 -0400</lastBuildDate>
     
 	<atom:link href="https://letsautomate.it/article/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>A Powershell Implementation of Netstat.exe</title>
-      <link>https://letsautomate.it/article/a-powershell-implementation-of-netstat/</link>
-      <pubDate>Thu, 06 Sep 2018 19:06:51 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/article/a-powershell-implementation-of-netstat/</guid>
-      <description>My PowerShell module PSNetStat contains the Get-NetStat function that offers features similar to the popular netstat.exe command. You can use it to analyze and display network connections in PowerShell.
-During the lead-up to IronScripter at the 2018 DevOps + PowerShell Global Summit, there were several weekly competitions to prepare for the official competition. One such challenge was during Week 4 where the challenge asked the competitor to generate a PowerShell equivalent to the output of netstat.</description>
-    </item>
     
     <item>
       <title>Python vs Powershell Part 1: Versioning</title>

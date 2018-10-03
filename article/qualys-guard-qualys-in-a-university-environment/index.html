@@ -6,11 +6,7 @@
         <meta name="author" content="Josh Rickard">
         <meta name="description" content="Lets Automate It">
         <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-<<<<<<< HEAD
         <meta name="generator" content="Hugo 0.49" />
-=======
-        <meta name="generator" content="Hugo 0.46" />
->>>>>>> 2ec01a5062b798e18bca7f21c33e42e9df85aa75
         <title> Qualys Guard Qualys in a University Environment | Lets Automate It</title>
         <meta name="description" content="Qualys Guard Qualys in a University Environment - Lets Automate It">
         <meta itemprop="name" content="Qualys Guard Qualys in a University Environment">
@@ -33,14 +29,6 @@
         
             
         
-        
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-1514695391372140",
-    enable_page_level_ads: true
-  });
-</script>
     </head>
     <body class="bilberry-hugo-theme">
         
@@ -217,6 +205,22 @@ Again, this is a high level overview but this is our basic process.  In future 
 </article>
         
     </div>
+    <p>The University I work for has began using Qualys for our Enterprise Vulnerability Scanning and so far it&rsquo;s been well received.  The problem is that every &ldquo;College/School&rdquo; maintains their own systems thus we are decentralized, which makes maintaining Reports/Scans/Maps/etc. very difficult.</p>
+
+<p>Because I have not found many posts/articles focused on a decentralized environment I decided I would explain the way we are approaching this.  This is all a work in progress - if you have any questions or ideas, please get a hold of me.:)</p>
+
+<p>So our basic process for setting up Qualys goes like this (overview):
+<ul>
+    <li>Gather IPs to add to our Qualys subscription (we are only worrying about servers at this time)</li>
+    <li>Create Asset Groups (Naming Conventions: CAMPUS DEPT VLAN QUALYSCANNER#)</li>
+    <li>Create User that will be the Unit Manager of a Business Unit</li>
+    <li>Create Business Unit while creating user</li>
+    <li>Assign Asset Group to Business Unit</li>
+    <li>Setup a Scheduled Scan</li>
+    <li>Have the Unit Manager create scheduled reports based on Global Templates that we&rsquo;ve create</li>
+</ul>
+Again, this is a high level overview but this is our basic process.  In future posts I will try to break down Qualys in more detail and how to manage a large diverse group of systems across a decentralized campus.</p>
+
     
 
      
@@ -228,10 +232,6 @@ Again, this is a high level overview but this is our basic process.  In future 
         <div class="recent-posts">
             <strong>Latest posts</strong>
                 <ul>
-                
-                    <li>
-                        <a href="/article/a-powershell-implementation-of-netstat/">A Powershell Implementation of Netstat.exe</a>
-                    </li>
                 
                     <li>
                         <a href="/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>
@@ -269,6 +269,10 @@ Again, this is a high level overview but this is our basic process.  In future 
                         <a href="/article/create-a-web-app-bot-using-azure-bot-services/">Create a Web App Bot Using Azure Bot Services</a>
                     </li>
                 
+                    <li>
+                        <a href="/article/using-qnamaker-to-create-chatbot/">Using Qnamaker to Create Chatbot</a>
+                    </li>
+                
                 </ul>
         </div>
 
@@ -291,7 +295,7 @@ Again, this is a high level overview but this is our basic process.  In future 
                     </li>
                 
                     <li>
-                        <a href="/categories/powershell">Powershell (8)</a>
+                        <a href="/categories/powershell">Powershell (7)</a>
                     </li>
                 
                     <li>
