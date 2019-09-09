@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>microsoft on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/microsoft/</link>
+    <description>Recent content in microsoft on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jul 2019 14:37:17 -0500</lastBuildDate>
+    
+	<atom:link href="https://letsautomate.it/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Microsoft Defender Advanced Threat Detection Queries</title>
+      <link>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</link>
+      <pubDate>Thu, 18 Jul 2019 14:37:17 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</guid>
+      <description>Recently, I shared on Twitter how you could run a query to detect if a user has clicked on a link within their Outlook using Microsoft Defender Advanced Threat Protection (MDATP). If you are not familiar, MDATP is available within your Microsoft 365 E5 license and is an enhancement to the traditional Windows Defender you might be used to.
+What is Microsoft Defender Advanced Threat Protection? Microsoft says that “Microsoft Defender Advanced Threat Protection is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft OAuth2 Part3: Using Microsoft Graph API</title>
+      <link>https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/</link>
+      <pubDate>Wed, 08 May 2019 14:20:07 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/</guid>
+      <description>In this third and final part of the &amp;ldquo;Understanding Microsoft’s OAuth2 Implementation&amp;rdquo; series, we will be using the application that we have previously created to authenticate to the Microsoft Graph API.
+If you have not done so, please read Part 1 and Part 2 before continuing.
+Now, let’s start using the Microsoft Graph API using PowerShell Core!
+Read More</description>
+    </item>
+    
+    <item>
+      <title>Microsoft OAuth2 Part2: Registering an App</title>
+      <link>https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/</link>
+      <pubDate>Thu, 18 Apr 2019 14:18:59 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/</guid>
+      <description>In my last post, I explained the different API endpoints available for authentication using Microsoft’s OAuth2. Additionally, I shared the different types of applications and their authentication flows.
+In Part 2, I will discuss how to create and register a new application with a deeper understanding of the permissions needed when interacting with the Microsoft Graph API.
+Read More</description>
+    </item>
+    
+    <item>
+      <title>Swimlane Runner Up in Microsoft Graph Security Hackathon</title>
+      <link>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</link>
+      <pubDate>Tue, 02 Apr 2019 14:17:04 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</guid>
+      <description>Within a few weeks of starting at Swimlane, our CEO Cody Cornell mentioned the Microsoft Graph Security Hackathon — put on by the Microsoft Graph Security team and DevPost. After assembling a team and a lot of hard work, we were notified yesterday that our submission earned runner up!
+We were extremely excited to participate in this unique event as we were about to begin our development of our Microsoft Graph Security API bundle, and this would be the perfect opportunity for us to showcase the power of Swimlane.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft&#39;s OAuth2 Part 1: Endpoints and Application Types</title>
+      <link>https://letsautomate.it/article/microsoft-oauth2-endpoints-and-application-types/</link>
+      <pubDate>Wed, 27 Mar 2019 14:14:26 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-oauth2-endpoints-and-application-types/</guid>
+      <description>As an information security or IT professional, understanding the concepts around Microsoft OAuth 2.0 or OpenID Connect authentication can be daunting. There are thousands of pages of documentation, and if you want to interact with a Microsoft Cloud service—like Microsoft Graph—it can be a minefield of information.
+In this three-part series, I am going to share with you my insights on Microsoft’s OAuth2 Implementation in hopes that it will help your organization understand and use OAuth2 when using Microsoft cloud-based services.</description>
+    </item>
+    
+  </channel>
+</rss>

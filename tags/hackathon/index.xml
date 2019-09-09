@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hackathon on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/hackathon/</link>
+    <description>Recent content in hackathon on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Apr 2019 14:17:04 -0500</lastBuildDate>
+    
+	<atom:link href="https://letsautomate.it/tags/hackathon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swimlane Runner Up in Microsoft Graph Security Hackathon</title>
+      <link>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</link>
+      <pubDate>Tue, 02 Apr 2019 14:17:04 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</guid>
+      <description>Within a few weeks of starting at Swimlane, our CEO Cody Cornell mentioned the Microsoft Graph Security Hackathon — put on by the Microsoft Graph Security team and DevPost. After assembling a team and a lot of hard work, we were notified yesterday that our submission earned runner up!
+We were extremely excited to participate in this unique event as we were about to begin our development of our Microsoft Graph Security API bundle, and this would be the perfect opportunity for us to showcase the power of Swimlane.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devsecops on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/devsecops/</link>
+    <description>Recent content in devsecops on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Aug 2019 14:40:36 -0500</lastBuildDate>
+    
+	<atom:link href="https://letsautomate.it/tags/devsecops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Every Security Team Is a Software Team Now</title>
+      <link>https://letsautomate.it/article/every-security-team-is-a-software-team-now/</link>
+      <pubDate>Thu, 01 Aug 2019 14:40:36 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/every-security-team-is-a-software-team-now/</guid>
+      <description>Building and facilitating a culture with continuous collaboration between engineers and security forces is becoming the new philosophy in security, which is why I am stoked for this year&amp;rsquo;s Black Hat USA keynote speaker: Dino Dai Zovi, staff security engineer at Square.
+&amp;ldquo;Every Security Team is a Software Team Now&amp;rdquo; promises to dive into the latest iteration of security operations as current security teams morph into in-house security software teams, delivering multi-vertical value through self-service platforms and tools.</description>
+    </item>
+    
+  </channel>
+</rss>

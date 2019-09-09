@@ -102,7 +102,7 @@
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/moving-away-from-wordpress/">
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -110,11 +110,11 @@
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/moving-away-from-wordpress/">Moving Away From Wordpress</a></h3>
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/">Mdt 2012 Deployment Guide Step by Step 7 of 11</a></h3>
     <div class="meta">
         
             
-                <span class="date moment">2018-08-05</span>
+                <span class="date moment">2018-08-07</span>
             
         
 
@@ -122,23 +122,395 @@
 
         
 
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
         
     </div>
 
     
-        Hello Everyone, I have decided this past weekend to final move completely away from WordPress for my blog; and I&rsquo;m 100% excited for this transition! I have decided to use GitHub Pages for my new blog.
-I plan on migrating content to this new locaton, but in the meantime if you find any missing content that you have seen previously then please let me know and I will get it moved over ASAP.
+        Capturing a Windows 7 Image from a reference PC The reference computer should be connected to the same network as the MDT Deployment server and should be set to get an IP address via DHCP.
+&nbsp;
+THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN!
+&nbsp;  Boot the reference computer and ensure network connectivity Make any last-minute modifications (additional software, Windows Updates, etc.) Click Start and type \&lt;MDTSERVER&gt;\share$\scripts\litetouch.
 
         
-            <a href="https://letsautomate.it/article/moving-away-from-wordpress/" class="more">Continue reading</a>
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/" class="more">Continue reading</a>
         
     
 </div>
 
     
-<div class="footer no-tags">
+<div class="footer">
 
 
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/">Mdt 2012 Deployment Guide Step by Step 6 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Completing the Deployment Share Configuration Now you have imported an OS (from source media) and some WinPE drivers, we can go ahead and complete the configuration of the Deployment Share. 6.1 Advanced Configuration The Advanced Configuration section of MDT consists of four separate areas although, we only use the Selection Profiles section for now. The rest are advanced topics which you can explore later! Advanced Configuration – Selection Profiles Created a single additional selection profile – “WinPE Drivers” and configured it to contain only the drivers which Windows PE will use.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/">Mdt 2012 Deployment Guide Step by Step 5 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Creating a Sysprep &amp; Capture Task Sequence The “Task Sequence” is the heart of the MDT deployment solution. It is a list of steps which need to be taken to successfully deploy an Operating System.
+&nbsp;
+Initially you need to create a “Sysprep and Capture” task sequence. Go ahead and do this now. You don’t need to worry too much about which choice of OS you make as it doesn’t matter.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/">Mdt 2012 Deployment Guide Step by Step 4 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        4. Importing an OS Image The Operating Systems section of MDT lists all of the Operating Systems which are available to deploy from a Deployment Share. The deployment itself is controlled by a Task Sequence but the operating system source files need to be available.
+&nbsp;
+Simply right-click on Operating Systems on the left and Import your Windows 7 source media from either DVD or a network share. If you are planning to deploy both 32 and 64 bit versions, import both!
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">Mdt 2012 Deployment Guide Step by Step 3 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Device Driver Management 3.1 Obtaining Device Drivers for a Deployment In order to deploy a single image to multiple hardware types, MDT performs a “driver injection” during the OS load process. For this to work, any and all relevant drivers need to be imported into the deployment share in advance. Depending on the hardware vendor, the process for obtaining these drivers may vary but will generally involve going to the vendor website and downloading the drivers for specific hardware models.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/">Mdt 2012 Deployment Guide Step by Step 2 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        2.1 Creating an MDT Deployment Share An MDT Deployment Share is the specific deployment environment which will be used for OS deployment. The share contains all elements of the deployment including drivers, applications, OS images etc.  Log on to the MDT server and open the “Deployment Workbench” Right-click on “Deployment Shares” in the left pane of the workbench and select New Deployment Share  
+ In the New Deployment Share Wizard, choose a location for the new share.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/">Mdt 2012 Deployment Guide Step by Step 1 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        1.0 Deployment Infrastructure Overview The new OS Deployment Infrastructure for the Configuration Centre is based around Microsoft Deployment Toolkit 2010 with Update 1. MDT relies on a number of underlying software components and is able to deploy a number of different Operating Systems including Windows XP, Windows Vista and Windows 7 on the client side and Windows Server 2003, 2008 and 2008 R2 on the server side. This document is focused on deployment of Windows 7 clients.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
     
 
     
@@ -152,6 +524,8 @@ I plan on migrating content to this new locaton, but in the meantime if you find
 
     
     <div class="paginator">
+        
+            <a href="/article/page/12/" class="older"><i class="fa fa-angle-double-left"></i> Older posts</a>
         
 
         
@@ -173,31 +547,31 @@ I plan on migrating content to this new locaton, but in the meantime if you find
                 <ul>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>
+                        <a href="https://letsautomate.it/article/vulnerability-management-program-best-practices/">Vulnerability Management Program Best Practices</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/using-amazon-sns-with-powershell/">Using Amazon SNS With Powershell</a>
+                        <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/">How to Setup a Hugo Website on GitHub</a>
+                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/using-amazon-sqs-with-powershell/">Using Amazon Sqs With Powershell</a>
+                        <a href="https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/">Swimlane&#39;s Research Teams Open Sources pyattck</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/traverse-local-certificate-store-with-powershell/">Traverse Local Certificate Store With Powershell</a>
+                        <a href="https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/">Swimlane Open Sources graphish to Help SecOps Teams</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!</a>
+                        <a href="https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/">Hey InfoSec, What Are You Doing to Protect Your DevOps Teams</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/using-github-to-revive-blog-posts/">Using Github to Revive Blog Posts</a>
+                        <a href="https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/">Swimlane Research Team Open Sources py-ews</a>
                     </li>
                 
                 </ul>
@@ -208,6 +582,10 @@ I plan on migrating content to this new locaton, but in the meantime if you find
         <div class="categories">
             <a href="/categories/"><strong>Categories</strong></a>
                 <ul>
+                
+                    <li>
+                        <a href="/categories/swimlane">Swimlane (13)</a>
+                    </li>
                 
                     <li>
                         <a href="/categories/powershell">Powershell (7)</a>

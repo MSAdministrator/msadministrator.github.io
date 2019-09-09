@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/python/</link>
+    <description>Recent content in python on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jul 2019 14:37:17 -0500</lastBuildDate>
+    
+	<atom:link href="https://letsautomate.it/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Microsoft Defender Advanced Threat Detection Queries</title>
+      <link>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</link>
+      <pubDate>Thu, 18 Jul 2019 14:37:17 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</guid>
+      <description>Recently, I shared on Twitter how you could run a query to detect if a user has clicked on a link within their Outlook using Microsoft Defender Advanced Threat Protection (MDATP). If you are not familiar, MDATP is available within your Microsoft 365 E5 license and is an enhancement to the traditional Windows Defender you might be used to.
+What is Microsoft Defender Advanced Threat Protection? Microsoft says that “Microsoft Defender Advanced Threat Protection is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.</description>
+    </item>
+    
+    <item>
+      <title>Swimlane&#39;s Research Teams Open Sources pyattck</title>
+      <link>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</link>
+      <pubDate>Thu, 11 Jul 2019 14:34:27 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</guid>
+      <description>As security teams adopt the Mitre ATT&amp;amp;CK Framework to help them identify gaps in their defenses, having a way to identify what malware and tools are being used by specific actors or groups becomes more critical. Additionally, having a way to identify these relationships programatically is even more critical.
+Today, we are excited to announce the Swimlane research team has released pyattck — a Python package to interact with the Mitre ATT&amp;amp;CK Framework.</description>
+    </item>
+    
+    <item>
+      <title>Swimlane Open Sources graphish to Help SecOps Teams</title>
+      <link>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</link>
+      <pubDate>Wed, 19 Jun 2019 14:31:46 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</guid>
+      <description>While having a conversation on Twitter about Microsoft Graph API I was convinced that the traditional Exchange eDiscovery features were not available in the Microsoft Graph API. Boy was I wrong.
+After stumbling across a few endpoints I had not seen previously, I decided to write a python package called graphish. graphish is an open-source python package Swimlane is open-sourcing that will enable IT, security operations (SecOps), developers and others to search and delete email messages from mailboxes using the Microsoft Graph API.</description>
+    </item>
+    
+    <item>
+      <title>Swimlane Research Team Open Sources py-ews</title>
+      <link>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</link>
+      <pubDate>Wed, 22 May 2019 14:27:42 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</guid>
+      <description>Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced py-ews to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.
+Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&amp;rsquo; mailboxes.</description>
+    </item>
+    
+  </channel>
+</rss>

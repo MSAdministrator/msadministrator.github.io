@@ -102,7 +102,7 @@
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-1-of-3/">
+                <a class="bubble" href="https://letsautomate.it/article/qualysguard-decentralized-it-how-to-organize-your-assets/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -110,7 +110,7 @@
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-1-of-3/">Powershell Updating Local Admin Passwords Securely 1 of 3</a></h3>
+    <h3><a href="https://letsautomate.it/article/qualysguard-decentralized-it-how-to-organize-your-assets/">Qualysguard Decentralized It How to Organize Your Assets</a></h3>
     <div class="meta">
         
             
@@ -128,11 +128,163 @@
     </div>
 
     
-        So I haven&rsquo;t posted in a bit but I&rsquo;ve seen this request many times. Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.
-Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
+        <p>I work for a University with a decentralized IT department: each college, division, department, etc maintains their users.  As a security department who maintains QualysGuard, we were wanting each department to scan their own assets and re-mediate all vulnerabilities found in these scans based on the following policy:
+<ul>
+    <li>Level 4 and Level 5 vulnerabilities must be re-mediated within 15 days</li>
+    <li>Level 3 vulnerabilities must be re-mediated within 30 days</li>
+    <li>Level 2 vulnerabilities must be re-mediated within the next semesters</li>
+    <li>Level 1 vulnerabilities must be re-mediated whenever possible</li>
+</ul>
+WIth this policy in mind, we began rolling out our QualysGuard service using the following methods.  We would create Asset Groups for each group of servers that belong to one of the following: a department, college, division, application group, etc.  Each Asset Group would be additionally subdivided into each network core.  For example, if you have a Athletics department, they may have assets in all the different network cores (Faculty/Staff Network, Data Center, DMZ, Residential Network, etc.).  Because each of these departments will have multiple assets in multiple network cores, we relied heavily on our naming conventions.  Our naming convention is the following for Asset Groups: CAMPUS DEPT NETWORK Assets (SCANNER NAME) -&gt; CAMPUS Athletics DC Assets (DC_SCANNER)</p>
+
+<p>When dealing with QualysGuard in a decentralized IT infrastructure, your naming convention will save you!</p>
+
+<p>Once you have a group of Assets in their respective Asset Groups, then we add them to their own Business Unit.  Remember that you must a Unit Manager (at least 1), and you may any number of Scanner and Reader roles.  You can additionally assign a role to specific Asset Groups within the Business Unit (or another Business Unit).</p>
+
+<p>Please see the following graphic, which outlines what was previously stated:</p>
+
+<p><a href="https://msadministrator.files.wordpress.com/2015/01/2015-01-11-14_12_21-business-unit-hierarchy.png"><img class="alignnone size-medium wp-image-297" src="https://msadministrator.files.wordpress.com/2015/01/2015-01-11-14_12_21-business-unit-hierarchy.png?w=300" alt="2015-01-11 14_12_21-Business Unit Hierarchy" width="300" height="166" /></a></p>
+
+<p>Remember, when you are rolling out your QualysGuard VM infrastructure you will want to plan (in great detail) your roll-out.  Creating a roll-out plan that relies on system owners to take responsibility for their own systems, instead of System Administrators and/or Security Analyst is the idea goal.  By doing this, it highlights the importance for security in your organization as well as giving everyone insight into the security posture of their organization.  Hopefully they will see QualysGuard as a tool of transparency that helps strengthen your organization vulnerability management life cycle management.</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/windows-security-publicprivate-key-exchange-basics/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/windows-security-publicprivate-key-exchange-basics/">Windows Security Publicprivate Key Exchange Basics</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
 
         
-            <a href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-1-of-3/" class="more">Continue reading</a>
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        <p>My wife and I saw CITIZENFOUR yesterday during a secret screening.  If you have not had the chance to see this movie, please do so as soon as you can - it&rsquo;s a great documentary!  The only complaint I have about the film is that they do not explain Cryptography or Encryption for the &ldquo;normal&rdquo; folks.  When the film ended, I looked around and their were many non-technical people (including older individuals).  I remember hearing someone say &ldquo;well I guess I&rsquo;m not going to be using email anymore&rdquo;.  This sentiment is not what the film is about, and I believe the director should have explained this very technical methodology to not confuse the non-techie people.</p>
+
+<p>With all that being said, I&rsquo;m going to try to explain Public/Private Key Exchange in the simplest form I can&hellip;&hellip;</p>
+
+<p>Imagine that you (mother) are wanting to send an email to someone (son), but you want the contents to be secure from prying eyes.  In order to do this, you need to use a form of encryption that it is secure.  The most common form of encryption is based on a certificate.</p>
+
+<p>You may be asking, what the hell is a certificate?  Think about your college degree or your highschool diploma, you received this certificate from your high school or university. This certificate is really nothing special, just a printed piece of paper, but the one thing that makes this certificate unique is that it&rsquo;s yours.  Additionally, your certificate is unique because it has your name on it, the year you graduated, the school you went to and it possibly has an issue number.  All of these things make your certificate unique, this is similar to a certificate we use for encryption.</p>
+
+<p>The only difference between a certificate you received for your graduation and one you use for encryption is that your certificate for encryption is digital.  Your digital certificate is typically unique because it comes from trusted source, it&rsquo;s made specifically for you, and well it means that this is me - you can trust me.</p>
+
+<p>So you have your unique certificate and within your certificate is a public key and a private key.  As you can imagine, your private key should always be kept private.  This private key is the key (pun intended) to all of your encryption.  This means that you do not want to store this private key just anywhere - keep it on a thumb drive in a safe (and buried in the backyard) :)  Seriously, keep it as safe as the data you are trying to encrypt needs to be protected.</p>
+
+<p>The other half of your certificate is your public key.  Your public key will be, well, public and we (the son) will use this public key to encrypt their data.  You may be asking at this point, well okay I have my certificate, I have my public and private key, and my data is now encrypted by my public key, NOW WHAT?  Well, once (your) the data is encrypted with your public key then you are the only one that can decrypt the data.</p>
+
+<p>That&rsquo;s right, your private key is used to decrypt data that has been encrypted by your public key!</p>
+
+<p>Now let&rsquo;s get to a real world example.  Now, back to my example above - Mother wants to send data that&rsquo;s secure to her son.  For the mother to send data securely she first needs to get a certificate.  Depending on where the mother lives, she can purchase a certificate from a Certificate Authority (CA) or receive one from her work&rsquo;s CA.  Once the mother has a certificate, she installs into her web browser or email client (for example).</p>
+
+<p>Now that the certificate is installed, the public key (sometimes the private key as well) is installed on her computer and can be used to encrypt her data.  Since the mother has a public key, it&rsquo;s now in the public and is sent with most communication on the web.  That&rsquo;s okay, remember this is your public key. The mother then sends her public key to her son (by sending an email).  Once her son has his mothers public key, he can now communicate with his mother securely.  Anything that is sent by the son to the mother can be decrypted by the mother because her private key is the only one that can decrypt the message - which is sent encrypted by the mothers public key.</p>
+
+<p>Below is a great graphical explanation of the Public/Private Key Exchange:</p>
+
+<p><a href="https://msadministrator.files.wordpress.com/2014/10/gpg-schema.jpg"><img class="alignnone size-medium wp-image-292" src="https://msadministrator.files.wordpress.com/2014/10/gpg-schema.jpg?w=300" alt="GPG-SChema" width="300" height="142" /></a></p>
+
+<p>This post explains the basics of public/private key exchange and does not go into the details surrounding the multitude of different technologies (i.e. Diffie-Hellman, symmetric and asymmetric key exchanges, etc).  I hope this post has helped people understand the absolute basics of encryption.</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/windows-security-server-hardening-security-templates/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/windows-security-server-hardening-security-templates/">Windows Security Server Hardening Security Templates</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Hardening your systems (Servers, Workstations, Applications, etc.) ensures that every system is secured in accordance to your organizations standards. Microsoft has a &ldquo;Solution Accelerator&rdquo; called Security Compliance Manager that allows System Administrators or IT Pro&rsquo;s to create security templates that help harden their systems in a manageable, repeatable, way. In addition to SCM, you can build your own by using the standard MMC console and adding the Security Templates Snap-In to the console - this gives you a more refined configuration, but can be cumbersome.
+
+        
+            <a href="https://letsautomate.it/article/windows-security-server-hardening-security-templates/" class="more">Continue reading</a>
         
     
 </div>
@@ -162,7 +314,7 @@ Updating the Passwords of the Local Administrator on remote mahcines (You must h
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/ipad-lockdown-mobileconfig/">
+                <a class="bubble" href="https://letsautomate.it/article/windows-security-patch-management/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -170,7 +322,7 @@ Updating the Passwords of the Local Administrator on remote mahcines (You must h
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/ipad-lockdown-mobileconfig/">Ipad Lockdown Mobileconfig</a></h3>
+    <h3><a href="https://letsautomate.it/article/windows-security-patch-management/">Windows Security Patch Management</a></h3>
     <div class="meta">
         
             
@@ -188,11 +340,10 @@ Updating the Passwords of the Local Administrator on remote mahcines (You must h
     </div>
 
     
-        It is possible to put an iPad or iPhone into &lsquo;Store Demo&rsquo; mode so that the home button and swipe to home gesture is disabled. If you have seen the iPads in the Apple Store running the smart sign apps then you will know what I mean.
-It is actually pretty trivial to make this work, all you need to do is install a correctly formatted mobile config plist over the air from a web server.
+        Recently, at work, I nominated myself to begin a &ldquo;Windows Security&rdquo; course for IT Professionals that I work with. Being a former IT Pro, and now part of our security department as an Incident Responder, I thought I would create a course surrounding security. So, i&rsquo;m going to use my blog to layout my plans for this &ldquo;Windows Security&rdquo; course - which will hopefully be useful for others as well.
 
         
-            <a href="https://letsautomate.it/article/ipad-lockdown-mobileconfig/" class="more">Continue reading</a>
+            <a href="https://letsautomate.it/article/windows-security-patch-management/" class="more">Continue reading</a>
         
     
 </div>
@@ -222,7 +373,7 @@ It is actually pretty trivial to make this work, all you need to do is install a
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/">
+                <a class="bubble" href="https://letsautomate.it/article/qualys-guard-qualys-in-a-university-environment/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -230,7 +381,7 @@ It is actually pretty trivial to make this work, all you need to do is install a
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/">Questions About Mdt 2012 Driver Setup</a></h3>
+    <h3><a href="https://letsautomate.it/article/qualys-guard-qualys-in-a-university-environment/">Qualys Guard Qualys in a University Environment</a></h3>
     <div class="meta">
         
             
@@ -248,13 +399,11 @@ It is actually pretty trivial to make this work, all you need to do is install a
     </div>
 
     
-        So I&rsquo;ve had a lot of questions about my MDT 2012 Driver setup and hopefully this post will explain a little bit about it. Let me know if you have any questions
-Personally I have a folder on my server called _Source_Drivers. I keep all my drivers here and import them into MDT but keep the original. Here is what my file structure of this folder looks like.
-
-Once I have my structure setup I then begin to setup the structure on my MDT Deployment Share.
+        The University I work for has began using Qualys for our Enterprise Vulnerability Scanning and so far it&rsquo;s been well received. The problem is that every &ldquo;College/School&rdquo; maintains their own systems thus we are decentralized, which makes maintaining Reports/Scans/Maps/etc. very difficult.
+Because I have not found many posts/articles focused on a decentralized environment I decided I would explain the way we are approaching this. This is all a work in progress - if you have any questions or ideas, please get a hold of me.
 
         
-            <a href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/" class="more">Continue reading</a>
+            <a href="https://letsautomate.it/article/qualys-guard-qualys-in-a-university-environment/" class="more">Continue reading</a>
         
     
 </div>
@@ -284,7 +433,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/">
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2013-installing-mdt-2013/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -292,7 +441,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/">Mdt 2012 Installing a Custom Dictionary in Office 2010</a></h3>
+    <h3><a href="https://letsautomate.it/article/mdt-2013-installing-mdt-2013/">Mdt 2013 Installing Mdt 2013</a></h3>
     <div class="meta">
         
             
@@ -310,10 +459,18 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     </div>
 
     
-        So, some might not need this but thought I would share anyways. I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&rsquo;m deploying my new OS. Here are the steps on how to do this, but also how to create a custom Office 2010 Install.  Once you&rsquo;ve setup everything for you OS, go to the Applications folder on your Deployment Share and right click&gt;New Application Once there, put in the relavent information including where your resource CD is located.
+        Now we are going to install MDT 2013. This is a simple process but I wanted to show you anyways.
+After you have downloaded MDT 2013 from Microsoft (See This Post)
+When you first Launch the MDT 2013 Installer, you should see the following screen:
+
+Click Next to Continue
+
+Accept the License Agreement and click Next:
+
+Choose the Location that you want MDT 2013 to be installed. This is typically left alone but you are more than welcome to install it on a separate partition/drive.
 
         
-            <a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/" class="more">Continue reading</a>
+            <a href="https://letsautomate.it/article/mdt-2013-installing-mdt-2013/" class="more">Continue reading</a>
         
     
 </div>
@@ -343,7 +500,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -351,7 +508,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">Mdt 2012 Deployment Guide Step by Step 11 of 11</a></h3>
+    <h3><a href="https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/">Mdt 2013 Installing Adk for 8 1</a></h3>
     <div class="meta">
         
             
@@ -369,142 +526,14 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     </div>
 
     
-        Preparing WDS to enable PXE Boot (optional but very useful)  Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version  
- Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.
+        Once you have all of the necessary files downloaded and saved on your Windows Server 2012 R2 box, then begin by installing the &ldquo;adksetup.exe&rdquo;.
+The first screen that should pop-up is this one:
+
+The Following Screenshots are all based on your own needs but these are the options that I have chosen for this setup:
+I choose to download the ADK instead of installing it. The reason I do this is because I like to keep a backup of the original file, just in case the server crashes or something else happens.
 
         
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    <a href="/tags/archive">archive</a>
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
-    <i class="fa fa-fw fa-pencil"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">Mdt 2012 Deployment Guide Step by Step 10 of 11</a></h3>
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
-        
-    </div>
-
-    
-        Automating the Deployment Process  Right-click on the deployment share and select Properties  
- Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…             CUSTOMSETTINGS.INI   [Settings]
-Priority=Default
-[Default ]
-_SMSTSORGNAME=Customer
-SkipBDDWelcome=YES
-SkipProductKey=YES
-ProductKey= XXXX-XXXX-XXXXX-XXXXX
-OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX
-SkipDeploymentType=YES
-DeploymentType=NEWCOMPUTER
-SkipDomainMembership=NO
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    <a href="/tags/archive">archive</a>
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
-    <i class="fa fa-fw fa-pencil"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">Mdt 2012 Deployment Guide Step by Step 9 of 11</a></h3>
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
-        
-    </div>
-
-    
-        Creating a Deployment Task Sequence  From the Deployment Workbench, expand the customer Deployment Share and right-click on Task Sequences and select New Task Sequence Enter a Task Sequence ID and Name. Make a note of the ID as you may need it later!  
- Accept the default “Standard Client Task Sequence” template Select the relevant OS Image to deploy  
- This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" class="more">Continue reading</a>
+            <a href="https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/" class="more">Continue reading</a>
         
     
 </div>
@@ -558,31 +587,31 @@ SkipDomainMembership=NO
                 <ul>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>
+                        <a href="https://letsautomate.it/article/vulnerability-management-program-best-practices/">Vulnerability Management Program Best Practices</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/using-amazon-sns-with-powershell/">Using Amazon SNS With Powershell</a>
+                        <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/">How to Setup a Hugo Website on GitHub</a>
+                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/using-amazon-sqs-with-powershell/">Using Amazon Sqs With Powershell</a>
+                        <a href="https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/">Swimlane&#39;s Research Teams Open Sources pyattck</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/traverse-local-certificate-store-with-powershell/">Traverse Local Certificate Store With Powershell</a>
+                        <a href="https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/">Swimlane Open Sources graphish to Help SecOps Teams</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!</a>
+                        <a href="https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/">Hey InfoSec, What Are You Doing to Protect Your DevOps Teams</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/using-github-to-revive-blog-posts/">Using Github to Revive Blog Posts</a>
+                        <a href="https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/">Swimlane Research Team Open Sources py-ews</a>
                     </li>
                 
                 </ul>
@@ -593,6 +622,10 @@ SkipDomainMembership=NO
         <div class="categories">
             <a href="/categories/"><strong>Categories</strong></a>
                 <ul>
+                
+                    <li>
+                        <a href="/categories/swimlane">Swimlane (13)</a>
+                    </li>
                 
                     <li>
                         <a href="/categories/powershell">Powershell (7)</a>

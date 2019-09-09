@@ -6,10 +6,142 @@
     <description>Recent content in Josh Rickard on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Sep 2018 21:20:15 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 15 Aug 2019 14:42:13 -0500</lastBuildDate>
     
 	<atom:link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vulnerability Management Program Best Practices</title>
+      <link>https://letsautomate.it/article/vulnerability-management-program-best-practices/</link>
+      <pubDate>Thu, 15 Aug 2019 14:42:13 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/vulnerability-management-program-best-practices/</guid>
+      <description>Nowadays most organizations have begun to implement a Vulnerability Management Program (VMP), but implementing one is daunting. Most organizations realize they either have no true categorical ownership over systems or they lack the authority to enforce remediation of identified vulnerabilities. Either way, it is time consuming to track down and enforce a true VMP within many organizations.
+What is a Vulnerability Management Program? If you are new to implementing a VMP, then you first must understand what vulnerability management is.</description>
+    </item>
+    
+    <item>
+      <title>Every Security Team Is a Software Team Now</title>
+      <link>https://letsautomate.it/article/every-security-team-is-a-software-team-now/</link>
+      <pubDate>Thu, 01 Aug 2019 14:40:36 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/every-security-team-is-a-software-team-now/</guid>
+      <description>Building and facilitating a culture with continuous collaboration between engineers and security forces is becoming the new philosophy in security, which is why I am stoked for this year&amp;rsquo;s Black Hat USA keynote speaker: Dino Dai Zovi, staff security engineer at Square.
+&amp;ldquo;Every Security Team is a Software Team Now&amp;rdquo; promises to dive into the latest iteration of security operations as current security teams morph into in-house security software teams, delivering multi-vertical value through self-service platforms and tools.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft Defender Advanced Threat Detection Queries</title>
+      <link>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</link>
+      <pubDate>Thu, 18 Jul 2019 14:37:17 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</guid>
+      <description>Recently, I shared on Twitter how you could run a query to detect if a user has clicked on a link within their Outlook using Microsoft Defender Advanced Threat Protection (MDATP). If you are not familiar, MDATP is available within your Microsoft 365 E5 license and is an enhancement to the traditional Windows Defender you might be used to.
+What is Microsoft Defender Advanced Threat Protection? Microsoft says that “Microsoft Defender Advanced Threat Protection is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.</description>
+    </item>
+    
+    <item>
+      <title>Swimlane&#39;s Research Teams Open Sources pyattck</title>
+      <link>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</link>
+      <pubDate>Thu, 11 Jul 2019 14:34:27 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</guid>
+      <description>As security teams adopt the Mitre ATT&amp;amp;CK Framework to help them identify gaps in their defenses, having a way to identify what malware and tools are being used by specific actors or groups becomes more critical. Additionally, having a way to identify these relationships programatically is even more critical.
+Today, we are excited to announce the Swimlane research team has released pyattck — a Python package to interact with the Mitre ATT&amp;amp;CK Framework.</description>
+    </item>
+    
+    <item>
+      <title>Swimlane Open Sources graphish to Help SecOps Teams</title>
+      <link>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</link>
+      <pubDate>Wed, 19 Jun 2019 14:31:46 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</guid>
+      <description>While having a conversation on Twitter about Microsoft Graph API I was convinced that the traditional Exchange eDiscovery features were not available in the Microsoft Graph API. Boy was I wrong.
+After stumbling across a few endpoints I had not seen previously, I decided to write a python package called graphish. graphish is an open-source python package Swimlane is open-sourcing that will enable IT, security operations (SecOps), developers and others to search and delete email messages from mailboxes using the Microsoft Graph API.</description>
+    </item>
+    
+    <item>
+      <title>Hey InfoSec, What Are You Doing to Protect Your DevOps Teams</title>
+      <link>https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/</link>
+      <pubDate>Fri, 14 Jun 2019 14:29:52 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/</guid>
+      <description>DevOps, serverless applications and containers are just a few of the latest advancements in a developer&amp;rsquo;s toolbox. For development teams, this means that the time to market (TTM) is faster—especially for Agile teams. So, how and what are security operations teams doing to ensure that security is keeping pace with this rapid development? Most are attempting to incorporate a security engineer within their development teams—which is a great first step—but there are multiple layers that you need to ensure you are protecting your organization beyond your source-code.</description>
+    </item>
+    
+    <item>
+      <title>Swimlane Research Team Open Sources py-ews</title>
+      <link>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</link>
+      <pubDate>Wed, 22 May 2019 14:27:42 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</guid>
+      <description>Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced py-ews to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.
+Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&amp;rsquo; mailboxes.</description>
+    </item>
+    
+    <item>
+      <title>Automate Employee Off Boarding Process With Swimlane</title>
+      <link>https://letsautomate.it/article/automate-employee-off-boarding-process-with-swimlane/</link>
+      <pubDate>Wed, 08 May 2019 14:25:25 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/automate-employee-off-boarding-process-with-swimlane/</guid>
+      <description>As more organizations discontinue internal services and begin adopting an increasing number of third-party *aaS-based services, ensuring the appropriate access is revoked in a timely manner is critical. By using our new employee off-boarding use case, you can automatically gather historical data, add a user to a monitoring watch list, and finally remove access when it is time to off-board an employee.
+The employee off-boarding use case contains two distinct applications to assist an organization with managing their employee off-boarding process.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft OAuth2 Part3: Using Microsoft Graph API</title>
+      <link>https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/</link>
+      <pubDate>Wed, 08 May 2019 14:20:07 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/</guid>
+      <description>In this third and final part of the &amp;ldquo;Understanding Microsoft’s OAuth2 Implementation&amp;rdquo; series, we will be using the application that we have previously created to authenticate to the Microsoft Graph API.
+If you have not done so, please read Part 1 and Part 2 before continuing.
+Now, let’s start using the Microsoft Graph API using PowerShell Core!
+Read More</description>
+    </item>
+    
+    <item>
+      <title>Microsoft OAuth2 Part2: Registering an App</title>
+      <link>https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/</link>
+      <pubDate>Thu, 18 Apr 2019 14:18:59 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/</guid>
+      <description>In my last post, I explained the different API endpoints available for authentication using Microsoft’s OAuth2. Additionally, I shared the different types of applications and their authentication flows.
+In Part 2, I will discuss how to create and register a new application with a deeper understanding of the permissions needed when interacting with the Microsoft Graph API.
+Read More</description>
+    </item>
+    
+    <item>
+      <title>Swimlane Runner Up in Microsoft Graph Security Hackathon</title>
+      <link>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</link>
+      <pubDate>Tue, 02 Apr 2019 14:17:04 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</guid>
+      <description>Within a few weeks of starting at Swimlane, our CEO Cody Cornell mentioned the Microsoft Graph Security Hackathon — put on by the Microsoft Graph Security team and DevPost. After assembling a team and a lot of hard work, we were notified yesterday that our submission earned runner up!
+We were extremely excited to participate in this unique event as we were about to begin our development of our Microsoft Graph Security API bundle, and this would be the perfect opportunity for us to showcase the power of Swimlane.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft&#39;s OAuth2 Part 1: Endpoints and Application Types</title>
+      <link>https://letsautomate.it/article/microsoft-oauth2-endpoints-and-application-types/</link>
+      <pubDate>Wed, 27 Mar 2019 14:14:26 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-oauth2-endpoints-and-application-types/</guid>
+      <description>As an information security or IT professional, understanding the concepts around Microsoft OAuth 2.0 or OpenID Connect authentication can be daunting. There are thousands of pages of documentation, and if you want to interact with a Microsoft Cloud service—like Microsoft Graph—it can be a minefield of information.
+In this three-part series, I am going to share with you my insights on Microsoft’s OAuth2 Implementation in hopes that it will help your organization understand and use OAuth2 when using Microsoft cloud-based services.</description>
+    </item>
+    
+    <item>
+      <title>Automated Malware Analysis and Reverse Engineering With Soar</title>
+      <link>https://letsautomate.it/article/automated-malware-analysis-and-reverse-engineering-with-soar/</link>
+      <pubDate>Thu, 14 Mar 2019 14:10:25 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/automated-malware-analysis-and-reverse-engineering-with-soar/</guid>
+      <description>We all know that security operations (SecOps) teams are overwhelmed by the extreme number of alerts they receive on a daily basis. Organizations are being attacked from all fronts, whether they know it or not. These attacks vary from social engineering, malicious emails, vulnerable services and applications, misconfiguration (job fatigue), etc.
+Traditionally in a security operations center (SOC), malware analysis—more specifically reverse engineering—is conducted by a highly trained member of the security team (depending on your size, this may be multiple individuals).</description>
+    </item>
     
     <item>
       <title>Python vs Powershell Part 1: Versioning</title>

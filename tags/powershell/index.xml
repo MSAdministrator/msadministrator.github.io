@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>powershell on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/powershell/</link>
+    <description>Recent content in powershell on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jul 2019 14:37:17 -0500</lastBuildDate>
+    
+	<atom:link href="https://letsautomate.it/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Microsoft Defender Advanced Threat Detection Queries</title>
+      <link>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</link>
+      <pubDate>Thu, 18 Jul 2019 14:37:17 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</guid>
+      <description>Recently, I shared on Twitter how you could run a query to detect if a user has clicked on a link within their Outlook using Microsoft Defender Advanced Threat Protection (MDATP). If you are not familiar, MDATP is available within your Microsoft 365 E5 license and is an enhancement to the traditional Windows Defender you might be used to.
+What is Microsoft Defender Advanced Threat Protection? Microsoft says that “Microsoft Defender Advanced Threat Protection is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.</description>
+    </item>
+    
+  </channel>
+</rss>

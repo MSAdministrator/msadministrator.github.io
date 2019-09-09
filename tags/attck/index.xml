@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ATT&amp;CK on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/attck/</link>
+    <description>Recent content in ATT&amp;CK on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Jul 2019 14:34:27 -0500</lastBuildDate>
+    
+	<atom:link href="https://letsautomate.it/tags/attck/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swimlane&#39;s Research Teams Open Sources pyattck</title>
+      <link>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</link>
+      <pubDate>Thu, 11 Jul 2019 14:34:27 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</guid>
+      <description>As security teams adopt the Mitre ATT&amp;amp;CK Framework to help them identify gaps in their defenses, having a way to identify what malware and tools are being used by specific actors or groups becomes more critical. Additionally, having a way to identify these relationships programatically is even more critical.
+Today, we are excited to announce the Swimlane research team has released pyattck — a Python package to interact with the Mitre ATT&amp;amp;CK Framework.</description>
+    </item>
+    
+  </channel>
+</rss>

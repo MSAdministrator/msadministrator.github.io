@@ -4,31 +4,236 @@
   
   <url>
     <loc>https://letsautomate.it/article/</loc>
-    <lastmod>2018-09-04T21:20:15-04:00</lastmod>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://letsautomate.it/author/</loc>
-    <lastmod>2018-09-04T21:20:15-04:00</lastmod>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://letsautomate.it/categories/</loc>
-    <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/tags/install-module/</loc>
-    <lastmod>2018-09-04T21:20:15-04:00</lastmod>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2018-09-04T21:20:15-04:00</lastmod>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://letsautomate.it/</loc>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/management/</loc>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/secops/</loc>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/categories/swimlane/</loc>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/</loc>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/vulnerability/</loc>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/vulnerability-management-program-best-practices/</loc>
+    <lastmod>2019-08-15T14:42:13-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/automation/</loc>
+    <lastmod>2019-08-01T14:40:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/blackhat/</loc>
+    <lastmod>2019-08-01T14:40:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/devops/</loc>
+    <lastmod>2019-08-01T14:40:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/devsecops/</loc>
+    <lastmod>2019-08-01T14:40:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/every-security-team-is-a-software-team-now/</loc>
+    <lastmod>2019-08-01T14:40:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/atp/</loc>
+    <lastmod>2019-07-18T14:37:17-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/defender/</loc>
+    <lastmod>2019-07-18T14:37:17-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/microsoft/</loc>
+    <lastmod>2019-07-18T14:37:17-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</loc>
+    <lastmod>2019-07-18T14:37:17-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/oauth2/</loc>
+    <lastmod>2019-07-18T14:37:17-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/powershell/</loc>
+    <lastmod>2019-07-18T14:37:17-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/python/</loc>
+    <lastmod>2019-07-18T14:37:17-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/tool/</loc>
+    <lastmod>2019-07-18T14:37:17-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/attck/</loc>
+    <lastmod>2019-07-11T14:34:27-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/mitre/</loc>
+    <lastmod>2019-07-11T14:34:27-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</loc>
+    <lastmod>2019-07-11T14:34:27-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/exchange/</loc>
+    <lastmod>2019-06-19T14:31:46-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/graph/</loc>
+    <lastmod>2019-06-19T14:31:46-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/o365/</loc>
+    <lastmod>2019-06-19T14:31:46-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</loc>
+    <lastmod>2019-06-19T14:31:46-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/</loc>
+    <lastmod>2019-06-14T14:29:52-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/ews/</loc>
+    <lastmod>2019-05-22T14:27:42-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</loc>
+    <lastmod>2019-05-22T14:27:42-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/automate-employee-off-boarding-process-with-swimlane/</loc>
+    <lastmod>2019-05-08T14:25:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/employee/</loc>
+    <lastmod>2019-05-08T14:25:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/off-boarding/</loc>
+    <lastmod>2019-05-08T14:25:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/</loc>
+    <lastmod>2019-05-08T14:20:07-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/</loc>
+    <lastmod>2019-04-18T14:18:59-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/hackathon/</loc>
+    <lastmod>2019-04-02T14:17:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/security/</loc>
+    <lastmod>2019-04-02T14:17:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</loc>
+    <lastmod>2019-04-02T14:17:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/microsoft-oauth2-endpoints-and-application-types/</loc>
+    <lastmod>2019-03-27T14:14:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/automated-malware-analysis-and-reverse-engineering-with-soar/</loc>
+    <lastmod>2019-03-14T14:10:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/malware/</loc>
+    <lastmod>2019-03-14T14:10:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/reverse-engineering/</loc>
+    <lastmod>2019-03-14T14:10:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/install-module/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
   </url>
   
@@ -53,11 +258,6 @@
   </url>
   
   <url>
-    <loc>https://letsautomate.it/tags/</loc>
-    <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://letsautomate.it/tags/aws/</loc>
     <lastmod>2018-08-31T20:51:46-04:00</lastmod>
   </url>
@@ -70,11 +270,6 @@
   <url>
     <loc>https://letsautomate.it/article/using-amazon-sns-with-powershell/</loc>
     <lastmod>2018-08-31T20:51:46-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/tags/automation/</loc>
-    <lastmod>2018-08-26T16:07:25-04:00</lastmod>
   </url>
   
   <url>
@@ -183,12 +378,12 @@
   </url>
   
   <url>
-    <loc>https://letsautomate.it/tags/slack/</loc>
+    <loc>https://letsautomate.it/categories/slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://letsautomate.it/categories/slack/</loc>
+    <loc>https://letsautomate.it/tags/slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
   </url>
   

@@ -102,7 +102,7 @@
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/">
+                <a class="bubble" href="https://letsautomate.it/article/ipad-lockdown-mobileconfig/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -110,7 +110,7 @@
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/">Mdt 2012 Deployment Guide Step by Step 1 of 11</a></h3>
+    <h3><a href="https://letsautomate.it/article/ipad-lockdown-mobileconfig/">Ipad Lockdown Mobileconfig</a></h3>
     <div class="meta">
         
             
@@ -128,10 +128,11 @@
     </div>
 
     
-        1.0 Deployment Infrastructure Overview The new OS Deployment Infrastructure for the Configuration Centre is based around Microsoft Deployment Toolkit 2010 with Update 1. MDT relies on a number of underlying software components and is able to deploy a number of different Operating Systems including Windows XP, Windows Vista and Windows 7 on the client side and Windows Server 2003, 2008 and 2008 R2 on the server side. This document is focused on deployment of Windows 7 clients.
+        It is possible to put an iPad or iPhone into &lsquo;Store Demo&rsquo; mode so that the home button and swipe to home gesture is disabled. If you have seen the iPads in the Apple Store running the smart sign apps then you will know what I mean.
+It is actually pretty trivial to make this work, all you need to do is install a correctly formatted mobile config plist over the air from a web server.
 
         
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/" class="more">Continue reading</a>
+            <a href="https://letsautomate.it/article/ipad-lockdown-mobileconfig/" class="more">Continue reading</a>
         
     
 </div>
@@ -161,7 +162,7 @@
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/windows-comparison-of-windows-commands-and-linux-commands/">
+                <a class="bubble" href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -169,7 +170,7 @@
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/windows-comparison-of-windows-commands-and-linux-commands/">Windows Comparison of Windows Commands and Linux Commands</a></h3>
+    <h3><a href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/">Questions About Mdt 2012 Driver Setup</a></h3>
     <div class="meta">
         
             
@@ -187,9 +188,13 @@
     </div>
 
     
-        So I went to this conference awhile back and sat through a presentation. Not really interesting, but since I am new to the whole Linux world I thought I would pass this along. Here is a PowerPoint presentation explaining the difference&rsquo;s between Windows and Linux commands, at least common ones. Enjoy!
-Linux-Windows - Comparison of Commands
+        So I&rsquo;ve had a lot of questions about my MDT 2012 Driver setup and hopefully this post will explain a little bit about it. Let me know if you have any questions
+Personally I have a folder on my server called _Source_Drivers. I keep all my drivers here and import them into MDT but keep the original. Here is what my file structure of this folder looks like.
 
+Once I have my structure setup I then begin to setup the structure on my MDT Deployment Share.
+
+        
+            <a href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/" class="more">Continue reading</a>
         
     
 </div>
@@ -219,7 +224,7 @@ Linux-Windows - Comparison of Commands
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/scripting-open-excel-sheets-in-separate-windows/">
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -227,7 +232,7 @@ Linux-Windows - Comparison of Commands
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/scripting-open-excel-sheets-in-separate-windows/">Scripting Open Excel Sheets in Separate Windows</a></h3>
+    <h3><a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/">Mdt 2012 Installing a Custom Dictionary in Office 2010</a></h3>
     <div class="meta">
         
             
@@ -245,10 +250,10 @@ Linux-Windows - Comparison of Commands
     </div>
 
     
-        If you work in an environment similar to my previous position, then you would know how often you hear certain complaints after upgrading people to new applications or Operating Systems. Well one of those complaints came from individuals that we upgraded to Office 2010. They were use to the option of opening up Excel Spreadsheets in separate windows, but in Office 2010 you can&rsquo;t do this by default you have to make a few tweaks.
+        So, some might not need this but thought I would share anyways. I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&rsquo;m deploying my new OS. Here are the steps on how to do this, but also how to create a custom Office 2010 Install.  Once you&rsquo;ve setup everything for you OS, go to the Applications folder on your Deployment Share and right click&gt;New Application Once there, put in the relavent information including where your resource CD is located.
 
         
-            <a href="https://letsautomate.it/article/scripting-open-excel-sheets-in-separate-windows/" class="more">Continue reading</a>
+            <a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/" class="more">Continue reading</a>
         
     
 </div>
@@ -278,7 +283,7 @@ Linux-Windows - Comparison of Commands
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/">
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -286,7 +291,7 @@ Linux-Windows - Comparison of Commands
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/">Scripting Clean Java Temporary Install Files From User Profiles Win 7 Xp</a></h3>
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">Mdt 2012 Deployment Guide Step by Step 11 of 11</a></h3>
     <div class="meta">
         
             
@@ -304,11 +309,11 @@ Linux-Windows - Comparison of Commands
     </div>
 
     
-        So I had an issue awhile back that need to be rectified and the fix was to clean out temporary install files from the Sun/Java folder in User profiles. This had to be done on about 700 machines, so I created this little script that cleans out these files and pushed it out to via AD. I hope you enjoy&hellip;..
-Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary install files from the REM *** SUN/JAVA folder in User Profiles.
+        Preparing WDS to enable PXE Boot (optional but very useful)  Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version  
+ Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.
 
         
-            <a href="https://letsautomate.it/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/" class="more">Continue reading</a>
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -338,7 +343,7 @@ Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/scripting-mount-printer-at-startup-script/">
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -346,7 +351,7 @@ Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/scripting-mount-printer-at-startup-script/">Scripting Mount Printer at Startup Script</a></h3>
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">Mdt 2012 Deployment Guide Step by Step 10 of 11</a></h3>
     <div class="meta">
         
             
@@ -364,10 +369,21 @@ Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary
     </div>
 
     
-        So I had to come up with a batch script that would allow the user (in a lab) to select the printer that they wanted to use during that login session. Pretty much this was placed in the startup folder on a few lab machines and every time someone would login (Deep Freeze Machines) it would ask them to select the printer that they wanted to print to. It worked pretty well, I hope someone makes use of it.
+        Automating the Deployment Process  Right-click on the deployment share and select Properties  
+ Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…             CUSTOMSETTINGS.INI   [Settings]
+Priority=Default
+[Default ]
+_SMSTSORGNAME=Customer
+SkipBDDWelcome=YES
+SkipProductKey=YES
+ProductKey= XXXX-XXXX-XXXXX-XXXXX
+OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX
+SkipDeploymentType=YES
+DeploymentType=NEWCOMPUTER
+SkipDomainMembership=NO
 
         
-            <a href="https://letsautomate.it/article/scripting-mount-printer-at-startup-script/" class="more">Continue reading</a>
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -397,7 +413,7 @@ Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/programming-final-project-for-x86-assembly-language-class-zombie-game/">
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -405,7 +421,7 @@ Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/programming-final-project-for-x86-assembly-language-class-zombie-game/">Programming Final Project for X86 Assembly Language Class Zombie Game</a></h3>
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">Mdt 2012 Deployment Guide Step by Step 9 of 11</a></h3>
     <div class="meta">
         
             
@@ -423,10 +439,12 @@ Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary
     </div>
 
     
-        So a few years ago I had to create a Zombie game for one of my Assembly Language classes and it was fun as heck. Sorry for the bad formatting and probably bad code in general, but I wanted to post it because it was fun to create!
-&nbsp;
-Final Project - Assembly Language
+        Creating a Deployment Task Sequence  From the Deployment Workbench, expand the customer Deployment Share and right-click on Task Sequences and select New Task Sequence Enter a Task Sequence ID and Name. Make a note of the ID as you may need it later!  
+ Accept the default “Standard Client Task Sequence” template Select the relevant OS Image to deploy  
+ This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.
 
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -456,7 +474,7 @@ Final Project - Assembly Language
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="https://letsautomate.it/article/programming-understanding-binary-and-its-hexadecimal-values/">
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
 
@@ -464,7 +482,7 @@ Final Project - Assembly Language
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/programming-understanding-binary-and-its-hexadecimal-values/">Programming Understanding Binary and Its Hexadecimal Values</a></h3>
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/">Mdt 2012 Deployment Guide Step by Step 8 of 11</a></h3>
     <div class="meta">
         
             
@@ -482,8 +500,10 @@ Final Project - Assembly Language
     </div>
 
     
-        So one crucial concept that every programmer that enjoys or endures Assembly Language programming is the concept of Binary arthimetic and their corresponding Hexadecimal values. Here is a great example that you can use to make sure that you understand their values and thus it will help you understand IP addressing as well.
+        Importing a Customer Reference Image  From the Deployment Workbench, expand the customer Deployment Share and right-click on Operating Systems and select Import Operating System From the Import Operating System Wizard, select Custom Image File and click Next Browse to the path of the WIM file. For captured images, this would by default be the \Captures folder in the Deployment Share Select “Copy Windows Vista, Windows Server 2008, or later setup files from specified path” and enter the path to the relevant OS installation media.
 
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -537,31 +557,31 @@ Final Project - Assembly Language
                 <ul>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>
+                        <a href="https://letsautomate.it/article/vulnerability-management-program-best-practices/">Vulnerability Management Program Best Practices</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/using-amazon-sns-with-powershell/">Using Amazon SNS With Powershell</a>
+                        <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/">How to Setup a Hugo Website on GitHub</a>
+                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/using-amazon-sqs-with-powershell/">Using Amazon Sqs With Powershell</a>
+                        <a href="https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/">Swimlane&#39;s Research Teams Open Sources pyattck</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/traverse-local-certificate-store-with-powershell/">Traverse Local Certificate Store With Powershell</a>
+                        <a href="https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/">Swimlane Open Sources graphish to Help SecOps Teams</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!</a>
+                        <a href="https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/">Hey InfoSec, What Are You Doing to Protect Your DevOps Teams</a>
                     </li>
                 
                     <li>
-                        <a href="https://letsautomate.it/article/using-github-to-revive-blog-posts/">Using Github to Revive Blog Posts</a>
+                        <a href="https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/">Swimlane Research Team Open Sources py-ews</a>
                     </li>
                 
                 </ul>
@@ -572,6 +592,10 @@ Final Project - Assembly Language
         <div class="categories">
             <a href="/categories/"><strong>Categories</strong></a>
                 <ul>
+                
+                    <li>
+                        <a href="/categories/swimlane">Swimlane (13)</a>
+                    </li>
                 
                     <li>
                         <a href="/categories/powershell">Powershell (7)</a>

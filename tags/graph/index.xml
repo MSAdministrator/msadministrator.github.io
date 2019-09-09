@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>graph on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/graph/</link>
+    <description>Recent content in graph on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 19 Jun 2019 14:31:46 -0500</lastBuildDate>
+    
+	<atom:link href="https://letsautomate.it/tags/graph/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swimlane Open Sources graphish to Help SecOps Teams</title>
+      <link>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</link>
+      <pubDate>Wed, 19 Jun 2019 14:31:46 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</guid>
+      <description>While having a conversation on Twitter about Microsoft Graph API I was convinced that the traditional Exchange eDiscovery features were not available in the Microsoft Graph API. Boy was I wrong.
+After stumbling across a few endpoints I had not seen previously, I decided to write a python package called graphish. graphish is an open-source python package Swimlane is open-sourcing that will enable IT, security operations (SecOps), developers and others to search and delete email messages from mailboxes using the Microsoft Graph API.</description>
+    </item>
+    
+    <item>
+      <title>Swimlane Runner Up in Microsoft Graph Security Hackathon</title>
+      <link>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</link>
+      <pubDate>Tue, 02 Apr 2019 14:17:04 -0500</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</guid>
+      <description>Within a few weeks of starting at Swimlane, our CEO Cody Cornell mentioned the Microsoft Graph Security Hackathon — put on by the Microsoft Graph Security team and DevPost. After assembling a team and a lot of hard work, we were notified yesterday that our submission earned runner up!
+We were extremely excited to participate in this unique event as we were about to begin our development of our Microsoft Graph Security API bundle, and this would be the perfect opportunity for us to showcase the power of Swimlane.</description>
+    </item>
+    
+  </channel>
+</rss>
