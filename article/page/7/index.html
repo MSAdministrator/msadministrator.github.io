@@ -128,9 +128,8 @@
     </div>
 
     
-        The PowerShell function Write-LogEntry described in this post allows you to integrate logging in your scripts in a standardized way. This will help you and your script users to troubleshoot and understand the output. Read More
+        <p>The PowerShell function Write-LogEntry described in this post allows you to integrate logging in your scripts in a standardized way. This will help you and your script users to troubleshoot and understand the output. <a href="https://4sysops.com/archives/standardize-powershell-logging-with-my-write-logentry-function/" target="_blank" rel="noopener noreferrer">Read More</a></p>
 
-        
     
 </div>
 
@@ -245,12 +244,28 @@ Once our “User Stories” have been defined and agreed upon by all stakeholder
     </div>
 
     
-        If you have worked in IT for any duration, I’m sure you have overheard or been asked to build a tool to complete X or Y. Creating tools with PowerShell is fun, but it can become daunting when you create a tool that does not meet its intended purpose. Without understanding the full requirements, you may waste time and energy on developing a tool that no one will use.
-Creating tools with PowerShell to automate a manual process or to help an internal stakeholder accomplish a desired result, typically does not need to turn into a large initiative with a Project Manager or Project Management Office (PMO).
+        <p>If you have worked in IT for any duration, I’m sure you have overheard or been asked to build a tool to complete X or Y. Creating tools with PowerShell is fun, but it can become daunting when you create a tool that does not meet its intended purpose.  Without understanding the full requirements, you may waste time and energy on developing a tool that no one will use.</p>
 
-        
-            <a href="https://letsautomate.it/article/design-before-coding-gathering-requirements/" class="more">Continue reading</a>
-        
+<p>Creating tools with PowerShell to automate a manual process or to help an internal stakeholder accomplish a desired result, typically does not need to turn into a large initiative with a Project Manager or Project Management Office (PMO). Being tasked with creating these tools usually comes in the form a short conversation or through an email.  Out of habit, we usually dive right into writing a script or function to solve the problem.  This approach can cause a lot of re-work or redesign of our tool once complete.  Even though we believe we understand all the requirements, it is better to have the stakeholder create a “Goal Statement” that defines the intended purpose of the tool.  The “Goal Statement” helps everyone involved understand when the initiative is done.</p>
+
+<p>A “Goal Statement” does not need to be a large body of work, it can simply be a couple of sentences or paragraphs.  Personally, I take the Scrum/Kanban approach and use User Stories.</p>
+
+<p>User Stories are typically designed in the following format (there are different styles, but in my experience this the simplest form):
+<p style="text-align:center;"><em>As a &lt;type of user&gt;, I want &lt;goal&gt; so that I &lt;receive benefit&gt;.</em></p>
+Having a defined User Story reduces re-work and ensures that all stakeholders involved agree on the intended uses of this new tool.  Agreement on the intended results of this new initiative may not solve the problem completely, but it’s a great start!</p>
+
+<p>At this point, we have not written any scripts, functions, modules, classes, etc.  You may want to dive right into writing a POC (Proof of Concept), but I recommend that you hold-off.  Once all stakeholders have agreed on our User Story, we should move to the design phase (Part 3 coming soon).</p>
+
+<p>Let’s say that we work on a “Automation Team” in our organization that focuses on building tools to streamline processes for both IT and business teams.  We have been tasked with helping the organizations IT managers identify and verify that all Active Directory groups in our Forest have the correct owners associated with them.  As we start our requirements gathering phase, we ask all stakeholders to provide our team with agreed upon User Stories.  Our team receives the following:
+<p style="padding-left:60px;"><em>As a manager, I want to know all Active Directory groups owned by myself so I can ensure that they are correct.</em><em> </em></p>
+<p style="padding-left:60px;"><em>As a manager, I want to know all Active Directory groups owned by my employees so that I can ensure that they should have access.</em><em> </em></p>
+<p style="padding-left:60px;"><em>As a manager, I want to know all Active Directory groups that do not have an owner but reside in my Active Directory OU so that I can assign the correct owner.</em></p>
+Now that we have our agreed upon User Stories, we can begin the next phase; designing the “look and feel” of our new tool based on the requirements we have been given.  Having a general idea of what our stakeholders are needing reduces our work effort, as well as setting clear expectations that are agreed upon.</p>
+
+<p>Understanding why we need to gather requirements is the first step.  The next post in this series I will discuss how you can use Kanban, digitally and manually, to organize our tasks so that you or your team can keep track of the status/progress along the way.</p>
+
+<p>The final post in this series, we will begin designing our code layout.  This will help us and our stakeholders understand what parameters need to be present, what objects should be accepted in the pipeline, what return objects should look like, and how the new tool will be used.</p>
+
     
 </div>
 
@@ -305,14 +320,119 @@ Creating tools with PowerShell to automate a manual process or to help an intern
     </div>
 
     
-        I recently saw this project shared by Adam Bertram, and decided that some of you may be interested in how I work on a day to day.
-https://github.com/adbertram/HowIWorkIT/blob/master/README.md
-If you&rsquo;re not interested, well then why the hell are you here? You can see others that have participated here: https://github.com/adbertram/HowIWorkIT/blob/master/ThisIsHowIWork.md
-&nbsp; Where are you located? First of all, my name is Josh Rickard and I&rsquo;m located in Columbia, Missouri. It sounds lame, but really it&rsquo;s a great little town.
+        <p>I recently saw this project shared by Adam Bertram, and decided that some of you may be interested in how I work on a day to day.</p>
 
-        
-            <a href="https://letsautomate.it/article/how-i-work/" class="more">Continue reading</a>
-        
+<p><a href="https://github.com/adbertram/HowIWorkIT/blob/master/README.md">https://github.com/adbertram/HowIWorkIT/blob/master/README.md</a></p>
+
+<p>If you&rsquo;re not interested, well then why the hell are you here?  You can see others that have participated here: <a href="https://github.com/adbertram/HowIWorkIT/blob/master/ThisIsHowIWork.md">https://github.com/adbertram/HowIWorkIT/blob/master/ThisIsHowIWork.md</a></p>
+
+<p>&nbsp;
+<h3><strong>Where are you located?</strong></h3>
+First of all, my name is Josh Rickard and I&rsquo;m located in Columbia, Missouri.  It sounds lame, but really it&rsquo;s a great little town.  The population of Columbia is around 100,
+                000 (without students).  With that being said, we have about 5 College&rsquo;s/Universities, so our population increases quite a bit when students are in town.
+<h3><strong>What is/are your current gig(s):</strong></h3>
+I currently work at home for PhishMe; if you&rsquo;re not familiar, then check us out: <a href="http://phishme.com/">http://phishme.com/</a>.  My position at PhishMe is currently &ldquo;Manager, Reporter Solutions Engineering&rdquo;.  I&rsquo;m a new manager, but we do anything and everything to do with PhishMe Reporter products (email client plugin/add-in to reporter suspicious messages).  When I say everything, I mean everything from customer engagement, support, troubleshooting, development, etc.</p>
+
+<p><strong>What&rsquo;s one word to describe your work?</strong></p>
+
+<p>Creativity
+<h3><strong>What apps, software, or tools can’t you live without?</strong></h3>
+Without a doubt, PowerShell.  Besides that, the biggest in each category are:
+<ul>
+    <li>Apps
+<ul>
+    <li>Jira</li>
+    <li>Confluence</li>
+    <li>Slack (and appear.in)</li>
+</ul>
+</li>
+    <li>Software
+<ul>
+    <li><a href="https://www.sapien.com/software/powershell_studio">PowerShell Studio</a></li>
+    <li>Visual Studio Code</li>
+    <li>OneNote</li>
+    <li>VMWare Fusion</li>
+</ul>
+</li>
+    <li>Tools
+<ul>
+    <li><a href="http://www.doanepaper.com/">Doane Notebook </a>and a great pen
+<ul>
+    <li>I know, I may be the only one but I still carry a pen and piece of paper daily.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><strong>What does your workspace look like? (Take a picture if you can)</strong></h3>
+So, since I work at home but workspace can get fairly messy but I try to keep it as clean as possible (even though my wife says I don’t :))</p>
+
+<p><a href="http://msadministrator.com/2016/11/28/how-i-work/img_1350/" rel="attachment wp-att-332"><img class="alignnone size-full wp-image-332" src="https://msadministrator.files.wordpress.com/2016/11/img_1350.jpeg" alt="img_1350" width="519" height="389" /></a> <a href="http://msadministrator.com/2016/11/28/how-i-work/img_1351/" rel="attachment wp-att-333"><img class="alignnone size-full wp-image-333" src="https://msadministrator.files.wordpress.com/2016/11/img_1351.jpeg" alt="img_1351" width="519" height="389" /></a> <a href="http://msadministrator.com/2016/11/28/how-i-work/img_1352/" rel="attachment wp-att-334"><img class="alignnone size-full wp-image-334" src="https://msadministrator.files.wordpress.com/2016/11/img_1352.jpeg" alt="img_1352" width="519" height="389" /></a> <a href="http://msadministrator.com/2016/11/28/how-i-work/img_1353/" rel="attachment wp-att-335"><img class="alignnone size-full wp-image-335" src="https://msadministrator.files.wordpress.com/2016/11/img_1353.jpeg" alt="img_1353" width="519" height="389" /></a>
+<h3><strong>What&rsquo;s a typical workweek look like?</strong></h3>
+Since PhishMe is based on the east coast, and I live in the Midwest, I typically work in eastern time.  I&rsquo;m a new manager, so my typical workweek contains of lots of project work that ranges from documentation, to building new tools (using PowerShell mostly), automating processes, moving development forward, and making sure that all our customers needs have been met.</p>
+
+<p><strong>What do you like the best about your role?</strong></p>
+
+<p>The best thing about my position is the ability to experiment and come up with new solutions for problems affecting our customers as well as new products.  Besides that, I love my team.  I have 8 guys underneath me and working them has made me excited for the next work week.  We have a highly jelled team, which, as you may know is extremely rare.
+<h3><strong>What&rsquo;s something about you that no one knows about?</strong></h3>
+Some of you may know this, some of you probably not, but I went to school late in life; I&rsquo;ve only been in IT for 5 <sup>1</sup>&frasl;<sub>2</sub> years.  So you can say I&rsquo;m still learning the IT way. :)
+<h3><strong>What do you listen to while you work?</strong></h3>
+I LOVE MUSIC!!!!  Like, seriously LOVE IT! But when I work, I don&rsquo;t listen to anything.  I can&rsquo;t.  I&rsquo;m a traditionalist and I love listening to the lyrics of music, but while I&rsquo;m working I get too distracted if I try to listen to music.
+<h3><strong>What do you wish you could change about your work?</strong></h3>
+Now that I&rsquo;m manager of my team, I find that I can&rsquo;t focus on scripting/coding as much as I used to be able to.  I&rsquo;ve really only been manager for about 3 months, so most of my time right now is focused on process improvement and making sure all our projects are moving forward.
+<h3><strong>Is there anything else you’d like to add that might be interesting to readers?</strong></h3>
+I decided to list out my career progression and some projects that I&rsquo;ve worked on:
+<ul>
+    <li>Helpdesk at a small college (9 months)
+<ul>
+    <li>Managed Accounts</li>
+    <li>Ran TONS of network cable</li>
+    <li>Implemented wireless across small college campus (College capstone project)</li>
+</ul>
+</li>
+    <li>System Support Analyst - Entry (14 months)
+<ul>
+    <li>Worked at a larger University/Medical</li>
+    <li>Re-organized AD, GPOs, etc for over 3,
+                000 users/pcs</li>
+    <li>Learned and implemented MDT for all 3,
+                000 users/pcs</li>
+    <li>GCWN (SANS Certified Windows Security Administrator)</li>
+</ul>
+</li>
+    <li>System Support Analyst - Specialist (5 Months)
+<ul>
+    <li>Implemented MDT for another division within the University</li>
+    <li>Guided a lot of initiatives that are still used today</li>
+</ul>
+</li>
+    <li>Security Analyst - Specialist (24 months)
+<ul>
+    <li>Hired as part of the Incident Response and Digital Forensics team for the University</li>
+    <li>Managed cases/investigations/etc.</li>
+    <li>Implemented QualysGuard Vulnerability Management for over 5,
+                000 servers</li>
+    <li>Implemented/Designed Kaspersky Endpoint Security administrative console for entire campus</li>
+    <li>Developed automation &amp; defense tools for protection of University assets.</li>
+</ul>
+</li>
+    <li>Solutions Engineer - PhishMe (9 Months)
+<ul>
+    <li>Solutions Engineer responsible for advancing development and products</li>
+    <li>Responsible for (ongoing) new products and solutions</li>
+    <li>Automate EVERYTHING!</li>
+</ul>
+</li>
+    <li>Manager, Reporter Solutions Engineering
+<ul>
+    <li>Responsible for global support, engagement, development and automation tools to support our global customers with more than 5.5 Million endpoints installed globally.</li>
+    <li>8 Employee&rsquo;s</li>
+    <li>Product development, enhancements, and bug hunting.</li>
+</ul>
+</li>
+</ul>
+Besides all of this, I am responsible for tons of projects which can be found on my GitHub: <a href="https://github.com/MSAdministrator">https://github.com/MSAdministrator</a></p>
+
     
 </div>
 
@@ -367,14 +487,145 @@ If you&rsquo;re not interested, well then why the hell are you here? You can see
     </div>
 
     
-        Today I decided to write another post regarding PowerShell and Qualys Vulnerability Management API. This post will focus on gathering information about your enrolled Asset Groups. You can find the complete script on GitHub: https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation
-We start of by opening up PowerShell ISE and using our handy &ldquo;Snippet&rdquo; shortcut:
+        <p>Today I decided to write another post regarding PowerShell and Qualys Vulnerability Management API.  This post will focus on gathering information about your enrolled Asset Groups.   You can find the complete script on GitHub: <a href="https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation" target="_blank"><a href="https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation">https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation</a></a></p>
 
-We select the &ldquo;Cmdlet (Advanced function) - complete&rdquo; option in the &ldquo;Snippet&rdquo; context menu. Once we have our advanced function template, we then proceed by entering a name for our Qualys Asset Group function.
+<p>We start of by opening up PowerShell ISE and using our handy &ldquo;Snippet&rdquo; shortcut:</p>
 
-        
-            <a href="https://letsautomate.it/article/powershell-qualys-get-asset-group-info-part-2/" class="more">Continue reading</a>
-        
+<p><a href="http://msadministrator.com/2016/02/03/powershell-qualys-get-asset-group-info-part-2/powershell_ise_ctrl__j/" rel="attachment wp-att-318"><img class="alignnone size-full wp-image-318" src="https://msadministrator.files.wordpress.com/2016/02/powershell_ise_ctrl__j.png" alt="PowerShell_ISE_CTRL_+_J" width="519" height="618" /></a></p>
+
+<p>We select the &ldquo;Cmdlet (Advanced function) - complete&rdquo; option in the &ldquo;Snippet&rdquo; context menu.  Once we have our advanced function template, we then proceed by entering a name for our Qualys Asset Group function.</p>
+
+<p>Since we will be gathering some additional information about our Asset Groups, I am going to name my function: [code
+                    ]</p>
+
+<p>function Get-QualysAssetGroupInformation</p>
+
+<p>[/code
+                    ]</p>
+
+<p>Next, we will start by filling out our &ldquo;Help&rdquo; info.  At this point, a lot of people skip this step; I HIGHLY recommend that you do not.  It will help you and anyone else viewing your code, understand what your intention was when writing this function.</p>
+
+<p>Next, we start by looking at our advanced functions template within the body of this function.  The first thing you will see is some default parameters for [CmdletBinding
+                    ].  With my function, I&rsquo;m going to weed these parameters down a bit, as they are not really needed.  Your function should look something like this when complete: [code
+                    ]
+function Get-QualysAssetGroupInformation
+{
+                        [CmdletBinding(SupportsShouldProcess=$true,
+                  HelpUri = &lsquo;https: //raw.githubusercontent.com/MSAdministrator/POSH-Guard/master/Get-QualysAssetGroupInformation&rsquo;,
+                  ConfirmImpact=&lsquo;Medium&rsquo;)
+                        ]
+    [Alias()
+                        ]
+    Param
+    (
+        # Param1 help description
+        [parameter(Mandatory=$true,
+                   ValueFromPipeline=$true,
+                   ValueFromPipelineByPropertyName=$true,
+                   HelpMessage=&quot;Please provide a credential obejct&quot;)
+                        ]
+                   [ValidateNotNullOrEmpty()
+                        ]
+                   [System.Management.Automation.CredentialAttribute()
+                        ]$credential
+        )</p>
+
+<pre><code>Begin
+{}
+Process
+{}
+End
+{}
+                }
+</code></pre>
+
+<p>[/code
+                    ]</p>
+
+<p>After we have the base of this function setup and ready to go, we will start off by adding some code into our Begin block.  Remember, the Begin block will always run once for every call to the function.</p>
+
+<p>[code
+                    ]
+    $results = @()
+    $assetGroupInfo = @()
+        [xml
+                    ]$assetGroupInfo = Invoke-RestMethod -Uri &quot;https: //qualysapi.qualys.com/msp/asset_group_list.php&quot; -Credential $credential [/code
+                    ]</p>
+
+<p>Here I am setting my $assetGroupInfo and a $results variable as empty array&rsquo;s/hash-table&rsquo;s. Next, I&rsquo;m casting my $assetGroupInfo variable as an XML object. This ensures that we receive XML from Invoke-RestMethod Cmdlet.</p>
+
+<p>If we want to make sure that any errors are caught, we should add a Try/Catch block to our Invoke-RestMethod call. Your code should look like this: [code
+                    ]
+ Begin
+    {
+        $results = @()
+        $assetGroupInfo = @()</p>
+
+<pre><code>    Try
+    {
+                        [xml
+                        ]$assetGroupInfo = Invoke-RestMethod -Uri &amp;quot;https: //qualysapi.qualys.com/msp/asset_group_list.php&amp;quot; -Credential $credential
+                    }
+    Catch
+    {
+        Write-Debug &amp;quot;Error using Invoke-RestMethod: $_&amp;quot;
+                    }
+                }
+</code></pre>
+
+<p>[/code
+                    ]</p>
+
+<p>Now we move to the Process block. This is where we will be parsing our data into our objects. As I mentioned above, we are wanting to gather all our Asset Groups Titles, their assigned IP Addresses, their role, and the users login ID. To do this, we must loop through each item, or branch returned by our query above. Each $item can be considered as an Asset Group. Additionally, we need to loop through each of the users assigned to that Asset Group.</p>
+
+<p>Once we have that data, we want to create a Custom PSObject to hold all of this data. Your code should look like this: [code
+                    ]
+Process
+{
+    foreach ($item in $assetGroupInfo.SelectNodes(&quot;/ASSET_GROUP_LIST/ASSET_GROUP&quot;))
+    {
+        for ($u=0; $u -lt $($item.ASSIGNED_USERS.ASSIGNED_USER.LOGIN).count;$u++)
+        {
+            $tempAssetGroupInfo = @()</p>
+
+<pre><code>                            $props = @{
+            userlogin=$($item.ASSIGNED_USERS.ASSIGNED_USER[$u
+                                ].LOGIN.InnerText)
+            userrole=$($item.ASSIGNED_USERS.ASSIGNED_USER[$u
+                                ].ROLE.InnerText)
+                                       assetgrouptitle=$($item.TITLE.InnerText)
+                                       ip=$($item.SCANIPS.IP)
+                            }
+
+        $tempAssetGroupInfo = New-Object PSObject -Property $props
+
+                            $results += $tempAssetGroupInfo
+                        }
+                    }
+                }
+</code></pre>
+
+<p>[/code
+                    ]</p>
+
+<p>Now, we can either simply put the following line in our End block: [code
+                    ]
+return $results
+[/code
+                    ]</p>
+
+<p>But, I actually like it to be saved into an XML file. This means that I can use this data with other functions without having to call Qualys again. To be quite frank, as you may know, Qualys is not the fastest website/service out there. Don&rsquo;t get me wrong, the scanning engines are fast, but their database(s) - not so much.</p>
+
+<p>To return both the object and export the results to an XML, we can just add this one line of code: [code
+                    ]
+Export-Clixml -Path &quot;$env:USERPROFILE\Desktop\QualysData\assetgroupinfo.xml&quot; -InputObject $results
+[/code
+                    ]</p>
+
+<p>That&rsquo;s it. We now have a function that can return some details about our Asset Groups within Qualys. Next time, I will focus on creating a function that gathers our enrolled IP Addresses, split&rsquo;s them into a single list.</p>
+
+<p>Hint: Qualys loves IP ranges (192.168.0.1-192.168.0.123) and their API calls return it the same way. :)</p>
+
     
 </div>
 
