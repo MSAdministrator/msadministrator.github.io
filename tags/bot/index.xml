@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bot on Lets Automate It</title>
+    <title>bot on Lets Automate It</title>
     <link>https://letsautomate.it/tags/bot/</link>
-    <description>Recent content in Bot on Lets Automate It</description>
+    <description>Recent content in bot on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Aug 2018 22:28:08 -0400</lastBuildDate>
@@ -37,8 +37,8 @@ First thing is that we should go ahead and log into the Azure Portal. In the top
       <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/using-qnamaker-to-create-chatbot/</guid>
-      <description>The first thing we need to do is login to QnAMaker. QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.
- Login to QnAMaker and navigate to the Create a knowledge base tab. You will need to walkthrough 5 steps to create your knowledge base.</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: &#34;ca-pub-1514695391372140&#34;, enable_page_level_ads: true });  The first thing we need to do is login to QnAMaker. QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.
+Login to QnAMaker and navigate to the Create a knowledge base tab.</description>
     </item>
     
     <item>

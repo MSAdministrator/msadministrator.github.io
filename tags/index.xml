@@ -6,17 +6,71 @@
     <description>Recent content in Tags on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Aug 2018 23:08:02 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 04 Sep 2018 21:20:15 -0400</lastBuildDate>
     
 	<atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>.Net</title>
-      <link>https://letsautomate.it/tags/.net/</link>
-      <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
+      <title>install-module</title>
+      <link>https://letsautomate.it/tags/install-module/</link>
+      <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
       
-      <guid>https://letsautomate.it/tags/.net/</guid>
+      <guid>https://letsautomate.it/tags/install-module/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pip</title>
+      <link>https://letsautomate.it/tags/pip/</link>
+      <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/pip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://letsautomate.it/tags/aws/</link>
+      <pubDate>Fri, 31 Aug 2018 20:51:46 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SNS</title>
+      <link>https://letsautomate.it/tags/sns/</link>
+      <pubDate>Fri, 31 Aug 2018 20:51:46 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/sns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>https://letsautomate.it/tags/automation/</link>
+      <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://letsautomate.it/tags/github/</link>
+      <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://letsautomate.it/tags/hugo/</link>
+      <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/hugo/</guid>
       <description></description>
     </item>
     
@@ -30,169 +84,7 @@
     </item>
     
     <item>
-      <title>Appveyor</title>
-      <link>https://letsautomate.it/tags/appveyor/</link>
-      <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/appveyor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Archive</title>
-      <link>https://letsautomate.it/tags/archive/</link>
-      <pubDate>Tue, 07 Aug 2018 20:45:35 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/archive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Automation</title>
-      <link>https://letsautomate.it/tags/automation/</link>
-      <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/automation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
-      <link>https://letsautomate.it/tags/aws/</link>
-      <pubDate>Fri, 31 Aug 2018 20:51:46 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bot</title>
-      <link>https://letsautomate.it/tags/bot/</link>
-      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/bot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Certificate</title>
-      <link>https://letsautomate.it/tags/certificate/</link>
-      <pubDate>Tue, 21 Aug 2018 12:50:50 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/certificate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chatbot</title>
-      <link>https://letsautomate.it/tags/chatbot/</link>
-      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/chatbot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cryptography</title>
-      <link>https://letsautomate.it/tags/cryptography/</link>
-      <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/cryptography/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Functions</title>
-      <link>https://letsautomate.it/tags/functions/</link>
-      <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/functions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Github</title>
-      <link>https://letsautomate.it/tags/github/</link>
-      <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://letsautomate.it/tags/hugo/</link>
-      <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Install Module</title>
-      <link>https://letsautomate.it/tags/install-module/</link>
-      <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/install-module/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Modules</title>
-      <link>https://letsautomate.it/tags/modules/</link>
-      <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/modules/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pip</title>
-      <link>https://letsautomate.it/tags/pip/</link>
-      <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/pip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Qnamaker</title>
-      <link>https://letsautomate.it/tags/qnamaker/</link>
-      <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/qnamaker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scripts</title>
-      <link>https://letsautomate.it/tags/scripts/</link>
-      <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/scripts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Slack</title>
-      <link>https://letsautomate.it/tags/slack/</link>
-      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/slack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sns</title>
-      <link>https://letsautomate.it/tags/sns/</link>
-      <pubDate>Fri, 31 Aug 2018 20:51:46 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/tags/sns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sqs</title>
+      <title>SQS</title>
       <link>https://letsautomate.it/tags/sqs/</link>
       <pubDate>Thu, 23 Aug 2018 22:24:59 -0400</pubDate>
       
@@ -201,7 +93,88 @@
     </item>
     
     <item>
-      <title>Webapp</title>
+      <title>certificate</title>
+      <link>https://letsautomate.it/tags/certificate/</link>
+      <pubDate>Tue, 21 Aug 2018 12:50:50 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/certificate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>functions</title>
+      <link>https://letsautomate.it/tags/functions/</link>
+      <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/functions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>modules</title>
+      <link>https://letsautomate.it/tags/modules/</link>
+      <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/modules/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scripts</title>
+      <link>https://letsautomate.it/tags/scripts/</link>
+      <pubDate>Sun, 19 Aug 2018 13:37:36 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/scripts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>appveyor</title>
+      <link>https://letsautomate.it/tags/appveyor/</link>
+      <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/appveyor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>writing</title>
+      <link>https://letsautomate.it/tags/writing/</link>
+      <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/writing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bot</title>
+      <link>https://letsautomate.it/tags/bot/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/bot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chatbot</title>
+      <link>https://letsautomate.it/tags/chatbot/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/chatbot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>slack</title>
+      <link>https://letsautomate.it/tags/slack/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/slack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webapp</title>
       <link>https://letsautomate.it/tags/webapp/</link>
       <pubDate>Fri, 10 Aug 2018 22:10:33 -0400</pubDate>
       
@@ -210,11 +183,38 @@
     </item>
     
     <item>
-      <title>Writing</title>
-      <link>https://letsautomate.it/tags/writing/</link>
-      <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
+      <title>qnamaker</title>
+      <link>https://letsautomate.it/tags/qnamaker/</link>
+      <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
       
-      <guid>https://letsautomate.it/tags/writing/</guid>
+      <guid>https://letsautomate.it/tags/qnamaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.NET</title>
+      <link>https://letsautomate.it/tags/.net/</link>
+      <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cryptography</title>
+      <link>https://letsautomate.it/tags/cryptography/</link>
+      <pubDate>Wed, 08 Aug 2018 23:08:02 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/cryptography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>archive</title>
+      <link>https://letsautomate.it/tags/archive/</link>
+      <pubDate>Tue, 07 Aug 2018 20:45:35 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/tags/archive/</guid>
       <description></description>
     </item>
     
