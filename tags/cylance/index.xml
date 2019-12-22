@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cylance on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/cylance/</link>
+    <description>Recent content in Cylance on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Oct 2019 12:03:34 -0600</lastBuildDate>
+    
+	<atom:link href="https://letsautomate.it/tags/cylance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swimlane and Cylance PROTECT: Endpoint Threat Response</title>
+      <link>https://letsautomate.it/article/swimlane-and-cylance-protect-endpoint-threat-response/</link>
+      <pubDate>Fri, 18 Oct 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-and-cylance-protect-endpoint-threat-response/</guid>
+      <description>Swimlane and Blackberry Cylance have partnered to offer a new use case that combines the power of security orchestration, automation and response (SOAR) with Cylance PROTECT’s integrated threat prevention solution. The Proactive Endpoint Threat Response use case utilizes our integration to take a proactive response to detections identified by Cylance PROTECT.
+By ingesting detections from Cylance PROTECT, Swimlane can automate and orchestrate the enrichment of detections using multiple open source intelligence (OSINT) platforms to identify malicious files proactively that are similar or related to a specific variant identified by Cylance.</description>
+    </item>
+    
+  </channel>
+</rss>

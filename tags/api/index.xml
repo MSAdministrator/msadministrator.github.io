@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>api on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/api/</link>
+    <description>Recent content in api on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Oct 2019 12:03:34 -0600</lastBuildDate>
+    
+	<atom:link href="https://letsautomate.it/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Understanding APIs: SOAP</title>
+      <link>https://letsautomate.it/article/understanding-apis-soap/</link>
+      <pubDate>Thu, 24 Oct 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/understanding-apis-soap/</guid>
+      <description>In my previous post, I talked about the basics of REST (representable state transfer) APIs (application programming interfaces). If you haven&amp;rsquo;t read it yet, I highly recommend you read that post before continuing.
+In this post, we will be talking about the basics of simple object access protocol (SOAP) APIs, and we will primarily focus on a real SOAP service: Microsoft Exchange Web Services. RESTful APIs, which are the most commonly used APIs today, are powerful and provide a simple way to interact with a service or application via an exposed interface.</description>
+    </item>
+    
+    <item>
+      <title>Understanding APIs: REST</title>
+      <link>https://letsautomate.it/article/understanding-apis-rest/</link>
+      <pubDate>Thu, 17 Oct 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/understanding-apis-rest/</guid>
+      <description>Security orchestration, automation and response (SOAR) platforms rely heavily on APIs (application programming interfaces) to drive orchestration of disparate security tools (products) and invoke desired responses in the form of actions. Besides SOAR products, APIs are commonplace among almost all services, tools, and products used by technical workers.
+Even though APIs are extremely common, you may not have experience using them or even know that a service has one when interacting with it.</description>
+    </item>
+    
+  </channel>
+</rss>
