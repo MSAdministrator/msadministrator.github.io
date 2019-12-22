@@ -247,12 +247,11 @@ Read More
     </div>
 
     
-        <p>In this post, I explain how to create a PowerShell function to process CSV data. This allows you to reuse your code whenever you are <a href="https://4sysops.com/archives/create-sort-and-filter-csv-files-in-powershell/">working with CSV files in PowerShell</a>.</p>
+        In this post, I explain how to create a PowerShell function to process CSV data. This allows you to reuse your code whenever you are working with CSV files in PowerShell.
+CSV (Comma-Separated Values) is used by almost every technology platform that we encounter. Manipulating this data can be cumbersome if you&rsquo;re NOT an Excel wizard, but PowerShell can simplify this job. For example,
+Read More
 
-<p>CSV (Comma-Separated Values) is used by almost every technology platform that we encounter. Manipulating this data can be cumbersome if you&rsquo;re NOT an Excel wizard, but PowerShell can simplify this job. For example,</p>
-
-<p><a href="https://4sysops.com/archives/processing-csv-data-in-powershell/">Read More</a></p>
-
+        
     
 </div>
 
@@ -307,30 +306,12 @@ Read More
     </div>
 
     
-        <p>Group Policy is nothing but flexible and extremely powerful when it comes to both configuration management and installation of software.  In addition, Group Policy is one of your best tools for securing your endpoints.  You can manage anything and everything from Firewall rules, account privileges, application white-listing, etc.  You can also manage user rights as well.</p>
+        Group Policy is nothing but flexible and extremely powerful when it comes to both configuration management and installation of software. In addition, Group Policy is one of your best tools for securing your endpoints. You can manage anything and everything from Firewall rules, account privileges, application white-listing, etc. You can also manage user rights as well.
+Computers and Users in your environment have a lot of rights, by default, that they don’t need.
 
-<p>Computers and Users in your environment have a lot of rights, by default, that they don’t need.  Using Group Policy, we can manage these privileges and start to lock-down our environments without making it burdensome for our end users.  One such privilege is the ability to Log on Locally.</p>
-
-<p>[caption id=&ldquo;attachment_413&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;656&rdquo;]<a href="http://msadministrator.com/2017/07/19/manage-user-rights-with-group-policy/use-group-policy-to-define-accounts-or-services-that-are-allowed-to-log-on-locally/" rel="attachment wp-att-413"><img class="size-full wp-image-413" src="https://msadministrator.files.wordpress.com/2017/07/use-group-policy-to-define-accounts-or-services-that-are-allowed-to-log-on-locally.png" alt="Use Group Policy to define accounts or services that are allowed to log on locally" width="656" height="374" /></a> Use Group Policy to define accounts or services that are allowed to log on locally[/caption]</p>
-
-<p>By default, anyone that has the correct username and password can log on locally to a system, but do you really need to log on to a server in your datacenter using a local account?  Some of you might, in this case you should explicitly allow certain accounts to have this privilege.  Instead of using the default setting of “if you have a local account you can log in to this system”, but instead restrict this at a global level.  This ensures that your systems are properly managed and no one was being lazy or malicious by creating a one-time account they forgot about.</p>
-
-<p>[caption id=&ldquo;attachment_414&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;656&rdquo;]<a href="http://msadministrator.com/2017/07/19/manage-user-rights-with-group-policy/use-group-policy-to-define-accounts-or-services-that-are-not-allowed-to-log-on-locally/" rel="attachment wp-att-414"><img class="size-full wp-image-414" src="https://msadministrator.files.wordpress.com/2017/07/use-group-policy-to-define-accounts-or-services-that-are-not-allowed-to-log-on-locally.png" alt="Use Group Policy to define accounts or services that are not allowed to log on locally" width="656" height="375" /></a> Use Group Policy to define accounts or services that are not allowed to log on locally[/caption]</p>
-
-<p>Let’s take the opposite approach.  Do you have systems on your network(s) that should only be logged on by specific individuals, accounts, services, etc?  Instead of relying on plainly on the security of your username and password, we should restrict this right to the specific accounts, computers, users, etc. that should have access. Only then, if they have the correct credentials are they allowed to login over the network.</p>
-
-<p>[caption id=&ldquo;attachment_415&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;417&rdquo;]<a href="http://msadministrator.com/2017/07/19/manage-user-rights-with-group-policy/use-group-policy-to-allow-access-to-computers-from-the-network/" rel="attachment wp-att-415"><img class="size-full wp-image-415" src="https://msadministrator.files.wordpress.com/2017/07/use-group-policy-to-allow-access-to-computers-from-the-network.png" alt="Use Group Policy to allow access to computers from the network" width="417" height="507" /></a> Use Group Policy to allow access to computers from the network[/caption]</p>
-
-<p>By restricting this access to only the certain machines or users within a specific group, someone who has either found a set of credentials or has somehow infiltrated your network will only be able authorize a set of systems because others have been restricted.</p>
-
-<p>Another example is to manage who has access to Log on Remote Desktop Services permissions.  Does everyone need to access a set of systems (this goes for both workstations and servers)?  I bet not, so why just enable RDP (Remote Desktop Protocol) for anyone who has valid credentials?  We should tightly restrict who has access to our systems, especially when using RDP.</p>
-
-<p>[caption id=&ldquo;attachment_416&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;656&rdquo;]<a href="http://msadministrator.com/2017/07/19/manage-user-rights-with-group-policy/use-group-policy-to-allow-or-deny-access-to-remote-desktop-services/" rel="attachment wp-att-416"><img class="size-full wp-image-416" src="https://msadministrator.files.wordpress.com/2017/07/use-group-policy-to-allow-or-deny-access-to-remote-desktop-services.png" alt="Use Group Policy to allow or deny access to Remote Desktop Services" width="656" height="398" /></a> Use Group Policy to allow or deny access to Remote Desktop Services[/caption]</p>
-
-<p>For all situations regarding user rights and access to systems, we should always restrict access as much as possible.  The key is to create these restrictions without being burdensome for your end-users.  There is a fine line, but we should always attempt to be reasonable with this approach.  Some systems just shouldn’t be accessed over RDP or locally, this will be up to the discretion of your organizations risk.  Providing clear guidance and allowing your management to either enable these restrictions or to accept the risk is all that we as IT professionals can do.</p>
-
-<p>&nbsp;</p>
-
+        
+            <a href="https://letsautomate.it/article/manage-user-rights-with-group-policy/" class="more">Continue reading</a>
+        
     
 </div>
 
@@ -385,12 +366,23 @@ Read More
     </div>
 
     
-        When organizations begin to think of users as cattle instead of unicorns we begin to remove their pride for, and their responsibility to, an organization. When responsibility for their actions are only out of necessity or self-preservation then you have lost the battle, but not necessarily the war. You can change people’s mindset but it just may take a little more effort.
-I believe that people are the answer to most security problems.
+        <p>When organizations begin to think of users as <strong>cattle</strong> instead of <strong>unicorns</strong> we begin to remove their pride for, and their responsibility to, an organization.  When responsibility for their actions are only out of necessity or self-preservation then you have lost the battle, but not necessarily the war.  You can change people’s mindset but it just may take a little more effort.</p>
 
-        
-            <a href="https://letsautomate.it/article/cattle-vs-unicorns/" class="more">Continue reading</a>
-        
+<p>I believe that people are the answer to most security problems.  Empowering people by making them part of your security team enhances their awareness and fosters a sense of shared responsibility.  Organizations that encourage (and consistently preach) a shared responsibility will have continual communication and awareness of their responsibilities in order to protect themselves and their fellow employees.  Those organizations that treat employee’s as another expense (or <strong>cattle</strong>) will push their employees away which allows them to disassociate themselves from their responsibility.  You have now created more resistance, and ultimately your security team has another force fighting against them - and not with them.</p>
+
+<p><img src="supercow.png" alt="cattle" title="cattle" />
+Do you really want to be another statistic?</p>
+
+<p><strong>Cattle</strong> organizations encourage people to use their creativity in an unproductive way.  The results include employees who attempt to bypass your security measures, instead of identifying and reporting potential incidents.  Most organizations have warmed up to the idea of phishing simulations (I hope your organization has) to provide an immersive and lifelike training experience.  Some <strong>cattle</strong> organizations have gone as far as to let go of employees that fail these tests.  By taking this approach, you have now forced your employees to either report everything, report nothing, or use creative ways to fight against the security team instead of for it.  Employees in a <strong>cattle</strong> organization will begin to use their <strong>cattle</strong> to bypass their training by creating Outlook rules to detect these simulations, or completely ignoring (caring) about a new face walking through the halls.  The first question that should come to your mind is, why are my employees doing this.  The second is identifying and preventing these (negative) creative ideas within your environment.</p>
+
+<p><img src="batman-unicorn.png" alt="Unicorn" title="Batman Unicorn" /></p>
+
+<p>Are you a Batman Unicorn?[/caption]</p>
+
+<p><strong>Unicorns</strong> are majestic and beautiful creatures.  Organizations and security teams that believe, and routinely encourage, their employees have equal (shared) responsibility for the protection of theirorganization, their data, and ultimately their job, will obtain an army of security agents to constantly watch for suspicious activity both digitally and physically.  Our security teams now have more actionable intelligence to do their jobs successfully.</p>
+
+<p>Just imagine, if everyone (Finance, HR, System Administrators, Shipping, etc.) in your organization is encouraged to protect themselves, their fellow employees, and their organization from suspicious email, people, system configurations, and so on.  If you have worked in security for any amount of time you know that the best information about problems or incidents comes from employees.  Unicorn organizations create a culture of responsibility - a stake-hold of sorts - which enables a form of peer pressure to report and communicate any suspicious activity.  I don’t know about you, but I would rather believe in unicorns than step in cow shit.</p>
+
     
 </div>
 
