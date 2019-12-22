@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Aug 2019 14:42:13 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 18 Dec 2019 12:03:34 -0600</lastBuildDate>
     
 	<atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Azure</title>
+      <link>https://letsautomate.it/tags/azure/</link>
+      <pubDate>Wed, 18 Dec 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SOAR</title>
+      <link>https://letsautomate.it/tags/soar/</link>
+      <pubDate>Wed, 18 Dec 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/soar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api</title>
+      <link>https://letsautomate.it/tags/api/</link>
+      <pubDate>Thu, 24 Oct 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>soap</title>
+      <link>https://letsautomate.it/tags/soap/</link>
+      <pubDate>Thu, 24 Oct 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/soap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cylance</title>
+      <link>https://letsautomate.it/tags/cylance/</link>
+      <pubDate>Fri, 18 Oct 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/cylance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Endpoint</title>
+      <link>https://letsautomate.it/tags/endpoint/</link>
+      <pubDate>Fri, 18 Oct 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/endpoint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rest</title>
+      <link>https://letsautomate.it/tags/rest/</link>
+      <pubDate>Thu, 17 Oct 2019 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/rest/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>management</title>

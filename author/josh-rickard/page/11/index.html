@@ -102,6 +102,256 @@
     
         <div class="article-wrapper u-cf">
             
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">Mdt 2012 Deployment Guide Step by Step 11 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Preparing WDS to enable PXE Boot (optional but very useful)  Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version  
+ Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">Mdt 2012 Deployment Guide Step by Step 10 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Automating the Deployment Process  Right-click on the deployment share and select Properties  
+ Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…             CUSTOMSETTINGS.INI   [Settings]
+Priority=Default
+[Default ]
+_SMSTSORGNAME=Customer
+SkipBDDWelcome=YES
+SkipProductKey=YES
+ProductKey= XXXX-XXXX-XXXXX-XXXXX
+OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX
+SkipDeploymentType=YES
+DeploymentType=NEWCOMPUTER
+SkipDomainMembership=NO
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">Mdt 2012 Deployment Guide Step by Step 9 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Creating a Deployment Task Sequence  From the Deployment Workbench, expand the customer Deployment Share and right-click on Task Sequences and select New Task Sequence Enter a Task Sequence ID and Name. Make a note of the ID as you may need it later!  
+ Accept the default “Standard Client Task Sequence” template Select the relevant OS Image to deploy  
+ This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/">
+    <i class="fa fa-fw fa-pencil"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/">Mdt 2012 Deployment Guide Step by Step 8 of 11</a></h3>
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+        
+    </div>
+
+    
+        Importing a Customer Reference Image  From the Deployment Workbench, expand the customer Deployment Share and right-click on Operating Systems and select Import Operating System From the Import Operating System Wizard, select Custom Image File and click Next Browse to the path of the WIM file. For captured images, this would by default be the \Captures folder in the Deployment Share Select “Copy Windows Vista, Windows Server 2008, or later setup files from specified path” and enter the path to the relevant OS installation media.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/archive">archive</a>
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
                 <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/">
     <i class="fa fa-fw fa-pencil"></i>
 </a>
@@ -282,245 +532,6 @@ Initially you need to create a “Sysprep and Capture” task sequence. Go ahea
             
         </div>
     
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/">
-    <i class="fa fa-fw fa-pencil"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/">Mdt 2012 Deployment Guide Step by Step 4 of 11</a></h3>
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
-        
-    </div>
-
-    
-        4. Importing an OS Image The Operating Systems section of MDT lists all of the Operating Systems which are available to deploy from a Deployment Share. The deployment itself is controlled by a Task Sequence but the operating system source files need to be available.
-&nbsp;
-Simply right-click on Operating Systems on the left and Import your Windows 7 source media from either DVD or a network share. If you are planning to deploy both 32 and 64 bit versions, import both!
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    <a href="/tags/archive">archive</a>
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">
-    <i class="fa fa-fw fa-pencil"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">Mdt 2012 Deployment Guide Step by Step 3 of 11</a></h3>
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
-        
-    </div>
-
-    
-        Device Driver Management 3.1 Obtaining Device Drivers for a Deployment In order to deploy a single image to multiple hardware types, MDT performs a “driver injection” during the OS load process. For this to work, any and all relevant drivers need to be imported into the deployment share in advance. Depending on the hardware vendor, the process for obtaining these drivers may vary but will generally involve going to the vendor website and downloading the drivers for specific hardware models.
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    <a href="/tags/archive">archive</a>
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/">
-    <i class="fa fa-fw fa-pencil"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/">Mdt 2012 Deployment Guide Step by Step 2 of 11</a></h3>
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
-        
-    </div>
-
-    
-        2.1 Creating an MDT Deployment Share An MDT Deployment Share is the specific deployment environment which will be used for OS deployment. The share contains all elements of the deployment including drivers, applications, OS images etc.  Log on to the MDT server and open the “Deployment Workbench” Right-click on “Deployment Shares” in the left pane of the workbench and select New Deployment Share  
- In the New Deployment Share Wizard, choose a location for the new share.
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    <a href="/tags/archive">archive</a>
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/">
-    <i class="fa fa-fw fa-pencil"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/">Mdt 2012 Deployment Guide Step by Step 1 of 11</a></h3>
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
-        
-    </div>
-
-    
-        1.0 Deployment Infrastructure Overview The new OS Deployment Infrastructure for the Configuration Centre is based around Microsoft Deployment Toolkit 2010 with Update 1. MDT relies on a number of underlying software components and is able to deploy a number of different Operating Systems including Windows XP, Windows Vista and Windows 7 on the client side and Windows Server 2003, 2008 and 2008 R2 on the server side. This document is focused on deployment of Windows 7 clients.
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    <a href="/tags/archive">archive</a>
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
 
     
     <div class="paginator">
@@ -547,6 +558,22 @@ Simply right-click on Operating Systems on the left and Import your Windows 7 so
                 <ul>
                 
                     <li>
+                        <a href="https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/">Investigate Alerts in Microsoft Azure Using SOAR</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-apis-soap/">Understanding APIs: SOAP</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/swimlane-and-cylance-protect-endpoint-threat-response/">Swimlane and Cylance PROTECT: Endpoint Threat Response</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-apis-rest/">Understanding APIs: REST</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/vulnerability-management-program-best-practices/">Vulnerability Management Program Best Practices</a>
                     </li>
                 
@@ -556,22 +583,6 @@ Simply right-click on Operating Systems on the left and Import your Windows 7 so
                 
                     <li>
                         <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/">Swimlane&#39;s Research Teams Open Sources pyattck</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/">Swimlane Open Sources graphish to Help SecOps Teams</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/">Hey InfoSec, What Are You Doing to Protect Your DevOps Teams</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/">Swimlane Research Team Open Sources py-ews</a>
                     </li>
                 
                 </ul>
@@ -584,7 +595,7 @@ Simply right-click on Operating Systems on the left and Import your Windows 7 so
                 <ul>
                 
                     <li>
-                        <a href="/categories/swimlane">Swimlane (13)</a>
+                        <a href="/categories/swimlane">Swimlane (17)</a>
                     </li>
                 
                     <li>
