@@ -7,22 +7,22 @@
         <meta name="description" content="Lets Automate It">
         <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
         <meta name="generator" content="Hugo 0.58.1" />
-        <title> Projects | Lets Automate It</title>
-        <meta name="description" content="Projects - Lets Automate It">
-        <meta itemprop="name" content="Projects">
-        <meta itemprop="description" content="Projects - Lets Automate It">
-        <meta property="og:title" content="Projects">
-        <meta property="og:description" content="Projects - Lets Automate It">
+        <title> Understanding APIs: SOAP | Lets Automate It</title>
+        <meta name="description" content="Understanding APIs: SOAP - Lets Automate It">
+        <meta itemprop="name" content="Understanding APIs: SOAP">
+        <meta itemprop="description" content="Understanding APIs: SOAP - Lets Automate It">
+        <meta property="og:title" content="Understanding APIs: SOAP">
+        <meta property="og:description" content="Understanding APIs: SOAP - Lets Automate It">
         <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
-        <meta property="og:url" content="https://letsautomate.it/page/projects/">
+        <meta property="og:url" content="https://letsautomate.it/article/understanding-apis-soap/">
         <meta property="og:site_name" content="Lets Automate It">
         <meta property="og:type" content="article">
         <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-16x16.png" sizes="16x16">
 
 	
-	  <link href="/page/projects/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-	  <link href="/page/projects/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+	  <link href="/article/understanding-apis-soap/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+	  <link href="/article/understanding-apis-soap/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
 	
 
         
@@ -102,50 +102,62 @@
      
     <div class="article-wrapper u-cf single">
         
-            <a class="bubble" href="https://letsautomate.it/page/projects/">
-    <i class="fa fa-fw fa-file"></i>
+            <a class="bubble" href="https://letsautomate.it/article/understanding-apis-soap/">
+    <i class="fa fa-fw fa-pencil"></i>
 </a>
 
 <article class="default article">
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/page/projects/">Projects</a></h3>
+    <h3><a href="https://letsautomate.it/article/understanding-apis-soap/">Understanding APIs: SOAP</a></h3>
     <div class="meta">
         
             
-                <span class="date moment">2018-08-05</span>
+                <span class="date moment">2019-10-24</span>
             
         
 
         
 
         
+            <span class="categories">
+                
+                    <a href="/categories/swimlane">swimlane</a>
+                
+            </span>
+        
 
+        
+            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
         
     </div>
 
     
-        <ul>
-<li><a href="https://github.com/MSAdministrator/WriteLogEntry">WriteLogEntry: A PowerShell helper function to create and write information to a log file</a></li>
-<li><a href="https://github.com/MSAdministrator/PPRT">PowerShell Phishing Response Toolkit: This PowerShell Module is designed to send notifications to hosting companies that host phishing URLs by utilizing the major WHOIS/RDAP Abuse Point of Contact (POC) information</a></li>
-<li><a href="https://github.com/MSAdministrator/CreateProfile">CreateProfile: PowerShell Module that uses WINAPI to create system profiles</a></li>
-<li><a href="https://github.com/MSAdministrator/GetGithubRepository">GetGithubRepository: This PowerShell function will download Github files without using Git</a></li>
-<li><a href="https://github.com/MSAdministrator/PoshZD">PoshZD: A PowerShell Module to interact with the ZenDesk ticketing system</a></li>
-<li><a href="https://github.com/MSAdministrator/PSRegistry">PSRegistry: A PowerShell Module that replaces the reg commands using the WIN_API</a></li>
-<li><a href="https://github.com/MSAdministrator/POSH-NotifyGroupOwnerManager">POSH-NotifyGroupOwnerManager</a></li>
-</ul>
+        <p>In my previous post, I talked about the basics of REST (representable state transfer) APIs (application programming interfaces). If you haven&rsquo;t read it yet, I highly recommend you read that post before continuing.</p>
+
+<p>In this post, we will be talking about the basics of simple object access protocol (SOAP) APIs, and we will primarily focus on a real SOAP service: Microsoft Exchange Web Services. RESTful APIs, which are the most commonly used APIs today, are powerful and provide a simple way to interact with a service or application via an exposed interface. Even though REST is the most popular, SOAP is still used today by many major services.</p>
+
+<p><a href="https://swimlane.com/blog/understanding-apis-soap/">Read More</a></p>
 
     
 </div>
 
+    
+<div class="footer">
+
 
     
-
-    
-<div class="footer no-tags">
-
-
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    <a href="/tags/api">api</a>
+                
+                    <a href="/tags/soap">soap</a>
+                
+            </div>
+        </div>
     
 
     
