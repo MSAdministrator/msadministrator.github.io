@@ -134,11 +134,288 @@
     </div>
 
     
-        I recently transitioned my blog over to GitHub Pages from WordPress. I was using the free version from WordPress.org and I wanted more granular control over the layout. Additionally, I wanted to automate my blog publishing and social media notifications; the free version of WordPress didn&rsquo;t meet my needs. So I looked around and eventually fell in love with Hugo! This post outlines how to go about setting up a GitHub Pages website/blog using Hugo.
+        
 
-        
-            <a href="https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/" class="more">Continue reading</a>
-        
+<p>I recently transitioned my blog over to <a href="https://pages.github.com">GitHub Pages</a> from <a href="https://wordpress.org">WordPress</a>.  I was using the free version from WordPress.org and I wanted more granular control over the layout.  Additionally, I wanted to automate my blog publishing and social media notifications; the free version of WordPress didn&rsquo;t meet my needs.  So I looked around and eventually fell in love with <a href="https://gohugo.io">Hugo</a>!  This post outlines how to go about setting up a GitHub Pages website/blog using Hugo.</p>
+
+<h2 id="github">GitHub</h2>
+
+<p>In order to host a website using GitHub Pages you need to first have a GitHub account. You will also need to create two new (empty) repositories.</p>
+
+<pre><code class="language-text"># The first repository
+{your_github_account_name}.github.io
+
+# The second repository
+blog
+</code></pre>
+
+<h3 id="github-pages-repository">GitHub Pages Repository</h3>
+
+<p>In order for GitHub pages to be used you need to have a blank repository that is named <code>{your_github_account_name}.github.io</code>.  In my case, my GitHub account name is currently <a href="https://github.com/MSAdministrator">MSAdministrator</a> so I have a repository named <a href="https://github.com/MSAdministrator/msadministrator.github.io"><code>msadministrator.github.io</code></a>.</p>
+
+<blockquote>
+<p>You can find your GitHub account name by looking at your base account profile page.  Your account will be <a href="https://github.com/{your_github_account_name">https://github.com/{your_github_account_name</a>}.</p>
+</blockquote>
+
+<p>If I was to go to my repository in GitHub then I would visit <a href="https://github.com/MSAdministrator/msadministrator.github.io">https://github.com/MSAdministrator/msadministrator.github.io</a>.  You should have the same layout in your GitHub account.</p>
+
+<p>This repository will actually contain our production or live website files.  We will configure this in a bit, but once we have everything setup then a visitor could visit https://{your_github_account_name}.github.io to view your GitHub Pages site.</p>
+
+<h3 id="raw-blog-content-repository">Raw Blog Content Repository</h3>
+
+<p>The second repository is called (in my case, but it can be whatever you want to call it) <code>blog</code>.  This repository will contain all the raw files and templates that are used by Hugo to generate your <code>public</code> facing GitHub Pages site.  I will explain this further, but just remember this is where the main &ldquo;source&rdquo; of your Hugo site is located and the first repository is where your actual site will exist.</p>
+
+<p>You should now have two repositories setup similar to how mine look (but with your account name).</p>
+
+<p><img src="Screenshot of my two GitHub repositories.png" style="max-width:100%;" alt="Screenshot of my two GitHub repositories"></p>
+
+<p>Now that you have your two empty repositories, let&rsquo;s go ahead and use Git (or you can download directly from GitHub) and clone the <code>blog</code> repository locally.</p>
+
+<pre><code class="language-git">cd ~\_GitHub\
+
+git clone git@github.com:{your_github_account_name}/blog.git
+</code></pre>
+
+<h2 id="hugo">Hugo</h2>
+
+<p>Hugo is a framework for building static websites.  It utilizes templates and markdown to generate the content for your site.  This means, that you can write your blog posts completely in Markdown syntax and Hugo will generate HTML pages for your content.  Pretty cool huh?!</p>
+
+<p>The main reason I choose Hugo was that I wanted to write my blogs in Markdown, plus I wanted to have a lot of granular control over all the aspects of my site.  Additionally, automation was key!</p>
+
+<p>Let&rsquo;s go ahead and install Hugo.  You can install Hugo using <code>brew</code> by calling:</p>
+
+<pre><code class="language-bash">brew install hugo
+</code></pre>
+
+<p>Once you have <code>hugo</code> installed you can verify that it installed successfully by calling <code>hugo version</code>.</p>
+
+<p>After we have installed <code>hugo</code> then let&rsquo;s go ahead and create a new site.  Installing a new site is needed so that we can setup a few of the basic dependencies that we will use later.</p>
+
+<pre><code class="language-bash"># cd into the folder that contains your two repositories you cloned earlier
+cd ~\_GitHub\
+
+# create a new site using hugo cli
+# and place the new site files in your blog folder (second repository you cloned)
+hugo new site blog
+</code></pre>
+
+<p>Next thing to do is find a hugo template that you like.  You can view a complete list of all the hugo themes by visiting <a href="https://themes.gohugo.io">https://themes.gohugo.io</a>.  For this example, we will use the <code>hello-friend</code> theme.  You can view the <code>Hello Friend</code> theme <a href="https://themes.gohugo.io/hugo-theme-hello-friend/">here</a>.</p>
+
+<p>In regards to themes, you can have two separate approaches depending on your needs/wants.  You can create a Git <code>submodule</code> for your theme or you can just download your theme and place it in your <code>blog</code> repository.</p>
+
+<p>A <code>submodule</code> will be a reference to the original theme location in GitHub.  This means that any changes to the creator of the theme will automatically be used/referenced in your website generation.  This is great if you don&rsquo;t plan to make any changes to the theme template, but I like to make changes so I elect to just download the repository and place it manually in my <code>blog</code> repository.</p>
+
+<p>To add the <code>hello-friend</code> theme as a <code>submodule</code> to your repository you would call:</p>
+
+<pre><code class="language-bash"># Inside your blog repository folder call the following git command
+git submodule add https://github.com/panr/hugo-theme-hello-friend.git themes/hello-friend
+</code></pre>
+
+<p>To add the <code>hello-friend</code> theme as a independent (not a submodule) theme to your repository then you would call:</p>
+
+<pre><code class="language-bash">git clone https://github.com/panr/hugo-theme-hello-friend.git themes/hello-friend
+</code></pre>
+
+<p>Either of these approaches should create a folder with the name of your theme under the <code>themes</code> folder.  For example, you should now have <code>~/_GitHub/blog/themes/hello-friend</code> folder.</p>
+
+<p>Our theme should have a default <code>config.toml</code> file that you can use (most do).  The <code>config.toml</code> file is a pure site wide configuration file that allows you to specify your base URL, turn settings on and off, etc.  Let&rsquo;s go ahead and copy our themes <code>config.toml</code> and default example content to our root <code>blog</code> repository.</p>
+
+<pre><code class="language-bash"># While in ~/_GitHub/blog repository folder we would run the following 
+cp -r themes/hello-friend/exampleSite/* .
+</code></pre>
+
+<p>Each <code>config.toml</code> has different default values or settings, but you can also specify your own (we won&rsquo;t go into this in this blog post).  For the <code>hello-friend</code> theme the default <code>config.toml</code> that we copied looks like this:</p>
+
+<pre><code class="language-toml">baseurl = &quot;https://example.org/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;Hello Friend&quot;
+theme = &quot;hugo-theme-hello-friend&quot;
+copyright = &quot;&quot;
+paginate = 5
+
+[params]
+  subtitle = &quot;A simple theme for Hugo&quot;
+
+[menu]
+  [[menu.main]]
+    identifier = &quot;about&quot;
+    name = &quot;About&quot;
+    url = &quot;/about&quot;
+  [[menu.main]]
+    identifier = &quot;showcase&quot;
+    name = &quot;Showcase&quot;
+    url = &quot;/showcase&quot;
+</code></pre>
+
+<p>At a minimum, let&rsquo;s go ahead and set our <code>baseurl</code> to our new site address.  This will be <code>https://{your_github_account_name}.github.io</code>.  We will also change the <code>title</code> and a misconfiguration in this template specifically; the <code>theme value</code>.  So in my example, my <code>config.toml</code> would now look like this:</p>
+
+<pre><code class="language-toml">baseurl = &quot;https://msadministrator.github.io/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;MSAdministrator Blog&quot;
+theme = &quot;hello-friend&quot;
+copyright = &quot;&quot;
+paginate = 5
+
+[params]
+  subtitle = &quot;A simple theme for Hugo&quot;
+
+[menu]
+  [[menu.main]]
+    identifier = &quot;about&quot;
+    name = &quot;About&quot;
+    url = &quot;/about&quot;
+  [[menu.main]]
+    identifier = &quot;showcase&quot;
+    name = &quot;Showcase&quot;
+    url = &quot;/showcase&quot;
+</code></pre>
+
+<p>After we have modified our <code>config.toml</code> we will also clean up the default <code>archetypes</code> that we copied earlier.  To do this call the following from our <code>blog</code> repository root folder.</p>
+
+<blockquote>
+<p>The reason we are cleaning up the archetypes it that the default processing order that hugo takes when generating content.  We want to use our themes archetypes and not the default ones in the hugo new site template we did earlier.</p>
+</blockquote>
+
+<pre><code class="language-bash">rm archetypes/default.md
+</code></pre>
+
+<p>Now that we have changed our default <code>config.toml</code> let&rsquo;s go ahead and tell <code>hugo</code> to generate a site.  We do this by calling <code>hugo</code> from our <code>blog</code> repository folder.  This will run and it should not return any errors.  If it was successful you should have a new folder called <code>public</code> in your <code>blog</code> repository.  In a bit, we will modify this <code>public</code> folder but for now let&rsquo;s test out our website.</p>
+
+<pre><code class="language-bash"># Let's run a local copy of our new generated site
+hugo server
+</code></pre>
+
+<p>You should be told to visit <code>http://localhost:1313/</code> in your web browser.  Go ahead and do this and checkout your new Hugo generated website!</p>
+
+<p>After looking around, let&rsquo;s shutoff the hugo webserver by pressing <code>crtl+c</code> in your terminal.</p>
+
+<p>Congratulations, you are now up and running with <code>Hugo</code>!</p>
+
+<h2 id="generate-github-pages-site">Generate GitHub Pages site</h2>
+
+<p>So we have not yet touched the first repository we created, our <code>{your_github_account_name}.github.io</code> repository, but we will now.  The first thing to understand is that our <code>blog</code> repository contains the raw files that are used by <code>hugo</code>.  These files will generate (convert) our markdown and templates into a functioning website.  This is what is placed in our <code>public</code> folder.  Currently our public folder has some website files in, but let&rsquo;s go ahead and remove them now.  Don&rsquo;t worry, we will change this in a bit.</p>
+
+<pre><code class="language-bash"># Remove our public folder from your blog repository
+rm -rf public
+</code></pre>
+
+<p>Now that our old <code>public</code> folder is removed, we are actually going to begin using our <code>{your_github_account_name}.github.io</code> repository.  But, we are going to make this repository a <code>submodule</code> of our <code>blog</code> repository.</p>
+
+<blockquote>
+<p>A git submodule is typically used in cases when you have a third-party library or dependency within your root project.  In our case, a submodule will contain our generated GitHub Pages website files.</p>
+</blockquote>
+
+<p>To do this, let&rsquo;s do the following:</p>
+
+<pre><code class="language-bash"># Run the following git command to make our {your_github_account_name}.github.io repository a submodule of our blog repository
+# Make sure that you are in the blog folder
+git submodule git@github.com:{your_github_account_name}/{your_github_account_name}.github.io.git public
+</code></pre>
+
+<p>This will clone your <code>{your_github_account_name}.github.io</code> repository into the <code>public</code> folder under your <code>blog</code> repository.</p>
+
+<p>Let&rsquo;s go ahead and generate our new GitHub Pages website!</p>
+
+<pre><code class="language-bash">hugo server
+</code></pre>
+
+<p>After running this command you should be able to see that there are now files in our <code>public</code> folder.  This is your new GitHub Pages site!!  Congrats!!!</p>
+
+<p>After reviewing our site locally using the <code>hugo server</code> web server, we should stop the server and let&rsquo;s push some code to our repositories!</p>
+
+<pre><code class="language-git"># add our source files to GitHub
+git add .
+git commit -m 'pushing github pages source files to our repo'
+git push
+
+# Now we are going to add our generated github page site to it's repository
+cd public/
+git add .
+git commit -m 'publishing my initial GitHub pages site'
+git push
+</code></pre>
+
+<p>That&rsquo;s it!!!  You&rsquo;re a GitHub Pages having machine!</p>
+
+<p>After a few minutes, you should now be able to go to your GitHub Pages site by visiting https://{your_github_account_name}.github.io.  In my example, it would be this site that you are reading this article on now!  Pretty cool huh!?</p>
+
+<h2 id="bonus-automation">Bonus Automation</h2>
+
+<p>This is cool and all, but let&rsquo;s add a little <code>shell</code> script to automate some of this for us when we want to publish a new article.  Before we can automate, let&rsquo;s generate a new post.  Each template has it&rsquo;s own <code>content</code> types.  The <code>hello-friend</code> template uses a <code>post</code> content type.  To generate a new <code>post</code> let&rsquo;s go back to our terminal and run the following:</p>
+
+<pre><code class="language-bash">hugo new post/my-first-post-using-hugo-and-github-pages.md
+</code></pre>
+
+<p>This will create a new <code>markdown</code> file in the <code>content/post</code> folder under your <code>blog</code> repository.  Based on the themes <code>archetypes</code> it will generate a template markdown file based on the content type.  You can view these default <code>archetypes</code> for our theme under the <code>themes/hello-friend/archetypes/</code> folder.  This theme in particular only has the 1 template, but a lot of themes have multiple <code>archetypes</code>.</p>
+
+<p>Your new post should have the following at the top of the page:</p>
+
+<pre><code class="language-text">---
+title: &quot;My First Post Using Hugo and Github Pages&quot;
+date: 2018-08-26T17:32:37-04:00
+draft: true
+---
+</code></pre>
+
+<p>Let&rsquo;s add some text to this new markdown file as an example.  Your markdown file should look like this.</p>
+
+<pre><code class="language-text">---
+title: &quot;My First Post Using Hugo and Github Pages&quot;
+date: 2018-08-26T17:32:37-04:00
+draft: false
+---
+# Hello world!!!!
+
+### Welcome to my new GitHub Pages blog
+
+This site was generated using Hugo and is hosted using GitHub Pages.  I am hoping to spread my knowledge and expertise through this site in the coming days/weeks.
+</code></pre>
+
+<p>Now that we have saved this, let&rsquo;s add some automation in the mix before we proceed.  Let&rsquo;s create a <code>.sh</code> script to help with this:</p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+# Go To Public folder
+cd public
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin master
+
+# Come Back up to the Project Root
+cd ..
+</code></pre>
+
+<p>After saving this new file as <code>deploy.sh</code> in our root <code>blog</code> directory, let&rsquo;s make it an executable:</p>
+
+<pre><code class="language-bash">chmod +x deploy.sh
+</code></pre>
+
+<p>Now, all we have to do is call <code>deploy.sh</code> to generate any new content from our markdown posts and push our code to our GitHub Pages repository.</p>
+
+<pre><code class="language-bash">cd ~/_GitHub/blog
+./deploy.sh &quot;adding my first blog post to GitHub pages&quot;
+</code></pre>
+
+<blockquote>
+<p>If you add any new markdown files then you should push your blog repository as well.</p>
+</blockquote>
+
+<p>That&rsquo;s it!  In a few seconds (or a minute or so) you should see your new blog post on your GitHub Pages site!  Congratulations!!!!  If you have any questions, please do not hesitate to reach out to me on Twitter at <a href="https://twitter.com/MS_dministrator">@MS_dministrator</a>.</p>
+
     
 </div>
 
@@ -192,7 +469,6 @@
                 
                     <li>
                         <a href="https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/">Investigate Alerts in Microsoft Azure Using SOAR</a>
-<<<<<<< HEAD
                     </li>
                 
                     <li>
@@ -213,32 +489,6 @@
                 
                     <li>
                         <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
-=======
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/understanding-apis-soap/">Understanding APIs: SOAP</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-and-cylance-protect-endpoint-threat-response/">Swimlane and Cylance PROTECT: Endpoint Threat Response</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/understanding-apis-rest/">Understanding APIs: REST</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/vulnerability-management-program-best-practices/">Vulnerability Management Program Best Practices</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
->>>>>>> tmp
                     </li>
                 
                 </ul>
