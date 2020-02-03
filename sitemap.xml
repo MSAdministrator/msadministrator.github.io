@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://letsautomate.it/</loc>
+    <lastmod>2020-02-02T08:47:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/page/open-source-projects/</loc>
+    <lastmod>2020-02-02T08:47:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/page/</loc>
+    <lastmod>2020-02-02T08:47:39-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://letsautomate.it/article/</loc>
     <lastmod>2019-12-18T12:03:34-06:00</lastmod>
   </url>
@@ -29,11 +44,6 @@
   
   <url>
     <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2019-12-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/</loc>
     <lastmod>2019-12-18T12:03:34-06:00</lastmod>
   </url>
   
@@ -775,16 +785,6 @@
   <url>
     <loc>https://letsautomate.it/article/programming-understanding-binary-and-its-hexadecimal-values/</loc>
     <lastmod>2018-08-07T20:42:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/page/</loc>
-    <lastmod>2018-08-05T21:49:16-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/page/projects/</loc>
-    <lastmod>2018-08-05T21:49:16-04:00</lastmod>
   </url>
   
   <url>

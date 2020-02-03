@@ -44,7 +44,7 @@
         <ul class="topnav">
             
                 
-                    <li><a href="https://letsautomate.it/page/projects/">Projects</a></li>
+                    <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
                 
             
                 
@@ -190,145 +190,14 @@ If you&rsquo;re not interested, well then why the hell are you here? You can see
     </div>
 
     
-        <p>Today I decided to write another post regarding PowerShell and Qualys Vulnerability Management API.  This post will focus on gathering information about your enrolled Asset Groups.   You can find the complete script on GitHub: <a href="https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation" target="_blank"><a href="https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation">https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation</a></a></p>
+        Today I decided to write another post regarding PowerShell and Qualys Vulnerability Management API. This post will focus on gathering information about your enrolled Asset Groups. You can find the complete script on GitHub: https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation
+We start of by opening up PowerShell ISE and using our handy &ldquo;Snippet&rdquo; shortcut:
 
-<p>We start of by opening up PowerShell ISE and using our handy &ldquo;Snippet&rdquo; shortcut:</p>
+We select the &ldquo;Cmdlet (Advanced function) - complete&rdquo; option in the &ldquo;Snippet&rdquo; context menu. Once we have our advanced function template, we then proceed by entering a name for our Qualys Asset Group function.
 
-<p><a href="http://msadministrator.com/2016/02/03/powershell-qualys-get-asset-group-info-part-2/powershell_ise_ctrl__j/" rel="attachment wp-att-318"><img class="alignnone size-full wp-image-318" src="https://msadministrator.files.wordpress.com/2016/02/powershell_ise_ctrl__j.png" alt="PowerShell_ISE_CTRL_+_J" width="519" height="618" /></a></p>
-
-<p>We select the &ldquo;Cmdlet (Advanced function) - complete&rdquo; option in the &ldquo;Snippet&rdquo; context menu.  Once we have our advanced function template, we then proceed by entering a name for our Qualys Asset Group function.</p>
-
-<p>Since we will be gathering some additional information about our Asset Groups, I am going to name my function: [code
-                    ]</p>
-
-<p>function Get-QualysAssetGroupInformation</p>
-
-<p>[/code
-                    ]</p>
-
-<p>Next, we will start by filling out our &ldquo;Help&rdquo; info.  At this point, a lot of people skip this step; I HIGHLY recommend that you do not.  It will help you and anyone else viewing your code, understand what your intention was when writing this function.</p>
-
-<p>Next, we start by looking at our advanced functions template within the body of this function.  The first thing you will see is some default parameters for [CmdletBinding
-                    ].  With my function, I&rsquo;m going to weed these parameters down a bit, as they are not really needed.  Your function should look something like this when complete: [code
-                    ]
-function Get-QualysAssetGroupInformation
-{
-                        [CmdletBinding(SupportsShouldProcess=$true,
-                  HelpUri = &lsquo;https: //raw.githubusercontent.com/MSAdministrator/POSH-Guard/master/Get-QualysAssetGroupInformation&rsquo;,
-                  ConfirmImpact=&lsquo;Medium&rsquo;)
-                        ]
-    [Alias()
-                        ]
-    Param
-    (
-        # Param1 help description
-        [parameter(Mandatory=$true,
-                   ValueFromPipeline=$true,
-                   ValueFromPipelineByPropertyName=$true,
-                   HelpMessage=&quot;Please provide a credential obejct&quot;)
-                        ]
-                   [ValidateNotNullOrEmpty()
-                        ]
-                   [System.Management.Automation.CredentialAttribute()
-                        ]$credential
-        )</p>
-
-<pre><code>Begin
-{}
-Process
-{}
-End
-{}
-                }
-</code></pre>
-
-<p>[/code
-                    ]</p>
-
-<p>After we have the base of this function setup and ready to go, we will start off by adding some code into our Begin block.  Remember, the Begin block will always run once for every call to the function.</p>
-
-<p>[code
-                    ]
-    $results = @()
-    $assetGroupInfo = @()
-        [xml
-                    ]$assetGroupInfo = Invoke-RestMethod -Uri &quot;https: //qualysapi.qualys.com/msp/asset_group_list.php&quot; -Credential $credential [/code
-                    ]</p>
-
-<p>Here I am setting my $assetGroupInfo and a $results variable as empty array&rsquo;s/hash-table&rsquo;s. Next, I&rsquo;m casting my $assetGroupInfo variable as an XML object. This ensures that we receive XML from Invoke-RestMethod Cmdlet.</p>
-
-<p>If we want to make sure that any errors are caught, we should add a Try/Catch block to our Invoke-RestMethod call. Your code should look like this: [code
-                    ]
- Begin
-    {
-        $results = @()
-        $assetGroupInfo = @()</p>
-
-<pre><code>    Try
-    {
-                        [xml
-                        ]$assetGroupInfo = Invoke-RestMethod -Uri &amp;quot;https: //qualysapi.qualys.com/msp/asset_group_list.php&amp;quot; -Credential $credential
-                    }
-    Catch
-    {
-        Write-Debug &amp;quot;Error using Invoke-RestMethod: $_&amp;quot;
-                    }
-                }
-</code></pre>
-
-<p>[/code
-                    ]</p>
-
-<p>Now we move to the Process block. This is where we will be parsing our data into our objects. As I mentioned above, we are wanting to gather all our Asset Groups Titles, their assigned IP Addresses, their role, and the users login ID. To do this, we must loop through each item, or branch returned by our query above. Each $item can be considered as an Asset Group. Additionally, we need to loop through each of the users assigned to that Asset Group.</p>
-
-<p>Once we have that data, we want to create a Custom PSObject to hold all of this data. Your code should look like this: [code
-                    ]
-Process
-{
-    foreach ($item in $assetGroupInfo.SelectNodes(&quot;/ASSET_GROUP_LIST/ASSET_GROUP&quot;))
-    {
-        for ($u=0; $u -lt $($item.ASSIGNED_USERS.ASSIGNED_USER.LOGIN).count;$u++)
-        {
-            $tempAssetGroupInfo = @()</p>
-
-<pre><code>                            $props = @{
-            userlogin=$($item.ASSIGNED_USERS.ASSIGNED_USER[$u
-                                ].LOGIN.InnerText)
-            userrole=$($item.ASSIGNED_USERS.ASSIGNED_USER[$u
-                                ].ROLE.InnerText)
-                                       assetgrouptitle=$($item.TITLE.InnerText)
-                                       ip=$($item.SCANIPS.IP)
-                            }
-
-        $tempAssetGroupInfo = New-Object PSObject -Property $props
-
-                            $results += $tempAssetGroupInfo
-                        }
-                    }
-                }
-</code></pre>
-
-<p>[/code
-                    ]</p>
-
-<p>Now, we can either simply put the following line in our End block: [code
-                    ]
-return $results
-[/code
-                    ]</p>
-
-<p>But, I actually like it to be saved into an XML file. This means that I can use this data with other functions without having to call Qualys again. To be quite frank, as you may know, Qualys is not the fastest website/service out there. Don&rsquo;t get me wrong, the scanning engines are fast, but their database(s) - not so much.</p>
-
-<p>To return both the object and export the results to an XML, we can just add this one line of code: [code
-                    ]
-Export-Clixml -Path &quot;$env:USERPROFILE\Desktop\QualysData\assetgroupinfo.xml&quot; -InputObject $results
-[/code
-                    ]</p>
-
-<p>That&rsquo;s it. We now have a function that can return some details about our Asset Groups within Qualys. Next time, I will focus on creating a function that gathers our enrolled IP Addresses, split&rsquo;s them into a single list.</p>
-
-<p>Hint: Qualys loves IP ranges (192.168.0.1-192.168.0.123) and their API calls return it the same way. :)</p>
-
+        
+            <a href="https://letsautomate.it/article/powershell-qualys-get-asset-group-info-part-2/" class="more">Continue reading</a>
+        
     
 </div>
 
@@ -444,14 +313,12 @@ To start this off, first I&rsquo;m going to share some my basic steps with regar
     </div>
 
     
-        <p>Recently I gave a presentation at MORENet&rsquo;s 2015 Annual Conference about &ldquo;Securing Windows with Group Policy&rdquo;.  This presentation was part of their &ldquo;Advanced&rdquo; technology track, and really focused on looking at the current permission levels of your users and deciding if they really need those rights/permissions.</p>
+        Recently I gave a presentation at MORENet&rsquo;s 2015 Annual Conference about &ldquo;Securing Windows with Group Policy&rdquo;. This presentation was part of their &ldquo;Advanced&rdquo; technology track, and really focused on looking at the current permission levels of your users and deciding if they really need those rights/permissions.
+I hope some people find these slides useful or at least a good reference point. If you have any questions about these slides then please do not hesitate to contact me by leaving a comment below.
 
-<p>I hope some people find these slides useful or at least a good reference point.  If you have any questions about these slides then please do not hesitate to contact me by leaving a comment below.</p>
-
-<p>Slides can be downloaded here: <a href="https://msadministrator.files.wordpress.com/2015/10/securing-windows-with-group-policy.pptx">Securing Windows with Group Policy</a></p>
-
-<p>NOTE: MORENet&rsquo;s conference is focused on technology and educational initiatives affecting K-12 &amp; Higher Education within the State of Missouri.</p>
-
+        
+            <a href="https://letsautomate.it/article/presentation-securing-windows-with-group-policy/" class="more">Continue reading</a>
+        
     
 </div>
 
@@ -565,32 +432,11 @@ To start this off, first I&rsquo;m going to share some my basic steps with regar
     </div>
 
     
-        <p>My wife and I saw CITIZENFOUR yesterday during a secret screening.  If you have not had the chance to see this movie, please do so as soon as you can - it&rsquo;s a great documentary!  The only complaint I have about the film is that they do not explain Cryptography or Encryption for the &ldquo;normal&rdquo; folks.  When the film ended, I looked around and their were many non-technical people (including older individuals).  I remember hearing someone say &ldquo;well I guess I&rsquo;m not going to be using email anymore&rdquo;.  This sentiment is not what the film is about, and I believe the director should have explained this very technical methodology to not confuse the non-techie people.</p>
+        My wife and I saw CITIZENFOUR yesterday during a secret screening. If you have not had the chance to see this movie, please do so as soon as you can - it&rsquo;s a great documentary! The only complaint I have about the film is that they do not explain Cryptography or Encryption for the &ldquo;normal&rdquo; folks. When the film ended, I looked around and their were many non-technical people (including older individuals).
 
-<p>With all that being said, I&rsquo;m going to try to explain Public/Private Key Exchange in the simplest form I can&hellip;&hellip;</p>
-
-<p>Imagine that you (mother) are wanting to send an email to someone (son), but you want the contents to be secure from prying eyes.  In order to do this, you need to use a form of encryption that it is secure.  The most common form of encryption is based on a certificate.</p>
-
-<p>You may be asking, what the hell is a certificate?  Think about your college degree or your highschool diploma, you received this certificate from your high school or university. This certificate is really nothing special, just a printed piece of paper, but the one thing that makes this certificate unique is that it&rsquo;s yours.  Additionally, your certificate is unique because it has your name on it, the year you graduated, the school you went to and it possibly has an issue number.  All of these things make your certificate unique, this is similar to a certificate we use for encryption.</p>
-
-<p>The only difference between a certificate you received for your graduation and one you use for encryption is that your certificate for encryption is digital.  Your digital certificate is typically unique because it comes from trusted source, it&rsquo;s made specifically for you, and well it means that this is me - you can trust me.</p>
-
-<p>So you have your unique certificate and within your certificate is a public key and a private key.  As you can imagine, your private key should always be kept private.  This private key is the key (pun intended) to all of your encryption.  This means that you do not want to store this private key just anywhere - keep it on a thumb drive in a safe (and buried in the backyard) :)  Seriously, keep it as safe as the data you are trying to encrypt needs to be protected.</p>
-
-<p>The other half of your certificate is your public key.  Your public key will be, well, public and we (the son) will use this public key to encrypt their data.  You may be asking at this point, well okay I have my certificate, I have my public and private key, and my data is now encrypted by my public key, NOW WHAT?  Well, once (your) the data is encrypted with your public key then you are the only one that can decrypt the data.</p>
-
-<p>That&rsquo;s right, your private key is used to decrypt data that has been encrypted by your public key!</p>
-
-<p>Now let&rsquo;s get to a real world example.  Now, back to my example above - Mother wants to send data that&rsquo;s secure to her son.  For the mother to send data securely she first needs to get a certificate.  Depending on where the mother lives, she can purchase a certificate from a Certificate Authority (CA) or receive one from her work&rsquo;s CA.  Once the mother has a certificate, she installs into her web browser or email client (for example).</p>
-
-<p>Now that the certificate is installed, the public key (sometimes the private key as well) is installed on her computer and can be used to encrypt her data.  Since the mother has a public key, it&rsquo;s now in the public and is sent with most communication on the web.  That&rsquo;s okay, remember this is your public key. The mother then sends her public key to her son (by sending an email).  Once her son has his mothers public key, he can now communicate with his mother securely.  Anything that is sent by the son to the mother can be decrypted by the mother because her private key is the only one that can decrypt the message - which is sent encrypted by the mothers public key.</p>
-
-<p>Below is a great graphical explanation of the Public/Private Key Exchange:</p>
-
-<p><a href="https://msadministrator.files.wordpress.com/2014/10/gpg-schema.jpg"><img class="alignnone size-medium wp-image-292" src="https://msadministrator.files.wordpress.com/2014/10/gpg-schema.jpg?w=300" alt="GPG-SChema" width="300" height="142" /></a></p>
-
-<p>This post explains the basics of public/private key exchange and does not go into the details surrounding the multitude of different technologies (i.e. Diffie-Hellman, symmetric and asymmetric key exchanges, etc).  I hope this post has helped people understand the absolute basics of encryption.</p>
-
+        
+            <a href="https://letsautomate.it/article/windows-security-publicprivate-key-exchange-basics/" class="more">Continue reading</a>
+        
     
 </div>
 
@@ -723,10 +569,6 @@ To start this off, first I&rsquo;m going to share some my basic steps with regar
                 
                     <li>
                         <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
                     </li>
                 
                 </ul>

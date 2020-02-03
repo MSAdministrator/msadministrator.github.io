@@ -6,18 +6,19 @@
     <description>Recent content in Pages on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Aug 2018 21:49:16 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 02 Feb 2020 08:47:39 -0400</lastBuildDate>
     
 	<atom:link href="https://letsautomate.it/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Projects</title>
-      <link>https://letsautomate.it/page/projects/</link>
-      <pubDate>Sun, 05 Aug 2018 21:49:16 -0400</pubDate>
+      <title>Open Source Projects</title>
+      <link>https://letsautomate.it/page/open-source-projects/</link>
+      <pubDate>Sun, 02 Feb 2020 08:47:39 -0400</pubDate>
       
-      <guid>https://letsautomate.it/page/projects/</guid>
-      <description> WriteLogEntry: A PowerShell helper function to create and write information to a log file PowerShell Phishing Response Toolkit: This PowerShell Module is designed to send notifications to hosting companies that host phishing URLs by utilizing the major WHOIS/RDAP Abuse Point of Contact (POC) information CreateProfile: PowerShell Module that uses WINAPI to create system profiles GetGithubRepository: This PowerShell function will download Github files without using Git PoshZD: A PowerShell Module to interact with the ZenDesk ticketing system PSRegistry: A PowerShell Module that replaces the reg commands using the WIN_API POSH-NotifyGroupOwnerManager  </description>
+      <guid>https://letsautomate.it/page/open-source-projects/</guid>
+      <description>Below is a list of open-source projects I have started or contributed heavily to:
+ soc-faker  A python package for use in generating fake data for SOC and security automation. Type: Python Documentation: https://soc-faker.readthedocs.io/en/latest/ Package Repository: https://pypi.org/project/soc-faker/  pyattck  A Python Package to interact with the Mitre ATT&amp;amp;CK Framework Type: Python Documentation: https://pyattck.readthedocs.io/en/latest/ Package Repository: https://pypi.org/project/pyattck/  carcass  carcass is a Python package to generate python package scaffolding based on best practices Type: Python  PSCVSS  A Windows PowerShell &amp;amp; PowerShell Core Module to calculate a CVSS3 Score based on a Vector string Type: PowerShell Package Repository: https://www.</description>
     </item>
     
     <item>
