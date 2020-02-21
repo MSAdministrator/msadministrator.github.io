@@ -397,90 +397,13 @@ Export-Clixml -Path &quot;$env:USERPROFILE\Desktop\QualysData\assetgroupinfo.xml
     </div>
 
     
-        <p>I always mean to post more on my blog, but as life gets in the way and work keeps me busy, I always seem to push it to the back-burner. This time, I am hoping to make it stick as a regular routine.</p>
+        I always mean to post more on my blog, but as life gets in the way and work keeps me busy, I always seem to push it to the back-burner. This time, I am hoping to make it stick as a regular routine.
+To kick off my new-found motivation to blog more, I am starting a series of posts surrounding PowerShell and Qualys Vulnerability Management API.
+To start this off, first I&rsquo;m going to share some my basic steps with regards to authentication to Qualys VM API v1.
 
-<p>To kick off my new-found motivation to blog more, I am starting a series of posts surrounding PowerShell and Qualys Vulnerability Management API.</p>
-
-<p>To start this off, first I&rsquo;m going to share some my basic steps with regards to authentication to Qualys VM API v1. This is really basic, but I see a lot of posts around that seem to try to create some &ldquo;advanced&rdquo; way of authenticating to Qualys API. You don&rsquo;t need to do anything fancy.</p>
-
-<p>As with all scripts/modules/etc., I suggest that you get into the habit of using PowerShell ISE and it&rsquo;s many great keyboard shortcuts to help you get on the right path.</p>
-
-<p>First, open PowerShell ISE and enter the following keyboard shortcut: [code
-                    ]</p>
-
-<p>CRT + J</p>
-
-<p>[/code
-                    ]</p>
-
-<p>Once the &ldquo;Show Snippets&rdquo; context menu shows up, select &ldquo;Advanced Function (Complete)&rdquo;. I always recommend that you start with a &lsquo;Complete&rsquo; Advanced FUnction. This makes your script look much better, and it&rsquo;s all around a good idea.</p>
-
-<p>Once you have the Snippet loaded, I would begin by coming up with a name; following Microsoft&rsquo;s approved Verb-Noun naming convention:</p>
-
-<p>Approved Verbs - <a href="https://technet.microsoft.com/en-us/library/ms714428(v=vs.85).aspx">https://technet.microsoft.com/en-us/library/ms714428(v=vs.85).aspx</a>
-Get-Verb Documentation: <a href="https://technet.microsoft.com/en-us/library/hh852690.aspx">https://technet.microsoft.com/en-us/library/hh852690.aspx</a></p>
-
-<p>Next, start adding a &ldquo;Credential&rdquo; object parameter to your code. Qualys uses &ldquo;Basic&rdquo; authentication, so using Invoke-RestMethod in combination with a &ldquo;Credential&rdquo; object is extremely easy.</p>
-
-<p>To capture your credentials into a Credential Object used by Invoke-RestMethod, you simply need the following before you run your function or within your function: [code
-                    ]</p>
-
-<p>$cred = Get-Credential</p>
-
-<p>[/code
-                    ]</p>
-
-<p>Enter your Qualys API username and password.</p>
-
-<p>*NOTE: Do not try to save this credential object to disk or to a file. It&rsquo;s NOT hard to enter your username and password every time you connect to Qualys API.</p>
-
-<p>Next, you should have the following code in your function: [code
-                    ]</p>
-
-<p>[xml
-                    ]$hostinfo = Invoke-RestMethod -Uri &quot;https: //qualysapi.qualys.com/msp/get_host_info.php?host_netbios=$netbios&amp;general_info=1&quot;-Credential $credential [/code
-                    ]</p>
-
-<p>I recommend that your $credential object should be passed into your function as a parameter. This will help when you move into more advanced interaction and multiple calls to Qualys VM API.</p>
-
-<p>Now that you have your XML (Type cast) $hostinfo variable, you can then parse the data very, very, very easily.</p>
-
-<p>In my next post I will share with you how to do this to gather some very important data for any Qualys Vulnerability Management Administrator.</p>
-
-<p>If you have any questions, then please leave a comment.</p>
-
-<p>[code
-                    ]</p>
-
-<p>function Test-QualysAuthentication ()
-{
-                        [cmdletbinding()
-                        ]
-param (
-[parameter(Mandatory=$true,
-ValueFromPipelineByPropertyName=$true,
-HelpMessage=&quot;Please provide a credential obejct&quot;)
-                        ]
-[ValidateNotNullOrEmpty()
-                        ]
-[System.Management.Automation.CredentialAttribute()
-                        ]$credential
-)</p>
-
-<p>&lt;# .SYNOPSIS This function tests your Qualys VM API Credentials .PARAMETER Credential Specifices a set of credentials used to query the QualysGuard API .EXAMPLE C:\PS&gt; $cred = Get-Credential
-C:\PS&gt; Test-QualysAuthentication -credential $cred</p>
-
-<p>#&gt;</p>
-
-<p>[xml
-                        ]$hostinfo = Invoke-RestMethod -Uri &quot;https: //qualysapi.qualys.com/msp/get_host_info.php?host_netbios=$netbios&amp;general_info=1&quot; -Credential $credential</p>
-
-<p>return $hostinfo
-                    }</p>
-
-<p>[/code
-                    ]</p>
-
+        
+            <a href="https://letsautomate.it/article/powershell-qualys-authentication-part-1/" class="more">Continue reading</a>
+        
     
 </div>
 
@@ -535,12 +458,14 @@ C:\PS&gt; Test-QualysAuthentication -credential $cred</p>
     </div>
 
     
-        Recently I gave a presentation at MORENet&rsquo;s 2015 Annual Conference about &ldquo;Securing Windows with Group Policy&rdquo;. This presentation was part of their &ldquo;Advanced&rdquo; technology track, and really focused on looking at the current permission levels of your users and deciding if they really need those rights/permissions.
-I hope some people find these slides useful or at least a good reference point. If you have any questions about these slides then please do not hesitate to contact me by leaving a comment below.
+        <p>Recently I gave a presentation at MORENet&rsquo;s 2015 Annual Conference about &ldquo;Securing Windows with Group Policy&rdquo;.  This presentation was part of their &ldquo;Advanced&rdquo; technology track, and really focused on looking at the current permission levels of your users and deciding if they really need those rights/permissions.</p>
 
-        
-            <a href="https://letsautomate.it/article/presentation-securing-windows-with-group-policy/" class="more">Continue reading</a>
-        
+<p>I hope some people find these slides useful or at least a good reference point.  If you have any questions about these slides then please do not hesitate to contact me by leaving a comment below.</p>
+
+<p>Slides can be downloaded here: <a href="https://msadministrator.files.wordpress.com/2015/10/securing-windows-with-group-policy.pptx">Securing Windows with Group Policy</a></p>
+
+<p>NOTE: MORENet&rsquo;s conference is focused on technology and educational initiatives affecting K-12 &amp; Higher Education within the State of Missouri.</p>
+
     
 </div>
 
