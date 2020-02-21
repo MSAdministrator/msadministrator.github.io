@@ -3,6 +3,20 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-35980408-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
         <meta name="author" content="Josh Rickard">
         <meta name="description" content="Lets Automate It">
         <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
@@ -134,12 +148,30 @@
     </div>
 
     
-        Yesterday I was asked to help with streamling a manual process that some QA folks were running into. They had a debug release of an applicaiton that was signed with a test code signing certificate. Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.
-This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.
+        <p>Yesterday I was asked to help with streamling a manual process that some QA folks were running into.  They had a debug release of an applicaiton that was signed with a test code signing certificate.  Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.</p>
 
-        
-            <a href="https://letsautomate.it/article/adding-a-dlls-certificate-to-trusted-store/" class="more">Continue reading</a>
-        
+<p>This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.</p>
+
+<pre><code class="language-powershell">$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate]::CreateFromSignedFile('C:\some\path\to\a\file.dll')
+$cert2 = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certificate)
+
+$certStore = [System.Security.Cryptography.X509Certificates.X509Store]::new([System.Security.Cryptography.X509Certificates.StoreName]::Root, [System.Security.Cryptography.X509Certificates.StoreLocation]::LocalMachine)
+
+$certStore.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
+$certStore.Add($cert2)
+$certStore.Close()
+</code></pre>
+
+<p>To break this down further, the first thing that we do is call a the <code>CreateFromSignedFile</code> method.  THis method takes a filepath as a parameter and will create a <code>$certificate</code> object with information stored in the dll.  The next thing is that we now need to take that object and create a new <code>Certificate2</code> from that existing <code>$certificate</code> metadata.</p>
+
+<p>Next, we create a <code>X509Store</code> object by specifying the <code>StoreName</code> we want to store the certiicate in.  Depending on where you want to store this certificate, your value may be different, but for this example we are storing the certificate in our Trusted Root Publishers store.  We also need to pass in if we want to store this in the <code>LocalMachine</code> or <code>User</code> portion of our certificate store.</p>
+
+<p>Lastly, we simply open our certificate store with the <code>ReadWrite</code> permissions. After this, we then simply add our created certificate into the store using the <code>$certStore.Add()</code> method.</p>
+
+<p>Once we are done, we simply close the store and go on our mary little way.</p>
+
+<p>I hope this helps breakdown how to recreate a DLLs signed certificate and store it in local certificate store.</p>
+
     
 </div>
 
@@ -308,6 +340,17 @@ This is a extremely simple task, but it was just an annoyance, so I wrote a few 
 
 
         
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-35980408-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 
         
 
