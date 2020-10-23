@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Lets Automate It</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Pages on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2020 08:47:39 -0400</lastBuildDate>
-    
-	<atom:link href="https://letsautomate.it/page/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 02 Feb 2020 08:47:39 -0400</lastBuildDate><atom:link href="https://letsautomate.it/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open Source Projects</title>
       <link>https://letsautomate.it/page/open-source-projects/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://letsautomate.it/page/open-source-projects/</guid>
       <description>Below is a list of open-source projects I have started or contributed heavily to:
- soc-faker  A python package for use in generating fake data for SOC and security automation. Type: Python Documentation: https://soc-faker.readthedocs.io/en/latest/ Package Repository: https://pypi.org/project/soc-faker/  pyattck  A Python Package to interact with the Mitre ATT&amp;amp;CK Framework Type: Python Documentation: https://pyattck.readthedocs.io/en/latest/ Package Repository: https://pypi.org/project/pyattck/  carcass  carcass is a Python package to generate python package scaffolding based on best practices Type: Python  PSCVSS  A Windows PowerShell &amp;amp; PowerShell Core Module to calculate a CVSS3 Score based on a Vector string Type: PowerShell Package Repository: https://www.</description>
+ soc-faker  A python package for use in generating fake data for SOC and security automation. Type: Python Documentation: https://soc-faker.readthedocs.io/en/latest/ Package Repository: https://pypi.org/project/soc-faker/   pyattck  A Python Package to interact with the Mitre ATT&amp;amp;CK Framework Type: Python Documentation: https://pyattck.readthedocs.io/en/latest/ Package Repository: https://pypi.org/project/pyattck/   carcass  carcass is a Python package to generate python package scaffolding based on best practices Type: Python   PSCVSS  A Windows PowerShell &amp;amp; PowerShell Core Module to calculate a CVSS3 Score based on a Vector string Type: PowerShell Package Repository: https://www.</description>
     </item>
     
     <item>
@@ -27,8 +23,8 @@
       <pubDate>Sun, 05 Aug 2018 21:47:39 -0400</pubDate>
       
       <guid>https://letsautomate.it/page/presentations/</guid>
-      <description> I have included a list below of my previous presentations and any relevant links. This will be continually updated moving forward:
-Presentation Slides  py-ews: A cross platform python package to interact with Exchange Web Services Hunting Phish Kits PowerShell vs Python: A side-by-side comparison Basics of Incident Handling Securing Windows with Group Policy  Past Presentations  py-ews: A cross platform python package to interact with Exchange Web Services - 2019 BSidesSTL Hunting Phish Kits - 2019 DerbyCon PowerShell vs Python: A side-by-side comparison - 2019 BSides Springfield (Missouri) - No Video SECURING WINDOWS WITH (SOME) GROUP POLICY – 2018 SHOWMECON SECURING WINDOWS WITH (SOME) GROUP POLICY – 2018 BSIDESKC MOTIVATIONS &amp;amp; TACTICS OF PHISHING – 2017 MORENET ANNUAL CONFERENCE SECURING WINDOWS WITH GROUP POLICY – 2017 DERBYCON BASICS OF INCIDENT RESPONSE – 2017 BSIDESSTL (2) HALF DAY POWERSHELL TRAINING COURSE FOR 80+ - 2017 MU VET MED PPRT: POWERSHELL PHISHING RESPONSE TOOLKIT – 2016 SHOWMECON PPRT: POWERSHELL PHISHING RESPONSE TOOLKIT – 2016 CIRCLE CITY CON SECURING WINDOWS WITH GROUP POLICY – 2015 MORENET ANNUAL CONFERENCE  </description>
+      <description>I have included a list below of my previous presentations and any relevant links. This will be continually updated moving forward:
+Presentation Slides  Making MITRE ATT&amp;amp;CK Actionable (gif) Making MITRE ATT&amp;amp;CK Actionable (pdf) py-ews: A cross platform python package to interact with Exchange Web Services Hunting Phish Kits PowerShell vs Python: A side-by-side comparison Basics of Incident Handling Securing Windows with Group Policy  Past Presentations  Making MITRE ATT&amp;amp;CK Actionable - 2020 Hacker Halted py-ews: A cross platform python package to interact with Exchange Web Services - 2019 BSidesSTL Hunting Phish Kits - 2019 DerbyCon PowerShell vs Python: A side-by-side comparison - 2019 BSides Springfield (Missouri) - No Video SECURING WINDOWS WITH (SOME) GROUP POLICY – 2018 SHOWMECON SECURING WINDOWS WITH (SOME) GROUP POLICY – 2018 BSIDESKC MOTIVATIONS &amp;amp; TACTICS OF PHISHING – 2017 MORENET ANNUAL CONFERENCE SECURING WINDOWS WITH GROUP POLICY – 2017 DERBYCON BASICS OF INCIDENT RESPONSE – 2017 BSIDESSTL (2) HALF DAY POWERSHELL TRAINING COURSE FOR 80+ - 2017 MU VET MED PPRT: POWERSHELL PHISHING RESPONSE TOOLKIT – 2016 SHOWMECON PPRT: POWERSHELL PHISHING RESPONSE TOOLKIT – 2016 CIRCLE CITY CON SECURING WINDOWS WITH GROUP POLICY – 2015 MORENET ANNUAL CONFERENCE  </description>
     </item>
     
     <item>

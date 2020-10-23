@@ -1,59 +1,58 @@
+
+  
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
-        <meta name="author" content="Josh Rickard">
-        <meta name="description" content="Lets Automate It">
-        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-        <meta name="generator" content="Hugo 0.58.1" />
-        <title> Mdt 2013 Installing Adk for 8 1 | Lets Automate It</title>
-        <meta name="description" content="Mdt 2013 Installing Adk for 8 1 - Lets Automate It">
-        <meta itemprop="name" content="Mdt 2013 Installing Adk for 8 1">
-        <meta itemprop="description" content="Mdt 2013 Installing Adk for 8 1 - Lets Automate It">
-        <meta property="og:title" content="Mdt 2013 Installing Adk for 8 1">
-        <meta property="og:description" content="Mdt 2013 Installing Adk for 8 1 - Lets Automate It">
-        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
-        <meta property="og:url" content="https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/">
-        <meta property="og:site_name" content="Lets Automate It">
-        <meta property="og:type" content="article">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-16x16.png" sizes="16x16">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <title>
+        
+           
+               Mdt 2013 Installing Adk for 8 1 &vert; Lets Automate It
+           
+        
+    </title>
+    <meta name="description" content="Mdt 2013 Installing Adk for 8 1 - Lets Automate It">
+    <meta itemprop="name" content="Mdt 2013 Installing Adk for 8 1">
+    <meta itemprop="description" content="Mdt 2013 Installing Adk for 8 1 - Lets Automate It">
+    <meta property="og:title" content="Mdt 2013 Installing Adk for 8 1">
+    <meta property="og:description" content="Mdt 2013 Installing Adk for 8 1 - Lets Automate It">
+    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:url" content="https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/">
+    <meta property="og:site_name" content="Lets Automate It">
+    <meta property="og:type" content="article">
 
-	
-	  <link href="/article/mdt-2013-installing-adk-for-8-1/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-	  <link href="/article/mdt-2013-installing-adk-for-8-1/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
-	
+    
 
-        
-        
-        
-        
-        <link rel="stylesheet" href="/sass/combined.min.7f83b77967030d2b9718ae20e651f09824a213fef01829749559bbe9dfb82c4f.css">
 
-        
+    <script src="/modernizr-simple.js"></script>
 
+    
+    <link href="/article/mdt-2013-installing-adk-for-8-1/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="/article/mdt-2013-installing-adk-for-8-1/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    
+
+    
+
+    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+
+    
+
+    
         
-            
-        
-    </head>
-    <body class="bilberry-hugo-theme">
-        
-<nav>
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+
+    
+    <nav>
 
     <div class="container">
         <ul class="topnav">
@@ -74,7 +73,7 @@ if (!doNotTrack) {
 
         
             <div id="search-box" class="search">
-                <i class="fa fa-search"></i>
+                <i class="fas fa-search"></i>
                 <input id="search" type="text" placeholder="Search ...">
             </div>
         
@@ -82,49 +81,60 @@ if (!doNotTrack) {
 </nav>
 
 
-        <header>
-    <div class="container">
-        <div class="logo">
-            <a href="/" class="logo">
-                
-                    <img src="/images/default.jpg" alt="">
-                
-
-                <span class="overlay"><i class="fa fa-home"></i></span>
-            </a>
-        </div>
-        <div class="titles">
-            <h3 class="title"><a href="/">Lets Automate It</a></h3>
-            
-                <span class="subtitle">from Josh Rickard</span>
-            
-        </div>
-
     
+    <header>
 
-        
-        <div class="toggler">
-        
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>
-    </div>
-</header>
+        <div class="container">
+            <div class="logo">
+                <a href="/" class="logo">
+                    
+                        <img src="/images/default.jpg" alt="">
+                    
 
+                    <span class="overlay"><i class="fa fa-home"></i></span>
+                </a>
+            </div>
+            <div class="titles">
+                <h3 class="title">
+                    <a href="/">
+                        Lets Automate It
+                    </a>
+                </h3>
 
-        <div class="main container">
+                
+                    <span class="subtitle">from Josh Rickard</span>
+                
+            </div>
+
             
-     
+
+            
+                <div class="toggler">
+            
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+            </div>
+    </header>
+
+
+    <div class="main container">
+        
     <div class="article-wrapper u-cf single">
         
             <a class="bubble" href="https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/">
-    <i class="fa fa-fw fa-pencil"></i>
+    <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
 <article class="default article">
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/">Mdt 2013 Installing Adk for 8 1</a></h3>
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/">
+            Mdt 2013 Installing Adk for 8 1
+        </a>
+    </h1>
+
     <div class="meta">
         
             
@@ -137,75 +147,50 @@ if (!doNotTrack) {
         
 
         
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
         
     </div>
 
     
-        <p>Once you have all of the <a title="MDT 2013: Setting up MDT 2013 with ADK for Windows 7, 8, &amp; 8.1" href="http://msadministrator.com/2014/03/27/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/">necessary files</a> downloaded and saved on your Windows Server 2012 R2 box, then begin by installing the &ldquo;adksetup.exe&rdquo;.</p>
+        
 
+        <p>Once you have all of the <!-- raw HTML omitted -->necessary files<!-- raw HTML omitted --> downloaded and saved on your Windows Server 2012 R2 box, then begin by installing the &ldquo;adksetup.exe&rdquo;.</p>
 <p>The first screen that should pop-up is this one:</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_1.png"><img class="alignnone size-full wp-image-254" src="http://msadministrator.files.wordpress.com/2014/03/adk_1.png" alt="ADK_1" width="396" height="298" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>The Following Screenshots are all based on your own needs but these are the options that I have chosen for this setup:</p>
-
 <p>I choose to download the ADK instead of installing it.  The reason I do this is because I like to keep a backup of the original file, just in case the server crashes or something else happens.</p>
-
 <p>Click Next</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_2.png"><img class="alignnone size-full wp-image-255" src="http://msadministrator.files.wordpress.com/2014/03/adk_2.png" alt="ADK_2" width="620" height="454" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>I typically choose to not accept the CEIP, mostly because it adds a little database file in AppData that i&rsquo;ve seen become corrupt and cause log in issues. If you choose to, it should be fine.</p>
-
 <p>Click Next</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_3.png"><img class="alignnone size-full wp-image-256" src="http://msadministrator.files.wordpress.com/2014/03/adk_3.png" alt="ADK_3" width="620" height="454" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Wait until the adksetup has been downloaded then proceed to the location that you save it to.</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_5.png"><img class="alignnone size-full wp-image-258" src="http://msadministrator.files.wordpress.com/2014/03/adk_5.png" alt="ADK_5" width="620" height="453" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Click Close and then run the downloaded ADK</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_6.png"><img class="alignnone size-full wp-image-259" src="http://msadministrator.files.wordpress.com/2014/03/adk_6.png" alt="ADK_6" width="620" height="455" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Specify the location that you want to install the ADK files.  I personally like to store them on a separate drive than the OS but it&rsquo;s up to you.</p>
-
 <p>Click Next</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_7.png"><img class="alignnone size-full wp-image-260" src="http://msadministrator.files.wordpress.com/2014/03/adk_7.png" alt="ADK_7" width="620" height="455" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Click Accept</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_9.png"><img class="alignnone size-full wp-image-262" src="http://msadministrator.files.wordpress.com/2014/03/adk_9.png" alt="ADK_9" width="620" height="455" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Again, it&rsquo;s up to you but I always select No.</p>
-
 <p>Click Next</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_8.png"><img class="alignnone size-full wp-image-261" src="http://msadministrator.files.wordpress.com/2014/03/adk_8.png" alt="ADK_8" width="620" height="454" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Below are the features that I install but you could install all of them.  Here is why I choose why I install the following.</p>
-
 <p>Deployment Tools:  You need to install Deployment Tools as this holds DISM and other tools that are needed by MDT</p>
-
 <p>Windows PE: You need to install this for MDT to work</p>
-
 <p>USMT: This is User State Migration Toolkit.  Think of this as a tool to migrate user data (Migwiz)</p>
-
 <p>SQL Server: I mostly install this because you can use it to setup a backed database for MDT, it&rsquo;s not necessary unless you plan on using it.</p>
-
 <p>Click Install</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_10.png"><img class="alignnone size-full wp-image-263" src="http://msadministrator.files.wordpress.com/2014/03/adk_10.png" alt="ADK_10" width="620" height="458" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Once the installation is complete, click Close</p>
-
-<p><a href="http://msadministrator.files.wordpress.com/2014/03/adk_11.png"><img class="alignnone size-full wp-image-264" src="http://msadministrator.files.wordpress.com/2014/03/adk_11.png" alt="ADK_11" width="620" height="456" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Congratulations, you&rsquo;ve installed ADK on your Windows Server 2012 R2 box.  Next we will install MDT 2013.</p>
-
 <p>Enjoy!</p>
 
     
@@ -220,7 +205,10 @@ if (!doNotTrack) {
             <i class="fa fa-tags"></i>
             <div class="links">
                 
-                    <a href="/tags/archive">archive</a>
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
                 
             </div>
         </div>
@@ -235,21 +223,24 @@ if (!doNotTrack) {
     </div>
 
     
-        
-    
-
-     
+        <div id="comments-container">
+            
+            
 
         </div>
+    
 
-        
+    </div>
+
+    
 <footer>
     <div class="container">
 
         
         <div class="recent-posts">
             <strong>Latest posts</strong>
-                <ul>
+            <ul>
+                
                 
                     <li>
                         <a href="https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/">Investigate Alerts in Microsoft Azure Using SOAR</a>
@@ -275,42 +266,53 @@ if (!doNotTrack) {
                         <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
                     </li>
                 
-                </ul>
+                    <li>
+                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
+                    </li>
+                
+            </ul>
         </div>
         
 
         
         <div class="categories">
             <a href="/categories/"><strong>Categories</strong></a>
-                <ul>
+            <ul>
                 
-                    <li>
-                        <a href="/categories/swimlane">Swimlane (17)</a>
-                    </li>
+                <li>
+                    <a href="/categories/swimlane">Swimlane
+                        (17)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/powershell">Powershell (7)</a>
-                    </li>
+                <li>
+                    <a href="/categories/powershell">Powershell
+                        (7)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/azure">Azure (4)</a>
-                    </li>
+                <li>
+                    <a href="/categories/azure">Azure
+                        (4)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/automation">Automation (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/automation">Automation
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/how-to">How to (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/how-to">How to
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/python">Python (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/python">Python
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/slack">Slack (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/slack">Slack
+                        (1)</a>
+                </li>
                 
             </ul>
         </div>
@@ -321,22 +323,6 @@ if (!doNotTrack) {
             <div class="external-profiles">
                 <strong>Social media</strong>
 
-                
-                
-                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
-                
-                
-                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
                 
             </div>
             
@@ -353,20 +339,21 @@ if (!doNotTrack) {
             <a href="https://github.com/Lednerb" target="_blank">
                 &copy;
                 
-                    2018
+                2018
                 
                 by Lednerb
             </a>
-	    
+            
         </div>
         <div class="author">
-            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
         </div>
     </div>
 </div>
 
 
-        
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -379,76 +366,28 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-        
-
-        
-        
-        <script type="text/javascript" src="/js/externalDependencies.39c47e10e241eae2947b3fe21809c572.js" integrity="md5-OcR&#43;EOJB6uKUez/iGAnFcg=="></script>
-
-        
-        
-        <script type="text/javascript" src="/js/theme.ff50ae6dc1bfc220b23bf69dbb41b54e.js" integrity="md5-/1CubcG/wiCyO/adu0G1Tg=="></script>
-
-        <script>
-            $(".moment").each(function() {
-                $(this).text(
-                    moment( $(this).text() )
-                        .locale( "en" )
-                        .format('LL')
-                );
-            });
-
-            $(".footnote-return sup").html("");
-        </script>
-
-        
-            
-        
-
-        
-            <script>
-    var client = algoliasearch("NLP9E0F1NO", "a4ffdf988b82857fa86f4403da30ec7f");
-    var index = client.initIndex("prod_msadministrator");
-
-    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
-      [
-        {
-          
-            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
-          
-          displayKey: function(suggestion) {
-            return suggestion.title || suggestion.author
-          },
-          templates: {
-            suggestion: function(suggestion) {
-                return "<span class='entry " + suggestion.type + "'>"
-                      + "<span class='title'>" + suggestion.title + "</span>"
-                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
-                  + "</span>"
-                ;
-            },
-            empty: function() {
-              return "<span class='empty'>Nothing found.</span>"
-            },
-            footer: function() {
-              return '<div class="branding">Powered by <img src="https:\/\/letsautomate.it\/dist\/algolia-logo-light.svg" /></div>'
-            }
-
-          },
-        }
-      ])
-      .on('autocomplete:selected', function(event, suggestion, dataset) {
-        window.location = (suggestion.url);
-      })
-      .keypress(function (event, suggestion) {
-        if (event.which == 13) {
-          window.location = (suggestion.url);
-        }
-      });
-</script>
-
-        
+    
 
 
-    </body>
+    <script type="text/javascript" src="https://letsautomate.it/theme.js"></script>
+
+    
+    
+    
+
+    
+    <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
+  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
+  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+</body>
+
 </html>

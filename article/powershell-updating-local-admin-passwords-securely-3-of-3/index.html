@@ -1,59 +1,58 @@
+
+  
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
-        <meta name="author" content="Josh Rickard">
-        <meta name="description" content="Lets Automate It">
-        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-        <meta name="generator" content="Hugo 0.58.1" />
-        <title> Powershell Updating Local Admin Passwords Securely 3 of 3 | Lets Automate It</title>
-        <meta name="description" content="Powershell Updating Local Admin Passwords Securely 3 of 3 - Lets Automate It">
-        <meta itemprop="name" content="Powershell Updating Local Admin Passwords Securely 3 of 3">
-        <meta itemprop="description" content="Powershell Updating Local Admin Passwords Securely 3 of 3 - Lets Automate It">
-        <meta property="og:title" content="Powershell Updating Local Admin Passwords Securely 3 of 3">
-        <meta property="og:description" content="Powershell Updating Local Admin Passwords Securely 3 of 3 - Lets Automate It">
-        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
-        <meta property="og:url" content="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/">
-        <meta property="og:site_name" content="Lets Automate It">
-        <meta property="og:type" content="article">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-16x16.png" sizes="16x16">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <title>
+        
+           
+               Powershell Updating Local Admin Passwords Securely 3 of 3 &vert; Lets Automate It
+           
+        
+    </title>
+    <meta name="description" content="Powershell Updating Local Admin Passwords Securely 3 of 3 - Lets Automate It">
+    <meta itemprop="name" content="Powershell Updating Local Admin Passwords Securely 3 of 3">
+    <meta itemprop="description" content="Powershell Updating Local Admin Passwords Securely 3 of 3 - Lets Automate It">
+    <meta property="og:title" content="Powershell Updating Local Admin Passwords Securely 3 of 3">
+    <meta property="og:description" content="Powershell Updating Local Admin Passwords Securely 3 of 3 - Lets Automate It">
+    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:url" content="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/">
+    <meta property="og:site_name" content="Lets Automate It">
+    <meta property="og:type" content="article">
 
-	
-	  <link href="/article/powershell-updating-local-admin-passwords-securely-3-of-3/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-	  <link href="/article/powershell-updating-local-admin-passwords-securely-3-of-3/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
-	
+    
 
-        
-        
-        
-        
-        <link rel="stylesheet" href="/sass/combined.min.7f83b77967030d2b9718ae20e651f09824a213fef01829749559bbe9dfb82c4f.css">
 
-        
+    <script src="/modernizr-simple.js"></script>
 
+    
+    <link href="/article/powershell-updating-local-admin-passwords-securely-3-of-3/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="/article/powershell-updating-local-admin-passwords-securely-3-of-3/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    
+
+    
+
+    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+
+    
+
+    
         
-            
-        
-    </head>
-    <body class="bilberry-hugo-theme">
-        
-<nav>
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+
+    
+    <nav>
 
     <div class="container">
         <ul class="topnav">
@@ -74,7 +73,7 @@ if (!doNotTrack) {
 
         
             <div id="search-box" class="search">
-                <i class="fa fa-search"></i>
+                <i class="fas fa-search"></i>
                 <input id="search" type="text" placeholder="Search ...">
             </div>
         
@@ -82,49 +81,60 @@ if (!doNotTrack) {
 </nav>
 
 
-        <header>
-    <div class="container">
-        <div class="logo">
-            <a href="/" class="logo">
-                
-                    <img src="/images/default.jpg" alt="">
-                
-
-                <span class="overlay"><i class="fa fa-home"></i></span>
-            </a>
-        </div>
-        <div class="titles">
-            <h3 class="title"><a href="/">Lets Automate It</a></h3>
-            
-                <span class="subtitle">from Josh Rickard</span>
-            
-        </div>
-
     
+    <header>
 
-        
-        <div class="toggler">
-        
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>
-    </div>
-</header>
+        <div class="container">
+            <div class="logo">
+                <a href="/" class="logo">
+                    
+                        <img src="/images/default.jpg" alt="">
+                    
 
+                    <span class="overlay"><i class="fa fa-home"></i></span>
+                </a>
+            </div>
+            <div class="titles">
+                <h3 class="title">
+                    <a href="/">
+                        Lets Automate It
+                    </a>
+                </h3>
 
-        <div class="main container">
+                
+                    <span class="subtitle">from Josh Rickard</span>
+                
+            </div>
+
             
-     
+
+            
+                <div class="toggler">
+            
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+            </div>
+    </header>
+
+
+    <div class="main container">
+        
     <div class="article-wrapper u-cf single">
         
             <a class="bubble" href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/">
-    <i class="fa fa-fw fa-pencil"></i>
+    <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
 <article class="default article">
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/">Powershell Updating Local Admin Passwords Securely 3 of 3</a></h3>
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/">
+            Powershell Updating Local Admin Passwords Securely 3 of 3
+        </a>
+    </h1>
+
     <div class="meta">
         
             
@@ -137,303 +147,215 @@ if (!doNotTrack) {
         
 
         
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
         
     </div>
 
     
         
 
-<p>Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely.  This is not my script, I received this script along with many others from the SANS SEC 505 course.  I have not altered it in any way.
-<div></p>
-
+        <p>Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely.  This is not my script, I received this script along with many others from the SANS SEC 505 course.  I have not altered it in any way.</p>
+<!-- raw HTML omitted -->
 <p>Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):</p>
-
 <p>This script will remove older local administrator passwords that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate in (2 of 3).</p>
-
 <p>Copy this text into a PowerShell Script called CleanUp_PasswordArchive.ps1</p>
-
 <p>[code
-                    ]</p>
-
+]</p>
 <p>####################################################################################
 #.Synopsis</p>
-
 <h1 id="carefully-delete-only-the-correct-password-archive-files-previously">Carefully delete only the correct password archive files previously</h1>
-
-<h1 id="created-with-the-companion-script-named-update-passwordarchive-ps1">created with the companion script named Update-PasswordArchive.ps1.</h1>
-
-<p>#
-#.Description</p>
-
+<h1 id="created-with-the-companion-script-named-update-passwordarchiveps1">created with the companion script named Update-PasswordArchive.ps1.</h1>
+<h1 id="heading"></h1>
+<p>#.Description</p>
 <h1 id="deletes-older-password-archive-files-while-retaining-a-chosen-number">Deletes older password archive files while retaining a chosen number</h1>
-
-<h1 id="default-5-of-prior-successful-and-failed-archive-files-for-each">(default = 5) of prior successful and failed archive files for each</h1>
-
+<h1 id="default--5-of-prior-successful-and-failed-archive-files-for-each">(default = 5) of prior successful and failed archive files for each</h1>
 <h1 id="unique-combination-of-computer-and-user-total-of-10-files-by-default">unique combination of computer and user (total of 10 files by default</h1>
-
 <h1 id="for-each-unique-combination-scheduling-this-script-will-help-to">for each unique combination). Scheduling this script will help to</h1>
-
 <h1 id="maintain-a-reasonable-number-of-password-archive-files">maintain a reasonable number of password archive files.</h1>
-
-<p>#
-#.Parameter PasswordArchivePath</p>
-
+<h1 id="heading-1"></h1>
+<p>#.Parameter PasswordArchivePath</p>
 <h1 id="the-local-or-unc-path-to-where-the-encrypted-password-files-are-kept">The local or UNC path to where the encrypted password files are kept.</h1>
-
-<p>#
-#.Parameter ComputerName</p>
-
+<h1 id="heading-2"></h1>
+<p>#.Parameter ComputerName</p>
 <h1 id="name-of-the-computer-with-the-local-account-whose-password-was-reset">Name of the computer with the local account whose password was reset</h1>
-
 <h1 id="and-whose-password-was-encrypted-and-saved-to-a-file-the-computer">and whose password was encrypted and saved to a file. The computer</h1>
-
 <h1 id="name-will-match-the-names-of-files-in-the-passwordarchivepath-this">name will match the names of files in the PasswordArchivePath. This</h1>
-
 <h1 id="parameter-can-accept-a-computer-name-with-a-wildcard-in-it-when">parameter can accept a computer name with a wildcard in it. When</h1>
-
 <h1 id="specified-only-the-archives-for-that-computer-or-for-those-matching">specified, only the archives for that computer (or for those matching</h1>
-
 <h1 id="computers-with-a-wildcard-will-be-cleaned-up-instead-of-the-default">computers with a wildcard) will be cleaned up instead of the default,</h1>
-
 <h1 id="which-is-to-clean-up-archive-files-for-all-computers">which is to clean up archive files for all computers.</h1>
-
-<p>#
-#.Parameter ArchivesToKeep</p>
-
+<h1 id="heading-3"></h1>
+<p>#.Parameter ArchivesToKeep</p>
 <h1 id="the-number-of-current-and-prior-password-archive-files-to-keep-for">The number of current and prior password archive files to keep for</h1>
-
 <h1 id="each-combination-of-computer-name-and-user-name-a-single-computer">each combination of computer name and user name. A single computer</h1>
-
 <h1 id="might-have-multiple-local-user-accounts-whose-passwords-are-managed">might have multiple local user accounts whose passwords are managed</h1>
-
 <h1 id="by-these-scripts-so-the-clean-up-must-handle-this-gracefully-the">by these scripts, so the clean up must handle this gracefully. The</h1>
-
-<h1 id="default-is-5-5-successful-files-5-failures-files-10-files">default is 5 (5 successful files + 5 failures files = 10 files).</h1>
-
-<p>#
-#.Parameter VerboseReporting</p>
-
+<h1 id="default-is-5-5-successful-files--5-failures-files--10-files">default is 5 (5 successful files + 5 failures files = 10 files).</h1>
+<h1 id="heading-4"></h1>
+<p>#.Parameter VerboseReporting</p>
 <h1 id="switch-to-show-verbose-information">Switch to show verbose information.</h1>
-
-<p>#
-#.Parameter DoNotDelete</p>
-
-<h1 id="switch-to-do-a-whatif-dry-run-that-will-not-actually-delete-any">Switch to do a -WhatIf dry run that will not actually delete any</h1>
-
-<h1 id="files-use-this-switch-along-with-verbosereporting-for-testing">files. Use this switch along with -VerboseReporting for testing.</h1>
-
-<p>#
-#.Parameter DeleteAllPasswordArchives</p>
-
+<h1 id="heading-5"></h1>
+<p>#.Parameter DoNotDelete</p>
+<h1 id="switch-to-do-a--whatif-dry-run-that-will-not-actually-delete-any">Switch to do a -WhatIf dry run that will not actually delete any</h1>
+<h1 id="files-use-this-switch-along-with--verbosereporting-for-testing">files. Use this switch along with -VerboseReporting for testing.</h1>
+<h1 id="heading-6"></h1>
+<p>#.Parameter DeleteAllPasswordArchives</p>
 <h1 id="switch-to-delete-all-password-archive-files-without-exception">Switch to delete all password archive files without exception.</h1>
-
-<p>#
-#.Example</p>
-
-<h1 id="cleanup-passwordarchive-ps1-passwordarchivepath-server-share">.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share</h1>
-
-<p>#</p>
-
+<h1 id="heading-7"></h1>
+<p>#.Example</p>
+<h1 id="cleanup-passwordarchiveps1--passwordarchivepath-servershare">.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share</h1>
+<h1 id="heading-8"></h1>
 <h1 id="deletes-all-but-the-last-5-password-archive-files-for-each-computer">Deletes all but the last 5 password archive files for each computer</h1>
-
 <h1 id="and-user-combination-also-deletes-all-but-the-last-5-failure-type">and user combination. Also, deletes all but the last 5 failure-type</h1>
-
 <h1 id="files-for-each-combination-hence-if-the-last-successful-reset-was">files for each combination. Hence, if the last successful reset was</h1>
-
 <h1 id="six-months-ago-followed-by-many-failures-the-last-5-successful">six months ago, followed by many failures, the last 5 successful</h1>
-
 <h1 id="reset-archive-files-will-not-be-deleted">reset archive files will <em>not</em> be deleted.</h1>
-
-<p>#
-#.Example</p>
-
-<h1 id="cleanup-passwordarchive-ps1-passwordarchivepath-server-share-computername-wks">.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share -ComputerName WKS*</h1>
-
-<p>#</p>
-
-<h1 id="only-cleans-up-the-archive-files-for-computers-which-match-the-quot-wks-quot-file">Only cleans up the archive files for computers which match the &quot;WKS*&quot; file</h1>
-
+<h1 id="heading-9"></h1>
+<p>#.Example</p>
+<h1 id="cleanup-passwordarchiveps1--passwordarchivepath-servershare--computername-wks">.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share -ComputerName WKS*</h1>
+<h1 id="heading-10"></h1>
+<h1 id="only-cleans-up-the-archive-files-for-computers-which-match-the-quotwksquot-file">Only cleans up the archive files for computers which match the &quot;WKS*&quot; file</h1>
 <h1 id="pattern-a-full-computer-name-can-be-specified-wildcards-are-not-required">pattern. A full computer name can be specified, wildcards are not required.</h1>
-
 <h1 id="regular-expressions-are-not-supported">Regular expressions are not supported.</h1>
-
-<p>#
-#.Example</p>
-
-<h1 id="cleanup-passwordarchive-ps1-passwordarchivepath-server-share-donotdelete-verbosereporting">.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share -DoNotDelete -VerboseReporting</h1>
-
-<p>#</p>
-
+<h1 id="heading-11"></h1>
+<p>#.Example</p>
+<h1 id="cleanup-passwordarchiveps1--passwordarchivepath-servershare--donotdelete--verbosereporting">.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share -DoNotDelete -VerboseReporting</h1>
+<h1 id="heading-12"></h1>
 <h1 id="no-files-will-be-deleted-but-a-verbose-report-of-files-discovered-will-be-shown">No files will be deleted, but a verbose report of files discovered will be shown.</h1>
-
-<p>#
-#
-#Requires -Version 2.0
-#
-#.Notes</p>
-
-<h1 id="author-jason-fossen-enclave-consulting-http-www-sans-org-windows-security">Author: Jason Fossen, Enclave Consulting (http: //www.sans.org/windows-security/)</h1>
-
-<h1 id="version-1-0">Version: 1.0</h1>
-
-<h1 id="updated-11-nov-2012">Updated: 11.Nov.2012</h1>
-
-<h1 id="legal-public-domain-script-provided-quot-as-is-quot-with-no-warranties-or-guarantees-of">LEGAL: PUBLIC DOMAIN. SCRIPT PROVIDED &quot;AS IS&quot; WITH NO WARRANTIES OR GUARANTEES OF</h1>
-
-<h1 id="any-kind-including-but-not-limited-to-merchantability-and-or-fitness-for">ANY KIND, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY AND/OR FITNESS FOR</h1>
-
+<h1 id="heading-13"></h1>
+<h1 id="heading-14"></h1>
+<p>#Requires -Version 2.0</p>
+<h1 id="heading-15"></h1>
+<p>#.Notes</p>
+<h1 id="author-jason-fossen-enclave-consulting-http-wwwsansorgwindows-security">Author: Jason Fossen, Enclave Consulting (http: //www.sans.org/windows-security/)</h1>
+<h1 id="version-10">Version: 1.0</h1>
+<h1 id="updated-11nov2012">Updated: 11.Nov.2012</h1>
+<h1 id="legal-public-domain-script-provided-quotas-isquot-with-no-warranties-or-guarantees-of">LEGAL: PUBLIC DOMAIN. SCRIPT PROVIDED &quot;AS IS&quot; WITH NO WARRANTIES OR GUARANTEES OF</h1>
+<h1 id="any-kind-including-but-not-limited-to-merchantability-andor-fitness-for">ANY KIND, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY AND/OR FITNESS FOR</h1>
 <h1 id="a-particular-purpose-all-risks-of-damage-remains-with-the-user-even-if">A PARTICULAR PURPOSE. ALL RISKS OF DAMAGE REMAINS WITH THE USER, EVEN IF</h1>
-
 <h1 id="the-author-supplier-or-distributor-has-been-advised-of-the-possibility-of">THE AUTHOR, SUPPLIER OR DISTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF</h1>
-
 <h1 id="any-such-damage-if-your-state-does-not-permit-the-complete-limitation-of">ANY SUCH DAMAGE. IF YOUR STATE DOES NOT PERMIT THE COMPLETE LIMITATION OF</h1>
-
 <h1 id="liability-then-delete-this-file-since-you-are-now-prohibited-to-have-it">LIABILITY, THEN DELETE THIS FILE SINCE YOU ARE NOW PROHIBITED TO HAVE IT.</h1>
-
 <p>####################################################################################
 Param ($PasswordArchivePath = &quot;.&amp;quot;, $ComputerName = &quot;*&quot;, $ArchivesToKeep = 5,
-                    [Switch
-                    ] $VerboseReporting,
-                    [Switch
-                    ] $DoNotDelete,
-                    [Switch
-                    ] $DeleteAllPasswordArchives)</p>
-
+[Switch
+] $VerboseReporting,
+[Switch
+] $DoNotDelete,
+[Switch
+] $DeleteAllPasswordArchives)</p>
 <h1 id="test-access-to-path">Test access to path.</h1>
-
 <p>if (Resolve-Path -Path $PasswordArchivePath)
 { $PasswordArchivePath = $(Resolve-Path -Path $PasswordArchivePath).Path
-                    }
+}
 else
-{ &quot;<code>nERROR: Cannot resolve path to archive folder: $PasswordArchivePath</code>n&quot; ; exit
-                    }</p>
-
+{ &quot;<code>nERROR: Cannot resolve path to archive folder: $PasswordArchivePath </code>n&quot; ; exit
+}</p>
 <h1 id="sanity-check-on-archivestokeep">Sanity check on $ArchivesToKeep</h1>
-
 <p>if ($ArchivesToKeep -le 0) { &quot;<code>nERROR: The -ArchivesToKeep argument must be 1 or larger.</code>n&quot; ; exit
-                    }</p>
-
+}</p>
 <h1 id="get-all-matching-files">Get all matching files.</h1>
-
-<p>$filter = $($ComputerName + &quot;<em>+</em>+<em>+</em>&quot;).Replace(&quot;*<em>&quot;,&quot;</em>&quot;)
+<p>$filter = $($ComputerName + &quot;<em>+</em>+<em>+</em>&quot;).Replace(&quot;**&quot;,&quot;*&quot;)
 $files = dir -Path $PasswordArchivePath -Filter $filter
 if ($VerboseReporting)
 {
- &quot;<code>nTotal number of matching ($ComputerName) archive files = &amp;quot; + $files.count
- $files | foreach { $_.fullname
-                        }
- &amp;quot;</code>n&quot;
-                    }</p>
-
+&quot;<code>nTotal number of matching ($ComputerName) archive files = &amp;quot; + $files.count $files | foreach { $_.fullname } &amp;quot;</code>n&quot;
+}</p>
 <h1 id="maybe-just-delete-them-all">Maybe just delete them all.</h1>
-
 <p>if ($DeleteAllPasswordArchives -and $DoNotDelete) { &quot;<code>nERROR: Invalid combination of switches.</code>n&quot; ; exit
-                    }
+}
 if ($DeleteAllPasswordArchives -and $ComputerName -ne &quot;*&quot;) { &quot;<code>nERROR: Invalid combination of switches.</code>n&quot; ; exit
-                    }
+}
 if ($DeleteAllPasswordArchives)
 {
- &quot;<code>nDeleting all password archive files...</code>n&quot;
- $files | foreach { remove-item $_
-                        }
- exit
-                    }</p>
-
+&quot;<code>nDeleting all password archive files...</code>n&quot;
+$files | foreach { remove-item $_
+}
+exit
+}</p>
 <h1 id="separate-successful-vs-failed-password-reset-files">Separate successful vs. failed password reset files.</h1>
-
 <p>$failurefiles = $files | where { $<em>.Name -like &quot;*FAILURE&quot;
-                    }
+}
 $successfiles = $files | where { $</em>.Name -notlike &quot;*FAILURE&quot;
-                    }
+}
 if ($VerboseReporting) { &quot;Files for failed resets = &quot; + $failurefiles.count
-                    }
+}
 if ($VerboseReporting) { &quot;Files for successful resets = &quot; + $successfiles.count
-                    }</p>
-
-<h1 id="build-arrays-of-unique-computername-username-combinations">Build arrays of unique computername+username combinations.</h1>
-
+}</p>
+<h1 id="build-arrays-of-unique-computernameusername-combinations">Build arrays of unique computername+username combinations.</h1>
 <p>$failurenames = @()
 $successnames = @()</p>
-
 <p>foreach ($file in $failurefiles)
 {
- $computer = $($file.name -split &lsquo;+&rsquo;)[
-                            0
-                        ] + &quot;+&quot; + $($file.name -split &lsquo;+&rsquo;)[
-                            1
-                        ]
- if ($computer -notin $failurenames){ $failurenames += $computer
-                        }
-                    }
-if ($VerboseReporting) { &quot;<code>nUnique Computer+User combinations for failed resets = &amp;quot; + $failurenames.count
-                    }
-if ($VerboseReporting) { $failurenames ; &amp;quot;</code>n&quot;
-                    }</p>
-
+$computer = $($file.name -split &lsquo;+')[
+0
+] + &quot;+&quot; + $($file.name -split &lsquo;+')[
+1
+]
+if ($computer -notin $failurenames){ $failurenames += $computer
+}
+}
+if ($VerboseReporting) { &quot;<code>nUnique Computer+User combinations for failed resets = &amp;quot; + $failurenames.count } if ($VerboseReporting) { $failurenames ; &amp;quot;</code>n&quot;
+}</p>
 <p>foreach ($file in $successfiles)
 {
- $computer = $($file.name -split &lsquo;+&rsquo;)[
-                            0
-                        ] + &quot;+&quot; + $($file.name -split &lsquo;+&rsquo;)[
-                            1
-                        ]
- if ($computer -notin $successnames){ $successnames += $computer
-                        }
-                    }
+$computer = $($file.name -split &lsquo;+')[
+0
+] + &quot;+&quot; + $($file.name -split &lsquo;+')[
+1
+]
+if ($computer -notin $successnames){ $successnames += $computer
+}
+}
 if ($VerboseReporting) { &quot;Unique Computer+User combinations for successful resets = &quot; + $successnames.count
-                    }
+}
 if ($VerboseReporting) { $successnames ; &quot;`n&quot;
-                    }</p>
-
+}</p>
 <h1 id="delete-the-non-keepers-for-each-unique-name">Delete the non-keepers for each unique name.</h1>
-
 <p>$SuccessFileCounter = $FailureFileCounter = 0</p>
-
 <p>foreach ($name in $failurenames)
 {
- $targets = $failurefiles | where { $<em>.Name -like ($name + &quot;+*&quot;)
-                        } | sort Name
- if ($targets.count -le $ArchivesToKeep) { continue
-                        }
- 0..$($targets.count - $ArchivesToKeep - 1) |
- foreach { if (-not $DoNotDelete){remove-item $targets[$</em>
-                                ].fullname ; if($?){$FailureFileCounter++
-                                }
-                            }
-                        }
-                    }</p>
-
+$targets = $failurefiles | where { $<em>.Name -like ($name + &quot;+*&quot;)
+} | sort Name
+if ($targets.count -le $ArchivesToKeep) { continue
+}
+0..$($targets.count - $ArchivesToKeep - 1) |
+foreach { if (-not $DoNotDelete){remove-item $targets[$</em>
+].fullname ; if($?){$FailureFileCounter++
+}
+}
+}
+}</p>
 <p>foreach ($name in $successnames)
 {
- $targets = $successfiles | where { $<em>.Name -like ($name + &quot;+*&quot;)
-                        } | sort Name
- if ($targets.count -le $ArchivesToKeep) { continue
-                        }
- 0..$($targets.count - $ArchivesToKeep - 1) |
- foreach { if (-not $DoNotDelete){remove-item $targets[$</em>
-                                ].fullname ; if($?){$SuccessFileCounter++
-                                }
-                            }
-                        }
-                    }</p>
-
+$targets = $successfiles | where { $<em>.Name -like ($name + &quot;+*&quot;)
+} | sort Name
+if ($targets.count -le $ArchivesToKeep) { continue
+}
+0..$($targets.count - $ArchivesToKeep - 1) |
+foreach { if (-not $DoNotDelete){remove-item $targets[$</em>
+].fullname ; if($?){$SuccessFileCounter++
+}
+}
+}
+}</p>
 <h1 id="default-report">Default Report</h1>
-
 <p>[String
-                    ] $SuccessFileCounter + &quot; files deleted out of the set of &quot; + [String
-                    ] $successfiles.count + &quot; successful reset files.&quot;
+] $SuccessFileCounter + &quot; files deleted out of the set of &quot; + [String
+] $successfiles.count + &quot; successful reset files.&quot;
 [String
-                    ] $FailureFileCounter + &quot; files deleted out of the set of &quot; + [String
-                    ] $failurefiles.count + &quot; failure reset files.&quot;
+] $FailureFileCounter + &quot; files deleted out of the set of &quot; + [String
+] $failurefiles.count + &quot; failure reset files.&quot;
 &quot;`n&quot;</p>
-
 <p>&amp;nbsp;</p>
-
 <p>[/code
-                    ]</p>
-
-<p></div></p>
+]</p>
+<!-- raw HTML omitted -->
 
     
 </div>
@@ -447,7 +369,10 @@ if ($VerboseReporting) { $successnames ; &quot;`n&quot;
             <i class="fa fa-tags"></i>
             <div class="links">
                 
-                    <a href="/tags/archive">archive</a>
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
                 
             </div>
         </div>
@@ -462,21 +387,24 @@ if ($VerboseReporting) { $successnames ; &quot;`n&quot;
     </div>
 
     
-        
-    
-
-     
+        <div id="comments-container">
+            
+            
 
         </div>
+    
 
-        
+    </div>
+
+    
 <footer>
     <div class="container">
 
         
         <div class="recent-posts">
             <strong>Latest posts</strong>
-                <ul>
+            <ul>
+                
                 
                     <li>
                         <a href="https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/">Investigate Alerts in Microsoft Azure Using SOAR</a>
@@ -502,42 +430,53 @@ if ($VerboseReporting) { $successnames ; &quot;`n&quot;
                         <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
                     </li>
                 
-                </ul>
+                    <li>
+                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
+                    </li>
+                
+            </ul>
         </div>
         
 
         
         <div class="categories">
             <a href="/categories/"><strong>Categories</strong></a>
-                <ul>
+            <ul>
                 
-                    <li>
-                        <a href="/categories/swimlane">Swimlane (17)</a>
-                    </li>
+                <li>
+                    <a href="/categories/swimlane">Swimlane
+                        (17)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/powershell">Powershell (7)</a>
-                    </li>
+                <li>
+                    <a href="/categories/powershell">Powershell
+                        (7)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/azure">Azure (4)</a>
-                    </li>
+                <li>
+                    <a href="/categories/azure">Azure
+                        (4)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/automation">Automation (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/automation">Automation
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/how-to">How to (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/how-to">How to
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/python">Python (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/python">Python
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/slack">Slack (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/slack">Slack
+                        (1)</a>
+                </li>
                 
             </ul>
         </div>
@@ -548,22 +487,6 @@ if ($VerboseReporting) { $successnames ; &quot;`n&quot;
             <div class="external-profiles">
                 <strong>Social media</strong>
 
-                
-                
-                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
-                
-                
-                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
                 
             </div>
             
@@ -580,20 +503,21 @@ if ($VerboseReporting) { $successnames ; &quot;`n&quot;
             <a href="https://github.com/Lednerb" target="_blank">
                 &copy;
                 
-                    2018
+                2018
                 
                 by Lednerb
             </a>
-	    
+            
         </div>
         <div class="author">
-            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
         </div>
     </div>
 </div>
 
 
-        
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -606,76 +530,28 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-        
-
-        
-        
-        <script type="text/javascript" src="/js/externalDependencies.39c47e10e241eae2947b3fe21809c572.js" integrity="md5-OcR&#43;EOJB6uKUez/iGAnFcg=="></script>
-
-        
-        
-        <script type="text/javascript" src="/js/theme.ff50ae6dc1bfc220b23bf69dbb41b54e.js" integrity="md5-/1CubcG/wiCyO/adu0G1Tg=="></script>
-
-        <script>
-            $(".moment").each(function() {
-                $(this).text(
-                    moment( $(this).text() )
-                        .locale( "en" )
-                        .format('LL')
-                );
-            });
-
-            $(".footnote-return sup").html("");
-        </script>
-
-        
-            
-        
-
-        
-            <script>
-    var client = algoliasearch("NLP9E0F1NO", "a4ffdf988b82857fa86f4403da30ec7f");
-    var index = client.initIndex("prod_msadministrator");
-
-    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
-      [
-        {
-          
-            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
-          
-          displayKey: function(suggestion) {
-            return suggestion.title || suggestion.author
-          },
-          templates: {
-            suggestion: function(suggestion) {
-                return "<span class='entry " + suggestion.type + "'>"
-                      + "<span class='title'>" + suggestion.title + "</span>"
-                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
-                  + "</span>"
-                ;
-            },
-            empty: function() {
-              return "<span class='empty'>Nothing found.</span>"
-            },
-            footer: function() {
-              return '<div class="branding">Powered by <img src="https:\/\/letsautomate.it\/dist\/algolia-logo-light.svg" /></div>'
-            }
-
-          },
-        }
-      ])
-      .on('autocomplete:selected', function(event, suggestion, dataset) {
-        window.location = (suggestion.url);
-      })
-      .keypress(function (event, suggestion) {
-        if (event.which == 13) {
-          window.location = (suggestion.url);
-        }
-      });
-</script>
-
-        
+    
 
 
-    </body>
+    <script type="text/javascript" src="https://letsautomate.it/theme.js"></script>
+
+    
+    
+    
+
+    
+    <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
+  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
+  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+</body>
+
 </html>

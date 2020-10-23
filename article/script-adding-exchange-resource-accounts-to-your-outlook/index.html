@@ -1,59 +1,58 @@
+
+  
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
-        <meta name="author" content="Josh Rickard">
-        <meta name="description" content="Lets Automate It">
-        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-        <meta name="generator" content="Hugo 0.58.1" />
-        <title> Script Adding Exchange Resource Accounts to Your Outlook | Lets Automate It</title>
-        <meta name="description" content="Script Adding Exchange Resource Accounts to Your Outlook - Lets Automate It">
-        <meta itemprop="name" content="Script Adding Exchange Resource Accounts to Your Outlook">
-        <meta itemprop="description" content="Script Adding Exchange Resource Accounts to Your Outlook - Lets Automate It">
-        <meta property="og:title" content="Script Adding Exchange Resource Accounts to Your Outlook">
-        <meta property="og:description" content="Script Adding Exchange Resource Accounts to Your Outlook - Lets Automate It">
-        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
-        <meta property="og:url" content="https://letsautomate.it/article/script-adding-exchange-resource-accounts-to-your-outlook/">
-        <meta property="og:site_name" content="Lets Automate It">
-        <meta property="og:type" content="article">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-16x16.png" sizes="16x16">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <title>
+        
+           
+               Script Adding Exchange Resource Accounts to Your Outlook &vert; Lets Automate It
+           
+        
+    </title>
+    <meta name="description" content="Script Adding Exchange Resource Accounts to Your Outlook - Lets Automate It">
+    <meta itemprop="name" content="Script Adding Exchange Resource Accounts to Your Outlook">
+    <meta itemprop="description" content="Script Adding Exchange Resource Accounts to Your Outlook - Lets Automate It">
+    <meta property="og:title" content="Script Adding Exchange Resource Accounts to Your Outlook">
+    <meta property="og:description" content="Script Adding Exchange Resource Accounts to Your Outlook - Lets Automate It">
+    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:url" content="https://letsautomate.it/article/script-adding-exchange-resource-accounts-to-your-outlook/">
+    <meta property="og:site_name" content="Lets Automate It">
+    <meta property="og:type" content="article">
 
-	
-	  <link href="/article/script-adding-exchange-resource-accounts-to-your-outlook/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-	  <link href="/article/script-adding-exchange-resource-accounts-to-your-outlook/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
-	
+    
 
-        
-        
-        
-        
-        <link rel="stylesheet" href="/sass/combined.min.7f83b77967030d2b9718ae20e651f09824a213fef01829749559bbe9dfb82c4f.css">
 
-        
+    <script src="/modernizr-simple.js"></script>
 
+    
+    <link href="/article/script-adding-exchange-resource-accounts-to-your-outlook/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="/article/script-adding-exchange-resource-accounts-to-your-outlook/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    
+
+    
+
+    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+
+    
+
+    
         
-            
-        
-    </head>
-    <body class="bilberry-hugo-theme">
-        
-<nav>
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+
+    
+    <nav>
 
     <div class="container">
         <ul class="topnav">
@@ -74,7 +73,7 @@ if (!doNotTrack) {
 
         
             <div id="search-box" class="search">
-                <i class="fa fa-search"></i>
+                <i class="fas fa-search"></i>
                 <input id="search" type="text" placeholder="Search ...">
             </div>
         
@@ -82,49 +81,60 @@ if (!doNotTrack) {
 </nav>
 
 
-        <header>
-    <div class="container">
-        <div class="logo">
-            <a href="/" class="logo">
-                
-                    <img src="/images/default.jpg" alt="">
-                
-
-                <span class="overlay"><i class="fa fa-home"></i></span>
-            </a>
-        </div>
-        <div class="titles">
-            <h3 class="title"><a href="/">Lets Automate It</a></h3>
-            
-                <span class="subtitle">from Josh Rickard</span>
-            
-        </div>
-
     
+    <header>
 
-        
-        <div class="toggler">
-        
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>
-    </div>
-</header>
+        <div class="container">
+            <div class="logo">
+                <a href="/" class="logo">
+                    
+                        <img src="/images/default.jpg" alt="">
+                    
 
+                    <span class="overlay"><i class="fa fa-home"></i></span>
+                </a>
+            </div>
+            <div class="titles">
+                <h3 class="title">
+                    <a href="/">
+                        Lets Automate It
+                    </a>
+                </h3>
 
-        <div class="main container">
+                
+                    <span class="subtitle">from Josh Rickard</span>
+                
+            </div>
+
             
-     
+
+            
+                <div class="toggler">
+            
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+            </div>
+    </header>
+
+
+    <div class="main container">
+        
     <div class="article-wrapper u-cf single">
         
             <a class="bubble" href="https://letsautomate.it/article/script-adding-exchange-resource-accounts-to-your-outlook/">
-    <i class="fa fa-fw fa-pencil"></i>
+    <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
 <article class="default article">
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/script-adding-exchange-resource-accounts-to-your-outlook/">Script Adding Exchange Resource Accounts to Your Outlook</a></h3>
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/script-adding-exchange-resource-accounts-to-your-outlook/">
+            Script Adding Exchange Resource Accounts to Your Outlook
+        </a>
+    </h1>
+
     <div class="meta">
         
             
@@ -137,91 +147,84 @@ if (!doNotTrack) {
         
 
         
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
         
     </div>
 
     
-        <p>I work for a large public University and we have many Resource Accounts.  We needed a way to move from Public Folders but we wanted it to be seemless as possible.  To do this, I created this VBS script that allows anyone to add Resource Accounts to their Outlook <sup>2013</sup>&frasl;<sub>2010</sub> calendar as a shared calendar.  The user in question will have to run this script while Outlook is open and it will pull the Resource Account (add the Resource Account name in the RESOURCEACCOUNTNAME variable below) from the GAL and add it to the users calendar.  I hope this helps anyone interested in doing the same.</p>
+        
 
+        <p>I work for a large public University and we have many Resource Accounts.  We needed a way to move from Public Folders but we wanted it to be seemless as possible.  To do this, I created this VBS script that allows anyone to add Resource Accounts to their Outlook 2013/2010 calendar as a shared calendar.  The user in question will have to run this script while Outlook is open and it will pull the Resource Account (add the Resource Account name in the RESOURCEACCOUNTNAME variable below) from the GAL and add it to the users calendar.  I hope this helps anyone interested in doing the same.</p>
 <p>[code
-                    ]</p>
-
+]</p>
 <p>&lsquo;**************************************************************************
-&lsquo; Script Name: ADDCALENDAR.vbs
-&lsquo; Version: 1.0
-&lsquo; Author: Josh Rickard
+' Script Name: ADDCALENDAR.vbs
+' Version: 1.0
+' Author: Josh Rickard
 &lsquo;Last Updated: 4.Nov.2013
-&lsquo; Purpose: This program is used to add Room Resource Calendars to
-&lsquo; someones Microsoft Office 2013 Shared Calendars group.
-&lsquo; Outlook 2013 has to be open for this script to continue.
-&lsquo; This script was originally created for the Trulaske
-&lsquo; University of REDACTED Technology Services Department.
-&lsquo; Legal: Script provided &quot;AS IS&quot; without warranties or guarantees
-&lsquo; of any kind. USE AT YOUR OWN RISK. Public domain.
+' Purpose: This program is used to add Room Resource Calendars to
+' someones Microsoft Office 2013 Shared Calendars group.
+' Outlook 2013 has to be open for this script to continue.
+' This script was originally created for the Trulaske
+' University of REDACTED Technology Services Department.
+' Legal: Script provided &quot;AS IS&quot; without warranties or guarantees
+' of any kind. USE AT YOUR OWN RISK. Public domain.
 &lsquo;**************************************************************************
- Dim objApp
- Dim objNS
- Dim objFolder
- Dim strName(3)
- Dim objDummy
- Dim objRecip
- Dim calendar
- strName(0) = &quot;RESOURCEACCOUNTNAME&quot;
- strName(1) = &quot;RESOURCEACCOUNTNAME&quot;
- strName(2) = &quot;RESOURCEACCOUNTNAME&quot;
- strName(3) = &quot;RESOURCEACCOUNTNAME&quot;</p>
-
+Dim objApp
+Dim objNS
+Dim objFolder
+Dim strName(3)
+Dim objDummy
+Dim objRecip
+Dim calendar
+strName(0) = &quot;RESOURCEACCOUNTNAME&quot;
+strName(1) = &quot;RESOURCEACCOUNTNAME&quot;
+strName(2) = &quot;RESOURCEACCOUNTNAME&quot;
+strName(3) = &quot;RESOURCEACCOUNTNAME&quot;</p>
 <p>Const olMailItem = 0
- Const olFolderCalendar = 9</p>
-
+Const olFolderCalendar = 9</p>
 <p>&amp;nbsp;</p>
-
-<p>&rsquo; This section checks to see if Outlook 2013 is open. If it is not
-&lsquo; It will return &quot;Please Open Outlook and run this program again&quot;</p>
-
+<p>' This section checks to see if Outlook 2013 is open. If it is not
+' It will return &quot;Please Open Outlook and run this program again&quot;</p>
 <p>&lsquo;Change &quot;Outlook.Application.15&quot; to &quot;Outlook.Application.14&quot; for Outlook 2010
 On Error Resume Next
 Dim Outlook: Set Outlook = GetObject(, &quot;Outlook.Application.15&quot;)</p>
-
 <p>If Err.Number = 0 Then
- MsgBox &quot;This program will add Room Calendars to your mailbox.&quot;
+MsgBox &quot;This program will add Room Calendars to your mailbox.&quot;
 Else
- MsgBox &quot;Please Open Outlook and run this program again.&quot;
- Err.Clear
+MsgBox &quot;Please Open Outlook and run this program again.&quot;
+Err.Clear
 End If</p>
-
 <p>&amp;nbsp;
-&lsquo; For Each Next Loop while adds each calendar from strName(array) to the users Shared Calendars</p>
-
+' For Each Next Loop while adds each calendar from strName(array) to the users Shared Calendars</p>
 <p>For Each calendar In strName</p>
-
 <p>Set objApp = CreateObject(&quot;Outlook.Application.15&quot;)
- Set objNS = objApp.GetNamespace(&quot;MAPI&quot;)
- Set objFolder = Nothing</p>
-
+Set objNS = objApp.GetNamespace(&quot;MAPI&quot;)
+Set objFolder = Nothing</p>
 <p>Set objDummy = objApp.CreateItem(olMailItem)
- Set objRecip = objDummy.Recipients.Add(calendar)
- objRecip.Resolve
- If objRecip.Resolved = True Then
- On Error Resume Next
- Set objFolder = objNS.GetSharedDefaultFolder(objRecip, olFolderCalendar)
- On Error GoTo 0
- Else
- MsgBox &quot;Could not find &quot;,
-                    , _
- &quot;User not found&quot;
- End If</p>
-
+Set objRecip = objDummy.Recipients.Add(calendar)
+objRecip.Resolve
+If objRecip.Resolved = True Then
+On Error Resume Next
+Set objFolder = objNS.GetSharedDefaultFolder(objRecip, olFolderCalendar)
+On Error GoTo 0
+Else
+MsgBox &quot;Could not find &quot;,
+, _
+&quot;User not found&quot;
+End If</p>
 <p>Next</p>
-
 <p>Set GetOtherUserCalendar = objFolder
- Set objApp = Nothing
- Set objNS = Nothing
- Set objFolder = Nothing</p>
-
+Set objApp = Nothing
+Set objNS = Nothing
+Set objFolder = Nothing</p>
 <p>[/code
-                    ]</p>
+]</p>
 
     
 </div>
@@ -235,7 +238,10 @@ End If</p>
             <i class="fa fa-tags"></i>
             <div class="links">
                 
-                    <a href="/tags/archive">archive</a>
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
                 
             </div>
         </div>
@@ -250,21 +256,24 @@ End If</p>
     </div>
 
     
-        
-    
-
-     
+        <div id="comments-container">
+            
+            
 
         </div>
+    
 
-        
+    </div>
+
+    
 <footer>
     <div class="container">
 
         
         <div class="recent-posts">
             <strong>Latest posts</strong>
-                <ul>
+            <ul>
+                
                 
                     <li>
                         <a href="https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/">Investigate Alerts in Microsoft Azure Using SOAR</a>
@@ -290,42 +299,53 @@ End If</p>
                         <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
                     </li>
                 
-                </ul>
+                    <li>
+                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
+                    </li>
+                
+            </ul>
         </div>
         
 
         
         <div class="categories">
             <a href="/categories/"><strong>Categories</strong></a>
-                <ul>
+            <ul>
                 
-                    <li>
-                        <a href="/categories/swimlane">Swimlane (17)</a>
-                    </li>
+                <li>
+                    <a href="/categories/swimlane">Swimlane
+                        (17)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/powershell">Powershell (7)</a>
-                    </li>
+                <li>
+                    <a href="/categories/powershell">Powershell
+                        (7)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/azure">Azure (4)</a>
-                    </li>
+                <li>
+                    <a href="/categories/azure">Azure
+                        (4)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/automation">Automation (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/automation">Automation
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/how-to">How to (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/how-to">How to
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/python">Python (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/python">Python
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/slack">Slack (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/slack">Slack
+                        (1)</a>
+                </li>
                 
             </ul>
         </div>
@@ -336,22 +356,6 @@ End If</p>
             <div class="external-profiles">
                 <strong>Social media</strong>
 
-                
-                
-                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
-                
-                
-                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
                 
             </div>
             
@@ -368,20 +372,21 @@ End If</p>
             <a href="https://github.com/Lednerb" target="_blank">
                 &copy;
                 
-                    2018
+                2018
                 
                 by Lednerb
             </a>
-	    
+            
         </div>
         <div class="author">
-            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
         </div>
     </div>
 </div>
 
 
-        
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -394,76 +399,28 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-        
-
-        
-        
-        <script type="text/javascript" src="/js/externalDependencies.39c47e10e241eae2947b3fe21809c572.js" integrity="md5-OcR&#43;EOJB6uKUez/iGAnFcg=="></script>
-
-        
-        
-        <script type="text/javascript" src="/js/theme.ff50ae6dc1bfc220b23bf69dbb41b54e.js" integrity="md5-/1CubcG/wiCyO/adu0G1Tg=="></script>
-
-        <script>
-            $(".moment").each(function() {
-                $(this).text(
-                    moment( $(this).text() )
-                        .locale( "en" )
-                        .format('LL')
-                );
-            });
-
-            $(".footnote-return sup").html("");
-        </script>
-
-        
-            
-        
-
-        
-            <script>
-    var client = algoliasearch("NLP9E0F1NO", "a4ffdf988b82857fa86f4403da30ec7f");
-    var index = client.initIndex("prod_msadministrator");
-
-    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
-      [
-        {
-          
-            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
-          
-          displayKey: function(suggestion) {
-            return suggestion.title || suggestion.author
-          },
-          templates: {
-            suggestion: function(suggestion) {
-                return "<span class='entry " + suggestion.type + "'>"
-                      + "<span class='title'>" + suggestion.title + "</span>"
-                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
-                  + "</span>"
-                ;
-            },
-            empty: function() {
-              return "<span class='empty'>Nothing found.</span>"
-            },
-            footer: function() {
-              return '<div class="branding">Powered by <img src="https:\/\/letsautomate.it\/dist\/algolia-logo-light.svg" /></div>'
-            }
-
-          },
-        }
-      ])
-      .on('autocomplete:selected', function(event, suggestion, dataset) {
-        window.location = (suggestion.url);
-      })
-      .keypress(function (event, suggestion) {
-        if (event.which == 13) {
-          window.location = (suggestion.url);
-        }
-      });
-</script>
-
-        
+    
 
 
-    </body>
+    <script type="text/javascript" src="https://letsautomate.it/theme.js"></script>
+
+    
+    
+    
+
+    
+    <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
+  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
+  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+</body>
+
 </html>

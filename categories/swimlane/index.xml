@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>swimlane on Lets Automate It</title>
@@ -6,11 +6,7 @@
     <description>Recent content in swimlane on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Dec 2019 12:03:34 -0600</lastBuildDate>
-    
-	<atom:link href="https://letsautomate.it/categories/swimlane/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 18 Dec 2019 12:03:34 -0600</lastBuildDate><atom:link href="https://letsautomate.it/categories/swimlane/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Investigate Alerts in Microsoft Azure Using SOAR</title>
       <link>https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/</link>
@@ -117,7 +113,7 @@ After stumbling across a few endpoints I had not seen previously, I decided to w
       
       <guid>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</guid>
       <description>Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced py-ews to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.
-Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&amp;rsquo; mailboxes.</description>
+Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&#39; mailboxes.</description>
     </item>
     
     <item>

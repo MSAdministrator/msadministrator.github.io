@@ -1,59 +1,58 @@
+
+  
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
-        <meta name="author" content="Josh Rickard">
-        <meta name="description" content="Lets Automate It">
-        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-        <meta name="generator" content="Hugo 0.58.1" />
-        <title> Design Before Coding Kanban | Lets Automate It</title>
-        <meta name="description" content="Design Before Coding Kanban - Lets Automate It">
-        <meta itemprop="name" content="Design Before Coding Kanban">
-        <meta itemprop="description" content="Design Before Coding Kanban - Lets Automate It">
-        <meta property="og:title" content="Design Before Coding Kanban">
-        <meta property="og:description" content="Design Before Coding Kanban - Lets Automate It">
-        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
-        <meta property="og:url" content="https://letsautomate.it/article/design-before-coding-kanban/">
-        <meta property="og:site_name" content="Lets Automate It">
-        <meta property="og:type" content="article">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-16x16.png" sizes="16x16">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <title>
+        
+           
+               Design Before Coding Kanban &vert; Lets Automate It
+           
+        
+    </title>
+    <meta name="description" content="Design Before Coding Kanban - Lets Automate It">
+    <meta itemprop="name" content="Design Before Coding Kanban">
+    <meta itemprop="description" content="Design Before Coding Kanban - Lets Automate It">
+    <meta property="og:title" content="Design Before Coding Kanban">
+    <meta property="og:description" content="Design Before Coding Kanban - Lets Automate It">
+    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:url" content="https://letsautomate.it/article/design-before-coding-kanban/">
+    <meta property="og:site_name" content="Lets Automate It">
+    <meta property="og:type" content="article">
 
-	
-	  <link href="/article/design-before-coding-kanban/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-	  <link href="/article/design-before-coding-kanban/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
-	
+    
 
-        
-        
-        
-        
-        <link rel="stylesheet" href="/sass/combined.min.7f83b77967030d2b9718ae20e651f09824a213fef01829749559bbe9dfb82c4f.css">
 
-        
+    <script src="/modernizr-simple.js"></script>
 
+    
+    <link href="/article/design-before-coding-kanban/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="/article/design-before-coding-kanban/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    
+
+    
+
+    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+
+    
+
+    
         
-            
-        
-    </head>
-    <body class="bilberry-hugo-theme">
-        
-<nav>
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+
+    
+    <nav>
 
     <div class="container">
         <ul class="topnav">
@@ -74,7 +73,7 @@ if (!doNotTrack) {
 
         
             <div id="search-box" class="search">
-                <i class="fa fa-search"></i>
+                <i class="fas fa-search"></i>
                 <input id="search" type="text" placeholder="Search ...">
             </div>
         
@@ -82,49 +81,60 @@ if (!doNotTrack) {
 </nav>
 
 
-        <header>
-    <div class="container">
-        <div class="logo">
-            <a href="/" class="logo">
-                
-                    <img src="/images/default.jpg" alt="">
-                
-
-                <span class="overlay"><i class="fa fa-home"></i></span>
-            </a>
-        </div>
-        <div class="titles">
-            <h3 class="title"><a href="/">Lets Automate It</a></h3>
-            
-                <span class="subtitle">from Josh Rickard</span>
-            
-        </div>
-
     
+    <header>
 
-        
-        <div class="toggler">
-        
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>
-    </div>
-</header>
+        <div class="container">
+            <div class="logo">
+                <a href="/" class="logo">
+                    
+                        <img src="/images/default.jpg" alt="">
+                    
 
+                    <span class="overlay"><i class="fa fa-home"></i></span>
+                </a>
+            </div>
+            <div class="titles">
+                <h3 class="title">
+                    <a href="/">
+                        Lets Automate It
+                    </a>
+                </h3>
 
-        <div class="main container">
+                
+                    <span class="subtitle">from Josh Rickard</span>
+                
+            </div>
+
             
-     
+
+            
+                <div class="toggler">
+            
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+            </div>
+    </header>
+
+
+    <div class="main container">
+        
     <div class="article-wrapper u-cf single">
         
             <a class="bubble" href="https://letsautomate.it/article/design-before-coding-kanban/">
-    <i class="fa fa-fw fa-pencil"></i>
+    <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
 <article class="default article">
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/design-before-coding-kanban/">Design Before Coding Kanban</a></h3>
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/design-before-coding-kanban/">
+            Design Before Coding Kanban
+        </a>
+    </h1>
+
     <div class="meta">
         
             
@@ -137,45 +147,32 @@ if (!doNotTrack) {
         
 
         
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
         
     </div>
 
     
-        <p>The first post in this three-part series focused on gathering requirements before spending time coding.  While it is not necessary, I recommend that everyone read part 1 (<a href="https://msadministrator.com/2017/03/29/design-before-coding-gathering-requirements/">Gathering Requirements</a>).  Understanding and having clear “User Stories” outlining the intended purpose of a tool is crucial, especially as we move towards building our new tool.</p>
+        
 
+        <p>The first post in this three-part series focused on gathering requirements before spending time coding.  While it is not necessary, I recommend that everyone read part 1 (<!-- raw HTML omitted -->Gathering Requirements<!-- raw HTML omitted -->).  Understanding and having clear “User Stories” outlining the intended purpose of a tool is crucial, especially as we move towards building our new tool.</p>
 <p>Once our “User Stories” have been defined and agreed upon by all stakeholders, we then need to begin breaking them down into tasks.  There are many different methodologies that allow us to track these different tasks. Part 2 of this three-part series will focus on one of them; Kanban.</p>
-
-<p>I use Kanban daily, both personally and professionally.  If you want to understand the principles of Kanban, then I recommend that you start with <a href="https://en.wikipedia.org/wiki/Kanban">this</a> Wikipedia page. No matter what methodology or process you use, having a consistent and repeatable utility is a must.</p>
-
+<p>I use Kanban daily, both personally and professionally.  If you want to understand the principles of Kanban, then I recommend that you start with <!-- raw HTML omitted -->this<!-- raw HTML omitted --> Wikipedia page. No matter what methodology or process you use, having a consistent and repeatable utility is a must.</p>
 <p>This post will go over using Kanban both digitally and manually, but first you must understand the general purpose of Kanban.  Tracking our work can be difficult, especially with the use of E-mail, Slack, Skype, Teams, Yammer, HipChat, etc. etc.  The constant communication that is available to us is overwhelming, but having a central location that you can organize your “To-Do’s” or tasks is necessary.  Not for our management or organizations tracking purposes, it is so that we can track exactly what we need to do next.</p>
-
-<p><img class="alignnone size-full wp-image-355" src="https://msadministrator.files.wordpress.com/2017/03/factory-35081_1280.png" alt="factory-35081_1280" width="1280" height="1006" /></p>
-
-<p>The theory of Kanban is to visually identify items that need to be worked on. Kanban allows you to understand what tasks need to be worked on, which ones are in-progress, and which ones are complete.  Using this information, we begin to identify any blockers or obstacles that may need to be fixed so that an item/task can move from “To Do” to “Done”.  This principle helps us identify our WIP (Work in Progress) so that the flow between “gates” or “hand-off points” is as smooth and controlled as possible.  Think of this like an assembly line:
-<p style="text-align:center;padding-left:60px;"><em>Let’s say we have two workers in an assembly line.  The first person’s job is to paint a car door handle, the second person’s job is to install that door handle on a new car.  If the first person can paint 5 handles in 10 minutes, but the second person takes 10 minutes to install the handle; we have a problem.  This means that we either need to increase staff that install car door handles or maybe the same person should do both.</em></p>
-Understanding these blockers will help us identify gaps in our processes, or the lack of labor to accomplish our goals.  Visually displaying this information on a Kanban board is much easier to understand than a bunch of tasks lists or “tickets”.</p>
-
-<p>There are many tools available for a digital Kanban board.  I have listed a few below that are both free and paid.  In my professional life, I use <a href="https://www.atlassian.com/software/jira">Jira’s</a> Kanban feature.  In my personal life, I use both a whiteboard with post-it notes and built-in features of GitHub Projects (<a href="https://github.com/MSAdministrator/GitHubCardsExample/projects/1">example</a>):
-<ul>
-    <li><a href="https://trello.com/">Trello</a></li>
-    <li><a href="http://volerro.com/index.php">Vollero</a></li>
-    <li><a href="http://kanbantool.com/free-kanban-board">Kanban Tool</a></li>
-    <li><a href="http://www.kanbanchi.com/">Kanbanchi</a></li>
-    <li><a href="https://taiga.io/">Taiga.io</a></li>
-    <li><a href="https://clubhouse.io/">Clubhouse.io</a></li>
-</ul>
-If you just do a quick google search for “free Kanban tools” or go to <a href="http://github.com/">GitHub.com</a> and search for “<a href="https://github.com/search?utf8=%E2%9C%93&amp;q=kanban&amp;type=">Kanban</a>” you will find many open source projects that you can host yourself.  If you don’t want to host it yourself, then check out <a href="https://www.digitalocean.com/">DigitalOcean.com</a>.  If you think a digital tool would work for you, you can even use Outlook (<a href="https://github.com/frederik/outlook-task-kanban">here</a> or <a href="https://github.com/evrenvarol/outlook-taskboard">here</a>) or <a href="https://www.sortd.com/">Gmail</a> to manage your tasks in the Kanban style.</p>
-
-<p>I’m not sure about you, but I personally carry a leather-bound notebook (with <a href="http://www.doanepaper.com/">DoanePaper</a>) with me wherever I go.  Whether at work, out with friends, going to bed, etc., I always have my notebook.  In my opinion a digital tool is great, but I’m faster at writing things down on paper than I am opening an app.  Plus, I always have it with me.</p>
-
-<p><img class="alignnone size-full wp-image-361" src="https://msadministrator.files.wordpress.com/2017/03/simple-kanban-board.jpg" alt="Simple-kanban-board-" width="2355" height="1404" /></p>
-
+<p><!-- raw HTML omitted --></p>
+<p>The theory of Kanban is to visually identify items that need to be worked on. Kanban allows you to understand what tasks need to be worked on, which ones are in-progress, and which ones are complete.  Using this information, we begin to identify any blockers or obstacles that may need to be fixed so that an item/task can move from “To Do” to “Done”.  This principle helps us identify our WIP (Work in Progress) so that the flow between “gates” or “hand-off points” is as smooth and controlled as possible.  Think of this like an assembly line:</p>
+<!-- raw HTML omitted -->
+<p>There are many tools available for a digital Kanban board.  I have listed a few below that are both free and paid.  In my professional life, I use <!-- raw HTML omitted -->Jira’s<!-- raw HTML omitted --> Kanban feature.  In my personal life, I use both a whiteboard with post-it notes and built-in features of GitHub Projects (<!-- raw HTML omitted -->example<!-- raw HTML omitted -->):</p>
+<!-- raw HTML omitted -->
+<p>I’m not sure about you, but I personally carry a leather-bound notebook (with <!-- raw HTML omitted -->DoanePaper<!-- raw HTML omitted -->) with me wherever I go.  Whether at work, out with friends, going to bed, etc., I always have my notebook.  In my opinion a digital tool is great, but I’m faster at writing things down on paper than I am opening an app.  Plus, I always have it with me.</p>
+<p><!-- raw HTML omitted --></p>
 <p>Another option or addition is by using a whiteboard in your home or work office.  The first thing you do is draw some columns.  Typically, you have three different columns: To-Do, In-Progress, and Done.  Starting out you will have everything in your To-Do column.  As you begin a new task you move that sticky-note to the In-Progress column.  If that item gets blocked or cannot be completed, you should move it back to the To-Do column.  You should only have a few items In-Progress (ideally, you would only have one).  Once you have completed that task, you move it to the Done column.</p>
-
 <p>That’s it! Kanban allows you to visually see tasks and progress you are making on your projects.  The manual process is great for a single person or a team that is in close quarters.  If you’re spread out or in a cubicle this may not work as well.  This is where having a platform like Jira or Trello really shines.  Especially for teams that are global or in different locations.</p>
-
-<p>Kanban is powerful, yet extremely simple. Using a tool to manage your tasks so that you understand exactly what you, your team, and others are working on reduces potential re-work while also making sure that all tasks for a project are complete (and on-time).  The third post in this series I will take the concepts of both post <a href="https://msadministrator.com/2017/03/29/design-before-coding-gathering-requirements/">one</a> and two, and we will begin to breakdown our User Stories onto our Kanban board.  Remember, we have not started coding yet.  Next, we will design how our stakeholders may use our new tool.  Understanding this, will speed up our development time and reduce re-work.</p>
+<p>Kanban is powerful, yet extremely simple. Using a tool to manage your tasks so that you understand exactly what you, your team, and others are working on reduces potential re-work while also making sure that all tasks for a project are complete (and on-time).  The third post in this series I will take the concepts of both post <!-- raw HTML omitted -->one<!-- raw HTML omitted --> and two, and we will begin to breakdown our User Stories onto our Kanban board.  Remember, we have not started coding yet.  Next, we will design how our stakeholders may use our new tool.  Understanding this, will speed up our development time and reduce re-work.</p>
 
     
 </div>
@@ -189,7 +186,10 @@ If you just do a quick google search for “free Kanban tools” or go to <a hre
             <i class="fa fa-tags"></i>
             <div class="links">
                 
-                    <a href="/tags/archive">archive</a>
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
                 
             </div>
         </div>
@@ -204,21 +204,24 @@ If you just do a quick google search for “free Kanban tools” or go to <a hre
     </div>
 
     
-        
-    
-
-     
+        <div id="comments-container">
+            
+            
 
         </div>
+    
 
-        
+    </div>
+
+    
 <footer>
     <div class="container">
 
         
         <div class="recent-posts">
             <strong>Latest posts</strong>
-                <ul>
+            <ul>
+                
                 
                     <li>
                         <a href="https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/">Investigate Alerts in Microsoft Azure Using SOAR</a>
@@ -244,42 +247,53 @@ If you just do a quick google search for “free Kanban tools” or go to <a hre
                         <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
                     </li>
                 
-                </ul>
+                    <li>
+                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
+                    </li>
+                
+            </ul>
         </div>
         
 
         
         <div class="categories">
             <a href="/categories/"><strong>Categories</strong></a>
-                <ul>
+            <ul>
                 
-                    <li>
-                        <a href="/categories/swimlane">Swimlane (17)</a>
-                    </li>
+                <li>
+                    <a href="/categories/swimlane">Swimlane
+                        (17)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/powershell">Powershell (7)</a>
-                    </li>
+                <li>
+                    <a href="/categories/powershell">Powershell
+                        (7)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/azure">Azure (4)</a>
-                    </li>
+                <li>
+                    <a href="/categories/azure">Azure
+                        (4)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/automation">Automation (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/automation">Automation
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/how-to">How to (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/how-to">How to
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/python">Python (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/python">Python
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/slack">Slack (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/slack">Slack
+                        (1)</a>
+                </li>
                 
             </ul>
         </div>
@@ -290,22 +304,6 @@ If you just do a quick google search for “free Kanban tools” or go to <a hre
             <div class="external-profiles">
                 <strong>Social media</strong>
 
-                
-                
-                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
-                
-                
-                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
                 
             </div>
             
@@ -322,20 +320,21 @@ If you just do a quick google search for “free Kanban tools” or go to <a hre
             <a href="https://github.com/Lednerb" target="_blank">
                 &copy;
                 
-                    2018
+                2018
                 
                 by Lednerb
             </a>
-	    
+            
         </div>
         <div class="author">
-            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
         </div>
     </div>
 </div>
 
 
-        
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -348,76 +347,28 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-        
-
-        
-        
-        <script type="text/javascript" src="/js/externalDependencies.39c47e10e241eae2947b3fe21809c572.js" integrity="md5-OcR&#43;EOJB6uKUez/iGAnFcg=="></script>
-
-        
-        
-        <script type="text/javascript" src="/js/theme.ff50ae6dc1bfc220b23bf69dbb41b54e.js" integrity="md5-/1CubcG/wiCyO/adu0G1Tg=="></script>
-
-        <script>
-            $(".moment").each(function() {
-                $(this).text(
-                    moment( $(this).text() )
-                        .locale( "en" )
-                        .format('LL')
-                );
-            });
-
-            $(".footnote-return sup").html("");
-        </script>
-
-        
-            
-        
-
-        
-            <script>
-    var client = algoliasearch("NLP9E0F1NO", "a4ffdf988b82857fa86f4403da30ec7f");
-    var index = client.initIndex("prod_msadministrator");
-
-    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
-      [
-        {
-          
-            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
-          
-          displayKey: function(suggestion) {
-            return suggestion.title || suggestion.author
-          },
-          templates: {
-            suggestion: function(suggestion) {
-                return "<span class='entry " + suggestion.type + "'>"
-                      + "<span class='title'>" + suggestion.title + "</span>"
-                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
-                  + "</span>"
-                ;
-            },
-            empty: function() {
-              return "<span class='empty'>Nothing found.</span>"
-            },
-            footer: function() {
-              return '<div class="branding">Powered by <img src="https:\/\/letsautomate.it\/dist\/algolia-logo-light.svg" /></div>'
-            }
-
-          },
-        }
-      ])
-      .on('autocomplete:selected', function(event, suggestion, dataset) {
-        window.location = (suggestion.url);
-      })
-      .keypress(function (event, suggestion) {
-        if (event.which == 13) {
-          window.location = (suggestion.url);
-        }
-      });
-</script>
-
-        
+    
 
 
-    </body>
+    <script type="text/javascript" src="https://letsautomate.it/theme.js"></script>
+
+    
+    
+    
+
+    
+    <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
+  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
+  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+</body>
+
 </html>

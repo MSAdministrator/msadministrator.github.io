@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Josh Rickard on Lets Automate It</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Josh Rickard on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Dec 2019 12:03:34 -0600</lastBuildDate>
-    
-	<atom:link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 18 Dec 2019 12:03:34 -0600</lastBuildDate><atom:link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Investigate Alerts in Microsoft Azure Using SOAR</title>
       <link>https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/</link>
@@ -117,7 +113,7 @@ After stumbling across a few endpoints I had not seen previously, I decided to w
       
       <guid>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</guid>
       <description>Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced py-ews to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.
-Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&amp;rsquo; mailboxes.</description>
+Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&#39; mailboxes.</description>
     </item>
     
     <item>
@@ -191,7 +187,7 @@ Traditionally in a security operations center (SOC), malware analysis—more spe
       <guid>https://letsautomate.it/article/python-vs-powershell-part-1-versioning/</guid>
       <description>I posted a tweet earlier this week asking if anyone would be interested in a small series of posts that explain the differences between Python and PowerShell.
 So, here we go!
-Python on macOS Python and PowerShell are quite a bit different from each other. Python has been around for several years and works on multiple operating systems. Additionally, Python is beloved by it&amp;rsquo;s extremely supportive open-source community; rightfully so!</description>
+Python on macOS Python and PowerShell are quite a bit different from each other. Python has been around for several years and works on multiple operating systems. Additionally, Python is beloved by it&amp;rsquo;s extremely supportive open-source community; rightfully so! Python is fast and portable, and is a go to for most developers.</description>
     </item>
     
     <item>
@@ -279,8 +275,8 @@ First thing is that we should go ahead and log into the Azure Portal. In the top
       <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/using-qnamaker-to-create-chatbot/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: &#34;ca-pub-1514695391372140&#34;, enable_page_level_ads: true });  The first thing we need to do is login to QnAMaker. QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.
-Login to QnAMaker and navigate to the Create a knowledge base tab.</description>
+      <description>The first thing we need to do is login to QnAMaker. QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.
+Login to QnAMaker and navigate to the Create a knowledge base tab. You will need to walkthrough 5 steps to create your knowledge base.</description>
     </item>
     
     <item>
@@ -320,7 +316,7 @@ I purchased 2 8ft butcher block countertops from Lumber Liquidators while they w
       <pubDate>Tue, 07 Aug 2018 20:45:30 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/using-docker-compose-on-windows/</guid>
-      <description>Docker Compose &amp;ldquo;is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application&amp;rsquo;s services.&amp;rdquo; In this post, I will show how you can work with Docker Compose.
+      <description>Docker Compose&amp;ldquo;is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application&amp;rsquo;s services.&amp;rdquo; In this post, I will show how you can work with Docker Compose.
 Docker on Windows is now commonplace, and it comes with additional features you may not be familiar with. In my previous posts Install Docker and run containers on Windowsand Create a Docker container on Windows with a Dockerfile, I showed you how to create a single container.</description>
     </item>
     
@@ -330,9 +326,8 @@ Docker on Windows is now commonplace, and it comes with additional features you 
       <pubDate>Tue, 07 Aug 2018 20:45:28 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/</guid>
-      <description>Early this evening I sent this tweet out regarding a #PowerShell Function I wrote called Confirm-DateTimeFormatPattern and Dan Franciscus (@dan_franciscus) recommend that I should blog about it, so here it goes!
-
-To elaborate on that tweet, this Function spawned from a larger initiative that I am working on for a presentation I&amp;rsquo;m giving at PowerShell Summit 2018 in April. That presentation will be about a PowerShell Module I have built called PSLogging, which is a logging framework built using PowerShell Classes.</description>
+      <description>Early this evening I sent thistweet out regarding a #PowerShell Function I wrote called Confirm-DateTimeFormatPatternand Dan Franciscus (@dan_franciscus) recommend that I should blog about it, so here it goes!
+To elaborate on that tweet, this Function spawned from a larger initiative that I am working on for a presentation I&amp;rsquo;m giving at PowerShell Summit 2018in April. That presentation will be about a PowerShell Module I have built called PSLogging, which is a logging framework built using PowerShell Classes.</description>
     </item>
     
     <item>
@@ -342,7 +337,7 @@ To elaborate on that tweet, this Function spawned from a larger initiative that 
       
       <guid>https://letsautomate.it/article/create-group-policy-adm-and-admx-templates/</guid>
       <description>The easiest way to create an ADMX template is to build an ADM template first and then convert the latter with the help of Microsoft&amp;rsquo;s free ADMX Migrator tool.
-Administrative templates let us create custom Group Policy settings. Administrative template files have two different versions. Windows Vista introduced templates with the .ADMX extension. These templates use an XML syntax and can be a lot more difficult to decipher and create by hand.</description>
+Administrative templates let us create custom Group Policy settings. Administrative template files have two different versions. Windows Vistaintroduced templates with the .ADMX extension. These templates use an XML syntax and can be a lot more difficult to decipher and create by hand.</description>
     </item>
     
     <item>
@@ -434,7 +429,7 @@ I believe that people are the answer to most security problems.</description>
       
       <guid>https://letsautomate.it/article/understanding-group-policy-order/</guid>
       <description>Group Policy order can be confusing. To understand how exactly Windows applies one GPO (Group Policy Object) versus another, you can use the &amp;ldquo;LSD OU&amp;rdquo; rule.
-You should always ask yourself two questions when dealing with Group Policy:  Where are you (local, site, domain, or organizational unit)? What are you (computer or user)?  Read More</description>
+You should always ask yourself two questions when dealing with Group Policy:</description>
     </item>
     
     <item>
@@ -443,7 +438,7 @@ You should always ask yourself two questions when dealing with Group Policy:  Wh
       <pubDate>Tue, 07 Aug 2018 20:44:57 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/run-powershell-scripts-as-immediate-scheduled-tasks-with-group-policy/</guid>
-      <description>To run a PowerShell script on multiple computers via Group Policy, you can work with an Immediate Scheduled Task. The main advantage over logon scripts is that you can execute your script with admin rights.
+      <description>To run a PowerShell script on multiple computers via Group Policy, you can work with an Immediate Scheduled Task. The main advantage over logon scriptsis that you can execute your script with admin rights.
 Read More.</description>
     </item>
     
@@ -464,8 +459,7 @@ Read More</description>
       
       <guid>https://letsautomate.it/article/download-files-from-github-without-git-using-powershell/</guid>
       <description>Have you ever needed to download code or a repository from Github, but didn&amp;rsquo;t want to download and install Git on a machine, create an SSH key, etc. If so, I have something that you may like.
-You can find the entire function here: https://github.com/MSAdministrator/GetGithubRepository
-To use this function, you will need to know the path to the Github repository (of course) you want to download. Once you have that URL, you will need to pass each piece of the URL into a parameter on the function.</description>
+You can find the entire function here: https://github.com/MSAdministrator/GetGithubRepositoryTo use this function, you will need to know the path to the Github repository (of course) you want to download. Once you have that URL, you will need to pass each piece of the URL into a parameter on the function.</description>
     </item>
     
     <item>
@@ -474,7 +468,7 @@ To use this function, you will need to know the path to the Github repository (o
       <pubDate>Tue, 07 Aug 2018 20:44:49 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/logging-to-the-windows-event-log-in-your-powershell-scripts/</guid>
-      <description>As I discussed in my previous post, you can log information to a file, but sometimes you may want to log to the Windows Event Log. To log to the Windows Event Log, you will need to use the following cmdlets:  New-EventLog Write-EventLog  Read More</description>
+      <description>As I discussed in my previous post, you can log information to a file, but sometimes you may want to log to the Windows Event Log. To log to the Windows Event Log, you will need to use the following cmdlets:</description>
     </item>
     
     <item>
@@ -513,9 +507,8 @@ Creating tools with PowerShell to automate a manual process or to help an intern
       
       <guid>https://letsautomate.it/article/how-i-work/</guid>
       <description>I recently saw this project shared by Adam Bertram, and decided that some of you may be interested in how I work on a day to day.
-https://github.com/adbertram/HowIWorkIT/blob/master/README.md
-If you&amp;rsquo;re not interested, well then why the hell are you here? You can see others that have participated here: https://github.com/adbertram/HowIWorkIT/blob/master/ThisIsHowIWork.md
-&amp;nbsp; Where are you located? First of all, my name is Josh Rickard and I&amp;rsquo;m located in Columbia, Missouri. It sounds lame, but really it&amp;rsquo;s a great little town.</description>
+https://github.com/adbertram/HowIWorkIT/blob/master/README.mdIf you&amp;rsquo;re not interested, well then why the hell are you here? You can see others that have participated here: https://github.com/adbertram/HowIWorkIT/blob/master/ThisIsHowIWork.md What&amp;rsquo;s one word to describe your work?Creativity
+What do you like the best about your role?The best thing about my position is the ability to experiment and come up with new solutions for problems affecting our customers as well as new products.</description>
     </item>
     
     <item>
@@ -524,9 +517,7 @@ If you&amp;rsquo;re not interested, well then why the hell are you here? You can
       <pubDate>Tue, 07 Aug 2018 20:44:33 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/powershell-qualys-get-asset-group-info-part-2/</guid>
-      <description>Today I decided to write another post regarding PowerShell and Qualys Vulnerability Management API. This post will focus on gathering information about your enrolled Asset Groups. You can find the complete script on GitHub: https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation
-We start of by opening up PowerShell ISE and using our handy &amp;ldquo;Snippet&amp;rdquo; shortcut:
-
+      <description>Today I decided to write another post regarding PowerShell and Qualys Vulnerability Management API. This post will focus on gathering information about your enrolled Asset Groups. You can find the complete script on GitHub: https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformationWe start of by opening up PowerShell ISE and using our handy &amp;ldquo;Snippet&amp;rdquo; shortcut:
 We select the &amp;ldquo;Cmdlet (Advanced function) - complete&amp;rdquo; option in the &amp;ldquo;Snippet&amp;rdquo; context menu. Once we have our advanced function template, we then proceed by entering a name for our Qualys Asset Group function.</description>
     </item>
     
@@ -557,7 +548,9 @@ I hope some people find these slides useful or at least a good reference point. 
       <pubDate>Tue, 07 Aug 2018 20:44:23 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/qualysguard-decentralized-it-how-to-organize-your-assets/</guid>
-      <description>I work for a University with a decentralized IT department: each college, division, department, etc maintains their users. As a security department who maintains QualysGuard, we were wanting each department to scan their own assets and re-mediate all vulnerabilities found in these scans based on the following policy:  Level 4 and Level 5 vulnerabilities must be re-mediated within 15 days Level 3 vulnerabilities must be re-mediated within 30 days Level 2 vulnerabilities must be re-mediated within the next semesters Level 1 vulnerabilities must be re-mediated whenever possible  WIth this policy in mind, we began rolling out our QualysGuard service using the following methods.</description>
+      <description>I work for a University with a decentralized IT department: each college, division, department, etc maintains their users. As a security department who maintains QualysGuard, we were wanting each department to scan their own assets and re-mediate all vulnerabilities found in these scans based on the following policy:
+When dealing with QualysGuard in a decentralized IT infrastructure, your naming convention will save you!
+Once you have a group of Assets in their respective Asset Groups, then we add them to their own Business Unit.</description>
     </item>
     
     <item>
@@ -606,11 +599,8 @@ Because I have not found many posts/articles focused on a decentralized environm
       <description>Now we are going to install MDT 2013. This is a simple process but I wanted to show you anyways.
 After you have downloaded MDT 2013 from Microsoft (See This Post)
 When you first Launch the MDT 2013 Installer, you should see the following screen:
-
 Click Next to Continue
-
 Accept the License Agreement and click Next:
-
 Choose the Location that you want MDT 2013 to be installed. This is typically left alone but you are more than welcome to install it on a separate partition/drive.</description>
     </item>
     
@@ -620,9 +610,8 @@ Choose the Location that you want MDT 2013 to be installed. This is typically le
       <pubDate>Tue, 07 Aug 2018 20:44:06 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/</guid>
-      <description>Once you have all of the necessary files downloaded and saved on your Windows Server 2012 R2 box, then begin by installing the &amp;ldquo;adksetup.exe&amp;rdquo;.
+      <description>Once you have all of the necessary filesdownloaded and saved on your Windows Server 2012 R2 box, then begin by installing the &amp;ldquo;adksetup.exe&amp;rdquo;.
 The first screen that should pop-up is this one:
-
 The Following Screenshots are all based on your own needs but these are the options that I have chosen for this setup:
 I choose to download the ADK instead of installing it. The reason I do this is because I like to keep a backup of the original file, just in case the server crashes or something else happens.</description>
     </item>
@@ -635,7 +624,7 @@ I choose to download the ADK instead of installing it. The reason I do this is b
       <guid>https://letsautomate.it/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/</guid>
       <description>Hello Everyone, in the following few weeks I will creating several new posts about setting MDT 2013 on Windows Server 2012 R2 to enable you to image your Dell OptiPlex &amp;amp; Lattitude machines. This will be similar to my MDT 2012 Update 1 Guide but a bit different as well. I hope you enjoy!
 To Start things off, you need to download the following pieces of software:
-MDT 2013 ADK for Windows 8.</description>
+MDT 2013ADK for Windows 8.</description>
     </item>
     
     <item>
@@ -654,7 +643,7 @@ To do this, you are going to need the following scripts in a folder on your MDT 
       <pubDate>Tue, 07 Aug 2018 20:43:57 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/script-adding-exchange-resource-accounts-to-your-outlook/</guid>
-      <description>I work for a large public University and we have many Resource Accounts. We needed a way to move from Public Folders but we wanted it to be seemless as possible. To do this, I created this VBS script that allows anyone to add Resource Accounts to their Outlook 2013&amp;frasl;2010 calendar as a shared calendar. The user in question will have to run this script while Outlook is open and it will pull the Resource Account (add the Resource Account name in the RESOURCEACCOUNTNAME variable below) from the GAL and add it to the users calendar.</description>
+      <description>I work for a large public University and we have many Resource Accounts. We needed a way to move from Public Folders but we wanted it to be seemless as possible. To do this, I created this VBS script that allows anyone to add Resource Accounts to their Outlook 2013/2010 calendar as a shared calendar. The user in question will have to run this script while Outlook is open and it will pull the Resource Account (add the Resource Account name in the RESOURCEACCOUNTNAME variable below) from the GAL and add it to the users calendar.</description>
     </item>
     
     <item>
@@ -664,7 +653,7 @@ To do this, you are going to need the following scripts in a folder on your MDT 
       
       <guid>https://letsautomate.it/article/script-removing-proxy-from-firefox-user-prefs-js/</guid>
       <description>So, I was tasked with removing proxy settings from Firefox because of Webroot Desktop Proxy. Removing them from the %Programfiles% directory was easy, the hard part was the user prefs.js. Anyways, here&amp;rsquo;s a little script I created to remove Proxy settings and set them to No Proxy.
-cd /D &amp;ldquo;%APPDATA%\Mozilla\Firefox\Profiles\&amp;rdquo; cd *.default set ffile=%cd% type &amp;ldquo;%ffile%\prefs.js&amp;rdquo; | findstr /v &amp;ldquo;userpref(&amp;ldquo;network.proxy.type&amp;rdquo;, 2);&amp;rdquo;&amp;gt;&amp;rdquo;%ffile%\prefs.js&amp;rdquo; type &amp;ldquo;%ffile%\prefs.js&amp;rdquo; | findstr /v &amp;ldquo;userpref(&amp;ldquo;network.proxy.type&amp;rdquo;, 0);&amp;rdquo;&amp;gt;&amp;rdquo;%ffile%\prefs.js&amp;rdquo; ren &amp;ldquo;prefs.js&amp;rdquo; &amp;ldquo;prefs.</description>
+cd /D &amp;ldquo;%APPDATA%\Mozilla\Firefox\Profiles&amp;quot; cd *.default set ffile=%cd% type &amp;ldquo;%ffile%\prefs.js&amp;rdquo; | findstr /v &amp;ldquo;user_pref(&amp;ldquo;network.proxy.type&amp;rdquo;, 2);&amp;quot;&amp;gt;&amp;quot;%ffile%\prefs_.js&amp;rdquo; type &amp;ldquo;%ffile%\prefs.js&amp;rdquo; | findstr /v &amp;ldquo;user_pref(&amp;ldquo;network.proxy.type&amp;rdquo;, 0);&amp;quot;&amp;gt;&amp;quot;%ffile%\prefs_.js&amp;rdquo; ren &amp;ldquo;prefs.js&amp;rdquo; &amp;ldquo;prefs_.</description>
     </item>
     
     <item>
@@ -673,8 +662,9 @@ cd /D &amp;ldquo;%APPDATA%\Mozilla\Firefox\Profiles\&amp;rdquo; cd *.default set
       <pubDate>Tue, 07 Aug 2018 20:43:52 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/</guid>
-      <description>Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way. 
-Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):</description>
+      <description>Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.
+Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
+This script will remove older local administrator passwords that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate in (2 of 3).</description>
     </item>
     
     <item>
@@ -683,8 +673,8 @@ Updating the Passwords of the Local Administrator on remote mahcines (You must h
       <pubDate>Tue, 07 Aug 2018 20:43:49 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-2-of-3/</guid>
-      <description>Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way. 
-Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):</description>
+      <description>Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
+This script will recover the local administrator password that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate.</description>
     </item>
     
     <item>
@@ -715,7 +705,6 @@ It is actually pretty trivial to make this work, all you need to do is install a
       <guid>https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/</guid>
       <description>So I&amp;rsquo;ve had a lot of questions about my MDT 2012 Driver setup and hopefully this post will explain a little bit about it. Let me know if you have any questions
 Personally I have a folder on my server called _Source_Drivers. I keep all my drivers here and import them into MDT but keep the original. Here is what my file structure of this folder looks like.
-
 Once I have my structure setup I then begin to setup the structure on my MDT Deployment Share.</description>
     </item>
     
@@ -725,7 +714,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
       <pubDate>Tue, 07 Aug 2018 20:43:39 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/</guid>
-      <description>So, some might not need this but thought I would share anyways. I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&amp;rsquo;m deploying my new OS. Here are the steps on how to do this, but also how to create a custom Office 2010 Install.  Once you&amp;rsquo;ve setup everything for you OS, go to the Applications folder on your Deployment Share and right click&amp;gt;New Application Once there, put in the relavent information including where your resource CD is located.</description>
+      <description>So, some might not need this but thought I would share anyways. I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&amp;rsquo;m deploying my new OS. Here are the steps on how to do this, but also how to create a custom Office 2010 Install.</description>
     </item>
     
     <item>
@@ -734,8 +723,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
       <pubDate>Tue, 07 Aug 2018 20:43:36 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/</guid>
-      <description>Preparing WDS to enable PXE Boot (optional but very useful)  Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version  
- Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.</description>
+      <description></description>
     </item>
     
     <item>
@@ -744,9 +732,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
       <pubDate>Tue, 07 Aug 2018 20:43:34 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/</guid>
-      <description>Automating the Deployment Process  Right-click on the deployment share and select Properties  
- Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…             CUSTOMSETTINGS.INI   [Settings]
-Priority=Default
+      <description>Priority=Default
 [Default ]
 _SMSTSORGNAME=Customer
 SkipBDDWelcome=YES
@@ -755,7 +741,38 @@ ProductKey= XXXX-XXXX-XXXXX-XXXXX
 OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX
 SkipDeploymentType=YES
 DeploymentType=NEWCOMPUTER
-SkipDomainMembership=NO</description>
+SkipDomainMembership=NO
+JoinDomain=domain.com
+DomainAdminDomain=domain.com
+DomainAdmin=MDTAddComputer
+DomainAdminPassword=Pa55w0rd
+MachineObjectOU=ou=example,dc=domain,dc=com
+OrgName=Customer
+SkipUserData=YES
+SkipTaskSequence=NO
+TaskSequenceID=TASKSEQID
+SkipPackageDisplay=YES
+SkipLocaleSelection=NO
+UILanguage=en-US
+UserLocale=en-GB
+KeyboardLocale=0809: 00000809
+SystemLocale=en-US
+SkipTimeZone=NO
+TimeZoneName=GMT Standard Time
+TimeZone=085
+SkipBitLocker=YES
+SkipSummary=YES
+SkipCapture=YES
+SkipAdminPassword=YES
+SkipApplications=NO
+SkipFinalSummary=NO
+WsusServer=http: //wsus.domain.com
+Home_page=http: //intranet.domain.com
+FinishAction=SHUTDOWNSkips unneeded wizard pages
+Skips unneeded wizard pages
+The Windows product key to use (only required if using MAK keys)
+Sets the deployment type
+Skip the domain membership screen</description>
     </item>
     
     <item>
@@ -764,9 +781,8 @@ SkipDomainMembership=NO</description>
       <pubDate>Tue, 07 Aug 2018 20:43:32 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/</guid>
-      <description>Creating a Deployment Task Sequence  From the Deployment Workbench, expand the customer Deployment Share and right-click on Task Sequences and select New Task Sequence Enter a Task Sequence ID and Name. Make a note of the ID as you may need it later!  
- Accept the default “Standard Client Task Sequence” template Select the relevant OS Image to deploy  
- This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.</description>
+      <description>MAK - Select Specify a multiple activation key (MAK key) for activating this operating systemand enter the relevant key
+This is an additional step we’ve added which sets the “DriverGroup001” variable to “%make%%model% which will automatically pick up the correct drivers from the repository based on manufacturer and model name. If we do not do this, MDT will just trawl through the entire Out-of-Box Drivers repository and try to determine the correct drivers based on PnP ID and it sometimes gets it wrong!</description>
     </item>
     
     <item>
@@ -775,7 +791,7 @@ SkipDomainMembership=NO</description>
       <pubDate>Tue, 07 Aug 2018 20:43:29 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/</guid>
-      <description>Importing a Customer Reference Image  From the Deployment Workbench, expand the customer Deployment Share and right-click on Operating Systems and select Import Operating System From the Import Operating System Wizard, select Custom Image File and click Next Browse to the path of the WIM file. For captured images, this would by default be the \Captures folder in the Deployment Share Select “Copy Windows Vista, Windows Server 2008, or later setup files from specified path” and enter the path to the relevant OS installation media.</description>
+      <description>You should now have everything you need to deploy your Windows 7 image to any hardware. The last step is to create a deployment Task Sequence.</description>
     </item>
     
     <item>
@@ -784,10 +800,7 @@ SkipDomainMembership=NO</description>
       <pubDate>Tue, 07 Aug 2018 20:43:27 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/</guid>
-      <description>Capturing a Windows 7 Image from a reference PC The reference computer should be connected to the same network as the MDT Deployment server and should be set to get an IP address via DHCP.
-&amp;nbsp;
-THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN!
-&amp;nbsp;  Boot the reference computer and ensure network connectivity Make any last-minute modifications (additional software, Windows Updates, etc.) Click Start and type \&amp;lt;MDTSERVER&amp;gt;\share$\scripts\litetouch.</description>
+      <description> THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN! </description>
     </item>
     
     <item>
@@ -796,7 +809,9 @@ THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN!
       <pubDate>Tue, 07 Aug 2018 20:43:24 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/</guid>
-      <description>Completing the Deployment Share Configuration Now you have imported an OS (from source media) and some WinPE drivers, we can go ahead and complete the configuration of the Deployment Share. 6.1 Advanced Configuration The Advanced Configuration section of MDT consists of four separate areas although, we only use the Selection Profiles section for now. The rest are advanced topics which you can explore later! Advanced Configuration – Selection Profiles Created a single additional selection profile – “WinPE Drivers” and configured it to contain only the drivers which Windows PE will use.</description>
+      <description>6.2 More Deployment Share PropertiesNow we return to the Properties page for the deployment share. We need to open the Windows PE x86 Componentstab (and/or the Windows PE x64 Componentsone)
+In the Selection Profile drop down, select the WinPE Drivers profile we just created and then click OK.
+ 6.3 Build the WinPE Boot MediaOnce everything is completed, you can update the deployment share. This will generate (or regenerate) the PXE boot images including loading the relevant drivers to allow the Windows PE environment to talk to the network to enable the deployment.</description>
     </item>
     
     <item>
@@ -805,9 +820,7 @@ THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN!
       <pubDate>Tue, 07 Aug 2018 20:43:22 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/</guid>
-      <description>Creating a Sysprep &amp;amp; Capture Task Sequence The “Task Sequence” is the heart of the MDT deployment solution. It is a list of steps which need to be taken to successfully deploy an Operating System.
-&amp;nbsp;
-Initially you need to create a “Sysprep and Capture” task sequence. Go ahead and do this now. You don’t need to worry too much about which choice of OS you make as it doesn’t matter.</description>
+      <description>Initially you need to create a “Sysprep and Capture” task sequence. Go ahead and do this now. You don’t need to worry too much about which choice of OS you make as it doesn’t matter. Make sure you select the “Sysprep and Capture” template!</description>
     </item>
     
     <item>
@@ -816,9 +829,8 @@ Initially you need to create a “Sysprep and Capture” task sequence. Go ahea
       <pubDate>Tue, 07 Aug 2018 20:43:20 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/</guid>
-      <description>4. Importing an OS Image The Operating Systems section of MDT lists all of the Operating Systems which are available to deploy from a Deployment Share. The deployment itself is controlled by a Task Sequence but the operating system source files need to be available.
-&amp;nbsp;
-Simply right-click on Operating Systems on the left and Import your Windows 7 source media from either DVD or a network share. If you are planning to deploy both 32 and 64 bit versions, import both!</description>
+      <description>Simply right-click on Operating Systems on the left and Import your Windows 7 source media from either DVD or a network share. If you are planning to deploy both 32 and 64 bit versions, import both! You can also import Windows XP, Vista, Server 2003, 2003R2, 2008 and 2008R2 for deployment…
+ Once you’ve created a custom WIM file from your reference PC, you can import this in exactly the same way.</description>
     </item>
     
     <item>
@@ -827,7 +839,8 @@ Simply right-click on Operating Systems on the left and Import your Windows 7 so
       <pubDate>Tue, 07 Aug 2018 20:43:17 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/</guid>
-      <description>Device Driver Management 3.1 Obtaining Device Drivers for a Deployment In order to deploy a single image to multiple hardware types, MDT performs a “driver injection” during the OS load process. For this to work, any and all relevant drivers need to be imported into the deployment share in advance. Depending on the hardware vendor, the process for obtaining these drivers may vary but will generally involve going to the vendor website and downloading the drivers for specific hardware models.</description>
+      <description>For instance, Lenovo drivers are generally downloaded as a single .EXE file which will need to be run to unpack them.
+  The naming of the folders is critical as the deployment process relies on correctly identifying the manufacturer and model number of the computers using a WMI query. For Dell hardware, the manufacturer is identified as “Dell Inc.” and the model is simply the model name followed by the model number (e.</description>
     </item>
     
     <item>
@@ -836,8 +849,8 @@ Simply right-click on Operating Systems on the left and Import your Windows 7 so
       <pubDate>Tue, 07 Aug 2018 20:43:01 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/</guid>
-      <description>2.1 Creating an MDT Deployment Share An MDT Deployment Share is the specific deployment environment which will be used for OS deployment. The share contains all elements of the deployment including drivers, applications, OS images etc.  Log on to the MDT server and open the “Deployment Workbench” Right-click on “Deployment Shares” in the left pane of the workbench and select New Deployment Share  
- In the New Deployment Share Wizard, choose a location for the new share.</description>
+      <description>UserDomain=CONFIG
+SkipBDDWelcome=YES</description>
     </item>
     
     <item>
@@ -846,7 +859,8 @@ Simply right-click on Operating Systems on the left and Import your Windows 7 so
       <pubDate>Tue, 07 Aug 2018 20:42:57 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/</guid>
-      <description>1.0 Deployment Infrastructure Overview The new OS Deployment Infrastructure for the Configuration Centre is based around Microsoft Deployment Toolkit 2010 with Update 1. MDT relies on a number of underlying software components and is able to deploy a number of different Operating Systems including Windows XP, Windows Vista and Windows 7 on the client side and Windows Server 2003, 2008 and 2008 R2 on the server side. This document is focused on deployment of Windows 7 clients.</description>
+      <description>The new Deployment Server should have the following software installed:
+ This deployment server should be configured as part of an Active Directory domain. A standard domain user account should be created and this will be used by the automated processes to access the shares on the MDT server. The examples in this document use the domain contoso.local and any account that is able to join machines to the domain.</description>
     </item>
     
     <item>
@@ -874,8 +888,7 @@ Linux-Windows - Comparison of Commands</description>
       <pubDate>Tue, 07 Aug 2018 20:42:48 -0400</pubDate>
       
       <guid>https://letsautomate.it/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/</guid>
-      <description>So I had an issue awhile back that need to be rectified and the fix was to clean out temporary install files from the Sun/Java folder in User profiles. This had to be done on about 700 machines, so I created this little script that cleans out these files and pushed it out to via AD. I hope you enjoy&amp;hellip;..
-Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary install files from the REM *** SUN/JAVA folder in User Profiles.</description>
+      <description>So I had an issue awhile back that need to be rectified and the fix was to clean out temporary install files from the Sun/Java folder in User profiles. This had to be done on about 700 machines, so I created this little script that cleans out these files and pushed it out to via AD. I hope you enjoy&amp;hellip;..</description>
     </item>
     
     <item>
@@ -894,8 +907,7 @@ Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary
       
       <guid>https://letsautomate.it/article/programming-final-project-for-x86-assembly-language-class-zombie-game/</guid>
       <description>So a few years ago I had to create a Zombie game for one of my Assembly Language classes and it was fun as heck. Sorry for the bad formatting and probably bad code in general, but I wanted to post it because it was fun to create!
-&amp;nbsp;
-Final Project - Assembly Language</description>
+ Final Project - Assembly Language</description>
     </item>
     
     <item>

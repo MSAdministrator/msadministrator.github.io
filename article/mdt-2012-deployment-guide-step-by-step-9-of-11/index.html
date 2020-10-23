@@ -1,59 +1,58 @@
+
+  
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
-        <meta name="author" content="Josh Rickard">
-        <meta name="description" content="Lets Automate It">
-        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-        <meta name="generator" content="Hugo 0.58.1" />
-        <title> Mdt 2012 Deployment Guide Step by Step 9 of 11 | Lets Automate It</title>
-        <meta name="description" content="Mdt 2012 Deployment Guide Step by Step 9 of 11 - Lets Automate It">
-        <meta itemprop="name" content="Mdt 2012 Deployment Guide Step by Step 9 of 11">
-        <meta itemprop="description" content="Mdt 2012 Deployment Guide Step by Step 9 of 11 - Lets Automate It">
-        <meta property="og:title" content="Mdt 2012 Deployment Guide Step by Step 9 of 11">
-        <meta property="og:description" content="Mdt 2012 Deployment Guide Step by Step 9 of 11 - Lets Automate It">
-        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
-        <meta property="og:url" content="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
-        <meta property="og:site_name" content="Lets Automate It">
-        <meta property="og:type" content="article">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-16x16.png" sizes="16x16">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <title>
+        
+           
+               Mdt 2012 Deployment Guide Step by Step 9 of 11 &vert; Lets Automate It
+           
+        
+    </title>
+    <meta name="description" content="Mdt 2012 Deployment Guide Step by Step 9 of 11 - Lets Automate It">
+    <meta itemprop="name" content="Mdt 2012 Deployment Guide Step by Step 9 of 11">
+    <meta itemprop="description" content="Mdt 2012 Deployment Guide Step by Step 9 of 11 - Lets Automate It">
+    <meta property="og:title" content="Mdt 2012 Deployment Guide Step by Step 9 of 11">
+    <meta property="og:description" content="Mdt 2012 Deployment Guide Step by Step 9 of 11 - Lets Automate It">
+    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:url" content="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
+    <meta property="og:site_name" content="Lets Automate It">
+    <meta property="og:type" content="article">
 
-	
-	  <link href="/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-	  <link href="/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
-	
+    
 
-        
-        
-        
-        
-        <link rel="stylesheet" href="/sass/combined.min.7f83b77967030d2b9718ae20e651f09824a213fef01829749559bbe9dfb82c4f.css">
 
-        
+    <script src="/modernizr-simple.js"></script>
 
+    
+    <link href="/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    
+
+    
+
+    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+
+    
+
+    
         
-            
-        
-    </head>
-    <body class="bilberry-hugo-theme">
-        
-<nav>
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+
+    
+    <nav>
 
     <div class="container">
         <ul class="topnav">
@@ -74,7 +73,7 @@ if (!doNotTrack) {
 
         
             <div id="search-box" class="search">
-                <i class="fa fa-search"></i>
+                <i class="fas fa-search"></i>
                 <input id="search" type="text" placeholder="Search ...">
             </div>
         
@@ -82,49 +81,60 @@ if (!doNotTrack) {
 </nav>
 
 
-        <header>
-    <div class="container">
-        <div class="logo">
-            <a href="/" class="logo">
-                
-                    <img src="/images/default.jpg" alt="">
-                
-
-                <span class="overlay"><i class="fa fa-home"></i></span>
-            </a>
-        </div>
-        <div class="titles">
-            <h3 class="title"><a href="/">Lets Automate It</a></h3>
-            
-                <span class="subtitle">from Josh Rickard</span>
-            
-        </div>
-
     
+    <header>
 
-        
-        <div class="toggler">
-        
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>
-    </div>
-</header>
+        <div class="container">
+            <div class="logo">
+                <a href="/" class="logo">
+                    
+                        <img src="/images/default.jpg" alt="">
+                    
 
+                    <span class="overlay"><i class="fa fa-home"></i></span>
+                </a>
+            </div>
+            <div class="titles">
+                <h3 class="title">
+                    <a href="/">
+                        Lets Automate It
+                    </a>
+                </h3>
 
-        <div class="main container">
+                
+                    <span class="subtitle">from Josh Rickard</span>
+                
+            </div>
+
             
-     
+
+            
+                <div class="toggler">
+            
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+            </div>
+    </header>
+
+
+    <div class="main container">
+        
     <div class="article-wrapper u-cf single">
         
             <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
-    <i class="fa fa-fw fa-pencil"></i>
+    <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
 <article class="default article">
     
 
     <div class="content">
-    <h3><a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">Mdt 2012 Deployment Guide Step by Step 9 of 11</a></h3>
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
+            Mdt 2012 Deployment Guide Step by Step 9 of 11
+        </a>
+    </h1>
+
     <div class="meta">
         
             
@@ -137,78 +147,36 @@ if (!doNotTrack) {
         
 
         
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
         
     </div>
 
     
-        <p><h1>Creating a Deployment Task Sequence</h1>
-<ol>
-    <li>From the Deployment Workbench, expand the customer Deployment Share and right-click on <b><i>Task Sequences</i></b> and select <b><i>New Task Sequence</i></b></li>
-    <li>Enter a Task Sequence ID and Name.  Make a note of the ID as you may need it later!</li>
-</ol>
-<p align="center"></p>
-<p align="left"><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/28/" rel="attachment wp-att-109"><img class="alignnone size-full wp-image-109" alt="28" src="http://msadministrator.files.wordpress.com/2012/12/28.png" width="519" height="426" /></a></p></p>
+        
 
-<p><ol>
-    <li>Accept the default <b><i>“Standard Client Task Sequence</i></b>” template</li>
-    <li>Select the relevant OS Image to deploy</li>
-</ol>
-<p align="center"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/29/" rel="attachment wp-att-110"><img class="alignnone size-full wp-image-110" alt="29" src="http://msadministrator.files.wordpress.com/2012/12/29.png" width="519" height="385" /></a></p></p>
-
-<p><ol>
-    <li>This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.</li>
-</ol>
-<b>KMS          -                 </b>Select <b><i>Do not specify a product key at this time</i></b></p>
-
-<p><b>MAK         -                 </b>Select <b><i>Specify a multiple activation key (MAK key) for activating this operating system</i></b></p>
-
+        <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->MAK         -                 <!-- raw HTML omitted -->Select <!-- raw HTML omitted --><!-- raw HTML omitted -->Specify a multiple activation key (MAK key) for activating this operating system<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>and enter the relevant key</p>
-
-<p><b><i> </i></b>
-<ol>
-    <li>Enter the relevant information in the OS Settings page</li>
-</ol>
-<p align="center"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/30/" rel="attachment wp-att-111"><img class="alignnone size-full wp-image-111" alt="30" src="http://msadministrator.files.wordpress.com/2012/12/30.png" width="519" height="425" /></a></p></p>
-
-<p><ol>
-    <li>Enter an Administrator password – this will be the local Admin password for the machines when built (Dilbert)</li>
-    <li>Ensure the summary data is correct</li>
-    <li>Accept the confirmation screen</li>
-</ol>
-<p align="left"></p>
-<p align="left">The task sequence is now created.  We can customise this to our hearts content but generally we don’t need to make too many changes.</p>
-<p align="left"></p>
-&nbsp;
-<p align="left"><b> </b></p></p>
-
-<p><h2>9.1  Task Sequence Properties</h2>
-<p align="left">When you edit a Task Sequence, there are multiple areas of configuration.  The properties of a Task Sequence consists of three tabs – General, Task Sequence and OS Info.</p>
-<p align="left"></p></p>
-
-<p><h3>General Tab</h3>
-The General tab contains the summary information about the Task Sequence including the sequence ID, Name and any comments along with the list of client platforms which the sequence is allowed to run on.
-<p align="left"></p>
-<p align="center"><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/31/" rel="attachment wp-att-112"><img class="alignnone size-full wp-image-112" alt="31" src="http://msadministrator.files.wordpress.com/2012/12/31.png" width="519" height="461" /></a></p></p>
-
-<p><h3>Task Sequence Tab</h3>
-The task sequence example below is based on the “Standard Client Task Sequence” template provided by MDT but the screenshot below includes quite a bit of stuff which wasn’t needed for the environment concerned (sorry).  Both 32 and 64 bit sequences are identical with the exception of the “Install Operating System” step which refers to the appropriate 32 or 64 bit custom OS image.
-<p align="center"><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/32/" rel="attachment wp-att-113"><img class="alignnone size-full wp-image-113" alt="32" src="http://msadministrator.files.wordpress.com/2012/12/32.png" width="519" height="459" /></a></p>
-<b>Set DriverGroup001 Task Sequence Variable Step</b></p>
-
-<p>This is an additional step we’ve added which sets the “DriverGroup001” variable to “%make%\%model% which will automatically pick up the correct drivers from the repository based on manufacturer and model name.  If we do not do this, MDT will just trawl through the entire Out-of-Box Drivers repository and try to determine the correct drivers based on PnP ID and it sometimes gets it wrong!  This gives us a little more control!  <b>NOTE:</b> DriverGroup001 needs to go immediately before the first “Inject Drivers” step.
-<h3>OS Info Tab</h3>
-The OS Info Tab’s contents will vary depending on which OS is being installed by the Task Sequence.  For Windows 7, it simply consists of a single button to edit the <i>unattend.xml</i> file which controls the configuration settings of Windows 7 during deployment.  Most elements of unattend.xml are automatically configured on-the-fly by MDT based on information provided during the Deployment Wizard although you can add additional elements manually.  For MIL, we are letting MDT perform all of the configuration of unattend.xml based on settings we have pre-configured in the CustomSettings.ini (see section 4.1)</p>
-
-<p><b>Copying the Default Profile we Created before we Captured our Image:</b></p>
-
-<p><b> </b></p>
-
-<p><b>                  </b>While within this task sequence we need to modify our Unattend.xml file so that the image will keep our Default Profile.  To do this, we must enable the CopyProfile setting within the Unattend.xml file but we can only do so from the Deployment Task Sequence, and<strong> NOT FROM THE CAPTURE TASK SEQUENCE.</strong>  View the Images below for more details:</p>
-
-<p><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/33/" rel="attachment wp-att-114"><img class="alignnone size-full wp-image-114" alt="33" src="http://msadministrator.files.wordpress.com/2012/12/33.png" width="519" height="410" /></a></p>
-
-<p><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/34/" rel="attachment wp-att-115"><img class="alignnone size-full wp-image-115" alt="34" src="http://msadministrator.files.wordpress.com/2012/12/34.png" width="519" height="410" /></a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>This is an additional step we’ve added which sets the “DriverGroup001” variable to “%make%%model% which will automatically pick up the correct drivers from the repository based on manufacturer and model name.  If we do not do this, MDT will just trawl through the entire Out-of-Box Drivers repository and try to determine the correct drivers based on PnP ID and it sometimes gets it wrong!  This gives us a little more control!  <!-- raw HTML omitted -->NOTE:<!-- raw HTML omitted --> DriverGroup001 needs to go immediately before the first “Inject Drivers” step.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->Copying the Default Profile we Created before we Captured our Image:<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->                  <!-- raw HTML omitted -->While within this task sequence we need to modify our Unattend.xml file so that the image will keep our Default Profile.  To do this, we must enable the CopyProfile setting within the Unattend.xml file but we can only do so from the Deployment Task Sequence, and<!-- raw HTML omitted --> NOT FROM THE CAPTURE TASK SEQUENCE.<!-- raw HTML omitted -->  View the Images below for more details:</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
     
 </div>
@@ -222,7 +190,10 @@ The OS Info Tab’s contents will vary depending on which OS is being installed 
             <i class="fa fa-tags"></i>
             <div class="links">
                 
-                    <a href="/tags/archive">archive</a>
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
                 
             </div>
         </div>
@@ -237,21 +208,24 @@ The OS Info Tab’s contents will vary depending on which OS is being installed 
     </div>
 
     
-        
-    
-
-     
+        <div id="comments-container">
+            
+            
 
         </div>
+    
 
-        
+    </div>
+
+    
 <footer>
     <div class="container">
 
         
         <div class="recent-posts">
             <strong>Latest posts</strong>
-                <ul>
+            <ul>
+                
                 
                     <li>
                         <a href="https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/">Investigate Alerts in Microsoft Azure Using SOAR</a>
@@ -277,42 +251,53 @@ The OS Info Tab’s contents will vary depending on which OS is being installed 
                         <a href="https://letsautomate.it/article/every-security-team-is-a-software-team-now/">Every Security Team Is a Software Team Now</a>
                     </li>
                 
-                </ul>
+                    <li>
+                        <a href="https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/">Microsoft Defender Advanced Threat Detection Queries</a>
+                    </li>
+                
+            </ul>
         </div>
         
 
         
         <div class="categories">
             <a href="/categories/"><strong>Categories</strong></a>
-                <ul>
+            <ul>
                 
-                    <li>
-                        <a href="/categories/swimlane">Swimlane (17)</a>
-                    </li>
+                <li>
+                    <a href="/categories/swimlane">Swimlane
+                        (17)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/powershell">Powershell (7)</a>
-                    </li>
+                <li>
+                    <a href="/categories/powershell">Powershell
+                        (7)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/azure">Azure (4)</a>
-                    </li>
+                <li>
+                    <a href="/categories/azure">Azure
+                        (4)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/automation">Automation (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/automation">Automation
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/how-to">How to (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/how-to">How to
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/python">Python (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/python">Python
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/slack">Slack (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/slack">Slack
+                        (1)</a>
+                </li>
                 
             </ul>
         </div>
@@ -323,22 +308,6 @@ The OS Info Tab’s contents will vary depending on which OS is being installed 
             <div class="external-profiles">
                 <strong>Social media</strong>
 
-                
-                
-                    <a href="https://twitter.com/MS_dministrator" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
-                
-                
-                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
                 
             </div>
             
@@ -355,20 +324,21 @@ The OS Info Tab’s contents will vary depending on which OS is being installed 
             <a href="https://github.com/Lednerb" target="_blank">
                 &copy;
                 
-                    2018
+                2018
                 
                 by Lednerb
             </a>
-	    
+            
         </div>
         <div class="author">
-            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
         </div>
     </div>
 </div>
 
 
-        
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -381,76 +351,28 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-        
-
-        
-        
-        <script type="text/javascript" src="/js/externalDependencies.39c47e10e241eae2947b3fe21809c572.js" integrity="md5-OcR&#43;EOJB6uKUez/iGAnFcg=="></script>
-
-        
-        
-        <script type="text/javascript" src="/js/theme.ff50ae6dc1bfc220b23bf69dbb41b54e.js" integrity="md5-/1CubcG/wiCyO/adu0G1Tg=="></script>
-
-        <script>
-            $(".moment").each(function() {
-                $(this).text(
-                    moment( $(this).text() )
-                        .locale( "en" )
-                        .format('LL')
-                );
-            });
-
-            $(".footnote-return sup").html("");
-        </script>
-
-        
-            
-        
-
-        
-            <script>
-    var client = algoliasearch("NLP9E0F1NO", "a4ffdf988b82857fa86f4403da30ec7f");
-    var index = client.initIndex("prod_msadministrator");
-
-    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
-      [
-        {
-          
-            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
-          
-          displayKey: function(suggestion) {
-            return suggestion.title || suggestion.author
-          },
-          templates: {
-            suggestion: function(suggestion) {
-                return "<span class='entry " + suggestion.type + "'>"
-                      + "<span class='title'>" + suggestion.title + "</span>"
-                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
-                  + "</span>"
-                ;
-            },
-            empty: function() {
-              return "<span class='empty'>Nothing found.</span>"
-            },
-            footer: function() {
-              return '<div class="branding">Powered by <img src="https:\/\/letsautomate.it\/dist\/algolia-logo-light.svg" /></div>'
-            }
-
-          },
-        }
-      ])
-      .on('autocomplete:selected', function(event, suggestion, dataset) {
-        window.location = (suggestion.url);
-      })
-      .keypress(function (event, suggestion) {
-        if (event.which == 13) {
-          window.location = (suggestion.url);
-        }
-      });
-</script>
-
-        
+    
 
 
-    </body>
+    <script type="text/javascript" src="https://letsautomate.it/theme.js"></script>
+
+    
+    
+    
+
+    
+    <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
+  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
+  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+</body>
+
 </html>

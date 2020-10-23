@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>how-to on Lets Automate It</title>
@@ -6,11 +6,7 @@
     <description>Recent content in how-to on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Aug 2018 16:07:25 -0400</lastBuildDate>
-    
-	<atom:link href="https://letsautomate.it/categories/how-to/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 26 Aug 2018 16:07:25 -0400</lastBuildDate><atom:link href="https://letsautomate.it/categories/how-to/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Setup a Hugo Website on GitHub</title>
       <link>https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/</link>
