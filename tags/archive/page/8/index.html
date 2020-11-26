@@ -10,6 +10,12 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="archive"/>
+<meta name="twitter:description" content="Lets Automate It"/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -158,8 +164,7 @@
     </div>
 
     
-        For instance, Lenovo drivers are generally downloaded as a single .EXE file which will need to be run to unpack them.
-  The naming of the folders is critical as the deployment process relies on correctly identifying the manufacturer and model number of the computers using a WMI query. For Dell hardware, the manufacturer is identified as “Dell Inc.” and the model is simply the model name followed by the model number (e.
+        Device Driver Management 3.1 Obtaining Device Drivers for a Deployment In order to deploy a single image to multiple hardware types, MDT performs a “driver injection” during the OS load process. For this to work, any and all relevant drivers need to be imported into the deployment share in advance. Depending on the hardware vendor, the process for obtaining these drivers may vary but will generally involve going to the vendor website and downloading the drivers for specific hardware models.
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/" class="more">Continue reading</a>
@@ -231,9 +236,11 @@
     </div>
 
     
-        UserDomain=CONFIG
-SkipBDDWelcome=YES
+        2.1 Creating an MDT Deployment Share An MDT Deployment Share is the specific deployment environment which will be used for OS deployment. The share contains all elements of the deployment including drivers, applications, OS images etc.  Log on to the MDT server and open the “Deployment Workbench” Right-click on “Deployment Shares” in the left pane of the workbench and select New Deployment Share  
+ In the New Deployment Share Wizard, choose a location for the new share.
 
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -302,8 +309,7 @@ SkipBDDWelcome=YES
     </div>
 
     
-        The new Deployment Server should have the following software installed:
- This deployment server should be configured as part of an Active Directory domain. A standard domain user account should be created and this will be used by the automated processes to access the shares on the MDT server. The examples in this document use the domain contoso.local and any account that is able to join machines to the domain.
+        1.0 Deployment Infrastructure Overview The new OS Deployment Infrastructure for the Configuration Centre is based around Microsoft Deployment Toolkit 2010 with Update 1. MDT relies on a number of underlying software components and is able to deploy a number of different Operating Systems including Windows XP, Windows Vista and Windows 7 on the client side and Windows Server 2003, 2008 and 2008 R2 on the server side. This document is focused on deployment of Windows 7 clients.
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/" class="more">Continue reading</a>
@@ -519,7 +525,10 @@ Linux-Windows - Comparison of Commands
 
     
         So I had an issue awhile back that need to be rectified and the fix was to clean out temporary install files from the Sun/Java folder in User profiles. This had to be done on about 700 machines, so I created this little script that cleans out these files and pushed it out to via AD. I hope you enjoy&hellip;..
+Win 7 - Clean Java Temp Files  CD C:\  CLS  ECHO  REM *** This DELETES temporary install files from the REM *** SUN/JAVA folder in User Profiles.
 
+        
+            <a href="https://letsautomate.it/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/" class="more">Continue reading</a>
         
     
 </div>
@@ -784,9 +793,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

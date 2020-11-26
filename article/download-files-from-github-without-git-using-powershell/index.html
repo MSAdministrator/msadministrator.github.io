@@ -10,6 +10,14 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Download Files From Github Without Git Using Powershell"/>
+<meta name="twitter:description" content="Have you ever needed to download code or a repository from Github, but didn&rsquo;t want to download and install Git on a machine, create an SSH key, etc. If so, I have something that you may like.
+You can find the entire function here: https://github.com/MSAdministrator/GetGithubRepository
+To use this function, you will need to know the path to the Github repository (of course) you want to download. Once you have that URL, you will need to pass each piece of the URL into a parameter on the function."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -160,21 +168,30 @@
         
 
         <p>Have you ever needed to download code or a repository from Github, but didn&rsquo;t want to download and install Git on a machine, create an SSH key, etc. If so, I have something that you may like.</p>
-<p>You can find the entire function here: <!-- raw HTML omitted --><a href="https://github.com/MSAdministrator/GetGithubRepository">https://github.com/MSAdministrator/GetGithubRepository</a><!-- raw HTML omitted --></p>
+<p>You can find the entire function here: <a href="https://github.com/MSAdministrator/GetGithubRepository"><a href="https://github.com/MSAdministrator/GetGithubRepository">https://github.com/MSAdministrator/GetGithubRepository</a></a></p>
 <p>To use this function, you will need to know the path to the Github repository (of course) you want to download.  Once you have that URL, you will need to pass each piece of the URL into a parameter on the function.</p>
 <p>For example, let&rsquo;s take a URL like https: //github.com/MSAdministrator/WriteLogEntry.  This URL can be broken down as follows</p>
-<!-- raw HTML omitted -->
-<p>To use this function, you will need to pass the following values as parameters to the function.  For example, to download my WriteLogEntry repository you will need to call the function like so:<!-- raw HTML omitted -->
+<ul>
+ 	<li>MSAdministrator = Owner</li>
+ 	<li>WriteLogEntry = Repository</li>
+</ul>
+We also know that we want to download the "master" branch of this repository.  The next part is that we need to gather a list of files/paths that we need to download as well.  These will be passed as an array of strings to the FilePath parameter.
+<ul>
+ 	<li>Branch = Master (unless you want a different branch)</li>
+ 	<li>FilePath = (Files and paths you want to download)</li>
+</ul>
+By default this function will always get the master branch of the repository you are wanting to download, but you can specify a different branch if wanted.  Additionally, this function will download the specified files to your user profiles Module Path (C:\users\some_user\Documents\WindowsPowerShell\Modules)
+<p>To use this function, you will need to pass the following values as parameters to the function.  For example, to download my WriteLogEntry repository you will need to call the function like so:<code>
 Get-GithubRepository -Owner MSAdministrator -Repository WriteLogEntry -Verbose -FilePath `
 &lsquo;WriteLogEntry.psm1&rsquo;,
 &lsquo;WriteLogEntry.psd1&rsquo;,
 &lsquo;Public&rsquo;,
 &lsquo;en-US&rsquo;,
 &lsquo;en-US\about_WriteLogEntry.help.txt&rsquo;,
-&lsquo;Public\Write-LogEntry.ps1&rsquo;<!-- raw HTML omitted --></p>
+&lsquo;Public\Write-LogEntry.ps1&rsquo;</code></p>
 <p>I hope that this function helps some of you who want to quickly download a Github repository without installing or using Git.  If you have issues or like this function, please submit issues or fork requests to my Github.</p>
 <p>Enjoy!</p>
-<p>Original Image here: <!-- raw HTML omitted --></p>
+<p>Original Image here: <img src="http://s.quickmeme.com/img/e0/e0d4afacba74c1b28ae4caad6f98e9d2d1689fe8e43dc1ee680214c75eb24e17.jpg" /></p>
 
     
 </div>
@@ -360,9 +377,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

@@ -10,6 +10,12 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="How to Setup a Hugo Website on GitHub"/>
+<meta name="twitter:description" content="I recently transitioned my blog over to GitHub Pages from WordPress. I was using the free version from WordPress.org and I wanted more granular control over the layout. Additionally, I wanted to automate my blog publishing and social media notifications; the free version of WordPress didn&rsquo;t meet my needs. So I looked around and eventually fell in love with Hugo! This post outlines how to go about setting up a GitHub Pages website/blog using Hugo."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -186,7 +192,7 @@ blog
 <h3 id="raw-blog-content-repository">Raw Blog Content Repository</h3>
 <p>The second repository is called (in my case, but it can be whatever you want to call it) <code>blog</code>.  This repository will contain all the raw files and templates that are used by Hugo to generate your <code>public</code> facing GitHub Pages site.  I will explain this further, but just remember this is where the main &ldquo;source&rdquo; of your Hugo site is located and the first repository is where your actual site will exist.</p>
 <p>You should now have two repositories setup similar to how mine look (but with your account name).</p>
-<!-- raw HTML omitted -->
+<img src="screenshot_of_my_two_github_repositories.png" style="max-width:100%;" alt="Screenshot of my two GitHub repositories">
 <p>Now that you have your two empty repositories, let&rsquo;s go ahead and use Git (or you can download directly from GitHub) and clone the <code>blog</code> repository locally.</p>
 <pre><code class="language-git" data-lang="git">cd ~\_GitHub\
 
@@ -546,9 +552,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

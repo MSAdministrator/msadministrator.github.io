@@ -10,6 +10,13 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Traverse Local Certificate Store With Powershell"/>
+<meta name="twitter:description" content="Windows Certificate Store is typically accessed using the MMC Snap-In, You can view both the Computer or User certificate stores using a traditional MMC console. Sometimes though, you may just want to programmatically access it using PowerShell. Luckily you can do this using a PSDrive that is created on your machine.
+As you can see there is a Cert drive and you can access it using PowerShell&rsquo;s multiple location based Cmdlets."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -169,7 +176,7 @@
         
 
         <p>Windows Certificate Store is typically accessed using the MMC Snap-In,  You can view both the Computer or User certificate stores using a traditional MMC console.  Sometimes though, you may just want to programmatically access it using PowerShell.  Luckily you can do this using a PSDrive that is created on your machine.</p>
-<!-- raw HTML omitted -->
+<img src="use_get-psdrive_to_view_all_your_psdrives.png" style="max-width:100%;" alt="Use Get-PSDrive to view all your PSDrives">
 <p>As you can see there is a <code>Cert</code> drive and you can access it using PowerShell&rsquo;s multiple location based Cmdlets.  For example, if you can use <code>cd Cert:\</code> and it will change your current directory to the certificate PSDrive.  You can also use <code>Set-Location</code>,<code>Push-Location</code>, <code>Pop-Location</code> etc. when access your PSDrives.</p>
 <p>Once you have changed your directory to <code>PS Cert:\&gt;</code> you can use your normal tools like <code>ls</code> or <code>dir</code> to identify what is in your certificate stores.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">cd Cert<span style="color:#960050;background-color:#1e0010">:</span>\
@@ -365,9 +372,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

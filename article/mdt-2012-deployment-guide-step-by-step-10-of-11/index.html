@@ -10,6 +10,22 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Mdt 2012 Deployment Guide Step by Step 10 of 11"/>
+<meta name="twitter:description" content="Automating the Deployment Process  Right-click on the deployment share and select Properties  
+ Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…             CUSTOMSETTINGS.INI   [Settings] Priority=Default
+[Default ]
+_SMSTSORGNAME=Customer
+SkipBDDWelcome=YES
+SkipProductKey=YES
+ProductKey= XXXX-XXXX-XXXXX-XXXXX
+OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX
+SkipDeploymentType=YES
+DeploymentType=NEWCOMPUTER
+SkipDomainMembership=NO"/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -159,8 +175,32 @@
     
         
 
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <h1>Automating the Deployment Process</h1>
+<ol>
+	<li>Right-click on the deployment share and select <b><i>Properties</i></b></li>
+</ol>
+<p align="center"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/36/" rel="attachment wp-att-122"><img class="alignnone size-full wp-image-122" alt="36" src="http://msadministrator.files.wordpress.com/2012/12/36.png" width="307" height="294" /></a></p>
+<ol>
+	<li>Select the “<b><i>Rules</i></b>” tab</li>
+	<li>In the main window, edit the settings as required.  A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/35/" rel="attachment wp-att-121"><img class="alignnone size-full wp-image-121" alt="35" src="http://msadministrator.files.wordpress.com/2012/12/351.png" width="519" height="431" /></a></li>
+</ol>
+<table cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td width="54" height="0"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<b>CUSTOMSETTINGS.INI</b>
+<table width="476" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="top" width="203">[Settings]
 <p>Priority=Default</p>
 <p>[Default
 ]</p>
@@ -198,8 +238,8 @@
 <p>SkipFinalSummary=NO</p>
 <p>WsusServer=http: //wsus.domain.com</p>
 <p>Home_page=http: //intranet.domain.com</p>
-<p>FinishAction=SHUTDOWN<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+<p>FinishAction=SHUTDOWN</td></p>
+<td valign="top" width="272">Sets the Company Name during the deployment
 <p>Skips unneeded wizard pages</p>
 <p>Skips unneeded wizard pages</p>
 <p>The Windows product key to use (only required if using MAK keys)</p>
@@ -226,8 +266,12 @@
 <p>Pre-sets the admin password to the value specified</p>
 <p>Allows you to set the local WSUS server for updates</p>
 <p>Sets the default IE homepage for all users of new computers</p>
-<p>Tells the computer to shut down once task sequence is completed<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+<p>Tells the computer to shut down once task sequence is completed</td></p>
+</tr>
+</tbody>
+</table>
+<b> </b>
+<p align="left">If you want to specify the Timezone, Locale or other settings during the deployment, simply change the YES to a NO for the relevant option and you’ll be prompted during deployment.  These settings are injected automatically during deployment into the unattend.xml so you don’t have to worry about messing around with it usually.</p>
 
     
 </div>
@@ -413,9 +457,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

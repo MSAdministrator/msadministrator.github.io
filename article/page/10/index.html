@@ -10,6 +10,12 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Articles"/>
+<meta name="twitter:description" content="Lets Automate It"/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -232,7 +238,7 @@ cd /D &ldquo;%APPDATA%\Mozilla\Firefox\Profiles&quot; cd *.default set ffile=%cd
 
     
         Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.
-Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
+ Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
 This script will remove older local administrator passwords that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate in (2 of 3).
 
         
@@ -305,7 +311,8 @@ This script will remove older local administrator passwords that you have create
     </div>
 
     
-        Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
+        Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.
+ Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
 This script will recover the local administrator password that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate.
 
         
@@ -526,6 +533,7 @@ It is actually pretty trivial to make this work, all you need to do is install a
     
         So I&rsquo;ve had a lot of questions about my MDT 2012 Driver setup and hopefully this post will explain a little bit about it. Let me know if you have any questions
 Personally I have a folder on my server called _Source_Drivers. I keep all my drivers here and import them into MDT but keep the original. Here is what my file structure of this folder looks like.
+
 Once I have my structure setup I then begin to setup the structure on my MDT Deployment Share.
 
         
@@ -599,7 +607,10 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
 
     
         So, some might not need this but thought I would share anyways. I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&rsquo;m deploying my new OS. Here are the steps on how to do this, but also how to create a custom Office 2010 Install.
+ Once you've setup everything for you OS, go to the Applications folder on your Deployment Share and right click&gt;New Application Once there, put in the relavent information including where your resource CD is located.
 
+        
+            <a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/" class="more">Continue reading</a>
         
     
 </div>
@@ -792,9 +803,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

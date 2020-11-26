@@ -10,6 +10,13 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Create a Web App Bot Using Azure Bot Services"/>
+<meta name="twitter:description" content="In my last post, we create a QnA Maker knowledge base that our Azure Web App Bot will use as it’s repository of questions &amp; answers. Now, we are going to create our bot using Azure’s Bot Services.
+First thing is that we should go ahead and log into the Azure Portal. In the top left-hand corner click the Create a resource button. You will then need to Search the marketplace in the New blade for Web App Bot."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -170,19 +177,19 @@
 
         <p>In my last post, we create a QnA Maker knowledge base that our Azure Web App Bot will use as it’s repository of questions &amp; answers.  Now, we are going to create our bot using Azure’s Bot Services.</p>
 <p>First thing is that we should go ahead and log into the <a href="https://portal.azure.com">Azure Portal</a>.  In the top left-hand corner click the Create a resource button.  You will then need to Search the marketplace in the New blade for Web App Bot.</p>
-<!-- raw HTML omitted -->
+<img src="select_create_a_resource_and_search_for_web_app_bot.png" style="max-width:100%;" alt="Select Create a Resource and search for Web App Bot">
 <p>Select Web App Bot from the list.  You will then be presented with a new blade and asked to Create the resource.  Click the Create button now.</p>
 <p>Before the Web App Bot is created, you need to fill in the required fields.  Most of these fields are straight forward but some need further explanation.</p>
-<!-- raw HTML omitted -->
+<img src="fill_out_the_fields_to_create_your_web_app_bot.png" style="max-width:100%;" alt="Fill out the fields to create your Web App Bot">
 <p>You will need to give your Web App Bot a name and select your Subscription plan.  Next, you should select your Resource Group (which was created previously), Location, Pricing tier, and App name.</p>
 <p>Next, you need to select a Bot Template.  Click the Bot template section and new blade will slide out.  There are several different Bot templates to choose from but the one that we need to select for our QnAMaker bot is the Question and Answer bot template.</p>
-<!-- raw HTML omitted -->
+<img src="select_the_question_and_answer_bot_template.png" style="max-width:100%;" alt="Select the Question and Answer bot template">
 <p>Now, click Create to create your Web App Bot.</p>
 <p>You will be redirected to the Azure dashboard.  You will be notified that your Web App Bot has been created successfully in the notification center (looks like bell).  Select the notification icon and click Go to resource.</p>
-<!-- raw HTML omitted -->
+<img src="select_the_notification_section_and_click_go_to_resource.png" style="max-width:100%;" alt="Select the notification section and click Go to resource">
 <p>Select the Test in Web Client section in your Web App Bot resource blade and enter any text you like.  You should receive the following output:</p>
 <p>Please set QnAKnowledgebaseId, QnAAuthKey and QnAEndpointHostName (if applicable) in App Settings. Learn how to get them at <a href="https://aka.ms/qnaabssetup">https://aka.ms/qnaabssetup</a></p>
-<!-- raw HTML omitted -->
+<img src="test_your_web_app_bot_using_the_test_in_web_client_setting.png" style="max-width:100%;" alt="Test your Web App Bot using the Test in Web Client setting">
 <p>If you remember from the previous post I mentioned that we will need the information presented to you when you created your QnAMaker knowledge base.  We will use this information now.</p>
 <p>First, select the Application Settings section and scroll down until you see a list of application settings.  You should see the following settings next to each other:</p>
 <ul>
@@ -191,10 +198,9 @@
 <li>QnAKnowledgebaseId</li>
 </ul>
 <p>These three settings will need a value from our Sample HTTP request from the <a href="https://qnamaker.ai">https://qnamaker.ai</a> website.</p>
-<!-- raw HTML omitted -->
+<img src="a_diagram_of_values_to_their_setting_name.png" style="max-width:100%;" alt="A diagram of values to their setting name">
 <p>Enter your values into the Application Settings pane on your Web App Bot resource and click Save.  Next, let’s test out our new Web App Bot.  Go to Test in web client again and ask your bot a question.</p>
-<!-- raw HTML omitted -->
-
+<img src="your_qnamaker_web_app_bot_should_be_responding._success.png" style="max-width:100%;" alt="Your QnAMaker Web App Bot should be responding. Success">
     
 </div>
 
@@ -389,9 +395,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

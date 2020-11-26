@@ -10,6 +10,13 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!"/>
+<meta name="twitter:description" content="PowerShell is unique, but it is also necessary in today&rsquo;s world. I find that newcomers to the language are sometimes confused or don&rsquo;t understand the basic layers of PowerShell scripting. You can use PowerShell in different ways, but I have yet to find an all encompassing article that explains the high-level of how to interact with PowerShell in these different ways.
+This post will explain the different concepts (or layers) of PowerShell code organization and their main advantages and use cases."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -173,7 +180,7 @@
 <h2 id="console">Console</h2>
 <p>The PowerShell console is a Windows shell environment that is used to invoke the PowerShell engine.  The console is traditionally used when you want to run one-off commands or to invoke other custom scripts, functions, modules, cmdlets, etc.  A typical PowerShell <code>developer</code> will use the console to quickly do a single action.  For example, if you wanted to identify running processes on a computer you would run the <code>Get-Process</code> CmdLet.  You probably would not write a script or function to invoke this simple command unless you wanted to do further action against a process or format the output.</p>
 <p>The PowerShell console is great for these quick and dirty commands, but a PowerShell developer often times does not want to write tons of logic in the console. Instead, you would probably write that logic in a script or function.  I consider the use of the PowerShell console as a quick way of proving that your thoughts or logic will work and not necessarily the final product.  If all you need to do is <code>Get-Process -Name notepad | Stop-Process</code> then just typing that in the console is all you need.  Great!  If you need a little more logic or flow control in your efforts then you will probably choose to write a PowerShell script or function.</p>
-<!-- raw HTML omitted -->
+<img src="PowerShell Console - Get and Stop Process.gif" style="max-width:100%;" alt="PowerShell Console - Get and Stop Process">
 <h2 id="scripts">Scripts</h2>
 <p>PowerShell scripts are placed into a <code>.ps1</code> file type.  These scripts usually contain a logic flow of multiple lines of code that the caller needs to perform.  These may contain loops or if statements; but they do not have to.  Think of the steps that you need to perform to build a cake or a car engine.  Each of these steps are usually outlined, and the steps are a recipe.  In PowerShell these are found in a <code>.ps1</code> file.</p>
 <p>With PowerShell scripts, you will invoke them directly in the PowerShell console.  Invoke is really a fancy way of saying you will call the file directly.  For example, if you have a script that traverses files within a folder and does an action when a file or folder matches the name you&rsquo;re looking for.  You may put this in a script, since it may be something you do frequently or want to save it for someone else to run.</p>
@@ -535,9 +542,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

@@ -10,6 +10,12 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Scripting Mount Printer at Startup Script"/>
+<meta name="twitter:description" content="So I had to come up with a batch script that would allow the user (in a lab) to select the printer that they wanted to use during that login session. Pretty much this was placed in the startup folder on a few lab machines and every time someone would login (Deep Freeze Machines) it would ask them to select the printer that they wanted to print to. It worked pretty well, I hope someone makes use of it."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -160,7 +166,58 @@
         
 
         <p>So I had to come up with a batch script that would allow the user (in a lab) to select the printer that they wanted to use during that login session.  Pretty much this was placed in the startup folder on a few lab machines and every time someone would login (Deep Freeze Machines) it would ask them to select the printer that they wanted to print to.  It worked pretty well, I hope someone makes use of it.</p>
-<!-- raw HTML omitted -->
+<blockquote><code>REM /in = install network printer
+REM /n = printer name
+REM /y = sets as default
+REM
+REM Repeat Add printer commands as needed</code>
+</code><code>
+@ECHO OFF
+CLS
+:BEGIN
+</code><code>
+ECHO.
+ECHO 1 = Printer 1 2 = Printer 2
+ECHO.
+Set /p choice="Choose the number of the default printer you desire"
+ECHO.
+ECHO.
+ECHO.
+IF not '%choice%'=='' set choice=%choice:~0,
+                    1%
+IF '%choice%'=='1' GOTO Printer1
+IF '%choice%'=='2' GOTO Printer2
+</code><code>
+ECHO "%choice%" is not valid please try again
+ECHO.
+GOTO BEGIN
+</code><code>
+<code>: Printer1
+ECHO Installing [BPrinter1
+                    ] on [PrinterServer
+                    ]!
+RunDll32.EXE printui.dll,PrintUIEntry /in /n \\PrinterServer\Printer1
+</code><code>
+ECHO Your default printer is [Printer1
+                    ] on [PrinterServer
+                    ]
+REM Set Default Printer
+RunDll32.EXE printui.dll,PrintUIEntry /y /n \\PrinterServer\Printer1
+GOTO END
+</code><code>
+: Printer2
+ECHO Installing [Printer2
+                    ] on [PrinterServer
+                    ]!
+RunDll32.EXE printui.dll,PrintUIEntry /in /n \\PrinterServer\Printer2
+ECHO Your default printer is [Printer2
+                    ] on [PrinterServer
+                    ]!
+REM Set Default Printer
+RunDll32.EXE printui.dll,PrintUIEntry /y /n \\PrinterServer\Printer2
+GOTO END
+</code><code>
+:END</code></blockquote>
 
     
 </div>
@@ -346,9 +403,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

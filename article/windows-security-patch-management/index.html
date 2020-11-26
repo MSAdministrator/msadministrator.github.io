@@ -10,6 +10,12 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Windows Security Patch Management"/>
+<meta name="twitter:description" content="Recently, at work, I nominated myself to begin a &ldquo;Windows Security&rdquo; course for IT Professionals that I work with. Being a former IT Pro, and now part of our security department as an Incident Responder, I thought I would create a course surrounding security. So, i&rsquo;m going to use my blog to layout my plans for this &ldquo;Windows Security&rdquo; course - which will hopefully be useful for others as well."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -166,7 +172,11 @@
 <p>You can also use SCCM, if your environment can justify the cost, to automate this process to a complete &ldquo;Zero-Touch&rdquo; solution.  My environment does not allow this because we are not a centralized IT department with a standard &ldquo;image&rdquo; across all departments.  Setting up SCCM is cumbersome unless you have full access to the SCCM &ldquo;site server(s)&rdquo;.  Never-the-less, SCCM is extremely powerful and can manage all systems (servers, workstations, etc.) in an automated way - but again, it&rsquo;s pricey.</p>
 <p>If you choose to solely use a &ldquo;fat&rdquo; image and decide to just use a WinPE disc or even Windows Deployment Servers (WDS), just make sure that you update your image every month or at-least quarterly - and do not, I repeat, do not, join it to your domain/network without it being fully patched.</p>
 <p>Deploying Operating Systems is a fairly complicated affair, and we need to utilize the tools available to us - but don&rsquo;t forget about our third party applications as well.  In my environment, most malware outbreaks are caused by either two types of incidents:</p>
-<!-- raw HTML omitted -->
+<ul>
+	<li>Third party products are out of date and malware droppers are taking advantage (either in advertising sites or plan malicious sites) of these exploits.</li>
+	<li>Phishing attempts</li>
+</ul>
+Maintaining our applications is also a crucial step that cannot be overlooked.  Again, you can utilize SCCM for this process (if you can justify it) or you can use additional third party products (Ninite, Secunia PSI, WSUS, etc.).  No matter what you use, you need to make sure that all of your systems are updated, and be able to report on this.
 <p>Having the ability to view your network/systems is a crucial part of a proper &ldquo;Patch Management&rdquo; strategy, so you need to have continual scanning on your network (with the ability to report on systems).  You can either use Nessus, SCCM, QualysGuard, etc., but no matter what, you need this data.  Again, utilize the tools you have - LEARN POWERSHELL!  PowerShell can give you crazy amounts of data - use it, love it, live it.</p>
 <p>The last part of this discussion is about anti-virus/malware software.  Depending on the solution, your organization is using, you should be able to alert on infected systems.  If you&rsquo;re using Microsoft ForeFront Endpoint Protection, then well you may not be able to (besides using PowerShell to gather the log files). It would be preferred if you have a anti-virus/malware solution that has an administrative console or the ability to run reports.</p>
 <p>If you don&rsquo;t have a A/V solution that has this capability, then you need to rely on your Windows Logs and parse them with either Splunk or LogStash or something similar.  Utilizing a system that can correlate this data for you is of immense help - especially if this repository is the same repository as your IDS/IPS logs, Windows Event Logs, etc.</p>
@@ -356,9 +366,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

@@ -10,6 +10,13 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Mdt 2013 Pin Start Menu Task Bar Shortcuts Through Task Sequence"/>
+<meta name="twitter:description" content="Below is how we stopped modifying the Start Menu &amp; Task Bar shortcuts on our Default Image (GOLD IMAGE) using MDT 2013 Task Sequence. This applies to Windows 7 and I&rsquo;m sure it could be modified to work with Windows 8.1. Check it out below and let me know if you have any questions.
+To do this, you are going to need the following scripts in a folder on your MDT 2013 Server."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -680,13 +687,13 @@ End Sub
 <p> </p>
 <p>MDT 2013:</p>
 <p>On your MDT 2013 DeploymentShare$, add an application by right clicking the &ldquo;Applications&rdquo; node and selecting &ldquo;New Application&rdquo;</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_1.png"><img id="i-191" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_1.png?w=250" alt="Image" /></a></p>
 <p>In the new dialogue box, select &ldquo;Application without source files or elsewhere on the network&rdquo; radius button.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<p>Select Next and fill out the information as you would like it to appear (I choose to name my Application as <!-- raw HTML omitted -->&ldquo;Set_TaskBar_&amp;_StartMenu_Shortcuts&rdquo;<!-- raw HTML omitted --> but it&rsquo;s up to you.  If you use something else, then change the first script above accordingly)</p>
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_2.png"><img id="i-195" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_2.png?w=650" alt="Image" /></a></p>
+<p>Select Next and fill out the information as you would like it to appear (I choose to name my Application as <strong>&ldquo;Set_TaskBar_&amp;_StartMenu_Shortcuts&rdquo;</strong> but it&rsquo;s up to you.  If you use something else, then change the first script above accordingly)</p>
 <p>Select Next, then in the Command Line field type &ldquo;Copy_To_Default_User_Startup.cmd&rdquo;</p>
 <p>In the &ldquo;Working directory&rdquo; field, type: &ldquo;.\Applications\Set_TaskBar_&amp;_StartMenu_Shortcuts&rdquo;</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_3.png"><img id="i-214" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_3.png?w=560" alt="Image" /></a></p>
 <p>Select Next, then Finish.</p>
 <p>Now, right click your newly created application and select properties</p>
 <p>Select the check box on the bottom left hand corner of the &ldquo;General&rdquo; tab that says &ldquo;Hide this application in the Deployment Wizard&rdquo;</p>
@@ -694,11 +701,11 @@ End Sub
 <p>After adding the scripts to this folder, go back to the Deployment Workbench and right click your Task Sequence for Windows 7 and select Properties</p>
 <p>Under the State Restore section of the Task Sequence, add a &ldquo;Custom Task&rdquo; after your &ldquo;Install Applications&rdquo; item in the Task Sequence.</p>
 <p>You can add the &ldquo;Custom Task&rdquo; in many different ways but I like to create a &ldquo;New Group&rdquo; after either my &ldquo;Install Applications&rdquo; or &ldquo;Windows Update (Post-Application Installation)&quot;:  Please see below:</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_4.png"><img id="i-225" class="size-full wp-image" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_4.png?w=227" alt="Image" /></a></p>
 <p>After creating the &ldquo;New Group&rdquo; you can name it anything but I choose to name mine as &ldquo;Custom Task&rdquo;.</p>
 <p>Next, you need to add the application to your Task Sequence by selecting the &ldquo;New Group&rdquo; and clicking on Add-&gt;General-&gt;Install Application.</p>
 <p>Configure your new Application as the screenshot</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a href="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_5.png"><img class="alignnone size-full wp-image-230" src="http://msadministrator.files.wordpress.com/2014/03/mdt2013_new_application_5.png" alt="MDT2013_New_Application_5" width="405" height="516" /></a></p>
 <p>Press Apply, then Ok.</p>
 <p>When ever I make changes to my DeploymentShare I always update my Deployment Share for safe measures.  It&rsquo;s also because I never want to forgot to do it when I really need too.</p>
 <p>You should now have a new application that will set the Task Bar and your Start Menu Shortcuts without having to set them in your base image.</p>
@@ -890,9 +897,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

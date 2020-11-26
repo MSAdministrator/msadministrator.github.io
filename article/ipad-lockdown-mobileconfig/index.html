@@ -10,6 +10,13 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Ipad Lockdown Mobileconfig"/>
+<meta name="twitter:description" content="It is possible to put an iPad or iPhone into &lsquo;Store Demo&rsquo; mode so that the home button and swipe to home gesture is disabled. If you have seen the iPads in the Apple Store running the smart sign apps then you will know what I mean.
+It is actually pretty trivial to make this work, all you need to do is install a correctly formatted mobile config plist over the air from a web server."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -164,10 +171,17 @@
 <p>To deliver your config from the web all you have to do is direct the iPhone to a url containing the profile. Just open the link to your .mobileconfig file in safari. If you don&rsquo;t have web space you can just use dropbox public folder URLs or switch on your mac webserver.</p>
 <p>This config file will not load in the iPhone Configuration Utility as it uses keys that IPCU doesn&rsquo;t know about. You can combine this with whatever other enterprise configuration profiles you have in play.</p>
 <p>IPCU is not required to remove the profile. However note that to get your device back to normal you would need to do the following:</p>
-<!-- raw HTML omitted -->
+<ol start="1">
+	<li>Reboot</li>
+	<li>Open the settings app FIRST - don't open anything else or you will need to reboot again</li>
+	<li>Settings-&gt;General-&gt;Profiles-&gt;[your profile
+                    ] remove it.</li>
+	<li>Reboot</li>
+</ol>
+you should be back to normal.
 <p>I have included an example plist that will disable the home button and lock your device into the app.</p>
-<p><!-- raw HTML omitted -->BEWARE<!-- raw HTML omitted --></p>
-<p><!-- raw HTML omitted -->Once this profile is installed the first app that is launched when the device is rebooted will be the only app that will run until you reboot the device again.<!-- raw HTML omitted --> This completely disables the ability to return to the home screen (unless your app crashes) including accessibility assistive touch.</p>
+<p><b>BEWARE</b></p>
+<p><i>Once this profile is installed the first app that is launched when the device is rebooted will be the only app that will run until you reboot the device again.</i> This completely disables the ability to return to the home screen (unless your app crashes) including accessibility assistive touch.</p>
 <p>Note that after installing the profile you must reboot the device (power off, power on) for it to take effect. To remove the profile plug the device into IPCU and delete it then reboot the device. Everything will be back to normal.</p>
 <p>&lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?&gt;
 &lt;!DOCTYPE plist PUBLIC &ldquo;-//Apple//DTD PLIST 1.0//EN&rdquo; &ldquo;<a href="http://www.apple.com/DTDs/PropertyList-1.0.dtd%22">http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;</a>&gt;
@@ -405,9 +419,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

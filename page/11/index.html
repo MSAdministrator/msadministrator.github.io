@@ -10,6 +10,12 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Lets Automate It"/>
+<meta name="twitter:description" content="Lets Automate It"/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -174,8 +180,11 @@
     </div>
 
     
-        
+        Preparing WDS to enable PXE Boot (optional but very useful)  Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version  
+ Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.
 
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -247,7 +256,8 @@
     </div>
 
     
-        Priority=Default
+        Automating the Deployment Process  Right-click on the deployment share and select Properties  
+ Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…             CUSTOMSETTINGS.INI   [Settings] Priority=Default
 [Default ]
 _SMSTSORGNAME=Customer
 SkipBDDWelcome=YES
@@ -257,37 +267,6 @@ OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX
 SkipDeploymentType=YES
 DeploymentType=NEWCOMPUTER
 SkipDomainMembership=NO
-JoinDomain=domain.com
-DomainAdminDomain=domain.com
-DomainAdmin=MDTAddComputer
-DomainAdminPassword=Pa55w0rd
-MachineObjectOU=ou=example,dc=domain,dc=com
-OrgName=Customer
-SkipUserData=YES
-SkipTaskSequence=NO
-TaskSequenceID=TASKSEQID
-SkipPackageDisplay=YES
-SkipLocaleSelection=NO
-UILanguage=en-US
-UserLocale=en-GB
-KeyboardLocale=0809: 00000809
-SystemLocale=en-US
-SkipTimeZone=NO
-TimeZoneName=GMT Standard Time
-TimeZone=085
-SkipBitLocker=YES
-SkipSummary=YES
-SkipCapture=YES
-SkipAdminPassword=YES
-SkipApplications=NO
-SkipFinalSummary=NO
-WsusServer=http: //wsus.domain.com
-Home_page=http: //intranet.domain.com
-FinishAction=SHUTDOWNSkips unneeded wizard pages
-Skips unneeded wizard pages
-The Windows product key to use (only required if using MAK keys)
-Sets the deployment type
-Skip the domain membership screen
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/" class="more">Continue reading</a>
@@ -362,8 +341,9 @@ Skip the domain membership screen
     </div>
 
     
-        MAK - Select Specify a multiple activation key (MAK key) for activating this operating systemand enter the relevant key
-This is an additional step we’ve added which sets the “DriverGroup001” variable to “%make%%model% which will automatically pick up the correct drivers from the repository based on manufacturer and model name. If we do not do this, MDT will just trawl through the entire Out-of-Box Drivers repository and try to determine the correct drivers based on PnP ID and it sometimes gets it wrong!
+        Creating a Deployment Task Sequence  From the Deployment Workbench, expand the customer Deployment Share and right-click on Task Sequences and select New Task Sequence Enter a Task Sequence ID and Name. Make a note of the ID as you may need it later!  
+ Accept the default “Standard Client Task Sequence” template Select the relevant OS Image to deploy  
+ This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" class="more">Continue reading</a>
@@ -438,8 +418,10 @@ This is an additional step we’ve added which sets the “DriverGroup001” var
     </div>
 
     
-        You should now have everything you need to deploy your Windows 7 image to any hardware. The last step is to create a deployment Task Sequence.
+        Importing a Customer Reference Image  From the Deployment Workbench, expand the customer Deployment Share and right-click on Operating Systems and select Import Operating System From the Import Operating System Wizard, select Custom Image File and click Next Browse to the path of the WIM file. For captured images, this would by default be the \Captures folder in the Deployment Share Select “Copy Windows Vista, Windows Server 2008, or later setup files from specified path” and enter the path to the relevant OS installation media.
 
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -511,8 +493,11 @@ This is an additional step we’ve added which sets the “DriverGroup001” var
     </div>
 
     
-         THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN! 
+        Capturing a Windows 7 Image from a reference PC The reference computer should be connected to the same network as the MDT Deployment server and should be set to get an IP address via DHCP.  THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN!
+  Boot the reference computer and ensure network connectivity Make any last-minute modifications (additional software, Windows Updates, etc.) Click Start and type \\&lt;MDTSERVER&gt;\share$\scripts\litetouch.
 
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -584,9 +569,7 @@ This is an additional step we’ve added which sets the “DriverGroup001” var
     </div>
 
     
-        6.2 More Deployment Share PropertiesNow we return to the Properties page for the deployment share. We need to open the Windows PE x86 Componentstab (and/or the Windows PE x64 Componentsone)
-In the Selection Profile drop down, select the WinPE Drivers profile we just created and then click OK.
- 6.3 Build the WinPE Boot MediaOnce everything is completed, you can update the deployment share. This will generate (or regenerate) the PXE boot images including loading the relevant drivers to allow the Windows PE environment to talk to the network to enable the deployment.
+        Completing the Deployment Share Configuration Now you have imported an OS (from source media) and some WinPE drivers, we can go ahead and complete the configuration of the Deployment Share. 6.1 Advanced Configuration The Advanced Configuration section of MDT consists of four separate areas although, we only use the Selection Profiles section for now. The rest are advanced topics which you can explore later! Advanced Configuration – Selection Profiles Created a single additional selection profile – “WinPE Drivers” and configured it to contain only the drivers which Windows PE will use.
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/" class="more">Continue reading</a>
@@ -661,8 +644,10 @@ In the Selection Profile drop down, select the WinPE Drivers profile we just cre
     </div>
 
     
-        Initially you need to create a “Sysprep and Capture” task sequence. Go ahead and do this now. You don’t need to worry too much about which choice of OS you make as it doesn’t matter. Make sure you select the “Sysprep and Capture” template!
+        Creating a Sysprep &amp; Capture Task Sequence The “Task Sequence” is the heart of the MDT deployment solution. It is a list of steps which need to be taken to successfully deploy an Operating System.  Initially you need to create a “Sysprep and Capture” task sequence. Go ahead and do this now. You don’t need to worry too much about which choice of OS you make as it doesn’t matter.
 
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -857,9 +842,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

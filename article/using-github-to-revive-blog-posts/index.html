@@ -10,6 +10,13 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Using Github to Revive Blog Posts"/>
+<meta name="twitter:description" content="I am currently migrating my blog content from Wordpress.com to GitHub pages using Hugo. During this transition, I wanted to have the ability to &ldquo;revive&rdquo; my blog posts on a scheduled basis on social media (e.g. Twitter). With Wordpress, you can use the WordPress Revive Old Posts plugin but with WordPress.com you have to have a premium business account to use plugins.
+If you&rsquo;re in a similar situation of if you want a free way to automate the &ldquo;re-posting&rdquo; of your blog content then you&rsquo;re in luck!"/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -186,9 +193,9 @@
 <h2 id="twitter">Twitter</h2>
 <p>To use this way of reviving your old blog posts you will need to have a Twitter account, but you will also need to generate some keys to post to twitter.  To do this, you will need to create a Twitter Application.</p>
 <p>The first step is to visit <a href="https://dev.twitter.com/apps/new">https://dev.twitter.com/apps/new</a> and create a new Twitter application.  When you create a new Twitter application you will need to provide the required information.</p>
-<!-- raw HTML omitted -->
+<img src="create_twitter_application.gif" style="max-width:100%;" alt="create_twitter_application">
 <p>Next, you will need to select the &ldquo;Keys and Tokens&rdquo; tab and gather all your keys.  <em>Please keep these secure!</em>  We will be using them when we get to the AppVeyor section below.</p>
-<!-- raw HTML omitted -->
+<img src="generate_twitter_api_keys.png" style="max-width:100%;" alt="Generate Twitter API Keys">
 <h2 id="github">GitHub</h2>
 <p>Once you have a GitHub account, you will need to create a new empty repository.  I called mine <code>ReviveBlogPostsCI</code> but you can name yours however you would like.  After you have created your GithUb repository, then go ahead and clone your empty repository to your local machine.</p>
 <pre><code>git clone git@github.com:{account_name}/ReviveBlogPostsCI.git
@@ -196,13 +203,13 @@
 <h2 id="appveyor">AppVeyor</h2>
 <p>AppVeyor is a Continuous Integration product that is free for opensource projects.  It is mostly known to Windows developers that use GitHub, but there are many organizaitons that use it on a daily basis.  Most notabley is <em>Microsoft</em>.</p>
 <p>We first need to create an AppVeyor account. <em>You MUST create your AppVeyor account using your GitHUb credentials.  This is mandatory!</em> You can do this by visiting Appveyor.com and creating your account.</p>
-<!-- raw HTML omitted -->
+<img src="create_your_appveyor_account.gif" style="max-width:100%;" alt="Create your AppVeyor Account">
 <p>Once you have created your account, then you need to head back to AppVeyor and sign in.  Once signed in, then we need to select the &ldquo;New Project&rdquo; button.  If you are signed with your GitHub account then you should see a list of your repositories on the next page.</p>
 <p>Go ahead and select the repository we created earlier.</p>
 <p>Depending on if you want to revive/re-post your blog posts on a scheduled basis or not, you will need to contact appveyor by emailing <a href="team@appveyor.com">team@appveyor.com</a> to ask them to enable the &ldquo;Scheduled Builds&rdquo; feature within your account.  If you DO NOT want to schedule automatic &ldquo;re-posting&rdquo; of old blog posts then you can ignore this step.</p>
 <p>Scheduled Builds allows you to schedule when the CI will run.  You can select a lot of different options as far as scheduling.  For my example, I have choosen to revive old posts twice a day at 11 AM and 6 PM.</p>
 <p>To set this type of schedule you would add the following to your project settings in AppVeyor (this is for only posting at 7PM CST daily):</p>
-<!-- raw HTML omitted -->
+<img src="set_appveyor_build_schedule_once_enabled_by_appveyor_support.png" style="max-width:100%;" alt="Set AppVeyor Build Schedule once enabled by AppVeyor Support">
 <p>If you would like to schedule your build for 7 PM CST then you add <code>0 0 * * *</code> into the Build Schedule.  If you would like your schedule to run twice a day; once at 11AM CST and again at 7PM CST then you would add the following to your Build Schedule:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">0 0,16 * * *
 </code></pre></div><p>You can find out more about scheduled builds and how the patterns work here: <a href="https://www.appveyor.com/docs/build-configuration/#scheduled-builds">https://www.appveyor.com/docs/build-configuration/#scheduled-builds</a></p>
@@ -485,9 +492,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

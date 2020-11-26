@@ -10,6 +10,12 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
+
+<meta name="twitter:title" content="Windows Security Publicprivate Key Exchange Basics"/>
+<meta name="twitter:description" content="My wife and I saw CITIZENFOUR yesterday during a secret screening. If you have not had the chance to see this movie, please do so as soon as you can - it&rsquo;s a great documentary! The only complaint I have about the film is that they do not explain Cryptography or Encryption for the &ldquo;normal&rdquo; folks. When the film ended, I looked around and their were many non-technical people (including older individuals)."/>
+
     <meta name="generator" content="Hugo 0.76.5" />
     <title>
         
@@ -170,7 +176,7 @@
 <p>Now let&rsquo;s get to a real world example.  Now, back to my example above - Mother wants to send data that&rsquo;s secure to her son.  For the mother to send data securely she first needs to get a certificate.  Depending on where the mother lives, she can purchase a certificate from a Certificate Authority (CA) or receive one from her work&rsquo;s CA.  Once the mother has a certificate, she installs into her web browser or email client (for example).</p>
 <p>Now that the certificate is installed, the public key (sometimes the private key as well) is installed on her computer and can be used to encrypt her data.  Since the mother has a public key, it&rsquo;s now in the public and is sent with most communication on the web.  That&rsquo;s okay, remember this is your public key. The mother then sends her public key to her son (by sending an email).  Once her son has his mothers public key, he can now communicate with his mother securely.  Anything that is sent by the son to the mother can be decrypted by the mother because her private key is the only one that can decrypt the message - which is sent encrypted by the mothers public key.</p>
 <p>Below is a great graphical explanation of the Public/Private Key Exchange:</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a href="https://msadministrator.files.wordpress.com/2014/10/gpg-schema.jpg"><img class="alignnone size-medium wp-image-292" src="https://msadministrator.files.wordpress.com/2014/10/gpg-schema.jpg?w=300" alt="GPG-SChema" width="300" height="142" /></a></p>
 <p>This post explains the basics of public/private key exchange and does not go into the details surrounding the multitude of different technologies (i.e. Diffie-Hellman, symmetric and asymmetric key exchanges, etc).  I hope this post has helped people understand the absolute basics of encryption.</p>
 
     
@@ -357,9 +363,9 @@ if (!doNotTrack) {
 
     
     <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="NLP9E0F1NO">
-  <input type="hidden" id="algolia-search-apiKey" value="a4ffdf988b82857fa86f4403da30ec7f">
-  <input type="hidden" id="algolia-search-indexName" value="prod_msadministrator">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   
