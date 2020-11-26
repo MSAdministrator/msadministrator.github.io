@@ -6,22 +6,76 @@
     <description>Recent content in Tags on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Dec 2019 12:03:34 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jul 2020 12:33:03 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Atomic Red Team</title>
+      <link>https://letsautomate.it/tags/atomic-red-team/</link>
+      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/atomic-red-team/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ATT&amp;CK</title>
+      <link>https://letsautomate.it/tags/attck/</link>
+      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/attck/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>https://letsautomate.it/tags/automation/</link>
+      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MITRE</title>
+      <link>https://letsautomate.it/tags/mitre/</link>
+      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/mitre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>soar</title>
+      <link>https://letsautomate.it/tags/soar/</link>
+      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/soar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>insider threats</title>
+      <link>https://letsautomate.it/tags/insider-threats/</link>
+      <pubDate>Fri, 24 Apr 2020 12:37:11 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/insider-threats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://letsautomate.it/tags/windows/</link>
+      <pubDate>Tue, 14 Jan 2020 12:40:08 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Azure</title>
       <link>https://letsautomate.it/tags/azure/</link>
       <pubDate>Wed, 18 Dec 2019 12:03:34 -0600</pubDate>
       
       <guid>https://letsautomate.it/tags/azure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SOAR</title>
-      <link>https://letsautomate.it/tags/soar/</link>
-      <pubDate>Wed, 18 Dec 2019 12:03:34 -0600</pubDate>
-      
-      <guid>https://letsautomate.it/tags/soar/</guid>
       <description></description>
     </item>
     
@@ -94,15 +148,6 @@
       <pubDate>Thu, 15 Aug 2019 14:42:13 -0500</pubDate>
       
       <guid>https://letsautomate.it/tags/vulnerability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>automation</title>
-      <link>https://letsautomate.it/tags/automation/</link>
-      <pubDate>Thu, 01 Aug 2019 14:40:36 -0500</pubDate>
-      
-      <guid>https://letsautomate.it/tags/automation/</guid>
       <description></description>
     </item>
     
@@ -193,24 +238,6 @@
       <pubDate>Thu, 18 Jul 2019 14:37:17 -0500</pubDate>
       
       <guid>https://letsautomate.it/tags/tool/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ATT&amp;CK</title>
-      <link>https://letsautomate.it/tags/attck/</link>
-      <pubDate>Thu, 11 Jul 2019 14:34:27 -0500</pubDate>
-      
-      <guid>https://letsautomate.it/tags/attck/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mitre</title>
-      <link>https://letsautomate.it/tags/mitre/</link>
-      <pubDate>Thu, 11 Jul 2019 14:34:27 -0500</pubDate>
-      
-      <guid>https://letsautomate.it/tags/mitre/</guid>
       <description></description>
     </item>
     

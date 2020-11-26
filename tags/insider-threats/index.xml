@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>insider threats on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/insider-threats/</link>
+    <description>Recent content in insider threats on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Apr 2020 12:37:11 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/insider-threats/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Responding to Insider Threats With Soar</title>
+      <link>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</link>
+      <pubDate>Fri, 24 Apr 2020 12:37:11 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</guid>
+      <description>Insider threats occur when an individual with ties to an organization misuses their access for malicious intent, such as stealing intellectual property or other data. Detecting insider threats can be difficult. But by using a security information and event management (SIEM) system or data loss prevention (DLP) products, you can create alerts to detect the exfiltration of data leaving your organization that is unauthorized or unexpected.
+Once you have detected these events, your security operations center (SOC) needs to investigate rapidly.</description>
+    </item>
+    
+    <item>
+      <title>Identify Malicious Domains Using Soar</title>
+      <link>https://letsautomate.it/article/identify-malicious-domains-using-soar/</link>
+      <pubDate>Wed, 25 Mar 2020 12:38:39 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/identify-malicious-domains-using-soar/</guid>
+      <description>Domain Squatting, typosquatting and IDN homograph attacks are commonplace when it comes to phishing and other forms of social engineering. Attackers use domain squatting and typosquatting of domains to trick users into providing their credentials, distribute malware, harm an organization’s reputation, or otherwise maliciously impersonate a legitimate domain. We&amp;rsquo;ve discussed this topic before and have developed a unique use case with Swimlane to detect this malicious activity automatically.
+Recently, we began to monitor domains related to coronavirus (COVID-19), knowing there would be an increase in traffic to research the outbreak, which could be exploited by bad actors.</description>
+    </item>
+    
+  </channel>
+</rss>

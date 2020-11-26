@@ -6,7 +6,56 @@
     <description>Recent content in Articles on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Dec 2019 12:03:34 -0600</lastBuildDate><atom:link href="https://letsautomate.it/article/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jul 2020 12:33:03 -0600</lastBuildDate><atom:link href="https://letsautomate.it/article/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Attck Testing With Soar and Atomic Red Team</title>
+      <link>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</link>
+      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</guid>
+      <description>MITRE ATT&amp;amp;CK is the defacto framework for organizations to measure their defense posture. ATT&amp;amp;CK provides categorical verticals in the form of tactics, which align to the common methodologies attackers use. Within these verticals are a set (and subsets) of common ways in which attackers accomplish a tactic (vertical). These are known as techniques.
+Some techniques may be common across multiple operating systems. This usually equates to a broad definition of a technique.</description>
+    </item>
+    
+    <item>
+      <title>Making MITRE ATT&amp;CK Actionable</title>
+      <link>https://letsautomate.it/article/making-mitre-attck-actionable/</link>
+      <pubDate>Thu, 16 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/making-mitre-attck-actionable/</guid>
+      <description>The Swimlane Deep Dive team is excited to announce the release of pyattck 2.0 and an equivalent PowerShell version called PSAttck. These open-source tools provide security operations centers (SOCs), defenders and offensive security teams with external data points that enrich MITRE ATT&amp;amp;CK by providing potential commands, queries and even detections for specific techniques. Additionally, these data points enable context related to specific attacker actors or groups, as well as details about different tools used by malicious actors.</description>
+    </item>
+    
+    <item>
+      <title>Responding to Insider Threats With Soar</title>
+      <link>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</link>
+      <pubDate>Fri, 24 Apr 2020 12:37:11 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</guid>
+      <description>Insider threats occur when an individual with ties to an organization misuses their access for malicious intent, such as stealing intellectual property or other data. Detecting insider threats can be difficult. But by using a security information and event management (SIEM) system or data loss prevention (DLP) products, you can create alerts to detect the exfiltration of data leaving your organization that is unauthorized or unexpected.
+Once you have detected these events, your security operations center (SOC) needs to investigate rapidly.</description>
+    </item>
+    
+    <item>
+      <title>Identify Malicious Domains Using Soar</title>
+      <link>https://letsautomate.it/article/identify-malicious-domains-using-soar/</link>
+      <pubDate>Wed, 25 Mar 2020 12:38:39 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/identify-malicious-domains-using-soar/</guid>
+      <description>Domain Squatting, typosquatting and IDN homograph attacks are commonplace when it comes to phishing and other forms of social engineering. Attackers use domain squatting and typosquatting of domains to trick users into providing their credentials, distribute malware, harm an organization’s reputation, or otherwise maliciously impersonate a legitimate domain. We&amp;rsquo;ve discussed this topic before and have developed a unique use case with Swimlane to detect this malicious activity automatically.
+Recently, we began to monitor domains related to coronavirus (COVID-19), knowing there would be an increase in traffic to research the outbreak, which could be exploited by bad actors.</description>
+    </item>
+    
+    <item>
+      <title>You Dont Have Windows 7 in Your Environment Do You</title>
+      <link>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</link>
+      <pubDate>Tue, 14 Jan 2020 12:40:08 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</guid>
+      <description>Today is the day. Microsoft Windows 7 is officially end-of-life (EOL). The Windows 7 operating system was released on October 22, 2009. For 10 years now, IT and system administrators around the globe have relied on their trusty old Windows 7 OS. I mean, it was a step beyond Windows XP for sure. With EOL here, have you migrated all of your systems to Windows 10?
+If you have not migrated, you definitely should.</description>
+    </item>
+    
     <item>
       <title>Investigate Alerts in Microsoft Azure Using SOAR</title>
       <link>https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/</link>

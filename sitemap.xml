@@ -3,8 +3,88 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://letsautomate.it/article/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/atomic-red-team/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/attck/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/author/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/automation/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/categories/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/author/josh-rickard/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://letsautomate.it/</loc>
-    <lastmod>2020-02-02T08:47:39-04:00</lastmod>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/mitre/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/soar/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/categories/swimlane/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/</loc>
+    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/making-mitre-attck-actionable/</loc>
+    <lastmod>2020-07-16T12:33:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/tags/insider-threats/</loc>
+    <lastmod>2020-04-24T12:37:11-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</loc>
+    <lastmod>2020-04-24T12:37:11-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/article/identify-malicious-domains-using-soar/</loc>
+    <lastmod>2020-03-25T12:38:39-06:00</lastmod>
   </url>
   
   <url>
@@ -18,13 +98,13 @@
   </url>
   
   <url>
-    <loc>https://letsautomate.it/article/</loc>
-    <lastmod>2019-12-18T12:03:34-06:00</lastmod>
+    <loc>https://letsautomate.it/tags/windows/</loc>
+    <lastmod>2020-01-14T12:40:08-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://letsautomate.it/author/</loc>
-    <lastmod>2019-12-18T12:03:34-06:00</lastmod>
+    <loc>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</loc>
+    <lastmod>2020-01-14T12:40:08-06:00</lastmod>
   </url>
   
   <url>
@@ -33,32 +113,7 @@
   </url>
   
   <url>
-    <loc>https://letsautomate.it/categories/</loc>
-    <lastmod>2019-12-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/</loc>
-    <lastmod>2019-12-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2019-12-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/tags/soar/</loc>
-    <lastmod>2019-12-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/categories/swimlane/</loc>
-    <lastmod>2019-12-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/tags/</loc>
     <lastmod>2019-12-18T12:03:34-06:00</lastmod>
   </url>
   
@@ -123,11 +178,6 @@
   </url>
   
   <url>
-    <loc>https://letsautomate.it/tags/automation/</loc>
-    <lastmod>2019-08-01T14:40:36-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://letsautomate.it/tags/blackhat/</loc>
     <lastmod>2019-08-01T14:40:36-05:00</lastmod>
   </url>
@@ -185,16 +235,6 @@
   <url>
     <loc>https://letsautomate.it/tags/tool/</loc>
     <lastmod>2019-07-18T14:37:17-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/tags/attck/</loc>
-    <lastmod>2019-07-11T14:34:27-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/tags/mitre/</loc>
-    <lastmod>2019-07-11T14:34:27-05:00</lastmod>
   </url>
   
   <url>

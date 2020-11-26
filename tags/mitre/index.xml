@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mitre on Lets Automate It</title>
+    <title>MITRE on Lets Automate It</title>
     <link>https://letsautomate.it/tags/mitre/</link>
-    <description>Recent content in mitre on Lets Automate It</description>
+    <description>Recent content in MITRE on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jul 2019 14:34:27 -0500</lastBuildDate><atom:link href="https://letsautomate.it/tags/mitre/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jul 2020 12:33:03 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/mitre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Attck Testing With Soar and Atomic Red Team</title>
+      <link>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</link>
+      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</guid>
+      <description>MITRE ATT&amp;amp;CK is the defacto framework for organizations to measure their defense posture. ATT&amp;amp;CK provides categorical verticals in the form of tactics, which align to the common methodologies attackers use. Within these verticals are a set (and subsets) of common ways in which attackers accomplish a tactic (vertical). These are known as techniques.
+Some techniques may be common across multiple operating systems. This usually equates to a broad definition of a technique.</description>
+    </item>
+    
+    <item>
+      <title>Making MITRE ATT&amp;CK Actionable</title>
+      <link>https://letsautomate.it/article/making-mitre-attck-actionable/</link>
+      <pubDate>Thu, 16 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/making-mitre-attck-actionable/</guid>
+      <description>The Swimlane Deep Dive team is excited to announce the release of pyattck 2.0 and an equivalent PowerShell version called PSAttck. These open-source tools provide security operations centers (SOCs), defenders and offensive security teams with external data points that enrich MITRE ATT&amp;amp;CK by providing potential commands, queries and even detections for specific techniques. Additionally, these data points enable context related to specific attacker actors or groups, as well as details about different tools used by malicious actors.</description>
+    </item>
+    
     <item>
       <title>Swimlane&#39;s Research Teams Open Sources pyattck</title>
       <link>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</link>

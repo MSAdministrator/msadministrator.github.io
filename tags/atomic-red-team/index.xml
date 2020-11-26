@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atomic Red Team on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/atomic-red-team/</link>
+    <description>Recent content in Atomic Red Team on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Jul 2020 12:33:03 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/atomic-red-team/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Attck Testing With Soar and Atomic Red Team</title>
+      <link>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</link>
+      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</guid>
+      <description>MITRE ATT&amp;amp;CK is the defacto framework for organizations to measure their defense posture. ATT&amp;amp;CK provides categorical verticals in the form of tactics, which align to the common methodologies attackers use. Within these verticals are a set (and subsets) of common ways in which attackers accomplish a tactic (vertical). These are known as techniques.
+Some techniques may be common across multiple operating systems. This usually equates to a broad definition of a technique.</description>
+    </item>
+    
+  </channel>
+</rss>

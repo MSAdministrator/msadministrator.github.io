@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/windows/</link>
+    <description>Recent content in windows on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Jan 2020 12:40:08 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>You Dont Have Windows 7 in Your Environment Do You</title>
+      <link>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</link>
+      <pubDate>Tue, 14 Jan 2020 12:40:08 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</guid>
+      <description>Today is the day. Microsoft Windows 7 is officially end-of-life (EOL). The Windows 7 operating system was released on October 22, 2009. For 10 years now, IT and system administrators around the globe have relied on their trusty old Windows 7 OS. I mean, it was a step beyond Windows XP for sure. With EOL here, have you migrated all of your systems to Windows 10?
+If you have not migrated, you definitely should.</description>
+    </item>
+    
+  </channel>
+</rss>
