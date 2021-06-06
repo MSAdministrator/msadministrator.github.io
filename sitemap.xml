@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://letsautomate.it/</loc>
+    <lastmod>2021-06-04T08:47:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/page/open-source-projects/</loc>
+    <lastmod>2021-06-04T08:47:39-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://letsautomate.it/page/</loc>
+    <lastmod>2021-06-04T08:47:39-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://letsautomate.it/article/</loc>
     <lastmod>2020-07-24T12:33:03-06:00</lastmod>
   </url>
@@ -39,11 +54,6 @@
   
   <url>
     <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2020-07-24T12:33:03-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/</loc>
     <lastmod>2020-07-24T12:33:03-06:00</lastmod>
   </url>
   
@@ -85,16 +95,6 @@
   <url>
     <loc>https://letsautomate.it/article/identify-malicious-domains-using-soar/</loc>
     <lastmod>2020-03-25T12:38:39-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/page/open-source-projects/</loc>
-    <lastmod>2020-02-02T08:47:39-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://letsautomate.it/page/</loc>
-    <lastmod>2020-02-02T08:47:39-04:00</lastmod>
   </url>
   
   <url>

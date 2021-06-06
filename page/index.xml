@@ -6,15 +6,15 @@
     <description>Recent content in Pages on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2020 08:47:39 -0400</lastBuildDate><atom:link href="https://letsautomate.it/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Jun 2021 08:47:39 -0400</lastBuildDate><atom:link href="https://letsautomate.it/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open Source Projects</title>
       <link>https://letsautomate.it/page/open-source-projects/</link>
-      <pubDate>Sun, 02 Feb 2020 08:47:39 -0400</pubDate>
+      <pubDate>Fri, 04 Jun 2021 08:47:39 -0400</pubDate>
       
       <guid>https://letsautomate.it/page/open-source-projects/</guid>
       <description>Below is a list of open-source projects I have started or contributed heavily to:
- soc-faker  A python package for use in generating fake data for SOC and security automation. Type: Python Documentation: https://soc-faker.readthedocs.io/en/latest/ Package Repository: https://pypi.org/project/soc-faker/   pyattck  A Python Package to interact with the Mitre ATT&amp;amp;CK Framework Type: Python Documentation: https://pyattck.readthedocs.io/en/latest/ Package Repository: https://pypi.org/project/pyattck/   carcass  carcass is a Python package to generate python package scaffolding based on best practices Type: Python   PSCVSS  A Windows PowerShell &amp;amp; PowerShell Core Module to calculate a CVSS3 Score based on a Vector string Type: PowerShell Package Repository: https://www.</description>
+ speedtweet  This docker-compose project will check your internet speed against a specified threshold and if below it will tweet at the provided account about your current internet speeds. Type: Docker   slack-url-utils  slack-url-utils is a slash command utility for Slack that obfuscates, deobfuscates, gets DNS information, and submits IOCs to AlienVault for a given URL.</description>
     </item>
     
     <item>
