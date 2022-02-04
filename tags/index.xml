@@ -6,13 +6,85 @@
     <description>Recent content in Tags on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2020 12:33:03 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 12:00:36 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Atomic Red Team</title>
+      <title>art</title>
+      <link>https://letsautomate.it/tags/art/</link>
+      <pubDate>Tue, 28 Dec 2021 12:00:36 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>atomic</title>
+      <link>https://letsautomate.it/tags/atomic/</link>
+      <pubDate>Tue, 28 Dec 2021 12:00:36 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/atomic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>https://letsautomate.it/tags/automation/</link>
+      <pubDate>Tue, 28 Dec 2021 12:00:36 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>atomic-red-team</title>
       <link>https://letsautomate.it/tags/atomic-red-team/</link>
-      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      <pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
       
       <guid>https://letsautomate.it/tags/atomic-red-team/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>soar</title>
+      <link>https://letsautomate.it/tags/soar/</link>
+      <pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/soar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api</title>
+      <link>https://letsautomate.it/tags/api/</link>
+      <pubDate>Wed, 21 Apr 2021 11:58:59 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rest</title>
+      <link>https://letsautomate.it/tags/rest/</link>
+      <pubDate>Wed, 21 Apr 2021 11:58:59 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://letsautomate.it/tags/docker/</link>
+      <pubDate>Tue, 24 Nov 2020 11:57:08 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elk</title>
+      <link>https://letsautomate.it/tags/elk/</link>
+      <pubDate>Tue, 24 Nov 2020 11:57:08 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/tags/elk/</guid>
       <description></description>
     </item>
     
@@ -26,29 +98,11 @@
     </item>
     
     <item>
-      <title>automation</title>
-      <link>https://letsautomate.it/tags/automation/</link>
-      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
-      
-      <guid>https://letsautomate.it/tags/automation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>MITRE</title>
       <link>https://letsautomate.it/tags/mitre/</link>
       <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
       
       <guid>https://letsautomate.it/tags/mitre/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>soar</title>
-      <link>https://letsautomate.it/tags/soar/</link>
-      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
-      
-      <guid>https://letsautomate.it/tags/soar/</guid>
       <description></description>
     </item>
     
@@ -80,15 +134,6 @@
     </item>
     
     <item>
-      <title>api</title>
-      <link>https://letsautomate.it/tags/api/</link>
-      <pubDate>Thu, 24 Oct 2019 12:03:34 -0600</pubDate>
-      
-      <guid>https://letsautomate.it/tags/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>soap</title>
       <link>https://letsautomate.it/tags/soap/</link>
       <pubDate>Thu, 24 Oct 2019 12:03:34 -0600</pubDate>
@@ -112,15 +157,6 @@
       <pubDate>Fri, 18 Oct 2019 12:03:34 -0600</pubDate>
       
       <guid>https://letsautomate.it/tags/endpoint/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rest</title>
-      <link>https://letsautomate.it/tags/rest/</link>
-      <pubDate>Thu, 17 Oct 2019 12:03:34 -0600</pubDate>
-      
-      <guid>https://letsautomate.it/tags/rest/</guid>
       <description></description>
     </item>
     

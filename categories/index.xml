@@ -6,11 +6,20 @@
     <description>Recent content in Categories on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2020 12:33:03 -0600</lastBuildDate><atom:link href="https://letsautomate.it/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 12:00:36 -0600</lastBuildDate><atom:link href="https://letsautomate.it/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>redcanary</title>
+      <link>https://letsautomate.it/categories/redcanary/</link>
+      <pubDate>Tue, 28 Dec 2021 12:00:36 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/categories/redcanary/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>swimlane</title>
       <link>https://letsautomate.it/categories/swimlane/</link>
-      <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
+      <pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
       
       <guid>https://letsautomate.it/categories/swimlane/</guid>
       <description></description>

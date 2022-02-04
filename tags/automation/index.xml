@@ -6,7 +6,46 @@
     <description>Recent content in automation on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2020 12:33:03 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 12:00:36 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing Atomic Operator</title>
+      <link>https://letsautomate.it/article/introducing-atomic-operator/</link>
+      <pubDate>Tue, 28 Dec 2021 12:00:36 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/introducing-atomic-operator/</guid>
+      <description>One of the major benefits of Atomic Red Team is that it enables security teams to understand how adversaries leverage MITRE® ATT&amp;amp;CK techniques in the real world, and I’ve been a big fan for years. To me, Atomic Red Team is more than a repository of tests (aka atomics), it’s also a knowledge base, training tool, and more.
+Each atomic in the library simulates a known adversary behavior associated with a given technique.</description>
+    </item>
+    
+    <item>
+      <title>Atomic Red Team Testing With Swimlane</title>
+      <link>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/</link>
+      <pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/</guid>
+      <description>Today, Swimlane is excited to announce that we are releasing a new SSP (Swimlane Solutions Package) for use within the Swimlane platform. This SSP will enable organizations to automate the testing of their defenses using Atomic Red Team using our new open-source project called atomic-operator.
+When using this SSP organizations can gain an understanding of their defensive posture against tests mapped to MITRE ATT&amp;amp;CK techniques. By using this use case you can correlate detections of these tests against their existing automation and log sources thus giving them fast feedback on their defensive posture based on tests available within Atomic Red Team.</description>
+    </item>
+    
+    <item>
+      <title>Common Rest Api Authentication Methods Explained</title>
+      <link>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</link>
+      <pubDate>Wed, 21 Apr 2021 11:58:59 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</guid>
+      <description>When it comes to implementing automation and orchestration, it is critical to understand how authentication works with APIs. The majority of the products in your environment likely have some sort of authentication mechanism. You need to know the nuances and differences between various authentication methods in order to automate communications with those APIs. In this blog post, I aim to help you understand by breaking down three different API authentication methods.</description>
+    </item>
+    
+    <item>
+      <title>Swimlane Releases Elk Tls Docker</title>
+      <link>https://letsautomate.it/article/swimlane-releases-elk-tls-docker/</link>
+      <pubDate>Tue, 24 Nov 2020 11:57:08 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/swimlane-releases-elk-tls-docker/</guid>
+      <description>At Swimlane, we love to automate but we also love building and sharing open-source software (OSS) to help security teams. We are proud to announce that we have released a new open-source project called elk-tls-docker to make it easier for you to test and deploy Elastic Stack by automating the creation of several Elastic open-source software solutions.
+Elk-tls-docker assists with setting up aand creating an Elastic Stack using either self-signed certificates or using Let’s Encrypt certificates (using SWAG).</description>
+    </item>
+    
     <item>
       <title>Automating Attck Testing With Soar and Atomic Red Team</title>
       <link>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</link>

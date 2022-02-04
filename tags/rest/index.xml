@@ -6,7 +6,16 @@
     <description>Recent content in rest on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Oct 2019 12:03:34 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Apr 2021 11:58:59 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Common Rest Api Authentication Methods Explained</title>
+      <link>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</link>
+      <pubDate>Wed, 21 Apr 2021 11:58:59 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</guid>
+      <description>When it comes to implementing automation and orchestration, it is critical to understand how authentication works with APIs. The majority of the products in your environment likely have some sort of authentication mechanism. You need to know the nuances and differences between various authentication methods in order to automate communications with those APIs. In this blog post, I aim to help you understand by breaking down three different API authentication methods.</description>
+    </item>
+    
     <item>
       <title>Understanding APIs: REST</title>
       <link>https://letsautomate.it/article/understanding-apis-rest/</link>

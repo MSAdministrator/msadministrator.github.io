@@ -126,124 +126,12 @@
     </div>
 
     
-        <p>I am currently migrating my blog content from <a href="https://wordpress.com">Wordpress.com</a> to GitHub pages using <a href="https://gohugo.io">Hugo</a>.  During this transition, I wanted to have the ability to &ldquo;revive&rdquo; my blog posts on a scheduled basis on social media (e.g. Twitter).  With Wordpress, you can use the WordPress <a href="https://wordpress.org/plugins/tweet-old-post/">Revive Old Posts</a> plugin but with WordPress.com you have to have a premium business account to use plugins.</p>
-<p>If you&rsquo;re in a similar situation of if you want a free way to automate the &ldquo;re-posting&rdquo; of your blog content then you&rsquo;re in luck!  Below I have listed some initial requirements that are needed to use this process.</p>
-<ul>
-<li>You blog has a xml RSS feed</li>
-<li>You will need a Twitter account and create a developer application</li>
-<li>You have a <a href="https://github.com">GitHub</a> Account</li>
-<li>You will need a <a href="https://appveyor.com">AppVeyor</a> Account</li>
-</ul>
-<h2 id="rss-feed">RSS Feed</h2>
-<p>I am using Hugo to build and deploy my blog to GitHUb.  One of the great things with Hugo is that it automatically generates a RSS feed for me.  You can find my blogs RSS feed here: <a href="https://msadministrator.github.io/index.xml">https://msadministrator.github.io/index.xml</a>.  To use this method, your blog needs a RSS feed or some method of retrieving all of your past blog posts. Of course you could script this, but for this example I will be using a RSS feed.</p>
-<h2 id="twitter">Twitter</h2>
-<p>To use this way of reviving your old blog posts you will need to have a Twitter account, but you will also need to generate some keys to post to twitter.  To do this, you will need to create a Twitter Application.</p>
-<p>The first step is to visit <a href="https://dev.twitter.com/apps/new">https://dev.twitter.com/apps/new</a> and create a new Twitter application.  When you create a new Twitter application you will need to provide the required information.</p>
-<img src="create_twitter_application.gif" style="max-width:100%;" alt="create_twitter_application">
-<p>Next, you will need to select the &ldquo;Keys and Tokens&rdquo; tab and gather all your keys.  <em>Please keep these secure!</em>  We will be using them when we get to the AppVeyor section below.</p>
-<img src="generate_twitter_api_keys.png" style="max-width:100%;" alt="Generate Twitter API Keys">
-<h2 id="github">GitHub</h2>
-<p>Once you have a GitHub account, you will need to create a new empty repository.  I called mine <code>ReviveBlogPostsCI</code> but you can name yours however you would like.  After you have created your GithUb repository, then go ahead and clone your empty repository to your local machine.</p>
-<pre><code>git clone git@github.com:{account_name}/ReviveBlogPostsCI.git
-</code></pre><p>For now, we will keep this empty.  Before we add anything to our repository, we will need setup our account in AppVeyor if we have not done so already.</p>
-<h2 id="appveyor">AppVeyor</h2>
-<p>AppVeyor is a Continuous Integration product that is free for opensource projects.  It is mostly known to Windows developers that use GitHub, but there are many organizaitons that use it on a daily basis.  Most notabley is <em>Microsoft</em>.</p>
-<p>We first need to create an AppVeyor account. <em>You MUST create your AppVeyor account using your GitHUb credentials.  This is mandatory!</em> You can do this by visiting Appveyor.com and creating your account.</p>
-<img src="create_your_appveyor_account.gif" style="max-width:100%;" alt="Create your AppVeyor Account">
-<p>Once you have created your account, then you need to head back to AppVeyor and sign in.  Once signed in, then we need to select the &ldquo;New Project&rdquo; button.  If you are signed with your GitHub account then you should see a list of your repositories on the next page.</p>
-<p>Go ahead and select the repository we created earlier.</p>
-<p>Depending on if you want to revive/re-post your blog posts on a scheduled basis or not, you will need to contact appveyor by emailing <a href="team@appveyor.com">team@appveyor.com</a> to ask them to enable the &ldquo;Scheduled Builds&rdquo; feature within your account.  If you DO NOT want to schedule automatic &ldquo;re-posting&rdquo; of old blog posts then you can ignore this step.</p>
-<p>Scheduled Builds allows you to schedule when the CI will run.  You can select a lot of different options as far as scheduling.  For my example, I have choosen to revive old posts twice a day at 11 AM and 6 PM.</p>
-<p>To set this type of schedule you would add the following to your project settings in AppVeyor (this is for only posting at 7PM CST daily):</p>
-<img src="set_appveyor_build_schedule_once_enabled_by_appveyor_support.png" style="max-width:100%;" alt="Set AppVeyor Build Schedule once enabled by AppVeyor Support">
-<p>If you would like to schedule your build for 7 PM CST then you add <code>0 0 * * *</code> into the Build Schedule.  If you would like your schedule to run twice a day; once at 11AM CST and again at 7PM CST then you would add the following to your Build Schedule:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">0 0,16 * * *
-</code></pre></div><p>You can find out more about scheduled builds and how the patterns work here: <a href="https://www.appveyor.com/docs/build-configuration/#scheduled-builds">https://www.appveyor.com/docs/build-configuration/#scheduled-builds</a></p>
-<h2 id="appveyor-yaml">AppVeyor YAML</h2>
-<p>Previously, we setup and saved our Twitter API keys somewhere secure. We will be using these keys to make API calls to Twitter on a scheduled basis but we don&rsquo;t want to expose these keys publicly.  Luckily, AppVeyor provides a way to encrypt these values and use them in our CI build pipeline.</p>
-<p>You can encrypt these values by visiting AppVeyor&rsquo;s encryption tool here <a href="https://ci.appveyor.com/tools/encrypt">https://ci.appveyor.com/tools/encrypt</a>.</p>
-<p>Once you encrypt these values, we need to add them to a special file called <code>appveyor.yml</code>.  Here is an example of my YAML file here:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#75715e">#          YAML Reference Guide: https://www.appveyor.com/docs/appveyor-yml/</span>
-<span style="color:#75715e"># Environmental Variables Guide: https://www.appveyor.com/docs/environment-variables/</span>
-<span style="color:#75715e">#                YAML Validator: https://ci.appveyor.com/tools/validate-yaml</span>
+        I am currently migrating my blog content from Wordpress.com to GitHub pages using Hugo. During this transition, I wanted to have the ability to &ldquo;revive&rdquo; my blog posts on a scheduled basis on social media (e.g. Twitter). With Wordpress, you can use the WordPress Revive Old Posts plugin but with WordPress.com you have to have a premium business account to use plugins.
+If you&rsquo;re in a similar situation of if you want a free way to automate the &ldquo;re-posting&rdquo; of your blog content then you&rsquo;re in luck!
 
-<span style="color:#75715e"># Disable automatic builds</span>
-<span style="color:#75715e"># Without this, the following error shows up:</span>
-<span style="color:#75715e"># &#34;Specify a project or solution file. The directory does not contain a project or solution file.&#34;</span>
-<span style="color:#f92672">build</span>: <span style="color:#66d9ef">off</span>
-
-<span style="color:#75715e">#Environmental variables for Twitter API</span>
-<span style="color:#f92672">environment</span>:
-  <span style="color:#f92672">TwitterAPIKey</span>:
-    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">T2bzCt5tixDJOZAr9tKvfFADNSmsSoo1MRmSc7ZSOi4=</span>
-  <span style="color:#f92672">TwitterAPISecretKey</span>:
-    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">J1/yUMcdB8A0VMBqIFlSC8lbxWcQyUDHKTr3eZWMHGIfxNrhfO4vFlT86PTqmO0QKQfe/HEsSZfwT+HoW0u/nQ==</span>
-  <span style="color:#f92672">TwitterAccessToken</span>:
-    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">wqBNHedxOUDZb6g1PbG+Ewx5kGxzYBsRXqzyKlOwRfekw/vNaMp2xEjII6PJJPPHf1TMs7ThbnLVjhQrRYUtQw==</span>
-  <span style="color:#f92672">TwitterAccessTokenSecret</span>:
-    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">epjLrmVSrzKq9ZYklfLtIKHuPTZaVZa8XId/cX9xfFbmevRYlZQBmhsChhqB2DYq</span>
-
-<span style="color:#75715e"># Revive Old Blog Post and post to twitter via the API</span>
-<span style="color:#f92672">install</span>:
-  - <span style="color:#f92672">ps</span>: |<span style="color:#e6db74">
-</span><span style="color:#e6db74">      [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-</span><span style="color:#e6db74">      $RevivePost = Invoke-RestMethod -Uri &#39;https://msadministrator.github.io/index.xml&#39; | Get-Random
-</span><span style="color:#e6db74">      Install-Module -Name PoshTwit -Force -Verbose 
-</span><span style="color:#e6db74">      $TweetContent = &#34;Blog Archive: &#34; + $RevivePost.title + &#34; &#34; + $RevivePost.link
-</span><span style="color:#e6db74">      $Tweet = @{ConsumerKey = $env:TwitterAPIKey; ConsumerSecret = $env:TwitterAPISecretKey; AccessToken = $env:TwitterAccessToken; AccessSecret = $env:TwitterAccessTokenSecret; Tweet = $TweetContent;}
-</span><span style="color:#e6db74">      Publish-Tweet @Tweet</span>      
-</code></pre></div><p>You can view my repository here <a href="https://github.com/MSAdministrator/ReviveBlogPostsCI">https://github.com/MSAdministrator/ReviveBlogPostsCI</a> if you would like to see an example.</p>
-<h2 id="breakdown-of-appveyoryml-file">Breakdown of <code>appveyor.yml</code> file</h2>
-<p>An YAML file is a configuration file that is commonly used by CI and CD infrastructure to specify the build configuration and the steps to take when building and/or deploying software.  This example is not typical in a traditional CI/CD setup but we are utilizing AppVeyor to pull down our latest blog posts and then select a random one to post/share (revive) to Twitter.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">#          YAML Reference Guide: https://www.appveyor.com/docs/appveyor-yml/</span>
-<span style="color:#75715e"># Environmental Variables Guide: https://www.appveyor.com/docs/environment-variables/</span>
-<span style="color:#75715e">#                YAML Validator: https://ci.appveyor.com/tools/validate-yaml</span>
-
-<span style="color:#75715e"># Disable automatic builds</span>
-<span style="color:#75715e"># Without this, the following error shows up:</span>
-<span style="color:#75715e"># &#34;Specify a project or solution file. The directory does not contain a project or solution file.&#34;</span>
-<span style="color:#f92672">build</span>: <span style="color:#66d9ef">off</span>
-</code></pre></div><p>The top section of configuration values are not necessarily needed and are only used as an example.  Since we are not <code>building</code> any software then in our yaml file we are turning off the <code>build</code> step.</p>
-<p>The next section is where we actually store our encrypted API keys we gathered from Twitter.  These are set in the <code>environment</code> section. By specifying the name of our variable(s) and the value it should contain after the <code>secure:</code> string, we are specifying new environmental variables and their values so that we can use them within our CI environment.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">#Environmental variables for Twitter API</span>
-<span style="color:#f92672">environment</span>:
-  <span style="color:#f92672">TwitterAPIKey</span>:
-    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">T2bzCt5tixDJOZAr9tKvfFADNSmsSoo1MRmSc7ZSOi4=</span>
-  <span style="color:#f92672">TwitterAPISecretKey</span>:
-    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">J1/yUMcdB8A0VMBqIFlSC8lbxWcQyUDHKTr3eZWMHGIfxNrhfO4vFlT86PTqmO0QKQfe/HEsSZfwT+HoW0u/nQ==</span>
-  <span style="color:#f92672">TwitterAccessToken</span>:
-    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">wqBNHedxOUDZb6g1PbG+Ewx5kGxzYBsRXqzyKlOwRfekw/vNaMp2xEjII6PJJPPHf1TMs7ThbnLVjhQrRYUtQw==</span>
-  <span style="color:#f92672">TwitterAccessTokenSecret</span>:
-    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">epjLrmVSrzKq9ZYklfLtIKHuPTZaVZa8XId/cX9xfFbmevRYlZQBmhsChhqB2DYq</span>
-</code></pre></div><p>You can access these environmental variables by referencing them using the <code>$env:{SOME_VARIABLE_NAME}</code> syntax.  For Example, if you are wanting to use the value from the <code>TwitterAPIKey</code> you would use <code>$env:TwitterAPIKey</code> in your build scripts.</p>
-<p>Lastly, we setup a specific build/deploy phase in our <code>appveyor.yml</code> configuration file to run a script or just run some code.  In this example, I am specifying that I want to open a PowerShell console and run some code (typically this is a script file). Since our the amount of code we are needing to use is fairly short, then I have opted to run the code here instead of inside of a script file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Revive Old Blog Post and post to twitter via the API</span>
-<span style="color:#f92672">install</span>:
-  - <span style="color:#f92672">ps</span>: |<span style="color:#e6db74">
-</span><span style="color:#e6db74">      [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-</span><span style="color:#e6db74">      $RevivePost = Invoke-RestMethod -Uri &#39;https://msadministrator.github.io/index.xml&#39; | Get-Random
-</span><span style="color:#e6db74">      Install-Module -Name PoshTwit -Force -Verbose 
-</span><span style="color:#e6db74">      $TweetContent = &#34;Blog Archive: &#34; + $RevivePost.title + &#34; &#34; + $RevivePost.link
-</span><span style="color:#e6db74">      $Tweet = @{ConsumerKey = $env:TwitterAPIKey; ConsumerSecret = $env:TwitterAPISecretKey; AccessToken = $env:TwitterAccessToken; AccessSecret = $env:TwitterAccessTokenSecret; Tweet = $TweetContent;}
-</span><span style="color:#e6db74">      Publish-Tweet @Tweet</span>      
-</code></pre></div><p>During the <code>install</code> phase of our pipeleine, we call <code>- ps: |</code> to call the following code using a PowerShell console. The <code>|</code> character in this context means that we want to run all the code that follows this call as 1 block of code.</p>
-<p>Lastly, the actual code to do all the &ldquo;work&rdquo; is doing the following:</p>
-<ul>
-<li>Set the the session to accept TLS 1.2</li>
-<li>Download my blogs RSS feed</li>
-<li>Get a random blog from my RSS feed</li>
-<li>Download and install <code>PoshTwit</code> from the PowerShell Gallery</li>
-<li>Create a tweet content string</li>
-<li>Submit the tweet using the Twitter API and our API Keys</li>
-</ul>
-<h2 id="final-step">Final Step</h2>
-<p>Now that we have our <code>appveyor.yml</code> file ready, we now need to push our code to our GitHub repository.</p>
-<pre><code class="language-git" data-lang="git">git add appveyor.yml
-git commit -m 'Adding yaml file to revive old blog posts'
-git push
-</code></pre><p>That&rsquo;s it!  We now have a way to revive old twitter posts using completely free services!</p>
-<p>If you have any suggestions or comments, please reach out to me on Twitter or on GitHub.</p>
-
+        
+            <a href="/article/using-github-to-revive-blog-posts/" class="more">Continue reading</a>
+        
     
 </div>
 
@@ -293,6 +181,22 @@ git push
                 <ul>
                 
                     <li>
+                        <a href="/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                    </li>
+                
+                    <li>
+                        <a href="/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
+                    </li>
+                
+                    <li>
                         <a href="/article/automating-attck-testing-with-soar-and-atomic-red-team/">Automating Attck Testing With Soar and Atomic Red Team</a>
                     </li>
                 
@@ -310,22 +214,6 @@ git push
                 
                     <li>
                         <a href="/article/you-dont-have-windows-7-in-your-environment-do-you/">You Dont Have Windows 7 in Your Environment Do You</a>
-                    </li>
-                
-                    <li>
-                        <a href="/article/investigate-alerts-in-microsoft-azure-using-soar/">Investigate Alerts in Microsoft Azure Using SOAR</a>
-                    </li>
-                
-                    <li>
-                        <a href="/article/understanding-apis-soap/">Understanding APIs: SOAP</a>
-                    </li>
-                
-                    <li>
-                        <a href="/article/swimlane-and-cylance-protect-endpoint-threat-response/">Swimlane and Cylance PROTECT: Endpoint Threat Response</a>
-                    </li>
-                
-                    <li>
-                        <a href="/article/understanding-apis-rest/">Understanding APIs: REST</a>
                     </li>
                 
                 </ul>
@@ -358,11 +246,15 @@ git push
                     </li>
                 
                     <li>
+                        <a href="/categories/redcanary">Redcanary (1)</a>
+                    </li>
+                
+                    <li>
                         <a href="/categories/slack">Slack (1)</a>
                     </li>
                 
                     <li>
-                        <a href="/categories/swimlane">Swimlane (22)</a>
+                        <a href="/categories/swimlane">Swimlane (25)</a>
                     </li>
                 
                 </ul>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>art on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/art/</link>
+    <description>Recent content in art on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Dec 2021 12:00:36 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/art/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing Atomic Operator</title>
+      <link>https://letsautomate.it/article/introducing-atomic-operator/</link>
+      <pubDate>Tue, 28 Dec 2021 12:00:36 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/introducing-atomic-operator/</guid>
+      <description>One of the major benefits of Atomic Red Team is that it enables security teams to understand how adversaries leverage MITRE® ATT&amp;amp;CK techniques in the real world, and I’ve been a big fan for years. To me, Atomic Red Team is more than a repository of tests (aka atomics), it’s also a knowledge base, training tool, and more.
+Each atomic in the library simulates a known adversary behavior associated with a given technique.</description>
+    </item>
+    
+  </channel>
+</rss>
