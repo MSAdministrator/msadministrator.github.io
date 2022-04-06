@@ -1,890 +1,536 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://letsautomate.it/tags/art/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/atomic/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/author/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/automation/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/categories/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/introducing-atomic-operator/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/author/josh-rickard/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/categories/redcanary/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/atomic-red-team/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/soar/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/categories/swimlane/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/page/open-source-projects/</loc>
     <lastmod>2021-06-04T08:47:39-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/page/</loc>
     <lastmod>2021-06-04T08:47:39-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/api/</loc>
     <lastmod>2021-04-21T11:58:59-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</loc>
     <lastmod>2021-04-21T11:58:59-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/rest/</loc>
     <lastmod>2021-04-21T11:58:59-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/docker/</loc>
     <lastmod>2020-11-24T11:57:08-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/elk/</loc>
     <lastmod>2020-11-24T11:57:08-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/swimlane-releases-elk-tls-docker/</loc>
     <lastmod>2020-11-24T11:57:08-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/attck/</loc>
     <lastmod>2020-07-24T12:33:03-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</loc>
     <lastmod>2020-07-24T12:33:03-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/mitre/</loc>
     <lastmod>2020-07-24T12:33:03-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/making-mitre-attck-actionable/</loc>
     <lastmod>2020-07-16T12:33:03-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/insider-threats/</loc>
     <lastmod>2020-04-24T12:37:11-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</loc>
     <lastmod>2020-04-24T12:37:11-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/identify-malicious-domains-using-soar/</loc>
     <lastmod>2020-03-25T12:38:39-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/windows/</loc>
     <lastmod>2020-01-14T12:40:08-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</loc>
     <lastmod>2020-01-14T12:40:08-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/azure/</loc>
     <lastmod>2019-12-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/</loc>
     <lastmod>2019-12-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/soap/</loc>
     <lastmod>2019-10-24T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/understanding-apis-soap/</loc>
     <lastmod>2019-10-24T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/cylance/</loc>
     <lastmod>2019-10-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/endpoint/</loc>
     <lastmod>2019-10-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/swimlane-and-cylance-protect-endpoint-threat-response/</loc>
     <lastmod>2019-10-18T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/understanding-apis-rest/</loc>
     <lastmod>2019-10-17T12:03:34-06:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/management/</loc>
     <lastmod>2019-08-15T14:42:13-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/secops/</loc>
     <lastmod>2019-08-15T14:42:13-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/vulnerability/</loc>
     <lastmod>2019-08-15T14:42:13-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/vulnerability-management-program-best-practices/</loc>
     <lastmod>2019-08-15T14:42:13-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/blackhat/</loc>
     <lastmod>2019-08-01T14:40:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/devops/</loc>
     <lastmod>2019-08-01T14:40:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/devsecops/</loc>
     <lastmod>2019-08-01T14:40:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/every-security-team-is-a-software-team-now/</loc>
     <lastmod>2019-08-01T14:40:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/atp/</loc>
     <lastmod>2019-07-18T14:37:17-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/defender/</loc>
     <lastmod>2019-07-18T14:37:17-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/microsoft/</loc>
     <lastmod>2019-07-18T14:37:17-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</loc>
     <lastmod>2019-07-18T14:37:17-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/oauth2/</loc>
     <lastmod>2019-07-18T14:37:17-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/powershell/</loc>
     <lastmod>2019-07-18T14:37:17-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/python/</loc>
     <lastmod>2019-07-18T14:37:17-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/tool/</loc>
     <lastmod>2019-07-18T14:37:17-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</loc>
     <lastmod>2019-07-11T14:34:27-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/exchange/</loc>
     <lastmod>2019-06-19T14:31:46-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/graph/</loc>
     <lastmod>2019-06-19T14:31:46-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/o365/</loc>
     <lastmod>2019-06-19T14:31:46-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</loc>
     <lastmod>2019-06-19T14:31:46-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/</loc>
     <lastmod>2019-06-14T14:29:52-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/ews/</loc>
     <lastmod>2019-05-22T14:27:42-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</loc>
     <lastmod>2019-05-22T14:27:42-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/automate-employee-off-boarding-process-with-swimlane/</loc>
     <lastmod>2019-05-08T14:25:25-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/employee/</loc>
     <lastmod>2019-05-08T14:25:25-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/off-boarding/</loc>
     <lastmod>2019-05-08T14:25:25-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/</loc>
     <lastmod>2019-05-08T14:20:07-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/</loc>
     <lastmod>2019-04-18T14:18:59-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/hackathon/</loc>
     <lastmod>2019-04-02T14:17:04-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/security/</loc>
     <lastmod>2019-04-02T14:17:04-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</loc>
     <lastmod>2019-04-02T14:17:04-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/microsoft-oauth2-endpoints-and-application-types/</loc>
     <lastmod>2019-03-27T14:14:26-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/automated-malware-analysis-and-reverse-engineering-with-soar/</loc>
     <lastmod>2019-03-14T14:10:25-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/malware/</loc>
     <lastmod>2019-03-14T14:10:25-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/reverse-engineering/</loc>
     <lastmod>2019-03-14T14:10:25-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/install-module/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/pip/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/categories/powershell/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/categories/python/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/python-vs-powershell-part-1-versioning/</loc>
     <lastmod>2018-09-04T21:20:15-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/aws/</loc>
     <lastmod>2018-08-31T20:51:46-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/sns/</loc>
     <lastmod>2018-08-31T20:51:46-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/using-amazon-sns-with-powershell/</loc>
     <lastmod>2018-08-31T20:51:46-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/github/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/categories/how-to/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/hugo/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/amazon/</loc>
     <lastmod>2018-08-23T22:24:59-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/sqs/</loc>
     <lastmod>2018-08-23T22:24:59-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/using-amazon-sqs-with-powershell/</loc>
     <lastmod>2018-08-23T22:24:59-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/certificate/</loc>
     <lastmod>2018-08-21T12:50:50-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/traverse-local-certificate-store-with-powershell/</loc>
     <lastmod>2018-08-21T12:50:50-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/functions/</loc>
     <lastmod>2018-08-19T13:37:36-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/modules/</loc>
     <lastmod>2018-08-19T13:37:36-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/</loc>
     <lastmod>2018-08-19T13:37:36-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/scripts/</loc>
     <lastmod>2018-08-19T13:37:36-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/appveyor/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/categories/automation/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/using-github-to-revive-blog-posts/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/writing/</loc>
     <lastmod>2018-08-14T10:08:33-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/categories/azure/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/bot/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/chatbot/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/connect-your-bot-to-slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/categories/slack/</loc>
     <lastmod>2018-08-10T22:28:08-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/create-a-web-app-bot-using-azure-bot-services/</loc>
     <lastmod>2018-08-10T22:10:33-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/webapp/</loc>
     <lastmod>2018-08-10T22:10:33-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/qnamaker/</loc>
     <lastmod>2018-08-10T21:55:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/using-qnamaker-to-create-chatbot/</loc>
     <lastmod>2018-08-10T21:55:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</loc>
     <lastmod>2018-08-10T21:28:54-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/.net/</loc>
     <lastmod>2018-08-08T23:08:02-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/adding-a-dlls-certificate-to-trusted-store/</loc>
     <lastmod>2018-08-08T23:08:02-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/cryptography/</loc>
     <lastmod>2018-08-08T23:08:02-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/tags/archive/</loc>
     <lastmod>2018-08-07T20:45:35-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/butcher-block-iron-pipe-desk/</loc>
     <lastmod>2018-08-07T20:45:35-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/using-docker-compose-on-windows/</loc>
     <lastmod>2018-08-07T20:45:30-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/verifying-a-datetime-format-string-is-valid-or-not-with-confirm-datetimeformatpattern/</loc>
     <lastmod>2018-08-07T20:45:28-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/create-group-policy-adm-and-admx-templates/</loc>
     <lastmod>2018-08-07T20:45:26-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/using-powershell-to-manage-amazon-ec2-instances/</loc>
     <lastmod>2018-08-07T20:45:24-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/manage-amazon-aws-s3-with-powershell/</loc>
     <lastmod>2018-08-07T20:45:21-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/create-a-docker-container-on-windows-with-a-dockerfile/</loc>
     <lastmod>2018-08-07T20:45:19-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/install-docker-and-run-containers-on-windows/</loc>
     <lastmod>2018-08-07T20:45:16-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/powershell-ise-snippets/</loc>
     <lastmod>2018-08-07T20:45:14-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/processing-csv-data-in-powershell/</loc>
     <lastmod>2018-08-07T20:45:11-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/manage-user-rights-with-group-policy/</loc>
     <lastmod>2018-08-07T20:45:08-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/cattle-vs-unicorns/</loc>
     <lastmod>2018-08-07T20:45:03-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/understanding-group-policy-order/</loc>
     <lastmod>2018-08-07T20:45:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/run-powershell-scripts-as-immediate-scheduled-tasks-with-group-policy/</loc>
     <lastmod>2018-08-07T20:44:57-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/add-and-remove-users-to-ad-groups-with-group-policy/</loc>
     <lastmod>2018-08-07T20:44:55-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/download-files-from-github-without-git-using-powershell/</loc>
     <lastmod>2018-08-07T20:44:52-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/logging-to-the-windows-event-log-in-your-powershell-scripts/</loc>
     <lastmod>2018-08-07T20:44:49-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/standardize-powershell-logging-with-my-write-logentry-function/</loc>
     <lastmod>2018-08-07T20:44:46-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/design-before-coding-kanban/</loc>
     <lastmod>2018-08-07T20:44:44-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/design-before-coding-gathering-requirements/</loc>
     <lastmod>2018-08-07T20:44:41-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/how-i-work/</loc>
     <lastmod>2018-08-07T20:44:39-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/powershell-qualys-get-asset-group-info-part-2/</loc>
     <lastmod>2018-08-07T20:44:33-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/powershell-qualys-authentication-part-1/</loc>
     <lastmod>2018-08-07T20:44:31-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/presentation-securing-windows-with-group-policy/</loc>
     <lastmod>2018-08-07T20:44:26-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/qualysguard-decentralized-it-how-to-organize-your-assets/</loc>
     <lastmod>2018-08-07T20:44:23-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/windows-security-publicprivate-key-exchange-basics/</loc>
     <lastmod>2018-08-07T20:44:20-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/windows-security-server-hardening-security-templates/</loc>
     <lastmod>2018-08-07T20:44:16-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/windows-security-patch-management/</loc>
     <lastmod>2018-08-07T20:44:13-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/qualys-guard-qualys-in-a-university-environment/</loc>
     <lastmod>2018-08-07T20:44:11-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2013-installing-mdt-2013/</loc>
     <lastmod>2018-08-07T20:44:09-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2013-installing-adk-for-8-1/</loc>
     <lastmod>2018-08-07T20:44:06-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2013-setting-up-mdt-2013-with-adk-for-windows-7-8-8-1/</loc>
     <lastmod>2018-08-07T20:44:03-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2013-pin-start-menu-task-bar-shortcuts-through-task-sequence/</loc>
     <lastmod>2018-08-07T20:44:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/script-adding-exchange-resource-accounts-to-your-outlook/</loc>
     <lastmod>2018-08-07T20:43:57-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/script-removing-proxy-from-firefox-user-prefs-js/</loc>
     <lastmod>2018-08-07T20:43:54-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/</loc>
     <lastmod>2018-08-07T20:43:52-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-2-of-3/</loc>
     <lastmod>2018-08-07T20:43:49-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-1-of-3/</loc>
     <lastmod>2018-08-07T20:43:47-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/ipad-lockdown-mobileconfig/</loc>
     <lastmod>2018-08-07T20:43:44-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/</loc>
     <lastmod>2018-08-07T20:43:41-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/</loc>
     <lastmod>2018-08-07T20:43:39-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/</loc>
     <lastmod>2018-08-07T20:43:36-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/</loc>
     <lastmod>2018-08-07T20:43:34-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/</loc>
     <lastmod>2018-08-07T20:43:32-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/</loc>
     <lastmod>2018-08-07T20:43:29-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/</loc>
     <lastmod>2018-08-07T20:43:27-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/</loc>
     <lastmod>2018-08-07T20:43:24-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/</loc>
     <lastmod>2018-08-07T20:43:22-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/</loc>
     <lastmod>2018-08-07T20:43:20-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/</loc>
     <lastmod>2018-08-07T20:43:17-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/</loc>
     <lastmod>2018-08-07T20:43:01-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/</loc>
     <lastmod>2018-08-07T20:42:57-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/windows-comparison-of-windows-commands-and-linux-commands/</loc>
     <lastmod>2018-08-07T20:42:53-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/scripting-open-excel-sheets-in-separate-windows/</loc>
     <lastmod>2018-08-07T20:42:51-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/</loc>
     <lastmod>2018-08-07T20:42:48-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/scripting-mount-printer-at-startup-script/</loc>
     <lastmod>2018-08-07T20:42:35-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/programming-final-project-for-x86-assembly-language-class-zombie-game/</loc>
     <lastmod>2018-08-07T20:42:31-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/programming-understanding-binary-and-its-hexadecimal-values/</loc>
     <lastmod>2018-08-07T20:42:13-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/page/presentations/</loc>
     <lastmod>2018-08-05T21:47:39-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/article/moving-away-from-wordpress/</loc>
     <lastmod>2018-08-05T12:55:27-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://letsautomate.it/page/about/</loc>
     <lastmod>2018-08-05T12:51:23-04:00</lastmod>
   </url>
-  
 </urlset>
