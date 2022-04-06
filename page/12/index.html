@@ -1,7 +1,8 @@
+<!DOCTYPE html>
+
 
   
-<!doctype html>
-<html class="no-js" lang="en">
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -10,13 +11,7 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://letsautomate.it/images/default.jpg"/>
-
-<meta name="twitter:title" content="Lets Automate It"/>
-<meta name="twitter:description" content="Lets Automate It"/>
-
-    <meta name="generator" content="Hugo 0.76.5" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <title>
         
            
@@ -24,7 +19,6 @@
            
         
     </title>
-    <meta name="description" content="Lets Automate It">
     <meta itemprop="name" content="from Josh Rickard">
     <meta itemprop="description" content="Lets Automate It">
     <meta property="og:title" content="from Josh Rickard">
@@ -43,6 +37,8 @@
     <link href="/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
     
 
+    
+    <link rel="canonical" href="https://letsautomate.it/">
     
 
     <link rel="stylesheet" href="https://letsautomate.it/theme.css">
@@ -89,37 +85,37 @@
     
     <header>
 
-        <div class="container">
-            <div class="logo">
-                <a href="/" class="logo">
-                    
-                        <img src="/images/default.jpg" alt="">
-                    
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
 
-                    <span class="overlay"><i class="fa fa-home"></i></span>
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
                 </a>
-            </div>
-            <div class="titles">
-                <h3 class="title">
-                    <a href="/">
-                        Lets Automate It
-                    </a>
-                </h3>
-
-                
-                    <span class="subtitle">from Josh Rickard</span>
-                
-            </div>
+            </h3>
 
             
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
 
-            
-                <div class="toggler">
-            
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </div>
+        
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
-    </header>
+    </div>
+</header>
 
 
     <div class="main container">
@@ -139,6 +135,321 @@
 
 
     
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/">
+            Questions About Mdt 2012 Driver Setup
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        So I&rsquo;ve had a lot of questions about my MDT 2012 Driver setup and hopefully this post will explain a little bit about it. Let me know if you have any questions
+Personally I have a folder on my server called _Source_Drivers. I keep all my drivers here and import them into MDT but keep the original. Here is what my file structure of this folder looks like.
+
+Once I have my structure setup I then begin to setup the structure on my MDT Deployment Share.
+
+        
+            <a href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/">
+            Mdt 2012 Installing a Custom Dictionary in Office 2010
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        So, some might not need this but thought I would share anyways. I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&rsquo;m deploying my new OS. Here are the steps on how to do this, but also how to create a custom Office 2010 Install.
+ Once you've setup everything for you OS, go to the Applications folder on your Deployment Share and right click&gt;New Application Once there, put in the relavent information including where your resource CD is located.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">
+            Mdt 2012 Deployment Guide Step by Step 11 of 11
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        Preparing WDS to enable PXE Boot (optional but very useful)  Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version  
+ Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
+            Mdt 2012 Deployment Guide Step by Step 10 of 11
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        Automating the Deployment Process  Right-click on the deployment share and select Properties  
+ Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…             CUSTOMSETTINGS.INI   [Settings] Priority=Default
+[Default ]
+_SMSTSORGNAME=Customer
+SkipBDDWelcome=YES
+SkipProductKey=YES
+ProductKey= XXXX-XXXX-XXXXX-XXXXX
+OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX
+SkipDeploymentType=YES
+DeploymentType=NEWCOMPUTER
+SkipDomainMembership=NO
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
 
     
         
@@ -369,306 +680,6 @@
 
 
     
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 6 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        Completing the Deployment Share Configuration Now you have imported an OS (from source media) and some WinPE drivers, we can go ahead and complete the configuration of the Deployment Share. 6.1 Advanced Configuration The Advanced Configuration section of MDT consists of four separate areas although, we only use the Selection Profiles section for now. The rest are advanced topics which you can explore later! Advanced Configuration – Selection Profiles Created a single additional selection profile – “WinPE Drivers” and configured it to contain only the drivers which Windows PE will use.
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 5 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        Creating a Sysprep &amp; Capture Task Sequence The “Task Sequence” is the heart of the MDT deployment solution. It is a list of steps which need to be taken to successfully deploy an Operating System.  Initially you need to create a “Sysprep and Capture” task sequence. Go ahead and do this now. You don’t need to worry too much about which choice of OS you make as it doesn’t matter.
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 4 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        4. Importing an OS Image The Operating Systems section of MDT lists all of the Operating Systems which are available to deploy from a Deployment Share. The deployment itself is controlled by a Task Sequence but the operating system source files need to be available.  Simply right-click on Operating Systems on the left and Import your Windows 7 source media from either DVD or a network share. If you are planning to deploy both 32 and 64 bit versions, import both!
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-4-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 3 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        Device Driver Management 3.1 Obtaining Device Drivers for a Deployment In order to deploy a single image to multiple hardware types, MDT performs a “driver injection” during the OS load process. For this to work, any and all relevant drivers need to be imported into the deployment share in advance. Depending on the hardware vendor, the process for obtaining these drivers may vary but will generally involve going to the vendor website and downloading the drivers for specific hardware models.
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
 
     
     <div class="paginator">
@@ -696,6 +707,22 @@
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/">Automating Attck Testing With Soar and Atomic Red Team</a>
                     </li>
                 
@@ -705,22 +732,6 @@
                 
                     <li>
                         <a href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/">Responding to Insider Threats With Soar</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/identify-malicious-domains-using-soar/">Identify Malicious Domains Using Soar</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/">You Dont Have Windows 7 in Your Environment Do You</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/">Investigate Alerts in Microsoft Azure Using SOAR</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/understanding-apis-soap/">Understanding APIs: SOAP</a>
                     </li>
                 
             </ul>
@@ -734,7 +745,7 @@
                 
                 <li>
                     <a href="/categories/swimlane">Swimlane
-                        (22)</a>
+                        (25)</a>
                 </li>
                 
                 <li>
@@ -763,7 +774,7 @@
                 </li>
                 
                 <li>
-                    <a href="/categories/slack">Slack
+                    <a href="/categories/redcanary">Redcanary
                         (1)</a>
                 </li>
                 
@@ -776,6 +787,26 @@
             <div class="external-profiles">
                 <strong>Social media</strong>
 
+                
+                <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fab fa-twitter"></i></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank"><i class="fab fa-github"></i></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            <div class="languages">
+                <strong>Other languages</strong>
+                
+                
+                <a href="https://letsautomate.it/" class="active">en</a>
+                
+                
+                
+                <a href="https://letsautomate.it/de/">de</a>
+                
                 
             </div>
             
@@ -823,7 +854,7 @@ if (!doNotTrack) {
     
 
 
-    <script type="text/javascript" src="https://letsautomate.it/theme.js"></script>
+    <script src="https://letsautomate.it/theme.js"></script>
 
     
     

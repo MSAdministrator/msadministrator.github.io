@@ -1,59 +1,81 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Josh Rickard">
-        <meta name="description" content="Lets Automate It">
-        <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-        <meta name="generator" content="Hugo 0.76.5" />
-        <title> Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My! | Lets Automate It</title>
-        <meta name="description" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My! - Lets Automate It">
-        <meta itemprop="name" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!">
-        <meta itemprop="description" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My! - Lets Automate It">
-        <meta property="og:title" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!">
-        <meta property="og:description" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My! - Lets Automate It">
-        <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
-        <meta property="og:url" content="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">
-        <meta property="og:site_name" content="Lets Automate It">
-        <meta property="og:type" content="article">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="https://letsautomate.it/favicon-16x16.png" sizes="16x16">
+<!DOCTYPE html>
 
-	
 
-        <link rel="stylesheet" href="https://letsautomate.it/dist/theme.css">
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.96.0" />
+    <title>
         
+           
+               Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My! &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!">
+    <meta itemprop="description" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My! - Lets Automate It">
+    <meta property="og:title" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!">
+    <meta property="og:description" content="Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My! - Lets Automate It">
+    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:url" content="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">
+    <meta property="og:site_name" content="Lets Automate It">
+    <meta property="og:type" content="article">
 
+    
+
+
+    <script src="/modernizr-simple.js"></script>
+
+    
+    <link href="/article/powershell-scripts-functions-modules-cmdlets-oh-my/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="/article/powershell-scripts-functions-modules-cmdlets-oh-my/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">
+    
+
+    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+
+    
+
+    
         
-            
-        
-    </head>
-    <body class="bilberry-hugo-theme">
-        
-<nav>
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+
+    
+    <nav>
 
     <div class="container">
         <ul class="topnav">
             
                 
-                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                    <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
                 
             
                 
-                    <li><a href="/page/presentations/">Presentations</a></li>
+                    <li><a href="https://letsautomate.it/page/presentations/">Presentations</a></li>
                 
             
                 
-                    <li><a href="/page/about/">About</a></li>
+                    <li><a href="https://letsautomate.it/page/about/">About</a></li>
                 
             
         </ul>
 
         
             <div id="search-box" class="search">
-                <i class="fa fa-search"></i>
+                <i class="fas fa-search"></i>
                 <input id="search" type="text" placeholder="Search ...">
             </div>
         
@@ -61,7 +83,9 @@
 </nav>
 
 
-        <header>
+    
+    <header>
+
     <div class="container">
         <div class="logo">
             <a href="/" class="logo">
@@ -73,54 +97,79 @@
             </a>
         </div>
         <div class="titles">
-            <h3 class="title"><a href="/">Lets Automate It</a></h3>
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
             
                 <span class="subtitle">from Josh Rickard</span>
             
         </div>
 
-    
+        
 
         
-        <div class="toggler">
+            <div class="toggler">
         
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
     </div>
 </header>
 
 
-        <div class="main container">
-            
-     
+    <div class="main container">
+        
     <div class="article-wrapper u-cf single">
         
-            <a class="bubble" href="/article/powershell-scripts-functions-modules-cmdlets-oh-my/">
-    <i class="fa fa-fw fa-pencil"></i>
+            <a class="bubble" href="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
 <article class="default article">
     
 
     <div class="content">
-    <h3><a href="/article/powershell-scripts-functions-modules-cmdlets-oh-my/">Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!</a></h3>
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">
+            Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!
+        </a>
+    </h1>
+
     <div class="meta">
-        <span class="date moment">2018-08-19</span>
+        
+            
+                <span class="date moment">2018-08-19</span>
+            
+        
+
+        
 
         
             <span class="categories">
                 
-                    <a href="/categories/powershell">powershell</a>
+                    
+                    
+                        <a href="https://letsautomate.it/categories/powershell/">powershell</a>
+                    
                 
             </span>
         
 
         
-            <span class="author"><a href="/author/josh-rickard">Josh Rickard</a></span>
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
         
     </div>
 
     
+        
+
         <p>PowerShell is unique, but it is also necessary in today&rsquo;s world.  I find that newcomers to the language are sometimes confused or don&rsquo;t understand the basic layers of PowerShell scripting.  You can use PowerShell in different ways, but I have yet to find an all encompassing article that explains the high-level of how to interact with PowerShell in these different ways.</p>
 <p>This post will explain the different concepts (or layers) of PowerShell code organization and their main advantages and use cases.  We will dive into the different approaches of implementing PowerShell and why you would use one over the other.</p>
 <h2 id="console">Console</h2>
@@ -130,118 +179,118 @@
 <h2 id="scripts">Scripts</h2>
 <p>PowerShell scripts are placed into a <code>.ps1</code> file type.  These scripts usually contain a logic flow of multiple lines of code that the caller needs to perform.  These may contain loops or if statements; but they do not have to.  Think of the steps that you need to perform to build a cake or a car engine.  Each of these steps are usually outlined, and the steps are a recipe.  In PowerShell these are found in a <code>.ps1</code> file.</p>
 <p>With PowerShell scripts, you will invoke them directly in the PowerShell console.  Invoke is really a fancy way of saying you will call the file directly.  For example, if you have a script that traverses files within a folder and does an action when a file or folder matches the name you&rsquo;re looking for.  You may put this in a script, since it may be something you do frequently or want to save it for someone else to run.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$filesAndFolders = Get-ChildItem -Path ~/Desktop/SomeFolder -Recurse
-
-<span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
-    <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-        Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
-    }
-}
-</code></pre></div><p>Let&rsquo;s say that this code above was in a file named <code>getFileAndFolders.ps1</code>.  When you open up the Powershell console you would typically navigate to the location this script is housed and invoke the script directly.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">.\getFileAndFolders.ps1
-</code></pre></div><p>This is the typical way that PowerShell scripts are used.  They are basic, but may have some logic.  They are designed to be invoked and they are easy to use.  It&rsquo;s much easier to tell someone to open up PowerShell and run the file then it is with more advanced methods like Functions and Modules.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$filesAndFolders = Get-ChildItem -Path ~/Desktop/SomeFolder -Recurse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
+</span></span><span style="display:flex;"><span>        Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Let&rsquo;s say that this code above was in a file named <code>getFileAndFolders.ps1</code>.  When you open up the Powershell console you would typically navigate to the location this script is housed and invoke the script directly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>.\getFileAndFolders.ps1
+</span></span></code></pre></div><p>This is the typical way that PowerShell scripts are used.  They are basic, but may have some logic.  They are designed to be invoked and they are easy to use.  It&rsquo;s much easier to tell someone to open up PowerShell and run the file then it is with more advanced methods like Functions and Modules.</p>
 <h2 id="basic-functions">Basic Functions</h2>
 <p>In PowerShell there are two different levels of functions; a basic function and a Advanced Function.  I will explain both in detail, but both are &ldquo;wrappers&rdquo; for specific code that you want to use.  It is best practice to <strong>have a function do 1 thing and do that 1 thing well!</strong>  Functions are used in many different cases but they are created so that you can re-use the code in that &ldquo;wrapper&rdquo; throughout your script or module.</p>
 <p>A &ldquo;basic&rdquo; function is just that - basic.  You can tell if code you are looking at is a function by the declarative statement of <code>function</code>.  A basic function is one that you can specify 0 or more parameters (or values) that the user passes into the function.  For example, below are two separate &ldquo;basic&rdquo; functions.  The first takes no parameters and is the same code above but wrapped in the <code>function</code> statement.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> getFileAndFolders () {
-    $filesAndFolders = Get-ChildItem -Path ~/Desktop/SomeFolder -Recurse
-
-    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
-        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
-        }
-    }
-}
-</code></pre></div><p>That&rsquo;s it!  This is a basic function; easy huh!  Where things get a little challenging for newcomers it that if you call this file like you did previously, the output will be different (actually no output).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">.\getFileAndFolders.ps1
-</code></pre></div><p>But why?  When your <code>.ps1</code> is invoked you are calling the same file but with <code>functions</code> you are not actually invoking the code, but rather you are loading it into memory.  This means that you now must call your function directly.  To do this, in a PowerShell console type <code>getFile</code> and the <code>Tab</code> key.  You will see that PowerShell knows what your function name is and now you can call it directly without always having to call the script file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> getFileAndFolders () {
+</span></span><span style="display:flex;"><span>    $filesAndFolders = Get-ChildItem -Path ~/Desktop/SomeFolder -Recurse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>That&rsquo;s it!  This is a basic function; easy huh!  Where things get a little challenging for newcomers it that if you call this file like you did previously, the output will be different (actually no output).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>.\getFileAndFolders.ps1
+</span></span></code></pre></div><p>But why?  When your <code>.ps1</code> is invoked you are calling the same file but with <code>functions</code> you are not actually invoking the code, but rather you are loading it into memory.  This means that you now must call your function directly.  To do this, in a PowerShell console type <code>getFile</code> and the <code>Tab</code> key.  You will see that PowerShell knows what your function name is and now you can call it directly without always having to call the script file.</p>
 <p>But, <strong>a HUGE but</strong>, this is only for this session of PowerShell.  As soon as you close your current PowerShell console then it will no longer be in memory and you will have to re-import/invoke your script file again to load it into memory.</p>
 <p>Secondarily, you can also load this function into memory by dot sourcing it.  What this means is that you are telling the console that you want to load the file into memory but not actually invoke it or run the code.  You do this by calling the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">. .\getFileAndFolders.ps1
-</code></pre></div><p>It doesn&rsquo;t seem like that big of a difference, and it is almost identical except for the single <code>.</code> and space before the path string to the file you want to load into memory.  Dot sourcing your code means you want to use it coming up, but you do not necessarily want to invoke the code at this time.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>. .\getFileAndFolders.ps1
+</span></span></code></pre></div><p>It doesn&rsquo;t seem like that big of a difference, and it is almost identical except for the single <code>.</code> and space before the path string to the file you want to load into memory.  Dot sourcing your code means you want to use it coming up, but you do not necessarily want to invoke the code at this time.</p>
 <p>There are big advantages to this, but we will explain that a bit later.</p>
 <p>To continue with this first example, you can, within your <code>.ps1</code> script invoke the function directly after loading it into memory.  For example, in your <code>getFileAndFolders.ps1</code> you can call your function right after you have loaded into memory.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> getFileAndFolders () {
-    $filesAndFolders = Get-ChildItem -Path ~/Desktop/SomeFolder -Recurse
-
-    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
-        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
-        }
-    }
-}
-
-<span style="color:#75715e"># Calling the function above that has been loaded into memory</span>
-<span style="color:#75715e"># You must load your function into memory first before calling it, so.</span>
-<span style="color:#75715e"># The order of your code MATTERS!</span>
-getFileAndFolders
-</code></pre></div><p>This way of invoking your script means that you still take advantage of a function but you are still invoking the code within the same file.  This helps when you want to segment your code into blocks (functions) but still have a single file that a user may invoke at any point.  Please note, that you must have your <code>function</code> statement before you actually invoke it.  This is from top to bottom within your <code>.ps1</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> getFileAndFolders () {
+</span></span><span style="display:flex;"><span>    $filesAndFolders = Get-ChildItem -Path ~/Desktop/SomeFolder -Recurse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calling the function above that has been loaded into memory</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You must load your function into memory first before calling it, so.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The order of your code MATTERS!</span>
+</span></span><span style="display:flex;"><span>getFileAndFolders
+</span></span></code></pre></div><p>This way of invoking your script means that you still take advantage of a function but you are still invoking the code within the same file.  This helps when you want to segment your code into blocks (functions) but still have a single file that a user may invoke at any point.  Please note, that you must have your <code>function</code> statement before you actually invoke it.  This is from top to bottom within your <code>.ps1</code>.</p>
 <p>Let&rsquo;s use this same example, but let&rsquo;s add a simple parameter.  Let&rsquo;s change our function to pass in the folder you want to search within.  When using a basic PowerShell function, you would add a parameter by adding a variable in between the parenthesis.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> getFileAndFolders ($SearchFolder) {
-    $filesAndFolders = Get-ChildItem -Path $SearchFolder -Recurse
-
-    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
-        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
-        }
-    }
-}
-
-<span style="color:#75715e"># Calling the function above that has been loaded into memory</span>
-<span style="color:#75715e"># You must load your function into memory first before calling it, so.</span>
-<span style="color:#75715e"># The order of your code MATTERS!</span>
-getFileAndFolders ~/Desktop/SomeFolder
-</code></pre></div><p>As you can see, we add the <code>$SearchFolder</code> parameter to our function, but we also replaced the <code>/Desktop/SomeFolder</code> string in our function with that variable.  We did this, because a parameter&rsquo;s value that is passed into a function will replace that value in your function.  So, when we call our function <code>getFileAndFolders</code> with a value of <code>~/Desktop/SomeFolder</code>, then our function will take that value and replace our variable of <code>$SearchFolder</code> with that value through out your function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> getFileAndFolders ($SearchFolder) {
+</span></span><span style="display:flex;"><span>    $filesAndFolders = Get-ChildItem -Path $SearchFolder -Recurse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calling the function above that has been loaded into memory</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You must load your function into memory first before calling it, so.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The order of your code MATTERS!</span>
+</span></span><span style="display:flex;"><span>getFileAndFolders ~/Desktop/SomeFolder
+</span></span></code></pre></div><p>As you can see, we add the <code>$SearchFolder</code> parameter to our function, but we also replaced the <code>/Desktop/SomeFolder</code> string in our function with that variable.  We did this, because a parameter&rsquo;s value that is passed into a function will replace that value in your function.  So, when we call our function <code>getFileAndFolders</code> with a value of <code>~/Desktop/SomeFolder</code>, then our function will take that value and replace our variable of <code>$SearchFolder</code> with that value through out your function.</p>
 <h2 id="advanced-functions">Advanced Functions</h2>
 <p>Basic PowerShell functions are great for basic operations.  That may be all you need, but as you get more familiar with PowerShell and want to create extremely durable and re-usable code that others will use, then you will want something more advanced.  There&rsquo;s a secret to advanced functions, but it&rsquo;s not difficult and it adds a lot of great functionality for free!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> getFileAndFolders {
-    [<span style="color:#66d9ef">CmdletBinding</span>()]
-    <span style="color:#66d9ef">Param</span>(
-        $SearchFolder
-    )
-
-    $filesAndFolders = Get-ChildItem -Path $SearchFolder -Recurse
-
-    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
-        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
-        }
-    }
-}
-
-<span style="color:#75715e"># Calling the function above that has been loaded into memory</span>
-<span style="color:#75715e"># You must load your function into memory first before calling it, so.</span>
-<span style="color:#75715e"># The order of your code MATTERS!</span>
-getFileAndFolders ~/Desktop/SomeFolder
-</code></pre></div><p>That&rsquo;s it!  Did you see what I did there?  There&rsquo;s a special indicator called <code>[CmdletBinding()]</code> that enables a whole slew of features to your function.  You now have an advanced PowerShell function!! Look at you go!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> getFileAndFolders {
+</span></span><span style="display:flex;"><span>    [<span style="color:#66d9ef">CmdletBinding</span>()]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Param</span>(
+</span></span><span style="display:flex;"><span>        $SearchFolder
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $filesAndFolders = Get-ChildItem -Path $SearchFolder -Recurse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calling the function above that has been loaded into memory</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You must load your function into memory first before calling it, so.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The order of your code MATTERS!</span>
+</span></span><span style="display:flex;"><span>getFileAndFolders ~/Desktop/SomeFolder
+</span></span></code></pre></div><p>That&rsquo;s it!  Did you see what I did there?  There&rsquo;s a special indicator called <code>[CmdletBinding()]</code> that enables a whole slew of features to your function.  You now have an advanced PowerShell function!! Look at you go!</p>
 <p>The great thing about <code>CmdletBinding</code> is that you now have a lot more flexibility and you can help users of your function by ensuring that they are operating within your defined requirements.</p>
 <p>So, I somewhat lied above; you did create an Advanced Function but using it this way is not going to help you much.  For example, if you call our <code>getFileAndFolders</code> function with NO input value then you will get a bunch of red (errors).  That sucks, but with <code>[CmdletBinding()]</code> we have an arsenal of ways to validate and require certain values to meet our demands.  If we want to require that all users pass in a value for <code>$SearchFolder</code> then we can force that.  We can even ensure that the passed in value is a <code>[string]</code> and not an integer or some other value type that we are not prepared to handle.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> getFileAndFolders {
-    [<span style="color:#66d9ef">CmdletBinding</span>()]
-    <span style="color:#66d9ef">Param</span>(
-        [<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span>=$true)]
-        <span style="color:#66d9ef">[string]</span>$SearchFolder
-    )
-
-    $filesAndFolders = Get-ChildItem -Path $SearchFolder -Recurse
-
-    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
-        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
-        }
-    }
-}
-</code></pre></div><p>We added some definitions around our parameter to ensure that the parameter must <code>(Mandatory)</code> be passed used when calling this function. We did this by setting <code>Mandatory</code> to <code>$True</code>.  We also <code>casted</code> our variable as a <code>[string]</code> to ensure that any value that is passed into that parameter must be a string.  These two definitions of our parameter ensure that we handle all situations that meet our requirements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> getFileAndFolders {
+</span></span><span style="display:flex;"><span>    [<span style="color:#66d9ef">CmdletBinding</span>()]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Param</span>(
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span>=$true)]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">[string]</span>$SearchFolder
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $filesAndFolders = Get-ChildItem -Path $SearchFolder -Recurse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We added some definitions around our parameter to ensure that the parameter must <code>(Mandatory)</code> be passed used when calling this function. We did this by setting <code>Mandatory</code> to <code>$True</code>.  We also <code>casted</code> our variable as a <code>[string]</code> to ensure that any value that is passed into that parameter must be a string.  These two definitions of our parameter ensure that we handle all situations that meet our requirements.</p>
 <p>There are lots of different validations that can be set on a parameter.  I&rsquo;m not going to go into these at this time, but I will share an example of what an advanced parameter validation may look like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">[<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span> = $true,
-           <span style="color:#66d9ef">ValueFromPipelineByPropertyName</span> = $true,
-           <span style="color:#66d9ef">Position</span> = 0)]
-[ValidateNotNull()]
-[ValidateNotNullOrEmpty()]
-[ValidateScript( {
-        <span style="color:#66d9ef">If</span> (Test-Path $_) {$true}<span style="color:#66d9ef">else</span> {<span style="color:#66d9ef">Throw</span> <span style="color:#e6db74">&#34;Invalid path given: $_&#34;</span>}})]
-<span style="color:#66d9ef">[string]</span>$SearchFolder
-</code></pre></div><p>Along with having the ability to set expectations around what values can be passed into your function, you get a bunch of additional features with <code>CmdletBinding</code>.  If you have ever used any other PowerShell built-in CmdLet&rsquo;s then you have probably noticed that there are additional &ldquo;common&rdquo; parameters that you have access to.  With <code>CmdletBinding</code> you now have access to these as well within your function.  Here is a list of these parameters, but I won&rsquo;t explain these in this post:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>[<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span> = $true,
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">ValueFromPipelineByPropertyName</span> = $true,
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">Position</span> = 0)]
+</span></span><span style="display:flex;"><span>[ValidateNotNull()]
+</span></span><span style="display:flex;"><span>[ValidateNotNullOrEmpty()]
+</span></span><span style="display:flex;"><span>[ValidateScript( {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> (Test-Path $_) {$true}<span style="color:#66d9ef">else</span> {<span style="color:#66d9ef">Throw</span> <span style="color:#e6db74">&#34;Invalid path given: $_&#34;</span>}})]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[string]</span>$SearchFolder
+</span></span></code></pre></div><p>Along with having the ability to set expectations around what values can be passed into your function, you get a bunch of additional features with <code>CmdletBinding</code>.  If you have ever used any other PowerShell built-in CmdLet&rsquo;s then you have probably noticed that there are additional &ldquo;common&rdquo; parameters that you have access to.  With <code>CmdletBinding</code> you now have access to these as well within your function.  Here is a list of these parameters, but I won&rsquo;t explain these in this post:</p>
 <ul>
 <li>Debug</li>
 <li>ErrorAction</li>
@@ -263,27 +312,27 @@ getFileAndFolders ~/Desktop/SomeFolder
 <p>PowerShell Modules can contain 1 or more functions.  If you have a library of functions that you use for a single topic then you would group them into a PowerShell Module. I have a few on my <a href="https://github.com/MSAdministrator?tab=repositories">GitHub</a> and they are somewhat (I hope mostly) organized into a specific functionality or &ldquo;product&rdquo;.  For example, I have a PowerShell Script Module to interact with the ZenDesk ticketing system API.  There are 44 PowerShell functions within this Module but they are all contained within a single PowerShell Script Module since they all relate to the ZenDesk ticketing system API.</p>
 <p>Instead of having to load each function into memory individually, I can simply download the PowerShell Script Module and run <code>Import-Module -Name PoshZD</code> and it will load all of them into memory. This saves me and user of my Module a lot of time, plus it is easy to do!</p>
 <p>Here is an example of how use a <code>.psm1</code> file to import all my functions:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># using module .\TemplatePowerShellModule\Class\TemplatePowerShellModule.Class1.psm1</span>
-<span style="color:#75715e"># Above needs to remain the first line to import Classes</span>
-<span style="color:#75715e"># remove the comment when using classes</span>
-
-<span style="color:#75715e">#requires -Version 2</span>
-<span style="color:#75715e">#Get public and private function definition files.</span>
-$Public = @( Get-ChildItem -Path $PSScriptRoot\Public\*.ps1 -Recurse -ErrorAction SilentlyContinue )
-$Private = @( Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -Recurse -ErrorAction SilentlyContinue )
-
-<span style="color:#75715e">#Dot source the files</span>
-<span style="color:#66d9ef">Foreach</span> ($import <span style="color:#66d9ef">in</span> @($Public + $Private)) {
-    <span style="color:#66d9ef">Try</span> {
-        . $import.fullname
-    }
-    <span style="color:#66d9ef">Catch</span> {
-        Write-Error -Message <span style="color:#e6db74">&#34;Failed to import function </span>$($import.fullname)<span style="color:#e6db74">: $_&#34;</span>
-    }
-}
-
-Export-ModuleMember -Function $Public.Basename
-</code></pre></div><p>With this in my <code>.psm1</code> file, any functions I have separated out into sub-folders named  <code>Public</code> and <code>Private</code> will be imported automatically when you import my <code>.psm1</code> Script Module file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># using module .\TemplatePowerShellModule\Class\TemplatePowerShellModule.Class1.psm1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Above needs to remain the first line to import Classes</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># remove the comment when using classes</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#requires -Version 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Get public and private function definition files.</span>
+</span></span><span style="display:flex;"><span>$Public = @( Get-ChildItem -Path $PSScriptRoot\Public\*.ps1 -Recurse -ErrorAction SilentlyContinue )
+</span></span><span style="display:flex;"><span>$Private = @( Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -Recurse -ErrorAction SilentlyContinue )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Dot source the files</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Foreach</span> ($import <span style="color:#66d9ef">in</span> @($Public + $Private)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Try</span> {
+</span></span><span style="display:flex;"><span>        . $import.fullname
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Catch</span> {
+</span></span><span style="display:flex;"><span>        Write-Error -Message <span style="color:#e6db74">&#34;Failed to import function </span>$($import.fullname)<span style="color:#e6db74">: $_&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Export-ModuleMember -Function $Public.Basename
+</span></span></code></pre></div><p>With this in my <code>.psm1</code> file, any functions I have separated out into sub-folders named  <code>Public</code> and <code>Private</code> will be imported automatically when you import my <code>.psm1</code> Script Module file.</p>
 <p><em>Please note, I do have a <a href="https://github.com/MSAdministrator/TemplatePowerShellModule">Template PowerShell Module</a> that you can use as reference if you would like to see how I organize my Script Modules</em></p>
 <p>The big thing to take away from this section is that PowerShell Script Modules typically do not have compiled code or they are NOT written in C#/.NET.  Yes, you can use <code>.psm1</code> and <code>.psd1</code> to import those compiled DLLs or code, but these are (IMO) CmdLets.</p>
 <h2 id="cmdlets">CmdLets</h2>
@@ -306,11 +355,20 @@ Export-ModuleMember -Function $Public.Basename
             <i class="fa fa-tags"></i>
             <div class="links">
                 
-                    <a href="/tags/scripts">scripts</a>
+                    
+                    
+                    <a href="https://letsautomate.it/tags/scripts/">scripts</a>
+                    
                 
-                    <a href="/tags/functions">functions</a>
+                    
+                    
+                    <a href="https://letsautomate.it/tags/functions/">functions</a>
+                    
                 
-                    <a href="/tags/modules">modules</a>
+                    
+                    
+                    <a href="https://letsautomate.it/tags/modules/">modules</a>
+                    
                 
             </div>
         </div>
@@ -325,119 +383,130 @@ Export-ModuleMember -Function $Public.Basename
     </div>
 
     
+        <div id="comments-container">
+            
+            
 
-     
+            
+
+            
 
         </div>
+    
 
-        <footer>
+    </div>
+
+    
+<footer>
     <div class="container">
+
+        
         <div class="recent-posts">
             <strong>Latest posts</strong>
-                <ul>
+            <ul>
+                
                 
                     <li>
-                        <a href="/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
+                        <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
                     </li>
                 
                     <li>
-                        <a href="/article/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
+                        <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
                     </li>
                 
                     <li>
-                        <a href="/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                        <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
                     </li>
                 
                     <li>
-                        <a href="/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
+                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
                     </li>
                 
                     <li>
-                        <a href="/article/automating-attck-testing-with-soar-and-atomic-red-team/">Automating Attck Testing With Soar and Atomic Red Team</a>
+                        <a href="https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/">Automating Attck Testing With Soar and Atomic Red Team</a>
                     </li>
                 
                     <li>
-                        <a href="/article/making-mitre-attck-actionable/">Making MITRE ATT&amp;CK Actionable</a>
+                        <a href="https://letsautomate.it/article/making-mitre-attck-actionable/">Making MITRE ATT&amp;CK Actionable</a>
                     </li>
                 
                     <li>
-                        <a href="/article/responding-to-insider-threats-with-soar/">Responding to Insider Threats With Soar</a>
+                        <a href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/">Responding to Insider Threats With Soar</a>
                     </li>
                 
-                    <li>
-                        <a href="/article/identify-malicious-domains-using-soar/">Identify Malicious Domains Using Soar</a>
-                    </li>
-                
-                    <li>
-                        <a href="/article/you-dont-have-windows-7-in-your-environment-do-you/">You Dont Have Windows 7 in Your Environment Do You</a>
-                    </li>
-                
-                </ul>
+            </ul>
         </div>
+        
 
+        
         <div class="categories">
-            <strong>Categories</strong>
-
-            
-                <ul>
+            <a href="/categories/"><strong>Categories</strong></a>
+            <ul>
                 
-                    <li>
-                        <a href="/categories/automation">Automation (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/swimlane">Swimlane
+                        (25)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/azure">Azure (4)</a>
-                    </li>
+                <li>
+                    <a href="/categories/powershell">Powershell
+                        (7)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/how-to">How to (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/azure">Azure
+                        (4)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/powershell">Powershell (7)</a>
-                    </li>
+                <li>
+                    <a href="/categories/automation">Automation
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/python">Python (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/how-to">How to
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/redcanary">Redcanary (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/python">Python
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/slack">Slack (1)</a>
-                    </li>
+                <li>
+                    <a href="/categories/redcanary">Redcanary
+                        (1)</a>
+                </li>
                 
-                    <li>
-                        <a href="/categories/swimlane">Swimlane (25)</a>
-                    </li>
-                
-                </ul>
-            
+            </ul>
         </div>
+        
 
         <div class="right">
             
-            <div class="social-media">
+            <div class="external-profiles">
                 <strong>Social media</strong>
 
                 
+                <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fab fa-twitter"></i></a>
                 
-                    <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://github.com/MSAdministrator" target="_blank"><i class="fab fa-github"></i></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                
+            </div>
+            
+
+            <div class="languages">
+                <strong>Other languages</strong>
+                
+                
+                <a href="https://letsautomate.it/" class="active">en</a>
                 
                 
                 
+                <a href="https://letsautomate.it/de/">de</a>
                 
-                
-                
-                
-                
-                
-                    <a href="https://github.com/MSAdministrator" target="_blank"><i class="fa fa-github"></i></a>
-                
-                
-                    <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fa fa-linkedin"></i></a>
                 
             </div>
             
@@ -447,27 +516,28 @@ Export-ModuleMember -Function $Public.Basename
     </div>
 </footer>
 
+
 <div class="credits">
     <div class="container">
         <div class="copyright">
             <a href="https://github.com/Lednerb" target="_blank">
                 &copy;
                 
-                    2018
+                2018
                 
                 by Lednerb
             </a>
-	    -
-	    
+            
         </div>
         <div class="author">
-            <a href="https://github.com/Lednerb/bilberry-hugo-theme" target="_blank">Bilberry Hugo Theme</a>
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
         </div>
     </div>
 </div>
 
 
-        
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -480,72 +550,28 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-        
-
-        <script src="https://letsautomate.it/dist/theme.js" type="application/javascript"></script>
-
-        
-            
-        
-
-        <script>
-            $(document).ready(function() {
-                $(".moment").each(function() {
-                    $(this).text(
-                        moment( $(this).text() )
-                            .locale( "en" )
-                            .format('LL')
-                    );
-                });
-
-                $(".footnote-return sup").html("[return]")
-            })
-        </script>
-
-        
-            <script>
-    var client = algoliasearch("9OVGJK665T", "58aeb104d5835247f4a4a050dd4fe189");
-    var index = client.initIndex("Letsautomate.it");
-
-    $('#search').autocomplete({ hint: false, autoselect: true, debug: false },
-      [
-        {
-          
-            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, filters: 'language: en' }),
-          
-          displayKey: function(suggestion) {
-            return suggestion.title || suggestion.author
-          },
-          templates: {
-            suggestion: function(suggestion) {
-                return "<span class='entry " + suggestion.type + "'>"
-                      + "<span class='title'>" + suggestion.title + "</span>"
-                      + "<span class='fa fa-fw " + suggestion.iconClass + "'></span>"
-                  + "</span>"
-                ;
-            },
-            empty: function() {
-              return "<span class='empty'>Nothing found.</span>"
-            },
-            footer: function() {
-              return '<div class="branding">Powered by <img src="https:\/\/letsautomate.it\/dist\/algolia-logo-light.svg" /></div>'
-            }
-
-          },
-        }
-      ])
-      .on('autocomplete:selected', function(event, suggestion, dataset) {
-        window.location = (suggestion.url);
-      })
-      .keypress(function (event, suggestion) {
-        if (event.which == 13) {
-          window.location = (suggestion.url);
-        }
-      });
-</script>
-
-        
+    
 
 
-    </body>
+    <script src="https://letsautomate.it/theme.js"></script>
+
+    
+    
+    
+
+    
+    <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
+  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
+  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+</body>
+
 </html>

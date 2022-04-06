@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Links on MSAdministrator</title>
-    <link>https://msadministrator.github.io/link/</link>
-    <description>Recent content in Links on MSAdministrator</description>
+    <title>Links on Lets Automate It</title>
+    <link>https://letsautomate.it/link/</link>
+    <description>Recent content in Links on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Aug 2018 22:22:39 -0400</lastBuildDate>
-    
-	<atom:link href="https://msadministrator.github.io/link/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 01 Nov 2021 13:05:27 +0100</lastBuildDate><atom:link href="https://letsautomate.it/link/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Using Amazon Sqs With Powershell</title>
-      <link>https://msadministrator.github.io/link/using-amazon-sqs-with-powershell/</link>
-      <pubDate>Thu, 23 Aug 2018 22:22:39 -0400</pubDate>
+      <title>Duckduckgo.com</title>
+      <link>https://letsautomate.it/link/duckduckgo/</link>
+      <pubDate>Mon, 01 Nov 2021 13:05:27 +0100</pubDate>
       
-      <guid>https://msadministrator.github.io/link/using-amazon-sqs-with-powershell/</guid>
-      <description></description>
+      <guid>https://letsautomate.it/link/duckduckgo/</guid>
+      <description>A search engine that respects your privacy.</description>
     </item>
     
   </channel>

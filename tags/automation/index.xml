@@ -19,10 +19,10 @@ Each atomic in the library simulates a known adversary behavior associated with 
     
     <item>
       <title>Atomic Red Team Testing With Swimlane</title>
-      <link>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/</link>
+      <link>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</link>
       <pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
       
-      <guid>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/</guid>
+      <guid>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</guid>
       <description>Today, Swimlane is excited to announce that we are releasing a new SSP (Swimlane Solutions Package) for use within the Swimlane platform. This SSP will enable organizations to automate the testing of their defenses using Atomic Red Team using our new open-source project called atomic-operator.
 When using this SSP organizations can gain an understanding of their defensive posture against tests mapped to MITRE ATT&amp;amp;CK techniques. By using this use case you can correlate detections of these tests against their existing automation and log sources thus giving them fast feedback on their defensive posture based on tests available within Atomic Red Team.</description>
     </item>
@@ -142,7 +142,7 @@ After stumbling across a few endpoints I had not seen previously, I decided to w
       
       <guid>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</guid>
       <description>Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced py-ews to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.
-Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&#39; mailboxes.</description>
+Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&amp;rsquo; mailboxes.</description>
     </item>
     
     <item>
