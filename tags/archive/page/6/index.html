@@ -11,7 +11,7 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
     <title>
         
            
@@ -161,7 +161,7 @@
 
     
         Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.
- Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
+Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
 This script will remove older local administrator passwords that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate in (2 of 3).
 
         
@@ -235,7 +235,7 @@ This script will remove older local administrator passwords that you have create
 
     
         Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.
- Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
+Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
 This script will recover the local administrator password that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate.
 
         
@@ -456,7 +456,6 @@ It is actually pretty trivial to make this work, all you need to do is install a
     
         So I&rsquo;ve had a lot of questions about my MDT 2012 Driver setup and hopefully this post will explain a little bit about it. Let me know if you have any questions
 Personally I have a folder on my server called _Source_Drivers. I keep all my drivers here and import them into MDT but keep the original. Here is what my file structure of this folder looks like.
-
 Once I have my structure setup I then begin to setup the structure on my MDT Deployment Share.
 
         
@@ -530,7 +529,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
 
     
         So, some might not need this but thought I would share anyways. I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&rsquo;m deploying my new OS. Here are the steps on how to do this, but also how to create a custom Office 2010 Install.
- Once you've setup everything for you OS, go to the Applications folder on your Deployment Share and right click&gt;New Application Once there, put in the relavent information including where your resource CD is located.
+Once you've setup everything for you OS, go to the Applications folder on your Deployment Share and right click&gt;New Application Once there, put in the relavent information including where your resource CD is located.
 
         
             <a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/" class="more">Continue reading</a>
@@ -602,8 +601,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     </div>
 
     
-        Preparing WDS to enable PXE Boot (optional but very useful)  Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version  
- Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.
+        Preparing WDS to enable PXE Boot (optional but very useful) Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/" class="more">Continue reading</a>
@@ -664,6 +662,10 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
                     </li>
                 
@@ -685,10 +687,6 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
                 
                     <li>
                         <a href="https://letsautomate.it/article/making-mitre-attck-actionable/">Making MITRE ATT&amp;CK Actionable</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/">Responding to Insider Threats With Soar</a>
                     </li>
                 
             </ul>
@@ -721,17 +719,17 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
                 </li>
                 
                 <li>
+                    <a href="/categories/dfir">Dfir
+                        (1)</a>
+                </li>
+                
+                <li>
                     <a href="/categories/how-to">How to
                         (1)</a>
                 </li>
                 
                 <li>
                     <a href="/categories/python">Python
-                        (1)</a>
-                </li>
-                
-                <li>
-                    <a href="/categories/redcanary">Redcanary
                         (1)</a>
                 </li>
                 

@@ -2,17 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://letsautomate.it/tags/art/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+    <loc>https://letsautomate.it/tags/api/</loc>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/article/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/tags/atomic/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/author/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -24,11 +21,8 @@
                 href="https://letsautomate.it/author/"
                 />
   </url><url>
-    <loc>https://letsautomate.it/tags/automation/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url><url>
     <loc>https://letsautomate.it/categories/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -40,14 +34,23 @@
                 href="https://letsautomate.it/categories/"
                 />
   </url><url>
-    <loc>https://letsautomate.it/article/introducing-atomic-operator/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+    <loc>https://letsautomate.it/tags/dfir/</loc>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/dfir/</loc>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/headers/</loc>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/http/</loc>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -59,11 +62,8 @@
                 href="https://letsautomate.it/"
                 />
   </url><url>
-    <loc>https://letsautomate.it/categories/redcanary/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url><url>
     <loc>https://letsautomate.it/tags/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -74,6 +74,24 @@
                 hreflang="en"
                 href="https://letsautomate.it/tags/"
                 />
+  </url><url>
+    <loc>https://letsautomate.it/article/understanding-http-request-headers/</loc>
+    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/art/</loc>
+    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/atomic/</loc>
+    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/automation/</loc>
+    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/article/introducing-atomic-operator/</loc>
+    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/redcanary/</loc>
+    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
@@ -92,9 +110,6 @@
   </url><url>
     <loc>https://letsautomate.it/page/</loc>
     <lastmod>2021-06-04T08:47:39-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/tags/api/</loc>
-    <lastmod>2021-04-21T11:58:59-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</loc>
     <lastmod>2021-04-21T11:58:59-06:00</lastmod>
