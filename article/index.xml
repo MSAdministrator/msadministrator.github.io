@@ -6,7 +6,18 @@
     <description>Recent content in Articles on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jun 2022 12:45:00 -0400</lastBuildDate><atom:link href="https://letsautomate.it/article/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jul 2022 12:45:00 -0400</lastBuildDate><atom:link href="https://letsautomate.it/article/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Python - Part 2: Running Code</title>
+      <link>https://letsautomate.it/article/understanding-python-part-2-running-code/</link>
+      <pubDate>Thu, 14 Jul 2022 12:45:00 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/article/understanding-python-part-2-running-code/</guid>
+      <description>Introduction Whether you are new to Python or not, ensuring you understand the basics will help you along the way to becoming a Python expert.
+Please see the first post titled Python vs Powershell Part 1: Versioning. This first post was written in 2018 but still applies. The remaining blog posts are a continuation of this series. Lets get started!
+Installation You may have Python already installed. To check, open your terminal and type:</description>
+    </item>
+    
     <item>
       <title>Understanding HTTP Request Headers</title>
       <link>https://letsautomate.it/article/understanding-http-request-headers/</link>
