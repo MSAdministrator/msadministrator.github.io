@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>http on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/http/</link>
+    <description>Recent content in http on Lets Automate It</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Jun 2022 12:45:00 -0400</lastBuildDate><atom:link href="https://letsautomate.it/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding HTTP Request Headers</title>
+      <link>https://letsautomate.it/article/understanding-http-request-headers/</link>
+      <pubDate>Tue, 21 Jun 2022 12:45:00 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/article/understanding-http-request-headers/</guid>
+      <description>Table of Contents Summary Introduction Setup General Headers Cache-Control Connection Transfer-Encoding Request Headers Common Request Headers Accept Accept-Encoding Authorization User-Agent Response Headers Common Response Headers Location Vary Server WWW-Authenticate Metadata Headers Common Metadata Headers Allow Content-Encoding Content-Type Conclusion Summary Networking is complex. Whether you are troubleshooting network connectivity or attempting to detect malicious external network communications, understanding the nuances of common HTTP requests is extremely helpful but often it can be difficult for many security and IT professionals.</description>
+    </item>
+    
+  </channel>
+</rss>

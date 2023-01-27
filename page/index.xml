@@ -6,7 +6,17 @@
     <description>Recent content in Pages on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Jun 2021 08:47:39 -0400</lastBuildDate><atom:link href="https://letsautomate.it/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Sep 2022 12:51:23 -0400</lastBuildDate><atom:link href="https://letsautomate.it/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Press</title>
+      <link>https://letsautomate.it/page/press/</link>
+      <pubDate>Sat, 03 Sep 2022 12:51:23 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/page/press/</guid>
+      <description>Below are different links to articles I have been quoted or featured in.
+Quoted August 2022 Argentina judiciary targeted by new &amp;lsquo;Play&amp;rsquo; ransomware group Dominican Republic refuses to pay ransom after attack on agrarian institute July 2022 California college with 12,500 students knocked offline in cyberattack ICYMI: Critical Cisco RCE Bug, Microsoft Breaks Down Hive, SHI Cyberattack June 2022 May 2022 India&amp;rsquo;s SpiceJet Strands Planes After Being Hit By Ransomware Attack At Swimlane, Security Analysts Are Creative Thinkers Agricultural equipment manufacturer hit by ransomware attack | #malware | #ransomware April 2022 Increasing Cyber Risks with Russia’s War on Ukraine March 2022 Russia is About to Hack Your Energy Source.</description>
+    </item>
+    
     <item>
       <title>Open Source Projects</title>
       <link>https://letsautomate.it/page/open-source-projects/</link>
@@ -14,7 +24,7 @@
       
       <guid>https://letsautomate.it/page/open-source-projects/</guid>
       <description>Below is a list of open-source projects I have started or contributed heavily to:
- speedtweet  This docker-compose project will check your internet speed against a specified threshold and if below it will tweet at the provided account about your current internet speeds. Type: Docker   slack-url-utils  slack-url-utils is a slash command utility for Slack that obfuscates, deobfuscates, gets DNS information, and submits IOCs to AlienVault for a given URL.</description>
+speedtweet This docker-compose project will check your internet speed against a specified threshold and if below it will tweet at the provided account about your current internet speeds. Type: Docker slack-url-utils slack-url-utils is a slash command utility for Slack that obfuscates, deobfuscates, gets DNS information, and submits IOCs to AlienVault for a given URL. Type: Docker rudder A Python package to run commands remotely on Windows, macOS or *nix systems using PowerShell Remoting/WinRM or SSH.</description>
     </item>
     
     <item>
@@ -24,7 +34,7 @@
       
       <guid>https://letsautomate.it/page/presentations/</guid>
       <description>I have included a list below of my previous presentations and any relevant links. This will be continually updated moving forward:
-Presentation Slides  Making MITRE ATT&amp;amp;CK Actionable (gif) (pdf) py-ews: A cross platform python package to interact with Exchange Web Services Hunting Phish Kits PowerShell vs Python: A side-by-side comparison Basics of Incident Handling Securing Windows with Group Policy atomic-operator: Atomic Red Team Python Execution Framework  Past Presentations  Hunting PhishKits - 2022 CactusCon atomic-operator: Atomic Red Team Python Execution Framework - 2022 CactusCon Making MITRE ATT&amp;amp;CK Actonable - WWHF Weekly Showcase - 2022 Securing Windows with Group Policy - 2021 CircleCityCon Hunting Phish Kits - 2021 BSidesKC Securing Windows with Group Policy - 2021 WildWest Hackin Fest Deadwood Making MITRE ATT&amp;amp;CK Actionable - 2020 Hacker Halted vOPCDE #3 - Search &amp;amp; Delete: eDiscovery using EWS &amp;amp; Graph APIs py-ews: A cross platform python package to interact with Exchange Web Services - 2019 BSidesSTL Hunting Phish Kits - 2019 DerbyCon PowerShell vs Python: A side-by-side comparison - 2019 BSides Springfield (Missouri) - No Video SECURING WINDOWS WITH (SOME) GROUP POLICY – 2018 SHOWMECON SECURING WINDOWS WITH (SOME) GROUP POLICY – 2018 BSIDESKC MOTIVATIONS &amp;amp; TACTICS OF PHISHING – 2017 MORENET ANNUAL CONFERENCE SECURING WINDOWS WITH GROUP POLICY – 2017 DERBYCON BASICS OF INCIDENT RESPONSE – 2017 BSIDESSTL (2) HALF DAY POWERSHELL TRAINING COURSE FOR 80+ - 2017 MU VET MED PPRT: POWERSHELL PHISHING RESPONSE TOOLKIT – 2016 SHOWMECON PPRT: POWERSHELL PHISHING RESPONSE TOOLKIT – 2016 CIRCLE CITY CON SECURING WINDOWS WITH GROUP POLICY – 2015 MORENET ANNUAL CONFERENCE  </description>
+Presentation Slides Making MITRE ATT&amp;amp;CK Actionable (gif) (pdf) py-ews: A cross platform python package to interact with Exchange Web Services Hunting Phish Kits PowerShell vs Python: A side-by-side comparison Basics of Incident Handling Securing Windows with Group Policy atomic-operator: Atomic Red Team Python Execution Framework Past Presentations Hunting PhishKits - 2022 CactusCon atomic-operator: Atomic Red Team Python Execution Framework - 2022 CactusCon Making MITRE ATT&amp;amp;CK Actonable - WWHF Weekly Showcase - 2022 Securing Windows with Group Policy - 2021 CircleCityCon Hunting Phish Kits - 2021 BSidesKC Securing Windows with Group Policy - 2021 WildWest Hackin Fest Deadwood Making MITRE ATT&amp;amp;CK Actionable - 2020 Hacker Halted vOPCDE #3 - Search &amp;amp; Delete: eDiscovery using EWS &amp;amp; Graph APIs py-ews: A cross platform python package to interact with Exchange Web Services - 2019 BSidesSTL Hunting Phish Kits - 2019 DerbyCon PowerShell vs Python: A side-by-side comparison - 2019 BSides Springfield (Missouri) - No Video SECURING WINDOWS WITH (SOME) GROUP POLICY – 2018 SHOWMECON SECURING WINDOWS WITH (SOME) GROUP POLICY – 2018 BSIDESKC MOTIVATIONS &amp;amp; TACTICS OF PHISHING – 2017 MORENET ANNUAL CONFERENCE SECURING WINDOWS WITH GROUP POLICY – 2017 DERBYCON BASICS OF INCIDENT RESPONSE – 2017 BSIDESSTL (2) HALF DAY POWERSHELL TRAINING COURSE FOR 80+ - 2017 MU VET MED PPRT: POWERSHELL PHISHING RESPONSE TOOLKIT – 2016 SHOWMECON PPRT: POWERSHELL PHISHING RESPONSE TOOLKIT – 2016 CIRCLE CITY CON SECURING WINDOWS WITH GROUP POLICY – 2015 MORENET ANNUAL CONFERENCE </description>
     </item>
     
     <item>
@@ -33,7 +43,9 @@ Presentation Slides  Making MITRE ATT&amp;amp;CK Actionable (gif) (pdf) py-ews: 
       <pubDate>Sun, 05 Aug 2018 12:51:23 -0400</pubDate>
       
       <guid>https://letsautomate.it/page/about/</guid>
-      <description>Josh&amp;rsquo;s primary focus is in Windows security and PowerShell automation. He is a GIAC Certified Windows Security Administrator (GCWN) and GIAC Certified Forensic Analyst (GCFA). You can reach Josh at MSAdministrator.com or on Twitter at @MS_dministrator.</description>
+      <description>My name is Josh Rickard and I am a creator and automator of things. I&amp;rsquo;m an experienced IT &amp;amp; DFIR (Digital Forensics &amp;amp; Incident Response) professional that loves to automate and release open-source tools to help the Information Security community.
+I like long walks through binary trees, Python &amp;amp; PowerShell riding, writing romantic experiences about code, git prune all branches, and deep sea phishing.
+Experience Senior Detection Validation Engineer Red Canary / Colorado / October 2022 to January 2023 Due to a reduction in force my position was let go.</description>
     </item>
     
   </channel>

@@ -11,7 +11,7 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.110.0">
     <title>
         
            
@@ -58,6 +58,10 @@
 
     <div class="container">
         <ul class="topnav">
+            
+                
+                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
             
                 
                     <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
@@ -183,7 +187,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-</span></span><span style="display:flex;"><span>        Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>        Write-Output <span style="color:#e6db74">&#34;Found </span>$fileorFolder<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Let&rsquo;s say that this code above was in a file named <code>getFileAndFolders.ps1</code>.  When you open up the Powershell console you would typically navigate to the location this script is housed and invoke the script directly.</p>
@@ -197,7 +201,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found </span>$fileorFolder<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -215,7 +219,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found </span>$fileorFolder<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -231,7 +235,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found </span>$fileorFolder<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -244,7 +248,7 @@
 <h2 id="advanced-functions">Advanced Functions</h2>
 <p>Basic PowerShell functions are great for basic operations.  That may be all you need, but as you get more familiar with PowerShell and want to create extremely durable and re-usable code that others will use, then you will want something more advanced.  There&rsquo;s a secret to advanced functions, but it&rsquo;s not difficult and it adds a lot of great functionality for free!</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> getFileAndFolders {
-</span></span><span style="display:flex;"><span>    [<span style="color:#66d9ef">CmdletBinding</span>()]
+</span></span><span style="display:flex;"><span>    [CmdletBinding()]
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Param</span>(
 </span></span><span style="display:flex;"><span>        $SearchFolder
 </span></span><span style="display:flex;"><span>    )
@@ -253,7 +257,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found </span>$fileorFolder<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -266,30 +270,30 @@
 <p>The great thing about <code>CmdletBinding</code> is that you now have a lot more flexibility and you can help users of your function by ensuring that they are operating within your defined requirements.</p>
 <p>So, I somewhat lied above; you did create an Advanced Function but using it this way is not going to help you much.  For example, if you call our <code>getFileAndFolders</code> function with NO input value then you will get a bunch of red (errors).  That sucks, but with <code>[CmdletBinding()]</code> we have an arsenal of ways to validate and require certain values to meet our demands.  If we want to require that all users pass in a value for <code>$SearchFolder</code> then we can force that.  We can even ensure that the passed in value is a <code>[string]</code> and not an integer or some other value type that we are not prepared to handle.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> getFileAndFolders {
-</span></span><span style="display:flex;"><span>    [<span style="color:#66d9ef">CmdletBinding</span>()]
+</span></span><span style="display:flex;"><span>    [CmdletBinding()]
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Param</span>(
-</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span>=$true)]
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">[string]</span>$SearchFolder
+</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span>=$true)]
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$SearchFolder
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    $filesAndFolders = Get-ChildItem -Path $SearchFolder -Recurse
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($fileOrFolder <span style="color:#66d9ef">in</span> $filesAndFolders) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($fileOrFolder <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;some name&#39;</span>) {
-</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found $fileorFolder&#34;</span>
+</span></span><span style="display:flex;"><span>            Write-Output <span style="color:#e6db74">&#34;Found </span>$fileorFolder<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>We added some definitions around our parameter to ensure that the parameter must <code>(Mandatory)</code> be passed used when calling this function. We did this by setting <code>Mandatory</code> to <code>$True</code>.  We also <code>casted</code> our variable as a <code>[string]</code> to ensure that any value that is passed into that parameter must be a string.  These two definitions of our parameter ensure that we handle all situations that meet our requirements.</p>
 <p>There are lots of different validations that can be set on a parameter.  I&rsquo;m not going to go into these at this time, but I will share an example of what an advanced parameter validation may look like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>[<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span> = $true,
-</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">ValueFromPipelineByPropertyName</span> = $true,
-</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">Position</span> = 0)]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>[Parameter(<span style="color:#a6e22e">Mandatory</span> = $true,
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">ValueFromPipelineByPropertyName</span> = $true,
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">Position</span> = <span style="color:#ae81ff">0</span>)]
 </span></span><span style="display:flex;"><span>[ValidateNotNull()]
 </span></span><span style="display:flex;"><span>[ValidateNotNullOrEmpty()]
 </span></span><span style="display:flex;"><span>[ValidateScript( {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> (Test-Path $_) {$true}<span style="color:#66d9ef">else</span> {<span style="color:#66d9ef">Throw</span> <span style="color:#e6db74">&#34;Invalid path given: $_&#34;</span>}})]
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[string]</span>$SearchFolder
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> (Test-Path $_) {$true}<span style="color:#66d9ef">else</span> {<span style="color:#66d9ef">Throw</span> <span style="color:#e6db74">&#34;Invalid path given: </span>$_<span style="color:#e6db74">&#34;</span>}})]
+</span></span><span style="display:flex;"><span>[<span style="color:#66d9ef">string</span>]$SearchFolder
 </span></span></code></pre></div><p>Along with having the ability to set expectations around what values can be passed into your function, you get a bunch of additional features with <code>CmdletBinding</code>.  If you have ever used any other PowerShell built-in CmdLet&rsquo;s then you have probably noticed that there are additional &ldquo;common&rdquo; parameters that you have access to.  With <code>CmdletBinding</code> you now have access to these as well within your function.  Here is a list of these parameters, but I won&rsquo;t explain these in this post:</p>
 <ul>
 <li>Debug</li>
@@ -316,7 +320,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Above needs to remain the first line to import Classes</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># remove the comment when using classes</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#requires -Version 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span><span style="color:#66d9ef">requires</span> <span style="color:#66d9ef">-Version</span><span style="color:#a6e22e"> 2</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Get public and private function definition files.</span>
 </span></span><span style="display:flex;"><span>$Public = @( Get-ChildItem -Path $PSScriptRoot\Public\*.ps1 -Recurse -ErrorAction SilentlyContinue )
 </span></span><span style="display:flex;"><span>$Private = @( Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -Recurse -ErrorAction SilentlyContinue )
@@ -327,7 +331,7 @@
 </span></span><span style="display:flex;"><span>        . $import.fullname
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Catch</span> {
-</span></span><span style="display:flex;"><span>        Write-Error -Message <span style="color:#e6db74">&#34;Failed to import function </span>$($import.fullname)<span style="color:#e6db74">: $_&#34;</span>
+</span></span><span style="display:flex;"><span>        Write-Error -Message <span style="color:#e6db74">&#34;Failed to import function </span>$($import.fullname)<span style="color:#e6db74">: </span>$_<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -407,6 +411,14 @@
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
                     </li>
                 
@@ -424,14 +436,6 @@
                 
                     <li>
                         <a href="https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/">Automating Attck Testing With Soar and Atomic Red Team</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/making-mitre-attck-actionable/">Making MITRE ATT&amp;CK Actionable</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/">Responding to Insider Threats With Soar</a>
                     </li>
                 
             </ul>
@@ -459,22 +463,22 @@
                 </li>
                 
                 <li>
+                    <a href="/categories/python">Python
+                        (2)</a>
+                </li>
+                
+                <li>
                     <a href="/categories/automation">Automation
                         (1)</a>
                 </li>
                 
                 <li>
+                    <a href="/categories/dfir">Dfir
+                        (1)</a>
+                </li>
+                
+                <li>
                     <a href="/categories/how-to">How to
-                        (1)</a>
-                </li>
-                
-                <li>
-                    <a href="/categories/python">Python
-                        (1)</a>
-                </li>
-                
-                <li>
-                    <a href="/categories/redcanary">Redcanary
                         (1)</a>
                 </li>
                 

@@ -11,7 +11,7 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.110.0">
     <title>
         
            
@@ -57,6 +57,10 @@
 
     <div class="container">
         <ul class="topnav">
+            
+                
+                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
             
                 
                     <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
@@ -140,6 +144,158 @@
         
     <div class="article-wrapper u-cf">
         
+            <a class="bubble" href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-1-of-3/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-1-of-3/">
+            Powershell Updating Local Admin Passwords Securely 1 of 3
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        So I haven&rsquo;t posted in a bit but I&rsquo;ve seen this request many times. Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.
+Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
+
+        
+            <a href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-1-of-3/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://letsautomate.it/article/ipad-lockdown-mobileconfig/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/ipad-lockdown-mobileconfig/">
+            Ipad Lockdown Mobileconfig
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        It is possible to put an iPad or iPhone into &lsquo;Store Demo&rsquo; mode so that the home button and swipe to home gesture is disabled. If you have seen the iPads in the Apple Store running the smart sign apps then you will know what I mean.
+It is actually pretty trivial to make this work, all you need to do is install a correctly formatted mobile config plist over the air from a web server.
+
+        
+            <a href="https://letsautomate.it/article/ipad-lockdown-mobileconfig/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
             <a class="bubble" href="https://letsautomate.it/article/questions-about-mdt-2012-driver-setup/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -178,7 +334,6 @@
     
         So I&rsquo;ve had a lot of questions about my MDT 2012 Driver setup and hopefully this post will explain a little bit about it. Let me know if you have any questions
 Personally I have a folder on my server called _Source_Drivers. I keep all my drivers here and import them into MDT but keep the original. Here is what my file structure of this folder looks like.
-
 Once I have my structure setup I then begin to setup the structure on my MDT Deployment Share.
 
         
@@ -255,7 +410,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
 
     
         So, some might not need this but thought I would share anyways. I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&rsquo;m deploying my new OS. Here are the steps on how to do this, but also how to create a custom Office 2010 Install.
- Once you've setup everything for you OS, go to the Applications folder on your Deployment Share and right click&gt;New Application Once there, put in the relavent information including where your resource CD is located.
+Once you've setup everything for you OS, go to the Applications folder on your Deployment Share and right click&gt;New Application Once there, put in the relavent information including where your resource CD is located.
 
         
             <a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/" class="more">Continue reading</a>
@@ -330,8 +485,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     </div>
 
     
-        Preparing WDS to enable PXE Boot (optional but very useful)  Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version  
- Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.
+        Preparing WDS to enable PXE Boot (optional but very useful) Minimize the Deployment Workbench application Open “Windows Deployment Services” from Start/Admin Tools Expand Servers / CONFIG-DEPLOY.config.local and right-click on Boot Images and select Add Boot Image. If the boot image already exists, right click on it and select Replace Boot Image to replace it with a newer version Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder Select the LiteTouchPE_x86.
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/" class="more">Continue reading</a>
@@ -406,8 +560,7 @@ Once I have my structure setup I then begin to setup the structure on my MDT Dep
     </div>
 
     
-        Automating the Deployment Process  Right-click on the deployment share and select Properties  
- Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…             CUSTOMSETTINGS.INI   [Settings] Priority=Default
+        Automating the Deployment Process Right-click on the deployment share and select Properties Select the “Rules” tab In the main window, edit the settings as required. A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed… CUSTOMSETTINGS.INI [Settings] Priority=Default
 [Default ]
 _SMSTSORGNAME=Customer
 SkipBDDWelcome=YES
@@ -417,6 +570,23 @@ OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX
 SkipDeploymentType=YES
 DeploymentType=NEWCOMPUTER
 SkipDomainMembership=NO
+JoinDomain=domain.com
+DomainAdminDomain=domain.com
+DomainAdmin=MDTAddComputer
+DomainAdminPassword=Pa55w0rd
+MachineObjectOU=ou=example,dc=domain,dc=com
+OrgName=Customer
+SkipUserData=YES
+SkipTaskSequence=NO
+TaskSequenceID=TASKSEQID
+SkipPackageDisplay=YES
+SkipLocaleSelection=NO
+UILanguage=en-US
+UserLocale=en-GB
+KeyboardLocale=0809: 00000809
+SystemLocale=en-US
+SkipTimeZone=NO
+TimeZoneName=GMT Standard Time
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/" class="more">Continue reading</a>
@@ -491,163 +661,10 @@ SkipDomainMembership=NO
     </div>
 
     
-        Creating a Deployment Task Sequence  From the Deployment Workbench, expand the customer Deployment Share and right-click on Task Sequences and select New Task Sequence Enter a Task Sequence ID and Name. Make a note of the ID as you may need it later!  
- Accept the default “Standard Client Task Sequence” template Select the relevant OS Image to deploy  
- This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.
+        Creating a Deployment Task Sequence From the Deployment Workbench, expand the customer Deployment Share and right-click on Task Sequences and select New Task Sequence Enter a Task Sequence ID and Name. Make a note of the ID as you may need it later! Accept the default “Standard Client Task Sequence” template Select the relevant OS Image to deploy This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 8 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        Importing a Customer Reference Image  From the Deployment Workbench, expand the customer Deployment Share and right-click on Operating Systems and select Import Operating System From the Import Operating System Wizard, select Custom Image File and click Next Browse to the path of the WIM file. For captured images, this would by default be the \Captures folder in the Deployment Share Select “Copy Windows Vista, Windows Server 2008, or later setup files from specified path” and enter the path to the relevant OS installation media.
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 7 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        Capturing a Windows 7 Image from a reference PC The reference computer should be connected to the same network as the MDT Deployment server and should be set to get an IP address via DHCP.  THE REFERENCE COMPUTER MUST NOT BE JOINED TO ANY DOMAIN!
-  Boot the reference computer and ensure network connectivity Make any last-minute modifications (additional software, Windows Updates, etc.) Click Start and type \\&lt;MDTSERVER&gt;\share$\scripts\litetouch.
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-7-of-11/" class="more">Continue reading</a>
         
     
 </div>
@@ -707,6 +724,14 @@ SkipDomainMembership=NO
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
                     </li>
                 
@@ -724,14 +749,6 @@ SkipDomainMembership=NO
                 
                     <li>
                         <a href="https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/">Automating Attck Testing With Soar and Atomic Red Team</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/making-mitre-attck-actionable/">Making MITRE ATT&amp;CK Actionable</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/">Responding to Insider Threats With Soar</a>
                     </li>
                 
             </ul>
@@ -759,22 +776,22 @@ SkipDomainMembership=NO
                 </li>
                 
                 <li>
+                    <a href="/categories/python">Python
+                        (2)</a>
+                </li>
+                
+                <li>
                     <a href="/categories/automation">Automation
                         (1)</a>
                 </li>
                 
                 <li>
+                    <a href="/categories/dfir">Dfir
+                        (1)</a>
+                </li>
+                
+                <li>
                     <a href="/categories/how-to">How to
-                        (1)</a>
-                </li>
-                
-                <li>
-                    <a href="/categories/python">Python
-                        (1)</a>
-                </li>
-                
-                <li>
-                    <a href="/categories/redcanary">Redcanary
                         (1)</a>
                 </li>
                 

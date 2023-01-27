@@ -11,7 +11,7 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.110.0">
     <title>
         
            
@@ -58,6 +58,10 @@
 
     <div class="container">
         <ul class="topnav">
+            
+                
+                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
             
                 
                     <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
@@ -172,12 +176,12 @@
 
         <p>Yesterday I was asked to help with streamling a manual process that some QA folks were running into.  They had a debug release of an applicaiton that was signed with a test code signing certificate.  Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.</p>
 <p>This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$certificate = <span style="color:#66d9ef">[System.Security.Cryptography.X509Certificates.X509Certificate]</span>::CreateFromSignedFile(<span style="color:#e6db74">&#39;C:\some\path\to\a\file.dll&#39;</span>)
-</span></span><span style="display:flex;"><span>$cert2 = <span style="color:#66d9ef">[System.Security.Cryptography.X509Certificates.X509Certificate2]</span>::new($certificate)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$certificate = [<span style="color:#66d9ef">System.Security.Cryptography.X509Certificates.X509Certificate</span>]::CreateFromSignedFile(<span style="color:#e6db74">&#39;C:\some\path\to\a\file.dll&#39;</span>)
+</span></span><span style="display:flex;"><span>$cert2 = [<span style="color:#66d9ef">System.Security.Cryptography.X509Certificates.X509Certificate2</span>]::new($certificate)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$certStore = <span style="color:#66d9ef">[System.Security.Cryptography.X509Certificates.X509Store]</span>::new(<span style="color:#66d9ef">[System.Security.Cryptography.X509Certificates.StoreName]</span>::Root, <span style="color:#66d9ef">[System.Security.Cryptography.X509Certificates.StoreLocation]</span>::LocalMachine)
+</span></span><span style="display:flex;"><span>$certStore = [<span style="color:#66d9ef">System.Security.Cryptography.X509Certificates.X509Store</span>]::new([<span style="color:#66d9ef">System.Security.Cryptography.X509Certificates.StoreName</span>]::Root, [<span style="color:#66d9ef">System.Security.Cryptography.X509Certificates.StoreLocation</span>]::LocalMachine)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$certStore.Open(<span style="color:#66d9ef">[System.Security.Cryptography.X509Certificates.OpenFlags]</span>::ReadWrite)
+</span></span><span style="display:flex;"><span>$certStore.Open([<span style="color:#66d9ef">System.Security.Cryptography.X509Certificates.OpenFlags</span>]::ReadWrite)
 </span></span><span style="display:flex;"><span>$certStore.Add($cert2)
 </span></span><span style="display:flex;"><span>$certStore.Close()
 </span></span></code></pre></div><p>To break this down further, the first thing that we do is call a the <code>CreateFromSignedFile</code> method.  THis method takes a filepath as a parameter and will create a <code>$certificate</code> object with information stored in the dll.  The next thing is that we now need to take that object and create a new <code>Certificate2</code> from that existing <code>$certificate</code> metadata.</p>
@@ -250,6 +254,14 @@
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
                     </li>
                 
@@ -267,14 +279,6 @@
                 
                     <li>
                         <a href="https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/">Automating Attck Testing With Soar and Atomic Red Team</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/making-mitre-attck-actionable/">Making MITRE ATT&amp;CK Actionable</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/">Responding to Insider Threats With Soar</a>
                     </li>
                 
             </ul>
@@ -302,22 +306,22 @@
                 </li>
                 
                 <li>
+                    <a href="/categories/python">Python
+                        (2)</a>
+                </li>
+                
+                <li>
                     <a href="/categories/automation">Automation
                         (1)</a>
                 </li>
                 
                 <li>
+                    <a href="/categories/dfir">Dfir
+                        (1)</a>
+                </li>
+                
+                <li>
                     <a href="/categories/how-to">How to
-                        (1)</a>
-                </li>
-                
-                <li>
-                    <a href="/categories/python">Python
-                        (1)</a>
-                </li>
-                
-                <li>
-                    <a href="/categories/redcanary">Redcanary
                         (1)</a>
                 </li>
                 

@@ -6,7 +6,25 @@
     <description>Recent content in Categories on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Dec 2021 12:00:36 -0600</lastBuildDate><atom:link href="https://letsautomate.it/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jul 2022 12:45:00 -0400</lastBuildDate><atom:link href="https://letsautomate.it/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python</title>
+      <link>https://letsautomate.it/categories/python/</link>
+      <pubDate>Thu, 14 Jul 2022 12:45:00 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dfir</title>
+      <link>https://letsautomate.it/categories/dfir/</link>
+      <pubDate>Tue, 21 Jun 2022 12:45:00 -0400</pubDate>
+      
+      <guid>https://letsautomate.it/categories/dfir/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>redcanary</title>
       <link>https://letsautomate.it/categories/redcanary/</link>
@@ -31,15 +49,6 @@
       <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
       
       <guid>https://letsautomate.it/categories/powershell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://letsautomate.it/categories/python/</link>
-      <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
-      
-      <guid>https://letsautomate.it/categories/python/</guid>
       <description></description>
     </item>
     
