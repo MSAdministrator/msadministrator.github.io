@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://letsautomate.it/page/about/</loc>
+    <lastmod>2023-01-30T12:51:23-04:00</lastmod>
+  </url><url>
     <loc>https://letsautomate.it/</loc>
-    <lastmod>2022-09-03T12:51:23-04:00</lastmod>
+    <lastmod>2023-01-30T12:51:23-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -16,7 +19,7 @@
                 />
   </url><url>
     <loc>https://letsautomate.it/page/</loc>
-    <lastmod>2022-09-03T12:51:23-04:00</lastmod>
+    <lastmod>2023-01-30T12:51:23-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/page/press/</loc>
     <lastmod>2022-09-03T12:51:23-04:00</lastmod>
@@ -593,9 +596,6 @@
   </url><url>
     <loc>https://letsautomate.it/article/moving-away-from-wordpress/</loc>
     <lastmod>2018-08-05T12:55:27-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/page/about/</loc>
-    <lastmod>2018-08-05T12:51:23-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/archive/</loc>
   </url><url>
