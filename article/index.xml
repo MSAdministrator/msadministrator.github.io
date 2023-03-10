@@ -6,7 +6,18 @@
     <description>Recent content in Articles on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Jul 2022 12:45:00 -0400</lastBuildDate><atom:link href="https://letsautomate.it/article/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Mar 2023 12:03:34 -0600</lastBuildDate><atom:link href="https://letsautomate.it/article/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Thoughts About the United States Banning TikTok</title>
+      <link>https://letsautomate.it/article/thoughts-about-tiktok-ban/</link>
+      <pubDate>Fri, 10 Mar 2023 12:03:34 -0600</pubDate>
+      
+      <guid>https://letsautomate.it/article/thoughts-about-tiktok-ban/</guid>
+      <description>These are my personal thoughts about the United States banning TikTok.
+As you may have already heard, some congressional leaders have proposed the ban of a Chinese based social media application called TikTok.
+There is fear, with some truth mixed in, that TikTok is a danger to United States national defense. There are many reasons congressional, military, and other policy leaders fear TikTok, but the common theme seems to be related to data collection on American citizens and the potential of manipulating viewpoints in favor of the Chinese government.</description>
+    </item>
+    
     <item>
       <title>Understanding Python - Part 2: Running Code</title>
       <link>https://letsautomate.it/article/understanding-python-part-2-running-code/</link>
