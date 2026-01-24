@@ -6,64 +6,8 @@
     <description>Recent content in Tags on Lets Automate It</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Jan 2026 14:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 10 Mar 2023 12:00:00 -0600</lastBuildDate>
     <atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ai</title>
-      <link>https://letsautomate.it/tags/ai/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/tags/ai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Chatgpt</title>
-      <link>https://letsautomate.it/tags/chatgpt/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/tags/chatgpt/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Claude</title>
-      <link>https://letsautomate.it/tags/claude/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/tags/claude/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cursor</title>
-      <link>https://letsautomate.it/tags/cursor/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/tags/cursor/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Llm</title>
-      <link>https://letsautomate.it/tags/llm/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/tags/llm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Productivity</title>
-      <link>https://letsautomate.it/tags/productivity/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/tags/productivity/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SOC</title>
-      <link>https://letsautomate.it/tags/soc/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/tags/soc/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Threat-Hunting</title>
-      <link>https://letsautomate.it/tags/threat-hunting/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/tags/threat-hunting/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Policy</title>
       <link>https://letsautomate.it/tags/policy/</link>
@@ -156,7 +100,7 @@
       <description></description>
     </item>
     <item>
-      <title>Soar</title>
+      <title>SOAR</title>
       <link>https://letsautomate.it/tags/soar/</link>
       <pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
       <guid>https://letsautomate.it/tags/soar/</guid>

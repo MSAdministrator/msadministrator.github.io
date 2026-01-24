@@ -6,19 +6,12 @@
     <description>Recent content in Categories on Lets Automate It</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Jan 2026 14:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 10 Mar 2023 12:00:00 -0600</lastBuildDate>
     <atom:link href="https://letsautomate.it/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Automation</title>
-      <link>https://letsautomate.it/categories/automation/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/categories/automation/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Security</title>
       <link>https://letsautomate.it/categories/security/</link>
-      <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
+      <pubDate>Fri, 10 Mar 2023 12:00:00 -0600</pubDate>
       <guid>https://letsautomate.it/categories/security/</guid>
       <description></description>
     </item>
@@ -62,6 +55,13 @@
       <link>https://letsautomate.it/categories/how-to/</link>
       <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
       <guid>https://letsautomate.it/categories/how-to/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>https://letsautomate.it/categories/automation/</link>
+      <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
+      <guid>https://letsautomate.it/categories/automation/</guid>
       <description></description>
     </item>
     <item>

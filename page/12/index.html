@@ -258,84 +258,6 @@
         
     <div class="article-wrapper u-cf">
         
-            <a class="bubble" href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/">
-            Powershell Updating Local Admin Passwords Securely 3 of 3
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        <p>Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely.  This is not my script, I received this script along with many others from the SANS SEC 505 course.  I have not altered it in any way.</p>
-<div>
-<p>Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):</p>
-<p>This script will remove older local administrator passwords that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate in (2 of 3).</p>
-
-        
-            <a href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
             <a class="bubble" href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-2-of-3/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -821,6 +743,126 @@
 
 
     
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
+            Mdt 2012 Deployment Guide Step by Step 10 of 11
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1>Automating the Deployment Process</h1>
+<ol>
+	<li>Right-click on the deployment share and select <b><i>Properties</i></b></li>
+</ol>
+<p align="center"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/36/" rel="attachment wp-att-122"><img class="alignnone size-full wp-image-122" alt="36" src="http://msadministrator.files.wordpress.com/2012/12/36.png" width="307" height="294" /></a></p>
+<ol>
+	<li>Select the “<b><i>Rules</i></b>” tab</li>
+	<li>In the main window, edit the settings as required.  A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/35/" rel="attachment wp-att-121"><img class="alignnone size-full wp-image-121" alt="35" src="http://msadministrator.files.wordpress.com/2012/12/351.png" width="519" height="431" /></a></li>
+</ol>
+<table cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td width="54" height="0"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<b>CUSTOMSETTINGS.INI</b>
+<table width="476" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="top" width="203">[Settings]
+<p>Priority=Default</p>
+<p>[Default
+]</p>
+<p>_SMSTSORGNAME=Customer</p>
+<p>SkipBDDWelcome=YES</p>
+<p>SkipProductKey=YES</p>
+<p>ProductKey= XXXX-XXXX-XXXXX-XXXXX</p>
+<p>OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX</p>
+<p>SkipDeploymentType=YES</p>
+<p>DeploymentType=NEWCOMPUTER</p>
+<p>SkipDomainMembership=NO</p>
+<p>JoinDomain=domain.com</p>
+<p>DomainAdminDomain=domain.com</p>
+<p>DomainAdmin=MDTAddComputer</p>
+<p>DomainAdminPassword=Pa55w0rd</p>
+<p>MachineObjectOU=ou=example,dc=domain,dc=com</p>
+<p>OrgName=Customer</p>
+<p>SkipUserData=YES</p>
+<p>SkipTaskSequence=NO</p>
+<p>TaskSequenceID=TASKSEQID</p>
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
 
     
     <div class="paginator">
@@ -850,10 +892,6 @@
                 
                 
                     <li>
-                        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
-                    </li>
-                
-                    <li>
                         <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
                     </li>
                 
@@ -875,6 +913,10 @@
                 
                     <li>
                         <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
                     </li>
                 
             </ul>
@@ -909,25 +951,25 @@
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/automation/">Automation (2)</a>
-                
-                </li>
-                
-                <li>
-                
                     <a href="https://letsautomate.it/categories/python/">Python (2)</a>
                 
                 </li>
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/security/">Security (2)</a>
+                    <a href="https://letsautomate.it/categories/automation/">Automation (1)</a>
                 
                 </li>
                 
                 <li>
                 
                     <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/how-to/">How-To (1)</a>
                 
                 </li>
                 
