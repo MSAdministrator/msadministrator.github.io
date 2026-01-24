@@ -4,14 +4,14 @@
   
 <html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.154.5">
     <title>
         
            
@@ -21,36 +21,139 @@
     </title>
     <meta itemprop="name" content="Josh Rickard">
     <meta itemprop="description" content="Josh Rickard - Lets Automate It">
-    <meta property="og:title" content="Josh Rickard">
-    <meta property="og:description" content="Josh Rickard - Lets Automate It">
-    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:site_name" content="Lets Automate It">
+
     <meta property="og:url" content="https://letsautomate.it/author/josh-rickard/">
-    <meta property="og:site_name" content="Lets Automate It"><meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Josh Rickard">
+  <meta property="og:description" content="Lets Automate It">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
 
     
 
 
-    <script src="/modernizr-simple.js"></script>
-
     
-    <link href="/author/josh-rickard/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-    <link href="/author/josh-rickard/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="feed" type="application/rss+xml" title="Lets Automate It" />
     
 
     
     <link rel="canonical" href="https://letsautomate.it/author/josh-rickard/">
     
 
-    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
 
     
 
     
-        
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
     
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
 </head>
 
 <body class="bilberry-hugo-theme">
+    
 
     
     <nav>
@@ -59,35 +162,40 @@
         <ul class="topnav">
             
                 
-                    <li><a href="https://letsautomate.it/page/about/">About</a></li>
+                
+                    <li><a href="/page/about/">About</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
+                    <li><a href="/page/press/">Press</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/presentations/">Presentations</a></li>
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
                 
             
         </ul>
-
-        
-            <div id="search-box" class="search">
-                <i class="fas fa-search"></i>
-                <input id="search" type="text" placeholder="Search ...">
-            </div>
-        
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
     </div>
 </nav>
 
 
     
     <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
     <div class="container">
         <div class="logo">
@@ -110,8 +218,10 @@
                 <span class="subtitle">from Josh Rickard</span>
             
         </div>
-
-        
+        <div class="selectors">
+          
+          
+       </div>
 
         
             <div class="toggler">
@@ -119,12 +229,110 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
     </div>
+    </div>
 </header>
 
 
     <div class="main container">
         
     
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">
+            Swimlane Releases Elk Tls Docker
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2020-11-24</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>At Swimlane, we love to automate but we also love building and sharing open-source software (OSS) to help security teams. We are proud to announce that we have released a new open-source project called elk-tls-docker to make it easier for you to test and deploy Elastic Stack by automating the creation of several Elastic open-source software solutions.</p>
+<p>Elk-tls-docker assists with setting up aand creating an Elastic Stack using either self-signed certificates or using Let’s Encrypt certificates (using SWAG). This project was built so that you can test and use built-in features under Elastic Security, like detections, signals, cases, Elastic Endpoint and other features.</p>
+
+        
+            <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/elk/">Elk</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/docker/">Docker</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
     
         <div class="article-wrapper u-cf">
             
@@ -156,7 +364,7 @@
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
                     
                 
             </span>
@@ -173,8 +381,8 @@
     </div>
 
     
-        MITRE ATT&amp;CK is the defacto framework for organizations to measure their defense posture. ATT&amp;CK provides categorical verticals in the form of tactics, which align to the common methodologies attackers use. Within these verticals are a set (and subsets) of common ways in which attackers accomplish a tactic (vertical). These are known as techniques.
-Some techniques may be common across multiple operating systems. This usually equates to a broad definition of a technique.
+        <p>MITRE ATT&amp;CK is the defacto framework for organizations to measure their defense posture. ATT&amp;CK provides categorical verticals in the form of tactics, which align to the common methodologies attackers use. Within these verticals are a set (and subsets) of common ways in which attackers accomplish a tactic (vertical). These are known as techniques.</p>
+<p>Some techniques may be common across multiple operating systems. This usually equates to a broad definition of a technique. As defenders, this means we must understand how a single technique may be implemented on multiple platforms—which can be difficult for many, including myself. Luckily, organizations like Red Canary have provided our community with a rich framework to assist with the testing of these techniques.</p>
 
         
             <a href="https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/" class="more">Continue reading</a>
@@ -193,15 +401,17 @@ Some techniques may be common across multiple operating systems. This usually eq
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">soar</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/automation/">automation</a>
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
                     
                 
                     
+                    
+                    <a href="https://letsautomate.it/tags/attck/">ATT&amp;CK</a>
                     
                 
                     
@@ -211,7 +421,7 @@ Some techniques may be common across multiple operating systems. This usually eq
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/atomic-red-team/">atomic-red-team</a>
+                    <a href="https://letsautomate.it/tags/atomic-red-team/">Atomic-Red-Team</a>
                     
                 
             </div>
@@ -256,7 +466,7 @@ Some techniques may be common across multiple operating systems. This usually eq
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
                     
                 
             </span>
@@ -273,7 +483,7 @@ Some techniques may be common across multiple operating systems. This usually eq
     </div>
 
     
-        The Swimlane Deep Dive team is excited to announce the release of pyattck 2.0 and an equivalent PowerShell version called PSAttck. These open-source tools provide security operations centers (SOCs), defenders and offensive security teams with external data points that enrich MITRE ATT&amp;CK by providing potential commands, queries and even detections for specific techniques. Additionally, these data points enable context related to specific attacker actors or groups, as well as details about different tools used by malicious actors.
+        <p>The Swimlane Deep Dive team is excited to announce the release of pyattck 2.0 and an equivalent PowerShell version called PSAttck. These open-source tools provide security operations centers (SOCs), defenders and offensive security teams with external data points that enrich MITRE ATT&amp;CK by providing potential commands, queries and even detections for specific techniques. Additionally, these data points enable context related to specific attacker actors or groups, as well as details about different tools used by malicious actors.</p>
 
         
             <a href="https://letsautomate.it/article/making-mitre-attck-actionable/" class="more">Continue reading</a>
@@ -292,15 +502,17 @@ Some techniques may be common across multiple operating systems. This usually eq
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">soar</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/automation/">automation</a>
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
                     
                 
                     
+                    
+                    <a href="https://letsautomate.it/tags/attck/">ATT&amp;CK</a>
                     
                 
                     
@@ -350,7 +562,7 @@ Some techniques may be common across multiple operating systems. This usually eq
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
                     
                 
             </span>
@@ -367,8 +579,8 @@ Some techniques may be common across multiple operating systems. This usually eq
     </div>
 
     
-        Insider threats occur when an individual with ties to an organization misuses their access for malicious intent, such as stealing intellectual property or other data. Detecting insider threats can be difficult. But by using a security information and event management (SIEM) system or data loss prevention (DLP) products, you can create alerts to detect the exfiltration of data leaving your organization that is unauthorized or unexpected.
-Once you have detected these events, your security operations center (SOC) needs to investigate rapidly.
+        <p>Insider threats occur when an individual with ties to an organization misuses their access for malicious intent, such as stealing intellectual property or other data. Detecting insider threats can be difficult. But by using a security information and event management (SIEM) system or data loss prevention (DLP) products, you can create alerts to detect the exfiltration of data leaving your organization that is unauthorized or unexpected.</p>
+<p>Once you have detected these events, your security operations center (SOC) needs to investigate rapidly. Utilizing Swimlane and our Insider Threat Use Case, you can investigate and respond to these insider threats swiftly and accurately.</p>
 
         
             <a href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/" class="more">Continue reading</a>
@@ -387,17 +599,17 @@ Once you have detected these events, your security operations center (SOC) needs
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">soar</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/automation/">automation</a>
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/insider-threats/">insider threats</a>
+                    <a href="https://letsautomate.it/tags/insider-threats/">Insider Threats</a>
                     
                 
             </div>
@@ -442,7 +654,7 @@ Once you have detected these events, your security operations center (SOC) needs
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
                     
                 
             </span>
@@ -459,8 +671,8 @@ Once you have detected these events, your security operations center (SOC) needs
     </div>
 
     
-        Domain Squatting, typosquatting and IDN homograph attacks are commonplace when it comes to phishing and other forms of social engineering. Attackers use domain squatting and typosquatting of domains to trick users into providing their credentials, distribute malware, harm an organization’s reputation, or otherwise maliciously impersonate a legitimate domain. We&rsquo;ve discussed this topic before and have developed a unique use case with Swimlane to detect this malicious activity automatically.
-Recently, we began to monitor domains related to coronavirus (COVID-19), knowing there would be an increase in traffic to research the outbreak, which could be exploited by bad actors.
+        <p>Domain Squatting, typosquatting and IDN homograph attacks are commonplace when it comes to phishing and other forms of social engineering. Attackers use domain squatting and typosquatting of domains to trick users into providing their credentials, distribute malware, harm an organization’s reputation, or otherwise maliciously impersonate a legitimate domain. We&rsquo;ve discussed this topic before and have developed a unique use case with Swimlane to detect this malicious activity automatically.</p>
+<p>Recently, we began to monitor domains related to coronavirus (COVID-19), knowing there would be an increase in traffic to research the outbreak, which could be exploited by bad actors. Even though not all of these domains are necessarily malicious or focused on spoofing (or typosquatting) techniques, we decided to use this use case to identify any registered domains related to “corona” and “covid.” Over the last 2 weeks, we have seen 5054 corona-related domains being registered.</p>
 
         
             <a href="https://letsautomate.it/article/identify-malicious-domains-using-soar/" class="more">Continue reading</a>
@@ -479,17 +691,17 @@ Recently, we began to monitor domains related to coronavirus (COVID-19), knowing
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">soar</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/automation/">automation</a>
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/insider-threats/">insider threats</a>
+                    <a href="https://letsautomate.it/tags/insider-threats/">Insider Threats</a>
                     
                 
             </div>
@@ -534,7 +746,7 @@ Recently, we began to monitor domains related to coronavirus (COVID-19), knowing
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
                     
                 
             </span>
@@ -551,8 +763,8 @@ Recently, we began to monitor domains related to coronavirus (COVID-19), knowing
     </div>
 
     
-        Today is the day. Microsoft Windows 7 is officially end-of-life (EOL). The Windows 7 operating system was released on October 22, 2009. For 10 years now, IT and system administrators around the globe have relied on their trusty old Windows 7 OS. I mean, it was a step beyond Windows XP for sure. With EOL here, have you migrated all of your systems to Windows 10?
-If you have not migrated, you definitely should.
+        <p>Today is the day. Microsoft Windows 7 is officially end-of-life (EOL). The Windows 7 operating system was released on October 22, 2009. For 10 years now, IT and system administrators around the globe have relied on their trusty old Windows 7 OS. I mean, it was a step beyond Windows XP for sure. With EOL here, have you migrated all of your systems to Windows 10?</p>
+<p>If you have not migrated, you definitely should. Here are several reasons why you should from a security perspective:</p>
 
         
             <a href="https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/" class="more">Continue reading</a>
@@ -571,17 +783,17 @@ If you have not migrated, you definitely should.
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">soar</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/automation/">automation</a>
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/windows/">windows</a>
+                    <a href="https://letsautomate.it/tags/windows/">Windows</a>
                     
                 
             </div>
@@ -626,7 +838,7 @@ If you have not migrated, you definitely should.
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
                     
                 
             </span>
@@ -643,8 +855,8 @@ If you have not migrated, you definitely should.
     </div>
 
     
-        Alerts or detections come in many forms—some are good and some are not—and security operations center (SOC) analysts are responsible for the initial investigation into these anomalies. What’s more, when it comes to cloud-based resources, we may not have the luxury of logging everything that happens on a host operating system.
-Microsoft Azure helps provide quite a bit of data to assist with the initial investigation, as well as some initial response actions.
+        <p>Alerts or detections come in many forms—some are good and some are not—and security operations center (SOC) analysts are responsible for the initial investigation into these anomalies. What’s more, when it comes to cloud-based resources, we may not have the luxury of logging everything that happens on a host operating system.</p>
+<p>Microsoft Azure helps provide quite a bit of data to assist with the initial investigation, as well as some initial response actions. If you are a tier-one or -two analyst, you probably don’t have the ability to perform a full investigation, which is typically completed by your incident response or digital forensics team. With this in mind, I would like to introduce Swimlane’s new Microsoft Azure Use Case for just this situation.</p>
 
         
             <a href="https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/" class="more">Continue reading</a>
@@ -663,99 +875,12 @@ Microsoft Azure helps provide quite a bit of data to assist with the initial inv
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">soar</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
                     
                     <a href="https://letsautomate.it/tags/azure/">Azure</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/understanding-apis-soap/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/understanding-apis-soap/">
-            Understanding APIs: SOAP
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2019-10-24</span>
-            
-        
-
-        
-
-        
-            <span class="categories">
-                
-                    
-                    
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
-                    
-                
-            </span>
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        In my previous post, I talked about the basics of REST (representable state transfer) APIs (application programming interfaces). If you haven&rsquo;t read it yet, I highly recommend you read that post before continuing.
-In this post, we will be talking about the basics of simple object access protocol (SOAP) APIs, and we will primarily focus on a real SOAP service: Microsoft Exchange Web Services. RESTful APIs, which are the most commonly used APIs today, are powerful and provide a simple way to interact with a service or application via an exposed interface.
-
-        
-            <a href="https://letsautomate.it/article/understanding-apis-soap/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/api/">api</a>
-                    
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/soap/">soap</a>
                     
                 
             </div>
@@ -797,6 +922,10 @@ In this post, we will be talking about the basics of simple object access protoc
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
                     </li>
                 
@@ -820,52 +949,58 @@ In this post, we will be talking about the basics of simple object access protoc
                         <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
                     </li>
                 
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
-                    </li>
-                
             </ul>
         </div>
         
 
         
         <div class="categories">
-            <a href="/categories/"><strong>Categories</strong></a>
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
             <ul>
                 
                 <li>
-                    <a href="/categories/swimlane">Swimlane
-                        (25)</a>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/powershell">Powershell
-                        (7)</a>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/azure">Azure
-                        (4)</a>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/python">Python
-                        (2)</a>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/automation">Automation
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/dfir">Dfir
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/how-to">How to
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
                 </li>
                 
             </ul>
@@ -876,29 +1011,16 @@ In this post, we will be talking about the basics of simple object access protoc
             
             <div class="external-profiles">
                 <strong>Social media</strong>
-
                 
-                <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
                 
-                <a href="https://github.com/MSAdministrator" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
                 
-                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
                 
             </div>
             
 
-            <div class="languages">
-                <strong>Other languages</strong>
-                
-                
-                <a href="https://letsautomate.it/" class="active">en</a>
-                
-                
-                
-                <a href="https://letsautomate.it/de/">de</a>
-                
-                
-            </div>
             
 
             
@@ -910,15 +1032,15 @@ In this post, we will be talking about the basics of simple object access protoc
 <div class="credits">
     <div class="container">
         <div class="copyright">
-            <a href="https://github.com/Lednerb" target="_blank">
+            <a href="https://github.com/MSAdministrator" target="_blank">
                 &copy;
                 
-                2018
+                2026
                 
-                by Lednerb
+                Josh Rickard
             </a>
             -
-            <a href="https://letsautomate.it/author/josh-rickard/index.xml">RSS</a>
+            <a href="https://letsautomate.it/author/josh-rickard/index.xml">rss</a>
         </div>
         <div class="author">
             <a href="https://github.com/Lednerb/bilberry-hugo-theme"
@@ -929,40 +1051,79 @@ In this post, we will be talking about the basics of simple object access protoc
 
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-    
-
-
-    <script src="https://letsautomate.it/theme.js"></script>
-
-    
-    
-    
-
-    
-    <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
-  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
-  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
-  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
-
-  
-  <input type="hidden" id="algolia-search-currentLanguageOnly">
-  
-</div>
-
-    
 </body>
 
 </html>

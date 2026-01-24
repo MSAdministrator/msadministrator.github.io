@@ -4,53 +4,156 @@
   
 <html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.154.5">
     <title>
         
            
-               security &vert; Lets Automate It
+               Security &vert; Lets Automate It
            
         
     </title>
-    <meta itemprop="name" content="security">
-    <meta itemprop="description" content="security - Lets Automate It">
-    <meta property="og:title" content="security">
-    <meta property="og:description" content="security - Lets Automate It">
-    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta itemprop="name" content="Security">
+    <meta itemprop="description" content="Security - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
     <meta property="og:url" content="https://letsautomate.it/tags/security/">
-    <meta property="og:site_name" content="Lets Automate It"><meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Security">
+  <meta property="og:description" content="Lets Automate It">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
 
     
 
 
-    <script src="/modernizr-simple.js"></script>
-
     
-    <link href="/tags/security/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-    <link href="/tags/security/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/tags/security/index.xml" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/tags/security/index.xml" rel="feed" type="application/rss+xml" title="Lets Automate It" />
     
 
     
     <link rel="canonical" href="https://letsautomate.it/tags/security/">
     
 
-    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
 
     
 
     
-        
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
     
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
 </head>
 
 <body class="bilberry-hugo-theme">
+    
 
     
     <nav>
@@ -59,35 +162,40 @@
         <ul class="topnav">
             
                 
-                    <li><a href="https://letsautomate.it/page/about/">About</a></li>
+                
+                    <li><a href="/page/about/">About</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
+                    <li><a href="/page/press/">Press</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/presentations/">Presentations</a></li>
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
                 
             
         </ul>
-
-        
-            <div id="search-box" class="search">
-                <i class="fas fa-search"></i>
-                <input id="search" type="text" placeholder="Search ...">
-            </div>
-        
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
     </div>
 </nav>
 
 
     
     <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
     <div class="container">
         <div class="logo">
@@ -110,8 +218,10 @@
                 <span class="subtitle">from Josh Rickard</span>
             
         </div>
-
-        
+        <div class="selectors">
+          
+          
+       </div>
 
         
             <div class="toggler">
@@ -119,12 +229,106 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
     </div>
+    </div>
 </header>
 
 
     <div class="main container">
         
     
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">
+            My Thoughts About the United States Banning TikTok
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2023-03-10</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/security/">Security</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p><strong>These are my personal thoughts about the United States banning TikTok.</strong></p>
+<p>As you may have already heard, some congressional leaders have proposed the ban of a Chinese based social media application called TikTok.</p>
+<p>There is fear, with some truth mixed in, that TikTok is a danger to United States national defense. There are many reasons congressional, military, and other policy leaders fear TikTok, but the common theme seems to be related to data collection on American citizens and the potential of manipulating viewpoints in favor of the Chinese government.</p>
+
+        
+            <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/security/">Security</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/privacy/">Privacy</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/policy/">Policy</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
     
         <div class="article-wrapper u-cf">
             
@@ -156,7 +360,7 @@
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
                     
                 
             </span>
@@ -173,8 +377,8 @@
     </div>
 
     
-        Within a few weeks of starting at Swimlane, our CEO Cody Cornell mentioned the Microsoft Graph Security Hackathon — put on by the Microsoft Graph Security team and DevPost. After assembling a team and a lot of hard work, we were notified yesterday that our submission earned runner up!
-We were extremely excited to participate in this unique event as we were about to begin our development of our Microsoft Graph Security API bundle, and this would be the perfect opportunity for us to showcase the power of Swimlane.
+        <p>Within a few weeks of starting at Swimlane, our CEO Cody Cornell mentioned the Microsoft Graph Security Hackathon — put on by the Microsoft Graph Security team and DevPost. After assembling a team and a lot of hard work, we were notified yesterday that our submission earned runner up!</p>
+<p>We were extremely excited to participate in this unique event as we were about to begin our development of our Microsoft Graph Security API bundle, and this would be the perfect opportunity for us to showcase the power of Swimlane.</p>
 
         
             <a href="https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/" class="more">Continue reading</a>
@@ -193,22 +397,22 @@ We were extremely excited to participate in this unique event as we were about t
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/graph/">graph</a>
+                    <a href="https://letsautomate.it/tags/graph/">Graph</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/security/">security</a>
+                    <a href="https://letsautomate.it/tags/security/">Security</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/hackathon/">hackathon</a>
+                    <a href="https://letsautomate.it/tags/hackathon/">Hackathon</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/microsoft/">microsoft</a>
+                    <a href="https://letsautomate.it/tags/microsoft/">Microsoft</a>
                     
                 
             </div>
@@ -246,6 +450,10 @@ We were extremely excited to participate in this unique event as we were about t
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
                     </li>
                 
@@ -269,52 +477,58 @@ We were extremely excited to participate in this unique event as we were about t
                         <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
                     </li>
                 
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
-                    </li>
-                
             </ul>
         </div>
         
 
         
         <div class="categories">
-            <a href="/categories/"><strong>Categories</strong></a>
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
             <ul>
                 
                 <li>
-                    <a href="/categories/swimlane">Swimlane
-                        (25)</a>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/powershell">Powershell
-                        (7)</a>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/azure">Azure
-                        (4)</a>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/python">Python
-                        (2)</a>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/automation">Automation
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/dfir">Dfir
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/how-to">How to
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
                 </li>
                 
             </ul>
@@ -325,29 +539,16 @@ We were extremely excited to participate in this unique event as we were about t
             
             <div class="external-profiles">
                 <strong>Social media</strong>
-
                 
-                <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
                 
-                <a href="https://github.com/MSAdministrator" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
                 
-                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
                 
             </div>
             
 
-            <div class="languages">
-                <strong>Other languages</strong>
-                
-                
-                <a href="https://letsautomate.it/" class="active">en</a>
-                
-                
-                
-                <a href="https://letsautomate.it/de/">de</a>
-                
-                
-            </div>
             
 
             
@@ -359,15 +560,15 @@ We were extremely excited to participate in this unique event as we were about t
 <div class="credits">
     <div class="container">
         <div class="copyright">
-            <a href="https://github.com/Lednerb" target="_blank">
+            <a href="https://github.com/MSAdministrator" target="_blank">
                 &copy;
                 
-                2018
+                2026
                 
-                by Lednerb
+                Josh Rickard
             </a>
             -
-            <a href="https://letsautomate.it/tags/security/index.xml">RSS</a>
+            <a href="https://letsautomate.it/tags/security/index.xml">rss</a>
         </div>
         <div class="author">
             <a href="https://github.com/Lednerb/bilberry-hugo-theme"
@@ -378,40 +579,79 @@ We were extremely excited to participate in this unique event as we were about t
 
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-    
-
-
-    <script src="https://letsautomate.it/theme.js"></script>
-
-    
-    
-    
-
-    
-    <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
-  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
-  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
-  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
-
-  
-  <input type="hidden" id="algolia-search-currentLanguageOnly">
-  
-</div>
-
-    
 </body>
 
 </html>

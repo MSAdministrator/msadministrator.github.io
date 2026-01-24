@@ -4,14 +4,14 @@
   
 <html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.154.5">
     <title>
         
            
@@ -21,36 +21,139 @@
     </title>
     <meta itemprop="name" content="from Josh Rickard">
     <meta itemprop="description" content="Lets Automate It">
-    <meta property="og:title" content="from Josh Rickard">
-    <meta property="og:description" content="Lets Automate It">
-    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:site_name" content="Lets Automate It">
+
     <meta property="og:url" content="https://letsautomate.it/">
-    <meta property="og:site_name" content="Lets Automate It"><meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Lets Automate It">
+  <meta property="og:description" content="Lets Automate It">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
 
     
 
 
-    <script src="/modernizr-simple.js"></script>
-
     
-    <link href="/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-    <link href="/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/index.xml" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/index.xml" rel="feed" type="application/rss+xml" title="Lets Automate It" />
     
 
     
     <link rel="canonical" href="https://letsautomate.it/">
     
 
-    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
 
     
 
     
-        
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
     
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
 </head>
 
 <body class="bilberry-hugo-theme">
+    
 
     
     <nav>
@@ -59,35 +162,40 @@
         <ul class="topnav">
             
                 
-                    <li><a href="https://letsautomate.it/page/about/">About</a></li>
+                
+                    <li><a href="/page/about/">About</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
+                    <li><a href="/page/press/">Press</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/presentations/">Presentations</a></li>
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
                 
             
         </ul>
-
-        
-            <div id="search-box" class="search">
-                <i class="fas fa-search"></i>
-                <input id="search" type="text" placeholder="Search ...">
-            </div>
-        
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
     </div>
 </nav>
 
 
     
     <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
     <div class="container">
         <div class="logo">
@@ -110,14 +218,17 @@
                 <span class="subtitle">from Josh Rickard</span>
             
         </div>
-
-        
+        <div class="selectors">
+          
+          
+       </div>
 
         
             <div class="toggler">
         
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
+    </div>
     </div>
 </header>
 
@@ -139,6 +250,130 @@
 
 
     
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">
+            How I Use LLMs for Security Work
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-01-18</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/security/">Security</a>
+                    
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/automation/">Automation</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>I&rsquo;ve been using LLM tools like Claude, Cursor, and ChatGPT extensively in my security &amp; engineering work for the past couple years. Not as a replacement for thinking—but they genuinely help me move faster through complex problems. If you&rsquo;re a security analyst, SOC analyst, threat hunter or engineer who hasn&rsquo;t found a rhythm with these tools yet, I&rsquo;ll try to share what&rsquo;s been working for me with the hope it helps you too.</p>
+
+        
+            <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/ai/">Ai</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/llm/">Llm</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/claude/">Claude</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/cursor/">Cursor</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/chatgpt/">Chatgpt</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/threat-hunting/">Threat-Hunting</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/soc/">SOC</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/productivity/">Productivity</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
 
     
         
@@ -168,6 +403,15 @@
         
 
         
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/security/">Security</a>
+                    
+                
+            </span>
+        
 
         
             <span class="author">
@@ -180,9 +424,9 @@
     </div>
 
     
-        These are my personal thoughts about the United States banning TikTok.
-As you may have already heard, some congressional leaders have proposed the ban of a Chinese based social media application called TikTok.
-There is fear, with some truth mixed in, that TikTok is a danger to United States national defense. There are many reasons congressional, military, and other policy leaders fear TikTok, but the common theme seems to be related to data collection on American citizens and the potential of manipulating viewpoints in favor of the Chinese government.
+        <p><strong>These are my personal thoughts about the United States banning TikTok.</strong></p>
+<p>As you may have already heard, some congressional leaders have proposed the ban of a Chinese based social media application called TikTok.</p>
+<p>There is fear, with some truth mixed in, that TikTok is a danger to United States national defense. There are many reasons congressional, military, and other policy leaders fear TikTok, but the common theme seems to be related to data collection on American citizens and the potential of manipulating viewpoints in favor of the Chinese government.</p>
 
         
             <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/" class="more">Continue reading</a>
@@ -191,9 +435,31 @@ There is fear, with some truth mixed in, that TikTok is a danger to United State
 </div>
 
     
-<div class="footer no-tags">
+<div class="footer">
 
 
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/security/">Security</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/privacy/">Privacy</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/policy/">Policy</a>
+                    
+                
+            </div>
+        </div>
     
 
     
@@ -237,7 +503,7 @@ There is fear, with some truth mixed in, that TikTok is a danger to United State
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/python/">python</a>
+                        <a href="https://letsautomate.it/categories/python/">Python</a>
                     
                 
             </span>
@@ -254,9 +520,11 @@ There is fear, with some truth mixed in, that TikTok is a danger to United State
     </div>
 
     
-        Introduction Whether you are new to Python or not, ensuring you understand the basics will help you along the way to becoming a Python expert.
-Please see the first post titled Python vs Powershell Part 1: Versioning. This first post was written in 2018 but still applies. The remaining blog posts are a continuation of this series. Lets get started!
-Installation You may have Python already installed. To check, open your terminal and type:
+        <h2 id="introduction">Introduction</h2>
+<p>Whether you are new to Python or not, ensuring you understand the basics will help you along the way to becoming a Python expert.</p>
+<p>Please see the first post titled <a href="https://letsautomate.it/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>. This first post was written in 2018 but still applies. The remaining blog posts are a continuation of this series. Lets get started!</p>
+<h2 id="installation">Installation</h2>
+<p>You may have Python already installed. To check, open your terminal and type:</p>
 
         
             <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/" class="more">Continue reading</a>
@@ -275,12 +543,12 @@ Installation You may have Python already installed. To check, open your terminal
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/python/">python</a>
+                    <a href="https://letsautomate.it/tags/python/">Python</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/basics/">basics</a>
+                    <a href="https://letsautomate.it/tags/basics/">Basics</a>
                     
                 
             </div>
@@ -328,7 +596,7 @@ Installation You may have Python already installed. To check, open your terminal
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/dfir/">dfir</a>
+                        <a href="https://letsautomate.it/categories/dfir/">Dfir</a>
                     
                 
             </span>
@@ -345,7 +613,51 @@ Installation You may have Python already installed. To check, open your terminal
     </div>
 
     
-        Table of Contents Summary Introduction Setup General Headers Cache-Control Connection Transfer-Encoding Request Headers Common Request Headers Accept Accept-Encoding Authorization User-Agent Response Headers Common Response Headers Location Vary Server WWW-Authenticate Metadata Headers Common Metadata Headers Allow Content-Encoding Content-Type Conclusion Summary Networking is complex. Whether you are troubleshooting network connectivity or attempting to detect malicious external network communications, understanding the nuances of common HTTP requests is extremely helpful but often it can be difficult for many security and IT professionals.
+        <h1 id="table-of-contents">Table of Contents</h1>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#summary">Summary</a></li>
+<li><a href="/article/understanding-http-request-headers/#introduction">Introduction</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#setup">Setup</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#general-headers">General Headers</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#cache-control">Cache-Control</a></li>
+<li><a href="/article/understanding-http-request-headers/#connection">Connection</a></li>
+<li><a href="/article/understanding-http-request-headers/#transfer-encoding">Transfer-Encoding</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#request-headers">Request Headers</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#common-request-headers">Common Request Headers</a></li>
+<li><a href="/article/understanding-http-request-headers/#accept">Accept</a></li>
+<li><a href="/article/understanding-http-request-headers/#accept-encoding">Accept-Encoding</a></li>
+<li><a href="/article/understanding-http-request-headers/#authorization">Authorization</a></li>
+<li><a href="/article/understanding-http-request-headers/#user-agent">User-Agent</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#response-headers">Response Headers</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#common-response-headers">Common Response Headers</a></li>
+<li><a href="/article/understanding-http-request-headers/#location">Location</a></li>
+<li><a href="/article/understanding-http-request-headers/#vary">Vary</a></li>
+<li><a href="/article/understanding-http-request-headers/#server">Server</a></li>
+<li><a href="/article/understanding-http-request-headers/#www-authenticate">WWW-Authenticate</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#metadata-headers">Metadata Headers</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#common-metadata-headers">Common Metadata Headers</a></li>
+<li><a href="/article/understanding-http-request-headers/#allow">Allow</a></li>
+<li><a href="/article/understanding-http-request-headers/#content-encoding">Content-Encoding</a></li>
+<li><a href="/article/understanding-http-request-headers/#content-type">Content-Type</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#conclusion">Conclusion</a></li>
+</ul>
+<h1 id="summary">Summary</h1>
+<p>Networking is complex. Whether you are troubleshooting network connectivity or attempting to detect malicious external network communications, understanding the nuances of common HTTP requests is extremely helpful but often it can be difficult for many security and IT professionals.</p>
 
         
             <a href="https://letsautomate.it/article/understanding-http-request-headers/" class="more">Continue reading</a>
@@ -364,22 +676,22 @@ Installation You may have Python already installed. To check, open your terminal
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/http/">http</a>
+                    <a href="https://letsautomate.it/tags/http/">Http</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/dfir/">dfir</a>
+                    <a href="https://letsautomate.it/tags/dfir/">Dfir</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/headers/">headers</a>
+                    <a href="https://letsautomate.it/tags/headers/">Headers</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/api/">api</a>
+                    <a href="https://letsautomate.it/tags/api/">Api</a>
                     
                 
             </div>
@@ -427,7 +739,7 @@ Installation You may have Python already installed. To check, open your terminal
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/redcanary/">redcanary</a>
+                        <a href="https://letsautomate.it/categories/redcanary/">Redcanary</a>
                     
                 
             </span>
@@ -444,8 +756,8 @@ Installation You may have Python already installed. To check, open your terminal
     </div>
 
     
-        One of the major benefits of Atomic Red Team is that it enables security teams to understand how adversaries leverage MITRE® ATT&amp;CK techniques in the real world, and I’ve been a big fan for years. To me, Atomic Red Team is more than a repository of tests (aka atomics), it’s also a knowledge base, training tool, and more.
-Each atomic in the library simulates a known adversary behavior associated with a given technique.
+        <p>One of the major benefits of Atomic Red Team is that it enables security teams to understand how adversaries leverage MITRE® ATT&amp;CK techniques in the real world, and I’ve been a big fan for years. To me, Atomic Red Team is more than a repository of tests (aka atomics), it’s also a knowledge base, training tool, and more.</p>
+<p>Each atomic in the library simulates a known adversary behavior associated with a given technique. Each of these tests are meant to help security professionals understand how a technique works (in other words, what malicious looks like) and enable them to test their defensive controls.</p>
 
         
             <a href="https://letsautomate.it/article/introducing-atomic-operator/" class="more">Continue reading</a>
@@ -464,17 +776,17 @@ Each atomic in the library simulates a known adversary behavior associated with 
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/automation/">automation</a>
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/atomic/">atomic</a>
+                    <a href="https://letsautomate.it/tags/atomic/">Atomic</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/art/">art</a>
+                    <a href="https://letsautomate.it/tags/art/">Art</a>
                     
                 
             </div>
@@ -522,7 +834,7 @@ Each atomic in the library simulates a known adversary behavior associated with 
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
                     
                 
             </span>
@@ -539,8 +851,8 @@ Each atomic in the library simulates a known adversary behavior associated with 
     </div>
 
     
-        Today, Swimlane is excited to announce that we are releasing a new SSP (Swimlane Solutions Package) for use within the Swimlane platform. This SSP will enable organizations to automate the testing of their defenses using Atomic Red Team using our new open-source project called atomic-operator.
-When using this SSP organizations can gain an understanding of their defensive posture against tests mapped to MITRE ATT&amp;CK techniques. By using this use case you can correlate detections of these tests against their existing automation and log sources thus giving them fast feedback on their defensive posture based on tests available within Atomic Red Team.
+        <p>Today, Swimlane is excited to announce that we are releasing a new SSP (Swimlane Solutions Package) for use within the Swimlane platform. This SSP will enable organizations to automate the testing of their defenses using Atomic Red Team using our new open-source project called atomic-operator.</p>
+<p>When using this SSP organizations can gain an understanding of their defensive posture against tests mapped to MITRE ATT&amp;CK techniques. By using this use case you can correlate detections of these tests against their existing automation and log sources thus giving them fast feedback on their defensive posture based on tests available within Atomic Red Team.</p>
 
         
             <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/" class="more">Continue reading</a>
@@ -559,17 +871,17 @@ When using this SSP organizations can gain an understanding of their defensive p
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/automation/">automation</a>
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">soar</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/atomic-red-team/">atomic-red-team</a>
+                    <a href="https://letsautomate.it/tags/atomic-red-team/">Atomic-Red-Team</a>
                     
                 
             </div>
@@ -617,7 +929,7 @@ When using this SSP organizations can gain an understanding of their defensive p
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
                     
                 
             </span>
@@ -634,7 +946,7 @@ When using this SSP organizations can gain an understanding of their defensive p
     </div>
 
     
-        When it comes to implementing automation and orchestration, it is critical to understand how authentication works with APIs. The majority of the products in your environment likely have some sort of authentication mechanism. You need to know the nuances and differences between various authentication methods in order to automate communications with those APIs. In this blog post, I aim to help you understand by breaking down three different API authentication methods.
+        <p>When it comes to implementing automation and orchestration, it is critical to understand how authentication works with APIs. The majority of the products in your environment likely have some sort of authentication mechanism. You need to know the nuances and differences between various authentication methods in order to automate communications with those APIs. In this blog post, I aim to help you understand by breaking down three different API authentication methods.</p>
 
         
             <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/" class="more">Continue reading</a>
@@ -653,122 +965,22 @@ When using this SSP organizations can gain an understanding of their defensive p
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/automation/">automation</a>
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">soar</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/api/">api</a>
+                    <a href="https://letsautomate.it/tags/api/">Api</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/rest/">rest</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">
-            Swimlane Releases Elk Tls Docker
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2020-11-24</span>
-            
-        
-
-        
-
-        
-            <span class="categories">
-                
-                    
-                    
-                        <a href="https://letsautomate.it/categories/swimlane/">swimlane</a>
-                    
-                
-            </span>
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        At Swimlane, we love to automate but we also love building and sharing open-source software (OSS) to help security teams. We are proud to announce that we have released a new open-source project called elk-tls-docker to make it easier for you to test and deploy Elastic Stack by automating the creation of several Elastic open-source software solutions.
-Elk-tls-docker assists with setting up aand creating an Elastic Stack using either self-signed certificates or using Let’s Encrypt certificates (using SWAG).
-
-        
-            <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/automation/">automation</a>
-                    
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/soar/">soar</a>
-                    
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/elk/">elk</a>
-                    
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/docker/">docker</a>
+                    <a href="https://letsautomate.it/tags/rest/">Rest</a>
                     
                 
             </div>
@@ -810,6 +1022,10 @@ Elk-tls-docker assists with setting up aand creating an Elastic Stack using eith
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
                     </li>
                 
@@ -833,52 +1049,58 @@ Elk-tls-docker assists with setting up aand creating an Elastic Stack using eith
                         <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
                     </li>
                 
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
-                    </li>
-                
             </ul>
         </div>
         
 
         
         <div class="categories">
-            <a href="/categories/"><strong>Categories</strong></a>
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
             <ul>
                 
                 <li>
-                    <a href="/categories/swimlane">Swimlane
-                        (25)</a>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/powershell">Powershell
-                        (7)</a>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/azure">Azure
-                        (4)</a>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/python">Python
-                        (2)</a>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/automation">Automation
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/dfir">Dfir
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/how-to">How to
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
                 </li>
                 
             </ul>
@@ -889,29 +1111,16 @@ Elk-tls-docker assists with setting up aand creating an Elastic Stack using eith
             
             <div class="external-profiles">
                 <strong>Social media</strong>
-
                 
-                <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
                 
-                <a href="https://github.com/MSAdministrator" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
                 
-                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
                 
             </div>
             
 
-            <div class="languages">
-                <strong>Other languages</strong>
-                
-                
-                <a href="https://letsautomate.it/" class="active">en</a>
-                
-                
-                
-                <a href="https://letsautomate.it/de/">de</a>
-                
-                
-            </div>
             
 
             
@@ -923,15 +1132,15 @@ Elk-tls-docker assists with setting up aand creating an Elastic Stack using eith
 <div class="credits">
     <div class="container">
         <div class="copyright">
-            <a href="https://github.com/Lednerb" target="_blank">
+            <a href="https://github.com/MSAdministrator" target="_blank">
                 &copy;
                 
-                2018
+                2026
                 
-                by Lednerb
+                Josh Rickard
             </a>
             -
-            <a href="https://letsautomate.it/index.xml">RSS</a>
+            <a href="https://letsautomate.it/index.xml">rss</a>
         </div>
         <div class="author">
             <a href="https://github.com/Lednerb/bilberry-hugo-theme"
@@ -942,40 +1151,79 @@ Elk-tls-docker assists with setting up aand creating an Elastic Stack using eith
 
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-    
-
-
-    <script src="https://letsautomate.it/theme.js"></script>
-
-    
-    
-    
-
-    
-    <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
-  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
-  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
-  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
-
-  
-  <input type="hidden" id="algolia-search-currentLanguageOnly">
-  
-</div>
-
-    
 </body>
 
 </html>

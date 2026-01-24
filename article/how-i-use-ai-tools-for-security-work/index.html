@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               How I Use LLMs for Security Work &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="How I Use LLMs for Security Work">
+    <meta itemprop="description" content="How I Use LLMs for Security Work - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="How I Use LLMs for Security Work">
+  <meta property="og:description" content="I’ve been using LLM tools like Claude, Cursor, and ChatGPT extensively in my security &amp; engineering work for the past couple years. Not as a replacement for thinking—but they genuinely help me move faster through complex problems. If you’re a security analyst, SOC analyst, threat hunter or engineer who hasn’t found a rhythm with these tools yet, I’ll try to share what’s been working for me with the hope it helps you too.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="article">
+    <meta property="article:published_time" content="2026-01-18T14:00:00-06:00">
+    <meta property="article:modified_time" content="2026-01-18T14:00:00-06:00">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Llm">
+    <meta property="article:tag" content="Claude">
+    <meta property="article:tag" content="Cursor">
+    <meta property="article:tag" content="Chatgpt">
+    <meta property="article:tag" content="Threat-Hunting">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">
+            How I Use LLMs for Security Work
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-01-18</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/security/">Security</a>
+                    
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/automation/">Automation</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>I&rsquo;ve been using LLM tools like Claude, Cursor, and ChatGPT extensively in my security &amp; engineering work for the past couple years. Not as a replacement for thinking—but they genuinely help me move faster through complex problems. If you&rsquo;re a security analyst, SOC analyst, threat hunter or engineer who hasn&rsquo;t found a rhythm with these tools yet, I&rsquo;ll try to share what&rsquo;s been working for me with the hope it helps you too.</p>
+<p>Here&rsquo;s the thing: most people prompt LLMs like they&rsquo;re searching Google. They type a few keywords and expect magic. That doesn&rsquo;t work, especially for security work where context and precision matter. You wouldn&rsquo;t walk up to a senior analyst and say &ldquo;phishing bad, clicked link, help&rdquo; and expect useful output. Same principle applies here. The way you prompt these tools completely changes what you get back.</p>
+<p>I don&rsquo;t claim to be an expert by any means so please take this all as my opinion&ndash;I know there are many other ways to approach using LLMs. I&rsquo;ve used approaches like:</p>
+<ul>
+<li>writing a design &amp; requirement document and feeding that into an LLM while writing examples shared below.</li>
+<li>providing a repository of code and giving clear problem statements</li>
+<li>question &amp; answer analysis</li>
+<li>etc.</li>
+</ul>
+<p>Here&rsquo;s some examples of how I think they can be most useful for security peeps just starting out with LLMs.</p>
+<h2 id="role-stacking-set-the-stage">Role-Stacking: Set the Stage</h2>
+<p>One of the most effective techniques I&rsquo;ve found is what I call &ldquo;role-stacking.&rdquo; Instead of just asking a question, I tell the LLM what perspectives I need it to consider. I also found that using my own experience when setting the stage is extremely helpful since it&rsquo;s what I know.</p>
+<p>Here&rsquo;s an example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>As a security analyst and phishing threat detection expert. As a software engineer experienced with Python, Flask, and Docker.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Create a simple Flask (bootstap, etc.) application to collect DNS, WHOIS/RDAP, HTML and other opensource threat intelligence for a given URL.
+</span></span></code></pre></div><p>Notice what I did there. I&rsquo;m not just asking &ldquo;create a simple flask application.&rdquo; I&rsquo;m telling the LLM to think from multiple angles simultaneously—security analysis, phishing expertise, and software engineering. This produces output that bridges disciplines rather than staying siloed.</p>
+<p>For SOC analysts, this might look like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>As a SOC analyst experienced in alert triage. As a threat hunter 
+</span></span><span style="display:flex;"><span>familiar with MITRE ATT&amp;CK. As someone who has dealt with alert 
+</span></span><span style="display:flex;"><span>fatigue firsthand.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Analyze this detection rule and identify potential blind spots or false positive generators.
+</span></span></code></pre></div><p>The role-stacking approach forces the LLM to consider your problem from multiple angles, which often shows you things you wouldn&rsquo;t get from a single-perspective prompt.</p>
+<h2 id="be-explicit-about-your-technology-stack">Be Explicit About Your Technology Stack</h2>
+<p>LLMs perform dramatically better when you tell them what you&rsquo;re actually working with. Be specific about the technologies, products, and constraints in your environment (as much as you know).</p>
+<p>Here&rsquo;s how I do it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>As a senior security engineer and sr. software engineer. Experience 
+</span></span><span style="display:flex;"><span>with Docker, Kubernetes, caching, data streaming, gRPC, protobuf, 
+</span></span><span style="display:flex;"><span>JSONSchema, common data models, Puppeteer, Playwright, extensive 
+</span></span><span style="display:flex;"><span>experience with APIs, network communications, web frameworks, 
+</span></span><span style="display:flex;"><span>anti-bot detection, Chromium, Selenium, network captures, monitoring, 
+</span></span><span style="display:flex;"><span>knowledge about fingerprinting, cookie injection, evading behavioral 
+</span></span><span style="display:flex;"><span>turnstiles/captchas.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Using these technologies, products, tools, frameworks and knowledge 
+</span></span><span style="display:flex;"><span>bases, let&#39;s design an application that [specific goal]...
+</span></span></code></pre></div><p>I know that looks like a lot. I mean, it is a lot. But here&rsquo;s why it matters: the LLM now knows exactly what tools are on the table. It &ldquo;shouldn&rsquo;t&rdquo; suggest solutions using technologies I don&rsquo;t have (but it does sometimes but I have found this approach helps). It&rsquo;ll reason within my actual constraints most of the time. When it does, it&rsquo;s a huge benefit&ndash;especially when you&rsquo;re trying to solve real problems in your actual environment—-not hypothetical ones.</p>
+<p>For threat hunters, this might be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>As a threat hunter with access to Splunk, CrowdStrike EDR, and 
+</span></span><span style="display:flex;"><span>network flow data. Working in a hybrid cloud environment with 
+</span></span><span style="display:flex;"><span>AWS and on-prem Windows infrastructure. Familiar with Sigma 
+</span></span><span style="display:flex;"><span>rules and MITRE ATT&amp;CK.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Help me develop a hunting hypothesis for [specific threat behavior].
+</span></span></code></pre></div><h2 id="request-thoroughness-explicitly">Request Thoroughness Explicitly</h2>
+<p>So, how do you get past the surface-level responses? LLMs will often give you the quick answer—which is usually the shallow answer. If you want depth, you have to ask for it and provide a very specific example output.</p>
+<p>I frequently use phrases like:</p>
+<ul>
+<li>&ldquo;Take your time, think through carefully&rdquo;</li>
+<li>&ldquo;Use critical systems thinking&rdquo;</li>
+<li>&ldquo;Consider batch and streaming patterns, integration patterns, and how this evolves over time&rdquo;</li>
+<li>&ldquo;Do not hallucinate and validate any decisions and findings&rdquo;</li>
+</ul>
+<p>That last one is important. Honestly, these tools can confidently generate plausible-sounding nonsense. Telling them explicitly to validate their reasoning helps—not perfectly, but noticeably.</p>
+<p>Here&rsquo;s an example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Using your knowledge of cyber security and threat intelligence 
+</span></span><span style="display:flex;"><span>as it relates to phishing defense. We are evaluating several 
+</span></span><span style="display:flex;"><span>products to integrate into our detection pipeline.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>We are evaluating VirusTotal GTI, Team Cymru, Feedly, and any.run.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Knowing all that, create an evaluation criteria process.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Take your time. Think through carefully. Do not hallucinate—validate 
+</span></span><span style="display:flex;"><span>any decisions and findings.
+</span></span></code></pre></div><h2 id="ask-for-current-information">Ask for Current Information</h2>
+<p>This is especially important for security work where the landscape changes constantly. Tools, techniques, and threat actor behaviors evolve. Explicitly ask for updated context:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Search for the latest information regarding security tools and products.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Evaluate the best option for a sandbox analysis tool when it 
+</span></span><span style="display:flex;"><span>comes to inspecting and analyzing both phishing links and 
+</span></span><span style="display:flex;"><span>attachments from phishing emails.
+</span></span></code></pre></div><p>Will the LLM always have the latest data? No. Prompting it this way encourages it to reason about recency and often produces more thoughtful responses about what might have changed. Luckily, many of these tools have web search capabilities, so this prompt pattern becomes even more effective.</p>
+<h2 id="think-in-systems-not-point-solutions">Think in Systems, Not Point Solutions</h2>
+<p>Security work is inherently about systems—interconnected components that create emergent behaviors (and emergent vulnerabilities). I prompt AI tools to think the same way.</p>
+<p>Here&rsquo;s an example from my own work:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Imagine you have a platform which can use a list of indicators 
+</span></span><span style="display:flex;"><span>to hunt backwards in time for up to 30 days. The list of indicators 
+</span></span><span style="display:flex;"><span>per type (domains, IP addresses, URLs, files) will add about 
+</span></span><span style="display:flex;"><span>2 million new indicators per day that we must back-test/hunt for. 
+</span></span><span style="display:flex;"><span>As each day passes, the indicators exponentially grow in size.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Provide 5 options for building a system to handle and manage this data for X years. Remember to use critcial systems thinking.
+</span></span></code></pre></div><p>This prompt describes a real systems problem—not a feature request. The tool now has to reason about data growth, retention strategies, computational constraints, and tradeoffs. That&rsquo;s the kind of thinking that produces useful output.</p>
+<p>For SOC analysts dealing with alert volume, try:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Our SIEM generates approximately 50,000 alerts per day across 
+</span></span><span style="display:flex;"><span>200 detection rules. About 15% of our analyst time is spent on 
+</span></span><span style="display:flex;"><span>5 rules that generate 60% of the volume.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>How should we approach optimizing this situation? Consider both short-term tactical fixes and 
+</span></span><span style="display:flex;"><span>longer-term strategic improvements.
+</span></span></code></pre></div><h2 id="practical-tips-for-getting-started">Practical Tips for Getting Started</h2>
+<p>If you&rsquo;re new to using LLMs for security work, here are some concrete starting points:</p>
+<ul>
+<li><strong>Start with role-stacking</strong>: Before every prompt, think about what perspectives would be valuable. Security analyst? Software engineer? Incident responder? Stack them.</li>
+<li><strong>Be embarrassingly specific</strong>: Include your actual tools, technologies, and constraints. The more context, the better the output.</li>
+<li><strong>Ask for validation</strong>: Explicitly request that the LLM validate its reasoning and not hallucinate. It helps.</li>
+<li><strong>Think in systems</strong>: Frame your questions as systems problems, not isolated tasks.</li>
+<li><strong>Iterate</strong>: Your first prompt won&rsquo;t be perfect. Refine based on what you get back. Tell the tool what was useful and what wasn&rsquo;t.</li>
+</ul>
+<p>Finally, if you really want to stretch how you think about LLMs. Once you have completed a project / idea tell the tool to write a mark down file that can be used next time when wanting to create a similar tool (or just a project in general).</p>
+<p>An additional approach I have been playing with is asking the LLM to generate this markdown document in a way that considers current and future progressions of how we interface with LLMs and to build it in a way that is most efficient for the LLM itself.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Assess this project as a whole and generate a markdown definiton that will be used in the future for similar projects. Think about the current adoption and patterns used to interact with LLMs as well as future progression based on industry trends.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Generate this document so that it is efficient, clear and precise for future iterations.
+</span></span></code></pre></div><p>That&rsquo;s it! These six techniques cover about 90% of how I get value from LLMs in my daily work.</p>
+<h2 id="a-note-on-people">A Note on People</h2>
+<p>With that being said, I want to be clear about something: these are tools to augment human judgment, not replace it. The value of a good security analyst isn&rsquo;t their ability to generate text—it&rsquo;s their judgment, their intuition, their ability to recognize what doesn&rsquo;t fit.</p>
+<p>LLMs help me move faster through the mechanical parts of my work. They help me explore ideas, draft documentation, reason through complex systems. But the decisions? Those are still mine.</p>
+<p>As InfoSec professionals, we&rsquo;re responsible for the security of real people and real organizations. LLms can help us do that job better—but only if we stay in the driver&rsquo;s seat. Just remember that these tools are amplifiers—they amplify good thinking and bad thinking alike. Bring the good thinking.</p>
+<h2 id="whats-next">What&rsquo;s Next</h2>
+<p>I&rsquo;m still learning how to use these tools effectively. The techniques I&rsquo;ve shared here are simplified examples of what&rsquo;s working for me right now, but I expect they&rsquo;ll evolve as the tools themselves improve.</p>
+<p>I&rsquo;m currently building my own <code>agent</code> and <code>workflow</code> (state machines) so I may write about that next as I continue to learn and adapt on the many ways you can approach those problems.</p>
+<p>In the real world, especially more complex work, I define my goals, general requirements, my constraints, ideal/desired inputs and outputs. Remember the more context you given an LLM the better it will be (e.g. provide reference API docs, schemas, query examples, etc.).</p>
+<p>If you&rsquo;ve found effective prompting patterns for security work, I&rsquo;d love to hear about them. Reach out on LinkedIn or GitHub—let&rsquo;s share what&rsquo;s working.</p>
+<p>I hope this helps some of you get more out of these tools. The threat landscape isn&rsquo;t slowing down. Neither should we.</p>
+<p>Enjoy!</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/ai/">Ai</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/llm/">Llm</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/claude/">Claude</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/cursor/">Cursor</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/chatgpt/">Chatgpt</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/threat-hunting/">Threat-Hunting</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/soc/">SOC</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/productivity/">Productivity</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

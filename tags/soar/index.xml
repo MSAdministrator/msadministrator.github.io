@@ -1,109 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>soar on Lets Automate It</title>
+    <title>Soar on Lets Automate It</title>
     <link>https://letsautomate.it/tags/soar/</link>
-    <description>Recent content in soar on Lets Automate It</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Soar on Lets Automate It</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Dec 2021 11:54:39 -0600</lastBuildDate><atom:link href="https://letsautomate.it/tags/soar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 11:54:39 -0600</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/soar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Atomic Red Team Testing With Swimlane</title>
       <link>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</link>
       <pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</guid>
-      <description>Today, Swimlane is excited to announce that we are releasing a new SSP (Swimlane Solutions Package) for use within the Swimlane platform. This SSP will enable organizations to automate the testing of their defenses using Atomic Red Team using our new open-source project called atomic-operator.
-When using this SSP organizations can gain an understanding of their defensive posture against tests mapped to MITRE ATT&amp;amp;CK techniques. By using this use case you can correlate detections of these tests against their existing automation and log sources thus giving them fast feedback on their defensive posture based on tests available within Atomic Red Team.</description>
+      <description>&lt;p&gt;Today, Swimlane is excited to announce that we are releasing a new SSP (Swimlane Solutions Package) for use within the Swimlane platform. This SSP will enable organizations to automate the testing of their defenses using Atomic Red Team using our new open-source project called atomic-operator.&lt;/p&gt;&#xA;&lt;p&gt;When using this SSP organizations can gain an understanding of their defensive posture against tests mapped to MITRE ATT&amp;amp;CK techniques. By using this use case you can correlate detections of these tests against their existing automation and log sources thus giving them fast feedback on their defensive posture based on tests available within Atomic Red Team.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Common Rest Api Authentication Methods Explained</title>
       <link>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</link>
       <pubDate>Wed, 21 Apr 2021 11:58:59 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</guid>
-      <description>When it comes to implementing automation and orchestration, it is critical to understand how authentication works with APIs. The majority of the products in your environment likely have some sort of authentication mechanism. You need to know the nuances and differences between various authentication methods in order to automate communications with those APIs. In this blog post, I aim to help you understand by breaking down three different API authentication methods.</description>
+      <description>&lt;p&gt;When it comes to implementing automation and orchestration, it is critical to understand how authentication works with APIs. The majority of the products in your environment likely have some sort of authentication mechanism. You need to know the nuances and differences between various authentication methods in order to automate communications with those APIs. In this blog post, I aim to help you understand by breaking down three different API authentication methods.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane Releases Elk Tls Docker</title>
       <link>https://letsautomate.it/article/swimlane-releases-elk-tls-docker/</link>
       <pubDate>Tue, 24 Nov 2020 11:57:08 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlane-releases-elk-tls-docker/</guid>
-      <description>At Swimlane, we love to automate but we also love building and sharing open-source software (OSS) to help security teams. We are proud to announce that we have released a new open-source project called elk-tls-docker to make it easier for you to test and deploy Elastic Stack by automating the creation of several Elastic open-source software solutions.
-Elk-tls-docker assists with setting up aand creating an Elastic Stack using either self-signed certificates or using Let’s Encrypt certificates (using SWAG).</description>
+      <description>&lt;p&gt;At Swimlane, we love to automate but we also love building and sharing open-source software (OSS) to help security teams. We are proud to announce that we have released a new open-source project called elk-tls-docker to make it easier for you to test and deploy Elastic Stack by automating the creation of several Elastic open-source software solutions.&lt;/p&gt;&#xA;&lt;p&gt;Elk-tls-docker assists with setting up aand creating an Elastic Stack using either self-signed certificates or using Let’s Encrypt certificates (using SWAG). This project was built so that you can test and use built-in features under Elastic Security, like detections, signals, cases, Elastic Endpoint and other features.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Automating Attck Testing With Soar and Atomic Red Team</title>
       <link>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</link>
       <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</guid>
-      <description>MITRE ATT&amp;amp;CK is the defacto framework for organizations to measure their defense posture. ATT&amp;amp;CK provides categorical verticals in the form of tactics, which align to the common methodologies attackers use. Within these verticals are a set (and subsets) of common ways in which attackers accomplish a tactic (vertical). These are known as techniques.
-Some techniques may be common across multiple operating systems. This usually equates to a broad definition of a technique.</description>
+      <description>&lt;p&gt;MITRE ATT&amp;amp;CK is the defacto framework for organizations to measure their defense posture. ATT&amp;amp;CK provides categorical verticals in the form of tactics, which align to the common methodologies attackers use. Within these verticals are a set (and subsets) of common ways in which attackers accomplish a tactic (vertical). These are known as techniques.&lt;/p&gt;&#xA;&lt;p&gt;Some techniques may be common across multiple operating systems. This usually equates to a broad definition of a technique. As defenders, this means we must understand how a single technique may be implemented on multiple platforms—which can be difficult for many, including myself. Luckily, organizations like Red Canary have provided our community with a rich framework to assist with the testing of these techniques.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Making MITRE ATT&amp;CK Actionable</title>
       <link>https://letsautomate.it/article/making-mitre-attck-actionable/</link>
       <pubDate>Thu, 16 Jul 2020 12:33:03 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/making-mitre-attck-actionable/</guid>
-      <description>The Swimlane Deep Dive team is excited to announce the release of pyattck 2.0 and an equivalent PowerShell version called PSAttck. These open-source tools provide security operations centers (SOCs), defenders and offensive security teams with external data points that enrich MITRE ATT&amp;amp;CK by providing potential commands, queries and even detections for specific techniques. Additionally, these data points enable context related to specific attacker actors or groups, as well as details about different tools used by malicious actors.</description>
+      <description>&lt;p&gt;The Swimlane Deep Dive team is excited to announce the release of pyattck 2.0 and an equivalent PowerShell version called PSAttck. These open-source tools provide security operations centers (SOCs), defenders and offensive security teams with external data points that enrich MITRE ATT&amp;amp;CK by providing potential commands, queries and even detections for specific techniques. Additionally, these data points enable context related to specific attacker actors or groups, as well as details about different tools used by malicious actors.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Responding to Insider Threats With Soar</title>
       <link>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</link>
       <pubDate>Fri, 24 Apr 2020 12:37:11 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</guid>
-      <description>Insider threats occur when an individual with ties to an organization misuses their access for malicious intent, such as stealing intellectual property or other data. Detecting insider threats can be difficult. But by using a security information and event management (SIEM) system or data loss prevention (DLP) products, you can create alerts to detect the exfiltration of data leaving your organization that is unauthorized or unexpected.
-Once you have detected these events, your security operations center (SOC) needs to investigate rapidly.</description>
+      <description>&lt;p&gt;Insider threats occur when an individual with ties to an organization misuses their access for malicious intent, such as stealing intellectual property or other data. Detecting insider threats can be difficult. But by using a security information and event management (SIEM) system or data loss prevention (DLP) products, you can create alerts to detect the exfiltration of data leaving your organization that is unauthorized or unexpected.&lt;/p&gt;&#xA;&lt;p&gt;Once you have detected these events, your security operations center (SOC) needs to investigate rapidly. Utilizing Swimlane and our Insider Threat Use Case, you can investigate and respond to these insider threats swiftly and accurately.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Identify Malicious Domains Using Soar</title>
       <link>https://letsautomate.it/article/identify-malicious-domains-using-soar/</link>
       <pubDate>Wed, 25 Mar 2020 12:38:39 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/identify-malicious-domains-using-soar/</guid>
-      <description>Domain Squatting, typosquatting and IDN homograph attacks are commonplace when it comes to phishing and other forms of social engineering. Attackers use domain squatting and typosquatting of domains to trick users into providing their credentials, distribute malware, harm an organization’s reputation, or otherwise maliciously impersonate a legitimate domain. We&amp;rsquo;ve discussed this topic before and have developed a unique use case with Swimlane to detect this malicious activity automatically.
-Recently, we began to monitor domains related to coronavirus (COVID-19), knowing there would be an increase in traffic to research the outbreak, which could be exploited by bad actors.</description>
+      <description>&lt;p&gt;Domain Squatting, typosquatting and IDN homograph attacks are commonplace when it comes to phishing and other forms of social engineering. Attackers use domain squatting and typosquatting of domains to trick users into providing their credentials, distribute malware, harm an organization’s reputation, or otherwise maliciously impersonate a legitimate domain. We&amp;rsquo;ve discussed this topic before and have developed a unique use case with Swimlane to detect this malicious activity automatically.&lt;/p&gt;&#xA;&lt;p&gt;Recently, we began to monitor domains related to coronavirus (COVID-19), knowing there would be an increase in traffic to research the outbreak, which could be exploited by bad actors. Even though not all of these domains are necessarily malicious or focused on spoofing (or typosquatting) techniques, we decided to use this use case to identify any registered domains related to “corona” and “covid.” Over the last 2 weeks, we have seen 5054 corona-related domains being registered.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>You Dont Have Windows 7 in Your Environment Do You</title>
       <link>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</link>
       <pubDate>Tue, 14 Jan 2020 12:40:08 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</guid>
-      <description>Today is the day. Microsoft Windows 7 is officially end-of-life (EOL). The Windows 7 operating system was released on October 22, 2009. For 10 years now, IT and system administrators around the globe have relied on their trusty old Windows 7 OS. I mean, it was a step beyond Windows XP for sure. With EOL here, have you migrated all of your systems to Windows 10?
-If you have not migrated, you definitely should.</description>
+      <description>&lt;p&gt;Today is the day. Microsoft Windows 7 is officially end-of-life (EOL). The Windows 7 operating system was released on October 22, 2009. For 10 years now, IT and system administrators around the globe have relied on their trusty old Windows 7 OS. I mean, it was a step beyond Windows XP for sure. With EOL here, have you migrated all of your systems to Windows 10?&lt;/p&gt;&#xA;&lt;p&gt;If you have not migrated, you definitely should. Here are several reasons why you should from a security perspective:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Investigate Alerts in Microsoft Azure Using SOAR</title>
       <link>https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/</link>
       <pubDate>Wed, 18 Dec 2019 12:03:34 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/</guid>
-      <description>Alerts or detections come in many forms—some are good and some are not—and security operations center (SOC) analysts are responsible for the initial investigation into these anomalies. What’s more, when it comes to cloud-based resources, we may not have the luxury of logging everything that happens on a host operating system.
-Microsoft Azure helps provide quite a bit of data to assist with the initial investigation, as well as some initial response actions.</description>
+      <description>&lt;p&gt;Alerts or detections come in many forms—some are good and some are not—and security operations center (SOC) analysts are responsible for the initial investigation into these anomalies. What’s more, when it comes to cloud-based resources, we may not have the luxury of logging everything that happens on a host operating system.&lt;/p&gt;&#xA;&lt;p&gt;Microsoft Azure helps provide quite a bit of data to assist with the initial investigation, as well as some initial response actions. If you are a tier-one or -two analyst, you probably don’t have the ability to perform a full investigation, which is typically completed by your incident response or digital forensics team. With this in mind, I would like to introduce Swimlane’s new Microsoft Azure Use Case for just this situation.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane and Cylance PROTECT: Endpoint Threat Response</title>
       <link>https://letsautomate.it/article/swimlane-and-cylance-protect-endpoint-threat-response/</link>
       <pubDate>Fri, 18 Oct 2019 12:03:34 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlane-and-cylance-protect-endpoint-threat-response/</guid>
-      <description>Swimlane and Blackberry Cylance have partnered to offer a new use case that combines the power of security orchestration, automation and response (SOAR) with Cylance PROTECT’s integrated threat prevention solution. The Proactive Endpoint Threat Response use case utilizes our integration to take a proactive response to detections identified by Cylance PROTECT.
-By ingesting detections from Cylance PROTECT, Swimlane can automate and orchestrate the enrichment of detections using multiple open source intelligence (OSINT) platforms to identify malicious files proactively that are similar or related to a specific variant identified by Cylance.</description>
+      <description>&lt;p&gt;Swimlane and Blackberry Cylance have partnered to offer a new use case that combines the power of security orchestration, automation and response (SOAR) with Cylance PROTECT’s integrated threat prevention solution. The Proactive Endpoint Threat Response use case utilizes our integration to take a proactive response to detections identified by Cylance PROTECT.&lt;/p&gt;&#xA;&lt;p&gt;By ingesting detections from Cylance PROTECT, Swimlane can automate and orchestrate the enrichment of detections using multiple open source intelligence (OSINT) platforms to identify malicious files proactively that are similar or related to a specific variant identified by Cylance. Swimlane then automatically pulls the related samples and feeds them back into Cylance to enhance your protection from future threats.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

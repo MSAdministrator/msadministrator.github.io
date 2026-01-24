@@ -4,14 +4,14 @@
   
 <html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.154.5">
     <title>
         
            
@@ -21,36 +21,139 @@
     </title>
     <meta itemprop="name" content="Josh Rickard">
     <meta itemprop="description" content="Josh Rickard - Lets Automate It">
-    <meta property="og:title" content="Josh Rickard">
-    <meta property="og:description" content="Josh Rickard - Lets Automate It">
-    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:site_name" content="Lets Automate It">
+
     <meta property="og:url" content="https://letsautomate.it/author/josh-rickard/">
-    <meta property="og:site_name" content="Lets Automate It"><meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Josh Rickard">
+  <meta property="og:description" content="Lets Automate It">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
 
     
 
 
-    <script src="/modernizr-simple.js"></script>
-
     
-    <link href="/author/josh-rickard/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-    <link href="/author/josh-rickard/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="feed" type="application/rss+xml" title="Lets Automate It" />
     
 
     
     <link rel="canonical" href="https://letsautomate.it/author/josh-rickard/">
     
 
-    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
 
     
 
     
-        
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
     
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
 </head>
 
 <body class="bilberry-hugo-theme">
+    
 
     
     <nav>
@@ -59,35 +162,40 @@
         <ul class="topnav">
             
                 
-                    <li><a href="https://letsautomate.it/page/about/">About</a></li>
+                
+                    <li><a href="/page/about/">About</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
+                    <li><a href="/page/press/">Press</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/presentations/">Presentations</a></li>
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
                 
             
         </ul>
-
-        
-            <div id="search-box" class="search">
-                <i class="fas fa-search"></i>
-                <input id="search" type="text" placeholder="Search ...">
-            </div>
-        
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
     </div>
 </nav>
 
 
     
     <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
     <div class="container">
         <div class="logo">
@@ -110,8 +218,10 @@
                 <span class="subtitle">from Josh Rickard</span>
             
         </div>
-
-        
+        <div class="selectors">
+          
+          
+       </div>
 
         
             <div class="toggler">
@@ -119,12 +229,88 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
     </div>
+    </div>
 </header>
 
 
     <div class="main container">
         
     
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">
+            Mdt 2012 Deployment Guide Step by Step 3 of 11
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1>Device Driver Management</h1>
+<h2>3.1       Obtaining Device Drivers for a Deployment</h2>
+In order to deploy a single image to multiple hardware types, MDT performs a “driver injection” during the OS load process.  For this to work, any and all relevant drivers need to be imported into the deployment share in advance.  Depending on the hardware vendor, the process for obtaining these drivers may vary but will generally involve going to the vendor website and downloading the drivers for specific hardware models.  Once you have downloaded these drivers, they may require unpacking as the import process can only recognise drivers containing .INF or .CAB files.
+<p> </p>
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
     
         <div class="article-wrapper u-cf">
             
@@ -164,7 +350,38 @@
     </div>
 
     
-        2.1 Creating an MDT Deployment Share An MDT Deployment Share is the specific deployment environment which will be used for OS deployment. The share contains all elements of the deployment including drivers, applications, OS images etc. Log on to the MDT server and open the “Deployment Workbench” Right-click on “Deployment Shares” in the left pane of the workbench and select New Deployment Share In the New Deployment Share Wizard, choose a location for the new share.
+        <h1>2.1       Creating an MDT Deployment Share</h1>
+An MDT Deployment Share is the specific deployment environment which will be used for OS deployment.  The share contains all elements of the deployment including drivers, applications, OS images etc.
+<ol>
+	<li>Log on to the MDT server and open the “<b><i>Deployment Workbench</i></b>”</li>
+	<li>Right-click on “<b><i>Deployment Shares” </i></b>in the left pane of the workbench and select <b><i>New Deployment Share</i></b></li>
+</ol>
+<p align="center"><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/2/" rel="attachment wp-att-60"><img class="alignnone size-full wp-image-60" alt="2" src="http://msadministrator.files.wordpress.com/2012/12/2.png" width="323" height="294" /></a></p>
+<ol>
+	<li>In the New Deployment Share Wizard, choose a location for the new share.   Once you’ve selected a folder, click <b>Next</b></li>
+</ol>
+<a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/3/" rel="attachment wp-att-61"><img class="alignnone size-full wp-image-61" alt="3" src="http://msadministrator.files.wordpress.com/2012/12/3.png" width="519" height="401" /></a>
+<ol>
+	<li>Give the share a name – the name used previously should be fine.  Click <b>Next</b></li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/4/" rel="attachment wp-att-62"><img class="alignnone size-full wp-image-62" alt="4" src="http://msadministrator.files.wordpress.com/2012/12/4.png" width="519" height="395" /></a></li>
+</ol>
+<ol>
+	<li>Enter a descriptive name for the share (“<i>NewCustomer Deployment Share</i>” for instance) and click <b>Next</b></li>
+	<li>Uncheck the next three options - Allow Image Capture, Allow Admin Password and Allow Product Key – click <b>Next</b> after each</li>
+</ol>
+<a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/5/" rel="attachment wp-att-63"><img class="alignnone size-full wp-image-63" alt="5" src="http://msadministrator.files.wordpress.com/2012/12/5.png" width="519" height="397" /></a>
+<ol>
+	<li>The Summary screen should look similar to the one below.  Click <b>Next</b></li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/6/" rel="attachment wp-att-64"><img class="alignnone size-full wp-image-64" alt="6" src="http://msadministrator.files.wordpress.com/2012/12/6.png" width="519" height="397" /></a></li>
+</ol>
+<ol>
+	<li>Wait while the deployment share is created.  Once this is done, a Confirmation screen will be shown.  Ensure no errors appear.</li>
+</ol>
+<a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/7/" rel="attachment wp-att-65"><img class="alignnone size-full wp-image-65" alt="7" src="http://msadministrator.files.wordpress.com/2012/12/7.png" width="519" height="397" /></a>
+<ol>
+	<li>Click <b>Finish</b></li>
+</ol>
+<p align="left"><b> </b></p>
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/" class="more">Continue reading</a>
@@ -183,7 +400,7 @@
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
                     
                 
             </div>
@@ -236,7 +453,10 @@
     </div>
 
     
-        1.0 Deployment Infrastructure Overview The new OS Deployment Infrastructure for the Configuration Centre is based around Microsoft Deployment Toolkit 2010 with Update 1. MDT relies on a number of underlying software components and is able to deploy a number of different Operating Systems including Windows XP, Windows Vista and Windows 7 on the client side and Windows Server 2003, 2008 and 2008 R2 on the server side. This document is focused on deployment of Windows 7 clients.
+        <h1>1.0    Deployment Infrastructure Overview</h1>
+The new OS Deployment Infrastructure for the Configuration Centre is based around Microsoft Deployment Toolkit 2010 with Update 1.  MDT relies on a number of underlying software components and is able to deploy a number of different Operating Systems including Windows XP, Windows Vista and Windows 7 on the client side and Windows Server 2003,
+                    2008 and 2008 R2 on the server side.  This document is focused on deployment of Windows 7 clients.
+<p> </p>
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-1-of-11/" class="more">Continue reading</a>
@@ -255,7 +475,7 @@
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
                     
                 
             </div>
@@ -308,8 +528,8 @@
     </div>
 
     
-        So I went to this conference awhile back and sat through a presentation. Not really interesting, but since I am new to the whole Linux world I thought I would pass this along. Here is a PowerPoint presentation explaining the difference&rsquo;s between Windows and Linux commands, at least common ones. Enjoy!
-Linux-Windows - Comparison of Commands
+        <p>So I went to this conference awhile back and sat through a presentation.  Not really interesting, but since I am new to the whole Linux world I thought I would pass this along.  Here is a PowerPoint presentation explaining the difference&rsquo;s between Windows and Linux commands, at least common ones.  Enjoy!</p>
+<p><a href="http://msadministrator.files.wordpress.com/2012/10/linux-windows-comparison-of-commands.pdf">Linux-Windows - Comparison of Commands</a></p>
 
         
     
@@ -326,7 +546,7 @@ Linux-Windows - Comparison of Commands
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
                     
                 
             </div>
@@ -379,7 +599,7 @@ Linux-Windows - Comparison of Commands
     </div>
 
     
-        If you work in an environment similar to my previous position, then you would know how often you hear certain complaints after upgrading people to new applications or Operating Systems. Well one of those complaints came from individuals that we upgraded to Office 2010. They were use to the option of opening up Excel Spreadsheets in separate windows, but in Office 2010 you can&rsquo;t do this by default you have to make a few tweaks.
+        <p>If you work in an environment similar to my previous position, then you would know how often you hear certain complaints after upgrading people to new applications or Operating Systems. Well one of those complaints came from individuals that we upgraded to Office 2010. They were use to the option of opening up Excel Spreadsheets in separate windows, but in Office 2010 you can&rsquo;t do this by default you have to make a few tweaks. My fix was to create a little Batch script that would alter the Registry and allow this to be done. I hope you enjoy&hellip;..</p>
 
         
             <a href="https://letsautomate.it/article/scripting-open-excel-sheets-in-separate-windows/" class="more">Continue reading</a>
@@ -398,7 +618,7 @@ Linux-Windows - Comparison of Commands
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
                     
                 
             </div>
@@ -451,11 +671,79 @@ Linux-Windows - Comparison of Commands
     </div>
 
     
-        So I had an issue awhile back that need to be rectified and the fix was to clean out temporary install files from the Sun/Java folder in User profiles. This had to be done on about 700 machines, so I created this little script that cleans out these files and pushed it out to via AD. I hope you enjoy&hellip;..
-Win 7 - Clean Java Temp Files CD C:\ CLS ECHO REM *** This DELETES temporary install files from the REM *** SUN/JAVA folder in User Profiles.
+        <p>So I had an issue awhile back that need to be rectified and the fix was to clean out temporary install files from the Sun/Java folder in User profiles.  This had to be done on about 700 machines, so I created this little script that cleans out these files and pushed it out to via AD.  I hope you enjoy&hellip;..</p>
+<blockquote><strong>Win 7 - Clean Java Temp Files</strong>
+<code>
+CD C:\
+</code><code>
+CLS
+</code><code>
+ECHO</code>
+<code>
+REM *** This DELETES temporary install files from the
+REM *** SUN/JAVA folder in User Profiles.
+REM *** Run this if you get a Pop-Up warning about your
+REM *** User Profile being too large.
+REM *** Click the corner [X
+                    ] to exit without running.
+REM *** Otherwise press the [Spacebar
+                    ] to continue.
+</code><code>
+PAUSE
+</code><code>
+DEL "%USERPROFILE%\AppData\LocalLow\Sun\Java\*.*" /S /F /Q
+</code><code>
+RD "%USERPROFILE%\AppData\LocalLow\Sun\Java\" /S /Q
+</code><code>
+DEL "%USERPROFILE%\AppData\Local\Temp\*.*" /S /F /Q
+</code><code>
+RD "%USERPROFILE%\AppData\Local\Temp\" /S /Q
+</code><code>
+CLS
+</code><code>
+REM *** Folders are cleaned!
+</code><code>
+PAUSE
+</code><code>
+EXIT
+</code></blockquote>
+<blockquote><strong>Win XP - Clean Java Temp Files</strong>
+<code>
+CD C:\
+</code><code>
+CLS
+</code><code>
+ECHO
+</code><code>
+REM *** This script is for Windows XP only it will NOT work on Vista or 7
+REM *** This DELETES temporary install files from the
+REM *** SUN\JAVA and Local Settings\Temp folders in User Profiles.
+REM *** Run this if you get a Pop-Up warning about your
+REM *** User Profile being too large.
+REM *** Click the corner [X
+                    ] to exit without running.
+REM *** Otherwise press the [Spacebar
+                    ] to continue.
+</code><code>
+PAUSE
+</code><code>
+DEL "%SYSTEMDRIVE%\Documents and Settings\%USERNAME%\Application Data\Sun\Java\*.*" /S /F /Q
+</code><code>
+RD "%SYSTEMDRIVE%\Documents and Settings\%USERNAME%\Application Data\Sun\Java\" /S /Q
+</code><code>
+DEL "%SYSTEMDRIVE%\Documents and Settings\%USERNAME%\Local Settings\Temp\*.*" /S /F /Q
+</code><code>
+RMDIR "%SYSTEMDRIVE%\Documents and Settings\%USERNAME%\Local Settings\Temp\" /S /Q
+</code><code>
+CLS
+</code><code>
+REM *** Folders are cleaned!
+</code><code>
+PAUSE
+</code><code>
+EXIT
+</code></blockquote>
 
-        
-            <a href="https://letsautomate.it/article/scripting-clean-java-temporary-install-files-from-user-profiles-win-7-xp/" class="more">Continue reading</a>
         
     
 </div>
@@ -471,7 +759,7 @@ Win 7 - Clean Java Temp Files CD C:\ CLS ECHO REM *** This DELETES temporary ins
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
                     
                 
             </div>
@@ -524,7 +812,7 @@ Win 7 - Clean Java Temp Files CD C:\ CLS ECHO REM *** This DELETES temporary ins
     </div>
 
     
-        So I had to come up with a batch script that would allow the user (in a lab) to select the printer that they wanted to use during that login session. Pretty much this was placed in the startup folder on a few lab machines and every time someone would login (Deep Freeze Machines) it would ask them to select the printer that they wanted to print to. It worked pretty well, I hope someone makes use of it.
+        <p>So I had to come up with a batch script that would allow the user (in a lab) to select the printer that they wanted to use during that login session.  Pretty much this was placed in the startup folder on a few lab machines and every time someone would login (Deep Freeze Machines) it would ask them to select the printer that they wanted to print to.  It worked pretty well, I hope someone makes use of it.</p>
 
         
             <a href="https://letsautomate.it/article/scripting-mount-printer-at-startup-script/" class="more">Continue reading</a>
@@ -543,78 +831,7 @@ Win 7 - Clean Java Temp Files CD C:\ CLS ECHO REM *** This DELETES temporary ins
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/programming-final-project-for-x86-assembly-language-class-zombie-game/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/programming-final-project-for-x86-assembly-language-class-zombie-game/">
-            Programming Final Project for X86 Assembly Language Class Zombie Game
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        So a few years ago I had to create a Zombie game for one of my Assembly Language classes and it was fun as heck. Sorry for the bad formatting and probably bad code in general, but I wanted to post it because it was fun to create!
-Final Project - Assembly Language
-
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
                     
                 
             </div>
@@ -656,6 +873,10 @@ Final Project - Assembly Language
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
                     </li>
                 
@@ -679,52 +900,58 @@ Final Project - Assembly Language
                         <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
                     </li>
                 
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
-                    </li>
-                
             </ul>
         </div>
         
 
         
         <div class="categories">
-            <a href="/categories/"><strong>Categories</strong></a>
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
             <ul>
                 
                 <li>
-                    <a href="/categories/swimlane">Swimlane
-                        (25)</a>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/powershell">Powershell
-                        (7)</a>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/azure">Azure
-                        (4)</a>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/python">Python
-                        (2)</a>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/automation">Automation
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/dfir">Dfir
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/how-to">How to
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
                 </li>
                 
             </ul>
@@ -735,29 +962,16 @@ Final Project - Assembly Language
             
             <div class="external-profiles">
                 <strong>Social media</strong>
-
                 
-                <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
                 
-                <a href="https://github.com/MSAdministrator" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
                 
-                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
                 
             </div>
             
 
-            <div class="languages">
-                <strong>Other languages</strong>
-                
-                
-                <a href="https://letsautomate.it/" class="active">en</a>
-                
-                
-                
-                <a href="https://letsautomate.it/de/">de</a>
-                
-                
-            </div>
             
 
             
@@ -769,15 +983,15 @@ Final Project - Assembly Language
 <div class="credits">
     <div class="container">
         <div class="copyright">
-            <a href="https://github.com/Lednerb" target="_blank">
+            <a href="https://github.com/MSAdministrator" target="_blank">
                 &copy;
                 
-                2018
+                2026
                 
-                by Lednerb
+                Josh Rickard
             </a>
             -
-            <a href="https://letsautomate.it/author/josh-rickard/index.xml">RSS</a>
+            <a href="https://letsautomate.it/author/josh-rickard/index.xml">rss</a>
         </div>
         <div class="author">
             <a href="https://github.com/Lednerb/bilberry-hugo-theme"
@@ -788,40 +1002,79 @@ Final Project - Assembly Language
 
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-    
-
-
-    <script src="https://letsautomate.it/theme.js"></script>
-
-    
-    
-    
-
-    
-    <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
-  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
-  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
-  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
-
-  
-  <input type="hidden" id="algolia-search-currentLanguageOnly">
-  
-</div>
-
-    
 </body>
 
 </html>

@@ -4,14 +4,14 @@
   
 <html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.154.5">
     <title>
         
            
@@ -21,37 +21,143 @@
     </title>
     <meta itemprop="name" content="Understanding HTTP Request Headers">
     <meta itemprop="description" content="Understanding HTTP Request Headers - Lets Automate It">
-    <meta property="og:title" content="Understanding HTTP Request Headers">
-    <meta property="og:description" content="Understanding HTTP Request Headers - Lets Automate It">
-    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
-    <meta property="og:url" content="https://letsautomate.it/article/understanding-http-request-headers/">
     <meta property="og:site_name" content="Lets Automate It">
-    <meta property="og:type" content="article">
+
+    <meta property="og:url" content="https://letsautomate.it/article/understanding-http-request-headers/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Understanding HTTP Request Headers">
+  <meta property="og:description" content="Table of Contents Summary Introduction Setup General Headers Cache-Control Connection Transfer-Encoding Request Headers Common Request Headers Accept Accept-Encoding Authorization User-Agent Response Headers Common Response Headers Location Vary Server WWW-Authenticate Metadata Headers Common Metadata Headers Allow Content-Encoding Content-Type Conclusion Summary Networking is complex. Whether you are troubleshooting network connectivity or attempting to detect malicious external network communications, understanding the nuances of common HTTP requests is extremely helpful but often it can be difficult for many security and IT professionals.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="article">
+    <meta property="article:published_time" content="2022-06-21T12:45:00-04:00">
+    <meta property="article:modified_time" content="2022-06-21T12:45:00-04:00">
+    <meta property="article:tag" content="Http">
+    <meta property="article:tag" content="Dfir">
+    <meta property="article:tag" content="Headers">
+    <meta property="article:tag" content="Api">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
 
     
 
 
-    <script src="/modernizr-simple.js"></script>
-
-    
-    <link href="/article/understanding-http-request-headers/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-    <link href="/article/understanding-http-request-headers/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
     
 
     
     <link rel="canonical" href="https://letsautomate.it/article/understanding-http-request-headers/">
     
 
-    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
 
     
 
     
-        
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
     
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
 </head>
 
 <body class="bilberry-hugo-theme">
+    
 
     
     <nav>
@@ -60,35 +166,40 @@
         <ul class="topnav">
             
                 
-                    <li><a href="https://letsautomate.it/page/about/">About</a></li>
+                
+                    <li><a href="/page/about/">About</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
+                    <li><a href="/page/press/">Press</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/presentations/">Presentations</a></li>
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
                 
             
         </ul>
-
-        
-            <div id="search-box" class="search">
-                <i class="fas fa-search"></i>
-                <input id="search" type="text" placeholder="Search ...">
-            </div>
-        
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
     </div>
 </nav>
 
 
     
     <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
     <div class="container">
         <div class="logo">
@@ -111,14 +222,17 @@
                 <span class="subtitle">from Josh Rickard</span>
             
         </div>
-
-        
+        <div class="selectors">
+          
+          
+       </div>
 
         
             <div class="toggler">
         
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
+    </div>
     </div>
 </header>
 
@@ -155,7 +269,7 @@
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/dfir/">dfir</a>
+                        <a href="https://letsautomate.it/categories/dfir/">Dfir</a>
                     
                 
             </span>
@@ -176,46 +290,46 @@
 
         <h1 id="table-of-contents">Table of Contents</h1>
 <ul>
-<li><a href="#summary">Summary</a></li>
-<li><a href="#introduction">Introduction</a>
+<li><a href="/article/understanding-http-request-headers/#summary">Summary</a></li>
+<li><a href="/article/understanding-http-request-headers/#introduction">Introduction</a>
 <ul>
-<li><a href="#setup">Setup</a></li>
+<li><a href="/article/understanding-http-request-headers/#setup">Setup</a></li>
 </ul>
 </li>
-<li><a href="#general-headers">General Headers</a>
+<li><a href="/article/understanding-http-request-headers/#general-headers">General Headers</a>
 <ul>
-<li><a href="#cache-control">Cache-Control</a></li>
-<li><a href="#connection">Connection</a></li>
-<li><a href="#transfer-encoding">Transfer-Encoding</a></li>
+<li><a href="/article/understanding-http-request-headers/#cache-control">Cache-Control</a></li>
+<li><a href="/article/understanding-http-request-headers/#connection">Connection</a></li>
+<li><a href="/article/understanding-http-request-headers/#transfer-encoding">Transfer-Encoding</a></li>
 </ul>
 </li>
-<li><a href="#request-headers">Request Headers</a>
+<li><a href="/article/understanding-http-request-headers/#request-headers">Request Headers</a>
 <ul>
-<li><a href="#common-request-headers">Common Request Headers</a></li>
-<li><a href="#accept">Accept</a></li>
-<li><a href="#accept-encoding">Accept-Encoding</a></li>
-<li><a href="#authorization">Authorization</a></li>
-<li><a href="#user-agent">User-Agent</a></li>
+<li><a href="/article/understanding-http-request-headers/#common-request-headers">Common Request Headers</a></li>
+<li><a href="/article/understanding-http-request-headers/#accept">Accept</a></li>
+<li><a href="/article/understanding-http-request-headers/#accept-encoding">Accept-Encoding</a></li>
+<li><a href="/article/understanding-http-request-headers/#authorization">Authorization</a></li>
+<li><a href="/article/understanding-http-request-headers/#user-agent">User-Agent</a></li>
 </ul>
 </li>
-<li><a href="#response-headers">Response Headers</a>
+<li><a href="/article/understanding-http-request-headers/#response-headers">Response Headers</a>
 <ul>
-<li><a href="#common-response-headers">Common Response Headers</a></li>
-<li><a href="#location">Location</a></li>
-<li><a href="#vary">Vary</a></li>
-<li><a href="#server">Server</a></li>
-<li><a href="#www-authenticate">WWW-Authenticate</a></li>
+<li><a href="/article/understanding-http-request-headers/#common-response-headers">Common Response Headers</a></li>
+<li><a href="/article/understanding-http-request-headers/#location">Location</a></li>
+<li><a href="/article/understanding-http-request-headers/#vary">Vary</a></li>
+<li><a href="/article/understanding-http-request-headers/#server">Server</a></li>
+<li><a href="/article/understanding-http-request-headers/#www-authenticate">WWW-Authenticate</a></li>
 </ul>
 </li>
-<li><a href="#metadata-headers">Metadata Headers</a>
+<li><a href="/article/understanding-http-request-headers/#metadata-headers">Metadata Headers</a>
 <ul>
-<li><a href="#common-metadata-headers">Common Metadata Headers</a></li>
-<li><a href="#allow">Allow</a></li>
-<li><a href="#content-encoding">Content-Encoding</a></li>
-<li><a href="#content-type">Content-Type</a></li>
+<li><a href="/article/understanding-http-request-headers/#common-metadata-headers">Common Metadata Headers</a></li>
+<li><a href="/article/understanding-http-request-headers/#allow">Allow</a></li>
+<li><a href="/article/understanding-http-request-headers/#content-encoding">Content-Encoding</a></li>
+<li><a href="/article/understanding-http-request-headers/#content-type">Content-Type</a></li>
 </ul>
 </li>
-<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="/article/understanding-http-request-headers/#conclusion">Conclusion</a></li>
 </ul>
 <h1 id="summary">Summary</h1>
 <p>Networking is complex. Whether you are troubleshooting network connectivity or attempting to detect malicious external network communications, understanding the nuances of common HTTP requests is extremely helpful but often it can be difficult for many security and IT professionals.</p>
@@ -243,16 +357,20 @@
 <pre><code>http.request
 </code></pre>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="wireshark-filter-http-request.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>A screenshot of Wireshark and the Hancitor Infection with Cobalt Strike sample filtered by http.request</b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/wireshark-filter-http-request.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/wireshark-filter-http-request.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>A screenshot of Wireshark and the Hancitor Infection with Cobalt Strike sample filtered by http.request</b></td>
+      </tr>
+  </tbody>
 </table>
 <p>Let&rsquo;s begin.</p>
 <h1 id="general-headers">General Headers</h1>
@@ -263,38 +381,38 @@
 <p>The Cache-Control header allows the user to specify whether data provided by a response to an HTTP request should be cached on the local system along with how that response is stored for future requests. There are several options available based on <a href="https://datatracker.ietf.org/doc/html/rfc7234">RFC7234</a>, but many libraries will set this to either private or a max-age of 0 by default. This default works in most cases but you can control this behavior in a more granular way.</p>
 <p>Below is a table outlining the (common) different Cache-Control values and a brief definition:</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Public</td>
-<td>This means that the response may be cached by any server within the HTTP request being made</td>
-</tr>
-<tr>
-<td>Private</td>
-<td>This means that the response is intended for a single user and should be cached for other (processes) to access</td>
-</tr>
-<tr>
-<td>no-cache</td>
-<td>The means the response will not be used for any subsequent HTTP request (even for redirects)</td>
-</tr>
-<tr>
-<td>no-store</td>
-<td>This means that no part of the request or response should be stored. This is used if information is sensitive in nature.</td>
-</tr>
-<tr>
-<td>no-transform</td>
-<td>This means that any part of the request will not be transformed. Example, if you send an image and a proxy/cache service tries to convert an image to another type. With no-transform this will not happen.</td>
-</tr>
-<tr>
-<td>max-age={value in seconds}</td>
-<td>This is the max-age that any cache should be considered valued before being re-evaluated by the client or server.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Public</td>
+          <td>This means that the response may be cached by any server within the HTTP request being made</td>
+      </tr>
+      <tr>
+          <td>Private</td>
+          <td>This means that the response is intended for a single user and should be cached for other (processes) to access</td>
+      </tr>
+      <tr>
+          <td>no-cache</td>
+          <td>The means the response will not be used for any subsequent HTTP request (even for redirects)</td>
+      </tr>
+      <tr>
+          <td>no-store</td>
+          <td>This means that no part of the request or response should be stored. This is used if information is sensitive in nature.</td>
+      </tr>
+      <tr>
+          <td>no-transform</td>
+          <td>This means that any part of the request will not be transformed. Example, if you send an image and a proxy/cache service tries to convert an image to another type. With no-transform this will not happen.</td>
+      </tr>
+      <tr>
+          <td>max-age={value in seconds}</td>
+          <td>This is the max-age that any cache should be considered valued before being re-evaluated by the client or server.</td>
+      </tr>
+  </tbody>
 </table>
 <p>Understanding how Cache-Control works may not give you lots of information during an investigation unless you are investigating a web proxy. If that is the case then Cache-Control can give you lots of information from cached website pages to authentication information and more.</p>
 <p>With cache-control, an ETag can be used to validate that the cached item matches what was expected. This is a hash generated by the server and can be used for comparison purposes. If the ETag is different then the request will retrieve a newly cached version of the entity.</p>
@@ -307,45 +425,57 @@
 <p>Some malware will send an HTTP request to download additional files (tools) from a Command and Control server (C&amp;C). As an example, you can see this being used by the <a href="https://blogs.jpcert.or.jp/en/2020/08/Lazarus-malware.html">Lazarus</a> group as reported by the JPCERT.</p>
 <p>You can also see the use of Connection: Keep-Alive in below example of a Bazarloader using Cobalt Strike:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="connection-bazar-loader.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>The initial request which returns code that downloads additional tools. This is an example of BazarLoader using Cobalt Strike: <a href="https://www.malware-traffic-analysis.net/2021/08/12/index.html">https://www.malware-traffic-analysis.net/2021/08/12/index.html</a> </b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/connection-bazar-loader.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/connection-bazar-loader.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>The initial request which returns code that downloads additional tools. This is an example of BazarLoader using Cobalt Strike: <a href="https://www.malware-traffic-analysis.net/2021/08/12/index.html">https://www.malware-traffic-analysis.net/2021/08/12/index.html</a> </b></td>
+      </tr>
+  </tbody>
 </table>
 <p>Additionally, Keep-Alive may be used when exfiltrating data as well since likely they are transferring large amounts of data which means their typical connection must be kept alive for a longer period of time.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="connection-hancitor-infection.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>Example of a Hancitor infection with Cobalt Strike showing the Connection and Cache-Control headers in the request</b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/connection-hancitor-infection.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/connection-hancitor-infection.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>Example of a Hancitor infection with Cobalt Strike showing the Connection and Cache-Control headers in the request</b></td>
+      </tr>
+  </tbody>
 </table>
 <p>An example of these general headers can be seen in this sample of a <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">Hancitor infection with Cobalt Strike</a> PCAP from <a href="https://www.malware-traffic-analysis.net/2020/12/29/index.html">malware-traffic-analysis.net</a>.</p>
 <h2 id="transfer-encoding">Transfer-Encoding</h2>
 <p>Transfer-Encoding is a hop-by-hop HTTP request header that explains what, if any, transformation of the request was done on that hop. Each type of transform must be added in the order of precedence. For example, it is very common to see that a transform was done using “chunked”. Chunked is used to split large amounts of dynamic content into multiple packets since the full size will not be known until the end of the transfer. If other transformations were done then you will also see the transfer-extension property. Unless absolutely necessary you probably will never mess with transfer-encoding headers but they are common to see.</p>
 <p>When investigating HTTP requests remember that this header (as well as some others) can be obfuscated by modifying the format of the header itself.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="transfer-encoding.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>An example of some ways the Transfer-Encoding header can be obfuscated. Thanks to <a href="https://book.hacktricks.xyz/pentesting-web/http-request-smuggling#te-te-vulnerabilities">https://book.hacktricks.xyz/pentesting-web/http-request-smuggling#te-te-vulnerabilities</a></b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/transfer-encoding.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/transfer-encoding.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>An example of some ways the Transfer-Encoding header can be obfuscated. Thanks to <a href="https://book.hacktricks.xyz/pentesting-web/http-request-smuggling#te-te-vulnerabilities">https://book.hacktricks.xyz/pentesting-web/http-request-smuggling#te-te-vulnerabilities</a></b></td>
+      </tr>
+  </tbody>
 </table>
 <p>You will often see Transfer-Encoding as chunked but one good indicator is the combination of Content-Length (we will talk more about this later) being different then the actual length plus having Transfer-Encoding as chunked.</p>
 <p>Please note that Content-Length is in bytes and that the length of the actual content is defined as the beginning of the body to the end. The end is defined as 2 bytes of data which are /r/n.</p>
@@ -362,73 +492,77 @@
 </ul>
 </blockquote>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Description</th>
-<th>Commonality</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Accept</td>
-<td>The Accept header and Accept-Encoding header are similar. Both are used to specify the media type in the request and response.</td>
-<td>HIGH</td>
-</tr>
-<tr>
-<td>Accept-Encoding</td>
-<td>The Accept header and Accept-Encoding header are similar. Both are used to specify the media type in the request and response.</td>
-<td>HIGH</td>
-</tr>
-<tr>
-<td>Accept-Language</td>
-<td>The Accept-Language header defines the accepted language for a response. This is not obscure by any means but it’s not very common to see.</td>
-<td>MED</td>
-</tr>
-<tr>
-<td>Authorization</td>
-<td>This header is the most common and is used for authentication. Examples that are common are Basic, Digest, and Bearer (some value).</td>
-<td>HIGH</td>
-</tr>
-<tr>
-<td>Host</td>
-<td>This value will contain the host and port number of the resource being requested, which is usually derived from the original request URL by client libraries.</td>
-<td>HIGH</td>
-</tr>
-<tr>
-<td>Max-Forwards</td>
-<td>This value limits how many times a request can be forwarded through proxies, gateways, or other services.</td>
-<td>MED to LOW</td>
-</tr>
-<tr>
-<td>Proxy-Authorization</td>
-<td>As the field suggests, you can provide this value to authenticate through a proxy. Similar to the Authorization header but it can have a set of different credentials for proxy authentication.</td>
-<td>MED</td>
-</tr>
-<tr>
-<td>Referer (yes it’s misspelled)</td>
-<td>This header value allows the client to specify the URI of the resource being requested. This is mostly to benefit the server when making a request.</td>
-<td>HIGH</td>
-</tr>
-<tr>
-<td>User-Agent</td>
-<td>This is probably the most common one to see. This is a string that represents what client you are making this request as.</td>
-<td>HIGH</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+          <th>Commonality</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Accept</td>
+          <td>The Accept header and Accept-Encoding header are similar. Both are used to specify the media type in the request and response.</td>
+          <td>HIGH</td>
+      </tr>
+      <tr>
+          <td>Accept-Encoding</td>
+          <td>The Accept header and Accept-Encoding header are similar. Both are used to specify the media type in the request and response.</td>
+          <td>HIGH</td>
+      </tr>
+      <tr>
+          <td>Accept-Language</td>
+          <td>The Accept-Language header defines the accepted language for a response. This is not obscure by any means but it’s not very common to see.</td>
+          <td>MED</td>
+      </tr>
+      <tr>
+          <td>Authorization</td>
+          <td>This header is the most common and is used for authentication. Examples that are common are Basic, Digest, and Bearer (some value).</td>
+          <td>HIGH</td>
+      </tr>
+      <tr>
+          <td>Host</td>
+          <td>This value will contain the host and port number of the resource being requested, which is usually derived from the original request URL by client libraries.</td>
+          <td>HIGH</td>
+      </tr>
+      <tr>
+          <td>Max-Forwards</td>
+          <td>This value limits how many times a request can be forwarded through proxies, gateways, or other services.</td>
+          <td>MED to LOW</td>
+      </tr>
+      <tr>
+          <td>Proxy-Authorization</td>
+          <td>As the field suggests, you can provide this value to authenticate through a proxy. Similar to the Authorization header but it can have a set of different credentials for proxy authentication.</td>
+          <td>MED</td>
+      </tr>
+      <tr>
+          <td>Referer (yes it’s misspelled)</td>
+          <td>This header value allows the client to specify the URI of the resource being requested. This is mostly to benefit the server when making a request.</td>
+          <td>HIGH</td>
+      </tr>
+      <tr>
+          <td>User-Agent</td>
+          <td>This is probably the most common one to see. This is a string that represents what client you are making this request as.</td>
+          <td>HIGH</td>
+      </tr>
+  </tbody>
 </table>
 <p>Here is an example, using the same sample request from the <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">Hancitor PCAP</a> above. You can see that Accept, Accept-Encoding, Accept-Language, Host, Referrer and User-Agent are all defined.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="accept-hancitor-cobalt-strike.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>Example of a Hancitor with Cobalt Strike PCAP and its response headers. Notice the Accept-Language header is set. This is not obscure, but it is also not extremely common either. <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">https://www.malware-traffic-analysis.net/2020/11/23/index.html</a></b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/accept-hancitor-cobalt-strike.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/accept-hancitor-cobalt-strike.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>Example of a Hancitor with Cobalt Strike PCAP and its response headers. Notice the Accept-Language header is set. This is not obscure, but it is also not extremely common either. <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">https://www.malware-traffic-analysis.net/2020/11/23/index.html</a></b></td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="accept">Accept</h2>
 <p>The Accept header tells the server what type of content encoding is accepted in the response. Often you find this to be <em>/</em> but instead of strictly saying “any” encoding is accepted you should specify a specific type like application/json.</p>
@@ -436,16 +570,20 @@
 <p>If the Accept header is specified then the sender can also specify “accept-params” and “accept-extension”.  You will often not see these but they can be specified. If the Accept header is not present then it is assumed that the sender will accept all media types.</p>
 <p>If you see a q=0.5 or something similar in this field then it means that a certain quality (½) was specified if available. In other words, this q value is a weight provided by the requester in order of preference.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="accept-rfc.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>Above is an example provided within <a href="https://datatracker.ietf.org/doc/html/rfc7231#page-38">RFC7232</a></b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/accept-rfc.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/accept-rfc.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>Above is an example provided within <a href="https://datatracker.ietf.org/doc/html/rfc7231#page-38">RFC7232</a></b></td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="accept-encoding">Accept-Encoding</h2>
 <p>The Accept-Encoding header is used to restrict the content encoding of the response from the server. Many client libraries set this value to * but if you know that the response is a zipped/compressed file then you would likely set this to “compress, gzip”.  This would look like the following:</p>
@@ -494,16 +632,20 @@
 </blockquote>
 <p>Below are examples of this type of authorization:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="auth-example.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b></b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/auth-example.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/auth-example.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b></b></td>
+      </tr>
+  </tbody>
 </table>
 <p>Each of these different types of authorization headers calculate their values differently or are provided when making the original request. To sum it up, it all depends on the API you are working with but it should have good documentation on how to authenticate and use the API.</p>
 <p>You can find a maintained list (IANA) of authentication schemas <a href="https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml">here</a> but for convenience I will list them below:</p>
@@ -529,16 +671,20 @@ base64 --decode “/tmp/path/to/file/containing/string.txt”
 <p>A user-agent is sent along with the HTTP request and if you are using a client library (e.g. Python Requests) then it may have its own User-Agent. Some APIs will require that you have a specific user-agent, but most do not. There are many different user-agent strings <a href="https://raw.githubusercontent.com/swimlane/soc-faker/master/socfaker/data/useragent.json">you can use</a> or you can specify your own. It depends on what the API allows. If you are requesting data from a known API then you will probably never need to change the user-agent. However, if you are scraping a bunch of websites you may want to use the user-agent to help prevent them from blocking you. This is not foolproof but just one of many things you can attempt, like using rotating proxies when scraping websites.</p>
 <p>Below are some examples of common user-agent strings (albeit outdated on purpose). If you want to see a large list, check out <a href="https://raw.githubusercontent.com/swimlane/soc-faker/master/socfaker/data/useragent.json">this link</a> (this list is also used in the Swimlane open-source project called <a href="https://github.com/swimlane/soc-faker">soc-faker</a>).</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="user-agent-example.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>A list of outdated user-agent strings from HTTP requests.</b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/user-agent-example.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/user-agent-example.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>A list of outdated user-agent strings from HTTP requests.</b></td>
+      </tr>
+  </tbody>
 </table>
 <p>A User-Agent string has a certain structure, which is defined in <a href="https://datatracker.ietf.org/doc/html/rfc7231#page-46">RFC7231</a>. Taking this specification we can create the following format structure:</p>
 <pre><code>User-Agent: [PRODUCT1]/[VERSION1] [WHITESPACE] [(OPTIONAL_COMMENTS)] [WHITESPACE] [SUBPRODUCT]/[SUBPRODUCT_VERSION]
@@ -551,34 +697,34 @@ base64 --decode “/tmp/path/to/file/containing/string.txt”
 <h2 id="common-response-headers">Common Response Headers</h2>
 <p>Below are a list of the most common Response headers you will come across:</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Location</td>
-<td>If the server wants the client to get the resource from a different URL or path they will add a Location header to the response.</td>
-</tr>
-<tr>
-<td>Retry-After</td>
-<td>This is an indicator used by a server that a service is unavailable and will let the client know when to try again.</td>
-</tr>
-<tr>
-<td>Vary</td>
-<td>This header tells the client what might have caused a specific response from the server.</td>
-</tr>
-<tr>
-<td>Server</td>
-<td>This header is used to tell the client what software is used by the server.</td>
-</tr>
-<tr>
-<td>WWW-Authenticate</td>
-<td>This response header must be included when you reach a 401 (Unauthorized) response.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Location</td>
+          <td>If the server wants the client to get the resource from a different URL or path they will add a Location header to the response.</td>
+      </tr>
+      <tr>
+          <td>Retry-After</td>
+          <td>This is an indicator used by a server that a service is unavailable and will let the client know when to try again.</td>
+      </tr>
+      <tr>
+          <td>Vary</td>
+          <td>This header tells the client what might have caused a specific response from the server.</td>
+      </tr>
+      <tr>
+          <td>Server</td>
+          <td>This header is used to tell the client what software is used by the server.</td>
+      </tr>
+      <tr>
+          <td>WWW-Authenticate</td>
+          <td>This response header must be included when you reach a 401 (Unauthorized) response.</td>
+      </tr>
+  </tbody>
 </table>
 <blockquote>
 <p>You can view the response headers for any http.request within Wireshark by selecting the request and right clicking. A menu will appear and then you select Follow -&gt; HTTP Stream.</p>
@@ -586,29 +732,37 @@ base64 --decode “/tmp/path/to/file/containing/string.txt”
 <p>To view the response header of a GET request we will use the <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">Hancitor with Cobalt Strike</a> sample.  Open the sample PCAP and filter by entering http.request in the filter bar.</p>
 <p>Next, select the top most request that displays <strong>GET /scaffold.php HTTP/1.1</strong> in the Info field.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="http-stream-example.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>Highlighting the first GET request in the Hancitor with Cobalt Strike sample <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">PCAP</a></b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/http-stream-example.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/http-stream-example.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>Highlighting the first GET request in the Hancitor with Cobalt Strike sample <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">PCAP</a></b></td>
+      </tr>
+  </tbody>
 </table>
 <p>Right click that request and on the menu that appears select Follow -&gt; HTTP Stream. You should now see a new windows that looks like this:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="http-stream-example-2.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>HTTP Stream of the Hancitor with Cobalt Strike sample <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">PCAP</a></b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/http-stream-example-2.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/http-stream-example-2.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>HTTP Stream of the Hancitor with Cobalt Strike sample <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">PCAP</a></b></td>
+      </tr>
+  </tbody>
 </table>
 <p>By default Wireshark presents the request from the client in RED and the response from the server in BLUE.</p>
 <h2 id="location">Location</h2>
@@ -653,34 +807,34 @@ Content-Type: text/html; charset=UTF-8
 <h2 id="common-metadata-headers">Common Metadata Headers</h2>
 <p>These headers are used to define metadata about the request body and or the resource (API endpoint) the HTTP request is being made against.  There are many different headers you can specify but the most common are listed below.</p>
 <table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Allow</td>
-<td>The allow header specifies the type of HTTP request being made. Typical options include: HEAD, GET, POST, PUT, DELETE, UPDATE.</td>
-</tr>
-<tr>
-<td>Content-Encoding</td>
-<td>This header is used as a modifier to the content-encoding in the request header and appends additional encoding to the request itself. Content-Encoding is used end-to-end whereas the Transfer-Encoding mentioned above is hop-to-hop and only used for specific connections in an end-to-end transfer.</td>
-</tr>
-<tr>
-<td>Content-Length</td>
-<td>This header indicates the length of the body of the request being made. Many client libraries will figure this out based on the provided body size.</td>
-</tr>
-<tr>
-<td>Content-Range</td>
-<td>This header is used to tell the server that this request contains a certain range of bytes in the request. This is typically used when uploading large files.</td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>This header is used quite often, especially if you are transferring images or other media. Additionally, if you are passing the body of a request as a JSON object you would specify application/json as the content-type.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Allow</td>
+          <td>The allow header specifies the type of HTTP request being made. Typical options include: HEAD, GET, POST, PUT, DELETE, UPDATE.</td>
+      </tr>
+      <tr>
+          <td>Content-Encoding</td>
+          <td>This header is used as a modifier to the content-encoding in the request header and appends additional encoding to the request itself. Content-Encoding is used end-to-end whereas the Transfer-Encoding mentioned above is hop-to-hop and only used for specific connections in an end-to-end transfer.</td>
+      </tr>
+      <tr>
+          <td>Content-Length</td>
+          <td>This header indicates the length of the body of the request being made. Many client libraries will figure this out based on the provided body size.</td>
+      </tr>
+      <tr>
+          <td>Content-Range</td>
+          <td>This header is used to tell the server that this request contains a certain range of bytes in the request. This is typically used when uploading large files.</td>
+      </tr>
+      <tr>
+          <td>Content-Type</td>
+          <td>This header is used quite often, especially if you are transferring images or other media. Additionally, if you are passing the body of a request as a JSON object you would specify application/json as the content-type.</td>
+      </tr>
+  </tbody>
 </table>
 <p>You may find metadata headers in GET, DELETE, and PATCH HTTP requests but they are most commonly found in POST methods.</p>
 <h2 id="allow">Allow</h2>
@@ -693,16 +847,20 @@ Content-Type: text/html; charset=UTF-8
 <p>Content-Encoding is used to describe the encoding of the content being sent so that the server knows how to understand the body of a request (if applicable). Many client libraries will use gzip by default. This is used primarily to compress the body content without losing any data when transferred. Often you will find that Content-Encoding does not need to be modified from the client library&rsquo;s default behavior.</p>
 <p>Let’s take a look at an example using our <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">Hancitor with Cobalt Strike</a> example PCAP. When we follow the HTTP Stream we can see that the response contains a Content-Encoding header and is set to chunked. This means the data is divided into chunks and sent in two or more packets.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="content-encoding-example.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>HTTP Stream from Hancitor with Cobalt Strike example: <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">https://www.malware-traffic-analysis.net/2020/11/23/index.html</a></b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/content-encoding-example.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/content-encoding-example.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>HTTP Stream from Hancitor with Cobalt Strike example: <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">https://www.malware-traffic-analysis.net/2020/11/23/index.html</a></b></td>
+      </tr>
+  </tbody>
 </table>
 <p>Understanding this will help you when attempting to investigate malicious file transfers, especially during exfiltration but also during exploitation.</p>
 <h2 id="content-type">Content-Type</h2>
@@ -710,16 +868,20 @@ Content-Type: text/html; charset=UTF-8
 <p>If we look at the example we can see that the HTTP request header of Content-Type is set to application/x-www-form-urlencoded. This is not necessarily an indicator but can be used as one in combination with other information like a POST request to a PHP page.</p>
 <p>Looking at our <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">Hancitor with Cobalt Strike</a> example we can see the POST method to /8/forum.php. This means that the host is posting data to this endpoint. In this case, the information is posted using the content-type of application/x-www-form-urlencoded which means that it’s posting to a form object and not a traditional API endpoint.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="content-type-example.png" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><b>A http request to post data to a form <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">Hancitor with Cobalt Strike</a></b></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">
+<a href="/article/understanding-http-request-headers/content-type-example.png" data-dimbox data-dimbox-caption="">
+  <img src="/article/understanding-http-request-headers/content-type-example.png"/>
+</a>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><b>A http request to post data to a form <a href="https://www.malware-traffic-analysis.net/2020/11/23/index.html">Hancitor with Cobalt Strike</a></b></td>
+      </tr>
+  </tbody>
 </table>
 <p>We won’t go into too much detail about the body of the message but I wanted to share the keys and values from this sample PCAP because they are interesting and provide another layer to assist us in creating detection rules around these requests.</p>
 <pre><code>HTML Form URL Encoded: application/x-www-form-urlencoded
@@ -770,22 +932,22 @@ Form item: &quot;WIN&quot; = &quot;10.0(x64)&quot;
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/http/">http</a>
+                    <a href="https://letsautomate.it/tags/http/">Http</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/dfir/">dfir</a>
+                    <a href="https://letsautomate.it/tags/dfir/">Dfir</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/headers/">headers</a>
+                    <a href="https://letsautomate.it/tags/headers/">Headers</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/api/">api</a>
+                    <a href="https://letsautomate.it/tags/api/">Api</a>
                     
                 
             </div>
@@ -825,6 +987,10 @@ Form item: &quot;WIN&quot; = &quot;10.0(x64)&quot;
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
                     </li>
                 
@@ -848,52 +1014,58 @@ Form item: &quot;WIN&quot; = &quot;10.0(x64)&quot;
                         <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
                     </li>
                 
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
-                    </li>
-                
             </ul>
         </div>
         
 
         
         <div class="categories">
-            <a href="/categories/"><strong>Categories</strong></a>
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
             <ul>
                 
                 <li>
-                    <a href="/categories/swimlane">Swimlane
-                        (25)</a>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/powershell">Powershell
-                        (7)</a>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/azure">Azure
-                        (4)</a>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/python">Python
-                        (2)</a>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/automation">Automation
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/dfir">Dfir
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/how-to">How to
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
                 </li>
                 
             </ul>
@@ -904,29 +1076,16 @@ Form item: &quot;WIN&quot; = &quot;10.0(x64)&quot;
             
             <div class="external-profiles">
                 <strong>Social media</strong>
-
                 
-                <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
                 
-                <a href="https://github.com/MSAdministrator" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
                 
-                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
                 
             </div>
             
 
-            <div class="languages">
-                <strong>Other languages</strong>
-                
-                
-                <a href="https://letsautomate.it/" class="active">en</a>
-                
-                
-                
-                <a href="https://letsautomate.it/de/">de</a>
-                
-                
-            </div>
             
 
             
@@ -938,12 +1097,12 @@ Form item: &quot;WIN&quot; = &quot;10.0(x64)&quot;
 <div class="credits">
     <div class="container">
         <div class="copyright">
-            <a href="https://github.com/Lednerb" target="_blank">
+            <a href="https://github.com/MSAdministrator" target="_blank">
                 &copy;
                 
-                2018
+                2026
                 
-                by Lednerb
+                Josh Rickard
             </a>
             
         </div>
@@ -956,40 +1115,79 @@ Form item: &quot;WIN&quot; = &quot;10.0(x64)&quot;
 
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-    
-
-
-    <script src="https://letsautomate.it/theme.js"></script>
-
-    
-    
-    
-
-    
-    <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
-  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
-  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
-  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
-
-  
-  <input type="hidden" id="algolia-search-currentLanguageOnly">
-  
-</div>
-
-    
 </body>
 
 </html>

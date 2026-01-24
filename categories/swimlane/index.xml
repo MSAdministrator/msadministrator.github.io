@@ -1,261 +1,187 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>swimlane on Lets Automate It</title>
+    <title>Swimlane on Lets Automate It</title>
     <link>https://letsautomate.it/categories/swimlane/</link>
-    <description>Recent content in swimlane on Lets Automate It</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Swimlane on Lets Automate It</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Dec 2021 11:54:39 -0600</lastBuildDate><atom:link href="https://letsautomate.it/categories/swimlane/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 11:54:39 -0600</lastBuildDate>
+    <atom:link href="https://letsautomate.it/categories/swimlane/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Atomic Red Team Testing With Swimlane</title>
       <link>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</link>
       <pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</guid>
-      <description>Today, Swimlane is excited to announce that we are releasing a new SSP (Swimlane Solutions Package) for use within the Swimlane platform. This SSP will enable organizations to automate the testing of their defenses using Atomic Red Team using our new open-source project called atomic-operator.
-When using this SSP organizations can gain an understanding of their defensive posture against tests mapped to MITRE ATT&amp;amp;CK techniques. By using this use case you can correlate detections of these tests against their existing automation and log sources thus giving them fast feedback on their defensive posture based on tests available within Atomic Red Team.</description>
+      <description>&lt;p&gt;Today, Swimlane is excited to announce that we are releasing a new SSP (Swimlane Solutions Package) for use within the Swimlane platform. This SSP will enable organizations to automate the testing of their defenses using Atomic Red Team using our new open-source project called atomic-operator.&lt;/p&gt;&#xA;&lt;p&gt;When using this SSP organizations can gain an understanding of their defensive posture against tests mapped to MITRE ATT&amp;amp;CK techniques. By using this use case you can correlate detections of these tests against their existing automation and log sources thus giving them fast feedback on their defensive posture based on tests available within Atomic Red Team.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Common Rest Api Authentication Methods Explained</title>
       <link>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</link>
       <pubDate>Wed, 21 Apr 2021 11:58:59 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/common-rest-api-authentication-methods-explained/</guid>
-      <description>When it comes to implementing automation and orchestration, it is critical to understand how authentication works with APIs. The majority of the products in your environment likely have some sort of authentication mechanism. You need to know the nuances and differences between various authentication methods in order to automate communications with those APIs. In this blog post, I aim to help you understand by breaking down three different API authentication methods.</description>
+      <description>&lt;p&gt;When it comes to implementing automation and orchestration, it is critical to understand how authentication works with APIs. The majority of the products in your environment likely have some sort of authentication mechanism. You need to know the nuances and differences between various authentication methods in order to automate communications with those APIs. In this blog post, I aim to help you understand by breaking down three different API authentication methods.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane Releases Elk Tls Docker</title>
       <link>https://letsautomate.it/article/swimlane-releases-elk-tls-docker/</link>
       <pubDate>Tue, 24 Nov 2020 11:57:08 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlane-releases-elk-tls-docker/</guid>
-      <description>At Swimlane, we love to automate but we also love building and sharing open-source software (OSS) to help security teams. We are proud to announce that we have released a new open-source project called elk-tls-docker to make it easier for you to test and deploy Elastic Stack by automating the creation of several Elastic open-source software solutions.
-Elk-tls-docker assists with setting up aand creating an Elastic Stack using either self-signed certificates or using Let’s Encrypt certificates (using SWAG).</description>
+      <description>&lt;p&gt;At Swimlane, we love to automate but we also love building and sharing open-source software (OSS) to help security teams. We are proud to announce that we have released a new open-source project called elk-tls-docker to make it easier for you to test and deploy Elastic Stack by automating the creation of several Elastic open-source software solutions.&lt;/p&gt;&#xA;&lt;p&gt;Elk-tls-docker assists with setting up aand creating an Elastic Stack using either self-signed certificates or using Let’s Encrypt certificates (using SWAG). This project was built so that you can test and use built-in features under Elastic Security, like detections, signals, cases, Elastic Endpoint and other features.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Automating Attck Testing With Soar and Atomic Red Team</title>
       <link>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</link>
       <pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/automating-attck-testing-with-soar-and-atomic-red-team/</guid>
-      <description>MITRE ATT&amp;amp;CK is the defacto framework for organizations to measure their defense posture. ATT&amp;amp;CK provides categorical verticals in the form of tactics, which align to the common methodologies attackers use. Within these verticals are a set (and subsets) of common ways in which attackers accomplish a tactic (vertical). These are known as techniques.
-Some techniques may be common across multiple operating systems. This usually equates to a broad definition of a technique.</description>
+      <description>&lt;p&gt;MITRE ATT&amp;amp;CK is the defacto framework for organizations to measure their defense posture. ATT&amp;amp;CK provides categorical verticals in the form of tactics, which align to the common methodologies attackers use. Within these verticals are a set (and subsets) of common ways in which attackers accomplish a tactic (vertical). These are known as techniques.&lt;/p&gt;&#xA;&lt;p&gt;Some techniques may be common across multiple operating systems. This usually equates to a broad definition of a technique. As defenders, this means we must understand how a single technique may be implemented on multiple platforms—which can be difficult for many, including myself. Luckily, organizations like Red Canary have provided our community with a rich framework to assist with the testing of these techniques.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Making MITRE ATT&amp;CK Actionable</title>
       <link>https://letsautomate.it/article/making-mitre-attck-actionable/</link>
       <pubDate>Thu, 16 Jul 2020 12:33:03 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/making-mitre-attck-actionable/</guid>
-      <description>The Swimlane Deep Dive team is excited to announce the release of pyattck 2.0 and an equivalent PowerShell version called PSAttck. These open-source tools provide security operations centers (SOCs), defenders and offensive security teams with external data points that enrich MITRE ATT&amp;amp;CK by providing potential commands, queries and even detections for specific techniques. Additionally, these data points enable context related to specific attacker actors or groups, as well as details about different tools used by malicious actors.</description>
+      <description>&lt;p&gt;The Swimlane Deep Dive team is excited to announce the release of pyattck 2.0 and an equivalent PowerShell version called PSAttck. These open-source tools provide security operations centers (SOCs), defenders and offensive security teams with external data points that enrich MITRE ATT&amp;amp;CK by providing potential commands, queries and even detections for specific techniques. Additionally, these data points enable context related to specific attacker actors or groups, as well as details about different tools used by malicious actors.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Responding to Insider Threats With Soar</title>
       <link>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</link>
       <pubDate>Fri, 24 Apr 2020 12:37:11 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/responding-to-insider-threats-with-soar/</guid>
-      <description>Insider threats occur when an individual with ties to an organization misuses their access for malicious intent, such as stealing intellectual property or other data. Detecting insider threats can be difficult. But by using a security information and event management (SIEM) system or data loss prevention (DLP) products, you can create alerts to detect the exfiltration of data leaving your organization that is unauthorized or unexpected.
-Once you have detected these events, your security operations center (SOC) needs to investigate rapidly.</description>
+      <description>&lt;p&gt;Insider threats occur when an individual with ties to an organization misuses their access for malicious intent, such as stealing intellectual property or other data. Detecting insider threats can be difficult. But by using a security information and event management (SIEM) system or data loss prevention (DLP) products, you can create alerts to detect the exfiltration of data leaving your organization that is unauthorized or unexpected.&lt;/p&gt;&#xA;&lt;p&gt;Once you have detected these events, your security operations center (SOC) needs to investigate rapidly. Utilizing Swimlane and our Insider Threat Use Case, you can investigate and respond to these insider threats swiftly and accurately.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Identify Malicious Domains Using Soar</title>
       <link>https://letsautomate.it/article/identify-malicious-domains-using-soar/</link>
       <pubDate>Wed, 25 Mar 2020 12:38:39 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/identify-malicious-domains-using-soar/</guid>
-      <description>Domain Squatting, typosquatting and IDN homograph attacks are commonplace when it comes to phishing and other forms of social engineering. Attackers use domain squatting and typosquatting of domains to trick users into providing their credentials, distribute malware, harm an organization’s reputation, or otherwise maliciously impersonate a legitimate domain. We&amp;rsquo;ve discussed this topic before and have developed a unique use case with Swimlane to detect this malicious activity automatically.
-Recently, we began to monitor domains related to coronavirus (COVID-19), knowing there would be an increase in traffic to research the outbreak, which could be exploited by bad actors.</description>
+      <description>&lt;p&gt;Domain Squatting, typosquatting and IDN homograph attacks are commonplace when it comes to phishing and other forms of social engineering. Attackers use domain squatting and typosquatting of domains to trick users into providing their credentials, distribute malware, harm an organization’s reputation, or otherwise maliciously impersonate a legitimate domain. We&amp;rsquo;ve discussed this topic before and have developed a unique use case with Swimlane to detect this malicious activity automatically.&lt;/p&gt;&#xA;&lt;p&gt;Recently, we began to monitor domains related to coronavirus (COVID-19), knowing there would be an increase in traffic to research the outbreak, which could be exploited by bad actors. Even though not all of these domains are necessarily malicious or focused on spoofing (or typosquatting) techniques, we decided to use this use case to identify any registered domains related to “corona” and “covid.” Over the last 2 weeks, we have seen 5054 corona-related domains being registered.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>You Dont Have Windows 7 in Your Environment Do You</title>
       <link>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</link>
       <pubDate>Tue, 14 Jan 2020 12:40:08 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/you-dont-have-windows-7-in-your-environment-do-you/</guid>
-      <description>Today is the day. Microsoft Windows 7 is officially end-of-life (EOL). The Windows 7 operating system was released on October 22, 2009. For 10 years now, IT and system administrators around the globe have relied on their trusty old Windows 7 OS. I mean, it was a step beyond Windows XP for sure. With EOL here, have you migrated all of your systems to Windows 10?
-If you have not migrated, you definitely should.</description>
+      <description>&lt;p&gt;Today is the day. Microsoft Windows 7 is officially end-of-life (EOL). The Windows 7 operating system was released on October 22, 2009. For 10 years now, IT and system administrators around the globe have relied on their trusty old Windows 7 OS. I mean, it was a step beyond Windows XP for sure. With EOL here, have you migrated all of your systems to Windows 10?&lt;/p&gt;&#xA;&lt;p&gt;If you have not migrated, you definitely should. Here are several reasons why you should from a security perspective:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Investigate Alerts in Microsoft Azure Using SOAR</title>
       <link>https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/</link>
       <pubDate>Wed, 18 Dec 2019 12:03:34 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/investigate-alerts-in-microsoft-azure-using-soar/</guid>
-      <description>Alerts or detections come in many forms—some are good and some are not—and security operations center (SOC) analysts are responsible for the initial investigation into these anomalies. What’s more, when it comes to cloud-based resources, we may not have the luxury of logging everything that happens on a host operating system.
-Microsoft Azure helps provide quite a bit of data to assist with the initial investigation, as well as some initial response actions.</description>
+      <description>&lt;p&gt;Alerts or detections come in many forms—some are good and some are not—and security operations center (SOC) analysts are responsible for the initial investigation into these anomalies. What’s more, when it comes to cloud-based resources, we may not have the luxury of logging everything that happens on a host operating system.&lt;/p&gt;&#xA;&lt;p&gt;Microsoft Azure helps provide quite a bit of data to assist with the initial investigation, as well as some initial response actions. If you are a tier-one or -two analyst, you probably don’t have the ability to perform a full investigation, which is typically completed by your incident response or digital forensics team. With this in mind, I would like to introduce Swimlane’s new Microsoft Azure Use Case for just this situation.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Understanding APIs: SOAP</title>
       <link>https://letsautomate.it/article/understanding-apis-soap/</link>
       <pubDate>Thu, 24 Oct 2019 12:03:34 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/understanding-apis-soap/</guid>
-      <description>In my previous post, I talked about the basics of REST (representable state transfer) APIs (application programming interfaces). If you haven&amp;rsquo;t read it yet, I highly recommend you read that post before continuing.
-In this post, we will be talking about the basics of simple object access protocol (SOAP) APIs, and we will primarily focus on a real SOAP service: Microsoft Exchange Web Services. RESTful APIs, which are the most commonly used APIs today, are powerful and provide a simple way to interact with a service or application via an exposed interface.</description>
+      <description>&lt;p&gt;In my previous post, I talked about the basics of REST (representable state transfer) APIs (application programming interfaces). If you haven&amp;rsquo;t read it yet, I highly recommend you read that post before continuing.&lt;/p&gt;&#xA;&lt;p&gt;In this post, we will be talking about the basics of simple object access protocol (SOAP) APIs, and we will primarily focus on a real SOAP service: Microsoft Exchange Web Services. RESTful APIs, which are the most commonly used APIs today, are powerful and provide a simple way to interact with a service or application via an exposed interface. Even though REST is the most popular, SOAP is still used today by many major services.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane and Cylance PROTECT: Endpoint Threat Response</title>
       <link>https://letsautomate.it/article/swimlane-and-cylance-protect-endpoint-threat-response/</link>
       <pubDate>Fri, 18 Oct 2019 12:03:34 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlane-and-cylance-protect-endpoint-threat-response/</guid>
-      <description>Swimlane and Blackberry Cylance have partnered to offer a new use case that combines the power of security orchestration, automation and response (SOAR) with Cylance PROTECT’s integrated threat prevention solution. The Proactive Endpoint Threat Response use case utilizes our integration to take a proactive response to detections identified by Cylance PROTECT.
-By ingesting detections from Cylance PROTECT, Swimlane can automate and orchestrate the enrichment of detections using multiple open source intelligence (OSINT) platforms to identify malicious files proactively that are similar or related to a specific variant identified by Cylance.</description>
+      <description>&lt;p&gt;Swimlane and Blackberry Cylance have partnered to offer a new use case that combines the power of security orchestration, automation and response (SOAR) with Cylance PROTECT’s integrated threat prevention solution. The Proactive Endpoint Threat Response use case utilizes our integration to take a proactive response to detections identified by Cylance PROTECT.&lt;/p&gt;&#xA;&lt;p&gt;By ingesting detections from Cylance PROTECT, Swimlane can automate and orchestrate the enrichment of detections using multiple open source intelligence (OSINT) platforms to identify malicious files proactively that are similar or related to a specific variant identified by Cylance. Swimlane then automatically pulls the related samples and feeds them back into Cylance to enhance your protection from future threats.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Understanding APIs: REST</title>
       <link>https://letsautomate.it/article/understanding-apis-rest/</link>
       <pubDate>Thu, 17 Oct 2019 12:03:34 -0600</pubDate>
-      
       <guid>https://letsautomate.it/article/understanding-apis-rest/</guid>
-      <description>Security orchestration, automation and response (SOAR) platforms rely heavily on APIs (application programming interfaces) to drive orchestration of disparate security tools (products) and invoke desired responses in the form of actions. Besides SOAR products, APIs are commonplace among almost all services, tools, and products used by technical workers.
-Even though APIs are extremely common, you may not have experience using them or even know that a service has one when interacting with it.</description>
+      <description>&lt;p&gt;Security orchestration, automation and response (SOAR) platforms rely heavily on APIs (application programming interfaces) to drive orchestration of disparate security tools (products) and invoke desired responses in the form of actions. Besides SOAR products, APIs are commonplace among almost all services, tools, and products used by technical workers.&lt;/p&gt;&#xA;&lt;p&gt;Even though APIs are extremely common, you may not have experience using them or even know that a service has one when interacting with it. For example, Facebook uses an API framework called Graph API.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vulnerability Management Program Best Practices</title>
       <link>https://letsautomate.it/article/vulnerability-management-program-best-practices/</link>
       <pubDate>Thu, 15 Aug 2019 14:42:13 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/vulnerability-management-program-best-practices/</guid>
-      <description>Nowadays most organizations have begun to implement a Vulnerability Management Program (VMP), but implementing one is daunting. Most organizations realize they either have no true categorical ownership over systems or they lack the authority to enforce remediation of identified vulnerabilities. Either way, it is time consuming to track down and enforce a true VMP within many organizations.
-What is a Vulnerability Management Program? If you are new to implementing a VMP, then you first must understand what vulnerability management is.</description>
+      <description>&lt;p&gt;Nowadays most organizations have begun to implement a Vulnerability Management Program (VMP), but implementing one is daunting. Most organizations realize they either have no true categorical ownership over systems or they lack the authority to enforce remediation of identified vulnerabilities. Either way, it is time consuming to track down and enforce a true VMP within many organizations.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-a-vulnerability-management-program&#34;&gt;What is a Vulnerability Management Program?&lt;/h1&gt;&#xA;&lt;p&gt;If you are new to implementing a VMP, then you first must understand what vulnerability management is. It seems self-evident, but it is the management (life-cycle) of identifying risks related to unpatched, misconfigured and unknown systems within an entity and implementing a remediation process for any identified risk.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Every Security Team Is a Software Team Now</title>
       <link>https://letsautomate.it/article/every-security-team-is-a-software-team-now/</link>
       <pubDate>Thu, 01 Aug 2019 14:40:36 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/every-security-team-is-a-software-team-now/</guid>
-      <description>Building and facilitating a culture with continuous collaboration between engineers and security forces is becoming the new philosophy in security, which is why I am stoked for this year&amp;rsquo;s Black Hat USA keynote speaker: Dino Dai Zovi, staff security engineer at Square.
-&amp;ldquo;Every Security Team is a Software Team Now&amp;rdquo; promises to dive into the latest iteration of security operations as current security teams morph into in-house security software teams, delivering multi-vertical value through self-service platforms and tools.</description>
+      <description>&lt;p&gt;Building and facilitating a culture with continuous collaboration between engineers and security forces is becoming the new philosophy in security, which is why I am stoked for this year&amp;rsquo;s Black Hat USA keynote speaker: Dino Dai Zovi, staff security engineer at Square.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Every Security Team is a Software Team Now&amp;rdquo; promises to dive into the latest iteration of security operations as current security teams morph into in-house security software teams, delivering multi-vertical value through self-service platforms and tools. Because of today&amp;rsquo;s growing and evolving threat landscape, security teams need to provide secure methods for both business and engineering teams to conduct daily business.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microsoft Defender Advanced Threat Detection Queries</title>
       <link>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</link>
       <pubDate>Thu, 18 Jul 2019 14:37:17 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</guid>
-      <description>Recently, I shared on Twitter how you could run a query to detect if a user has clicked on a link within their Outlook using Microsoft Defender Advanced Threat Protection (MDATP). If you are not familiar, MDATP is available within your Microsoft 365 E5 license and is an enhancement to the traditional Windows Defender you might be used to.
-What is Microsoft Defender Advanced Threat Protection? Microsoft says that “Microsoft Defender Advanced Threat Protection is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.</description>
+      <description>&lt;p&gt;Recently, I &lt;a href=&#34;https://twitter.com/MSAdministrator/status/1145778141127991302?s=20&#34;&gt;shared on Twitter&lt;/a&gt; how you could run a query to detect if a user has clicked on a link within their Outlook using Microsoft Defender Advanced Threat Protection (MDATP). If you are not familiar, MDATP is available within your Microsoft 365 E5 license and is an enhancement to the traditional Windows Defender you might be used to.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-microsoft-defender-advanced-threat-protection&#34;&gt;What is Microsoft Defender Advanced Threat Protection?&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection&#34;&gt;Microsoft&lt;/a&gt; says that “Microsoft Defender Advanced Threat Protection is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.” MDATP offers quite a few endpoints that you can leverage in both incident response and threat hunting.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane&#39;s Research Teams Open Sources pyattck</title>
       <link>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</link>
       <pubDate>Thu, 11 Jul 2019 14:34:27 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</guid>
-      <description>As security teams adopt the Mitre ATT&amp;amp;CK Framework to help them identify gaps in their defenses, having a way to identify what malware and tools are being used by specific actors or groups becomes more critical. Additionally, having a way to identify these relationships programatically is even more critical.
-Today, we are excited to announce the Swimlane research team has released pyattck — a Python package to interact with the Mitre ATT&amp;amp;CK Framework.</description>
+      <description>&lt;p&gt;As security teams adopt the &lt;a href=&#34;https://attack.mitre.org/&#34;&gt;Mitre ATT&amp;amp;CK Framework&lt;/a&gt; to help them identify gaps in their defenses, having a way to identify what malware and tools are being used by specific actors or groups becomes more critical. Additionally, having a way to identify these relationships programatically is even more critical.&lt;/p&gt;&#xA;&lt;p&gt;Today, we are excited to announce the Swimlane research team has released &lt;a href=&#34;https://pyattck.readthedocs.io/en/latest/&#34;&gt;pyattck&lt;/a&gt; — a Python package to interact with the &lt;a href=&#34;https://attack.mitre.org/&#34;&gt;Mitre ATT&amp;amp;CK Framework&lt;/a&gt;. There are many different open-source projects being released on a daily basis, but we wanted to provide a straightforward Python package that allows the user to identify known relationships between all verticals of the &lt;a href=&#34;https://attack.mitre.org/&#34;&gt;Mitre ATT&amp;amp;CK Framework&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane Open Sources graphish to Help SecOps Teams</title>
       <link>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</link>
       <pubDate>Wed, 19 Jun 2019 14:31:46 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</guid>
-      <description>While having a conversation on Twitter about Microsoft Graph API I was convinced that the traditional Exchange eDiscovery features were not available in the Microsoft Graph API. Boy was I wrong.
-After stumbling across a few endpoints I had not seen previously, I decided to write a python package called graphish. graphish is an open-source python package Swimlane is open-sourcing that will enable IT, security operations (SecOps), developers and others to search and delete email messages from mailboxes using the Microsoft Graph API.</description>
+      <description>&lt;p&gt;While having a conversation on &lt;a href=&#34;https://twitter.com/MSAdministrator/status/1140380695430410240?s=20&#34;&gt;Twitter&lt;/a&gt; about Microsoft Graph API I was convinced that the traditional Exchange eDiscovery features were not available in the Microsoft Graph API. Boy was I wrong.&lt;/p&gt;&#xA;&lt;p&gt;After stumbling across a few endpoints I had not seen previously, I decided to write a python package called &lt;a href=&#34;https://github.com/swimlane/graphish&#34;&gt;graphish&lt;/a&gt;. &lt;a href=&#34;https://github.com/swimlane/graphish&#34;&gt;graphish&lt;/a&gt; is an open-source python package Swimlane is open-sourcing that will enable IT, security operations (SecOps), developers and others to search and delete email messages from mailboxes using the Microsoft Graph API.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hey InfoSec, What Are You Doing to Protect Your DevOps Teams</title>
       <link>https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/</link>
       <pubDate>Fri, 14 Jun 2019 14:29:52 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/</guid>
-      <description>DevOps, serverless applications and containers are just a few of the latest advancements in a developer&amp;rsquo;s toolbox. For development teams, this means that the time to market (TTM) is faster—especially for Agile teams. So, how and what are security operations teams doing to ensure that security is keeping pace with this rapid development? Most are attempting to incorporate a security engineer within their development teams—which is a great first step—but there are multiple layers that you need to ensure you are protecting your organization beyond your source-code.</description>
+      <description>&lt;p&gt;DevOps, serverless applications and containers are just a few of the latest advancements in a developer&amp;rsquo;s toolbox. For development teams, this means that the time to market (TTM) is faster—especially for Agile teams. So, how and what are security operations teams doing to ensure that security is keeping pace with this rapid development? Most are attempting to incorporate a security engineer within their development teams—which is a great first step—but there are multiple layers that you need to ensure you are protecting your organization beyond your source-code.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane Research Team Open Sources py-ews</title>
       <link>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</link>
       <pubDate>Wed, 22 May 2019 14:27:42 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</guid>
-      <description>Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced py-ews to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.
-Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&amp;rsquo; mailboxes.</description>
+      <description>&lt;p&gt;Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced &lt;a href=&#34;https://py-ews.readthedocs.io/en/latest/&#34;&gt;py-ews&lt;/a&gt; to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.&lt;/p&gt;&#xA;&lt;h1 id=&#34;why-py-ews&#34;&gt;Why py-ews?&lt;/h1&gt;&#xA;&lt;p&gt;Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&amp;rsquo; mailboxes. &lt;a href=&#34;https://py-ews.readthedocs.io/en/latest/&#34;&gt;py-ews&lt;/a&gt; was written to give control back to your security and IT teams so they can remediate threats faster.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Automate Employee Off Boarding Process With Swimlane</title>
       <link>https://letsautomate.it/article/automate-employee-off-boarding-process-with-swimlane/</link>
       <pubDate>Wed, 08 May 2019 14:25:25 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/automate-employee-off-boarding-process-with-swimlane/</guid>
-      <description>As more organizations discontinue internal services and begin adopting an increasing number of third-party *aaS-based services, ensuring the appropriate access is revoked in a timely manner is critical. By using our new employee off-boarding use case, you can automatically gather historical data, add a user to a monitoring watch list, and finally remove access when it is time to off-board an employee.
-The employee off-boarding use case contains two distinct applications to assist an organization with managing their employee off-boarding process.</description>
+      <description>&lt;p&gt;As more organizations discontinue internal services and begin adopting an increasing number of third-party *aaS-based services, ensuring the appropriate access is revoked in a timely manner is critical. By using our new employee off-boarding use case, you can automatically gather historical data, add a user to a monitoring watch list, and finally remove access when it is time to off-board an employee.&lt;/p&gt;&#xA;&lt;p&gt;The employee off-boarding use case contains two distinct applications to assist an organization with managing their employee off-boarding process. The first is the employee application, which contains all relevant information about the employee as well as references to the second application: assets. The assets application contains individual assets to which the employee has access. These assets can be applications, services or hardware.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microsoft OAuth2 Part3: Using Microsoft Graph API</title>
       <link>https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/</link>
       <pubDate>Wed, 08 May 2019 14:20:07 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/</guid>
-      <description>In this third and final part of the &amp;ldquo;Understanding Microsoft’s OAuth2 Implementation&amp;rdquo; series, we will be using the application that we have previously created to authenticate to the Microsoft Graph API.
-If you have not done so, please read Part 1 and Part 2 before continuing.
-Now, let’s start using the Microsoft Graph API using PowerShell Core!
-Read More</description>
+      <description>&lt;p&gt;In this third and final part of the &amp;ldquo;Understanding Microsoft’s OAuth2 Implementation&amp;rdquo; series, we will be using the application that we have previously created to authenticate to the Microsoft Graph API.&lt;/p&gt;&#xA;&lt;p&gt;If you have not done so, please read &lt;a href=&#34;https://swimlane.com/blog/microsoft-oauth2-implementation-1&#34;&gt;Part 1&lt;/a&gt; and &lt;a href=&#34;https://swimlane.com/blog/microsoft-oauth2-implementation-2&#34;&gt;Part 2&lt;/a&gt; before continuing.&lt;/p&gt;&#xA;&lt;p&gt;Now, let’s start using the Microsoft Graph API using PowerShell Core!&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://swimlane.com/blog/microsoft-oauth2-implementation-3/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microsoft OAuth2 Part2: Registering an App</title>
       <link>https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/</link>
       <pubDate>Thu, 18 Apr 2019 14:18:59 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/</guid>
-      <description>In my last post, I explained the different API endpoints available for authentication using Microsoft’s OAuth2. Additionally, I shared the different types of applications and their authentication flows.
-In Part 2, I will discuss how to create and register a new application with a deeper understanding of the permissions needed when interacting with the Microsoft Graph API.
-Read More</description>
+      <description>&lt;p&gt;In my &lt;a href=&#34;https://swimlane.com/blog/microsoft-oauth2-implementation-1&#34;&gt;last post&lt;/a&gt;, I explained the different API endpoints available for authentication using Microsoft’s OAuth2. Additionally, I shared the different types of applications and their authentication flows.&lt;/p&gt;&#xA;&lt;p&gt;In Part 2, I will discuss how to create and register a new application with a deeper understanding of the permissions needed when interacting with the Microsoft Graph API.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://swimlane.com/blog/microsoft-oauth2-implementation-2/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane Runner Up in Microsoft Graph Security Hackathon</title>
       <link>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</link>
       <pubDate>Tue, 02 Apr 2019 14:17:04 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/</guid>
-      <description>Within a few weeks of starting at Swimlane, our CEO Cody Cornell mentioned the Microsoft Graph Security Hackathon — put on by the Microsoft Graph Security team and DevPost. After assembling a team and a lot of hard work, we were notified yesterday that our submission earned runner up!
-We were extremely excited to participate in this unique event as we were about to begin our development of our Microsoft Graph Security API bundle, and this would be the perfect opportunity for us to showcase the power of Swimlane.</description>
+      <description>&lt;p&gt;Within a few weeks of starting at Swimlane, our CEO Cody Cornell mentioned the Microsoft Graph Security Hackathon — put on by the Microsoft Graph Security team and DevPost. After assembling a team and a lot of hard work, we were notified yesterday that our submission earned runner up!&lt;/p&gt;&#xA;&lt;p&gt;We were extremely excited to participate in this unique event as we were about to begin our development of our Microsoft Graph Security API bundle, and this would be the perfect opportunity for us to showcase the power of Swimlane.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microsoft&#39;s OAuth2 Part 1: Endpoints and Application Types</title>
       <link>https://letsautomate.it/article/microsoft-oauth2-endpoints-and-application-types/</link>
       <pubDate>Wed, 27 Mar 2019 14:14:26 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/microsoft-oauth2-endpoints-and-application-types/</guid>
-      <description>As an information security or IT professional, understanding the concepts around Microsoft OAuth 2.0 or OpenID Connect authentication can be daunting. There are thousands of pages of documentation, and if you want to interact with a Microsoft Cloud service—like Microsoft Graph—it can be a minefield of information.
-In this three-part series, I am going to share with you my insights on Microsoft’s OAuth2 Implementation in hopes that it will help your organization understand and use OAuth2 when using Microsoft cloud-based services.</description>
+      <description>&lt;p&gt;As an information security or IT professional, understanding the concepts around Microsoft OAuth 2.0 or OpenID Connect authentication can be daunting. There are thousands of pages of documentation, and if you want to interact with a Microsoft Cloud service—like Microsoft Graph—it can be a minefield of information.&lt;/p&gt;&#xA;&lt;p&gt;In this three-part series, I am going to share with you my insights on Microsoft’s OAuth2 Implementation in hopes that it will help your organization understand and use OAuth2 when using Microsoft cloud-based services. This series is broken out into the following parts:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Automated Malware Analysis and Reverse Engineering With Soar</title>
       <link>https://letsautomate.it/article/automated-malware-analysis-and-reverse-engineering-with-soar/</link>
       <pubDate>Thu, 14 Mar 2019 14:10:25 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/automated-malware-analysis-and-reverse-engineering-with-soar/</guid>
-      <description>We all know that security operations (SecOps) teams are overwhelmed by the extreme number of alerts they receive on a daily basis. Organizations are being attacked from all fronts, whether they know it or not. These attacks vary from social engineering, malicious emails, vulnerable services and applications, misconfiguration (job fatigue), etc.
-Traditionally in a security operations center (SOC), malware analysis—more specifically reverse engineering—is conducted by a highly trained member of the security team (depending on your size, this may be multiple individuals).</description>
+      <description>&lt;p&gt;We all know that security operations (SecOps) teams are overwhelmed by the extreme number of alerts they receive on a daily basis. Organizations are being attacked from all fronts, whether they know it or not. These attacks vary from social engineering, malicious emails, vulnerable services and applications, misconfiguration (job fatigue), etc.&lt;/p&gt;&#xA;&lt;p&gt;Traditionally in a security operations center (SOC), malware analysis—more specifically reverse engineering—is conducted by a highly trained member of the security team (depending on your size, this may be multiple individuals). A SOC may receive hundreds, even thousands, of alerts about potentially malicious files from users reporting malicious messages to EDR (endpoint detection and response) to workstation/server event logs.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

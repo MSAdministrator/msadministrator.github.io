@@ -4,14 +4,14 @@
   
 <html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.154.5">
     <title>
         
            
@@ -21,36 +21,139 @@
     </title>
     <meta itemprop="name" content="Josh Rickard">
     <meta itemprop="description" content="Josh Rickard - Lets Automate It">
-    <meta property="og:title" content="Josh Rickard">
-    <meta property="og:description" content="Josh Rickard - Lets Automate It">
-    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
+    <meta property="og:site_name" content="Lets Automate It">
+
     <meta property="og:url" content="https://letsautomate.it/author/josh-rickard/">
-    <meta property="og:site_name" content="Lets Automate It"><meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Josh Rickard">
+  <meta property="og:description" content="Lets Automate It">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
 
     
 
 
-    <script src="/modernizr-simple.js"></script>
-
     
-    <link href="/author/josh-rickard/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-    <link href="/author/josh-rickard/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="feed" type="application/rss+xml" title="Lets Automate It" />
     
 
     
     <link rel="canonical" href="https://letsautomate.it/author/josh-rickard/">
     
 
-    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
 
     
 
     
-        
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
     
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
 </head>
 
 <body class="bilberry-hugo-theme">
+    
 
     
     <nav>
@@ -59,35 +162,40 @@
         <ul class="topnav">
             
                 
-                    <li><a href="https://letsautomate.it/page/about/">About</a></li>
+                
+                    <li><a href="/page/about/">About</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
+                    <li><a href="/page/press/">Press</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/presentations/">Presentations</a></li>
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
                 
             
         </ul>
-
-        
-            <div id="search-box" class="search">
-                <i class="fas fa-search"></i>
-                <input id="search" type="text" placeholder="Search ...">
-            </div>
-        
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
     </div>
 </nav>
 
 
     
     <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
     <div class="container">
         <div class="logo">
@@ -110,8 +218,10 @@
                 <span class="subtitle">from Josh Rickard</span>
             
         </div>
-
-        
+        <div class="selectors">
+          
+          
+       </div>
 
         
             <div class="toggler">
@@ -119,12 +229,105 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
     </div>
+    </div>
 </header>
 
 
     <div class="main container">
         
     
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/">
+            Powershell Console, Scripts, Functions, Modules, Cmdlets, Oh My!
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-19</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/powershell/">Powershell</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>PowerShell is unique, but it is also necessary in today&rsquo;s world.  I find that newcomers to the language are sometimes confused or don&rsquo;t understand the basic layers of PowerShell scripting.  You can use PowerShell in different ways, but I have yet to find an all encompassing article that explains the high-level of how to interact with PowerShell in these different ways.</p>
+<p>This post will explain the different concepts (or layers) of PowerShell code organization and their main advantages and use cases.  We will dive into the different approaches of implementing PowerShell and why you would use one over the other.</p>
+
+        
+            <a href="https://letsautomate.it/article/powershell-scripts-functions-modules-cmdlets-oh-my/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/scripts/">Scripts</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/functions/">Functions</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/modules/">Modules</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
     
         <div class="article-wrapper u-cf">
             
@@ -156,12 +359,12 @@
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/automation/">automation</a>
+                        <a href="https://letsautomate.it/categories/automation/">Automation</a>
                     
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/powershell/">powershell</a>
+                        <a href="https://letsautomate.it/categories/powershell/">Powershell</a>
                     
                 
             </span>
@@ -178,8 +381,8 @@
     </div>
 
     
-        I am currently migrating my blog content from Wordpress.com to GitHub pages using Hugo. During this transition, I wanted to have the ability to &ldquo;revive&rdquo; my blog posts on a scheduled basis on social media (e.g. Twitter). With Wordpress, you can use the WordPress Revive Old Posts plugin but with WordPress.com you have to have a premium business account to use plugins.
-If you&rsquo;re in a similar situation of if you want a free way to automate the &ldquo;re-posting&rdquo; of your blog content then you&rsquo;re in luck!
+        <p>I am currently migrating my blog content from <a href="https://wordpress.com">Wordpress.com</a> to GitHub pages using <a href="https://gohugo.io">Hugo</a>.  During this transition, I wanted to have the ability to &ldquo;revive&rdquo; my blog posts on a scheduled basis on social media (e.g. Twitter).  With Wordpress, you can use the WordPress <a href="https://wordpress.org/plugins/tweet-old-post/">Revive Old Posts</a> plugin but with WordPress.com you have to have a premium business account to use plugins.</p>
+<p>If you&rsquo;re in a similar situation of if you want a free way to automate the &ldquo;re-posting&rdquo; of your blog content then you&rsquo;re in luck!  Below I have listed some initial requirements that are needed to use this process.</p>
 
         
             <a href="https://letsautomate.it/article/using-github-to-revive-blog-posts/" class="more">Continue reading</a>
@@ -198,17 +401,17 @@ If you&rsquo;re in a similar situation of if you want a free way to automate the
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/github/">github</a>
+                    <a href="https://letsautomate.it/tags/github/">Github</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/writing/">writing</a>
+                    <a href="https://letsautomate.it/tags/writing/">Writing</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/appveyor/">appveyor</a>
+                    <a href="https://letsautomate.it/tags/appveyor/">Appveyor</a>
                     
                 
             </div>
@@ -253,12 +456,12 @@ If you&rsquo;re in a similar situation of if you want a free way to automate the
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/azure/">azure</a>
+                        <a href="https://letsautomate.it/categories/azure/">Azure</a>
                     
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/slack/">slack</a>
+                        <a href="https://letsautomate.it/categories/slack/">Slack</a>
                     
                 
             </span>
@@ -275,8 +478,8 @@ If you&rsquo;re in a similar situation of if you want a free way to automate the
     </div>
 
     
-        In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal. Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.
-Please make sure you have a Slack workspace created and you have access to create a Slack application.
+        <p>In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal.  Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.</p>
+<p>Please make sure you have a Slack workspace created and you have access to create a Slack application.  <a href="https://api.slack.com/apps">Login to your Slack workspace API</a> and select Create New App in the top right-hand corner.  You will need to give your new application a name and select the appropriate workspace to create your new application.</p>
 
         
             <a href="https://letsautomate.it/article/connect-your-bot-to-slack/" class="more">Continue reading</a>
@@ -295,17 +498,17 @@ Please make sure you have a Slack workspace created and you have access to creat
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/bot/">bot</a>
+                    <a href="https://letsautomate.it/tags/bot/">Bot</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/slack/">slack</a>
+                    <a href="https://letsautomate.it/tags/slack/">Slack</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/chatbot/">chatbot</a>
+                    <a href="https://letsautomate.it/tags/chatbot/">Chatbot</a>
                     
                 
             </div>
@@ -350,7 +553,7 @@ Please make sure you have a Slack workspace created and you have access to creat
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/azure/">azure</a>
+                        <a href="https://letsautomate.it/categories/azure/">Azure</a>
                     
                 
             </span>
@@ -367,8 +570,8 @@ Please make sure you have a Slack workspace created and you have access to creat
     </div>
 
     
-        In my last post, we create a QnA Maker knowledge base that our Azure Web App Bot will use as it’s repository of questions &amp; answers. Now, we are going to create our bot using Azure’s Bot Services.
-First thing is that we should go ahead and log into the Azure Portal. In the top left-hand corner click the Create a resource button. You will then need to Search the marketplace in the New blade for Web App Bot.
+        <p>In my last post, we create a QnA Maker knowledge base that our Azure Web App Bot will use as it’s repository of questions &amp; answers.  Now, we are going to create our bot using Azure’s Bot Services.</p>
+<p>First thing is that we should go ahead and log into the <a href="https://portal.azure.com">Azure Portal</a>.  In the top left-hand corner click the Create a resource button.  You will then need to Search the marketplace in the New blade for Web App Bot.</p>
 
         
             <a href="https://letsautomate.it/article/create-a-web-app-bot-using-azure-bot-services/" class="more">Continue reading</a>
@@ -387,17 +590,17 @@ First thing is that we should go ahead and log into the Azure Portal. In the top
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/bot/">bot</a>
+                    <a href="https://letsautomate.it/tags/bot/">Bot</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/webapp/">webapp</a>
+                    <a href="https://letsautomate.it/tags/webapp/">Webapp</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/chatbot/">chatbot</a>
+                    <a href="https://letsautomate.it/tags/chatbot/">Chatbot</a>
                     
                 
             </div>
@@ -442,7 +645,7 @@ First thing is that we should go ahead and log into the Azure Portal. In the top
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/azure/">azure</a>
+                        <a href="https://letsautomate.it/categories/azure/">Azure</a>
                     
                 
             </span>
@@ -459,8 +662,15 @@ First thing is that we should go ahead and log into the Azure Portal. In the top
     </div>
 
     
-        The first thing we need to do is login to QnAMaker. QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.
-Login to QnAMaker and navigate to the Create a knowledge base tab. You will need to walkthrough 5 steps to create your knowledge base.
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1514695391372140",
+    enable_page_level_ads: true
+  });
+</script>
+<p>The first thing we need to do is login to <a href="https://qnamaker.ai">QnAMaker</a>.  QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.</p>
+<p>Login to QnAMaker and navigate to the Create a knowledge base tab.  You will need to walkthrough 5 steps to create your knowledge base.  Luckily, Microsoft has provided clear instructions to make this as simple as possible.</p>
 
         
             <a href="https://letsautomate.it/article/using-qnamaker-to-create-chatbot/" class="more">Continue reading</a>
@@ -479,17 +689,17 @@ Login to QnAMaker and navigate to the Create a knowledge base tab. You will need
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/bot/">bot</a>
+                    <a href="https://letsautomate.it/tags/bot/">Bot</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/qnamaker/">qnamaker</a>
+                    <a href="https://letsautomate.it/tags/qnamaker/">Qnamaker</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/chatbot/">chatbot</a>
+                    <a href="https://letsautomate.it/tags/chatbot/">Chatbot</a>
                     
                 
             </div>
@@ -534,7 +744,7 @@ Login to QnAMaker and navigate to the Create a knowledge base tab. You will need
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/azure/">azure</a>
+                        <a href="https://letsautomate.it/categories/azure/">Azure</a>
                     
                 
             </span>
@@ -551,8 +761,8 @@ Login to QnAMaker and navigate to the Create a knowledge base tab. You will need
     </div>
 
     
-        Chatbots are all the rage right now, and they have proven to be extremely useful for organizations around the globe. You can have simple bots that take lunch orders or tell you the weather in your location. You can also bots tht act as part of an advanced distributed security alerting system. Whatever the reason, bots are not going anywhere anytime soon.
-To create our chatbot we are going to use a few different services.
+        <p>Chatbots are all the rage right now, and they have proven to be extremely useful for organizations around the globe.  You can have simple bots that take lunch orders or tell you the weather in your location. You can also bots tht act as part of an <a href="https://slack.engineering/distributed-security-alerting-c89414c992d6">advanced distributed security alerting system</a>.  Whatever the reason, bots are not going anywhere anytime soon.</p>
+<p>To create our chatbot we are going to use a few different services.  Please make sure that you have all the necessary access setup and ready to go before proceeding. Here is the list of services we will be using:</p>
 
         
             <a href="https://letsautomate.it/article/create-a-question-and-answer-chatbot-for-slack-in-azure/" class="more">Continue reading</a>
@@ -571,17 +781,17 @@ To create our chatbot we are going to use a few different services.
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/bot/">bot</a>
+                    <a href="https://letsautomate.it/tags/bot/">Bot</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/slack/">slack</a>
+                    <a href="https://letsautomate.it/tags/slack/">Slack</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/chatbot/">chatbot</a>
+                    <a href="https://letsautomate.it/tags/chatbot/">Chatbot</a>
                     
                 
             </div>
@@ -626,7 +836,7 @@ To create our chatbot we are going to use a few different services.
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/powershell/">powershell</a>
+                        <a href="https://letsautomate.it/categories/powershell/">Powershell</a>
                     
                 
             </span>
@@ -643,8 +853,8 @@ To create our chatbot we are going to use a few different services.
     </div>
 
     
-        Yesterday I was asked to help with streamling a manual process that some QA folks were running into. They had a debug release of an applicaiton that was signed with a test code signing certificate. Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.
-This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.
+        <p>Yesterday I was asked to help with streamling a manual process that some QA folks were running into.  They had a debug release of an applicaiton that was signed with a test code signing certificate.  Part of the process was that they needed to select a DLL, view the certificate, and then install the certificate into the machines trusted certificate store.</p>
+<p>This is a extremely simple task, but it was just an annoyance, so I wrote a few lines of code to autoamte this for them.</p>
 
         
             <a href="https://letsautomate.it/article/adding-a-dlls-certificate-to-trusted-store/" class="more">Continue reading</a>
@@ -663,91 +873,17 @@ This is a extremely simple task, but it was just an annoyance, so I wrote a few 
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/certificate/">certificate</a>
+                    <a href="https://letsautomate.it/tags/certificate/">Certificate</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/cryptography/">cryptography</a>
+                    <a href="https://letsautomate.it/tags/cryptography/">Cryptography</a>
                     
                 
                     
                     
                     <a href="https://letsautomate.it/tags/.net/">.NET</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/butcher-block-iron-pipe-desk/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/butcher-block-iron-pipe-desk/">
-            Butcher Block Iron Pipe Desk
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        Recently I built a butcher block and iron pipe desk for my home office. Within this post i&rsquo;ll try and list out how I approached it as best as possible:
-I purchased 2 8ft butcher block countertops from Lumber Liquidators while they were on sale. I paid $150 for each. Next, I researched quite a bit about how to finish them. Here&rsquo;s what I did:
-Sanded using 80 grit sandpaper Sanded using 120 grit sandpaper Sanded using 200 grit sandpaper Sanded using 320 grit sandpaper Sanded using 400 grit sandpaper Once that was done, I used cheese cloth to wipe away all the debris.
-
-        
-            <a href="https://letsautomate.it/article/butcher-block-iron-pipe-desk/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">archive</a>
                     
                 
             </div>
@@ -789,6 +925,10 @@ Sanded using 80 grit sandpaper Sanded using 120 grit sandpaper Sanded using 200 
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
                     </li>
                 
@@ -812,52 +952,58 @@ Sanded using 80 grit sandpaper Sanded using 120 grit sandpaper Sanded using 200 
                         <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
                     </li>
                 
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
-                    </li>
-                
             </ul>
         </div>
         
 
         
         <div class="categories">
-            <a href="/categories/"><strong>Categories</strong></a>
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
             <ul>
                 
                 <li>
-                    <a href="/categories/swimlane">Swimlane
-                        (25)</a>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/powershell">Powershell
-                        (7)</a>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/azure">Azure
-                        (4)</a>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/python">Python
-                        (2)</a>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/automation">Automation
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/dfir">Dfir
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/how-to">How to
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
                 </li>
                 
             </ul>
@@ -868,29 +1014,16 @@ Sanded using 80 grit sandpaper Sanded using 120 grit sandpaper Sanded using 200 
             
             <div class="external-profiles">
                 <strong>Social media</strong>
-
                 
-                <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
                 
-                <a href="https://github.com/MSAdministrator" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
                 
-                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
                 
             </div>
             
 
-            <div class="languages">
-                <strong>Other languages</strong>
-                
-                
-                <a href="https://letsautomate.it/" class="active">en</a>
-                
-                
-                
-                <a href="https://letsautomate.it/de/">de</a>
-                
-                
-            </div>
             
 
             
@@ -902,15 +1035,15 @@ Sanded using 80 grit sandpaper Sanded using 120 grit sandpaper Sanded using 200 
 <div class="credits">
     <div class="container">
         <div class="copyright">
-            <a href="https://github.com/Lednerb" target="_blank">
+            <a href="https://github.com/MSAdministrator" target="_blank">
                 &copy;
                 
-                2018
+                2026
                 
-                by Lednerb
+                Josh Rickard
             </a>
             -
-            <a href="https://letsautomate.it/author/josh-rickard/index.xml">RSS</a>
+            <a href="https://letsautomate.it/author/josh-rickard/index.xml">rss</a>
         </div>
         <div class="author">
             <a href="https://github.com/Lednerb/bilberry-hugo-theme"
@@ -921,40 +1054,79 @@ Sanded using 80 grit sandpaper Sanded using 120 grit sandpaper Sanded using 200 
 
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-    
-
-
-    <script src="https://letsautomate.it/theme.js"></script>
-
-    
-    
-    
-
-    
-    <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
-  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
-  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
-  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
-
-  
-  <input type="hidden" id="algolia-search-currentLanguageOnly">
-  
-</div>
-
-    
 </body>
 
 </html>

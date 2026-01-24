@@ -1,62 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on Lets Automate It</title>
+    <title>Python on Lets Automate It</title>
     <link>https://letsautomate.it/tags/python/</link>
-    <description>Recent content in python on Lets Automate It</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Python on Lets Automate It</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Jul 2022 12:45:00 -0400</lastBuildDate><atom:link href="https://letsautomate.it/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jul 2022 12:45:00 -0400</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding Python - Part 2: Running Code</title>
       <link>https://letsautomate.it/article/understanding-python-part-2-running-code/</link>
       <pubDate>Thu, 14 Jul 2022 12:45:00 -0400</pubDate>
-      
       <guid>https://letsautomate.it/article/understanding-python-part-2-running-code/</guid>
-      <description>Introduction Whether you are new to Python or not, ensuring you understand the basics will help you along the way to becoming a Python expert.
-Please see the first post titled Python vs Powershell Part 1: Versioning. This first post was written in 2018 but still applies. The remaining blog posts are a continuation of this series. Lets get started!
-Installation You may have Python already installed. To check, open your terminal and type:</description>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Whether you are new to Python or not, ensuring you understand the basics will help you along the way to becoming a Python expert.&lt;/p&gt;&#xA;&lt;p&gt;Please see the first post titled &lt;a href=&#34;https://letsautomate.it/article/python-vs-powershell-part-1-versioning/&#34;&gt;Python vs Powershell Part 1: Versioning&lt;/a&gt;. This first post was written in 2018 but still applies. The remaining blog posts are a continuation of this series. Lets get started!&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;p&gt;You may have Python already installed. To check, open your terminal and type:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microsoft Defender Advanced Threat Detection Queries</title>
       <link>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</link>
       <pubDate>Thu, 18 Jul 2019 14:37:17 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</guid>
-      <description>Recently, I shared on Twitter how you could run a query to detect if a user has clicked on a link within their Outlook using Microsoft Defender Advanced Threat Protection (MDATP). If you are not familiar, MDATP is available within your Microsoft 365 E5 license and is an enhancement to the traditional Windows Defender you might be used to.
-What is Microsoft Defender Advanced Threat Protection? Microsoft says that “Microsoft Defender Advanced Threat Protection is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.</description>
+      <description>&lt;p&gt;Recently, I &lt;a href=&#34;https://twitter.com/MSAdministrator/status/1145778141127991302?s=20&#34;&gt;shared on Twitter&lt;/a&gt; how you could run a query to detect if a user has clicked on a link within their Outlook using Microsoft Defender Advanced Threat Protection (MDATP). If you are not familiar, MDATP is available within your Microsoft 365 E5 license and is an enhancement to the traditional Windows Defender you might be used to.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-microsoft-defender-advanced-threat-protection&#34;&gt;What is Microsoft Defender Advanced Threat Protection?&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection&#34;&gt;Microsoft&lt;/a&gt; says that “Microsoft Defender Advanced Threat Protection is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.” MDATP offers quite a few endpoints that you can leverage in both incident response and threat hunting.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane&#39;s Research Teams Open Sources pyattck</title>
       <link>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</link>
       <pubDate>Thu, 11 Jul 2019 14:34:27 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlanes-research-teams-open-sources-pyattck/</guid>
-      <description>As security teams adopt the Mitre ATT&amp;amp;CK Framework to help them identify gaps in their defenses, having a way to identify what malware and tools are being used by specific actors or groups becomes more critical. Additionally, having a way to identify these relationships programatically is even more critical.
-Today, we are excited to announce the Swimlane research team has released pyattck — a Python package to interact with the Mitre ATT&amp;amp;CK Framework.</description>
+      <description>&lt;p&gt;As security teams adopt the &lt;a href=&#34;https://attack.mitre.org/&#34;&gt;Mitre ATT&amp;amp;CK Framework&lt;/a&gt; to help them identify gaps in their defenses, having a way to identify what malware and tools are being used by specific actors or groups becomes more critical. Additionally, having a way to identify these relationships programatically is even more critical.&lt;/p&gt;&#xA;&lt;p&gt;Today, we are excited to announce the Swimlane research team has released &lt;a href=&#34;https://pyattck.readthedocs.io/en/latest/&#34;&gt;pyattck&lt;/a&gt; — a Python package to interact with the &lt;a href=&#34;https://attack.mitre.org/&#34;&gt;Mitre ATT&amp;amp;CK Framework&lt;/a&gt;. There are many different open-source projects being released on a daily basis, but we wanted to provide a straightforward Python package that allows the user to identify known relationships between all verticals of the &lt;a href=&#34;https://attack.mitre.org/&#34;&gt;Mitre ATT&amp;amp;CK Framework&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane Open Sources graphish to Help SecOps Teams</title>
       <link>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</link>
       <pubDate>Wed, 19 Jun 2019 14:31:46 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/</guid>
-      <description>While having a conversation on Twitter about Microsoft Graph API I was convinced that the traditional Exchange eDiscovery features were not available in the Microsoft Graph API. Boy was I wrong.
-After stumbling across a few endpoints I had not seen previously, I decided to write a python package called graphish. graphish is an open-source python package Swimlane is open-sourcing that will enable IT, security operations (SecOps), developers and others to search and delete email messages from mailboxes using the Microsoft Graph API.</description>
+      <description>&lt;p&gt;While having a conversation on &lt;a href=&#34;https://twitter.com/MSAdministrator/status/1140380695430410240?s=20&#34;&gt;Twitter&lt;/a&gt; about Microsoft Graph API I was convinced that the traditional Exchange eDiscovery features were not available in the Microsoft Graph API. Boy was I wrong.&lt;/p&gt;&#xA;&lt;p&gt;After stumbling across a few endpoints I had not seen previously, I decided to write a python package called &lt;a href=&#34;https://github.com/swimlane/graphish&#34;&gt;graphish&lt;/a&gt;. &lt;a href=&#34;https://github.com/swimlane/graphish&#34;&gt;graphish&lt;/a&gt; is an open-source python package Swimlane is open-sourcing that will enable IT, security operations (SecOps), developers and others to search and delete email messages from mailboxes using the Microsoft Graph API.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swimlane Research Team Open Sources py-ews</title>
       <link>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</link>
       <pubDate>Wed, 22 May 2019 14:27:42 -0500</pubDate>
-      
       <guid>https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/</guid>
-      <description>Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced py-ews to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.
-Why py-ews? Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&amp;rsquo; mailboxes.</description>
+      <description>&lt;p&gt;Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced &lt;a href=&#34;https://py-ews.readthedocs.io/en/latest/&#34;&gt;py-ews&lt;/a&gt; to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.&lt;/p&gt;&#xA;&lt;h1 id=&#34;why-py-ews&#34;&gt;Why py-ews?&lt;/h1&gt;&#xA;&lt;p&gt;Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&amp;rsquo; mailboxes. &lt;a href=&#34;https://py-ews.readthedocs.io/en/latest/&#34;&gt;py-ews&lt;/a&gt; was written to give control back to your security and IT teams so they can remediate threats faster.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

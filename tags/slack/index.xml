@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>slack on Lets Automate It</title>
+    <title>Slack on Lets Automate It</title>
     <link>https://letsautomate.it/tags/slack/</link>
-    <description>Recent content in slack on Lets Automate It</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Slack on Lets Automate It</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Aug 2018 22:28:08 -0400</lastBuildDate><atom:link href="https://letsautomate.it/tags/slack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Aug 2018 22:28:08 -0400</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/slack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Connect Your Bot to Slack</title>
       <link>https://letsautomate.it/article/connect-your-bot-to-slack/</link>
       <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
-      
       <guid>https://letsautomate.it/article/connect-your-bot-to-slack/</guid>
-      <description>In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal. Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.
-Please make sure you have a Slack workspace created and you have access to create a Slack application.</description>
+      <description>&lt;p&gt;In my previous two posts we created a knowledge base of questions and answers using QnAMaker and we created our Web App Bot in the Azure Portal.  Now that we have a bot created and it is responding as we intended, we can interact with our bot directly through our web browser (or embed it into a website) or we can integrate into our Slack workspace.&lt;/p&gt;&#xA;&lt;p&gt;Please make sure you have a Slack workspace created and you have access to create a Slack application.  &lt;a href=&#34;https://api.slack.com/apps&#34;&gt;Login to your Slack workspace API&lt;/a&gt; and select Create New App in the top right-hand corner.  You will need to give your new application a name and select the appropriate workspace to create your new application.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Create a Question and Answer Chatbot for Slack in Azure</title>
       <link>https://letsautomate.it/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</link>
       <pubDate>Fri, 10 Aug 2018 21:28:54 -0400</pubDate>
-      
       <guid>https://letsautomate.it/article/create-a-question-and-answer-chatbot-for-slack-in-azure/</guid>
-      <description>Chatbots are all the rage right now, and they have proven to be extremely useful for organizations around the globe. You can have simple bots that take lunch orders or tell you the weather in your location. You can also bots tht act as part of an advanced distributed security alerting system. Whatever the reason, bots are not going anywhere anytime soon.
-To create our chatbot we are going to use a few different services.</description>
+      <description>&lt;p&gt;Chatbots are all the rage right now, and they have proven to be extremely useful for organizations around the globe.  You can have simple bots that take lunch orders or tell you the weather in your location. You can also bots tht act as part of an &lt;a href=&#34;https://slack.engineering/distributed-security-alerting-c89414c992d6&#34;&gt;advanced distributed security alerting system&lt;/a&gt;.  Whatever the reason, bots are not going anywhere anytime soon.&lt;/p&gt;&#xA;&lt;p&gt;To create our chatbot we are going to use a few different services.  Please make sure that you have all the necessary access setup and ready to go before proceeding. Here is the list of services we will be using:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

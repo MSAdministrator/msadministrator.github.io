@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on Lets Automate It</title>
+    <title>Hugo on Lets Automate It</title>
     <link>https://letsautomate.it/tags/hugo/</link>
-    <description>Recent content in hugo on Lets Automate It</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Hugo on Lets Automate It</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Aug 2018 16:07:25 -0400</lastBuildDate><atom:link href="https://letsautomate.it/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Aug 2018 16:07:25 -0400</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Setup a Hugo Website on GitHub</title>
       <link>https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/</link>
       <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
-      
       <guid>https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/</guid>
-      <description>I recently transitioned my blog over to GitHub Pages from WordPress. I was using the free version from WordPress.org and I wanted more granular control over the layout. Additionally, I wanted to automate my blog publishing and social media notifications; the free version of WordPress didn&amp;rsquo;t meet my needs. So I looked around and eventually fell in love with Hugo! This post outlines how to go about setting up a GitHub Pages website/blog using Hugo.</description>
+      <description>&lt;p&gt;I recently transitioned my blog over to &lt;a href=&#34;https://pages.github.com&#34;&gt;GitHub Pages&lt;/a&gt; from &lt;a href=&#34;https://wordpress.org&#34;&gt;WordPress&lt;/a&gt;.  I was using the free version from WordPress.org and I wanted more granular control over the layout.  Additionally, I wanted to automate my blog publishing and social media notifications; the free version of WordPress didn&amp;rsquo;t meet my needs.  So I looked around and eventually fell in love with &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;!  This post outlines how to go about setting up a GitHub Pages website/blog using Hugo.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
