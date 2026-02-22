@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F_\u002Fstorybook\u002F[group]\u002F[story]\u002F[substory]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
