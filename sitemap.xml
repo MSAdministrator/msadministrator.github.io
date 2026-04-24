@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://letsautomate.it/</loc>
+    <lastmod>2026-04-23T21:47:39-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/page/</loc>
+    <lastmod>2026-04-23T21:47:39-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/page/papers/</loc>
+    <lastmod>2026-04-23T21:47:39-04:00</lastmod>
+  </url><url>
     <loc>https://letsautomate.it/tags/agent/</loc>
     <lastmod>2026-04-13T23:08:02-04:00</lastmod>
   </url><url>
@@ -27,9 +36,6 @@
     <lastmod>2026-04-13T23:08:02-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2026-04-13T23:08:02-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/</loc>
     <lastmod>2026-04-13T23:08:02-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/categories/llm/</loc>
@@ -63,9 +69,6 @@
     <lastmod>2023-03-10T12:00:00-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/page/about/</loc>
-    <lastmod>2023-01-30T12:51:23-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/page/</loc>
     <lastmod>2023-01-30T12:51:23-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/page/press/</loc>

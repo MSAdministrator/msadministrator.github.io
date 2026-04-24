@@ -6,8 +6,15 @@
     <description>Recent content in Pages on Lets Automate It</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Jan 2023 12:51:23 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 21:47:39 -0400</lastBuildDate>
     <atom:link href="https://letsautomate.it/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Papers</title>
+      <link>https://letsautomate.it/page/papers/</link>
+      <pubDate>Thu, 23 Apr 2026 21:47:39 -0400</pubDate>
+      <guid>https://letsautomate.it/page/papers/</guid>
+      <description>&lt;p&gt;Below is a list of published (or draft) research papers. This will be continually updated moving forward:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://letsautomate.it/data/Beyond%20the%20Prompt-%20The%20Social%20Costs%20of%20Generative%20Artifical%20Intelligence%20-%20First%20Draft.pdf&#34;&gt;Beyond the Prompt: The Social Costs of Generative Artificial Intelligence&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>About</title>
       <link>https://letsautomate.it/page/about/</link>

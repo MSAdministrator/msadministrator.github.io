@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spf on Lets Automate It</title>
+    <link>http://localhost:1313/tags/spf/</link>
+    <description>Recent content in Spf on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Jan 2026 10:00:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/spf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Detecting Phishing with Microsoft Email Headers</title>
+      <link>http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/</link>
+      <pubDate>Mon, 19 Jan 2026 10:00:00 -0600</pubDate>
+      <guid>http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/</guid>
+      <description>&lt;p&gt;After reading Microsoft&amp;rsquo;s excellent blog post &lt;a href=&#34;https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/&#34;&gt;Phishing actors exploit complex routing and misconfigurations to spoof domains&lt;/a&gt;, I wanted to dive deeper and provide additional guidance for understanding common concepts found within Microsoft email headers. This post extends the referenced blog by focusing specifically on phishing detection opportunities within these headers.&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;ve worked in email security for any duration, you know that email headers are a goldmine of information. The challenge is knowing what to look for and how to interpret it. Let&amp;rsquo;s break this down.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

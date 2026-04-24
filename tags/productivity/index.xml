@@ -2,17 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Productivity on Lets Automate It</title>
-    <link>https://letsautomate.it/tags/productivity/</link>
+    <link>http://localhost:1313/tags/productivity/</link>
     <description>Recent content in Productivity on Lets Automate It</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Jan 2026 14:00:00 -0600</lastBuildDate>
-    <atom:link href="https://letsautomate.it/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Feb 2026 14:00:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Use LLMs for Security Work: Part 2</title>
+      <link>http://localhost:1313/article/how-i-use-llms-part2/</link>
+      <pubDate>Sun, 22 Feb 2026 14:00:00 -0600</pubDate>
+      <guid>http://localhost:1313/article/how-i-use-llms-part2/</guid>
+      <description>&lt;h1 id=&#34;how-i-use-llms-for-security-work-part-2&#34;&gt;How I use LLMs For Security Work: Part 2&lt;/h1&gt;&#xA;&lt;p&gt;I previously wrote a blog for THOR Collective Dispatch about some basic examples of different approaches when it comes to LLMs. It was cool and I hope it truly helps those starting out but I wanted to follow up and share some other more specific examples, including more “advanced” patterns that have worked for me over the past year or so.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How I Use LLMs for Security Work</title>
-      <link>https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/</link>
+      <link>http://localhost:1313/article/how-i-use-ai-tools-for-security-work/</link>
       <pubDate>Sun, 18 Jan 2026 14:00:00 -0600</pubDate>
-      <guid>https://letsautomate.it/article/how-i-use-ai-tools-for-security-work/</guid>
+      <guid>http://localhost:1313/article/how-i-use-ai-tools-for-security-work/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been using LLM tools like Claude, Cursor, and ChatGPT extensively in my security &amp;amp; engineering work for the past couple years. Not as a replacement for thinking—but they genuinely help me move faster through complex problems. If you&amp;rsquo;re a security analyst, SOC analyst, threat hunter or engineer who hasn&amp;rsquo;t found a rhythm with these tools yet, I&amp;rsquo;ll try to share what&amp;rsquo;s been working for me with the hope it helps you too.&lt;/p&gt;</description>
     </item>
   </channel>

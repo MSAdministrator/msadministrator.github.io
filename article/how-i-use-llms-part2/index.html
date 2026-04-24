@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               How I Use LLMs for Security Work: Part 2 &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="How I Use LLMs for Security Work: Part 2">
+    <meta itemprop="description" content="How I Use LLMs for Security Work: Part 2 - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="http://localhost:1313/article/how-i-use-llms-part2/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="How I Use LLMs for Security Work: Part 2">
+  <meta property="og:description" content="How I use LLMs For Security Work: Part 2 I previously wrote a blog for THOR Collective Dispatch about some basic examples of different approaches when it comes to LLMs. It was cool and I hope it truly helps those starting out but I wanted to follow up and share some other more specific examples, including more “advanced” patterns that have worked for me over the past year or so.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="article">
+    <meta property="article:published_time" content="2026-02-22T14:00:00-06:00">
+    <meta property="article:modified_time" content="2026-02-22T14:00:00-06:00">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Llm">
+    <meta property="article:tag" content="Claude">
+    <meta property="article:tag" content="Cursor">
+    <meta property="article:tag" content="Chatgpt">
+    <meta property="article:tag" content="Threat-Hunting">
+    <meta property="og:image" content="http://localhost:1313/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/article/how-i-use-llms-part2/">
+    
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/papers/">Papers</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/article/how-i-use-llms-part2/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/how-i-use-llms-part2/">
+            How I Use LLMs for Security Work: Part 2
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-02-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="http://localhost:1313/categories/security/">Security</a>
+                    
+                
+                    
+                    
+                        <a href="http://localhost:1313/categories/automation/">Automation</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="http://localhost:1313/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <h1 id="how-i-use-llms-for-security-work-part-2">How I use LLMs For Security Work: Part 2</h1>
+<p>I previously wrote a blog for THOR Collective Dispatch about some basic examples of different approaches when it comes to LLMs. It was cool and I hope it truly helps those starting out but I wanted to follow up and share some other more specific examples, including more “advanced” patterns that have worked for me over the past year or so.</p>
+<p>We’ve all seen the scope, complexity and rise of usage of LLMs from products which integrate them, to all new product categories to ClawdBot. If you’re not familiar with all the facets of LLMs that’s okay but before I dive into these more advanced use cases, I think it’s advantageous to understand some terminology (at a high-level) when it comes to LLMs.</p>
+<p>Once we have a firm grasp on these different concepts, I will provide some more concrete examples of how I have used LLMs in the past.</p>
+<h2 id="terminology">Terminology</h2>
+<p>This section defines some common (current) concepts related to LLMs but really, they are just Markdown with the exception that Assistants also may include code.</p>
+<h3 id="prompting">Prompting</h3>
+<p>Really this is exactly what I wrote about in my previous blog. In this approach/use you provide statement(s), with some minimal context, maybe some general requirements and either a question or a problem statement.</p>
+<p>I’ve seen vibe coding thrown around but never cared to look it up but my understanding is that it’s either using speech to text and just describing your problems or just typing it out listening to some JL or Joey Cool (my current vibe). Often, I believe this approach of question, answer, fix, validate, test, fix, etc. is painful and can go awry pretty quick depending on the client used.</p>
+<p>Vibe coding maybe useful for some but where the real work will happen in our industry will be in the trenches. You must know how to describe the problem you are trying to solve, which requires you to intimately know the problem.</p>
+<h3 id="agents">Agents</h3>
+<p>Agents are the next “level” where there is very precise context given to an LLM. This context (which is really what this post is about) is about providing the guardrails for a request. Some provide this context in form of documentation, use cases, hard and loose requirements, gotchas, what not to do, perspectives including situational awareness statements and more. This can be 1,000-word document referencing 1 or 500 other documents to a single 50K (or more) prompt and typically includes extremely detailed descriptions, when to consider alternative options and especially negations of decisions.</p>
+<h4 id="skillsmd">SKILLS.md</h4>
+<p>Skills (e.g. SKILLS.md) are markdown files that essentially take everything a team knows about how to perform an action and writes a document that then feeds into an agent for absolute context, decision making, etc. These are almost identical to <code>agents</code> but I’ll let others decide where the naming concepts go.</p>
+<h4 id="workflows">Workflows</h4>
+<p>Workflows are like skills, but these are supposed to be directions for an LLM on how they should “analyze” or “examine” or “perform” the task being asked. For example, how to investigate an alert may have 1 or 15 steps defined including which tools (MCPs), how to interrupt results and how to make decisions before moving on to the next phase of the workflow.</p>
+<p>I like to think of workflows in the same way we define/document playbooks but in markdown. I think a good starting place for more mature organizations would be to embed their existing incident response documentation and response playbooks into their Agents and/or Assistants. Iterate and go wild from there.</p>
+<h3 id="assistants">Assistants</h3>
+<p>This is the “newest” evolution (that I’m aware of) and I believe is where we are headed as an industry. Assitants are multi-faceted, customized and curated to tackle problems both big and small. These are the combination of multiple Workflows which trigger defined SKILLS.md and tools (MCP servers) and use multiple discrete agents to perform tasks along the way.</p>
+<p>These are larger projects that allow someone to hook into how an LLM is called (via it’s API) - for example, this is how one such project called PAI works (btw, Daniel is definitely onto something here). These hooks are used to control the flow of operations all described in text and past decisions. It’s quite interesting but nuanced.</p>
+<h2 id="context-is-key">Context Is Key</h2>
+<p>I know that’s a lot, but really the first thing you need to understand is that this is really just all text/Markdown files. Instead of designing and defining how to communicate with a services APIs using some abstraction integration pattern, you can provide the docs and in plain English define what the inputs and outputs should be along with when to use it and how to perceive the results.</p>
+<p>With everything said so far, I’d like to switch gears to provide some examples of why context maters and describing your problem succinctly will provide more value than “vibing” (I’m old) your way through it.
+Let’s take this simple example I ran across the other week. Let’s say that you want to automate logging into multiple Google Chrome Profiles (you MSSP &amp; thrunters know what I mean) and kick-off a simple hunt (search) in each. Why you may ask, because it’s tedious and you have to do what you have to do with the tools you have and really this is a silly example (and don’t really do this please).</p>
+<p>Using this example, you may start up Claude Desktop/Code or Cursor and say:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>As a threat hunter, I want to create a python package and CLI utility which accepts a list of Google Chrome Profiles to open. I want this package to ensure the latest ChromeDriver is installed. For each provided Google Chrome Profile provided as input, I want this tool to only accept Chrome Profiles that exist on the system and do not create one if it doesn’t exist. Once validated, it should create a new browser instance that opens in the provided profile display name and the first tab is X url.
+</span></span></code></pre></div><p>Doing this may result in some success (again this is a simple example) but more than likely it will never get it right because it will guess at which Profile and only if that name exists will it try and open that profile. It may also take a completely different approach and may solve, it but I’d honestly be surprised.</p>
+<p>If I change this prompt by adding the following, giving it context, it will understand and find the correct answer because it has been given explicit instructions and a determined example output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>… Ensure that the provided Google Chrome Profile name represents the display name shown within Google Chrome. For example, I have a profile named “Thrunting - X organization name” and it should match the input value”
+</span></span></code></pre></div><p>This simple addition, of providing actual context and an expected result aligns the context/data inputs with your expected outputs; again guardrails.</p>
+<p>This was a silly example, but I hope it provides some clarification that the more concrete outputs, decision points, paths to follow, descriptions of key terms, specifications, requirements and more in the context you provide to an LLM the better inference results.</p>
+<p>p.s. The reason why LLMS do not understand that the values you are wanting to match reside in <code>./LocalState</code> instead of its parent directory is beyond me but that is where those display names are located (FYI).</p>
+<h2 id="back-to-the-basics">Back to the Basics</h2>
+<p>First, I want to reiterate that in order to build something meaningful using an LLM, you must NO MATTER WHAT first understand the problem you are trying to solve. If you don’t intimately know the problem, then start by writing what you do know and ask questions until you know what the problem is.</p>
+<p>I’ve talked a lot about context but that’s a vague statement. In this section I wanted to provide some examples of context that I’ve found to be extremely beneficial when it comes to LLM output. Here is a non-inclusive list of context examples (in no particular order):</p>
+<h3 id="personas---identities---personalities">Personas -&gt; Identities -&gt; Personalities</h3>
+<p>When starting, this is less of a concern but as your knowledge base on how you prefer to use LLMs grows you probably want to repeat a process, especially investigations, analysis, research, and/or tooling. This is where you can describe the experience, technologies, frameworks, etc. to skew results towards your current knowledge.</p>
+<p>For example, you can describe your preferred Python package layout, templates, etc. You can define a persona for different projects or code bases. The point is to use the tools you are familiar with already when starting out. Don’t just let the LLM use TypeScript if you have never use it previously.
+Over time your design patterns, thinking logic and more can be recorded and use as persona or identity for repeatable work from a specific perspective and experience.</p>
+<p>There are some projects, like PAI, which are experimenting on building personalities from defining your background, failures, successes, etc. Pretty weird to think about but also pretty cool.</p>
+<h3 id="perspectives--goals">Perspectives &amp; Goals</h3>
+<p>Describe the perspective you want this problem to be researched or reviewed from. Whether that is QA as a staff level SDET or an elite red team ninja warrior. Defining these perspectives as well as the overall goals of the project will help keep scope within the problem space.</p>
+<p>Here you can also define the overall skills (threat hunting, phishing defense, detection rule guru, etc.). You should also define the goals of the ask in general (e.g. find new and novel threats).</p>
+<h3 id="tools">Tools</h3>
+<p>This is pretty straight forward but provide a list of different external tools which can be used within this project. Most of these will be MCP servers and their exposed methods. But it can also be things like:</p>
+<ul>
+<li>A local runner docker compose stack</li>
+<li>Guidelines on which tools to use:
+<ul>
+<li>use python not golang or js</li>
+<li>Use python-fire for CLI, attrs models</li>
+<li>Class and inheritance over utility functions, etc.</li>
+<li>Use uv over poetry</li>
+<li>Etc.</li>
+</ul>
+</li>
+<li>Specific APIs with examples (Schema docs is preferred)</li>
+</ul>
+<p>For all of these, provide context as to when to use the tool, how to use it and how to interpret the results. This will definitely improve your results.</p>
+<h3 id="documentation">Documentation</h3>
+<p>As much reference documentation you can provide will always be helpful but ensure that you are not bloating your token usage or extending beyond the context windows of these models; size of your prompt matters both on costs and the ability for the model to provide correct inference results.</p>
+<p>Provide things like:</p>
+<ul>
+<li>API specifications</li>
+<li>JSONSchemas</li>
+<li>Repositories</li>
+<li>Internal &amp; external docs to terms/keywords specific to your org/worldview</li>
+<li>Provide examples of similar problems
+<ul>
+<li>It is also advantageous to provide examples that you already have documented on solving a problem or of a previous investigation decision</li>
+</ul>
+</li>
+</ul>
+<p>In addition to these standard pieces of documentation, you should also provide what NOT to do. For example:</p>
+<ul>
+<li>Provide scenarios that will / may occur and describe what not to do and why</li>
+<li>Document when to not use a tool (defined above)</li>
+<li>Document what to do if a situation does occur that’s critical</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<p>Like I have mentioned a few times, you must understand the problem to fully get the benefits of LLMs. Another great way to improve your research, discovery, analysis, etc. uses of LLMs is to ensure you provide all the business and technical requirements.</p>
+<p>When defining technical requirements, provide things around when to use tools, different tools or frameworks to avoid using, and other specifics. For example:</p>
+<ul>
+<li>Defining the requirements can be as simple as “use caching of results” or specific enough to warrant something like “use Redis caching, using the rueidis go package”</li>
+<li>Document what not to use including languages, frameworks, etc.</li>
+<li>Define business requirements
+<ul>
+<li>This should likely be the largest section, but it depends on the end goal of the prompt.</li>
+</ul>
+</li>
+<li>Define gotchas</li>
+</ul>
+<p>There are lots of opportunities to write here. As a side note, I believe the ones that will prevail in the future of the “tech” industry are the ones that can describe a problem in detail effectively and efficiently as possible.</p>
+<p>In addition to all of the above, I recommend checking out frameworks like Skills <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview</a> and review projects which have implemented <code>SKILLS.md</code> to get a different perspective. We are in a new frontier and the frameworks, schemas, etc. are constantly evolving. Just look at MCP (plug for a MCP I wrote about a year ago <a href="https://github.com/MSAdministrator/enrichment-mcp">https://github.com/MSAdministrator/enrichment-mcp</a>) and its evolution (I still think they should have used gRPC <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1144%29">https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1144)</a>.</p>
+<h2 id="advanced-example">Advanced Example</h2>
+<p>Now let’s get into an example. This is purely hypothetical and for posterity I’m actually not going to put this prompt into any LLMs and just let you try it for yourself (mostly because I don’t want to waste the energy — LLMs have Externalities that reach further than most other technology known to humans — what you input has an external cost that you may not realize).</p>
+<p>Note: I wrote this in example below in like 30 minutes. Your mileage will vary depending on the number of details provided.</p>
+<h2 id="description">Description</h2>
+<p>As a senior security research engineer focused on building highly scalable threat detection systems. As a senior software engineer proficient in Golang, gRPC, Protobuf, unary and bi-directional streaming, ingestion processing using Kafka or google pub/sub, caching using Redis pipelining, Postgres (and ip4r) scaling using pgbouncer(s), kubernetes, monitoring and metrics using Prometheus.Your goal is to build highly scalable threat enrichment pipeline that can ingest logs of different services, extract the necessary IPv4/IPv6 addresses (as well as their context  e.g. source ips vs destination ips, etc.) and perform enrichment providing precise geolocation information (for now you can use ipinfo sample databases).</p>
+<p>This service can process anywhere from 100 to 1 billion IPs per day to enrich but performance throughput and low latency (10ms~) are REQUIRED.</p>
+<h2 id="tools-1">Tools</h2>
+<p>You have the following tools available to you:</p>
+<ul>
+<li>Golang</li>
+<li>gRPC &amp; protobuf for inner service communications</li>
+<li>Use Postgres (using the ip4r extension)
+<ul>
+<li>Use pgbouncer for scalable queries</li>
+<li>Ensure proper indexes are in place</li>
+</ul>
+</li>
+<li>Cache results using Redis (rueidis client library)</li>
+<li>Use kubernetes and light weight images</li>
+<li>Setup monitoring and metrics throughout the pipeline using Prometheus</li>
+</ul>
+<h2 id="documentation-1">Documentation</h2>
+<p>The following are references to use:</p>
+<ul>
+<li>Use the ipinfo sample databases <a href="https://github.com/ipinfo/sample-database">https://github.com/ipinfo/sample-database</a> as the core database structure</li>
+<li>Expect that the incoming logs are in this schemas format (link to schema or samples)</li>
+<li>It is expected that every log ingested will be enriched, but this does not mean every log will have values. Indicate in the log if enrichment occurred no matter if successful or not</li>
+<li>Ensure you are creating the appropriate views or queries utilize the correct ip4r data types <a href="https://github.com/RhodiumToad/ip4r">https://github.com/RhodiumToad/ip4r</a></li>
+</ul>
+<h2 id="what-not-to-do">What Not to do</h2>
+<ul>
+<li>Do not create two separate paths for ipv4 and ipv6 addresses</li>
+</ul>
+<h2 id="requirements-1">Requirements</h2>
+<ul>
+<li>Ensure the pipeline can handle 1 billion events per day</li>
+<li>Ensure that you are extracting all IPs found and that each IP addresses found is enriched in the correct context (source vs. destination, etc.)</li>
+<li>Ensure that extract can be changed easily, you never know when new formats are going to be supported in the future</li>
+<li>Keep cached results for up to 18 hours (at a minimum) but provide a way to invalidate cache</li>
+<li>Ensure all communications are encrypted and have proper (and secure) authorization between services</li>
+<li>Create indexes that use the ip4r data types for IPs</li>
+<li>Data will be updated from a remote location at any time so upgrading of IP geolocation must be straight forward</li>
+</ul>
+<p>I hope this more advanced example helps you understand that the more context you can provide the better results you will receive. Vibe coding is cool and all but just like how a Product/Project Manager will provide guidance for a project, you too must do the same in order to get the best results.</p>
+<p>As I have stated previously, I believe that those who understand a problem fully and can describe it in detail, are the ones that will prevail as we move into this new era of technology advancement. Time will tell if I’m right or wrong.</p>
+<p>Peace</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/ai/">Ai</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/llm/">Llm</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/claude/">Claude</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/cursor/">Cursor</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/chatgpt/">Chatgpt</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/threat-hunting/">Threat-Hunting</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/soc/">SOC</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/productivity/">Productivity</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/from-apis-to-intents/">From APIs to Intents: The End of Procedural Machine Communication</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/how-i-use-llms-part2/">How I Use LLMs for Security Work: Part 2</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/">Detecting Phishing with Microsoft Email Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/why-phishing-defense-needs-software-engineers/">Why Phishing Defense Needs Software Engineers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/security/">Security (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/automation/">Automation (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/python/">Python (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/llm/">Llm (2)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               From APIs to Intents: The End of Procedural Machine Communication &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="From APIs to Intents: The End of Procedural Machine Communication">
+    <meta itemprop="description" content="From APIs to Intents: The End of Procedural Machine Communication - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="http://localhost:1313/article/from-apis-to-intents/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="From APIs to Intents: The End of Procedural Machine Communication">
+  <meta property="og:description" content="I’ve spent years building integrations. REST APIs, SOAP endpoints, gRPC services, GraphQL queries, webhook receivers, message queues, etc. If two systems needed to talk, I’ve probably wired them together at some point. And every single time, the pattern is the same: I read the docs, I learn the endpoints, I map the parameters, I handle the auth, I write the glue code, and I pray the vendor doesn’t push a breaking change on a Friday afternoon.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="article">
+    <meta property="article:published_time" content="2026-04-09T23:45:00-04:00">
+    <meta property="article:modified_time" content="2026-04-09T23:45:00-04:00">
+    <meta property="article:tag" content="Agent">
+    <meta property="article:tag" content="Llm">
+    <meta property="article:tag" content="Api">
+    <meta property="article:tag" content="Intent">
+    <meta property="article:tag" content="Architecture">
+    <meta property="article:tag" content="Aip">
+    <meta property="og:image" content="http://localhost:1313/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/article/from-apis-to-intents/">
+    
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/papers/">Papers</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/article/from-apis-to-intents/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/from-apis-to-intents/">
+            From APIs to Intents: The End of Procedural Machine Communication
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-04-09</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="http://localhost:1313/categories/llm/">Llm</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="http://localhost:1313/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>I&rsquo;ve spent years building integrations. REST APIs, SOAP endpoints, gRPC services, GraphQL queries, webhook receivers, message queues, etc. If two systems needed to talk, I&rsquo;ve probably wired them together at some point. And every single time, the pattern is the same: I read the docs, I learn the endpoints, I map the parameters, I handle the auth, I write the glue code, and I pray the vendor doesn&rsquo;t push a breaking change on a Friday afternoon.</p>
+<p>This is how machine-to-machine communication has worked for decades. The caller must know <strong>exactly</strong> what to ask for, <strong>exactly</strong> how to ask for it, and <strong>exactly</strong> where to send the request. It works. But I believe we&rsquo;re at the beginning of a fundamental shift &ndash; one where machines stop speaking in rigid procedures and start speaking in <strong>intents</strong>.</p>
+<p>This post is a deep dive into that shift. I&rsquo;m going to trace the evolution of API paradigms, show you where LLMs have already started changing the game, introduce the concept of intent-based communication, walk through the emerging protocol landscape, and give you an honest critical analysis of where this breaks down. This isn&rsquo;t a prediction about next quarter. This is about the architectural trajectory of how systems will communicate over the next decade.</p>
+<h2 id="the-api-evolution-a-pattern-of-increasing-abstraction">The API Evolution: A Pattern of Increasing Abstraction</h2>
+<p>Every major API paradigm shift has followed the same pattern: abstract away more implementation detail from the caller. Let&rsquo;s trace it.</p>
+<h3 id="soap-and-xml-rpc">SOAP and XML-RPC</h3>
+<p>SOAP was enterprise software&rsquo;s first serious attempt at standardized machine-to-machine communication. You had WSDLs that defined exact operations, XML schemas that described every parameter type, and envelope formats that wrapped every request in ceremony. The caller had to know the exact method signature, the exact XML structure, and the exact endpoint.</p>
+<p>If you&rsquo;ve ever worked with SOAP, you know the pain. The schemas were rigid, the payloads were bloated, and debugging a malformed XML envelope at 2AM is something I wouldn&rsquo;t wish on anyone. But SOAP gave us something important: a contract between systems. Both sides agreed on a structure, and the tooling enforced it.</p>
+<h3 id="rest">REST</h3>
+<p>REST stripped away the ceremony. Resources instead of methods. HTTP verbs instead of SOAP actions. JSON instead of XML. Stateless interactions instead of session-bound conversations. Roy Fielding&rsquo;s dissertation gave us an architectural style that became the dominant paradigm for web APIs, and for good reason &ndash; it was simpler, more flexible, and mapped naturally to HTTP.</p>
+<p>But REST still requires the caller to know a lot. You need to know the resource URIs (<code>/api/v2/users/123</code>), the supported HTTP methods, the parameter names and formats, the authentication mechanism, the pagination scheme, and the error response structure. You&rsquo;re still writing procedural code that says &ldquo;send this exact request to this exact endpoint with these exact parameters.&rdquo;</p>
+<h3 id="graphql">GraphQL</h3>
+<p>GraphQL was the first meaningful step toward declarative data access. Instead of the server dictating what data you get back (REST&rsquo;s over-fetching and under-fetching problem), the client declares what data it wants:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-graphql" data-lang="graphql"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  user(id: <span style="color:#e6db74">&#34;123&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>    email
+</span></span><span style="display:flex;"><span>    recentOrders {
+</span></span><span style="display:flex;"><span>      total
+</span></span><span style="display:flex;"><span>      status
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is significant. The client is expressing <strong>what</strong> it wants, not <strong>how</strong> to get it. It doesn&rsquo;t know or care whether <code>user</code> and <code>recentOrders</code> come from the same database, different microservices, or a cache layer. The server resolves the query. This is already a move toward intent &ndash; &ldquo;give me this shape of data&rdquo; rather than &ldquo;call these three endpoints and assemble the results.&rdquo;</p>
+<p>But GraphQL still requires schema knowledge. You need to know the types, the fields, the arguments, and the relationships. The abstraction is over data shape, not over purpose.</p>
+<h3 id="grpc">gRPC</h3>
+<p>gRPC optimized for performance with Protocol Buffers, strong typing, and bidirectional streaming. It&rsquo;s excellent for service-to-service communication in microservice architectures. But from an abstraction standpoint, gRPC is actually a step backward &ndash; callers must know exact service definitions, exact method signatures, and exact protobuf message structures. The trade-off is performance and type safety for tight coupling.</p>
+<p>| As a side note, I still <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1144">believe</a> we should have used gRPC over the existing MCP model.</p>
+<h3 id="the-pattern">The Pattern</h3>
+<p>Here&rsquo;s what matters: <strong>SOAP abstracted the transport. REST abstracted the protocol. GraphQL abstracted the data shape.</strong> Each generation removed a layer of implementation detail from the caller. The next logical step in this progression is to abstract away the <strong>entire call sequence</strong> &ndash; to move from &ldquo;call this endpoint with these parameters&rdquo; to &ldquo;here&rsquo;s what I&rsquo;m trying to accomplish.&rdquo;</p>
+<p>That&rsquo;s the intent paradigm.</p>
+<h2 id="llms-already-changed-the-game-you-just-didnt-notice">LLMs Already Changed the Game (You Just Didn&rsquo;t Notice)</h2>
+<p>Here&rsquo;s the thing &ndash; if you&rsquo;ve used function calling or tool use with any major LLM provider, you&rsquo;ve already experienced proto-intent-based communication. You just might not have framed it that way.</p>
+<p>When OpenAI launched function calling in June 2023, they introduced a pattern that fundamentally changed how APIs get consumed. Instead of a developer writing procedural code to call an API, you describe what tools are available (using JSON Schema), and the model decides <strong>when</strong> and <strong>how</strong> to use them based on the user&rsquo;s natural language request.</p>
+<p>Anthropic, Google, and others followed with their own implementations. The pattern is the same across all of them:</p>
+<ol>
+<li>You define tools with descriptions and parameter schemas</li>
+<li>A user expresses what they want in natural language</li>
+<li>The LLM interprets the <strong>intent</strong> behind the request</li>
+<li>The LLM decomposes the request into one or more structured tool calls</li>
+<li>Your application executes the calls and feeds results back</li>
+<li>The LLM synthesizes a response</li>
+</ol>
+<p>Read that flow again. The human never specifies an endpoint. The human never writes a query parameter. The human expresses what they want to accomplish, and the LLM figures out which tools to call, in what order, with what parameters. The LLM is acting as an intent resolution layer between the human and the API.</p>
+<p>This is already a massive shift from traditional API consumption. But it has a critical limitation: the LLM is mediating between a human and a set of pre-defined tools within a single application. The tools are hard-coded. The endpoints are known in advance. The LLM is doing intent resolution, but within a closed system.</p>
+<p>The question is: what happens when we generalize this pattern across systems, across organizations, across the entire network?</p>
+<h2 id="what-intents-actually-are">What Intents Actually Are</h2>
+<p>Let me explain what I mean by &ldquo;intent&rdquo; because the term gets thrown around loosely.</p>
+<p>A traditional API request tells the receiving system exactly what to do:</p>
+<pre tabindex="0"><code>GET /api/flights?from=STL&amp;to=LAX&amp;date=2026-12-01&amp;max_price=800
+</code></pre><p>This requires the caller to know the endpoint path, the parameter names (<code>from</code>, <code>to</code>, <code>date</code>, <code>max_price</code>), the value formats (airport codes, ISO dates, numeric prices), and the service location. It encodes the how.</p>
+<p>An intent tells the receiving system what the caller is trying to accomplish:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">intent</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">objective</span>: <span style="color:#ae81ff">purchase</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">category</span>: <span style="color:#ae81ff">travel.flight</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">constraints</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hard</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">departure_city</span>: <span style="color:#ae81ff">STL</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">arrival_city</span>: <span style="color:#ae81ff">LAX</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">date_range</span>: <span style="color:#e6db74">&#34;2026-12-01 to 2026-12-03&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">price_max</span>: <span style="color:#ae81ff">800</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">soft</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">seat_preference: window  # priority</span>: <span style="color:#ae81ff">0.8</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">arrival_time: before 9AM  # priority</span>: <span style="color:#ae81ff">0.6</span>
+</span></span></code></pre></div><p>The difference is not cosmetic. It&rsquo;s architectural. The intent separates <strong>what</strong> from <strong>how</strong> at the protocol level. The caller doesn&rsquo;t need to know the API endpoint, the parameter format, or even which service will handle the request.</p>
+<p>It declares a desired outcome with constraints and preferences, and the receiving system (or network of systems) resolves it.</p>
+<p>There are two categories of constraints, and this distinction matters:</p>
+<ul>
+<li>
+<p><strong>Hard constraints</strong> are non-negotiable. Violate any one of them and the response is invalid. The flight must depart from STL. It must arrive at LAX. It must cost less than $800.</p>
+</li>
+<li>
+<p><strong>Soft constraints</strong> are preferences with priorities. A window seat is strongly preferred (0.8) but not required. Arriving before 9AM is moderately preferred (0.6) but negotiable. This allows the receiving system to rank solutions and make trade-offs &ndash; something a traditional API request cannot express at all.</p>
+</li>
+</ul>
+<p>| Intents are semantically richer than API calls</p>
+<p>They carry context, priorities, and flexibility that procedural requests simply cannot encode. And that context is exactly what autonomous agents need to negotiate, compare, and make decisions on your behalf.</p>
+<h2 id="the-protocol-landscape-where-things-stand-today">The Protocol Landscape: Where Things Stand Today</h2>
+<p>The idea of intent-based communication isn&rsquo;t theoretical anymore. Multiple protocols and standards are converging on this concept from different angles. Let me walk through the major ones and how they fit together.</p>
+<h3 id="model-context-protocol-mcp">Model Context Protocol (MCP)</h3>
+<p>MCP solves the &ldquo;integration&rdquo; problem. MCP standardizes how AI agents connect to external tools and data sources using a client-server model over JSON-RPC 2.0.</p>
+<p>MCP&rsquo;s primitives include <strong>Tools</strong> (executable functions), <strong>Resources</strong> (data sources), and <strong>Prompts</strong> (interaction templates). It was inspired by the Language Server Protocol (LSP), which standardized how IDEs interact with programming language tooling. The insight is the same: define a common protocol so that any client can work with any server.</p>
+<p>MCP adoption is real. Claude Desktop, ChatGPT, VS Code with Copilot, Cursor, and many other tools support it. But MCP is fundamentally tool-centric, not intent-centric. It standardizes how an agent accesses tools, not how agents communicate desired outcomes to each other.</p>
+<h3 id="agent-to-agent-protocol-a2a">Agent-to-Agent Protocol (A2A)</h3>
+<p>A2A was released as open-source in March of 2026 and tackles the agent-to-agent collaboration problem. Where MCP connects an agent to its tools, A2A connects agents to other agents.</p>
+<p>A2A&rsquo;s core concepts include&quot;</p>
+<ul>
+<li>Agent Cards - discovery documents describing capabilities</li>
+<li>Tasks - long-running collaborative workflows</li>
+<li>opacity principle - where agents collaborate without exposing internal state.</li>
+</ul>
+<p>It uses JSON-RPC 2.0 over HTTP with support for synchronous, streaming, and async communication.</p>
+<p>A2A represents a meaningful step toward intent-based interaction. Agents discover each other through capability descriptions rather than hardcoded endpoints, and tasks are collaborative rather than procedural. But A2A&rsquo;s task model is still relatively structured &ndash; it&rsquo;s closer to &ldquo;delegate this task&rdquo; than &ldquo;resolve this intent.&rdquo;</p>
+<h3 id="intent-based-agent-interconnection-protocol-iaip">Intent-Based Agent Interconnection Protocol (IAIP)</h3>
+<p>IAIP a draft IETF <a href="https://datatracker.ietf.org/doc/draft-sun-zhang-iaip/">RFC</a> is the most explicitly intent-focused protocol in the landscape. IOAIPO operates as a Gateway layer and introduces a three-layer intent model:</p>
+<ol>
+<li><strong>Human intent</strong> &ndash; unstructured natural language (&ldquo;I need a flight to LA&rdquo;)</li>
+<li><strong>Task intent</strong> &ndash; abstract objectives with constraints</li>
+<li><strong>Intent descriptors</strong> &ndash; machine-interpretable routing data with semantic vectors</li>
+</ol>
+<p>IAIP draws directly from <a href="https://www.ibm.com/think/topics/intent-based-networking">Intent-Based Networking (IBN)</a>, a mature concept in network management where administrators declare desired outcomes (&ldquo;ensure video traffic gets priority&rdquo;) and the system figures out the configuration. Cisco and Juniper have productized IBN for years. IAIP applies the same principle to agent communication.</p>
+<h3 id="natural-language-interaction-protocol-nlip">Natural Language Interaction Protocol (NLIP)</h3>
+<p><a href="https://ecma-international.org/publications-and-standards/standards/ecma-430/">ECMA-430</a> is the first formal international standard for natural language as an inter-agent communication protocol. <a href="https://nlip-project.org/#/">NLIP</a> defines a protocol for AI-to-AI and human-to-AI communication using natural language as the primary medium.</p>
+<p>This is notable because it formalizes something that the industry has been doing ad hoc: using natural language as a communication interface between systems. Whether NLIP gains traction alongside or instead of structured intent formats remains to be seen.</p>
+<h3 id="how-they-fit-together">How They Fit Together</h3>
+<p>Here&rsquo;s my mental model of the landscape:</p>
+<pre tabindex="0"><code>MCP:   Agent &lt;-&gt; Tools (vertical integration)
+A2A:   Agent &lt;-&gt; Agent (horizontal collaboration)
+IAIP:  Intent routing and resolution (semantic layer)
+NLIP:  Natural language as communication format
+</code></pre><p>These aren&rsquo;t competing. They&rsquo;re complementary layers. MCP gives an agent its tools. A2A lets agents collaborate. IAIP routes intents to the right agents. NLIP standardizes the message format.</p>
+<h2 id="critical-systems-thinking-where-this-breaks-down">Critical Systems Thinking: Where This Breaks Down</h2>
+<p>I would be doing you a disservice if I presented this as a smooth, inevitable transition. The move from procedural APIs to intent-based communication has real, hard, unsolved problems. Let me walk through them honestly.</p>
+<h3 id="the-reliability-problem">The Reliability Problem</h3>
+<p>This is the biggest one. Current LLMs fail to select the correct tool roughly half the time in unconstrained scenarios, according to LangChain&rsquo;s analysis of production agent deployments. Even Gorilla, a research project specifically fine-tuned for API calling, demonstrated that GPT-4 &ldquo;hallucinates the wrong usage of an API call&rdquo; with concerning frequency.</p>
+<p>Intent-based systems compound this problem. A misinterpreted intent at the routing layer means the entire downstream execution is wrong. And unlike a procedural API call that either works or throws a clear error, a misrouted intent may produce a plausible-looking but incorrect result. You might not even know it failed.</p>
+<p>For a traditional REST call, failure is binary: you get a 200 or you get an error. For an intent, failure can be <strong>semantic</strong> &ndash; the system does something, but it&rsquo;s not what you meant. That&rsquo;s a fundamentally harder problem to detect, debug, and recover from.</p>
+<h3 id="the-ambiguity-problem">The Ambiguity Problem</h3>
+<p>Natural language is inherently ambiguous, and structured intents inherit some of that ambiguity. &ldquo;Transfer $500&rdquo; could mean a bank transfer, a file transfer, or a data migration depending on context. Even with structured intent objects, different agents may interpret the same constraints differently. What does &ldquo;budget &lt; $800&rdquo; mean &ndash; total including taxes and fees, or base price?</p>
+<p>The IAIP draft addresses this with three-layer intent decomposition (human intent, task intent, intent descriptor), but the translation between layers is where errors creep in. Each layer of decomposition is an opportunity for semantic drift.</p>
+<h3 id="the-determinism-problem">The Determinism Problem</h3>
+<p>Traditional APIs are deterministic. The same input always produces the same output. This is critical for testing, auditing, compliance, and debugging. Intent-based communication is inherently stochastic &ndash; the same natural language intent may be interpreted differently depending on context, model state, or available agents.</p>
+<p>For regulated industries &ndash; finance, healthcare, government &ndash; this non-determinism is a potential dealbreaker without additional verification layers. If an auditor asks &ldquo;why did your agent transfer $5,000 to this vendor?&rdquo;, you need a deterministic audit trail, not &ldquo;the model interpreted the intent this way at that time.&rdquo;</p>
+<p>This is solvable (deterministic guardrails around stochastic interpretation), but it adds complexity. You end up with hybrid architectures where the intent layer handles understanding and the execution layer enforces rules. That&rsquo;s a reasonable pattern, but it means intent-based systems aren&rsquo;t simpler than procedural ones &ndash; they&rsquo;re differently complex.</p>
+<h3 id="the-security-surface">The Security Surface</h3>
+<p>Every layer of indirection is an attack surface. Intent-based routing introduces new vectors:</p>
+<ul>
+<li><strong>Prompt injection through intents</strong>: Crafted intent objects that manipulate how receiving agents interpret the request</li>
+<li><strong>Capability spoofing</strong>: Malicious agents advertising capabilities they don&rsquo;t have to intercept intents</li>
+<li><strong>Intent replay</strong>: Re-submitting captured intents to trigger unauthorized actions</li>
+<li><strong>Semantic confusion attacks</strong>: Crafting intents that are interpreted differently by different layers</li>
+</ul>
+<p>The MCP specification itself acknowledges this directly: tool descriptions &ldquo;should be considered untrusted, unless obtained from a trusted server.&rdquo; If you can&rsquo;t trust the tool descriptions, you certainly can&rsquo;t trust arbitrary intent objects from unknown agents on an open network.</p>
+<h3 id="the-agent-communication-trilemma">The Agent Communication Trilemma</h3>
+<p>A research survey by Yang et al. (April 2025) identifies a fundamental constraint they call the <strong>Agent Communication Trilemma</strong>: you cannot simultaneously optimize for <strong>versatility</strong> (supporting diverse message types), <strong>efficiency</strong> (minimizing computational costs), and <strong>portability</strong> (ease of implementation).</p>
+<p>Intent-based protocols that support rich, flexible message types (high versatility) will be computationally expensive (low efficiency) and hard to implement (low portability). This isn&rsquo;t a solvable engineering problem &ndash; it&rsquo;s a fundamental trade-off. Different domains will make different choices along this triangle, which is why I don&rsquo;t think a single intent protocol will rule them all.</p>
+<h3 id="the-latency-and-cost-problem">The Latency and Cost Problem</h3>
+<p>Intent interpretation adds a computational layer that pure API calls don&rsquo;t have. Every intent must be parsed, semantically matched, and routed &ndash; operations that involve LLM inference or at minimum heavyweight vector similarity computation. For high-throughput, low-latency systems (trading, real-time telemetry, streaming data pipelines), intent-based routing may never be appropriate.</p>
+<p>The future likely involves hybrid architectures: intent-based communication handles novel, complex, or ambiguous requests while traditional APIs handle known, high-frequency, deterministic patterns. The intent layer is the thinking layer. The API layer is the doing layer. Knowing when to use which is an architectural judgment call.</p>
+<h3 id="the-standardization-race">The Standardization Race</h3>
+<p>As of early 2026, there are at least 17 competing agent protocols at various maturity levels. The XKCD &ldquo;Standards&rdquo; comic applies perfectly &ndash; every new standard meant to unify previous ones just adds another standard. The merger of IBM&rsquo;s Agent Communication Protocol (ACP) into A2A under the Linux Foundation is a positive signal toward consolidation, but MCP and A2A remain separate ecosystems with different governance models. Add in IAIP, NLIP, ANP, Agora, and others, and you have a fragmented landscape that may slow adoption.</p>
+<h2 id="the-ai-api-gap-and-why-it-matters-now">The &ldquo;AI-API Gap&rdquo; and Why It Matters Now</h2>
+<p>Postman&rsquo;s 2025 State of the API report surfaced a data point that crystallizes where we are in this transition: <strong>89% of developers use AI tools, but only 24% design APIs with AI agents in mind</strong>.</p>
+<p>That gap is the story. We&rsquo;re in a transition period where APIs are still designed for human developers to consume procedurally, even as AI agents are rapidly becoming the primary consumers. OpenAI alone commands 56% of AI API traffic at 4.2 million calls annually, with Gemini and Llama growing at 3x and 7x respectively.</p>
+<p>If you&rsquo;re designing an API today and you&rsquo;re not thinking about how an LLM agent will consume it, you&rsquo;re designing for yesterday&rsquo;s users. This doesn&rsquo;t mean you abandon REST or GraphQL. It means you invest heavily in rich, semantic descriptions of what your endpoints do, clear capability boundaries, and unambiguous parameter documentation. The tool/function schemas used by OpenAI, Anthropic, and Google are effectively a new API description format optimized for LLM consumption &ndash; and they need to be treated with the same rigor as your OpenAPI spec.</p>
+<p>Anthropic&rsquo;s own research on building effective agents (December 2024) makes this explicit: &ldquo;Treat tool design with equivalent rigor to prompt engineering.&rdquo; That&rsquo;s not a throwaway line. It&rsquo;s a design principle for a world where your API&rsquo;s primary consumer is a model, not a developer.</p>
+<h2 id="where-this-is-heading">Where This Is Heading</h2>
+<p>Let me lay out what I think the trajectory looks like over the next few years.</p>
+<p><strong>Near-term (now - 2027):</strong> Hybrid architectures dominate. Traditional APIs handle known, high-frequency interactions. LLM-mediated tool use handles novel or complex requests within closed systems. MCP and A2A gain adoption for tool integration and agent collaboration. API designers start adding richer semantic descriptions to existing endpoints. The &ldquo;AI-API gap&rdquo; starts closing.</p>
+<p><strong>Medium-term (2027 - 2030):</strong> Intent-based routing emerges for specific high-value domains &ndash; threat intelligence sharing, travel booking, procurement, scheduling. These are domains where negotiation, trust, and flexibility matter more than raw throughput. IAIP-style semantic routing gets deployed in production. The protocol landscape consolidates around 2-3 major standards. Agent discovery becomes as routine as DNS resolution.</p>
+<p><strong>Long-term (2030+):</strong> Intent-based communication becomes the default for novel interactions between unfamiliar systems. Traditional APIs remain for high-frequency, well-defined, performance-critical paths. The boundary between the two blurs as systems learn to dynamically switch between procedural and intent-based communication based on context. Personal agents (as described in the <a href="/article/agentic-web/">Agentic Web concept</a>) begin to emerge, initially in enterprise settings.</p>
+<p>The critical insight is that <strong>this isn&rsquo;t a replacement &ndash; it&rsquo;s a new layer</strong>. Just like REST didn&rsquo;t eliminate databases and GraphQL didn&rsquo;t eliminate REST, intent-based communication won&rsquo;t eliminate procedural APIs. It adds a semantic layer on top that handles the messy, ambiguous, negotiation-heavy interactions that procedural APIs were never designed for.</p>
+<h2 id="what-this-means-for-practitioners">What This Means for Practitioners</h2>
+<p>If you&rsquo;re building integrations today, here&rsquo;s what I&rsquo;d focus on:</p>
+<p><strong>Design APIs for machine consumption.</strong> Your tool descriptions, parameter documentation, and capability boundaries are now as important as your endpoint design. Write them like a contract, not an afterthought.</p>
+<p><strong>Invest in semantic richness.</strong> The more context your API exposes about what it does and what it expects, the better LLM agents can use it. Don&rsquo;t just document the parameters &ndash; document the purpose, constraints, and expected outcomes.</p>
+<p><strong>Build for composability.</strong> The MCP pattern of servers-as-clients creating capability graphs is going to become a dominant architecture. Design your services to be both providers and consumers of capabilities.</p>
+<p><strong>Watch the protocol landscape.</strong> You don&rsquo;t need to bet on one standard yet. But understanding MCP, A2A, and the intent-based protocols coming out of the IETF will inform your architectural decisions.</p>
+<p><strong>Don&rsquo;t abandon determinism.</strong> For anything touching money, compliance, or safety, keep deterministic guardrails around stochastic intent interpretation. The thinking layer can be probabilistic. The execution layer must be verifiable.</p>
+<p><strong>Start with high-value, negotiation-heavy domains.</strong> If you&rsquo;re in threat intelligence, procurement, scheduling, or any domain where interactions involve preferences, trade-offs, and multi-party negotiation, intent-based communication will provide the most immediate value. That&rsquo;s where procedural APIs are weakest and intents are strongest.</p>
+<p>The shift from APIs to intents isn&rsquo;t happening overnight. But the trajectory is clear, the protocols are emerging, and the LLM capabilities that make it possible are improving rapidly. The question isn&rsquo;t whether this shift happens. It&rsquo;s whether you&rsquo;re designing for it.</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/agent/">Agent</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/llm/">Llm</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/api/">Api</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/intent/">Intent</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/architecture/">Architecture</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/aip/">Aip</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/mcp/">Mcp</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/a2a/">A2a</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/future/">Future</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/from-apis-to-intents/">From APIs to Intents: The End of Procedural Machine Communication</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/how-i-use-llms-part2/">How I Use LLMs for Security Work: Part 2</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/">Detecting Phishing with Microsoft Email Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/why-phishing-defense-needs-software-engineers/">Why Phishing Defense Needs Software Engineers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/security/">Security (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/automation/">Automation (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/python/">Python (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/llm/">Llm (2)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

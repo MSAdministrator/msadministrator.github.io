@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               Opt Out From Osinit Websites &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Opt Out From Osinit Websites">
+    <meta itemprop="description" content="Opt Out From Osinit Websites - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="http://localhost:1313/article/opt-out-from-osinit-websites/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Opt Out From Osinit Websites">
+  <meta property="og:description" content="MyLife.com: Email membersupport@mylife.com &amp; cc removalrequests@mylife.com. Include a link to your public profile to be removed.
+Spokeo: https://t.co/W4q6Hc9Q6G or https://www.spokeo.com/optout
+Provide a link to your public profile(s) and an email. Once you submit you will receive a confirmation email to verify.
+PeopleSmart: https://t.co/vFXUaAnY6c or https://www.peoplesmart.com/optout-go
+Other services or research info: https://inteltechniques.com/data/workbook.pdf https://tisiphone.net/2017/01/25/thwart-my-osint-efforts-while-binging-tv/ https://www.abine.com/optouts.php https://motherboard.vice.com/en_us/article/ne9b3z/how-to-get-off-data-broker-and-people-search-sites-pipl-spokeo
+Someone created this document: https://docs.google.com/document/d/1ElB7VXmr5JEkFaLJpO7YLGrAuasedmq-rZC-8TUMxTM/edit
+Here is it just in case it goes down: Big Ass Data Broker Opt-Out List
+☠ = high priority 🎫 = requires driver’s license (cross out your ID #!) 📞 = must pick up a (gasp!) phone 📠 = must go back in time and find a fax machine 📫 = must use snail mail 💰 = site charges money for removal (whaaaaat?)">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="article">
+    <meta property="article:published_time" content="2018-08-24T16:43:39-04:00">
+    <meta property="article:modified_time" content="2018-08-24T16:43:39-04:00">
+    <meta property="og:image" content="http://localhost:1313/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/article/opt-out-from-osinit-websites/">
+    
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/papers/">Papers</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/article/opt-out-from-osinit-websites/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/opt-out-from-osinit-websites/">
+            Opt Out From Osinit Websites
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-24</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="http://localhost:1313/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>MyLife.com:
+Email <a href="mailto:membersupport@mylife.com">membersupport@mylife.com</a> &amp; cc <a href="mailto:removalrequests@mylife.com">removalrequests@mylife.com</a>.  Include a link to your public profile to be removed.</p>
+<p>Spokeo: <a href="https://t.co/W4q6Hc9Q6G">https://t.co/W4q6Hc9Q6G</a> or <a href="https://www.spokeo.com/optout">https://www.spokeo.com/optout</a></p>
+<p>Provide a link to your public profile(s) and an email.  Once you submit you will receive a confirmation email to verify.</p>
+<p>PeopleSmart: <a href="https://t.co/vFXUaAnY6c">https://t.co/vFXUaAnY6c</a> or <a href="https://www.peoplesmart.com/optout-go">https://www.peoplesmart.com/optout-go</a></p>
+<p>Other services or research info:
+<a href="https://inteltechniques.com/data/workbook.pdf">https://inteltechniques.com/data/workbook.pdf</a>
+<a href="https://tisiphone.net/2017/01/25/thwart-my-osint-efforts-while-binging-tv/">https://tisiphone.net/2017/01/25/thwart-my-osint-efforts-while-binging-tv/</a>
+<a href="https://www.abine.com/optouts.php">https://www.abine.com/optouts.php</a>
+<a href="https://motherboard.vice.com/en_us/article/ne9b3z/how-to-get-off-data-broker-and-people-search-sites-pipl-spokeo">https://motherboard.vice.com/en_us/article/ne9b3z/how-to-get-off-data-broker-and-people-search-sites-pipl-spokeo</a></p>
+<h2 id="someone-created-this-document">Someone created this document:</h2>
+<p><a href="https://docs.google.com/document/d/1ElB7VXmr5JEkFaLJpO7YLGrAuasedmq-rZC-8TUMxTM/edit">https://docs.google.com/document/d/1ElB7VXmr5JEkFaLJpO7YLGrAuasedmq-rZC-8TUMxTM/edit</a></p>
+<h2 id="here-is-it-just-in-case-it-goes-down">Here is it just in case it goes down:</h2>
+<p>Big Ass Data Broker Opt-Out List</p>
+<p>☠ = high priority
+🎫 = requires driver’s license (cross out your ID #!)
+📞 = must pick up a (gasp!) phone
+📠 = must go back in time and find a fax machine
+📫 = must use snail mail
+💰 = site charges money for removal (whaaaaat?)</p>
+<p>People Search Sites:</p>
+<p>Acxiom: It is hard to find info for free, but you can opt out here: <a href="https://isapps.acxiom.com/optout/optout.aspx">https://isapps.acxiom.com/optout/optout.aspx</a></p>
+<p>Addresses: Find your information here: <a href="http://www.addresses.com/white-pages">http://www.addresses.com/white-pages</a> Opt out here: <a href="http://www.addresses.com/optout.php">http://www.addresses.com/optout.php</a></p>
+<p>AddressSearch:
+Look up your address here: <a href="http://www.addresssearch.com/">http://www.addresssearch.com/</a><br>
+Opt out here: <a href="http://www.addresssearch.com/remove-info.php">http://www.addresssearch.com/remove-info.php</a></p>
+<p>AnyWho: Find your information here: <a href="https://www.anywho.com/people/">https://www.anywho.com/people/</a>
+Opt out here: <a href="https://www.anywho.com/help/privacy">https://www.anywho.com/help/privacy</a></p>
+<p>Archives: To find your information, you must sign up for a free trial here: <a href="https://www.archives.com/search/ancestor/checkout">https://www.archives.com/search/ancestor/checkout</a> (and then cancel)
+Opt out here: <a href="http://www.archives.com/?_act=Optout">http://www.archives.com/?_act=Optout</a></p>
+<p>☠ BeenVerified: Find your information here: <a href="https://www.beenverified.com/">https://www.beenverified.com/</a> Opt out here: <a href="https://www.beenverified.com/f/optout/search">https://www.beenverified.com/f/optout/search</a></p>
+<p>Classmates.com: Opt out or control information that’s posted here: <a href="http://www.classmates.com/sitesearch/help/article?articleId=4384">http://www.classmates.com/sitesearch/help/article?articleId=4384</a>, owned by Intelius.</p>
+<p>DOBSearch: Find your information here: <a href="https://www.dobsearch.com/people-finder/">https://www.dobsearch.com/people-finder/</a> Then hit “manage my records” and opt out. You will need to supply your number and email address and provide text or email confirmation. Info here: <a href="https://www.dobsearch.com/people-finder/pf_manage_help.php">https://www.dobsearch.com/people-finder/pf_manage_help.php</a> Another option to try: <a href="https://www.dobsearch.com/contact.php?nature=remove">https://www.dobsearch.com/contact.php?nature=remove</a></p>
+<p>FamilyTreeNow: Search for yourself and remove your information here: <a href="https://www.familytreenow.com/optout">https://www.familytreenow.com/optout</a></p>
+<p>🎫 📠 📫 InfoTracer: Find your information here: <a href="https://www.infotracer.com">https://www.infotracer.com</a>, opt out here: <a href="https://www.infopay.com/merchant/files/78/files/Generic_data_opt_out_form.pdf">https://www.infopay.com/merchant/files/78/files/Generic_data_opt_out_form.pdf</a></p>
+<p>☠ InstantCheckmate: Find and remove your information here:  <a href="https://www.instantcheckmate.com/opt-out/">https://www.instantcheckmate.com/opt-out/</a></p>
+<p>InstantPeopleFinder: Find your information here: <a href="https://instantpeoplefinder.com">https://instantpeoplefinder.com</a>, remove listings from the sites it’s aggregating the data from, and try to opt out here, though you can’t provide requested URLs without paying. <a href="https://www.instantpeoplefinder.com/optout.php">https://www.instantpeoplefinder.com/optout.php</a>. You can also email <a href="mailto:optout@instantpeoplefinder.com">optout@instantpeoplefinder.com</a>.</p>
+<p>☠ 🎫 Intelius: Find your information here: <a href="https://www.intelius.com">https://www.intelius.com</a>. Opt out by sending your driver’s license and other information in using the form here: <a href="https://www.intelius.com/optout">https://www.intelius.com/optout</a>. You can also mail or fax your ID in, if preferred, to (425) 974-6194. (Intelius owns Classmates, DateCheck, iSearch, LookUpAnyone, Peopleconnect.us, PeopleLookup, Phonesbook, Publicrecords, Spock, USSearch, Zabasearch).</p>
+<p>LookUp: Find your information here: <a href="http://www.lookup.com">http://www.lookup.com</a>, opt out at  <a href="http://www.lookup.com/optout.php">http://www.lookup.com/optout.php</a></p>
+<p>☠ 📞 MyLife: Find your information here: <a href="https://www.mylife.com">https://www.mylife.com</a>. (You don’t need to sign up and pay for anything). Opt out by calling (888) 704-1900, press 2, ask to be removed from MyLife (and Wink.com, just in case). You’ll need to provide your name, age, date of birth, email address, current mailing address, and a previous mailing address. (Do not sign up on the site; it will charge you to access your info.) Another option to try is to email a link to your profile to <a href="mailto:removalrequests@mylife.com">removalrequests@mylife.com</a>.</p>
+<p>Nuwber: Find your information here: <a href="https://nuwber.com/">https://nuwber.com/</a>. Enter the URL of the profile page you found and your email address here: <a href="https://nuwber.com/removal/link">https://nuwber.com/removal/link</a>.</p>
+<p>☠ PeekYou: Find your information here: <a href="https://www.peekyou.com/">https://www.peekyou.com/</a>, opt out here: <a href="https://www.peekyou.com/about/contact/optout">https://www.peekyou.com/about/contact/optout</a>. You will need the letters at the end of your profile’s URL in the “unique ID” field. Make sure to check “remove my entire listing.”  You can also remove your information from the sites that it says it has aggregated information from.</p>
+<p>PeopleByName: Type your phone number here: <a href="http://www.peoplebyname.com/">http://www.peoplebyname.com/</a>. It may not give you information without you paying, but you can still try to opt out at <a href="http://www.peoplebyname.com/remove.php">http://www.peoplebyname.com/remove.php</a></p>
+<p>PeopleFinder: Find your information here: <a href="http://www.peoplefinder.com/">http://www.peoplefinder.com/</a>, opt out at <a href="http://www.peoplefinder.com/optout.php">http://www.peoplefinder.com/optout.php</a></p>
+<p>☠ PeopleFinders: Find your information and opt out here: <a href="https://www.peoplefinders.com/manage">https://www.peoplefinders.com/manage</a> (includes PublicRecordsNow)</p>
+<p>PeopleLooker: Find your information here: <a href="https://www.peoplelooker.com/f/optout/search">https://www.peoplelooker.com/f/optout/search</a>, select your record, and then follow the instructions to opt out. You will need to verify your request to opt out by clicking on the link in a verification email.</p>
+<p>🎫 📠 📫 PeopleLookUp: Find your information here: <a href="https://peoplelookup.com/">https://peoplelookup.com/</a>, follow opt-out instructions here: <a href="https://peoplelookup.com/privacy-policy#updating-or-removing-your-information">https://peoplelookup.com/privacy-policy#updating-or-removing-your-information</a></p>
+<p>PeopleSearchNow: Find your information and opt out here: <a href="https://www.peoplesearchnow.com/opt-out">https://www.peoplesearchnow.com/opt-out</a></p>
+<p>☠ PeopleSmart: Find and remove your information here: <a href="https://www.peoplesmart.com/optout-go">https://www.peoplesmart.com/optout-go</a></p>
+<p>Phone Detective: Do a search on your number here: <a href="https://www.phonedetective.com/PD.aspx">https://www.phonedetective.com/PD.aspx</a> and opt out here: <a href="https://www.phonedetective.com/PD.aspx?_act=OptOut">https://www.phonedetective.com/PD.aspx?_act=OptOut</a></p>
+<p>☠ Pipl: Go to <a href="https://pipl.com">https://pipl.com</a> and remove your information from any sites it’s aggregated from. See <a href="https://pipl.com/help/remove">https://pipl.com/help/remove</a> for details.</p>
+<p>📫 PrivateEye: Find your information here: <a href="http://secure.privateeye.com/default.aspx">http://secure.privateeye.com/default.aspx</a>, though it’s hard to tell if the results are complete. To opt out via mail, fill out and mail in the following form: <a href="http://secure.privateeye.com/optout-form.pdf">http://secure.privateeye.com/optout-form.pdf</a>.
+*site appears down</p>
+<p>📫 Public Background Checks: Find your information here: <a href="http://www.publicbackgroundchecks.com/">http://www.publicbackgroundchecks.com/</a>. Information on how to opt out is here: <a href="http://www.publicbackgroundchecks.com/privacypolicy.aspx">http://www.publicbackgroundchecks.com/privacypolicy.aspx</a>. You must send a letter with your full name, aliases, birthdate, current address, and former addresses going back 20 years.
+*site appears down</p>
+<p>☠ 📫 📠 PublicRecords: owned by Intelius. Find your information here: <a href="https://www.publicrecords.com/">https://www.publicrecords.com/</a>. To opt out, you need to mail or fax your driver’s license or state-issued ID card along with your full name, address, and date of birth to the address and fax number listed under “How to Remove your Information from PublicRecords.com Public Records Databases” on <a href="https://secure.publicrecords.com/privacy.php">https://secure.publicrecords.com/privacy.php</a>.</p>
+<p>🎫 📫 PublicRecordsNow: Find your information here: <a href="https://www.publicrecordsnow.com/">https://www.publicrecordsnow.com/</a> Send them a letter along with the records you found, the information you want removed (your full name, middle initial, any aliases, current and former addresses, date of birth, a letter requesting removal, and a copy of your ID. Ask them to remove you also from USA-People-Search, PrivateEye, Veromi, and PeopleFinders. Send the letter to Opt-Out/Public Records Now, PO Box 110850, Naples, FL 34108.</p>
+<p>☠ PublicRecords360: Find your information and opt out here: <a href="https://www.publicrecords360.com/optout.html">https://www.publicrecords360.com/optout.html</a></p>
+<p>Radaris: Find your information here: <a href="http://radaris.com">http://radaris.com</a>. Click on “control information” and then “manage information” and remove it by clicking on the X next to it or by removing specific listings. You may need to register to remove information. Details are here:  <a href="http://radaris.com/page/how-to-remove">http://radaris.com/page/how-to-remove</a></p>
+<p>ReversePhone Lookup: <a href="https://www.reversephonelookup.com/remove.php">https://www.reversephonelookup.com/remove.php</a></p>
+<p>SearchBug Free Listings: Find your information here: <a href="https://www.searchbug.com/">https://www.searchbug.com/</a>. Remove free records by clicking on your name at the address you want to remove, and clicking on the trash can icon or Remove link.</p>
+<p>💰 📫 SearchBug Premium Listings: Find your information here: <a href="https://www.searchbug.com/">https://www.searchbug.com/</a>. Preview premium records, circle the listings you want removed, and mail the request along with a letter with your name, address, and signature requesting that the listing be blocked, and a $20 check (whaaat??). Instructions are here: <a href="https://www.searchbug.com/help.aspx?WHAT=people">https://www.searchbug.com/help.aspx?WHAT=people</a></p>
+<p>Spoke: Find your information here: <a href="http://www.spoke.com/">http://www.spoke.com/</a>. To opt out,  click This is me -&gt; To suppress your profile, click here -&gt; click on removal link in email.</p>
+<p>☠ Spokeo: Find and remove your information here: <a href="https://www.spokeo.com/optout">https://www.spokeo.com/optout</a></p>
+<p>That’s Them: Find your information here: <a href="https://thatsthem.com/">https://thatsthem.com/</a>, try to opt out here: <a href="https://thatsthem.com/optout">https://thatsthem.com/optout</a>.</p>
+<p>TruthFinder: Find and remove your information at <a href="https://www.truthfinder.com/opt-out/">https://www.truthfinder.com/opt-out/</a>.</p>
+<p>USA People Search: Find and remove your information at <a href="https://www.usa-people-search.com/manage/default.aspx">https://www.usa-people-search.com/manage/default.aspx</a></p>
+<p>📫 USIdentify: Find and remove your information here: <a href="http://www.usidentify.com/company/privacy.html">http://www.usidentify.com/company/privacy.html</a>, click on IV. Choice and opt out</p>
+<p>☠ 🎫 📫 US Search: Find your information here: <a href="https://www.ussearch.com/privacylock">https://www.ussearch.com/privacylock</a>, then follow the instructions for opting out.</p>
+<p>📫 Veromi: Find your information here: <a href="http://www.veromi.net/processor.asp">http://www.veromi.net/processor.asp</a>, try to opt out here:  <a href="http://www.veromi.net/privacy.aspx">http://www.veromi.net/privacy.aspx</a>.</p>
+<p>☠ 📞 White Pages: Find your information here: <a href="https://www.whitepages.com/">https://www.whitepages.com/</a>, and then opt out here: <a href="https://www.whitepages.com/suppression_requests">https://www.whitepages.com/suppression_requests</a>
+You will need to enter an opt-out code when you receive a phone call. Opt-out information is available here: <a href="https://support.whitepages.com/hc/en-us/articles/115010106908-How-do-I-edit-or-remove-a-personal-listing-">https://support.whitepages.com/hc/en-us/articles/115010106908-How-do-I-edit-or-remove-a-personal-listing-</a>. You can also send a request here <a href="https://support.whitepages.com/hc/en-us/requests/new">https://support.whitepages.com/hc/en-us/requests/new</a> and here: <a href="https://support.premium.whitepages.com/hc/en-us/requests/new?ticket_form_id=549628">https://support.premium.whitepages.com/hc/en-us/requests/new?ticket_form_id=549628</a>. (Including multiple options because these sites have a tendency to disappear.) Sometimes, information is removed from White Pages but not White Pages Premium, so make sure to double-check for your listing.</p>
+<p>☠ 🎫 📠 ZabaSearch: Find your information here: <a href="http://zabasearch.com">http://zabasearch.com</a>. Get information on opting out at <a href="http://www.zabasearch.com/block_records/">http://www.zabasearch.com/block_records/</a> You will need to fax proof of your identity and your address. If you’re using a driver’s license, cross out the photo and driver’s license number. Fax it to 425-974-6194. It can take 4-6 weeks to process.</p>
+<p>☠ ZoomInfo: Check to see if your information is on ZoomInfo by filling out this form: <a href="http://www.zoominfo.com/lookupEmail">http://www.zoominfo.com/lookupEmail</a>. Opt out if it has an email on record—they will email you.</p>
+<p>Special Circumstances If you’re a victim of violent crime or identity theft, it’s often possible to opt out of information that others can’t opt out of. You may, however, need to provide court orders or other information. It may be worth checking more complete data broker lists which include those: <a href="https://www.privacyrights.org/data-brokers">https://www.privacyrights.org/data-brokers</a></p>
+<p>Preventing Identity Theft &amp; Opting Out of Marketing Sites:</p>
+<p>📞 Consider freezing your credit, which prevents creditors from accessing your credit report. (It also prevents credit, loans, and services from being approved in your name, but you will receive a pin to unfreeze your credit, if needed.) You will need to provide personal information such as your name, address, date of birth, and social security number to freeze your credit. While you can sometimes initiate this online, it’s better to do it by phone. Fees for freezing your credit vary by state. To freeze your credit, contact:</p>
+<p>Equifax:  1 (800) 349-9960, <a href="https://www.freeze.equifax.com/">https://www.freeze.equifax.com/</a>
+Experian: 1 (888) 397‑3742, <a href="https://www.experian.com/blogs/ask-experian/credit-education/preventing-fraud/security-freeze/">https://www.experian.com/blogs/ask-experian/credit-education/preventing-fraud/security-freeze/</a>
+TransUnion: 1 (888) 909-8872, <a href="https://www.transunion.com/credit-freeze/place-credit-freeze">https://www.transunion.com/credit-freeze/place-credit-freeze</a>
+Innovis: 1 (800) 540-2505, <a href="https://www.innovis.com/personal/securityFreeze">https://www.innovis.com/personal/securityFreeze</a>
+Explore any privacy options offered by your state’s motor vehicle department.</p>
+<p>Contact your home and mobile phone companies to see if they offer privacy options, such as not listing your number on caller ID or allowing you to opt out of sales of phone numbers.</p>
+<p>Consider opting out of direct marketing and telemarketing. This list, compiled by Griffin Boyce, has a lot of information on doing so: <a href="https://github.com/glamrock/data-brokers/blob/master/data-brokers.md">https://github.com/glamrock/data-brokers/blob/master/data-brokers.md</a>. A good place to start is to opt out at the Direct Marketing Association .https://dmachoice.thedma.org/register.php</p>
+<p>Opt out of prescreened credit offers: Follow the instructions at <a href="https://www.optoutprescreen.com/">https://www.optoutprescreen.com/</a></p>
+<p>Get on the Do Not Call Registry: <a href="https://www.donotcall.gov/register/reg.aspx">https://www.donotcall.gov/register/reg.aspx</a></p>
+
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/from-apis-to-intents/">From APIs to Intents: The End of Procedural Machine Communication</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/how-i-use-llms-part2/">How I Use LLMs for Security Work: Part 2</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/">Detecting Phishing with Microsoft Email Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/why-phishing-defense-needs-software-engineers/">Why Phishing Defense Needs Software Engineers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/security/">Security (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/automation/">Automation (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/python/">Python (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/llm/">Llm (2)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

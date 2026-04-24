@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               Detecting Phishing with Microsoft Email Headers &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Detecting Phishing with Microsoft Email Headers">
+    <meta itemprop="description" content="Detecting Phishing with Microsoft Email Headers - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Detecting Phishing with Microsoft Email Headers">
+  <meta property="og:description" content="After reading Microsoft’s excellent blog post Phishing actors exploit complex routing and misconfigurations to spoof domains, I wanted to dive deeper and provide additional guidance for understanding common concepts found within Microsoft email headers. This post extends the referenced blog by focusing specifically on phishing detection opportunities within these headers.
+If you’ve worked in email security for any duration, you know that email headers are a goldmine of information. The challenge is knowing what to look for and how to interpret it. Let’s break this down.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="article">
+    <meta property="article:published_time" content="2026-01-19T10:00:00-06:00">
+    <meta property="article:modified_time" content="2026-01-19T10:00:00-06:00">
+    <meta property="article:tag" content="Email-Security">
+    <meta property="article:tag" content="Microsoft-365">
+    <meta property="article:tag" content="Office-365">
+    <meta property="article:tag" content="Spf">
+    <meta property="article:tag" content="Dkim">
+    <meta property="article:tag" content="Dmarc">
+    <meta property="og:image" content="http://localhost:1313/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/">
+    
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/papers/">Papers</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/">
+            Detecting Phishing with Microsoft Email Headers
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-01-19</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="http://localhost:1313/categories/security/">Security</a>
+                    
+                
+                    
+                    
+                        <a href="http://localhost:1313/categories/phishing/">Phishing</a>
+                    
+                
+                    
+                    
+                        <a href="http://localhost:1313/categories/detection/">Detection</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="http://localhost:1313/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>After reading Microsoft&rsquo;s excellent blog post <a href="https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/">Phishing actors exploit complex routing and misconfigurations to spoof domains</a>, I wanted to dive deeper and provide additional guidance for understanding common concepts found within Microsoft email headers. This post extends the referenced blog by focusing specifically on phishing detection opportunities within these headers.</p>
+<p>If you&rsquo;ve worked in email security for any duration, you know that email headers are a goldmine of information. The challenge is knowing what to look for and how to interpret it. Let&rsquo;s break this down.</p>
+<h2 id="understanding-key-microsoft-headers">Understanding Key Microsoft Headers</h2>
+<p>Before we dive into detection rules, let&rsquo;s understand some of the key headers Microsoft uses in Exchange Online. These headers tell a story about where a message came from and how it was authenticated.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Header</th>
+          <th>Value</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>X-MS-Exchange-Organization-InternalOrgSender</code></td>
+          <td><code>True</code></td>
+          <td>Combined with <code>Incoming</code> directionality, indicates spoofing (not necessarily malicious)</td>
+      </tr>
+      <tr>
+          <td><code>X-MS-Exchange-Organization-MessageDirectionality</code></td>
+          <td><code>Incoming</code></td>
+          <td>Message was sent from outside the organization</td>
+      </tr>
+      <tr>
+          <td><code>X-MS-Exchange-Organization-ASDirectionalityType</code></td>
+          <td><code>1</code></td>
+          <td>Indicates external origin</td>
+      </tr>
+      <tr>
+          <td><code>X-MS-Exchange-Organization-AuthAs</code></td>
+          <td><code>Anonymous</code></td>
+          <td>If set alongside other external indicators, confirms external source</td>
+      </tr>
+  </tbody>
+</table>
+<p>These headers become particularly interesting when their values contradict each other. An <code>InternalOrgSender</code> of <code>True</code> combined with <code>Incoming</code> directionality? That&rsquo;s worth investigating.</p>
+<h2 id="the-authentication-results-header">The Authentication-Results Header</h2>
+<p>When it comes to detecting spoofing and authentication issues, the <code>Authentication-Results</code> header is your primary source of truth. You can read the full RFC <a href="https://datatracker.ietf.org/doc/html/rfc7001">here</a>, but let me break down what matters for threat detection.</p>
+<p>Here&rsquo;s a typical format of this header:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>spf=pass (sender IP is 2607:f8b0:4864:20::112d)
+</span></span><span style="display:flex;"><span> smtp.mailfrom=gmail.com; dkim=pass (signature was verified)
+</span></span><span style="display:flex;"><span> header.d=gmail.com;dmarc=pass action=none header.from=gmail.com;compauth=pass
+</span></span><span style="display:flex;"><span> reason=100
+</span></span></code></pre></div><p>The header starts with <code>spf=</code> followed by one of several values. For detection purposes, we focus on the later portions: <code>dmarc=pass action=none</code> and <code>compauth=pass reason=100</code>. These give us several detection opportunities.</p>
+<h3 id="spf-dkim-and-dmarc-values">SPF, DKIM, and DMARC Values</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Authentication Type</th>
+          <th>Supported Values</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>SPF (Sender Policy Framework)</td>
+          <td>pass, fail, softfail, neutral, none, temperror, permerror</td>
+          <td>Verifies RFC5321 <code>Mail From</code> address</td>
+      </tr>
+      <tr>
+          <td>DKIM (DomainKeys Identified Mail)</td>
+          <td>pass, fail, none, temperror, permerror</td>
+          <td>Verifies RFC5322 <code>From</code> address</td>
+      </tr>
+      <tr>
+          <td>DMARC (Domain-based Message Authentication, Reporting &amp; Conformance)</td>
+          <td>pass, fail, none</td>
+          <td>Combines SPF and DKIM results</td>
+      </tr>
+  </tbody>
+</table>
+<p>Many organizations don&rsquo;t set up SPF, DKIM, and DMARC correctly or enforce <code>reject</code> within their policies. Let&rsquo;s fix that knowledge gap.</p>
+<h2 id="spf-configuration">SPF Configuration</h2>
+<p>For SPF, organizations need to set up a TXT DNS record for their email domain. The format looks like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>v=spf1 &lt;mail sources&gt; &lt;rule&gt;all
+</span></span></code></pre></div><p>There are three options for the <code>rule</code> and they&rsquo;re all punctuation:</p>
+<ul>
+<li><code>-</code> → Hard Fail</li>
+<li><code>~</code> → Soft Fail</li>
+<li><code>?</code> → Neutral</li>
+</ul>
+<p>So for example, if you&rsquo;re using Office 365, your TXT record will look like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>v=spf1 include:spf.protection.outlook.com -all
+</span></span></code></pre></div><p>If you don&rsquo;t set up this record, it results in <code>spf=none</code> within your <code>Authentication-Results</code> header. For detection, we don&rsquo;t care much about <code>pass</code> or <code>none</code> (can&rsquo;t fix external domains), but we care about <code>fail</code>, <code>softfail</code>, and <code>temperror</code> since these indicate something went wrong during SPF validation.</p>
+<h2 id="dkim-configuration">DKIM Configuration</h2>
+<p>DomainKeys Identified Mail (DKIM) validates that email content hasn&rsquo;t been altered in transit. DKIM uses a public/private key pair. You generate the pair and store the public key in a CNAME DNS record. Check <a href="https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure">Microsoft&rsquo;s documentation</a> for setup details.</p>
+<p>Because DKIM is more involved than SPF and DMARC, we&rsquo;re not incorporating specific detection mechanisms for it in this post.</p>
+<p>Example DKIM CNAME DNS records:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Hostname: selector1._domainkey
+</span></span><span style="display:flex;"><span>Points to: selector1-{yourdomain}-com._domainkey.{yourdomain}.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Hostname: selector2._domainkey
+</span></span><span style="display:flex;"><span>Points to: selector2-{yourdomain}-com._domainkey.{yourdomain}.com
+</span></span></code></pre></div><h2 id="dmarc-configuration">DMARC Configuration</h2>
+<p>DMARC is where things get interesting because the combination of SPF and DKIM ultimately determines the DMARC result for a given email.</p>
+<p>Just like SPF, you&rsquo;ll create a TXT record for DMARC:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Record Key</th>
+          <th>Value</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Hostname</td>
+          <td><code>_dmarc</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>TXT Value</td>
+          <td><code>v=DMARC1; p=reject; pct=100; rua=mailto:rua@contoso.com; ruf=mailto:ruf@contoso.com</code></td>
+          <td>v=version, p=action (reject/quarantine/none), pct=percentage, rua=aggregate report, ruf=failure report</td>
+      </tr>
+  </tbody>
+</table>
+<p>When configured correctly, DMARC validates that either SPF or DKIM (or both) passed authentication.</p>
+<h2 id="spf-dkim-and-dmarc-truth-table">SPF, DKIM, and DMARC Truth Table</h2>
+<p>Understanding how these work together is critical. DMARC passes if either SPF or DKIM passes.</p>
+<table>
+  <thead>
+      <tr>
+          <th>SPF</th>
+          <th>DKIM</th>
+          <th>DMARC Result</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Pass</td>
+          <td>Pass</td>
+          <td>Pass</td>
+          <td>Both authentication methods passed</td>
+      </tr>
+      <tr>
+          <td>Pass</td>
+          <td>Fail</td>
+          <td>Pass</td>
+          <td>SPF passed, DKIM failed - DMARC still passes</td>
+      </tr>
+      <tr>
+          <td>Pass</td>
+          <td>None</td>
+          <td>Pass</td>
+          <td>SPF passed, no DKIM configured - DMARC passes</td>
+      </tr>
+      <tr>
+          <td>Fail</td>
+          <td>Pass</td>
+          <td>Pass</td>
+          <td>SPF failed, DKIM passed - DMARC still passes</td>
+      </tr>
+      <tr>
+          <td>Fail</td>
+          <td>Fail</td>
+          <td>Fail</td>
+          <td>Both authentication methods failed - DMARC fails</td>
+      </tr>
+      <tr>
+          <td>Fail</td>
+          <td>None</td>
+          <td>Fail</td>
+          <td>SPF failed, no DKIM - DMARC fails</td>
+      </tr>
+      <tr>
+          <td>None</td>
+          <td>Pass</td>
+          <td>Pass</td>
+          <td>No SPF configured, DKIM passed - DMARC passes</td>
+      </tr>
+      <tr>
+          <td>None</td>
+          <td>Fail</td>
+          <td>Fail</td>
+          <td>No SPF configured, DKIM failed - DMARC fails</td>
+      </tr>
+      <tr>
+          <td>None</td>
+          <td>None</td>
+          <td>None/Fail</td>
+          <td>Neither configured - DMARC typically fails</td>
+      </tr>
+      <tr>
+          <td>Softfail</td>
+          <td>Pass</td>
+          <td>Pass</td>
+          <td>SPF softfail, DKIM passed - DMARC passes</td>
+      </tr>
+      <tr>
+          <td>Softfail</td>
+          <td>Fail</td>
+          <td>Fail</td>
+          <td>SPF softfail treated as fail, DKIM failed - DMARC fails</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Key Takeaway:</strong> DMARC requires at least one of SPF or DKIM to pass for the overall check to pass. This is known as DMARC alignment. If both fail (or aren&rsquo;t configured), DMARC fails and the action specified in the DMARC policy applies.</p>
+<h2 id="email-flow-diagram">Email Flow Diagram</h2>
+<p>Understanding the SMTP session helps clarify why we have both RFC5321 and RFC5322 addresses:</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+    participant Sending as Sending Mail Server
+    participant Receiving as Receiving Mail Server
+    
+    Note over Sending,Receiving: Steps 1 &amp; 2: SMTP Session (RFC 5321)
+    Sending-&gt;&gt;Receiving: MAIL FROM: (RFC5321.MailFrom)
+    Note right of Receiving: Verify sender address
+    Receiving-&gt;&gt;Sending: 250 OK
+    Sending-&gt;&gt;Receiving: RCPT TO: (RFC5321.RcptTo)
+    Note right of Receiving: Verify recipient willing to accept
+    Receiving-&gt;&gt;Sending: 250 OK
+    
+    Note over Sending,Receiving: Step 3: Message Transfer (RFC 5322)
+    Sending-&gt;&gt;Receiving: DATA
+    Receiving-&gt;&gt;Sending: 354 Start mail input
+    Sending-&gt;&gt;Receiving: Mail Headers &amp; Body&lt;br/&gt;(RFC5322.From, RFC5322.To)
+    Note right of Receiving: Transfer complete message&lt;br/&gt;including all headers
+    Receiving-&gt;&gt;Sending: 250 OK Message accepted
+</code></pre><p>SPF verifies that the RFC5321 <code>Mail From</code> address isn&rsquo;t spoofed, while DKIM verifies that the RFC5322 <code>From</code> address isn&rsquo;t spoofed. DMARC ties them together. This is one of main benefits of DMARC when it comes to verification of authentication.</p>
+<h2 id="composite-authentication-reason-codes">Composite Authentication Reason Codes</h2>
+<p>Using the <code>Authentication-Results</code> header, we can extract details about the authentication reason based on Microsoft&rsquo;s <a href="https://learn.microsoft.com/en-us/defender-office-365/message-headers-eop-mdo#composite-authentication-reason-codes">reason codes</a>.</p>
+<p>Here are the key codes for detection:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Code</th>
+          <th>Description</th>
+          <th>Detection Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>108</td>
+          <td>DKIM failed due to message body modification from previous legitimate hops</td>
+          <td>Possible on-prem modification</td>
+      </tr>
+      <tr>
+          <td>451</td>
+          <td>Complex routing with <code>oreject</code> means message was delivered to spam</td>
+          <td>From Microsoft&rsquo;s blog</td>
+      </tr>
+      <tr>
+          <td>601</td>
+          <td>Sending domain is an accepted domain (self-to-self or intra-org spoofing)</td>
+          <td>Aligns with code <code>010</code></td>
+      </tr>
+      <tr>
+          <td>905</td>
+          <td>DMARC wasn&rsquo;t enforced due to complex routing</td>
+          <td>On-prem Exchange or third-party service routing</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="detection-rules">Detection Rules</h2>
+<p>Now let&rsquo;s get to the good stuff. Here are detection rules for identifying authentication failures that may indicate phishing attempts.</p>
+<h3 id="detecting-authentication-failures-with-weak-dmarc-policies">Detecting Authentication Failures with Weak DMARC Policies</h3>
+<p>This rule catches authentication failures that &ldquo;slipped through&rdquo; due to weak DMARC/SPF policies—messages that should have been blocked but only made it to junk mail. These represent potential spoofing attempts against domains without strict enforcement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>, .<span style="color:#a6e22e">index</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Authentication-Results&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;dmarc=(fail|none)\saction=none&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>,
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#39;spf=(fail|softfail|temperror)\s\(sender\sIP\sis\s&#39;</span>
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// MX record points to on-premises Exchange environment
+</span></span></span><span style="display:flex;"><span>              <span style="color:#75715e">// or third-party service before reaching Microsoft 365
+</span></span></span><span style="display:flex;"><span>              <span style="color:#75715e">// but message delivered to spam folder
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;reason=451&#39;</span>)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// exclude passes
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;spf=(pass)\s\(sender\sIP\sis\s&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// ignore proper action type when dmarc fails
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;dmarc=fail\saction=oreject&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// excluding properly configured dmarc failures
+</span></span></span><span style="display:flex;"><span>              <span style="color:#75715e">// failed explicit email authentication
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;reason=000&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// failed implicit email authentication
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;reason=001&#39;</span>)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="detecting-bypassed-enforcement-via-tenant-allow-policies">Detecting Bypassed Enforcement via Tenant Allow Policies</h3>
+<p>This catches DMARC/SPF authentication failures that bypassed enforcement due to tenant allow policies (<code>reason=905</code>). These are messages that failed authentication but were delivered because an admin policy explicitly permitted them. This could indicate overly permissive allow-lists being exploited by attackers spoofing &ldquo;trusted&rdquo; domains.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>, .<span style="color:#a6e22e">index</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Authentication-Results&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;dmarc=(fail|none)\saction=none&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>,
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#39;spf=(fail|softfail|temperror)\s\(sender\sIP\sis\s&#39;</span>
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// MX record points to on-premises Exchange environment
+</span></span></span><span style="display:flex;"><span>              <span style="color:#75715e">// or third-party service before reaching Microsoft 365
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;reason=905&#39;</span>)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// exclude passes
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;spf=(pass)\s\(sender\sIP\sis\s&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// ignore proper action type when dmarc fails
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;dmarc=fail\saction=oreject&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// excluding properly configured dmarc failures
+</span></span></span><span style="display:flex;"><span>              <span style="color:#75715e">// failed explicit email authentication
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;reason=000&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// failed implicit email authentication
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;reason=001&#39;</span>)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="detecting-domain-spoofing-attempts">Detecting Domain Spoofing Attempts</h3>
+<p>This detects DMARC/SPF failures where the attacker attempted to spoof your own domain (<code>reason=601</code>—intra-org/self-to-self spoofing). This is a direct indicator of domain spoofing attacks targeting internal trust.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>, .<span style="color:#a6e22e">index</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Authentication-Results&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;dmarc=(fail|none)\saction=none&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>,
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#39;spf=(fail|softfail|temperror)\s\(sender\sIP\sis\s&#39;</span>
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// tried to impersonate within same domain but failed authentication
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;reason=601&#34;</span>)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// exclude passes
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;spf=(pass)\s\(sender\sIP\sis\s&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// ignore proper action type when dmarc fails
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;dmarc=fail\saction=oreject&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// excluding properly configured dmarc failures
+</span></span></span><span style="display:flex;"><span>              <span style="color:#75715e">// failed explicit email authentication
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;reason=000&#39;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// failed implicit email authentication
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;reason=001&#39;</span>)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="x-forefront-antispam-report">X-Forefront-Antispam-Report</h2>
+<p>If you&rsquo;re using Microsoft 365 or have cloud mailboxes (and who isn&rsquo;t now?), you&rsquo;ll see this header within your messages. This information is extremely useful for identifying how your detection strategies perform compared to Microsoft&rsquo;s global system.</p>
+<p>For example, we can identify scenarios where we haven&rsquo;t marked something as spam but Microsoft has categorized it as such. See the <a href="https://learn.microsoft.com/en-us/defender-office-365/message-headers-eop-mdo#x-forefront-antispam-report-message-header-fields">full list of categories</a>.</p>
+<h3 id="detecting-spam-categorization">Detecting Spam Categorization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-Forefront-Antispam-Report&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// High confidence spam
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:HSPM&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Outbound spam
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:OSPM&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// General spam
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:SPM&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// spam because it matched a sender in the blocked senders list
+</span></span></span><span style="display:flex;"><span>                <span style="color:#75715e">// or blocked domains list in an anti-spam policy
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFV:SKB&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// The message was marked as spam before processing by spam filtering
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFV:SKS&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// The message was marked as spam by spam filtering
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFV:SPM&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// identified as bulk by spam filtering
+</span></span></span><span style="display:flex;"><span>                <span style="color:#75715e">// and the bulk complaint level (BCL) threshold
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SRV:BULK&#34;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> (<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:NONE;&#34;</span>))
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="detecting-impersonation-categories">Detecting Impersonation Categories</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-Forefront-Antispam-Report&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Mailbox intelligence impersonation policy applied
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:GIMP&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// identified as phishing but intra org impersonation
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFTY:9.11&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// identified as phishing and domain impersonation
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFTY:9.19&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// identified as phishing and User impersonation
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFTY:9.20&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// identified as phishing but cross domain spoofing
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFTY:9.22&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// SPOOF
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:SPOOF&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// User impersonation
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:UIMP&#34;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> (<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:NONE;&#34;</span>))
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="detecting-phishing-categories">Detecting Phishing Categories</h3>
+<p>This is great for finding gaps in detection coverage that Microsoft has flagged as phishing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-Forefront-Antispam-Report&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// High confidence phishing
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:HPHISH&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// identified as phishing but intra org impersonation
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFTY:9.11&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// identified as phishing and domain impersonation
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFTY:9.19&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// identified as phishing and User impersonation
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFTY:9.20&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// identified as phishing but cross domain spoofing
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFTY:9.22&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// First contact safety tip
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFTY:9.25&#34;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:NONE;&#34;</span>)
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="detecting-allow-list-misconfigurations">Detecting Allow List Misconfigurations</h3>
+<p>This helps identify messages that bypassed filtering due to allow lists:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-Forefront-Antispam-Report&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// skipped spam filtering since source IP address was in allow list
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;IPV:CAL&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// released from quarantine &amp; sent to the intended recipients
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFV:SKQ&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Filtering skipped and was blocked because it was sent
+</span></span></span><span style="display:flex;"><span>                <span style="color:#75715e">// from an address in a user&#39;s Blocked Senders list
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;SFV:BLK&#34;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> (<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;CAT:NONE;&#34;</span>))
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="x-microsoft-antispam">X-Microsoft-Antispam</h2>
+<p>This header helps determine if the sender has a high Bulk sender rate. You can find the <a href="https://learn.microsoft.com/en-us/defender-office-365/anti-spam-bulk-complaint-level-bcl-about">BCL values table here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>    (
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-Microsoft-Antispam&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// bulk sender that generates a high number of complaints
+</span></span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;BCL:[8-9]&#39;</span>)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="x-ms-exchange-organization-scl">X-MS-Exchange-Organization-SCL</h2>
+<p>This header provides Microsoft&rsquo;s Spam Confidence Level determination. For the highest confidence spam:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-MS-Exchange-Organization-SCL&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// highest spam confidence level
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> .<span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;9&#34;</span>
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>For medium SCL levels:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-MS-Exchange-Organization-SCL&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// medium spam confidence level
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">match</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;[5-8]&#39;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="x-ms-exchange-organization-pcl">X-MS-Exchange-Organization-PCL</h2>
+<p>Same concept but for Phishing Confidence Level:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-MS-Exchange-Organization-PCL&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// The message content is likely to be phishing
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;[4-8]&#39;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="x-microsoft-antispam-mailbox-delivery">X-Microsoft-Antispam-Mailbox-Delivery</h2>
+<p>This header reveals how Microsoft determined delivery destination and what filters were applied:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ucf:0;jmr:0;auth:0;dest:J;OFR:SpamFilterAuthJ;ENG:(910005)(944490095)(944506478)(944626604)(4710137)(4715077)(4999163)(920097)(930201)(3100021)(140003);RF:JunkEmail;
+</span></span></code></pre></div><p>Key field values:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Field</th>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>auth</td>
+          <td>0</td>
+          <td>Authentication failed</td>
+      </tr>
+      <tr>
+          <td>auth</td>
+          <td>1</td>
+          <td>Authentication passed</td>
+      </tr>
+      <tr>
+          <td>ucf</td>
+          <td>1</td>
+          <td>User controlled filtering enabled</td>
+      </tr>
+      <tr>
+          <td>jmr</td>
+          <td>0</td>
+          <td>Junk mail filtering - No</td>
+      </tr>
+      <tr>
+          <td>dest</td>
+          <td>J</td>
+          <td>Server-side decision to deliver to Junk Mail</td>
+      </tr>
+      <tr>
+          <td>dest</td>
+          <td>I</td>
+          <td>Server-side decision to deliver to INBOX</td>
+      </tr>
+      <tr>
+          <td>dest</td>
+          <td>C</td>
+          <td>Server-side decision to deliver to custom folder</td>
+      </tr>
+      <tr>
+          <td>OFR</td>
+          <td>CustomRules</td>
+          <td>Outlook rule determined delivery</td>
+      </tr>
+      <tr>
+          <td>OFR</td>
+          <td>SpamFilterAuthJ</td>
+          <td>Exchange determined delivery</td>
+      </tr>
+      <tr>
+          <td>wl</td>
+          <td>1</td>
+          <td>Sender or recipient on white list</td>
+      </tr>
+      <tr>
+          <td>wl</td>
+          <td>0</td>
+          <td>Sender is not on a whitelist</td>
+      </tr>
+      <tr>
+          <td>pcwl</td>
+          <td>1</td>
+          <td>Policy controlled white list</td>
+      </tr>
+      <tr>
+          <td>rwl</td>
+          <td>1</td>
+          <td>Recipient on recipient white list</td>
+      </tr>
+      <tr>
+          <td>abwl</td>
+          <td>1</td>
+          <td>Auto-block white lists</td>
+      </tr>
+      <tr>
+          <td>dwl</td>
+          <td>1</td>
+          <td>Domain white list</td>
+      </tr>
+      <tr>
+          <td>RF</td>
+          <td>JunkEmail</td>
+          <td>Reason failure</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="detecting-whitelisted-malicious-messages">Detecting Whitelisted Malicious Messages</h3>
+<p>This identifies messages on a white list that were delivered to the inbox. Good for finding messages flagged as malicious that bypassed controls due to whitelist configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-Microsoft-Antispam-Mailbox-Delivery&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Sender or recipient on white list and considered safe
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;wl:1&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Sender or recipient on policy controlled white list
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;pcwl:1&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Recipient on recipient white list
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;rwl:1&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// sender on Auto-block white lists
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;abwl:1&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Sender on domain white list
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;dwl:1&#34;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// server side delivered the message to the users mailbox
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;dest:I;&#34;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// and the message was delivered (not to junk mail)
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Server-side decision to deliver to Junk Mail
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;dest:J;&#34;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="detecting-user-controlled-filter-bypasses">Detecting User-Controlled Filter Bypasses</h3>
+<p>This finds messages delivered to custom folders based on user-controlled filters, which could indicate custom mail rules or content filters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-Microsoft-Antispam-Mailbox-Delivery&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// User controlled filter was set to True
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;ucf:1&#34;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// server side delivered the message to custom folder
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;dest:C;&#34;</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// and the message was delivered (not to junk mail)
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> (
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Server-side decision to deliver to Junk Mail
+</span></span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;dest:J;&#34;</span>)
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="x-ms-exchange-organization-authas">X-MS-Exchange-Organization-AuthAs</h2>
+<p>This header has two values: <code>Anonymous</code> and <code>Internal</code>. Anonymous means no authentication occurred, while Internal indicates authenticated internal communication.</p>
+<p>Combined with <code>X-MS-Exchange-Organization-MessageDirectionality</code> (<code>Originating</code> or <code>Incoming</code>), we can detect misconfigurations:</p>
+<table>
+  <thead>
+      <tr>
+          <th>AuthAs</th>
+          <th>Directionality</th>
+          <th>Interpretation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Anonymous</td>
+          <td>Incoming</td>
+          <td>Normal external email</td>
+      </tr>
+      <tr>
+          <td>Anonymous</td>
+          <td>Originating</td>
+          <td>Potential misconfiguration - unauthenticated message marked as originating internally</td>
+      </tr>
+      <tr>
+          <td>Internal</td>
+          <td>Incoming</td>
+          <td>Potential misconfiguration - authenticated internal message marked as incoming</td>
+      </tr>
+      <tr>
+          <td>Internal</td>
+          <td>Originating</td>
+          <td>Normal internal email</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="detecting-authenticationdirectionality-mismatches">Detecting Authentication/Directionality Mismatches</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">inbound</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-MS-Exchange-Organization-AuthAs&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// This means that the sender did not authenticate when sending the message
+</span></span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;Anonymous&#34;</span>)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-MS-Exchange-Organization-MessageDirectionality&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// This means that the sender claims to be internal
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;Originating&#34;</span>)
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">not</span> (
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>              .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-MS-Exchange-Organization-SCL&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// Bypassed spam filters
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">contains</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#34;-1&#34;</span>)
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="automation-finding-detection-gaps">Automation: Finding Detection Gaps</h2>
+<p>I created an automation to test detection coverage by identifying messages with high Microsoft spam confidence that weren&rsquo;t flagged by our rules:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// not any rules
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">not</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">triage</span>.<span style="color:#a6e22e">flagged_rules</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// which are in the core feed
+</span></span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">feed</span>.<span style="color:#a6e22e">is_core</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">or</span> .<span style="color:#a6e22e">feed</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Rules from open PRs&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">and</span> <span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">hops</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">any</span>(.<span style="color:#a6e22e">fields</span>,
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X-MS-Exchange-Organization-SCL&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">and</span> (
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// 5-9 confidence in spam
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">match</span>(.<span style="color:#a6e22e">value</span>, <span style="color:#e6db74">&#39;[5-9]&#39;</span>)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="summary">Summary</h2>
+<p>Email headers contain a wealth of information for detecting phishing attempts and authentication failures. By understanding how Microsoft populates these headers and what the values mean, you can build detection rules that catch:</p>
+<ul>
+<li>Authentication failures that bypass weak DMARC policies</li>
+<li>Spoofing attempts against your own domain</li>
+<li>Messages that exploit overly permissive allow lists</li>
+<li>Misconfigurations in your mail flow</li>
+</ul>
+<p>The key is combining multiple header values to build context. A single failed SPF check might be legitimate. But a failed SPF check combined with specific reason codes and directionality indicators? That tells a much more interesting story.</p>
+<p>If you have any questions or suggestions, feel free to reach out. I hope this helps you level up your email-based threat detection.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/">Phishing actors exploit complex routing and misconfigurations to spoof domains</a> - Microsoft Security Blog</li>
+<li><a href="https://techcommunity.microsoft.com/blog/exchange/direct-send-vs-sending-directly-to-an-exchange-online-tenant/4439865">Direct Send vs sending directly to an Exchange Online tenant</a></li>
+<li><a href="https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/use-connectors-to-configure-mail-flow/use-connectors-to-configure-mail-flow">Configure mail flow using connectors in Exchange Online</a></li>
+<li><a href="https://learn.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/mail-flow-rules">Mail flow rules (transport rules) in Exchange Online</a></li>
+<li><a href="https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/manage-mail-flow-using-third-party-cloud">Manage mail flow using a third-party cloud service with Exchange Online</a></li>
+<li><a href="https://learn.microsoft.com/en-us/defender-office-365/message-headers-eop-mdo#authentication-results-message-header">Authentication-Results Header</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7001">Authentication-Results RFC7001</a></li>
+<li><a href="https://sublime.security/articles/email-impersonation-protection/">Email impersonation protection: How to spot and stop attacks</a> - Sublime Security</li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc6376">DKIM RFC6376</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7489">DMARC RFC7489</a></li>
+<li><a href="https://thecloudtechnologist.com/2025/08/09/an-improved-approach-to-blocking-direct-send-abuse/">An improved approach to blocking Direct Send Abuse</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc5322">RFC5322 - Internet Message Format</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc5321">RFC5321 - Simple Mail Transfer Protocol</a></li>
+<li><a href="https://www.easy365manager.com/what-is-spf-sender-policy-framework/">What is SPF (Sender Policy Framework)?</a></li>
+<li><a href="https://www.easy365manager.com/what-is-dkim-domainkeys-identified-mail/">What is DKIM (DomainKeys Identified Mail)?</a></li>
+<li><a href="https://www.easy365manager.com/dmarc-explained/">DMARC Explained</a></li>
+</ul>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/email-security/">Email-Security</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/microsoft-365/">Microsoft-365</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/office-365/">Office-365</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/spf/">Spf</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/dkim/">Dkim</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/dmarc/">Dmarc</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/headers/">Headers</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/threat-detection/">Threat-Detection</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/mql/">MQL</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/sublime-security/">Sublime-Security</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/from-apis-to-intents/">From APIs to Intents: The End of Procedural Machine Communication</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/how-i-use-llms-part2/">How I Use LLMs for Security Work: Part 2</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/detecting-phishing-with-microsoft-email-headers/">Detecting Phishing with Microsoft Email Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/how-i-use-ai-tools-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/why-phishing-defense-needs-software-engineers/">Why Phishing Defense Needs Software Engineers</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/security/">Security (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/automation/">Automation (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/python/">Python (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/llm/">Llm (2)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mcp on Lets Automate It</title>
+    <link>http://localhost:1313/tags/mcp/</link>
+    <description>Recent content in Mcp on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Apr 2026 23:45:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From APIs to Intents: The End of Procedural Machine Communication</title>
+      <link>http://localhost:1313/article/from-apis-to-intents/</link>
+      <pubDate>Thu, 09 Apr 2026 23:45:00 -0400</pubDate>
+      <guid>http://localhost:1313/article/from-apis-to-intents/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve spent years building integrations. REST APIs, SOAP endpoints, gRPC services, GraphQL queries, webhook receivers, message queues, etc. If two systems needed to talk, I&amp;rsquo;ve probably wired them together at some point. And every single time, the pattern is the same: I read the docs, I learn the endpoints, I map the parameters, I handle the auth, I write the glue code, and I pray the vendor doesn&amp;rsquo;t push a breaking change on a Friday afternoon.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
