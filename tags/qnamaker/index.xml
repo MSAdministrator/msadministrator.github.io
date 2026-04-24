@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qnamaker on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/qnamaker/</link>
+    <description>Recent content in Qnamaker on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Aug 2018 21:55:42 -0400</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/qnamaker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Qnamaker to Create Chatbot</title>
+      <link>https://letsautomate.it/article/using-qnamaker-to-create-chatbot/</link>
+      <pubDate>Fri, 10 Aug 2018 21:55:42 -0400</pubDate>
+      <guid>https://letsautomate.it/article/using-qnamaker-to-create-chatbot/</guid>
+      <description>&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;&#xA;&lt;script&gt;&#xA;  (adsbygoogle = window.adsbygoogle || []).push({&#xA;    google_ad_client: &#34;ca-pub-1514695391372140&#34;,&#xA;    enable_page_level_ads: true&#xA;  });&#xA;&lt;/script&gt;&#xA;&lt;p&gt;The first thing we need to do is login to &lt;a href=&#34;https://qnamaker.ai&#34;&gt;QnAMaker&lt;/a&gt;.  QnA Maker is a Microsoft service that allows you to easily generate a bot using either existing documentation for a product (or service) or you can create your own questions and answers – hence the name QnA Maker.&lt;/p&gt;&#xA;&lt;p&gt;Login to QnAMaker and navigate to the Create a knowledge base tab.  You will need to walkthrough 5 steps to create your knowledge base.  Luckily, Microsoft has provided clear instructions to make this as simple as possible.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

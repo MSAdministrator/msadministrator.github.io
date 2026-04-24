@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webapp on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/webapp/</link>
+    <description>Recent content in Webapp on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Aug 2018 22:10:33 -0400</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/webapp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a Web App Bot Using Azure Bot Services</title>
+      <link>https://letsautomate.it/article/create-a-web-app-bot-using-azure-bot-services/</link>
+      <pubDate>Fri, 10 Aug 2018 22:10:33 -0400</pubDate>
+      <guid>https://letsautomate.it/article/create-a-web-app-bot-using-azure-bot-services/</guid>
+      <description>&lt;p&gt;In my last post, we create a QnA Maker knowledge base that our Azure Web App Bot will use as it’s repository of questions &amp;amp; answers.  Now, we are going to create our bot using Azure’s Bot Services.&lt;/p&gt;&#xA;&lt;p&gt;First thing is that we should go ahead and log into the &lt;a href=&#34;https://portal.azure.com&#34;&gt;Azure Portal&lt;/a&gt;.  In the top left-hand corner click the Create a resource button.  You will then need to Search the marketplace in the New blade for Web App Bot.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

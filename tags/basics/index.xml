@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basics on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/basics/</link>
+    <description>Recent content in Basics on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Jul 2022 12:45:00 -0400</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/basics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Python - Part 2: Running Code</title>
+      <link>https://letsautomate.it/article/understanding-python-part-2-running-code/</link>
+      <pubDate>Thu, 14 Jul 2022 12:45:00 -0400</pubDate>
+      <guid>https://letsautomate.it/article/understanding-python-part-2-running-code/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Whether you are new to Python or not, ensuring you understand the basics will help you along the way to becoming a Python expert.&lt;/p&gt;&#xA;&lt;p&gt;Please see the first post titled &lt;a href=&#34;https://letsautomate.it/article/python-vs-powershell-part-1-versioning/&#34;&gt;Python vs Powershell Part 1: Versioning&lt;/a&gt;. This first post was written in 2018 but still applies. The remaining blog posts are a continuation of this series. Lets get started!&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;p&gt;You may have Python already installed. To check, open your terminal and type:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

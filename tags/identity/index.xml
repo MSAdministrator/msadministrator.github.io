@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Identity on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/identity/</link>
+    <description>Recent content in Identity on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Apr 2026 23:08:02 -0400</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/identity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Agentic Web: A New Internet Built for Agents, Not Browsers</title>
+      <link>https://letsautomate.it/article/agentic-web/</link>
+      <pubDate>Mon, 13 Apr 2026 23:08:02 -0400</pubDate>
+      <guid>https://letsautomate.it/article/agentic-web/</guid>
+      <description>&lt;p&gt;Every time you sign up for a new service, you hand over your data, create yet another set of credentials, and agree to terms you didn&amp;rsquo;t read. You do this dozens of times across dozens of platforms. Each one owns a piece of you &amp;ndash; your preferences, your purchase history, your social graph &amp;ndash; and good luck getting any of it back. The internet as we know it was built for humans to browse. I believe it&amp;rsquo;s time we build one where agents act on our behalf.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               Mdt 2012 Deployment Guide Step by Step 6 of 11 &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Mdt 2012 Deployment Guide Step by Step 6 of 11">
+    <meta itemprop="description" content="Mdt 2012 Deployment Guide Step by Step 6 of 11 - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Mdt 2012 Deployment Guide Step by Step 6 of 11">
+  <meta property="og:description" content="Completing the Deployment Share Configuration Now you have imported an OS (from source media) and some WinPE drivers, we can go ahead and complete the configuration of the Deployment Share. 6.1 Advanced Configuration The Advanced Configuration section of MDT consists of four separate areas although, we only use the Selection Profiles section for now. The rest are advanced topics which you can explore later! Advanced Configuration – Selection Profiles Created a single additional selection profile – “WinPE Drivers” and configured it to contain only the drivers which Windows PE will use. We’ll use this profile in a moment to configure the Windows PE environment. The next three photo&#39;s are in order by actions:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="article">
+    <meta property="article:published_time" content="2018-08-07T20:43:24-04:00">
+    <meta property="article:modified_time" content="2018-08-07T20:43:24-04:00">
+    <meta property="article:tag" content="Archive">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-6-of-11/">
+            Mdt 2012 Deployment Guide Step by Step 6 of 11
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <h1>Completing the Deployment Share Configuration</h1>
+Now you have imported an OS (from source media) and some WinPE drivers, we can go ahead and complete the configuration of the Deployment Share.
+<h2>6.1       Advanced Configuration</h2>
+The Advanced Configuration section of MDT consists of four separate areas although, we only use the Selection Profiles section for now.  The rest are advanced topics which you can explore later!
+<h3>Advanced Configuration – Selection Profiles</h3>
+Created a single additional selection profile – “WinPE Drivers” and configured it to contain only the drivers which Windows PE will use.  We’ll use this profile in a moment to configure the Windows PE environment.  The next three photo's are in order by actions:
+<p><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-6-of-11/attachment/15/" rel="attachment wp-att-87"><img class="alignnone size-full wp-image-87" alt="15" src="http://msadministrator.files.wordpress.com/2012/12/15.png" width="519" height="398" /></a></p>
+<p><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-6-of-11/attachment/16/" rel="attachment wp-att-88"><img class="alignnone size-full wp-image-88" alt="16" src="http://msadministrator.files.wordpress.com/2012/12/16.png" width="519" height="186" /></a></p>
+<p><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-6-of-11/17-2/" rel="attachment wp-att-89"><img class="alignnone size-full wp-image-89" alt="17" src="http://msadministrator.files.wordpress.com/2012/12/17.png" width="519" height="459" /></a></p>
+<p><strong> 6.2       More Deployment Share Properties</strong></p>
+<p>Now we return to the Properties page for the deployment share.  We need to open the <b>Windows PE x86 Components</b> tab (and/or the <b>Windows PE x64 Components</b> one)</p>
+<p>In the Selection Profile drop down, select the WinPE Drivers profile we just created and then click OK.</p>
+<p><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-6-of-11/attachment/18/" rel="attachment wp-att-90"><img class="alignnone size-full wp-image-90" alt="18" src="http://msadministrator.files.wordpress.com/2012/12/18.png" width="519" height="363" /></a></p>
+<table cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td width="22" height="0"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+&nbsp;
+<p> </p>
+<p><strong>6.3       Build the WinPE Boot Media</strong></p>
+<p>Once everything is completed, you can update the deployment share.  This will generate (or regenerate) the PXE boot images including loading the relevant drivers to allow the Windows PE environment to talk to the network to enable the deployment.</p>
+<ol>
+	<li>From the Deployment Workbench, right-click  the customer Deployment Share and select <b><i>Update Deployment Share</i></b></li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-6-of-11/attachment/19/" rel="attachment wp-att-91"><img class="alignnone size-full wp-image-91" alt="19" src="http://msadministrator.files.wordpress.com/2012/12/19.png" width="519" height="335" /></a></li>
+</ol>
+<ol>
+	<li>Select <b><i>Optimize the boot image updating process</i></b></li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-6-of-11/attachment/20/" rel="attachment wp-att-92"><img class="alignnone size-full wp-image-92" alt="20" src="http://msadministrator.files.wordpress.com/2012/12/20.png" width="519" height="426" /></a></li>
+</ol>
+<ol>
+	<li>Click <b><i>Next</i></b>.</li>
+</ol>
+<p align="left"></p>
+<div>
+<p align="left"><b>NOTE:</b>                       This process may take in excess of 30 minutes!  Be patient!</p>
+</div>
+<p align="left"></p>
+<ol>
+	<li>Click <b><i>Finish</i></b></li>
+</ol>
+We can now capture our reference Windows 7 image.  I am assuming that this has already been created on a reference PC (or VM).
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/how-to/">How-To (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

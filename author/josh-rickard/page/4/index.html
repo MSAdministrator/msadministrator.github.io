@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               Josh Rickard &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Josh Rickard">
+    <meta itemprop="description" content="Josh Rickard - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="https://letsautomate.it/author/josh-rickard/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Josh Rickard">
+  <meta property="og:description" content="Lets Automate It">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
+
+    
+
+
+    
+    <link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
+    <link href="https://letsautomate.it/author/josh-rickard/index.xml" rel="feed" type="application/rss+xml" title="Lets Automate It" />
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/author/josh-rickard/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-ignore="all">
+        
+    
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/">
+            Swimlane Open Sources graphish to Help SecOps Teams
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2019-06-19</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>While having a conversation on <a href="https://twitter.com/MSAdministrator/status/1140380695430410240?s=20">Twitter</a> about Microsoft Graph API I was convinced that the traditional Exchange eDiscovery features were not available in the Microsoft Graph API. Boy was I wrong.</p>
+<p>After stumbling across a few endpoints I had not seen previously, I decided to write a python package called <a href="https://github.com/swimlane/graphish">graphish</a>. <a href="https://github.com/swimlane/graphish">graphish</a> is an open-source python package Swimlane is open-sourcing that will enable IT, security operations (SecOps), developers and others to search and delete email messages from mailboxes using the Microsoft Graph API.</p>
+
+        
+            <a href="https://letsautomate.it/article/swimlane-open-sources-graphish-to-help-secops-teams/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/exchange/">Exchange</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/o365/">O365</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/python/">Python</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/graph/">Graph</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/tool/">Tool</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/">
+            Hey InfoSec, What Are You Doing to Protect Your DevOps Teams
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2019-06-14</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>DevOps, serverless applications and containers are just a few of the latest advancements in a developer&rsquo;s toolbox. For development teams, this means that the time to market (TTM) is faster—especially for Agile teams. So, how and what are security operations teams doing to ensure that security is keeping pace with this rapid development? Most are attempting to incorporate a security engineer within their development teams—which is a great first step—but there are multiple layers that you need to ensure you are protecting your organization beyond your source-code.</p>
+
+        
+            <a href="https://letsautomate.it/article/hey-infosec-what-are-you-doing-to-protect-your-devops-teams/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/devops/">Devops</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/">
+            Swimlane Research Team Open Sources py-ews
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2019-05-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>Phishing impacts every organization, and security operations (SecOps) teams need to act quickly to remediate and prevent unknown threats within their email infrastructure. To help combat these threats, the Swimlane research team has open sourced <a href="https://py-ews.readthedocs.io/en/latest/">py-ews</a> to enable security and IT teams to interact with Microsoft Exchange Web Services (EWS) using Python.</p>
+<h1 id="why-py-ews">Why py-ews?</h1>
+<p>Organizations continue to battle against malicious phishing emails in their email environments, but security and IT teams have limited visibility into what currently resides in their users&rsquo; mailboxes. <a href="https://py-ews.readthedocs.io/en/latest/">py-ews</a> was written to give control back to your security and IT teams so they can remediate threats faster.</p>
+
+        
+            <a href="https://letsautomate.it/article/swimlane-research-team-open-sources-py-ews/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/exchange/">Exchange</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/python/">Python</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/ews/">Ews</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/tool/">Tool</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/automate-employee-off-boarding-process-with-swimlane/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/automate-employee-off-boarding-process-with-swimlane/">
+            Automate Employee Off Boarding Process With Swimlane
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2019-05-08</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>As more organizations discontinue internal services and begin adopting an increasing number of third-party *aaS-based services, ensuring the appropriate access is revoked in a timely manner is critical. By using our new employee off-boarding use case, you can automatically gather historical data, add a user to a monitoring watch list, and finally remove access when it is time to off-board an employee.</p>
+<p>The employee off-boarding use case contains two distinct applications to assist an organization with managing their employee off-boarding process. The first is the employee application, which contains all relevant information about the employee as well as references to the second application: assets. The assets application contains individual assets to which the employee has access. These assets can be applications, services or hardware.</p>
+
+        
+            <a href="https://letsautomate.it/article/automate-employee-off-boarding-process-with-swimlane/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/off-boarding/">Off-Boarding</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/employee/">Employee</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/microsoft-oauth2-part3-using-microsoft-graph-api/">
+            Microsoft OAuth2 Part3: Using Microsoft Graph API
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2019-05-08</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>In this third and final part of the &ldquo;Understanding Microsoft’s OAuth2 Implementation&rdquo; series, we will be using the application that we have previously created to authenticate to the Microsoft Graph API.</p>
+<p>If you have not done so, please read <a href="https://swimlane.com/blog/microsoft-oauth2-implementation-1">Part 1</a> and <a href="https://swimlane.com/blog/microsoft-oauth2-implementation-2">Part 2</a> before continuing.</p>
+<p>Now, let’s start using the Microsoft Graph API using PowerShell Core!</p>
+<p><a href="https://swimlane.com/blog/microsoft-oauth2-implementation-3/">Read More</a></p>
+
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/oauth2/">Oauth2</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/microsoft/">Microsoft</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/microsoft-oauth2-part2-registering-an-app/">
+            Microsoft OAuth2 Part2: Registering an App
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2019-04-18</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>In my <a href="https://swimlane.com/blog/microsoft-oauth2-implementation-1">last post</a>, I explained the different API endpoints available for authentication using Microsoft’s OAuth2. Additionally, I shared the different types of applications and their authentication flows.</p>
+<p>In Part 2, I will discuss how to create and register a new application with a deeper understanding of the permissions needed when interacting with the Microsoft Graph API.</p>
+<p><a href="https://swimlane.com/blog/microsoft-oauth2-implementation-2/">Read More</a></p>
+
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/oauth2/">Oauth2</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/microsoft/">Microsoft</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/">
+            Swimlane Runner Up in Microsoft Graph Security Hackathon
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2019-04-02</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>Within a few weeks of starting at Swimlane, our CEO Cody Cornell mentioned the Microsoft Graph Security Hackathon — put on by the Microsoft Graph Security team and DevPost. After assembling a team and a lot of hard work, we were notified yesterday that our submission earned runner up!</p>
+<p>We were extremely excited to participate in this unique event as we were about to begin our development of our Microsoft Graph Security API bundle, and this would be the perfect opportunity for us to showcase the power of Swimlane.</p>
+
+        
+            <a href="https://letsautomate.it/article/swimlane-runner-up-in-microsoft-graph-security-hackathon/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/graph/">Graph</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/security/">Security</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/hackathon/">Hackathon</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/microsoft/">Microsoft</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+
+    
+    <div class="paginator">
+        
+            <a href="/author/josh-rickard/page/5/" class="older"><i class="fa fa-angle-double-left"></i> Older posts</a>
+        
+
+        
+            <a href="/author/josh-rickard/page/3/" class="newer">Newer posts <i class="fa fa-angle-double-right"></i></a>
+        
+    </div>
+
+
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/how-to/">How-To (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            -
+            <a href="https://letsautomate.it/author/josh-rickard/index.xml">rss</a>
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

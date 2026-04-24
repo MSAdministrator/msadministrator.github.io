@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               Powershell Qualys Get Asset Group Info Part 2 &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Powershell Qualys Get Asset Group Info Part 2">
+    <meta itemprop="description" content="Powershell Qualys Get Asset Group Info Part 2 - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="https://letsautomate.it/article/powershell-qualys-get-asset-group-info-part-2/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Powershell Qualys Get Asset Group Info Part 2">
+  <meta property="og:description" content="Today I decided to write another post regarding PowerShell and Qualys Vulnerability Management API. This post will focus on gathering information about your enrolled Asset Groups. You can find the complete script on GitHub: https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation
+We start of by opening up PowerShell ISE and using our handy “Snippet” shortcut:
+We select the “Cmdlet (Advanced function) - complete” option in the “Snippet” context menu. Once we have our advanced function template, we then proceed by entering a name for our Qualys Asset Group function.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="article">
+    <meta property="article:published_time" content="2018-08-07T20:44:33-04:00">
+    <meta property="article:modified_time" content="2018-08-07T20:44:33-04:00">
+    <meta property="article:tag" content="Archive">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/article/powershell-qualys-get-asset-group-info-part-2/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://letsautomate.it/article/powershell-qualys-get-asset-group-info-part-2/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/powershell-qualys-get-asset-group-info-part-2/">
+            Powershell Qualys Get Asset Group Info Part 2
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>Today I decided to write another post regarding PowerShell and Qualys Vulnerability Management API.  This post will focus on gathering information about your enrolled Asset Groups.   You can find the complete script on GitHub: <a href="https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation" target="_blank"><a href="https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation">https://github.com/MSAdministrator/POSH-Guard/blob/master/Get-QualysAssetGroupInformation</a></a></p>
+<p>We start of by opening up PowerShell ISE and using our handy &ldquo;Snippet&rdquo; shortcut:</p>
+<p><a href="http://msadministrator.com/2016/02/03/powershell-qualys-get-asset-group-info-part-2/powershell_ise_ctrl__j/" rel="attachment wp-att-318"><img class="alignnone size-full wp-image-318" src="https://msadministrator.files.wordpress.com/2016/02/powershell_ise_ctrl__j.png" alt="PowerShell_ISE_CTRL_+_J" width="519" height="618" /></a></p>
+<p>We select the &ldquo;Cmdlet (Advanced function) - complete&rdquo; option in the &ldquo;Snippet&rdquo; context menu.  Once we have our advanced function template, we then proceed by entering a name for our Qualys Asset Group function.</p>
+<p>Since we will be gathering some additional information about our Asset Groups, I am going to name my function: [code
+]</p>
+<p>function Get-QualysAssetGroupInformation</p>
+<p>[/code
+]</p>
+<p>Next, we will start by filling out our &ldquo;Help&rdquo; info.  At this point, a lot of people skip this step; I HIGHLY recommend that you do not.  It will help you and anyone else viewing your code, understand what your intention was when writing this function.</p>
+<p>Next, we start by looking at our advanced functions template within the body of this function.  The first thing you will see is some default parameters for [CmdletBinding
+].  With my function, I&rsquo;m going to weed these parameters down a bit, as they are not really needed.  Your function should look something like this when complete: [code
+]
+function Get-QualysAssetGroupInformation
+{
+[CmdletBinding(SupportsShouldProcess=$true,
+HelpUri = &lsquo;https: //raw.githubusercontent.com/MSAdministrator/POSH-Guard/master/Get-QualysAssetGroupInformation&rsquo;,
+ConfirmImpact=&lsquo;Medium&rsquo;)
+]
+[Alias()
+]
+Param
+(
+# Param1 help description
+[parameter(Mandatory=$true,
+ValueFromPipeline=$true,
+ValueFromPipelineByPropertyName=$true,
+HelpMessage=&quot;Please provide a credential obejct&quot;)
+]
+[ValidateNotNullOrEmpty()
+]
+[System.Management.Automation.CredentialAttribute()
+]$credential
+)</p>
+<pre><code>Begin
+{}
+Process
+{}
+End
+{}
+                }
+</code></pre>
+<p>[/code
+]</p>
+<p>After we have the base of this function setup and ready to go, we will start off by adding some code into our Begin block.  Remember, the Begin block will always run once for every call to the function.</p>
+<p>[code
+]
+$results = @()
+$assetGroupInfo = @()
+[xml
+]$assetGroupInfo = Invoke-RestMethod -Uri &quot;https: //qualysapi.qualys.com/msp/asset_group_list.php&quot; -Credential $credential [/code
+]</p>
+<p>Here I am setting my $assetGroupInfo and a $results variable as empty array&rsquo;s/hash-table&rsquo;s. Next, I&rsquo;m casting my $assetGroupInfo variable as an XML object. This ensures that we receive XML from Invoke-RestMethod Cmdlet.</p>
+<p>If we want to make sure that any errors are caught, we should add a Try/Catch block to our Invoke-RestMethod call. Your code should look like this: [code
+]
+Begin
+{
+$results = @()
+$assetGroupInfo = @()</p>
+<pre><code>    Try
+    {
+                        [xml
+                        ]$assetGroupInfo = Invoke-RestMethod -Uri &amp;quot;https: //qualysapi.qualys.com/msp/asset_group_list.php&amp;quot; -Credential $credential
+                    }
+    Catch
+    {
+        Write-Debug &amp;quot;Error using Invoke-RestMethod: $_&amp;quot;
+                    }
+                }
+</code></pre>
+<p>[/code
+]</p>
+<p>Now we move to the Process block. This is where we will be parsing our data into our objects. As I mentioned above, we are wanting to gather all our Asset Groups Titles, their assigned IP Addresses, their role, and the users login ID. To do this, we must loop through each item, or branch returned by our query above. Each $item can be considered as an Asset Group. Additionally, we need to loop through each of the users assigned to that Asset Group.</p>
+<p>Once we have that data, we want to create a Custom PSObject to hold all of this data. Your code should look like this: [code
+]
+Process
+{
+foreach ($item in $assetGroupInfo.SelectNodes(&quot;/ASSET_GROUP_LIST/ASSET_GROUP&quot;))
+{
+for ($u=0; $u -lt $($item.ASSIGNED_USERS.ASSIGNED_USER.LOGIN).count;$u++)
+{
+$tempAssetGroupInfo = @()</p>
+<pre><code>                            $props = @{
+			userlogin=$($item.ASSIGNED_USERS.ASSIGNED_USER[$u
+                                ].LOGIN.InnerText)
+			userrole=$($item.ASSIGNED_USERS.ASSIGNED_USER[$u
+                                ].ROLE.InnerText)
+                                       assetgrouptitle=$($item.TITLE.InnerText)
+                                       ip=$($item.SCANIPS.IP)
+                            }
+	
+		$tempAssetGroupInfo = New-Object PSObject -Property $props
+	        
+                            $results += $tempAssetGroupInfo
+                        }
+                    }
+                }
+</code></pre>
+<p>[/code
+]</p>
+<p>Now, we can either simply put the following line in our End block: [code
+]
+return $results
+[/code
+]</p>
+<p>But, I actually like it to be saved into an XML file. This means that I can use this data with other functions without having to call Qualys again. To be quite frank, as you may know, Qualys is not the fastest website/service out there. Don&rsquo;t get me wrong, the scanning engines are fast, but their database(s) - not so much.</p>
+<p>To return both the object and export the results to an XML, we can just add this one line of code: [code
+]
+Export-Clixml -Path &quot;$env:USERPROFILE\Desktop\QualysData\assetgroupinfo.xml&quot; -InputObject $results
+[/code
+]</p>
+<p>That&rsquo;s it. We now have a function that can return some details about our Asset Groups within Qualys. Next time, I will focus on creating a function that gathers our enrolled IP Addresses, split&rsquo;s them into a single list.</p>
+<p>Hint: Qualys loves IP ranges (192.168.0.1-192.168.0.123) and their API calls return it the same way. :)</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/how-to/">How-To (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

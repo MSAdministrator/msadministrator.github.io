@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/docker/</link>
+    <description>Recent content in Docker on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Nov 2020 11:57:08 -0600</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swimlane Releases Elk Tls Docker</title>
+      <link>https://letsautomate.it/article/swimlane-releases-elk-tls-docker/</link>
+      <pubDate>Tue, 24 Nov 2020 11:57:08 -0600</pubDate>
+      <guid>https://letsautomate.it/article/swimlane-releases-elk-tls-docker/</guid>
+      <description>&lt;p&gt;At Swimlane, we love to automate but we also love building and sharing open-source software (OSS) to help security teams. We are proud to announce that we have released a new open-source project called elk-tls-docker to make it easier for you to test and deploy Elastic Stack by automating the creation of several Elastic open-source software solutions.&lt;/p&gt;&#xA;&lt;p&gt;Elk-tls-docker assists with setting up aand creating an Elastic Stack using either self-signed certificates or using Let’s Encrypt certificates (using SWAG). This project was built so that you can test and use built-in features under Elastic Security, like detections, signals, cases, Elastic Endpoint and other features.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

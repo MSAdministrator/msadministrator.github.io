@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               About &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="About">
+    <meta itemprop="description" content="About - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="https://letsautomate.it/page/about/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="About">
+  <meta property="og:description" content="My name is Josh Rickard and I am a creator and automator of things. I’m an experienced IT &amp; DFIR (Digital Forensics &amp; Incident Response) professional that loves to automate and release open-source tools to help the Information Security community.
+Experience Senior Detection Validation Engineer Red Canary / Colorado / October 2022 to January 2023 Due to a reduction in force my position was let go. I was part of Red Canary’s Detection Enablement division focusing on proving detection capabilities at scale.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="page">
+    <meta property="article:published_time" content="2023-01-30T12:51:23-04:00">
+    <meta property="article:modified_time" content="2023-01-30T12:51:23-04:00">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/page/about/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://letsautomate.it/page/about/">
+    <i class="fas fa-fw fa-file"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/page/about/">
+            About
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2023-01-30</span>
+            
+        
+
+        
+
+        
+
+        
+    </div>
+
+    
+        
+
+        <div style="float: left;"><a href="https://github.com/MSAdministrator" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a></div>
+<div style="float: left;"><a href="https://twitter.com/MSAdministrator" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a></div>
+<div style="float: left;"><a href="https://www.linkedin.com/in/josh-rickard" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a></div>
+<div style="float: left;"><a href="https://letsautomate.it" target="_blank"><img alt="LetsAutomateIt" src="https://img.shields.io/badge/blog-%2312100E.svg?&style=for-the-badge&logo=blog&logoColor=white" /></a></div>
+<br><br>
+<p>My name is Josh Rickard and I am a creator and automator of things. I&rsquo;m an experienced IT &amp; DFIR (Digital Forensics &amp; Incident Response) professional that loves to automate and release open-source tools to help the Information Security community.</p>
+<div style="float: left;"><img alt="Linux" src="https://img.shields.io/badge/-Linux-45b8d8?style=flat-square&logo=linux&logoColor=white" /></div>
+<div style="float: left;"><img alt="macOS" src="https://img.shields.io/badge/-macOS-8DD6F9?style=flat-square&logo=macOS&logoColor=white" /></div>
+<div style="float: left;"><img alt="Docker" src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" /></div>
+<div style="float: left;"><img alt="Windows" src="https://img.shields.io/badge/-Windows-2088FF?style=flat-square&logo=windows&logoColor=white" /></div>
+<div style="float: left;"><img alt="Python" src="https://img.shields.io/badge/-Python-1a73e8?style=flat-square&logo=python&logoColor=white" /></div>
+<div style="float: left;"><img alt="PowerShell" src="https://img.shields.io/badge/-PowerShell-007ACC?style=flat-square&logo=powershell&logoColor=white" /></div>
+<div style="float: left;"><img alt="Bash" src="https://img.shields.io/badge/-Bash-5849BE?style=flat-square&logo=shell&logoColor=white" /></div>
+<div style="float: left;"><img alt="github actions" src="https://img.shields.io/badge/-Github_Actions-311C87?style=flat-square&logo=github-actions&logoColor=white" /></div>
+<div style="float: left;"><img alt="git" src="https://img.shields.io/badge/-Git-430098?style=flat-square&logo=git&logoColor=white" /></div>
+<div style="float: left;"><img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-764ABC?style=flat-square&logo=mongodb&logoColor=white" /></div>
+<div style="float: left;"><img alt="Digital Ocean" src="https://img.shields.io/badge/-Digital Ocean-B7178C?style=flat-square&logo=digitalocean&logoColor=white" /></div>
+<div style="float: left;"><img alt="AWS" src="https://img.shields.io/badge/-AWS-E10098?style=flat-square&logo=aws&logoColor=white" /></div>
+<div style="float: left;"><img alt="Azure" src="https://img.shields.io/badge/-Azure-CC6699?style=flat-square&logo=azure&logoColor=white" /></div>
+<br><br>
+<h2 id="experience">Experience</h2>
+<h3 id="senior-detection-validation-engineer">Senior Detection Validation Engineer</h3>
+<h4 id="red-canary--colorado--october-2022-to-january-2023">Red Canary / Colorado / October 2022 to January 2023</h4>
+<p>Due to a reduction in force my position was let go. I was part of Red Canary’s Detection Enablement division focusing on proving detection capabilities at scale.</p>
+<ul>
+<li>Assisted with development of a rails web application to streamline testing of attacker techniques and tools.</li>
+<li>Assisted with development of infrastructure using terraform and ansible to build, deploy and execute several attack testing frameworks across multiple operating systems, EDR products and more</li>
+</ul>
+<h3 id="senior-security-solutions-architect">Senior Security Solutions Architect</h3>
+<h4 id="swimlane--colorado--dec-2018-to-october-2022">Swimlane / Colorado / Dec 2018 to October 2022</h4>
+<p>I am part of the Swimlane research team which focuses on innovative security automation, building content and giving back to the security community.</p>
+<ul>
+<li>Automated complex and unique processes used by some of the largest private, public and governmental organizations in the world</li>
+<li>Implemented integrations with many critical security operations products</li>
+<li>Released many open-source tools like pyattck, atomic-operator, soc-faker and more</li>
+<li>Contributed by writing several blogs, presenting on webinars and at conferences</li>
+<li>Ideation to implementation for several internal tools and frameworks, including content migration and generation</li>
+</ul>
+<h3 id="manager-reporter-solutions-engineering">Manager, Reporter Solutions Engineering</h3>
+<h4 id="cofense--virginia--dec-2015-to-nov-2018">Cofense / Virginia / Dec 2015 to Nov 2018</h4>
+<p>Managed, designed and implemented features for all Cofense Reporter products which grew the product from 2 million to 15 million installs globally.</p>
+<ul>
+<li>Designed and managed day-to-day operations of new innovative products utilizing internal and external developers, from conception to market release</li>
+<li>Introduced automation tools for generation, verification and support of Cofense Reporter products, reducing support costs and reducing development time by 300%</li>
+<li>Technical Product Owner for 3 scrum teams (9 engineers &amp; 6 quality assurance engineers)</li>
+</ul>
+<h3 id="security-analyst---specialist">Security Analyst - Specialist</h3>
+<h4 id="university-of-missouri--may-2012-to-dec-2015">University of Missouri / May 2012 to Dec 2015</h4>
+<p>I held several roles but I was a security analyst part of the university&rsquo;s digital forensics &amp; incident response team. I was also an IT systems analysts and a system administrator during my time at the University.
+Some focus areas in which I was worked on during my time are:</p>
+<ul>
+<li>Managed Vulnerability Management enterprise wide</li>
+<li>Managed A/V for thousands of endpoints</li>
+<li>Secure Group Policy creation and application across the enterprise</li>
+<li>Operating system deployment automation services</li>
+<li>Tool developer, including some open-source software</li>
+<li>Managed servers across multiple departments</li>
+<li>And more!</li>
+</ul>
+<h2 id="open-source-projects">Open-Source Projects</h2>
+<p>You can see a full list of all my open-source projects on my <a href="https://github.com/msadministrator">GitHub</a>. Here are a few highlights.</p>
+<ul>
+<li><a href="https://github.com/swimlane/pyattck">pyattck</a> - A Python Package to interact with the Mitre ATT&amp;CK Framework</li>
+<li><a href="https://github.com/swimlane/atomic-operator">atomic-operator</a> - A Python package is used to execute Atomic Red Team tests (Atomics) across multiple operating system environments</li>
+<li><a href="https://github.com/swimlane/soc-faker">soc-faker</a> - A python package for use in generating fake data for SOC and security automation</li>
+</ul>
+<h3 id="x270d-blog--writing">✍ Blog &amp; Writing</h3>
+<p>I have written for many websites, but you can find most of my writing on my blog at <a href="https://letsautomate.it">letsautomate.it</a>. You can find additional links to blogs, articles and more in which I was interviewed for, wrote myself, or was mentioned in <a href="https://letsautomate.it/page/press/">here</a></p>
+<h2 id="recognitions">Recognitions</h2>
+<ul>
+<li>Past President &amp; Board Member of the Central Missouri InfraGard chapter (January 2015 - December 2018)</li>
+<li>SC Media (SC Magazine) Reboot Leadership Awards awarded me in the <a href="https://www.scmagazine.com/home/events/reboot-leadership-awards-2019/josh-rickard-swimlane/">Influencers</a> category in 2019.</li>
+<li>An official maintainer of the <a href="https://atomicredteam.io/maintainers/">Atomic Red Team</a> project (January 2023)</li>
+</ul>
+<h2 id="past-presentations">Past Presentations</h2>
+<p>You can view my past presentations and some recordings <a href="https://letsautomate.it/page/presentations/">here</a>.</p>
+
+    
+</div>
+
+
+    
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/how-to/">How-To (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

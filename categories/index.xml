@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Lets Automate It</title>
+    <link>https://letsautomate.it/categories/</link>
+    <description>Recent content in Categories on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Apr 2026 23:08:02 -0400</lastBuildDate>
+    <atom:link href="https://letsautomate.it/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Llm</title>
+      <link>https://letsautomate.it/categories/llm/</link>
+      <pubDate>Mon, 13 Apr 2026 23:08:02 -0400</pubDate>
+      <guid>https://letsautomate.it/categories/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>https://letsautomate.it/categories/security/</link>
+      <pubDate>Fri, 10 Mar 2023 12:00:00 -0600</pubDate>
+      <guid>https://letsautomate.it/categories/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://letsautomate.it/categories/python/</link>
+      <pubDate>Thu, 14 Jul 2022 12:45:00 -0400</pubDate>
+      <guid>https://letsautomate.it/categories/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dfir</title>
+      <link>https://letsautomate.it/categories/dfir/</link>
+      <pubDate>Tue, 21 Jun 2022 12:45:00 -0400</pubDate>
+      <guid>https://letsautomate.it/categories/dfir/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redcanary</title>
+      <link>https://letsautomate.it/categories/redcanary/</link>
+      <pubDate>Tue, 28 Dec 2021 12:00:36 -0600</pubDate>
+      <guid>https://letsautomate.it/categories/redcanary/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Swimlane</title>
+      <link>https://letsautomate.it/categories/swimlane/</link>
+      <pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
+      <guid>https://letsautomate.it/categories/swimlane/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Powershell</title>
+      <link>https://letsautomate.it/categories/powershell/</link>
+      <pubDate>Tue, 04 Sep 2018 21:20:15 -0400</pubDate>
+      <guid>https://letsautomate.it/categories/powershell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How-To</title>
+      <link>https://letsautomate.it/categories/how-to/</link>
+      <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
+      <guid>https://letsautomate.it/categories/how-to/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>https://letsautomate.it/categories/automation/</link>
+      <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
+      <guid>https://letsautomate.it/categories/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure</title>
+      <link>https://letsautomate.it/categories/azure/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      <guid>https://letsautomate.it/categories/azure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Slack</title>
+      <link>https://letsautomate.it/categories/slack/</link>
+      <pubDate>Fri, 10 Aug 2018 22:28:08 -0400</pubDate>
+      <guid>https://letsautomate.it/categories/slack/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

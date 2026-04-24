@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.154.5">
+    <title>
+        
+           
+               Python vs Powershell Part 1: Versioning &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Python vs Powershell Part 1: Versioning">
+    <meta itemprop="description" content="Python vs Powershell Part 1: Versioning - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="https://letsautomate.it/article/python-vs-powershell-part-1-versioning/">
+  <meta property="og:site_name" content="Lets Automate It">
+  <meta property="og:title" content="Python vs Powershell Part 1: Versioning">
+  <meta property="og:description" content="I posted a tweet earlier this week asking if anyone would be interested in a small series of posts that explain the differences between Python and PowerShell.
+So, here we go!
+Python on macOS Python and PowerShell are quite a bit different from each other. Python has been around for several years and works on multiple operating systems. Additionally, Python is beloved by it’s extremely supportive open-source community; rightfully so! Python is fast and portable, and is a go to for most developers.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="article">
+    <meta property="article:published_time" content="2018-09-04T21:20:15-04:00">
+    <meta property="article:modified_time" content="2018-09-04T21:20:15-04:00">
+    <meta property="article:tag" content="Pip">
+    <meta property="article:tag" content="Install-Module">
+    <meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/article/python-vs-powershell-part-1-versioning/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.1a0d93231783f7c871f51c8185c240a64349d5f96d0f57fa72a93481e6ae8d8a.css" integrity="sha256-Gg2TIxeD98hx9RyBhcJApkNJ1fltD1f6cqk0geaujYo=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://letsautomate.it/article/python-vs-powershell-part-1-versioning/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/python-vs-powershell-part-1-versioning/">
+            Python vs Powershell Part 1: Versioning
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-09-04</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/python/">Python</a>
+                    
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/powershell/">Powershell</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>I posted a tweet earlier this week asking if anyone would be interested in a small series of posts that explain the differences between Python and PowerShell.</p>
+<img src="python-vs-powershell-twitter-post.png" style="max-width:100%;" alt="python-vs-powershell-twitter-post">
+<p>So, here we go!</p>
+<h2 id="python-on-macos">Python on macOS</h2>
+<p>Python and PowerShell are quite a bit different from each other.  Python has been around for several years and works on multiple operating systems.  Additionally, Python is beloved by it&rsquo;s extremely supportive open-source community; rightfully so!  Python is fast and portable, and is a go to for most developers.</p>
+<p>At the time of writing this post, there are two distinct release branches.  These are Python 2.x and 3.x.  <strong>This entire blog series will focus only on Python 3.x.</strong>  The current version of [Python is 3.7.0 for macOS(https://www.python.org/downloads/)], but luckily if you have a modern OS X system Python is already installed by Apple.  Even though it is installed by default on Mac OS X, we should make sure that we have the latest version installed.</p>
+<p>The first step if you are on a Mac OS X system is to open up your Terminal app and run the following command.</p>
+<p>Please note, that if you are on a Windows system then you will need to download Python 3.x from <a href="https://www.python.org/downloads/windows/">here</a>. Additionally, <a href="https://www.howtogeek.com/197947/how-to-install-python-on-windows/">here is a great article that walks through installing Python on Windows</a>.  Once you have installed Python then these commands should work the same whether on Mac OS X or Windows.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Try both python and python3 if you have two seperate branches of Python installed</span>
+</span></span><span style="display:flex;"><span>python <span style="color:#f92672">-</span>V
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>python3 <span style="color:#f92672">-</span>V
+</span></span></code></pre></div><p>This will output the current version of Python installed on your system.  If it is not Python 3.x, then you will need to install it using your choice of package manager or straight from the <a href="https://python.org">https://pythong.org</a> website.</p>
+<p>If you use <code>brew</code> as your package manager, then you can simply install <code>python3</code> by calling:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install python3
+</span></span></code></pre></div><p>While we have our Terminal app open, let&rsquo;s also check to make sure that we have the latest version of <code>pip</code> installed.  <a href="https://pip.readthedocs.io/en/stable/installing/">Pip</a> is Python&rsquo;s package manager.  This is how Python installs additional libraries or <code>requirements</code> needed to work with a library or package.  Let&rsquo;s check to make sure that we have pip installed and it is running.</p>
+<p>Please note, that if you are installing Python on Windows then <code>pip</code> is installed by default.  Either way, it is still good to check which pip commands works for your system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># The same with Python, you can have two versions of pip intalled</span>
+</span></span><span style="display:flex;"><span>pip <span style="color:#f92672">-</span>V
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>pip3 <span style="color:#f92672">-</span>V
+</span></span></code></pre></div><h2 id="powershell-on-windows">PowerShell on Windows</h2>
+<p>PowerShell is natively installed on Windows machines since Windows 7 (give or take).  As new features are released by the PowerShell Team, you can upgrade your version of PowerShell as well.  But, this has potential drawbacks as PowerShell has different version functionality depending on your operating system.  For example, PowerShell 5.0 is more full featured on a Windows 10 operating system than it is on a Windows 7 operating system.  Most of the features are present, but there are differences.</p>
+<p>You can upgrade PowerShell on any Windows 7 or higher system, but to do this you will need to install a new version of the Windows Management Framework (WMF) (sometimes multiple versions) to upgrade.  Before we do that, you can find out the specific version you are on by opening up a PowerShell console and running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$PSVersionTable
+</span></span></code></pre></div><p>This should output your version of PowerShell.  If you are on a brand-new Windows 7 machine, then you will be on PowerShell 2.  To upgrade you will need to first install WMF 3.0, then you can install WMF 5.0 (skipping WMF 4.0).</p>
+<p>I have compiled a json file that has all the download links for all the versions of WMF that you can install:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&#34;WMF3&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Win7&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;x86&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/E/7/6/E76850B8-DA6E-4FF5-8CCE-A24FC513FD16/Windows6.1-KB2506143-x86.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;x64&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/E/7/6/E76850B8-DA6E-4FF5-8CCE-A24FC513FD16/Windows6.1-KB2506143-x64.msu&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>   },
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&#34;DotNet4&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/1/B/E/1BE39E79-7E39-46A3-96FF-047F95396215/dotNetFx40_Full_setup.exe&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&#34;WMF4&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Win7&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;x64&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x64-MultiPkg.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;x86&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x86-MultiPkg.msu&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Server2012&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows8-RT-KB2799888-x64.msu&#34;</span>
+</span></span><span style="display:flex;"><span>   },
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&#34;WMF5&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Server2008R2&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win7AndW2K8R2-KB3134760-x64.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Server2012&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/W2K12-KB3134759-x64.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Server2012R2&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win8.1AndW2K12R2-KB3134758-x64.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Win7&#34;</span>: {
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&#34;x64&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win7AndW2K8R2-KB3134760-x64.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&#34;x86&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win7-KB3134760-x86.msu&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Win81&#34;</span>: {
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&#34;x64&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win8.1AndW2K12R2-KB3134758-x64.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&#34;x86&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win8.1-KB3134758-x86.msu&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>   },
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&#34;WMF51&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Server2012&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/W2K12-KB3191565-x64.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Server2012R2&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/Win8.1AndW2K12R2-KB3191564-x64.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Win81&#34;</span>: {
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&#34;x64&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/Win8.1AndW2K12R2-KB3191564-x64.msu&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&#34;x86&#34;</span>: <span style="color:#e6db74">&#34;https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/Win8.1-KB3191564-x86.msu&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Once you have installed or upgraded to atleast PowerShell 5.0, then you can again check to ensure that your <code>$PSVersionTable</code> environmental variable states 5 or higher.</p>
+<h2 id="powershell-core-on-macos">PowerShell Core on macOS</h2>
+<p>Since the release of PowerShell Core, you can have the power of PowerShell on your macOS (or linux) systems.  To install PowerShell Core on a macOS system, you can use <code>brew</code> to install PowerShell Core:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># first make sure that brew is updated</span>
+</span></span><span style="display:flex;"><span>brew tap
+</span></span><span style="display:flex;"><span>brew update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># next install PowerShell Core</span>
+</span></span><span style="display:flex;"><span>brew cask install powershell
+</span></span></code></pre></div><p>Once PowerShell Core is installed, you would typically think that you would access it by running <code>powershell</code> in our terminal, but it is actually <code>pwsh</code> in PowerShell Core.</p>
+<p>Microsoft decided to change the name of the PowerShell CLI application to <code>pwsh</code> over the traditional <code>powershell.exe</code> for cross platform compatibility (among other reasons).  To see if PowerShell Core is working correctly, you should open your terminal application and launch powershell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># run PowerShell Core as normal user</span>
+</span></span><span style="display:flex;"><span>pwsh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># run PowerShell Core as a sudo user</span>
+</span></span><span style="display:flex;"><span>sudo pwsh
+</span></span></code></pre></div><p>Once you are in a PowerShell session you can identify the version of your current PowerShell Core install by using the same environmental variable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$PSVersionTable
+</span></span></code></pre></div><pre tabindex="0"><code class="language-output" data-lang="output">Name                       Value                                  
+----                       -----                               
+PSVersion                  6.0.2                              
+PSEdition                  Core                            
+GitCommitId                v6.0.2                         
+OS                         Darwin 17.7.0 Darwin Kernel Version
+Platform                   Unix                                       
+PSCompatibleVersions       {1.0, 2.0, 3.0, 4.0...}                    
+PSRemotingProtocolVersion  2.3                                        
+SerializationVersion       1.1.0.1                                    
+WSManStackVersion          3.0                                        
+</code></pre><p>If a new version of PowerShell Core is released, you can use brew to upgrade your current version of PowerShell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew update
+</span></span><span style="display:flex;"><span>brew cask upgrade powershell
+</span></span></code></pre></div><p>If you do not have or use <code>brew</code> you can also install PowerShell Core directly from the PowerShell GitHub repository.  These are located on the <a href="https://github.com/PowerShell/PowerShell/releases/latest">Releases</a> page.</p>
+<p>You download the version of PowerShell Core you want, but please make sure that you download the <code>pkg</code> of the selected version of PowerShell Core.</p>
+<p>You can double click the <code>pkg</code> and follow the on-screen instructions or you can run the following via terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo installer -pkg powershell-6.0.2-osx.10.12-x64.pkg -target /
+</span></span></code></pre></div><p>That&rsquo;s it!  I hope you enjoyed the first part of this series explaining the differences between <code>PowerShell</code> and <code>Python</code> for beginners.</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/pip/">Pip</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/install-module/">Install-Module</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/dfir/">Dfir (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/how-to/">How-To (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Powershell on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/powershell/</link>
+    <description>Recent content in Powershell on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jul 2019 14:37:17 -0500</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Defender Advanced Threat Detection Queries</title>
+      <link>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</link>
+      <pubDate>Thu, 18 Jul 2019 14:37:17 -0500</pubDate>
+      <guid>https://letsautomate.it/article/microsoft-defender-advanced-threat-detection-queries/</guid>
+      <description>&lt;p&gt;Recently, I &lt;a href=&#34;https://twitter.com/MSAdministrator/status/1145778141127991302?s=20&#34;&gt;shared on Twitter&lt;/a&gt; how you could run a query to detect if a user has clicked on a link within their Outlook using Microsoft Defender Advanced Threat Protection (MDATP). If you are not familiar, MDATP is available within your Microsoft 365 E5 license and is an enhancement to the traditional Windows Defender you might be used to.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-microsoft-defender-advanced-threat-protection&#34;&gt;What is Microsoft Defender Advanced Threat Protection?&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection&#34;&gt;Microsoft&lt;/a&gt; says that “Microsoft Defender Advanced Threat Protection is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.” MDATP offers quite a few endpoints that you can leverage in both incident response and threat hunting.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

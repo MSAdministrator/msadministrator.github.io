@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/github/</link>
+    <description>Recent content in Github on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Aug 2018 16:07:25 -0400</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Setup a Hugo Website on GitHub</title>
+      <link>https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/</link>
+      <pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
+      <guid>https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/</guid>
+      <description>&lt;p&gt;I recently transitioned my blog over to &lt;a href=&#34;https://pages.github.com&#34;&gt;GitHub Pages&lt;/a&gt; from &lt;a href=&#34;https://wordpress.org&#34;&gt;WordPress&lt;/a&gt;.  I was using the free version from WordPress.org and I wanted more granular control over the layout.  Additionally, I wanted to automate my blog publishing and social media notifications; the free version of WordPress didn&amp;rsquo;t meet my needs.  So I looked around and eventually fell in love with &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;!  This post outlines how to go about setting up a GitHub Pages website/blog using Hugo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using Github to Revive Blog Posts</title>
+      <link>https://letsautomate.it/article/using-github-to-revive-blog-posts/</link>
+      <pubDate>Tue, 14 Aug 2018 10:08:33 -0400</pubDate>
+      <guid>https://letsautomate.it/article/using-github-to-revive-blog-posts/</guid>
+      <description>&lt;p&gt;I am currently migrating my blog content from &lt;a href=&#34;https://wordpress.com&#34;&gt;Wordpress.com&lt;/a&gt; to GitHub pages using &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;.  During this transition, I wanted to have the ability to &amp;ldquo;revive&amp;rdquo; my blog posts on a scheduled basis on social media (e.g. Twitter).  With Wordpress, you can use the WordPress &lt;a href=&#34;https://wordpress.org/plugins/tweet-old-post/&#34;&gt;Revive Old Posts&lt;/a&gt; plugin but with WordPress.com you have to have a premium business account to use plugins.&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re in a similar situation of if you want a free way to automate the &amp;ldquo;re-posting&amp;rdquo; of your blog content then you&amp;rsquo;re in luck!  Below I have listed some initial requirements that are needed to use this process.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

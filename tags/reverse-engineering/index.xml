@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reverse-Engineering on Lets Automate It</title>
+    <link>https://letsautomate.it/tags/reverse-engineering/</link>
+    <description>Recent content in Reverse-Engineering on Lets Automate It</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Mar 2019 14:10:25 -0500</lastBuildDate>
+    <atom:link href="https://letsautomate.it/tags/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automated Malware Analysis and Reverse Engineering With Soar</title>
+      <link>https://letsautomate.it/article/automated-malware-analysis-and-reverse-engineering-with-soar/</link>
+      <pubDate>Thu, 14 Mar 2019 14:10:25 -0500</pubDate>
+      <guid>https://letsautomate.it/article/automated-malware-analysis-and-reverse-engineering-with-soar/</guid>
+      <description>&lt;p&gt;We all know that security operations (SecOps) teams are overwhelmed by the extreme number of alerts they receive on a daily basis. Organizations are being attacked from all fronts, whether they know it or not. These attacks vary from social engineering, malicious emails, vulnerable services and applications, misconfiguration (job fatigue), etc.&lt;/p&gt;&#xA;&lt;p&gt;Traditionally in a security operations center (SOC), malware analysis—more specifically reverse engineering—is conducted by a highly trained member of the security team (depending on your size, this may be multiple individuals). A SOC may receive hundreds, even thousands, of alerts about potentially malicious files from users reporting malicious messages to EDR (endpoint detection and response) to workstation/server event logs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
