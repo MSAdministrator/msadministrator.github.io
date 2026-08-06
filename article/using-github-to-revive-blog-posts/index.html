@@ -4,14 +4,14 @@
   
 <html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="siteBaseUrl" content="https://letsautomate.it">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.164.0">
     <title>
         
            
@@ -21,74 +21,190 @@
     </title>
     <meta itemprop="name" content="Using Github to Revive Blog Posts">
     <meta itemprop="description" content="Using Github to Revive Blog Posts - Lets Automate It">
-    <meta property="og:title" content="Using Github to Revive Blog Posts">
-    <meta property="og:description" content="Using Github to Revive Blog Posts - Lets Automate It">
-    <meta property="og:image" content="https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=200">
-    <meta property="og:url" content="https://letsautomate.it/article/using-github-to-revive-blog-posts/">
     <meta property="og:site_name" content="Lets Automate It">
-    <meta property="og:type" content="article">
+
+    <meta property="og:url" content="https://letsautomate.it/article/using-github-to-revive-blog-posts/">
+	<meta property="og:site_name" content="Lets Automate It">
+	<meta property="og:title" content="Using Github to Revive Blog Posts">
+	<meta property="og:description" content="I am currently migrating my blog content from Wordpress.com to GitHub pages using Hugo. During this transition, I wanted to have the ability to “revive” my blog posts on a scheduled basis on social media (e.g. Twitter). With Wordpress, you can use the WordPress Revive Old Posts plugin but with WordPress.com you have to have a premium business account to use plugins.
+If you’re in a similar situation of if you want a free way to automate the “re-posting” of your blog content then you’re in luck! Below I have listed some initial requirements that are needed to use this process.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2018-08-14T10:08:33-04:00">
+		<meta property="article:modified_time" content="2018-08-14T10:08:33-04:00">
+		<meta property="article:tag" content="Github">
+		<meta property="article:tag" content="Writing">
+		<meta property="article:tag" content="Appveyor">
+		<meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
 
     
 
 
-    <script src="/modernizr-simple.js"></script>
-
-    
-    <link href="/article/using-github-to-revive-blog-posts/" rel="alternate" type="application/rss+xml" title="Lets Automate It" />
-    <link href="/article/using-github-to-revive-blog-posts/" rel="feed" type="application/rss+xml" title="Lets Automate It" />
     
 
     
     <link rel="canonical" href="https://letsautomate.it/article/using-github-to-revive-blog-posts/">
     
 
-    <link rel="stylesheet" href="https://letsautomate.it/theme.css">
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.9a5d1e61914a7a0cc8321fa56fd98f6541d72d87aeca1531f0722b986f24b489.css" integrity="sha256-ml0eYZFKegzIMh&#43;lb9mPZUHXLYeuyhUx8HIrmG8ktIk=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
 
     
 
     
-        
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
     
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
 </head>
 
 <body class="bilberry-hugo-theme">
-
     
+
+    <div data-pagefind-ignore>
+        
     <nav>
 
     <div class="container">
         <ul class="topnav">
             
                 
-                    <li><a href="https://letsautomate.it/page/about/">About</a></li>
+                
+                    <li><a href="/page/about/">About</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/press/">Press</a></li>
+                
+                    <li><a href="/page/press/">Press</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/open-source-projects/">Open Source Projects</a></li>
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
                 
             
                 
-                    <li><a href="https://letsautomate.it/page/presentations/">Presentations</a></li>
+                
+                    <li><a href="/page/papers/">Papers</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
                 
             
         </ul>
-
-        
-            <div id="search-box" class="search">
-                <i class="fas fa-search"></i>
-                <input id="search" type="text" placeholder="Search ...">
-            </div>
-        
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
     </div>
 </nav>
 
-
-    
+        
     <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
     <div class="container">
         <div class="logo">
@@ -111,8 +227,10 @@
                 <span class="subtitle">from Josh Rickard</span>
             
         </div>
-
-        
+        <div class="selectors">
+          
+          
+       </div>
 
         
             <div class="toggler">
@@ -120,10 +238,14 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
     </div>
+    </div>
 </header>
 
+    </div>
 
-    <div class="main container">
+    
+    
+    <div class="main container" data-pagefind-body>
         
     <div class="article-wrapper u-cf single">
         
@@ -155,12 +277,12 @@
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/automation/">automation</a>
+                        <a href="https://letsautomate.it/categories/automation/">Automation</a>
                     
                 
                     
                     
-                        <a href="https://letsautomate.it/categories/powershell/">powershell</a>
+                        <a href="https://letsautomate.it/categories/powershell/">Powershell</a>
                     
                 
             </span>
@@ -210,13 +332,13 @@
 <p>To set this type of schedule you would add the following to your project settings in AppVeyor (this is for only posting at 7PM CST daily):</p>
 <img src="set_appveyor_build_schedule_once_enabled_by_appveyor_support.png" style="max-width:100%;" alt="Set AppVeyor Build Schedule once enabled by AppVeyor Support">
 <p>If you would like to schedule your build for 7 PM CST then you add <code>0 0 * * *</code> into the Build Schedule.  If you would like your schedule to run twice a day; once at 11AM CST and again at 7PM CST then you would add the following to your Build Schedule:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>0 0,16 * * *
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>0 0,16 * * *
 </span></span></code></pre></div><p>You can find out more about scheduled builds and how the patterns work here: <a href="https://www.appveyor.com/docs/build-configuration/#scheduled-builds">https://www.appveyor.com/docs/build-configuration/#scheduled-builds</a></p>
 <h2 id="appveyor-yaml">AppVeyor YAML</h2>
 <p>Previously, we setup and saved our Twitter API keys somewhere secure. We will be using these keys to make API calls to Twitter on a scheduled basis but we don&rsquo;t want to expose these keys publicly.  Luckily, AppVeyor provides a way to encrypt these values and use them in our CI build pipeline.</p>
 <p>You can encrypt these values by visiting AppVeyor&rsquo;s encryption tool here <a href="https://ci.appveyor.com/tools/encrypt">https://ci.appveyor.com/tools/encrypt</a>.</p>
 <p>Once you encrypt these values, we need to add them to a special file called <code>appveyor.yml</code>.  Here is an example of my YAML file here:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#75715e">#          YAML Reference Guide: https://www.appveyor.com/docs/appveyor-yml/</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#75715e">#          YAML Reference Guide: https://www.appveyor.com/docs/appveyor-yml/</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Environmental Variables Guide: https://www.appveyor.com/docs/environment-variables/</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#                YAML Validator: https://ci.appveyor.com/tools/validate-yaml</span>
 </span></span><span style="display:flex;"><span>
@@ -244,11 +366,11 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      Install-Module -Name PoshTwit -Force -Verbose 
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      $TweetContent = &#34;Blog Archive: &#34; + $RevivePost.title + &#34; &#34; + $RevivePost.link
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      $Tweet = @{ConsumerKey = $env:TwitterAPIKey; ConsumerSecret = $env:TwitterAPISecretKey; AccessToken = $env:TwitterAccessToken; AccessSecret = $env:TwitterAccessTokenSecret; Tweet = $TweetContent;}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      Publish-Tweet @Tweet</span>      
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      Publish-Tweet @Tweet</span>
 </span></span></code></pre></div><p>You can view my repository here <a href="https://github.com/MSAdministrator/ReviveBlogPostsCI">https://github.com/MSAdministrator/ReviveBlogPostsCI</a> if you would like to see an example.</p>
 <h2 id="breakdown-of-appveyoryml-file">Breakdown of <code>appveyor.yml</code> file</h2>
 <p>An YAML file is a configuration file that is commonly used by CI and CD infrastructure to specify the build configuration and the steps to take when building and/or deploying software.  This example is not typical in a traditional CI/CD setup but we are utilizing AppVeyor to pull down our latest blog posts and then select a random one to post/share (revive) to Twitter.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">#          YAML Reference Guide: https://www.appveyor.com/docs/appveyor-yml/</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">#          YAML Reference Guide: https://www.appveyor.com/docs/appveyor-yml/</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Environmental Variables Guide: https://www.appveyor.com/docs/environment-variables/</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#                YAML Validator: https://ci.appveyor.com/tools/validate-yaml</span>
 </span></span><span style="display:flex;"><span>
@@ -258,7 +380,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">build</span>: <span style="color:#66d9ef">off</span>
 </span></span></code></pre></div><p>The top section of configuration values are not necessarily needed and are only used as an example.  Since we are not <code>building</code> any software then in our yaml file we are turning off the <code>build</code> step.</p>
 <p>The next section is where we actually store our encrypted API keys we gathered from Twitter.  These are set in the <code>environment</code> section. By specifying the name of our variable(s) and the value it should contain after the <code>secure:</code> string, we are specifying new environmental variables and their values so that we can use them within our CI environment.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">#Environmental variables for Twitter API</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">#Environmental variables for Twitter API</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">environment</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">TwitterAPIKey</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">T2bzCt5tixDJOZAr9tKvfFADNSmsSoo1MRmSc7ZSOi4=</span>
@@ -270,7 +392,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">secure</span>: <span style="color:#ae81ff">epjLrmVSrzKq9ZYklfLtIKHuPTZaVZa8XId/cX9xfFbmevRYlZQBmhsChhqB2DYq</span>
 </span></span></code></pre></div><p>You can access these environmental variables by referencing them using the <code>$env:{SOME_VARIABLE_NAME}</code> syntax.  For Example, if you are wanting to use the value from the <code>TwitterAPIKey</code> you would use <code>$env:TwitterAPIKey</code> in your build scripts.</p>
 <p>Lastly, we setup a specific build/deploy phase in our <code>appveyor.yml</code> configuration file to run a script or just run some code.  In this example, I am specifying that I want to open a PowerShell console and run some code (typically this is a script file). Since our the amount of code we are needing to use is fairly short, then I have opted to run the code here instead of inside of a script file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Revive Old Blog Post and post to twitter via the API</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Revive Old Blog Post and post to twitter via the API</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">install</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#f92672">ps</span>: |<span style="color:#e6db74">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -278,7 +400,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      Install-Module -Name PoshTwit -Force -Verbose 
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      $TweetContent = &#34;Blog Archive: &#34; + $RevivePost.title + &#34; &#34; + $RevivePost.link
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      $Tweet = @{ConsumerKey = $env:TwitterAPIKey; ConsumerSecret = $env:TwitterAPISecretKey; AccessToken = $env:TwitterAccessToken; AccessSecret = $env:TwitterAccessTokenSecret; Tweet = $TweetContent;}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      Publish-Tweet @Tweet</span>      
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      Publish-Tweet @Tweet</span>
 </span></span></code></pre></div><p>During the <code>install</code> phase of our pipeleine, we call <code>- ps: |</code> to call the following code using a PowerShell console. The <code>|</code> character in this context means that we want to run all the code that follows this call as 1 block of code.</p>
 <p>Lastly, the actual code to do all the &ldquo;work&rdquo; is doing the following:</p>
 <ul>
@@ -311,17 +433,17 @@ git push
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/github/">github</a>
+                    <a href="https://letsautomate.it/tags/github/">Github</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/writing/">writing</a>
+                    <a href="https://letsautomate.it/tags/writing/">Writing</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/appveyor/">appveyor</a>
+                    <a href="https://letsautomate.it/tags/appveyor/">Appveyor</a>
                     
                 
             </div>
@@ -349,8 +471,10 @@ git push
     
 
     </div>
-
     
+
+    <div data-pagefind-ignore>
+        
 <footer>
     <div class="container">
 
@@ -359,6 +483,22 @@ git push
             <strong>Latest posts</strong>
             <ul>
                 
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/beyond-the-prompt-social-costs-of-generative-ai/">Beyond the Prompt: The Social Costs of Generative Artificial Intelligence</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work-part-2/">How I Use LLMs for Security Work: Part 2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
                 
                     <li>
                         <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
@@ -372,64 +512,58 @@ git push
                         <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
                     </li>
                 
-                    <li>
-                        <a href="https://letsautomate.it/article/introducing-atomic-operator/">Introducing Atomic Operator</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/">Atomic Red Team Testing With Swimlane</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/common-rest-api-authentication-methods-explained/">Common Rest Api Authentication Methods Explained</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/swimlane-releases-elk-tls-docker/">Swimlane Releases Elk Tls Docker</a>
-                    </li>
-                
             </ul>
         </div>
         
 
         
         <div class="categories">
-            <a href="/categories/"><strong>Categories</strong></a>
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
             <ul>
                 
                 <li>
-                    <a href="/categories/swimlane">Swimlane
-                        (25)</a>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/powershell">Powershell
-                        (7)</a>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/azure">Azure
-                        (4)</a>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/python">Python
-                        (2)</a>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (4)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/automation">Automation
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (3)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/dfir">Dfir
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/llm/">Llm (2)</a>
+                
                 </li>
                 
                 <li>
-                    <a href="/categories/how-to">How to
-                        (1)</a>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
                 </li>
                 
             </ul>
@@ -440,29 +574,16 @@ git push
             
             <div class="external-profiles">
                 <strong>Social media</strong>
-
                 
-                <a href="https://twitter.com/MSAdministrator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
                 
-                <a href="https://github.com/MSAdministrator" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
                 
-                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
                 
             </div>
             
 
-            <div class="languages">
-                <strong>Other languages</strong>
-                
-                
-                <a href="https://letsautomate.it/" class="active">en</a>
-                
-                
-                
-                <a href="https://letsautomate.it/de/">de</a>
-                
-                
-            </div>
             
 
             
@@ -474,12 +595,12 @@ git push
 <div class="credits">
     <div class="container">
         <div class="copyright">
-            <a href="https://github.com/Lednerb" target="_blank">
+            <a href="https://github.com/MSAdministrator" target="_blank">
                 &copy;
                 
-                2018
+                2026
                 
-                by Lednerb
+                Josh Rickard
             </a>
             
         </div>
@@ -490,42 +611,80 @@ git push
     </div>
 </div>
 
+    </div>
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-35980408-2', 'auto');
-	
-	ga('send', 'pageview');
-}
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-    
-
-
-    <script src="https://letsautomate.it/theme.js"></script>
-
-    
-    
-    
-
-    
-    <div id="activate-algolia-search" class="hidden">
-  <input type="hidden" id="algolia-search-appId" value="9OVGJK665T">
-  <input type="hidden" id="algolia-search-apiKey" value="58aeb104d5835247f4a4a050dd4fe189">
-  <input type="hidden" id="algolia-search-indexName" value="Letsautomate.it">
-  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
-
-  
-  <input type="hidden" id="algolia-search-currentLanguageOnly">
-  
-</div>
-
-    
 </body>
 
 </html>
