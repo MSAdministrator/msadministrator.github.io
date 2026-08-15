@@ -10,30 +10,9 @@
 		
 		
 		
-			<lastBuildDate>Fri, 14 Aug 2026 00:00:00 -0500</lastBuildDate>
+			<lastBuildDate>Fri, 14 Aug 2026 00:00:00 -0400</lastBuildDate>
 		
 			<atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Grpc</title>
-				<link>https://letsautomate.it/tags/grpc/</link>
-				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
-				<guid>https://letsautomate.it/tags/grpc/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Prometheus</title>
-				<link>https://letsautomate.it/tags/prometheus/</link>
-				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
-				<guid>https://letsautomate.it/tags/prometheus/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Protobuf</title>
-				<link>https://letsautomate.it/tags/protobuf/</link>
-				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
-				<guid>https://letsautomate.it/tags/protobuf/</guid>
-				<description></description>
-			</item>
 			<item>
 				<title>Enrichment</title>
 				<link>https://letsautomate.it/tags/enrichment/</link>
@@ -245,7 +224,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Soar</title>
+				<title>SOAR</title>
 				<link>https://letsautomate.it/tags/soar/</link>
 				<pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
 				<guid>https://letsautomate.it/tags/soar/</guid>
@@ -280,7 +259,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>MITRE</title>
+				<title>Mitre</title>
 				<link>https://letsautomate.it/tags/mitre/</link>
 				<pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
 				<guid>https://letsautomate.it/tags/mitre/</guid>
