@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Mon, 29 Jun 2026 00:00:00 -0600</lastBuildDate>
+			<lastBuildDate>Fri, 14 Aug 2026 00:00:00 -0400</lastBuildDate>
 		
 			<atom:link href="https://letsautomate.it/categories/security/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Open Season: CZDS</title>
+				<link>https://letsautomate.it/article/open-season-czds/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0400</pubDate>
+				<guid>https://letsautomate.it/article/open-season-czds/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;This post was also published in &lt;a href=&#34;https://dispatch.thorcollective.com/p/open-season-czds&#34;&gt;The Thor Collective&amp;rsquo;s Dispatch&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;What up nerds? I was reading this awesome post from LP titled &lt;a href=&#34;https://dispatch.thorcollective.com/p/open-season-certificate-transparency&#34;&gt;Open Season: Certificate Transparency&lt;/a&gt; (I highly recommend you read this too) and it forced me to write this blog about a free and open (mostly) service which can add another layer of context / enrichment to your threat intelligence toolbelt.&lt;/p&gt;&#xA;&lt;p&gt;Before I get into &lt;a href=&#34;https://czds.icann.org/home&#34;&gt;CZDS&lt;/a&gt;, first I want to set the stage of how we can view this data along with the other sources (mentioned in LPs blog and many others).&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Beyond the Prompt: The Social Costs of Generative Artificial Intelligence</title>
 				<link>https://letsautomate.it/article/beyond-the-prompt-social-costs-of-generative-ai/</link>

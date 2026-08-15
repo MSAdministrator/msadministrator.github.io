@@ -10,9 +10,44 @@
 		
 		
 		
-			<lastBuildDate>Mon, 29 Jun 2026 00:00:00 -0600</lastBuildDate>
+			<lastBuildDate>Fri, 14 Aug 2026 00:00:00 -0500</lastBuildDate>
 		
 			<atom:link href="https://letsautomate.it/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Appomni</title>
+				<link>https://letsautomate.it/categories/appomni/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/categories/appomni/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Golang</title>
+				<link>https://letsautomate.it/categories/golang/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/categories/golang/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Metrics</title>
+				<link>https://letsautomate.it/categories/metrics/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/categories/metrics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Python</title>
+				<link>https://letsautomate.it/categories/python/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/categories/python/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Security</title>
+				<link>https://letsautomate.it/categories/security/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0400</pubDate>
+				<guid>https://letsautomate.it/categories/security/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Llm</title>
 				<link>https://letsautomate.it/categories/llm/</link>
@@ -21,24 +56,10 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Security</title>
-				<link>https://letsautomate.it/categories/security/</link>
-				<pubDate>Mon, 29 Jun 2026 00:00:00 -0600</pubDate>
-				<guid>https://letsautomate.it/categories/security/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Automation</title>
 				<link>https://letsautomate.it/categories/automation/</link>
 				<pubDate>Thu, 05 Mar 2026 14:00:00 -0600</pubDate>
 				<guid>https://letsautomate.it/categories/automation/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Python</title>
-				<link>https://letsautomate.it/categories/python/</link>
-				<pubDate>Thu, 14 Jul 2022 12:45:00 -0400</pubDate>
-				<guid>https://letsautomate.it/categories/python/</guid>
 				<description></description>
 			</item>
 			<item>

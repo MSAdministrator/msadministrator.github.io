@@ -10,9 +10,51 @@
 		
 		
 		
-			<lastBuildDate>Mon, 29 Jun 2026 00:00:00 -0600</lastBuildDate>
+			<lastBuildDate>Fri, 14 Aug 2026 00:00:00 -0500</lastBuildDate>
 		
 			<atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Grpc</title>
+				<link>https://letsautomate.it/tags/grpc/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/grpc/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Prometheus</title>
+				<link>https://letsautomate.it/tags/prometheus/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/prometheus/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Protobuf</title>
+				<link>https://letsautomate.it/tags/protobuf/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/protobuf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Enrichment</title>
+				<link>https://letsautomate.it/tags/enrichment/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0400</pubDate>
+				<guid>https://letsautomate.it/tags/enrichment/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Golang</title>
+				<link>https://letsautomate.it/tags/golang/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0400</pubDate>
+				<guid>https://letsautomate.it/tags/golang/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Python</title>
+				<link>https://letsautomate.it/tags/python/</link>
+				<pubDate>Fri, 14 Aug 2026 00:00:00 -0400</pubDate>
+				<guid>https://letsautomate.it/tags/python/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Ai</title>
 				<link>https://letsautomate.it/tags/ai/</link>
@@ -147,13 +189,6 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Python</title>
-				<link>https://letsautomate.it/tags/python/</link>
-				<pubDate>Thu, 14 Jul 2022 12:45:00 -0400</pubDate>
-				<guid>https://letsautomate.it/tags/python/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Api</title>
 				<link>https://letsautomate.it/tags/api/</link>
 				<pubDate>Tue, 21 Jun 2022 12:45:00 -0400</pubDate>
@@ -203,14 +238,14 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Atomic Red Team</title>
+				<title>Atomic-Red-Team</title>
 				<link>https://letsautomate.it/tags/atomic-red-team/</link>
 				<pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
 				<guid>https://letsautomate.it/tags/atomic-red-team/</guid>
 				<description></description>
 			</item>
 			<item>
-				<title>SOAR</title>
+				<title>Soar</title>
 				<link>https://letsautomate.it/tags/soar/</link>
 				<pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
 				<guid>https://letsautomate.it/tags/soar/</guid>
@@ -245,7 +280,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Mitre</title>
+				<title>MITRE</title>
 				<link>https://letsautomate.it/tags/mitre/</link>
 				<pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
 				<guid>https://letsautomate.it/tags/mitre/</guid>

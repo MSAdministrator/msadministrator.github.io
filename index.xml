@@ -5,10 +5,32 @@
     <description>Recent content on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jun 2026 00:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 00:00:00 -0500</lastBuildDate>
     
         <atom:link href="https://letsautomate.it/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Two Years as a Software Engineer</title>
+      <link>https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/</link>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 -0500</pubDate>
+      <guid>https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Before I dive in, I just wanted to first thank you for your interest in me; it does truly mean a lot to me. This post was also featured in &lt;a href=&#34;https://dispatch.thorcollective.com/p/open-season-czds&#34;&gt;The Thor Collective&amp;rsquo;s Dispatch&lt;/a&gt;. Now, lets switch gears.&lt;/p&gt;
+&lt;p&gt;If you are curious, the past two years I have been working as a Senior Software Engineer focused on learning new languages, frameworks, architecture patterns, scaling services, metrics, advanced CI/CD and even GCP itself. These were all new to me and most of my time over the past two years has been focusing on both learning and implementing these in a mirad of ways.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open Season: CZDS</title>
+      <link>https://letsautomate.it/article/open-season-czds/</link>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 -0400</pubDate>
+      <guid>https://letsautomate.it/article/open-season-czds/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;This post was also published in &lt;a href=&#34;https://dispatch.thorcollective.com/p/open-season-czds&#34;&gt;The Thor Collective&amp;rsquo;s Dispatch&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What up nerds? I was reading this awesome post from LP titled &lt;a href=&#34;https://dispatch.thorcollective.com/p/open-season-certificate-transparency&#34;&gt;Open Season: Certificate Transparency&lt;/a&gt; (I highly recommend you read this too) and it forced me to write this blog about a free and open (mostly) service which can add another layer of context / enrichment to your threat intelligence toolbelt.&lt;/p&gt;
+&lt;p&gt;Before I get into &lt;a href=&#34;https://czds.icann.org/home&#34;&gt;CZDS&lt;/a&gt;, first I want to set the stage of how we can view this data along with the other sources (mentioned in LPs blog and many others).&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Beyond the Prompt: The Social Costs of Generative Artificial Intelligence</title>

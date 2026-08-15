@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.164.0">
+    <title>
+        
+           
+               Open Season: CZDS &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Open Season: CZDS">
+    <meta itemprop="description" content="Open Season: CZDS - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="https://letsautomate.it/article/open-season-czds/">
+	<meta property="og:site_name" content="Lets Automate It">
+	<meta property="og:title" content="Open Season: CZDS">
+	<meta property="og:description" content="This post was also published in The Thor Collective’s Dispatch.
+What up nerds? I was reading this awesome post from LP titled Open Season: Certificate Transparency (I highly recommend you read this too) and it forced me to write this blog about a free and open (mostly) service which can add another layer of context / enrichment to your threat intelligence toolbelt.
+Before I get into CZDS, first I want to set the stage of how we can view this data along with the other sources (mentioned in LPs blog and many others).">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2026-08-14T00:00:00-04:00">
+		<meta property="article:modified_time" content="2026-08-14T00:00:00-04:00">
+		<meta property="article:tag" content="Enrichment">
+		<meta property="article:tag" content="Python">
+		<meta property="article:tag" content="Golang">
+		<meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/article/open-season-czds/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.9a5d1e61914a7a0cc8321fa56fd98f6541d72d87aeca1531f0722b986f24b489.css" integrity="sha256-ml0eYZFKegzIMh&#43;lb9mPZUHXLYeuyhUx8HIrmG8ktIk=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/papers/">Papers</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://letsautomate.it/article/open-season-czds/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/open-season-czds/">
+            Open Season: CZDS
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-08-14</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/security/">Security</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <blockquote>
+<p>This post was also published in <a href="https://dispatch.thorcollective.com/p/open-season-czds">The Thor Collective&rsquo;s Dispatch</a>.</p>
+</blockquote>
+<p>What up nerds? I was reading this awesome post from LP titled <a href="https://dispatch.thorcollective.com/p/open-season-certificate-transparency">Open Season: Certificate Transparency</a> (I highly recommend you read this too) and it forced me to write this blog about a free and open (mostly) service which can add another layer of context / enrichment to your threat intelligence toolbelt.</p>
+<p>Before I get into <a href="https://czds.icann.org/home">CZDS</a>, first I want to set the stage of how we can view this data along with the other sources (mentioned in LPs blog and many others).</p>
+<img src="open-season-phishing-attack-lifecycle.PNG" style="max-width:100%;" alt="Open Season: Phishing Attack Lifecycle — a proactive framework for mapping, detecting, and disrupting phishing operations before they reach victims.">
+<p>When a threat actor, let’s call them BOB, is going to setup a phishing campaign they will typically:</p>
+<ul>
+<li>Register a domain (or compromise one)</li>
+<li>Deploy their infrastructure (this one is more difficult to identify at this stage)</li>
+<li>Configure DNS</li>
+<li>(Nowadays) Obtain a SSL/TLS certificate</li>
+<li>Kick off the campaign</li>
+</ul>
+<p>There are also operational steps that are highly dependent on infrastructure:</p>
+<ul>
+<li>General reconnaissance</li>
+<li>Brand impersonation/cloning/etc.</li>
+<li>Testing and verification</li>
+<li>Lure infrastructure may be different</li>
+</ul>
+<p>All of these are different sources of data.</p>
+<p>The important thing to understand is that each phase leaves behind a different type of telemetry:</p>
+<ul>
+<li>Certificate Transparency logs tell us when certificates are issued.</li>
+<li>Passive DNS tells us how infrastructure resolves over time.</li>
+<li>Hosting and network intelligence tells us where infrastructure lives.</li>
+<li>Registrar data gives us ownership and registration context.</li>
+</ul>
+<p>CZDS gives us visibility into one of the earliest events in this lifecycle: domain delegation.</p>
+<p>Today, though, we are going to talk more about the first phase: domain registration.</p>
+<p>DNS (Domain Name System) is a globally distributed, hierarchical naming system. The age-old question of how the internet works is how domain.com eventually resolves to an IP address. When a new domain is delegated, the appropriate TLD registry publishes that delegation, so recursive resolvers can eventually discover it.</p>
+<p>Before a phishing page exists, before a certificate is issued, before a victim receives an email, there is usually a domain registration and DNS delegation event.</p>
+<p>That small window is where CZDS becomes interesting.</p>
+<p>Because of this, ICANN has a service called CZDS (Centralized Zone Data Service) which provides daily zone files for participating gTLD registries. These zone files map delegated domains to their authoritative name servers and, when necessary, include glue records containing the IP addresses of those name servers.</p>
+<p>In other words, CZDS gives defenders a view into the DNS delegation layer of the internet.</p>
+<p>It does not tell you what a domain is currently hosting, what IP address a website resolves to, or what content exists behind the domain. Instead, it tells you that a domain exists and where its authoritative DNS infrastructure lives.</p>
+<p>By collecting this data over time, you can begin to see how certain authoritative name servers repeatedly appear alongside fuzzy domain registrations, how domain name re-use/re-registration occurs over extended periods of time, or view outliers/clusters in relation to your own threat intelligence feed.</p>
+<h2 id="what-is-czds">What is CZDS?</h2>
+<p>One reason CZDS tends to be overlooked is that the raw data isn’t immediately exciting. A zone file is just text, and most of the records you’ll encounter are completely benign.</p>
+<p>Unlike Certificate Transparency, where suspicious certificate requests can sometimes stand out on their own, the value in CZDS rarely comes from an individual record. It emerges when you collect snapshots over time, enrich them with other datasets, and start asking relationship-based questions instead of record-based ones.</p>
+<p>To use <a href="https://czds.icann.org/home">CZDS</a> you do have to register an account and get an API key to download the compressed files. Each .zone file contains DNS delegation information for a gTLD, including delegated domains, authoritative name servers, and glue records where required.</p>
+<p>I’m not going to go into details about name servers here, but the basics are that authoritative name servers publish the DNS records that allow resolvers to translate domain names into IP addresses and other resource records.</p>
+<p>The IP addresses you see in a CZDS TLD zone file are glue records. They are not the IP addresses of the domain itself but rather the IP addresses of authoritative name servers when those addresses are needed to complete DNS delegation.</p>
+<p>This distinction is important because CZDS is not passive DNS.</p>
+<p>CZDS will not tell you:</p>
+<ul>
+<li>Where a domain currently resolves</li>
+<li>Historical A/AAAA resolutions</li>
+<li>HTTP behavior</li>
+<li>Malware delivery infrastructure</li>
+<li>Certificate history</li>
+</ul>
+<p>For that, you still need additional data sources.</p>
+<p>What CZDS does provide is the earliest DNS-level visibility into domain existence and delegation relationships.</p>
+<p>There is an important tradeoff, though. Certificate Transparency can often provide visibility close to the moment a certificate is issued, whereas CZDS is distributed as periodic snapshots by participating registries. Rather than observing individual delegation events in real time, you’re observing how the delegation layer changes over time. Those are different datasets with different strengths, and together they provide a more complete picture of infrastructure evolution.</p>
+<h2 id="data-relationships">Data Relationships</h2>
+<p>This is where the data becomes much more interesting.</p>
+<p>A single domain registration by itself is usually just noise.</p>
+<p>A domain that shares authoritative infrastructure with hundreds of other suspicious domains is a different story.</p>
+<p>The value is not necessarily in the individual record. The value comes from the relationships.</p>
+<p>Imagine ingesting daily zone files for a handful of popular gTLDs. One morning, a newly delegated domain catches your attention. On its own, it isn’t particularly interesting. But when you pivot to its authoritative name servers, you discover they’re also responsible for hundreds of other recently delegated domains.</p>
+<p>Those name servers resolve through the same glue IPs, which belong to infrastructure you’ve previously associated with phishing activity. None of the domains have active websites yet, and none have appeared in Certificate Transparency logs. Nevertheless, you’ve already identified what appears to be a coordinated infrastructure cluster before most defenders would even know it exists.</p>
+<p>That’s the advantage of treating CZDS as relationship data instead of a list of domain names. You’re not waiting for malicious content to appear; you’re looking for infrastructure patterns that suggest future activity.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>domain
+</span></span><span style="display:flex;"><span>  |
+</span></span><span style="display:flex;"><span>  +-- authoritative nameserver
+</span></span><span style="display:flex;"><span>          |
+</span></span><span style="display:flex;"><span>          +-- glue IP
+</span></span><span style="display:flex;"><span>                  |
+</span></span><span style="display:flex;"><span>                  +-- ASN
+</span></span><span style="display:flex;"><span>                  |
+</span></span><span style="display:flex;"><span>                  +-- other domains
+</span></span></code></pre></div><p>Once you start looking at CZDS data as relationship data instead of just DNS records, you can begin building infrastructure graphs.</p>
+<p>There are dozens of ways that this data can be useful for your organization:</p>
+<ul>
+<li>Shared authoritative name servers</li>
+<li>Shared glue IPs</li>
+<li>Newly delegated domains</li>
+<li>Registrar patterns (with additional data)</li>
+<li>DNS hosting providers</li>
+<li>Infrastructure reuse</li>
+<li>Identifying clusters of related registrations</li>
+</ul>
+<p>The problem though is size because of exponential growth over time (which has limited my research) unless you engineer it.</p>
+<blockquote>
+<p>NOTE: If anyone has petabyte(s) storage for free and forever then holla at me</p>
+</blockquote>
+<p>The interesting engineering problem is not necessarily storing every record forever. It is deciding what relationships and attributes actually matter.</p>
+<p>For example, instead of storing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>domain -&gt; every historical DNS record
+</span></span></code></pre></div><p>you may get more value from storing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>nameserver -&gt; domains
+</span></span><span style="display:flex;"><span>IP -&gt; nameservers
+</span></span><span style="display:flex;"><span>ASN -&gt; infrastructure
+</span></span><span style="display:flex;"><span>registrar -&gt; domains
+</span></span><span style="display:flex;"><span>first_seen
+</span></span><span style="display:flex;"><span>last_seen
+</span></span></code></pre></div><p>The intelligence questions you want to answer should drive the data model.</p>
+<h2 id="understanding-czds-zone-files">Understanding CZDS Zone Files</h2>
+<p>Each .zone file contains DNS delegation information for a gTLD, including delegated domains, authoritative name servers, and glue records where required.</p>
+<p>For example, a simplified delegation may look something like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>example.com. 172800 IN NS ns1.example.net.
+</span></span><span style="display:flex;"><span>ns1.example.net. 172800 IN A 192.0.2.10
+</span></span></code></pre></div><p>The first record tells resolvers which authoritative name server is responsible for the domain.</p>
+<p>The second record exists because ns1.example.net is within the namespace being delegated, and the resolver needs the IP address to find that server.</p>
+<p>This is why CZDS is useful, but also why it is commonly misunderstood.</p>
+<p>These zone files will give you the authoritative information for a gTLD but not details about the domain itself (the domain’s A, AAAA, CNAME, MX, etc. records); that you must still do if needed/warranted/etc.</p>
+<p>The intelligence comes from combining CZDS with other sources.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>CZDS
+</span></span><span style="display:flex;"><span> |
+</span></span><span style="display:flex;"><span> +-- Domain delegation
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        +-- Nameserver
+</span></span><span style="display:flex;"><span>              |
+</span></span><span style="display:flex;"><span>              +-- Glue IP
+</span></span><span style="display:flex;"><span>                    |
+</span></span><span style="display:flex;"><span>                    +-- ASN
+</span></span><span style="display:flex;"><span>                    |
+</span></span><span style="display:flex;"><span>                    +-- Other observed domains
+</span></span></code></pre></div><p>That relationship can then be enriched with:</p>
+<ul>
+<li>Certificate Transparency</li>
+<li>WHOIS/RDAP</li>
+<li>Passive DNS</li>
+<li>Hosting intelligence</li>
+<li>Reputation feeds</li>
+<li>Internal telemetry</li>
+</ul>
+<p>The goal is not to answer:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>“Is this domain malicious?”
+</span></span></code></pre></div><p>The goal is to answer:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>“What infrastructure relationships does this domain have, and have we seen similar behavior before?”
+</span></span></code></pre></div><h2 id="parsing-zone-files">Parsing Zone Files</h2>
+<p>Here’s a general layout of the field data in these zone files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>www.example.com. 3600 IN A 192.168.1.10
+</span></span></code></pre></div><p>which produces the following in a JSON format:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;dns_record&#34;</span>: <span style="color:#e6db74">&#34;www.example.com&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ttl&#34;</span>: <span style="color:#e6db74">&#34;3600&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;record_class&#34;</span>: <span style="color:#e6db74">&#34;IN&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;record_type&#34;</span>: <span style="color:#e6db74">&#34;A&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;record_data&#34;</span>: <span style="color:#e6db74">&#34;192.168.1.10&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For CZDS specifically, the records you will most commonly care about are delegation-related records:</p>
+<ul>
+<li>NS records</li>
+<li>Glue A records</li>
+<li>Glue AAAA records</li>
+</ul>
+<p>The challenge with CZDS is not parsing a single file.</p>
+<p>The challenge is scale.</p>
+<p>Zone files can be large, and storing every record from every zone forever, quickly becomes impractical unless you have a very specific reason for doing so.</p>
+<p>This is why streaming is important.</p>
+<p>Instead of:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>records <span style="color:#f92672">=</span> load_entire_zone_file() 
+</span></span></code></pre></div><p>you generally want:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> record <span style="color:#f92672">in</span> stream_zone_file(): 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    process(record) 
+</span></span></code></pre></div><p>This allows you to:</p>
+<ul>
+<li>Process large zones with constant memory usage</li>
+<li>Build enrichment indexes incrementally</li>
+<li>Extract only relationships you care about</li>
+<li>Avoid loading multi-gigabyte files into memory</li>
+</ul>
+<h2 id="implementation-examples">Implementation Examples</h2>
+<p>I have had a few implementations of using CZDS over the years. The most recent is embedded as a source within a project called go-mmdb-extender. This takes a MMDB database (binary search tree over IP addresses; fast lookups possible) and can extend or upsert it with data from different sources.</p>
+<p>This one happens to be CZDS and written in Golang:</p>
+<p><a href="https://github.com/MSAdministrator/go-mmdb-extender/blob/main/internal/source/czds/czds.go">https://github.com/MSAdministrator/go-mmdb-extender/blob/main/internal/source/czds/czds.go</a></p>
+<p>The general idea is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>CZDS Zone File 
+</span></span><span style="display:flex;"><span>        | 
+</span></span><span style="display:flex;"><span>        v 
+</span></span><span style="display:flex;"><span>Parse delegation data
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>Extract relationships
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>Enrich IP intelligence database
+</span></span></code></pre></div><p>The advantage of this approach is that you can combine CZDS-derived information with other enrichment sources without needing to query massive raw datasets during investigations.</p>
+<p>If Python is more your thing, then check out my Python package/CLI tool for CZDS below.</p>
+<p>This one doesn’t touch a MMDB at all and just retrieves the zone files as requested.</p>
+<p><a href="https://github.com/MSAdministrator/czds">https://github.com/MSAdministrator/czds</a></p>
+<p>With either tool, remember you must have API access and have been granted access to more than one zone files.</p>
+<h2 id="python-streaming-parser-example">Python Streaming Parser (example)</h2>
+<p>The first implementation uses dnspython and provides behavior similar to Go’s DNS parsing libraries.</p>
+<p>The goal is:</p>
+<ul>
+<li>Stream records</li>
+<li>Avoid loading entire zones</li>
+<li>Support compressed zone files</li>
+<li>Process records as they arrive</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> __future__ <span style="color:#f92672">import</span> annotations
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> gzip
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Iterator
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> dns.exception
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> dns.name
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> dns.rdata
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> dns.rdataclass
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> dns.rdatatype
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> dns.tokenizer
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> dns.zonefile
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">stream_zone_records</span>(
+</span></span><span style="display:flex;"><span>    filename: str <span style="color:#f92672">|</span> Path,
+</span></span><span style="display:flex;"><span>    origin: str,
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">-&gt;</span> Iterator[dns<span style="color:#f92672">.</span>rdata<span style="color:#f92672">.</span>Rdata]:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Stream records from a zone file without loading the entire zone.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Yields ResourceRecord objects one at a time, similar to Go&#39;s
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    dns.NewZoneParser().
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    opener <span style="color:#f92672">=</span> gzip<span style="color:#f92672">.</span>open <span style="color:#66d9ef">if</span> str(filename)<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.gz&#34;</span>) <span style="color:#66d9ef">else</span> open
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> opener(filename, <span style="color:#e6db74">&#34;rt&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>, errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;replace&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>        tok <span style="color:#f92672">=</span> dns<span style="color:#f92672">.</span>tokenizer<span style="color:#f92672">.</span>Tokenizer(f)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        reader <span style="color:#f92672">=</span> dns<span style="color:#f92672">.</span>zonefile<span style="color:#f92672">.</span>Reader(
+</span></span><span style="display:flex;"><span>            tok,
+</span></span><span style="display:flex;"><span>            dns<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>from_text(origin),
+</span></span><span style="display:flex;"><span>            rdclass<span style="color:#f92672">=</span>dns<span style="color:#f92672">.</span>rdataclass<span style="color:#f92672">.</span>IN,
+</span></span><span style="display:flex;"><span>            relativize<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>                rr <span style="color:#f92672">=</span> reader<span style="color:#f92672">.</span>read_rr()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">EOFError</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">except</span> dns<span style="color:#f92672">.</span>exception<span style="color:#f92672">.</span>DNSException <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">RuntimeError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Zone parse error: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>) <span style="color:#f92672">from</span> e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> rr <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">yield</span> rr
+</span></span></code></pre></div><p>The important part here is not the dictionary itself. The important part is that we are transforming raw DNS data into relationships that can later be queried.</p>
+<p>A raw zone file is just text.</p>
+<p>A relationship database built from those records becomes intelligence.</p>
+<h2 id="lightweight-czds-parser">Lightweight CZDS Parser</h2>
+<p>The second implementation is a lightweight parser written specifically around the CZDS workflow.</p>
+<p>The goal was not to replace full DNS parsing libraries.</p>
+<p>The goal was a small streaming parser that handles the features needed for large-scale zone processing:</p>
+<ul>
+<li>Streaming iteration (for rr in ZoneParser(path):)</li>
+<li>Constant memory usage</li>
+<li>.gz and plain text support</li>
+<li>$ORIGIN</li>
+<li>$TTL</li>
+<li>Owner inheritance</li>
+<li>Multiline records with parentheses</li>
+<li>Comment stripping</li>
+<li>Quoted-string preservation</li>
+<li>RFC 3597 TYPE#### support</li>
+<li>Lightweight ResourceRecord dataclass</li>
+</ul>
+<p>This version is intentionally focused on CZDS-style processing rather than being a complete replacement for every possible BIND zone feature.</p>
+<blockquote>
+<p>NOTE: This bottom one was written by Claude so take it with a grain of salt but it looks like to would work.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> __future__ <span style="color:#f92672">import</span> annotations
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> gzip
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> shlex
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Iterator, TextIO
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RFC3597_TYPE <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;^TYPE\d+$&#34;</span>, re<span style="color:#f92672">.</span>IGNORECASE)
+</span></span><span style="display:flex;"><span>_CLASSES <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;IN&#34;</span>, <span style="color:#e6db74">&#34;CH&#34;</span>, <span style="color:#e6db74">&#34;HS&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span>(slots<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResourceRecord</span>:
+</span></span><span style="display:flex;"><span>    name: str
+</span></span><span style="display:flex;"><span>    ttl: int <span style="color:#f92672">|</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    rdclass: str
+</span></span><span style="display:flex;"><span>    rdtype: str
+</span></span><span style="display:flex;"><span>    rdata: tuple[str, <span style="color:#f92672">...</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ZoneParser</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Streaming BIND zone parser suitable for CZDS.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, path: str <span style="color:#f92672">|</span> Path):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>path <span style="color:#f92672">=</span> Path(path)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>origin <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>default_ttl: int <span style="color:#f92672">|</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>current_owner: str <span style="color:#f92672">|</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__iter__</span>(self) <span style="color:#f92672">-&gt;</span> Iterator[ResourceRecord]:
+</span></span><span style="display:flex;"><span>        opener <span style="color:#f92672">=</span> gzip<span style="color:#f92672">.</span>open <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>suffix <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;.gz&#34;</span> <span style="color:#66d9ef">else</span> open
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> opener(self<span style="color:#f92672">.</span>path, <span style="color:#e6db74">&#34;rt&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>, errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;replace&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">yield from</span> self<span style="color:#f92672">.</span>_parse(f)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_strip_comment</span>(line: str) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        quoted <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        escaped <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> ch <span style="color:#f92672">in</span> line:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> escaped:
+</span></span><span style="display:flex;"><span>                out<span style="color:#f92672">.</span>append(ch)
+</span></span><span style="display:flex;"><span>                escaped <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ch <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>:
+</span></span><span style="display:flex;"><span>                escaped <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>                out<span style="color:#f92672">.</span>append(ch)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ch <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#34;&#39;</span>:
+</span></span><span style="display:flex;"><span>                quoted <span style="color:#f92672">=</span> <span style="color:#f92672">not</span> quoted
+</span></span><span style="display:flex;"><span>                out<span style="color:#f92672">.</span>append(ch)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ch <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;;&#34;</span> <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> quoted:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            out<span style="color:#f92672">.</span>append(ch)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(out)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_fqdn</span>(self, owner: str) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> owner <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;@&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>origin
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> owner<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.&#34;</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> owner[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>owner<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>origin<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>origin <span style="color:#66d9ef">else</span> owner
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_parse</span>(self, fh: TextIO) <span style="color:#f92672">-&gt;</span> Iterator[ResourceRecord]:
+</span></span><span style="display:flex;"><span>        buf <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        depth <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> raw <span style="color:#f92672">in</span> fh:
+</span></span><span style="display:flex;"><span>            line <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_strip_comment(raw)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> line:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            depth <span style="color:#f92672">+=</span> line<span style="color:#f92672">.</span>count(<span style="color:#e6db74">&#34;(&#34;</span>)
+</span></span><span style="display:flex;"><span>            depth <span style="color:#f92672">-=</span> line<span style="color:#f92672">.</span>count(<span style="color:#e6db74">&#34;)&#34;</span>)
+</span></span><span style="display:flex;"><span>            buf<span style="color:#f92672">.</span>append(line<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;(&#34;</span>, <span style="color:#e6db74">&#34; &#34;</span>)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;)&#34;</span>, <span style="color:#e6db74">&#34; &#34;</span>))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> depth <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            record <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(buf)
+</span></span><span style="display:flex;"><span>            buf<span style="color:#f92672">.</span>clear()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> record<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;$ORIGIN&#34;</span>):
+</span></span><span style="display:flex;"><span>                parts <span style="color:#f92672">=</span> record<span style="color:#f92672">.</span>split(<span style="color:#66d9ef">None</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> len(parts) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                    self<span style="color:#f92672">.</span>origin <span style="color:#f92672">=</span> parts[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>rstrip(<span style="color:#e6db74">&#34;.&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> record<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;$TTL&#34;</span>):
+</span></span><span style="display:flex;"><span>                parts <span style="color:#f92672">=</span> record<span style="color:#f92672">.</span>split(<span style="color:#66d9ef">None</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> len(parts) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                    self<span style="color:#f92672">.</span>default_ttl <span style="color:#f92672">=</span> int(parts[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            lex <span style="color:#f92672">=</span> shlex<span style="color:#f92672">.</span>shlex(record, posix<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>            lex<span style="color:#f92672">.</span>whitespace_split <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            tokens <span style="color:#f92672">=</span> list(lex)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> tokens:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            owner <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>            first <span style="color:#f92672">=</span> tokens[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>            up <span style="color:#f92672">=</span> first<span style="color:#f92672">.</span>upper()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> first<span style="color:#f92672">.</span>isdigit() <span style="color:#f92672">and</span> up <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> _CLASSES:
+</span></span><span style="display:flex;"><span>                owner <span style="color:#f92672">=</span> first
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>current_owner <span style="color:#f92672">=</span> owner
+</span></span><span style="display:flex;"><span>                idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                owner <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>current_owner
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> owner <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            ttl <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>            rdclass <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;IN&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> idx <span style="color:#f92672">&lt;</span> len(tokens):
+</span></span><span style="display:flex;"><span>                t <span style="color:#f92672">=</span> tokens[idx]
+</span></span><span style="display:flex;"><span>                u <span style="color:#f92672">=</span> t<span style="color:#f92672">.</span>upper()
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> t<span style="color:#f92672">.</span>isdigit():
+</span></span><span style="display:flex;"><span>                    ttl <span style="color:#f92672">=</span> int(t)
+</span></span><span style="display:flex;"><span>                    idx <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">elif</span> u <span style="color:#f92672">in</span> _CLASSES:
+</span></span><span style="display:flex;"><span>                    rdclass <span style="color:#f92672">=</span> u
+</span></span><span style="display:flex;"><span>                    idx <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            ttl <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>default_ttl <span style="color:#66d9ef">if</span> ttl <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span> <span style="color:#66d9ef">else</span> ttl
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> idx <span style="color:#f92672">&gt;=</span> len(tokens):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            rdtype <span style="color:#f92672">=</span> tokens[idx]<span style="color:#f92672">.</span>upper()
+</span></span><span style="display:flex;"><span>            idx <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> (rdtype<span style="color:#f92672">.</span>isalpha() <span style="color:#f92672">or</span> RFC3597_TYPE<span style="color:#f92672">.</span>fullmatch(rdtype)):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">yield</span> ResourceRecord(
+</span></span><span style="display:flex;"><span>                name<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>_fqdn(owner),
+</span></span><span style="display:flex;"><span>                ttl<span style="color:#f92672">=</span>ttl,
+</span></span><span style="display:flex;"><span>                rdclass<span style="color:#f92672">=</span>rdclass,
+</span></span><span style="display:flex;"><span>                rdtype<span style="color:#f92672">=</span>rdtype,
+</span></span><span style="display:flex;"><span>                rdata<span style="color:#f92672">=</span>tuple(tokens[idx:]),
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> rr <span style="color:#f92672">in</span> ZoneParser(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>]):
+</span></span><span style="display:flex;"><span>        print(rr)
+</span></span></code></pre></div><p>Like Certificate Transparency, CZDS isn’t valuable because it magically identifies malicious domains. Its value comes from exposing another layer of attacker infrastructure that would otherwise remain difficult to observe.</p>
+<p>By itself, a zone file is little more than a collection of DNS delegation records. Combined with Certificate Transparency, Passive DNS, registrar information, hosting intelligence, and your own internal telemetry, those records become edges in an infrastructure graph that can reveal relationships long before a phishing campaign reaches a victim.</p>
+<p>That’s ultimately the lesson I took away after reading LP’s post. Modern threat intelligence isn’t about finding one perfect dataset, it’s more about understanding what each dataset can tell you, what it can’t, and how combining them creates something far more valuable than any individual source alone.</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/enrichment/">Enrichment</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/python/">Python</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/golang/">Golang</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/">Two Years as a Software Engineer</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/open-season-czds/">Open Season: CZDS</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/beyond-the-prompt-social-costs-of-generative-ai/">Beyond the Prompt: The Social Costs of Generative Artificial Intelligence</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work-part-2/">How I Use LLMs for Security Work: Part 2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/llm/">Llm (2)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

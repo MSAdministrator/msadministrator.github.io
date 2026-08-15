@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.164.0">
+    <title>
+        
+           
+               Two Years as a Software Engineer &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Two Years as a Software Engineer">
+    <meta itemprop="description" content="Two Years as a Software Engineer - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/">
+	<meta property="og:site_name" content="Lets Automate It">
+	<meta property="og:title" content="Two Years as a Software Engineer">
+	<meta property="og:description" content="Introduction Before I dive in, I just wanted to first thank you for your interest in me; it does truly mean a lot to me. This post was also featured in The Thor Collective’s Dispatch. Now, lets switch gears.
+If you are curious, the past two years I have been working as a Senior Software Engineer focused on learning new languages, frameworks, architecture patterns, scaling services, metrics, advanced CI/CD and even GCP itself. These were all new to me and most of my time over the past two years has been focusing on both learning and implementing these in a mirad of ways.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2026-08-14T00:00:00-05:00">
+		<meta property="article:modified_time" content="2026-08-14T00:00:00-05:00">
+		<meta property="article:tag" content="Grpc">
+		<meta property="article:tag" content="Protobuf">
+		<meta property="article:tag" content="Prometheus">
+		<meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.9a5d1e61914a7a0cc8321fa56fd98f6541d72d87aeca1531f0722b986f24b489.css" integrity="sha256-ml0eYZFKegzIMh&#43;lb9mPZUHXLYeuyhUx8HIrmG8ktIk=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/papers/">Papers</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/">
+            Two Years as a Software Engineer
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-08-14</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/appomni/">Appomni</a>
+                    
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/python/">Python</a>
+                    
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/golang/">Golang</a>
+                    
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/metrics/">Metrics</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+            <h2>Table of Contents</h2>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#some-context">Some Context</a></li>
+    <li><a href="#what-have-i-learned">What have I learned?</a></li>
+    <li><a href="#start">Start</a></li>
+  </ul>
+</nav>
+        
+
+        <h2 id="introduction">Introduction</h2>
+<p>Before I dive in, I just wanted to first thank you for your interest in me; it does truly mean a lot to me. This post was also featured in <a href="https://dispatch.thorcollective.com/p/open-season-czds">The Thor Collective&rsquo;s Dispatch</a>. Now, lets switch gears.</p>
+<p>If you are curious, the past two years I have been working as a Senior Software Engineer focused on learning new languages, frameworks, architecture patterns, scaling services, metrics, advanced CI/CD and even GCP itself. These were all new to me and most of my time over the past two years has been focusing on both learning and implementing these in a mirad of ways.</p>
+<h2 id="some-context">Some Context</h2>
+<p>Okay, before I go to far I want to share some context here. I won’t go into any great details regarding my experience but will outline my past roles with minor points. I believe this will set the stage for why I&rsquo;m even writing this blog in the first place.</p>
+<p>First of all, I didn’t go to college right after high school. I went full time in the evenings starting at 28 and got a BS in Science (Computer Information Systems). This was when I truly strarted my career in IT and eventually leading to information security as my passion.</p>
+<ul>
+<li>[1 year] Helpdesk - was support at a small university after competing my internship there - total of a year or so</li>
+<li>[1.5 years] System Support Analyst / System Administrator - Focused on AD &amp; GPO and Windows image management (MDT, WDS, SCCM, etc.) for thousands of systems</li>
+<li>[3 years] Security Analyst - Focused on DFIR but built tools using PowerShell / VB.net / C#. Worked on phishing defense, vulnerability management, group policy/ ad security / etc.</li>
+<li>[1 year] Solution Engineer - Recruited to PhishMe (now Cofense) because of open-source report button &amp; helped build the “PhishMe Reporter” product to 18 Million installs globally</li>
+<li>[2 years] Manager / Technical Product Owner/Manager - While at Cofense I managed a team of 7 solutions engineers and 3 software engineers where we defined, designed, implemented &amp; supported global customers</li>
+<li>[4 years] Security Research Engineer / Security Solutions Architect - Created content and webinars around SOAR and automation. I also worked to defined &amp; built SOAR automation systems (large workflows) used by some of the largest companies on the globe. I also released lots of open source security tools.</li>
+<li>[3 months~] Senior Detection Validation Engineer - Worked briefly on detection validation but also had to learn Ruby and Rails while doing so. RIF occured.</li>
+</ul>
+<p>Again these are all high level details but I think it sets the stage and my point. I’ve always been hands on keyboard but never a full time software engineer. All of the roles above required me to work with people. I’ve never said I had all the answers, and to me working with people and having a conversation helps me think. Honestly it may be weird but I think much better with people than on my own. My ADHD seems to include a million different thoughts at once so having a conversation allows me to focus on one of those things.</p>
+<p>Anyways, that’s not the point of this post.</p>
+<h2 id="what-have-i-learned">What have I learned?</h2>
+<p>I knew from the beginning that being a software engineer would be a different role than I&rsquo;ve experienced before but I still wanted to try; and overall I&rsquo;m glad I did. For the majority of the past two years I have been learning and using Golang which is quite a bit different than Python. I&rsquo;ve been using Go to build, augment, etc. microservices as part of an event-driven architecture. Obviously I cannot share any details here but I can tell you that building a robust CI/CD infrastructure is paramount.</p>
+<h2 id="start">Start</h2>
+<p>In retrospect, I have realized that creating software for software sake does not motive me and really just adds way more stress and anxiety than I want in my life. I enjoy collaborating (communicating) with other engineers, analysts, researchers and technicians to help solve problems they have. This also allows me to have immediate impact (and feedback) which further motivates me. I like helping where I can.</p>
+<p>After the past two years I&rsquo;ve done some reflection on what I want for my career. Here&rsquo;s a short list if you&rsquo;re interested:</p>
+<ul>
+<li>
+<p>I thrive in a team environment where verbal and written communication is second nature.</p>
+</li>
+<li>
+<p>Ideation, brainstorming and general collaboration to solve problems motives me. I&rsquo;ve found many times where I&rsquo;ve had conversations with engineers for hours and those were the most productive for me. I don&rsquo;t know all the answers, but I know what I don&rsquo;t know.</p>
+</li>
+<li>
+<p>I like giving back to the infosec community via open-source tools. Over the past few years I&rsquo;ve missed this &ndash; learning new languages, tools, frameworks, etc. doesn&rsquo;t leave much room for anything else.</p>
+</li>
+<li></li>
+<li>
+<p>Golang - I had never used Golang and over the past two years I have spent most of my time using it to build microservices</p>
+</li>
+<li>
+<p><a href="https://grpc.io/">gRPC</a> - Google&rsquo;s RPC (Remote Procedure Call) framework (open-source) for high-speed network communications (HTTP2) between services</p>
+</li>
+<li>
+<p><a href="https://protobuf.dev/">Protobuf</a> - A cross platform and cross language framework for serialization/deserialization of messages over gRPC</p>
+</li>
+</ul>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/grpc/">Grpc</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/protobuf/">Protobuf</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/prometheus/">Prometheus</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/">Two Years as a Software Engineer</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/open-season-czds/">Open Season: CZDS</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/beyond-the-prompt-social-costs-of-generative-ai/">Beyond the Prompt: The Social Costs of Generative Artificial Intelligence</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work-part-2/">How I Use LLMs for Security Work: Part 2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/llm/">Llm (2)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

@@ -2,28 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://letsautomate.it/tags/ai/</loc>
-    <lastmod>2026-06-29T00:00:00-06:00</lastmod>
+    <loc>https://letsautomate.it/categories/appomni/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/article/</loc>
-    <lastmod>2026-06-29T00:00:00-06:00</lastmod>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/author/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/golang/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/grpc/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/author/josh-rickard/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/metrics/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/prometheus/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/protobuf/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/python/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/</loc>
+    <lastmod>2026-08-14T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/enrichment/</loc>
+    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/golang/</loc>
+    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/article/open-season-czds/</loc>
+    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/python/</loc>
+    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/security/</loc>
+    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/ai/</loc>
     <lastmod>2026-06-29T00:00:00-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/article/beyond-the-prompt-social-costs-of-generative-ai/</loc>
     <lastmod>2026-06-29T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/categories/</loc>
-    <lastmod>2026-06-29T00:00:00-06:00</lastmod>
-  </url><url>
     <loc>https://letsautomate.it/tags/generative-ai/</loc>
-    <lastmod>2026-06-29T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2026-06-29T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/</loc>
     <lastmod>2026-06-29T00:00:00-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/categories/llm/</loc>
@@ -36,12 +78,6 @@
     <lastmod>2026-06-29T00:00:00-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/privacy/</loc>
-    <lastmod>2026-06-29T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/categories/security/</loc>
-    <lastmod>2026-06-29T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/tags/</loc>
     <lastmod>2026-06-29T00:00:00-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/page/</loc>
@@ -113,12 +149,6 @@
     <loc>https://letsautomate.it/tags/basics/</loc>
     <lastmod>2022-07-14T12:45:00-04:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/categories/python/</loc>
-    <lastmod>2022-07-14T12:45:00-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/tags/python/</loc>
-    <lastmod>2022-07-14T12:45:00-04:00</lastmod>
-  </url><url>
     <loc>https://letsautomate.it/article/understanding-python-part-2-running-code/</loc>
     <lastmod>2022-07-14T12:45:00-04:00</lastmod>
   </url><url>
@@ -155,10 +185,10 @@
     <loc>https://letsautomate.it/categories/redcanary/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/tags/atomic-red-team/</loc>
+    <loc>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</loc>
+    <loc>https://letsautomate.it/tags/atomic-red-team/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/soar/</loc>

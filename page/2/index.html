@@ -263,6 +263,242 @@
         
     <div class="article-wrapper u-cf">
         
+            <a class="bubble" href="https://letsautomate.it/article/understanding-python-part-2-running-code/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">
+            Understanding Python - Part 2: Running Code
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2022-07-14</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/python/">Python</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h2 id="introduction">Introduction</h2>
+<p>Whether you are new to Python or not, ensuring you understand the basics will help you along the way to becoming a Python expert.</p>
+<p>Please see the first post titled <a href="https://letsautomate.it/article/python-vs-powershell-part-1-versioning/">Python vs Powershell Part 1: Versioning</a>. This first post was written in 2018 but still applies. The remaining blog posts are a continuation of this series. Lets get started!</p>
+<h2 id="installation">Installation</h2>
+<p>You may have Python already installed. To check, open your terminal and type:</p>
+
+        
+            <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/python/">Python</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/basics/">Basics</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://letsautomate.it/article/understanding-http-request-headers/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/understanding-http-request-headers/">
+            Understanding HTTP Request Headers
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2022-06-21</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/dfir/">Dfir</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1 id="table-of-contents">Table of Contents</h1>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#summary">Summary</a></li>
+<li><a href="/article/understanding-http-request-headers/#introduction">Introduction</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#setup">Setup</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#general-headers">General Headers</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#cache-control">Cache-Control</a></li>
+<li><a href="/article/understanding-http-request-headers/#connection">Connection</a></li>
+<li><a href="/article/understanding-http-request-headers/#transfer-encoding">Transfer-Encoding</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#request-headers">Request Headers</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#common-request-headers">Common Request Headers</a></li>
+<li><a href="/article/understanding-http-request-headers/#accept">Accept</a></li>
+<li><a href="/article/understanding-http-request-headers/#accept-encoding">Accept-Encoding</a></li>
+<li><a href="/article/understanding-http-request-headers/#authorization">Authorization</a></li>
+<li><a href="/article/understanding-http-request-headers/#user-agent">User-Agent</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#response-headers">Response Headers</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#common-response-headers">Common Response Headers</a></li>
+<li><a href="/article/understanding-http-request-headers/#location">Location</a></li>
+<li><a href="/article/understanding-http-request-headers/#vary">Vary</a></li>
+<li><a href="/article/understanding-http-request-headers/#server">Server</a></li>
+<li><a href="/article/understanding-http-request-headers/#www-authenticate">WWW-Authenticate</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#metadata-headers">Metadata Headers</a>
+<ul>
+<li><a href="/article/understanding-http-request-headers/#common-metadata-headers">Common Metadata Headers</a></li>
+<li><a href="/article/understanding-http-request-headers/#allow">Allow</a></li>
+<li><a href="/article/understanding-http-request-headers/#content-encoding">Content-Encoding</a></li>
+<li><a href="/article/understanding-http-request-headers/#content-type">Content-Type</a></li>
+</ul>
+</li>
+<li><a href="/article/understanding-http-request-headers/#conclusion">Conclusion</a></li>
+</ul>
+<h1 id="summary">Summary</h1>
+<p>Networking is complex. Whether you are troubleshooting network connectivity or attempting to detect malicious external network communications, understanding the nuances of common HTTP requests is extremely helpful but often it can be difficult for many security and IT professionals.</p>
+
+        
+            <a href="https://letsautomate.it/article/understanding-http-request-headers/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/http/">Http</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/dfir/">Dfir</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/headers/">Headers</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/api/">Api</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
             <a class="bubble" href="https://letsautomate.it/article/introducing-atomic-operator/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -428,12 +664,12 @@
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">SOAR</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/atomic-red-team/">Atomic Red Team</a>
+                    <a href="https://letsautomate.it/tags/atomic-red-team/">Atomic-Red-Team</a>
                     
                 
             </div>
@@ -522,7 +758,7 @@
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">SOAR</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
@@ -622,7 +858,7 @@
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">SOAR</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
@@ -717,7 +953,7 @@
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/soar/">SOAR</a>
+                    <a href="https://letsautomate.it/tags/soar/">Soar</a>
                     
                 
                     
@@ -732,206 +968,12 @@
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/mitre/">Mitre</a>
+                    <a href="https://letsautomate.it/tags/mitre/">MITRE</a>
                     
                 
                     
                     
-                    <a href="https://letsautomate.it/tags/atomic-red-team/">Atomic Red Team</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/making-mitre-attck-actionable/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/making-mitre-attck-actionable/">
-            Making MITRE ATT&amp;CK Actionable
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2020-07-16</span>
-            
-        
-
-        
-
-        
-            <span class="categories">
-                
-                    
-                    
-                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
-                    
-                
-            </span>
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        <p>The Swimlane Deep Dive team is excited to announce the release of pyattck 2.0 and an equivalent PowerShell version called PSAttck. These open-source tools provide security operations centers (SOCs), defenders and offensive security teams with external data points that enrich MITRE ATT&amp;CK by providing potential commands, queries and even detections for specific techniques. Additionally, these data points enable context related to specific attacker actors or groups, as well as details about different tools used by malicious actors.</p>
-
-        
-            <a href="https://letsautomate.it/article/making-mitre-attck-actionable/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/soar/">SOAR</a>
-                    
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
-                    
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/attck/">ATT&amp;CK</a>
-                    
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/mitre/">Mitre</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/">
-            Responding to Insider Threats With Soar
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2020-04-24</span>
-            
-        
-
-        
-
-        
-            <span class="categories">
-                
-                    
-                    
-                        <a href="https://letsautomate.it/categories/swimlane/">Swimlane</a>
-                    
-                
-            </span>
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        <p>Insider threats occur when an individual with ties to an organization misuses their access for malicious intent, such as stealing intellectual property or other data. Detecting insider threats can be difficult. But by using a security information and event management (SIEM) system or data loss prevention (DLP) products, you can create alerts to detect the exfiltration of data leaving your organization that is unauthorized or unexpected.</p>
-<p>Once you have detected these events, your security operations center (SOC) needs to investigate rapidly. Utilizing Swimlane and our Insider Threat Use Case, you can investigate and respond to these insider threats swiftly and accurately.</p>
-
-        
-            <a href="https://letsautomate.it/article/responding-to-insider-threats-with-soar/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/soar/">SOAR</a>
-                    
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/automation/">Automation</a>
-                    
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/insider-threats/">Insider Threats</a>
+                    <a href="https://letsautomate.it/tags/atomic-red-team/">Atomic-Red-Team</a>
                     
                 
             </div>
@@ -977,6 +1019,14 @@
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/two-years-as-software-engineer/two-years-as-software-engineer/">Two Years as a Software Engineer</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/open-season-czds/">Open Season: CZDS</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/beyond-the-prompt-social-costs-of-generative-ai/">Beyond the Prompt: The Social Costs of Generative Artificial Intelligence</a>
                     </li>
                 
@@ -994,14 +1044,6 @@
                 
                     <li>
                         <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/understanding-python-part-2-running-code/">Understanding Python - Part 2: Running Code</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/understanding-http-request-headers/">Understanding HTTP Request Headers</a>
                     </li>
                 
             </ul>
@@ -1030,13 +1072,13 @@
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                    <a href="https://letsautomate.it/categories/security/">Security (5)</a>
                 
                 </li>
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/security/">Security (4)</a>
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
                 
                 </li>
                 
@@ -1048,13 +1090,13 @@
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/llm/">Llm (2)</a>
+                    <a href="https://letsautomate.it/categories/python/">Python (3)</a>
                 
                 </li>
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                    <a href="https://letsautomate.it/categories/llm/">Llm (2)</a>
                 
                 </li>
                 
