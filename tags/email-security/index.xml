@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Email-Security on Lets Automate It</title>
+		<link>https://letsautomate.it/tags/email-security/</link>
+		<description>Recent content in Email-Security on Lets Automate It</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 27 Aug 2026 10:00:00 -0500</lastBuildDate>
+		
+			<atom:link href="https://letsautomate.it/tags/email-security/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Detecting Phishing with Microsoft Email Headers</title>
+				<link>https://letsautomate.it/article/detecting-phishing-with-microsoft-email-headers/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/article/detecting-phishing-with-microsoft-email-headers/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;I also wrote a companion post on the Sublime Security blog: &lt;a href=&#34;https://sublime.security/blog/getting-started-with-microsoft-email-headers-for-security/&#34;&gt;Getting started with Microsoft email headers for security&lt;/a&gt;. It covers these headers with hunts written for Sublime&amp;rsquo;s MQL. A copy of the original post is archived at the bottom of this page.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;original-post-getting-started-with-microsoft-email-headers-for-security&#34;&gt;Original Post: Getting started with Microsoft email headers for security&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Originally published August 27, 2026 on the &lt;a href=&#34;https://sublime.security/blog/getting-started-with-microsoft-email-headers-for-security/&#34;&gt;Sublime Security blog&lt;/a&gt;. Archived here in case the original is removed.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Whether you&amp;rsquo;re a SOC analyst or a detection engineer, understanding Microsoft email infrastructure is advantageous for investigating and resolving email-based threats. If you&amp;rsquo;re working at a Microsoft shop, you may have already seen Microsoft&amp;rsquo;s recent &lt;a href=&#34;https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/&#34;&gt;Phishing actors exploit complex routing and misconfigurations to spoof domains&lt;/a&gt; blog. That post gives a great overview of how adversaries are taking advantage of misconfigurations that can happen when a SEG (secure email gateway) is placed in front of Microsoft, as we can see from this line:&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

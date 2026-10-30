@@ -247,6 +247,78 @@
     
         <div class="article-wrapper u-cf">
             
+                <a class="bubble" href="https://letsautomate.it/article/windows-security-patch-management/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/windows-security-patch-management/">
+            Windows Security Patch Management
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>Recently, at work, I nominated myself to begin a &ldquo;Windows Security&rdquo; course for IT Professionals that I work with.  Being a former IT Pro, and now part of our security department as an Incident Responder, I thought I would create a course surrounding security.  So, i&rsquo;m going to use my blog to layout my plans for this &ldquo;Windows Security&rdquo; course - which will hopefully be useful for others as well.</p>
+
+        
+            <a href="https://letsautomate.it/article/windows-security-patch-management/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
                 <a class="bubble" href="https://letsautomate.it/article/qualys-guard-qualys-in-a-university-environment/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -693,88 +765,6 @@ Windows 7 ISO/DVD
             
         </div>
     
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/script-removing-proxy-from-firefox-user-prefs-js/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/script-removing-proxy-from-firefox-user-prefs-js/">
-            Script Removing Proxy From Firefox User Prefs Js
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        <p>So, I was tasked with removing proxy settings from Firefox because of Webroot Desktop Proxy.  Removing them from the %Programfiles% directory was easy, the hard part was the user prefs.js.  Anyways, here&rsquo;s a little script I created to remove Proxy settings and set them to No Proxy.</p>
-<p>cd /D &ldquo;%APPDATA%\Mozilla\Firefox\Profiles&quot;
-cd *.default
-set ffile=%cd%
-type &ldquo;%ffile%\prefs.js&rdquo; | findstr /v &ldquo;user_pref(&ldquo;network.proxy.type&rdquo;, 2);&quot;&gt;&quot;%ffile%\prefs_.js&rdquo;
-type &ldquo;%ffile%\prefs.js&rdquo; | findstr /v &ldquo;user_pref(&ldquo;network.proxy.type&rdquo;, 0);&quot;&gt;&quot;%ffile%\prefs_.js&rdquo;
-ren &ldquo;prefs.js&rdquo; &ldquo;prefs_.js&rdquo;
-del &ldquo;%ffile%\prefs.js&rdquo;
-ren &ldquo;prefs_.js&rdquo; &ldquo;prefs.js&rdquo;
-del &ldquo;%ffile%\prefs_.js&rdquo;
-echo user_pref(&ldquo;network.proxy.type&rdquo;, 0);&gt;&gt;&quot;%ffile%\prefs.js&rdquo;
-set ffile=
-cd %windir%</p>
-
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
 
     
     <div class="paginator">
@@ -812,6 +802,10 @@ cd %windir%</p>
                     </li>
                 
                     <li>
+                        <a href="https://letsautomate.it/article/detecting-phishing-with-microsoft-email-headers/">Detecting Phishing with Microsoft Email Headers</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/open-season-czds/">Open Season: CZDS</a>
                     </li>
                 
@@ -825,10 +819,6 @@ cd %windir%</p>
                 
                     <li>
                         <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work-part-2/">How I Use LLMs for Security Work: Part 2</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work/">How I Use LLMs for Security Work</a>
                     </li>
                 
             </ul>
@@ -851,13 +841,13 @@ cd %windir%</p>
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                    <a href="https://letsautomate.it/categories/security/">Security (8)</a>
                 
                 </li>
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/security/">Security (7)</a>
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
                 
                 </li>
                 
@@ -881,7 +871,7 @@ cd %windir%</p>
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                    <a href="https://letsautomate.it/categories/phishing/">Phishing (2)</a>
                 
                 </li>
                 

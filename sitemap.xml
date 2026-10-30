@@ -59,6 +59,42 @@
     <loc>https://letsautomate.it/tags/python/</loc>
     <lastmod>2026-09-03T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://letsautomate.it/article/detecting-phishing-with-microsoft-email-headers/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/detection/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/dkim/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/dmarc/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/email-security/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/headers/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/microsoft-365/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/mql/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/office-365/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/spf/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/sublime-security/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/threat-detection/</loc>
+    <lastmod>2026-08-27T10:00:00-05:00</lastmod>
+  </url><url>
     <loc>https://letsautomate.it/tags/golang/</loc>
     <lastmod>2026-08-14T00:00:00-04:00</lastmod>
   </url><url>
@@ -167,9 +203,6 @@
     <loc>https://letsautomate.it/tags/dfir/</loc>
     <lastmod>2022-06-21T12:45:00-04:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/tags/headers/</loc>
-    <lastmod>2022-06-21T12:45:00-04:00</lastmod>
-  </url><url>
     <loc>https://letsautomate.it/tags/http/</loc>
     <lastmod>2022-06-21T12:45:00-04:00</lastmod>
   </url><url>
@@ -188,10 +221,10 @@
     <loc>https://letsautomate.it/categories/redcanary/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/tags/atomic-red-team/</loc>
+    <loc>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</loc>
+    <loc>https://letsautomate.it/tags/atomic-red-team/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/soar/</loc>

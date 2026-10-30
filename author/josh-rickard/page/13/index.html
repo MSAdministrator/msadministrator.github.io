@@ -247,6 +247,88 @@
     
         <div class="article-wrapper u-cf">
             
+                <a class="bubble" href="https://letsautomate.it/article/script-removing-proxy-from-firefox-user-prefs-js/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/script-removing-proxy-from-firefox-user-prefs-js/">
+            Script Removing Proxy From Firefox User Prefs Js
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>So, I was tasked with removing proxy settings from Firefox because of Webroot Desktop Proxy.  Removing them from the %Programfiles% directory was easy, the hard part was the user prefs.js.  Anyways, here&rsquo;s a little script I created to remove Proxy settings and set them to No Proxy.</p>
+<p>cd /D &ldquo;%APPDATA%\Mozilla\Firefox\Profiles&quot;
+cd *.default
+set ffile=%cd%
+type &ldquo;%ffile%\prefs.js&rdquo; | findstr /v &ldquo;user_pref(&ldquo;network.proxy.type&rdquo;, 2);&quot;&gt;&quot;%ffile%\prefs_.js&rdquo;
+type &ldquo;%ffile%\prefs.js&rdquo; | findstr /v &ldquo;user_pref(&ldquo;network.proxy.type&rdquo;, 0);&quot;&gt;&quot;%ffile%\prefs_.js&rdquo;
+ren &ldquo;prefs.js&rdquo; &ldquo;prefs_.js&rdquo;
+del &ldquo;%ffile%\prefs.js&rdquo;
+ren &ldquo;prefs_.js&rdquo; &ldquo;prefs.js&rdquo;
+del &ldquo;%ffile%\prefs_.js&rdquo;
+echo user_pref(&ldquo;network.proxy.type&rdquo;, 0);&gt;&gt;&quot;%ffile%\prefs.js&rdquo;
+set ffile=
+cd %windir%</p>
+
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
                 <a class="bubble" href="https://letsautomate.it/article/powershell-updating-local-admin-passwords-securely-3-of-3/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -707,89 +789,6 @@
             
         </div>
     
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 11 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        <h1>Preparing WDS to enable PXE Boot (optional but very useful)</h1>
-<ol>
-	<li>Minimize the Deployment Workbench application</li>
-	<li>Open “<b><i>Windows Deployment Services</i></b>” from Start/Admin Tools</li>
-	<li>Expand Servers / CONFIG-DEPLOY.config.local and right-click on <b><i>Boot Images</i></b> and select <b><i>Add Boot Image.</i></b> If the boot image already exists, right click on it and select <b><i>Replace Boot Image</i></b> to replace it with a newer version</li>
-</ol>
-<p align="center"><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-11-of-11/attachment/37/" rel="attachment wp-att-126"><img class="alignnone size-full wp-image-126" alt="37" src="http://msadministrator.files.wordpress.com/2012/12/37.png" width="519" height="253" /></a></p>
-<ol>
-	<li>Browse to the Deployment Share location (e.g. E:\DeploymentShares\Customername) and open the Boot folder</li>
-	<li>Select the <b><i>LiteTouchPE_x86.wim</i></b> file and click <b><i>Open</i></b></li>
-</ol>
-<p align="center"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-11-of-11/attachment/38/" rel="attachment wp-att-127"><img class="alignnone size-full wp-image-127" alt="38" src="http://msadministrator.files.wordpress.com/2012/12/38.png" width="519" height="370" /></a></p>
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
 
     
     <div class="paginator">
@@ -827,6 +826,10 @@
                     </li>
                 
                     <li>
+                        <a href="https://letsautomate.it/article/detecting-phishing-with-microsoft-email-headers/">Detecting Phishing with Microsoft Email Headers</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/open-season-czds/">Open Season: CZDS</a>
                     </li>
                 
@@ -840,10 +843,6 @@
                 
                     <li>
                         <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work-part-2/">How I Use LLMs for Security Work: Part 2</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work/">How I Use LLMs for Security Work</a>
                     </li>
                 
             </ul>
@@ -866,13 +865,13 @@
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                    <a href="https://letsautomate.it/categories/security/">Security (8)</a>
                 
                 </li>
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/security/">Security (7)</a>
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
                 
                 </li>
                 
@@ -896,7 +895,7 @@
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                    <a href="https://letsautomate.it/categories/phishing/">Phishing (2)</a>
                 
                 </li>
                 

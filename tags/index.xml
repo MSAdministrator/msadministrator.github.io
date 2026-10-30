@@ -77,6 +77,76 @@
 				<description></description>
 			</item>
 			<item>
+				<title>Dkim</title>
+				<link>https://letsautomate.it/tags/dkim/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/dkim/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Dmarc</title>
+				<link>https://letsautomate.it/tags/dmarc/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/dmarc/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Email-Security</title>
+				<link>https://letsautomate.it/tags/email-security/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/email-security/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Headers</title>
+				<link>https://letsautomate.it/tags/headers/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/headers/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Microsoft-365</title>
+				<link>https://letsautomate.it/tags/microsoft-365/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/microsoft-365/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>MQL</title>
+				<link>https://letsautomate.it/tags/mql/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/mql/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Office-365</title>
+				<link>https://letsautomate.it/tags/office-365/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/office-365/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Spf</title>
+				<link>https://letsautomate.it/tags/spf/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/spf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Sublime-Security</title>
+				<link>https://letsautomate.it/tags/sublime-security/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/sublime-security/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Threat-Detection</title>
+				<link>https://letsautomate.it/tags/threat-detection/</link>
+				<pubDate>Thu, 27 Aug 2026 10:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/tags/threat-detection/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>Golang</title>
 				<link>https://letsautomate.it/tags/golang/</link>
 				<pubDate>Fri, 14 Aug 2026 00:00:00 -0400</pubDate>
@@ -224,13 +294,6 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Headers</title>
-				<link>https://letsautomate.it/tags/headers/</link>
-				<pubDate>Tue, 21 Jun 2022 12:45:00 -0400</pubDate>
-				<guid>https://letsautomate.it/tags/headers/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Http</title>
 				<link>https://letsautomate.it/tags/http/</link>
 				<pubDate>Tue, 21 Jun 2022 12:45:00 -0400</pubDate>
@@ -252,7 +315,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Atomic Red Team</title>
+				<title>Atomic-Red-Team</title>
 				<link>https://letsautomate.it/tags/atomic-red-team/</link>
 				<pubDate>Mon, 20 Dec 2021 11:54:39 -0600</pubDate>
 				<guid>https://letsautomate.it/tags/atomic-red-team/</guid>
@@ -294,7 +357,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>MITRE</title>
+				<title>Mitre</title>
 				<link>https://letsautomate.it/tags/mitre/</link>
 				<pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
 				<guid>https://letsautomate.it/tags/mitre/</guid>
