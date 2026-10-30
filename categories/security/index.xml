@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 -0400</lastBuildDate>
+			<lastBuildDate>Thu, 29 Oct 2026 12:00:00 -0500</lastBuildDate>
 		
 			<atom:link href="https://letsautomate.it/categories/security/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Why Phishing Defense Needs Software Engineers</title>
+				<link>https://letsautomate.it/article/why-phishing-defense-needs-software-engineers/</link>
+				<pubDate>Thu, 29 Oct 2026 12:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/article/why-phishing-defense-needs-software-engineers/</guid>
+				<description>&lt;p&gt;If you&amp;rsquo;ve worked in security for any amount of time, you know that phishing is the attack vector that just won&amp;rsquo;t quit. It&amp;rsquo;s evolved from Nigerian prince emails to sophisticated credential harvesting operations powered by Phishing-as-a-Service (PhaaS) platforms like Tycoon 2FA. The attackers have leveled up—and honestly, most defenders are still playing catch-up.&lt;/p&gt;&#xA;&lt;p&gt;Traditional approaches to phishing defense aren&amp;rsquo;t cutting it anymore. We need to think like software engineers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem-with-traditional-phishing-defense&#34;&gt;The Problem with Traditional Phishing Defense&lt;/h2&gt;&#xA;&lt;p&gt;Most organizations approach phishing defense reactively. An email comes in, gets flagged (maybe), an analyst investigates, and if it&amp;rsquo;s malicious, they block the sender or domain. Rinse and repeat.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Open Season: Domain Profiling</title>
 				<link>https://letsautomate.it/article/open-season-domain-profiling/</link>

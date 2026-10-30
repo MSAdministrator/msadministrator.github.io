@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 -0400</lastBuildDate>
+			<lastBuildDate>Thu, 29 Oct 2026 12:00:00 -0500</lastBuildDate>
 		
 			<atom:link href="https://letsautomate.it/article/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Why Phishing Defense Needs Software Engineers</title>
+				<link>https://letsautomate.it/article/why-phishing-defense-needs-software-engineers/</link>
+				<pubDate>Thu, 29 Oct 2026 12:00:00 -0500</pubDate>
+				<guid>https://letsautomate.it/article/why-phishing-defense-needs-software-engineers/</guid>
+				<description>&lt;p&gt;If you&amp;rsquo;ve worked in security for any amount of time, you know that phishing is the attack vector that just won&amp;rsquo;t quit. It&amp;rsquo;s evolved from Nigerian prince emails to sophisticated credential harvesting operations powered by Phishing-as-a-Service (PhaaS) platforms like Tycoon 2FA. The attackers have leveled up—and honestly, most defenders are still playing catch-up.&lt;/p&gt;&#xA;&lt;p&gt;Traditional approaches to phishing defense aren&amp;rsquo;t cutting it anymore. We need to think like software engineers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem-with-traditional-phishing-defense&#34;&gt;The Problem with Traditional Phishing Defense&lt;/h2&gt;&#xA;&lt;p&gt;Most organizations approach phishing defense reactively. An email comes in, gets flagged (maybe), an analyst investigates, and if it&amp;rsquo;s malicious, they block the sender or domain. Rinse and repeat.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Open Season: Domain Profiling</title>
 				<link>https://letsautomate.it/article/open-season-domain-profiling/</link>
@@ -278,6 +285,13 @@
 				<pubDate>Sun, 26 Aug 2018 16:07:25 -0400</pubDate>
 				<guid>https://letsautomate.it/article/how-to-setup-a-hugo-website-on-github/</guid>
 				<description>&lt;p&gt;I recently transitioned my blog over to &lt;a href=&#34;https://pages.github.com&#34;&gt;GitHub Pages&lt;/a&gt; from &lt;a href=&#34;https://wordpress.org&#34;&gt;WordPress&lt;/a&gt;.  I was using the free version from WordPress.org and I wanted more granular control over the layout.  Additionally, I wanted to automate my blog publishing and social media notifications; the free version of WordPress didn&amp;rsquo;t meet my needs.  So I looked around and eventually fell in love with &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;!  This post outlines how to go about setting up a GitHub Pages website/blog using Hugo.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Opt Out From Osinit Websites</title>
+				<link>https://letsautomate.it/article/opt-out-from-osinit-websites/</link>
+				<pubDate>Fri, 24 Aug 2018 16:43:39 -0400</pubDate>
+				<guid>https://letsautomate.it/article/opt-out-from-osinit-websites/</guid>
+				<description>&lt;p&gt;MyLife.com:&#xA;Email &lt;a href=&#34;mailto:membersupport@mylife.com&#34;&gt;membersupport@mylife.com&lt;/a&gt; &amp;amp; cc &lt;a href=&#34;mailto:removalrequests@mylife.com&#34;&gt;removalrequests@mylife.com&lt;/a&gt;.  Include a link to your public profile to be removed.&lt;/p&gt;&#xA;&lt;p&gt;Spokeo: &lt;a href=&#34;https://t.co/W4q6Hc9Q6G&#34;&gt;https://t.co/W4q6Hc9Q6G&lt;/a&gt; or &lt;a href=&#34;https://www.spokeo.com/optout&#34;&gt;https://www.spokeo.com/optout&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Provide a link to your public profile(s) and an email.  Once you submit you will receive a confirmation email to verify.&lt;/p&gt;&#xA;&lt;p&gt;PeopleSmart: &lt;a href=&#34;https://t.co/vFXUaAnY6c&#34;&gt;https://t.co/vFXUaAnY6c&lt;/a&gt; or &lt;a href=&#34;https://www.peoplesmart.com/optout-go&#34;&gt;https://www.peoplesmart.com/optout-go&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Other services or research info:&#xA;&lt;a href=&#34;https://inteltechniques.com/data/workbook.pdf&#34;&gt;https://inteltechniques.com/data/workbook.pdf&lt;/a&gt;&#xA;&lt;a href=&#34;https://tisiphone.net/2017/01/25/thwart-my-osint-efforts-while-binging-tv/&#34;&gt;https://tisiphone.net/2017/01/25/thwart-my-osint-efforts-while-binging-tv/&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.abine.com/optouts.php&#34;&gt;https://www.abine.com/optouts.php&lt;/a&gt;&#xA;&lt;a href=&#34;https://motherboard.vice.com/en_us/article/ne9b3z/how-to-get-off-data-broker-and-people-search-sites-pipl-spokeo&#34;&gt;https://motherboard.vice.com/en_us/article/ne9b3z/how-to-get-off-data-broker-and-people-search-sites-pipl-spokeo&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;someone-created-this-document&#34;&gt;Someone created this document:&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.google.com/document/d/1ElB7VXmr5JEkFaLJpO7YLGrAuasedmq-rZC-8TUMxTM/edit&#34;&gt;https://docs.google.com/document/d/1ElB7VXmr5JEkFaLJpO7YLGrAuasedmq-rZC-8TUMxTM/edit&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;here-is-it-just-in-case-it-goes-down&#34;&gt;Here is it just in case it goes down:&lt;/h2&gt;&#xA;&lt;p&gt;Big Ass Data Broker Opt-Out List&lt;/p&gt;&#xA;&lt;p&gt;☠ = high priority&#xA;🎫 = requires driver’s license (cross out your ID #!)&#xA;📞 = must pick up a (gasp!) phone&#xA;📠 = must go back in time and find a fax machine&#xA;📫 = must use snail mail&#xA;💰 = site charges money for removal (whaaaaat?)&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Using Amazon Sqs With Powershell</title>

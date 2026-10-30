@@ -263,6 +263,217 @@
         
     <div class="article-wrapper u-cf">
         
+            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/">
+            Mdt 2012 Deployment Guide Step by Step 10 of 11
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1>Automating the Deployment Process</h1>
+<ol>
+	<li>Right-click on the deployment share and select <b><i>Properties</i></b></li>
+</ol>
+<p align="center"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/36/" rel="attachment wp-att-122"><img class="alignnone size-full wp-image-122" alt="36" src="http://msadministrator.files.wordpress.com/2012/12/36.png" width="307" height="294" /></a></p>
+<ol>
+	<li>Select the “<b><i>Rules</i></b>” tab</li>
+	<li>In the main window, edit the settings as required.  A sample CUSTOMSETTINGS.INI is below but feel free to change it as needed…</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-10-of-11/attachment/35/" rel="attachment wp-att-121"><img class="alignnone size-full wp-image-121" alt="35" src="http://msadministrator.files.wordpress.com/2012/12/351.png" width="519" height="431" /></a></li>
+</ol>
+<table cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td width="54" height="0"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<b>CUSTOMSETTINGS.INI</b>
+<table width="476" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="top" width="203">[Settings]
+<p>Priority=Default</p>
+<p>[Default
+]</p>
+<p>_SMSTSORGNAME=Customer</p>
+<p>SkipBDDWelcome=YES</p>
+<p>SkipProductKey=YES</p>
+<p>ProductKey= XXXX-XXXX-XXXXX-XXXXX</p>
+<p>OverrideProductKey=XXXX-XXXX-XXXXX-XXXXX</p>
+<p>SkipDeploymentType=YES</p>
+<p>DeploymentType=NEWCOMPUTER</p>
+<p>SkipDomainMembership=NO</p>
+<p>JoinDomain=domain.com</p>
+<p>DomainAdminDomain=domain.com</p>
+<p>DomainAdmin=MDTAddComputer</p>
+<p>DomainAdminPassword=Pa55w0rd</p>
+<p>MachineObjectOU=ou=example,dc=domain,dc=com</p>
+<p>OrgName=Customer</p>
+<p>SkipUserData=YES</p>
+<p>SkipTaskSequence=NO</p>
+<p>TaskSequenceID=TASKSEQID</p>
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/">
+            Mdt 2012 Deployment Guide Step by Step 9 of 11
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1>Creating a Deployment Task Sequence</h1>
+<ol>
+	<li>From the Deployment Workbench, expand the customer Deployment Share and right-click on <b><i>Task Sequences</i></b> and select <b><i>New Task Sequence</i></b></li>
+	<li>Enter a Task Sequence ID and Name.  Make a note of the ID as you may need it later!</li>
+</ol>
+<p align="center"></p>
+<p align="left"><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/28/" rel="attachment wp-att-109"><img class="alignnone size-full wp-image-109" alt="28" src="http://msadministrator.files.wordpress.com/2012/12/28.png" width="519" height="426" /></a></p>
+<ol>
+	<li>Accept the default <b><i>“Standard Client Task Sequence</i></b>” template</li>
+	<li>Select the relevant OS Image to deploy</li>
+</ol>
+<p align="center"> <a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-9-of-11/attachment/29/" rel="attachment wp-att-110"><img class="alignnone size-full wp-image-110" alt="29" src="http://msadministrator.files.wordpress.com/2012/12/29.png" width="519" height="385" /></a></p>
+<ol>
+	<li>This option will vary dependent on whether you are going to be using KMS or MAK licenses for their Windows 7 deployment.</li>
+</ol>
+<b>KMS          -                 </b>Select <b><i>Do not specify a product key at this time</i></b>
+<p><b>MAK         -                 </b>Select <b><i>Specify a multiple activation key (MAK key) for activating this operating system</i></b></p>
+
+        
+            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-9-of-11/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
             <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-8-of-11/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -681,190 +892,6 @@ The Operating Systems section of MDT lists all of the Operating Systems which ar
 
 
     
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 3 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        <h1>Device Driver Management</h1>
-<h2>3.1       Obtaining Device Drivers for a Deployment</h2>
-In order to deploy a single image to multiple hardware types, MDT performs a “driver injection” during the OS load process.  For this to work, any and all relevant drivers need to be imported into the deployment share in advance.  Depending on the hardware vendor, the process for obtaining these drivers may vary but will generally involve going to the vendor website and downloading the drivers for specific hardware models.  Once you have downloaded these drivers, they may require unpacking as the import process can only recognise drivers containing .INF or .CAB files.
-<p> </p>
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-3-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 2 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        <h1>2.1       Creating an MDT Deployment Share</h1>
-An MDT Deployment Share is the specific deployment environment which will be used for OS deployment.  The share contains all elements of the deployment including drivers, applications, OS images etc.
-<ol>
-	<li>Log on to the MDT server and open the “<b><i>Deployment Workbench</i></b>”</li>
-	<li>Right-click on “<b><i>Deployment Shares” </i></b>in the left pane of the workbench and select <b><i>New Deployment Share</i></b></li>
-</ol>
-<p align="center"><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/2/" rel="attachment wp-att-60"><img class="alignnone size-full wp-image-60" alt="2" src="http://msadministrator.files.wordpress.com/2012/12/2.png" width="323" height="294" /></a></p>
-<ol>
-	<li>In the New Deployment Share Wizard, choose a location for the new share.   Once you’ve selected a folder, click <b>Next</b></li>
-</ol>
-<a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/3/" rel="attachment wp-att-61"><img class="alignnone size-full wp-image-61" alt="3" src="http://msadministrator.files.wordpress.com/2012/12/3.png" width="519" height="401" /></a>
-<ol>
-	<li>Give the share a name – the name used previously should be fine.  Click <b>Next</b></li>
-	<li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/4/" rel="attachment wp-att-62"><img class="alignnone size-full wp-image-62" alt="4" src="http://msadministrator.files.wordpress.com/2012/12/4.png" width="519" height="395" /></a></li>
-</ol>
-<ol>
-	<li>Enter a descriptive name for the share (“<i>NewCustomer Deployment Share</i>” for instance) and click <b>Next</b></li>
-	<li>Uncheck the next three options - Allow Image Capture, Allow Admin Password and Allow Product Key – click <b>Next</b> after each</li>
-</ol>
-<a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/5/" rel="attachment wp-att-63"><img class="alignnone size-full wp-image-63" alt="5" src="http://msadministrator.files.wordpress.com/2012/12/5.png" width="519" height="397" /></a>
-<ol>
-	<li>The Summary screen should look similar to the one below.  Click <b>Next</b></li>
-	<li><a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/6/" rel="attachment wp-att-64"><img class="alignnone size-full wp-image-64" alt="6" src="http://msadministrator.files.wordpress.com/2012/12/6.png" width="519" height="397" /></a></li>
-</ol>
-<ol>
-	<li>Wait while the deployment share is created.  Once this is done, a Confirmation screen will be shown.  Ensure no errors appear.</li>
-</ol>
-<a href="http://msadministrator.wordpress.com/2012/12/21/mdt-2012-deployment-guide-step-by-step-2-of-11/attachment/7/" rel="attachment wp-att-65"><img class="alignnone size-full wp-image-65" alt="7" src="http://msadministrator.files.wordpress.com/2012/12/7.png" width="519" height="397" /></a>
-<ol>
-	<li>Click <b>Finish</b></li>
-</ol>
-<p align="left"><b> </b></p>
-
-        
-            <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-2-of-11/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
 
     
     <div class="paginator">
@@ -894,6 +921,10 @@ An MDT Deployment Share is the specific deployment environment which will be use
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/why-phishing-defense-needs-software-engineers/">Why Phishing Defense Needs Software Engineers</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/open-season-domain-profiling/">Open Season: Domain Profiling</a>
                     </li>
                 
@@ -915,10 +946,6 @@ An MDT Deployment Share is the specific deployment environment which will be use
                 
                     <li>
                         <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work/">How I Use LLMs for Security Work</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
                     </li>
                 
             </ul>
@@ -947,7 +974,7 @@ An MDT Deployment Share is the specific deployment environment which will be use
                 
                 <li>
                 
-                    <a href="https://letsautomate.it/categories/security/">Security (6)</a>
+                    <a href="https://letsautomate.it/categories/security/">Security (7)</a>
                 
                 </li>
                 

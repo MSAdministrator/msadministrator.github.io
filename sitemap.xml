@@ -3,13 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://letsautomate.it/article/</loc>
-    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/author/</loc>
-    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/automation/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/categories/</loc>
-    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/cti/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/author/josh-rickard/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/phishing/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/phishing/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/security/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/software-engineering/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/threat-intelligence/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/article/why-phishing-defense-needs-software-engineers/</loc>
+    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/dns/</loc>
     <lastmod>2026-09-03T00:00:00-04:00</lastmod>
@@ -20,22 +53,10 @@
     <loc>https://letsautomate.it/tags/enrichment/</loc>
     <lastmod>2026-09-03T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/</loc>
-    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
-  </url><url>
     <loc>https://letsautomate.it/article/open-season-domain-profiling/</loc>
     <lastmod>2026-09-03T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/python/</loc>
-    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/categories/security/</loc>
-    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/tags/</loc>
     <lastmod>2026-09-03T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/golang/</loc>
@@ -87,9 +108,6 @@
     <lastmod>2026-04-13T23:08:02-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/article/agentic-web/</loc>
-    <lastmod>2026-04-13T23:08:02-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/tags/threat-intelligence/</loc>
     <lastmod>2026-04-13T23:08:02-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/categories/automation/</loc>
@@ -164,19 +182,16 @@
     <loc>https://letsautomate.it/tags/atomic/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/tags/automation/</loc>
-    <lastmod>2021-12-28T12:00:36-06:00</lastmod>
-  </url><url>
     <loc>https://letsautomate.it/article/introducing-atomic-operator/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/categories/redcanary/</loc>
     <lastmod>2021-12-28T12:00:36-06:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</loc>
+    <loc>https://letsautomate.it/tags/atomic-red-team/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/tags/atomic-red-team/</loc>
+    <loc>https://letsautomate.it/article/atomic-red-team-testing-with-swimlane/atomic-red-team-testing-with-swimlane/</loc>
     <lastmod>2021-12-20T11:54:39-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/soar/</loc>
@@ -388,6 +403,9 @@
   </url><url>
     <loc>https://letsautomate.it/tags/hugo/</loc>
     <lastmod>2018-08-26T16:07:25-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/article/opt-out-from-osinit-websites/</loc>
+    <lastmod>2018-08-24T16:43:39-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/amazon/</loc>
     <lastmod>2018-08-23T22:24:59-04:00</lastmod>
