@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://letsautomate.it/">
+    <meta name="author" content="Josh Rickard">
+    <meta name="description" content="Lets Automate It">
+    <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
+    <meta name="generator" content="Hugo 0.166.0">
+    <title>
+        
+           
+               Open Season: Domain Profiling &vert; Lets Automate It
+           
+        
+    </title>
+    <meta itemprop="name" content="Open Season: Domain Profiling">
+    <meta itemprop="description" content="Open Season: Domain Profiling - Lets Automate It">
+    <meta property="og:site_name" content="Lets Automate It">
+
+    <meta property="og:url" content="https://letsautomate.it/article/open-season-domain-profiling/">
+	<meta property="og:site_name" content="Lets Automate It">
+	<meta property="og:title" content="Open Season: Domain Profiling">
+	<meta property="og:description" content="I hope you enjoyed the last post about CZDS, but I wanted to write another one explicitly related to my experience and how you can profile a domain address.
+All of this derived from a tool I wrote called domain-profiler (and the other blog gave me an itch).
+So here we go, let’s talk about how you can approach profiling a domain.
+What Is a Domain? To start, let’s just set an example. I’ll use my blog letsautomate.it in this post since it is the most apt to this situation.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2026-09-03T00:00:00-04:00">
+		<meta property="article:modified_time" content="2026-09-03T00:00:00-04:00">
+		<meta property="article:tag" content="Domain">
+		<meta property="article:tag" content="Dns">
+		<meta property="article:tag" content="Enrichment">
+		<meta property="article:tag" content="Python">
+		<meta property="og:image" content="https://letsautomate.it/images/default.jpg">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://letsautomate.it/article/open-season-domain-profiling/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://letsautomate.it/theme.min.b18c72650320d4c806b21646450572426034b414f8d06de7e28b5b4165ab81a7.css" integrity="sha256-sYxyZQMg1MgGshZGRQVyQmA0tBT40G3n4otbQWWrgac=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+     
+    .pagefind-ui {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: #5c8b15;
+        --pagefind-ui-text: #393939;
+        --pagefind-ui-background: #fff;
+        --pagefind-ui-border: #eeeeee;
+        --pagefind-ui-tag: #eeeeee;
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-font: inherit;
+    }
+    
+    .pagefind-ui .pagefind-ui__search-input {
+        font-size: 1rem;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link {
+        color: #5c8b15;
+    }
+    
+    .pagefind-ui .pagefind-ui__result-link:hover {
+        text-decoration: underline;
+    }
+
+     
+    nav .search-container {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-border-radius: 4px;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__form {
+        margin: 0;
+        width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-input {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__search-clear {
+        padding: 0.5rem;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__drawer {
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 4px;
+        max-height: 400px;
+        overflow-y: auto;
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__results {
+        max-width: 100%;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-inner {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #pagefind-topnav-search .pagefind-ui__result-excerpt {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    <div data-pagefind-ignore>
+        
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/press/">Press</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/open-source-projects/">Open Source Projects</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/papers/">Papers</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/presentations/">Presentations</a></li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="container search-container">
+        <div id="pagefind-topnav-search"></div>
+    </div>
+</nav>
+
+        
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/images/default.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Lets Automate It
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">from Josh Rickard</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+    </div>
+
+    
+    
+    <div class="main container" data-pagefind-body>
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://letsautomate.it/article/open-season-domain-profiling/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/open-season-domain-profiling/">
+            Open Season: Domain Profiling
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-09-03</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://letsautomate.it/categories/security/">Security</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>I hope you enjoyed the last post about <a href="https://dispatch.thorcollective.com/p/open-season-czds">CZDS</a>, but I wanted to write another one explicitly related to my experience and how you can profile a domain address.</p>
+<p>All of this derived from a tool I wrote called <a href="https://github.com/MSAdministrator/domain-profiler">domain-profiler</a> (and the other blog gave me an itch).</p>
+<p>So here we go, let&rsquo;s talk about how you can approach profiling a domain.</p>
+<h2 id="what-is-a-domain">What Is a Domain?</h2>
+<p>To start, let&rsquo;s just set an example. I&rsquo;ll use my blog <code>letsautomate.it</code> in this post since it is the most apt to this situation.</p>
+<p>Let&rsquo;s first break down what a domain looks like using a full (typical) URL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://letsautomate.it/blog-post
+</span></span><span style="display:flex;"><span>        |-------------|
+</span></span><span style="display:flex;"><span>            domain
+</span></span></code></pre></div><p>If we break this down even further, we have:</p>
+<ul>
+<li>The protocol: <code>https://</code></li>
+<li>The registered name: <code>letsautomate</code></li>
+<li>The country-code top-level domain (ccTLD): <code>.it</code></li>
+<li>The path/resource: <code>/blog-post</code> (not part of the domain)</li>
+</ul>
+<p>That is a simple explanation that works for most domains, but things get trickier with multi-level TLDs like <code>co.uk</code>. Different portions of domains are governed by different countries, organizations, and policies.</p>
+<p>Obviously the most popular one is <code>.com</code>, but there are now thousands of TLD types that can be used. Some are cheap, some are expensive, and some just look cool.</p>
+<h2 id="how-do-domains-work">How Do Domains Work?</h2>
+<p>When you visit a site, you enter a friendly name like <code>letsautomate.it</code>. Under the hood, your browser sends a request to a local recursive resolver (typically your ISP or configured DNS service).</p>
+<p>If that resolver already has the answer cached, it returns immediately. If it does not, it starts a recursive lookup process:</p>
+<ol>
+<li>Query a root nameserver.</li>
+<li>Receive a referral to the <code>.it</code> TLD nameservers.</li>
+<li>Query the <code>.it</code> nameserver.</li>
+<li>Follow referrals until it finds the authoritative nameserver for <code>letsautomate.it</code>.</li>
+<li>Query the authoritative nameserver for the desired record (often <code>A</code> or <code>AAAA</code>).</li>
+</ol>
+<p>For <code>letsautomate.it</code>, the <code>A</code> records are:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;A&#34;</span>: [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;185.199.111.153&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;185.199.108.153&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;185.199.109.153&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;185.199.110.153&#34;</span>
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Those IPs are <a href="https://pages.github.com/">GitHub Pages</a> addresses. I registered the domain through <a href="https://www.godaddy.com/">GoDaddy</a>, used GoDaddy nameservers, and pointed the <code>A</code> records to GitHub.</p>
+<p>Once that was done, I updated GitHub Pages by adding a <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site"><code>CNAME</code> file</a> with <code>letsautomate.it</code>, and GitHub handled the rest.</p>
+<h2 id="domain-dns">Domain DNS</h2>
+<p>When I registered <code>letsautomate.it</code>, I used <a href="https://www.godaddy.com/">GoDaddy</a> as the registrar and also used GoDaddy&rsquo;s nameservers to host DNS records.</p>
+<p>Technically, I did not purchase the domain permanently. I registered the right to use it for a period, subject to renewal and the policies governing the <code>.it</code> TLD.</p>
+<p>There are a few organizations and roles involved:</p>
+<ul>
+<li>The registry (<a href="https://www.nic.it/en">Registro.it</a>) operates the <code>.it</code> TLD and maintains the authoritative registration database.</li>
+<li>The registrar (<a href="https://www.godaddy.com/">GoDaddy</a>) provides the interface where I registered and manage the domain.</li>
+<li>The DNS provider hosts authoritative nameservers and DNS records. In this case, also GoDaddy.</li>
+<li>The registrant is the person or organization that registered the domain (me).</li>
+</ul>
+<p>Registrars act as approved intermediaries between registrants and registries. They handle registration, renewal, billing, account security, and delegation changes.</p>
+<p>Because GoDaddy is also hosting DNS, I can manage records like <code>A</code>, <code>AAAA</code>, <code>CNAME</code>, <code>MX</code>, and <code>TXT</code> in one place.</p>
+<p>Delegation flow looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>letsautomate.it
+</span></span><span style="display:flex;"><span>  -&gt; .it registry delegates to configured nameservers
+</span></span><span style="display:flex;"><span>  -&gt; GoDaddy authoritative nameservers answer
+</span></span><span style="display:flex;"><span>  -&gt; A records point to GitHub Pages
+</span></span></code></pre></div><p>I could move DNS to <a href="https://www.cloudflare.com/">Cloudflare</a> or self-hosted nameservers by changing delegation at GoDaddy.</p>
+<p>On a private network, you can even use internal names such as <code>blog.josh.internal</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Your computer
+</span></span><span style="display:flex;"><span>  -&gt; Your private resolver
+</span></span><span style="display:flex;"><span>  -&gt; Your private nameserver
+</span></span><span style="display:flex;"><span>  -&gt; Your server
+</span></span></code></pre></div><p>A very local version of name resolution is also your hosts file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>192.0.2.50 letsautomate.it
+</span></span></code></pre></div><p>On the internet, that same concept happens with a lot more moving parts.</p>
+<h2 id="dns-records">DNS Records</h2>
+<p>There are many DNS record types, each with a different purpose.</p>
+<p>Common records include:</p>
+<ul>
+<li><code>A</code>: maps a hostname to an IPv4 address (<a href="https://datatracker.ietf.org/doc/html/rfc1035">RFC 1035</a>).</li>
+<li><code>AAAA</code>: maps a hostname to an IPv6 address (<a href="https://datatracker.ietf.org/doc/html/rfc3596">RFC 3596</a>).</li>
+<li><code>CNAME</code>: aliases one hostname to another (<a href="https://datatracker.ietf.org/doc/html/rfc1035">RFC 1035</a>).</li>
+<li><code>MX</code>: identifies inbound mail servers (<a href="https://datatracker.ietf.org/doc/html/rfc1035">RFC 1035</a>).</li>
+<li><code>TXT</code>: publishes arbitrary text (<a href="https://datatracker.ietf.org/doc/html/rfc7208">SPF</a>, <a href="https://datatracker.ietf.org/doc/html/rfc6376">DKIM</a>, <a href="https://datatracker.ietf.org/doc/html/rfc7489">DMARC</a>, verification, etc.).</li>
+<li><code>NS</code>: identifies authoritative nameservers (<a href="https://datatracker.ietf.org/doc/html/rfc1035">RFC 1035</a>).</li>
+<li><code>SOA</code>: zone administrative/synchronization metadata (<a href="https://datatracker.ietf.org/doc/html/rfc1035">RFC 1035</a>).</li>
+<li><code>SRV</code>: service host and port metadata (<a href="https://datatracker.ietf.org/doc/html/rfc2782">RFC 2782</a>).</li>
+<li><code>CAA</code>: specifies which certificate authorities may issue certs (<a href="https://datatracker.ietf.org/doc/html/rfc8659">RFC 8659</a>).</li>
+<li><code>PTR</code>: reverse DNS mapping from IP to hostname (<a href="https://datatracker.ietf.org/doc/html/rfc1035">RFC 1035</a>).</li>
+</ul>
+<p>For <code>letsautomate.it</code>, <code>A</code> records direct web traffic to GitHub Pages. Other records can independently route email, publish anti-spoofing policy, verify domain ownership, or restrict certificate issuance.</p>
+<p>This separation means a single domain can use multiple providers simultaneously:</p>
+<ul>
+<li>Website on GitHub Pages</li>
+<li>Email at <a href="https://workspace.google.com/">Google</a></li>
+<li>DNS at Cloudflare</li>
+<li>Registration at GoDaddy</li>
+</ul>
+<h2 id="domain-security">Domain Security</h2>
+<p>Domain security is not a single yes/no property.</p>
+<p>A domain can have a valid TLS certificate while still having weak DNS controls, suspicious registration characteristics, or dangling records that could be claimed by someone else.</p>
+<p>No individual signal proves a domain is safe or malicious. The value comes from combining many weak-to-moderate signals into a coherent profile.</p>
+<h2 id="dnssec">DNSSEC</h2>
+<p>Standard DNS shows where a domain points, but not whether responses were modified in transit. <a href="https://datatracker.ietf.org/doc/html/rfc9364">DNS Security Extensions (DNSSEC)</a> add cryptographic signatures.</p>
+<p>A signed zone publishes <code>DNSKEY</code> records, and the parent publishes a <code>DS</code> record that links trust to the hierarchy.</p>
+<p>Finding a <code>DNSKEY</code> record alone is not enough to claim DNSSEC works.</p>
+<blockquote>
+<p>I have a Python package called <a href="https://github.com/MSAdministrator/domain-profiler">domain-profiler</a> that performs DNSSEC, CAA, RDAP, TLS, and more.</p>
+</blockquote>
+<p><code>domain-profiler</code> checks:</p>
+<ul>
+<li>Whether the zone publishes DNSSEC keys</li>
+<li>Whether <code>DNSKEY</code> RRsets are validly signed</li>
+<li>Whether the parent <code>DS</code> matches zone keys</li>
+<li>Whether a validating resolver sets the AD flag</li>
+<li>Whether weak/deprecated signing algorithms are in use</li>
+</ul>
+<p>It classifies results as:</p>
+<ul>
+<li><code>secure</code>: signatures and chain of trust validate</li>
+<li><code>insecure</code>: no complete DNSSEC chain</li>
+<li><code>bogus</code>: DNSSEC exists, but signatures/delegation fail validation</li>
+<li><code>error</code>: validation could not be completed</li>
+</ul>
+<p>Example output shape:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;dnssec&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;secure&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;has_dnskey&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ds_matches&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ad_flag&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;algorithm_warnings&#34;</span>: []
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>An unsigned domain is still extremely common and is not inherently malicious. A <code>bogus</code> result is often more interesting because it may indicate breakage or tampering.</p>
+<h2 id="caa">CAA</h2>
+<p>A <a href="https://datatracker.ietf.org/doc/html/rfc8659">Certification Authority Authorization (CAA)</a> record tells certificate authorities which organizations can issue TLS certificates for a domain.</p>
+<p>Common tags:</p>
+<ul>
+<li><code>issue</code>: controls normal certificate issuance</li>
+<li><code>issuewild</code>: controls wildcard issuance</li>
+<li><code>iodef</code>: reporting destination for policy violations</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>letsautomate.it. 3600 IN CAA 0 issue &#34;letsencrypt.org&#34;
+</span></span><span style="display:flex;"><span>letsautomate.it. 3600 IN CAA 0 issuewild &#34;;&#34;
+</span></span></code></pre></div><p>If no CAA policy exists, any publicly trusted CA may issue a cert after its normal validation process. That is not automatically vulnerable, but it does mean issuance is unrestricted.</p>
+<p>CAA can be inherited. If no record is found on the exact hostname, CAs can walk up the DNS hierarchy to find applicable policy. The profiler follows this logic and reports where effective policy came from.</p>
+<p>The tool identifies:</p>
+<ul>
+<li>Authorized certificate authorities</li>
+<li>Wildcard-specific policy differences</li>
+<li>Explicit issuance denial</li>
+<li>Incident-reporting destination availability</li>
+<li>Cases where effective policy cannot be determined</li>
+</ul>
+<p>CAA is not a complete defense, but it is useful control over who should be issuing certs for your domain.</p>
+<h2 id="rdap-and-whois">RDAP and WHOIS</h2>
+<p><a href="https://www.icann.org/resources/pages/whois-2012-02-25-en">WHOIS</a> has traditionally been used to retrieve registration data, but output formats are inconsistent and difficult to parse reliably.</p>
+<p><a href="https://www.icann.org/rdap">RDAP</a> (Registration Data Access Protocol) is the structured successor to WHOIS and provides standardized JSON responses.</p>
+<p>This is useful when investigating suspicious domains. Very recent registration, changes just before activity, or unexpected nameserver shifts may warrant additional scrutiny.</p>
+<p>Status codes are useful too. For example, <code>clientTransferProhibited</code> often indicates registrar transfer lock protections.</p>
+<p>Registration age alone is only a supporting signal. Legitimate organizations register new domains daily, and attackers can compromise old domains. RDAP becomes more useful when correlated with DNS, certificates, hosting data, and observed behavior.</p>
+<h2 id="tls">TLS</h2>
+<p>TLS is the protocol behind <code>https://</code>. During the handshake, the server presents a certificate with identity and crypto configuration details.</p>
+<p>A newly issued certificate is not automatically suspicious. Many modern services rotate certificates frequently, and authorities like <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> issue short-lived certs at huge scale.</p>
+<p>But a look-alike domain that was just registered and got a same-day certificate is much more interesting than either signal by itself. This is where profiling pays off: weak individual signals become stronger when combined.</p>
+<h2 id="email-authentication">Email Authentication</h2>
+<p>Domains also publish records that define who may send email for them.</p>
+<p>The profiler can inspect:</p>
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7208">SPF</a> records and nested include relationships</li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc6376">DKIM</a> public keys for common selectors</li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7489">DMARC</a> policy, alignment, and reporting</li>
+<li><a href="https://bimigroup.org/">BIMI</a> logo and authority records</li>
+<li>MX records and recognizable providers</li>
+</ul>
+<p>Example SPF record with multiple providers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>v=spf1 include:_spf.google.com include:mailgun.org include:spf.protection.outlook.com -all
+</span></span></code></pre></div><p>SPF can become complex quickly because one record can reference multiple external providers. <code>domain-profiler</code> can produce both a tree and flattened list of resulting IPs/networks, and track SPF&rsquo;s ten-lookup limit.</p>
+<p>DKIM is harder to enumerate because selectors are sender-chosen and there is no universal selector directory. The profiler checks common selectors and allows custom selector input.</p>
+<p>These records help evaluate both email-security posture and authorized sender infrastructure.</p>
+<h2 id="typosquatting-and-homoglyphs">Typosquatting and Homoglyphs</h2>
+<p>When investigating phishing, you may compare a candidate domain to a known brand.</p>
+<p>The profiler compares registrable portions using edit-distance similarity, decodes internationalized domain names (IDN), and normalizes common visual substitutions, including:</p>
+<ul>
+<li><code>0</code> for <code>o</code></li>
+<li><code>1</code> for lowercase <code>l</code></li>
+<li>Cyrillic letters that resemble Latin letters</li>
+<li>Greek letters that resemble Latin letters</li>
+<li>Multi-character combinations such as <code>rn</code> appearing similar to <code>m</code></li>
+</ul>
+<p>Example comparison:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>paypal.com
+</span></span><span style="display:flex;"><span>xn--pypal-4ve.com
+</span></span></code></pre></div><p>A domain can appear visually similar to <code>paypal.com</code> while containing technically different characters.</p>
+<p>The tool reports:</p>
+<ul>
+<li>Raw similarity</li>
+<li>Similarity after homoglyph normalization</li>
+<li>Whether Punycode was used</li>
+<li>Whether multiple writing systems are mixed</li>
+</ul>
+<p>Similarity alone is not proof of malicious intent. It becomes powerful when combined with other signals such as recent registration, fresh cert issuance, unfamiliar infrastructure, and brand-mimicking content.</p>
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+<p>A domain is more than a name pointing to a website. It is a set of registrations, delegations, infrastructure references, security policies, and cryptographic assertions across several systems.</p>
+<p>Each data source answers a different question:</p>
+<ul>
+<li>DNS: where services are located</li>
+<li>RDAP: registration/admin context</li>
+<li>TLS: HTTPS identity and certificate metadata</li>
+<li>CAA: allowed certificate authorities</li>
+<li>DNSSEC: DNS integrity/validation</li>
+<li>SPF, DKIM, DMARC: email authorization/protection</li>
+<li>Typosquatting analysis: similarity to known brands</li>
+<li>CNAME/wildcard analysis: potential takeover exposure</li>
+</ul>
+<p>None of these are especially strong in isolation.</p>
+<ul>
+<li>New cert: normal</li>
+<li>New domain: normal</li>
+<li>GitHub Pages hosting: normal</li>
+<li>Name similarity: sometimes normal</li>
+</ul>
+<p>Interesting patterns emerge when these overlap.</p>
+<p>A domain registered yesterday, similar to a known company, using unfamiliar nameservers, with a certificate issued hours ago, and hosting a cloned login page is a far stronger signal than any single indicator.</p>
+<p>This process is useful defensively too. Looking at <code>letsautomate.it</code> showed me how the domain is delegated, where hosting lives, which CA GitHub Pages uses, and which controls were configured or missing.</p>
+<p>It also led me to add CAA restrictions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>letsautomate.it. 3600 IN CAA 0 issue &#34;letsencrypt.org&#34;
+</span></span><span style="display:flex;"><span>letsautomate.it. 3600 IN CAA 0 issuewild &#34;;&#34;
+</span></span></code></pre></div><p>That is really the point of domain profiling: not just labeling domains as &ldquo;good&rdquo; or &ldquo;bad,&rdquo; but collecting enough context to understand what a domain is, how it works, what changed, and whether its pieces make sense together.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The internet exposes a surprising amount of domain metadata. DNS records, registration data, certificates, email policies, and infrastructure relationships are observable without direct access to backend systems.</p>
+<p>For more context, check out:</p>
+<ul>
+<li><a href="https://dispatch.thorcollective.com/p/open-season-certificate-transparency">Open Season: Certificate Transparency</a></li>
+<li><a href="https://dispatch.thorcollective.com/p/open-season-czds">Open Season: CZDS</a></li>
+</ul>
+<p>The hard part is not collecting one record. The hard part is connecting records into a useful profile.</p>
+<p>That is why I built <a href="https://github.com/MSAdministrator/domain-profiler">domain-profiler</a>: to gather these observations, interpret security relevance, and return output that is useful for investigation, enrichment, or simply better understanding your own domains.</p>
+<p>As always, understanding the nuances of this core technology helps us investigate and defend more effectively.</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/domain/">Domain</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/dns/">Dns</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/enrichment/">Enrichment</a>
+                    
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/python/">Python</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+    
+
+    <div data-pagefind-ignore>
+        
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/open-season-domain-profiling/">Open Season: Domain Profiling</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/open-season-czds/">Open Season: CZDS</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/beyond-the-prompt-social-costs-of-generative-ai/">Beyond the Prompt: The Social Costs of Generative Artificial Intelligence</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work-part-2/">How I Use LLMs for Security Work: Part 2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work/">How I Use LLMs for Security Work</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://letsautomate.it/article/thoughts-about-tiktok-ban/">My Thoughts About the United States Banning TikTok</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://letsautomate.it/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/swimlane/">Swimlane (25)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/powershell/">Powershell (7)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/security/">Security (6)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/azure/">Azure (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/automation/">Automation (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/llm/">Llm (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://letsautomate.it/categories/python/">Python (2)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://x.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/MSAdministrator" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://www.linkedin.com/in/josh-rickard/" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/MSAdministrator" target="_blank">
+                &copy;
+                
+                2026
+                
+                Josh Rickard
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://letsautomate.it/theme.min.042ae98fa88e4ac4a8c85d8d68c93f64728601849c209480cc9b0869d2788d31.js" integrity="sha256-BCrpj6iOSsSoyF2NaMk/ZHKGAYScIJSAzJsIadJ4jTE=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const searchContainer = document.getElementById('pagefind-search');
+        if (searchContainer) {
+            new PagefindUI({ 
+                element: "#pagefind-search", 
+                showSubResults: true,
+                showImages: false
+            });
+        }
+
+        
+        const topnavSearch = document.getElementById('pagefind-topnav-search');
+        if (topnavSearch) {
+            new PagefindUI({ 
+                element: "#pagefind-topnav-search", 
+                showSubResults: false,
+                showImages: false,
+                resetStyles: false
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>

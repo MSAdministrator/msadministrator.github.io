@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Fri, 14 Aug 2026 00:00:00 -0400</lastBuildDate>
+			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 -0400</lastBuildDate>
 		
 			<atom:link href="https://letsautomate.it/categories/security/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Open Season: Domain Profiling</title>
+				<link>https://letsautomate.it/article/open-season-domain-profiling/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 -0400</pubDate>
+				<guid>https://letsautomate.it/article/open-season-domain-profiling/</guid>
+				<description>&lt;p&gt;I hope you enjoyed the last post about &lt;a href=&#34;https://dispatch.thorcollective.com/p/open-season-czds&#34;&gt;CZDS&lt;/a&gt;, but I wanted to write another one explicitly related to my experience and how you can profile a domain address.&lt;/p&gt;&#xA;&lt;p&gt;All of this derived from a tool I wrote called &lt;a href=&#34;https://github.com/MSAdministrator/domain-profiler&#34;&gt;domain-profiler&lt;/a&gt; (and the other blog gave me an itch).&lt;/p&gt;&#xA;&lt;p&gt;So here we go, let&amp;rsquo;s talk about how you can approach profiling a domain.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-a-domain&#34;&gt;What Is a Domain?&lt;/h2&gt;&#xA;&lt;p&gt;To start, let&amp;rsquo;s just set an example. I&amp;rsquo;ll use my blog &lt;code&gt;letsautomate.it&lt;/code&gt; in this post since it is the most apt to this situation.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Open Season: CZDS</title>
 				<link>https://letsautomate.it/article/open-season-czds/</link>

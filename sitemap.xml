@@ -3,36 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://letsautomate.it/article/</loc>
-    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/author/</loc>
-    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/categories/</loc>
-    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/dns/</loc>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/domain/</loc>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/enrichment/</loc>
-    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/author/josh-rickard/</loc>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/</loc>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/article/open-season-domain-profiling/</loc>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/python/</loc>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/security/</loc>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/</loc>
+    <lastmod>2026-09-03T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/golang/</loc>
     <lastmod>2026-08-14T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/</loc>
-    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
-  </url><url>
     <loc>https://letsautomate.it/article/open-season-czds/</loc>
-    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/tags/python/</loc>
-    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/categories/security/</loc>
-    <lastmod>2026-08-14T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/tags/</loc>
     <lastmod>2026-08-14T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/ai/</loc>
