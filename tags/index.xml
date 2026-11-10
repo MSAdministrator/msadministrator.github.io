@@ -10,9 +10,37 @@
 		
 		
 		
-			<lastBuildDate>Thu, 29 Oct 2026 12:00:00 -0500</lastBuildDate>
+			<lastBuildDate>Tue, 10 Nov 2026 11:00:00 -0600</lastBuildDate>
 		
 			<atom:link href="https://letsautomate.it/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Artificial-Intelligence</title>
+				<link>https://letsautomate.it/tags/artificial-intelligence/</link>
+				<pubDate>Tue, 10 Nov 2026 11:00:00 -0600</pubDate>
+				<guid>https://letsautomate.it/tags/artificial-intelligence/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Digital-Commons</title>
+				<link>https://letsautomate.it/tags/digital-commons/</link>
+				<pubDate>Tue, 10 Nov 2026 11:00:00 -0600</pubDate>
+				<guid>https://letsautomate.it/tags/digital-commons/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Infrastructure</title>
+				<link>https://letsautomate.it/tags/infrastructure/</link>
+				<pubDate>Tue, 10 Nov 2026 11:00:00 -0600</pubDate>
+				<guid>https://letsautomate.it/tags/infrastructure/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Scraping</title>
+				<link>https://letsautomate.it/tags/scraping/</link>
+				<pubDate>Tue, 10 Nov 2026 11:00:00 -0600</pubDate>
+				<guid>https://letsautomate.it/tags/scraping/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Automation</title>
 				<link>https://letsautomate.it/tags/automation/</link>
@@ -357,7 +385,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Mitre</title>
+				<title>MITRE</title>
 				<link>https://letsautomate.it/tags/mitre/</link>
 				<pubDate>Fri, 24 Jul 2020 12:33:03 -0600</pubDate>
 				<guid>https://letsautomate.it/tags/mitre/</guid>

@@ -5,10 +5,20 @@
     <description>Recent content on Lets Automate It</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Oct 2026 12:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 11:00:00 -0600</lastBuildDate>
     
         <atom:link href="https://letsautomate.it/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Beyond the Prompt: Infrastructure Costs of Scraping</title>
+      <link>https://letsautomate.it/article/beyond-the-prompt-infrastructure-costs-of-scraping/</link>
+      <pubDate>Tue, 10 Nov 2026 11:00:00 -0600</pubDate>
+      <guid>https://letsautomate.it/article/beyond-the-prompt-infrastructure-costs-of-scraping/</guid>
+      <description>&lt;p&gt;Earlier this year, I co-wrote (with &lt;a href=&#34;https://www.christiansonjs.com/&#34;&gt;J. Scott Christianson&lt;/a&gt;) a paper titled &lt;a href=&#34;https://letsautomate.it/article/beyond-the-prompt-social-costs-of-generative-ai/&#34;&gt;“Beyond the Prompt: The Social Costs of Generative Artificial Intelligence”&lt;/a&gt;. In this paper, we explored how generative artificial intelligence affects the digital commons (e.g., the internet), particularly the organizations and communities responsible for making information publicly available.&lt;/p&gt;
+&lt;p&gt;One of the topics we discussed was scraping and the costs imposed on organizations around the world.&lt;/p&gt;
+&lt;p&gt;But not all systems are created equal, and neither are the costs of operating them at scale.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Why Phishing Defense Needs Software Engineers</title>
@@ -927,7 +937,200 @@ cd %windir%&lt;/p&gt;</description>
       <description>&lt;p&gt;Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely.  This is not my script, I received this script along with many others from the SANS SEC 505 course.  I have not altered it in any way.&lt;/p&gt;
 &lt;div&gt;
 &lt;p&gt;Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):&lt;/p&gt;
-&lt;p&gt;This script will remove older local administrator passwords that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate in (2 of 3).&lt;/p&gt;</description>
+&lt;p&gt;This script will remove older local administrator passwords that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate in (2 of 3).&lt;/p&gt;
+&lt;p&gt;Copy this text into a PowerShell Script called CleanUp_PasswordArchive.ps1&lt;/p&gt;
+&lt;p&gt;[code
+]&lt;/p&gt;
+&lt;p&gt;####################################################################################
+#.Synopsis&lt;/p&gt;
+&lt;h1 id=&#34;carefully-delete-only-the-correct-password-archive-files-previously&#34;&gt;Carefully delete only the correct password archive files previously&lt;/h1&gt;
+&lt;h1 id=&#34;created-with-the-companion-script-named-update-passwordarchiveps1&#34;&gt;created with the companion script named Update-PasswordArchive.ps1.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Description&lt;/p&gt;
+&lt;h1 id=&#34;deletes-older-password-archive-files-while-retaining-a-chosen-number&#34;&gt;Deletes older password archive files while retaining a chosen number&lt;/h1&gt;
+&lt;h1 id=&#34;default--5-of-prior-successful-and-failed-archive-files-for-each&#34;&gt;(default = 5) of prior successful and failed archive files for each&lt;/h1&gt;
+&lt;h1 id=&#34;unique-combination-of-computer-and-user-total-of-10-files-by-default&#34;&gt;unique combination of computer and user (total of 10 files by default&lt;/h1&gt;
+&lt;h1 id=&#34;for-each-unique-combination-scheduling-this-script-will-help-to&#34;&gt;for each unique combination). Scheduling this script will help to&lt;/h1&gt;
+&lt;h1 id=&#34;maintain-a-reasonable-number-of-password-archive-files&#34;&gt;maintain a reasonable number of password archive files.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Parameter PasswordArchivePath&lt;/p&gt;
+&lt;h1 id=&#34;the-local-or-unc-path-to-where-the-encrypted-password-files-are-kept&#34;&gt;The local or UNC path to where the encrypted password files are kept.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Parameter ComputerName&lt;/p&gt;
+&lt;h1 id=&#34;name-of-the-computer-with-the-local-account-whose-password-was-reset&#34;&gt;Name of the computer with the local account whose password was reset&lt;/h1&gt;
+&lt;h1 id=&#34;and-whose-password-was-encrypted-and-saved-to-a-file-the-computer&#34;&gt;and whose password was encrypted and saved to a file. The computer&lt;/h1&gt;
+&lt;h1 id=&#34;name-will-match-the-names-of-files-in-the-passwordarchivepath-this&#34;&gt;name will match the names of files in the PasswordArchivePath. This&lt;/h1&gt;
+&lt;h1 id=&#34;parameter-can-accept-a-computer-name-with-a-wildcard-in-it-when&#34;&gt;parameter can accept a computer name with a wildcard in it. When&lt;/h1&gt;
+&lt;h1 id=&#34;specified-only-the-archives-for-that-computer-or-for-those-matching&#34;&gt;specified, only the archives for that computer (or for those matching&lt;/h1&gt;
+&lt;h1 id=&#34;computers-with-a-wildcard-will-be-cleaned-up-instead-of-the-default&#34;&gt;computers with a wildcard) will be cleaned up instead of the default,&lt;/h1&gt;
+&lt;h1 id=&#34;which-is-to-clean-up-archive-files-for-all-computers&#34;&gt;which is to clean up archive files for all computers.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Parameter ArchivesToKeep&lt;/p&gt;
+&lt;h1 id=&#34;the-number-of-current-and-prior-password-archive-files-to-keep-for&#34;&gt;The number of current and prior password archive files to keep for&lt;/h1&gt;
+&lt;h1 id=&#34;each-combination-of-computer-name-and-user-name-a-single-computer&#34;&gt;each combination of computer name and user name. A single computer&lt;/h1&gt;
+&lt;h1 id=&#34;might-have-multiple-local-user-accounts-whose-passwords-are-managed&#34;&gt;might have multiple local user accounts whose passwords are managed&lt;/h1&gt;
+&lt;h1 id=&#34;by-these-scripts-so-the-clean-up-must-handle-this-gracefully-the&#34;&gt;by these scripts, so the clean up must handle this gracefully. The&lt;/h1&gt;
+&lt;h1 id=&#34;default-is-5-5-successful-files--5-failures-files--10-files&#34;&gt;default is 5 (5 successful files + 5 failures files = 10 files).&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Parameter VerboseReporting&lt;/p&gt;
+&lt;h1 id=&#34;switch-to-show-verbose-information&#34;&gt;Switch to show verbose information.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Parameter DoNotDelete&lt;/p&gt;
+&lt;h1 id=&#34;switch-to-do-a--whatif-dry-run-that-will-not-actually-delete-any&#34;&gt;Switch to do a -WhatIf dry run that will not actually delete any&lt;/h1&gt;
+&lt;h1 id=&#34;files-use-this-switch-along-with--verbosereporting-for-testing&#34;&gt;files. Use this switch along with -VerboseReporting for testing.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Parameter DeleteAllPasswordArchives&lt;/p&gt;
+&lt;h1 id=&#34;switch-to-delete-all-password-archive-files-without-exception&#34;&gt;Switch to delete all password archive files without exception.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Example&lt;/p&gt;
+&lt;h1 id=&#34;cleanup-passwordarchiveps1--passwordarchivepath-servershare&#34;&gt;.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;deletes-all-but-the-last-5-password-archive-files-for-each-computer&#34;&gt;Deletes all but the last 5 password archive files for each computer&lt;/h1&gt;
+&lt;h1 id=&#34;and-user-combination-also-deletes-all-but-the-last-5-failure-type&#34;&gt;and user combination. Also, deletes all but the last 5 failure-type&lt;/h1&gt;
+&lt;h1 id=&#34;files-for-each-combination-hence-if-the-last-successful-reset-was&#34;&gt;files for each combination. Hence, if the last successful reset was&lt;/h1&gt;
+&lt;h1 id=&#34;six-months-ago-followed-by-many-failures-the-last-5-successful&#34;&gt;six months ago, followed by many failures, the last 5 successful&lt;/h1&gt;
+&lt;h1 id=&#34;reset-archive-files-will-not-be-deleted&#34;&gt;reset archive files will &lt;em&gt;not&lt;/em&gt; be deleted.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Example&lt;/p&gt;
+&lt;h1 id=&#34;cleanup-passwordarchiveps1--passwordarchivepath-servershare--computername-wks&#34;&gt;.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share -ComputerName WKS*&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;only-cleans-up-the-archive-files-for-computers-which-match-the-wks-file&#34;&gt;Only cleans up the archive files for computers which match the &amp;quot;WKS*&amp;quot; file&lt;/h1&gt;
+&lt;h1 id=&#34;pattern-a-full-computer-name-can-be-specified-wildcards-are-not-required&#34;&gt;pattern. A full computer name can be specified, wildcards are not required.&lt;/h1&gt;
+&lt;h1 id=&#34;regular-expressions-are-not-supported&#34;&gt;Regular expressions are not supported.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Example&lt;/p&gt;
+&lt;h1 id=&#34;cleanup-passwordarchiveps1--passwordarchivepath-servershare--donotdelete--verbosereporting&#34;&gt;.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share -DoNotDelete -VerboseReporting&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;no-files-will-be-deleted-but-a-verbose-report-of-files-discovered-will-be-shown&#34;&gt;No files will be deleted, but a verbose report of files discovered will be shown.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#Requires -Version 2.0&lt;/p&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Notes&lt;/p&gt;
+&lt;h1 id=&#34;author-jason-fossen-enclave-consulting-http-wwwsansorgwindows-security&#34;&gt;Author: Jason Fossen, Enclave Consulting (http: //www.sans.org/windows-security/)&lt;/h1&gt;
+&lt;h1 id=&#34;version-10&#34;&gt;Version: 1.0&lt;/h1&gt;
+&lt;h1 id=&#34;updated-11nov2012&#34;&gt;Updated: 11.Nov.2012&lt;/h1&gt;
+&lt;h1 id=&#34;legal-public-domain-script-provided-as-is-with-no-warranties-or-guarantees-of&#34;&gt;LEGAL: PUBLIC DOMAIN. SCRIPT PROVIDED &amp;quot;AS IS&amp;quot; WITH NO WARRANTIES OR GUARANTEES OF&lt;/h1&gt;
+&lt;h1 id=&#34;any-kind-including-but-not-limited-to-merchantability-andor-fitness-for&#34;&gt;ANY KIND, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY AND/OR FITNESS FOR&lt;/h1&gt;
+&lt;h1 id=&#34;a-particular-purpose-all-risks-of-damage-remains-with-the-user-even-if&#34;&gt;A PARTICULAR PURPOSE. ALL RISKS OF DAMAGE REMAINS WITH THE USER, EVEN IF&lt;/h1&gt;
+&lt;h1 id=&#34;the-author-supplier-or-distributor-has-been-advised-of-the-possibility-of&#34;&gt;THE AUTHOR, SUPPLIER OR DISTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF&lt;/h1&gt;
+&lt;h1 id=&#34;any-such-damage-if-your-state-does-not-permit-the-complete-limitation-of&#34;&gt;ANY SUCH DAMAGE. IF YOUR STATE DOES NOT PERMIT THE COMPLETE LIMITATION OF&lt;/h1&gt;
+&lt;h1 id=&#34;liability-then-delete-this-file-since-you-are-now-prohibited-to-have-it&#34;&gt;LIABILITY, THEN DELETE THIS FILE SINCE YOU ARE NOW PROHIBITED TO HAVE IT.&lt;/h1&gt;
+&lt;p&gt;####################################################################################
+Param ($PasswordArchivePath = &amp;quot;.&amp;amp;quot;, $ComputerName = &amp;quot;*&amp;quot;, $ArchivesToKeep = 5,
+[Switch
+] $VerboseReporting,
+[Switch
+] $DoNotDelete,
+[Switch
+] $DeleteAllPasswordArchives)&lt;/p&gt;
+&lt;h1 id=&#34;test-access-to-path&#34;&gt;Test access to path.&lt;/h1&gt;
+&lt;p&gt;if (Resolve-Path -Path $PasswordArchivePath)
+{ $PasswordArchivePath = $(Resolve-Path -Path $PasswordArchivePath).Path
+}
+else
+{ &amp;quot;&lt;code&gt;nERROR: Cannot resolve path to archive folder: $PasswordArchivePath &lt;/code&gt;n&amp;quot; ; exit
+}&lt;/p&gt;
+&lt;h1 id=&#34;sanity-check-on-archivestokeep&#34;&gt;Sanity check on $ArchivesToKeep&lt;/h1&gt;
+&lt;p&gt;if ($ArchivesToKeep -le 0) { &amp;quot;&lt;code&gt;nERROR: The -ArchivesToKeep argument must be 1 or larger.&lt;/code&gt;n&amp;quot; ; exit
+}&lt;/p&gt;
+&lt;h1 id=&#34;get-all-matching-files&#34;&gt;Get all matching files.&lt;/h1&gt;
+&lt;p&gt;$filter = $($ComputerName + &amp;quot;&lt;em&gt;+&lt;/em&gt;+&lt;em&gt;+&lt;/em&gt;&amp;quot;).Replace(&amp;quot;**&amp;quot;,&amp;quot;*&amp;quot;)
+$files = dir -Path $PasswordArchivePath -Filter $filter
+if ($VerboseReporting)
+{
+&amp;quot;&lt;code&gt;nTotal number of matching ($ComputerName) archive files = &amp;amp;quot; + $files.count $files | foreach { $_.fullname } &amp;amp;quot;&lt;/code&gt;n&amp;quot;
+}&lt;/p&gt;
+&lt;h1 id=&#34;maybe-just-delete-them-all&#34;&gt;Maybe just delete them all.&lt;/h1&gt;
+&lt;p&gt;if ($DeleteAllPasswordArchives -and $DoNotDelete) { &amp;quot;&lt;code&gt;nERROR: Invalid combination of switches.&lt;/code&gt;n&amp;quot; ; exit
+}
+if ($DeleteAllPasswordArchives -and $ComputerName -ne &amp;quot;*&amp;quot;) { &amp;quot;&lt;code&gt;nERROR: Invalid combination of switches.&lt;/code&gt;n&amp;quot; ; exit
+}
+if ($DeleteAllPasswordArchives)
+{
+&amp;quot;&lt;code&gt;nDeleting all password archive files...&lt;/code&gt;n&amp;quot;
+$files | foreach { remove-item $_
+}
+exit
+}&lt;/p&gt;
+&lt;h1 id=&#34;separate-successful-vs-failed-password-reset-files&#34;&gt;Separate successful vs. failed password reset files.&lt;/h1&gt;
+&lt;p&gt;$failurefiles = $files | where { $&lt;em&gt;.Name -like &amp;quot;*FAILURE&amp;quot;
+}
+$successfiles = $files | where { $&lt;/em&gt;.Name -notlike &amp;quot;*FAILURE&amp;quot;
+}
+if ($VerboseReporting) { &amp;quot;Files for failed resets = &amp;quot; + $failurefiles.count
+}
+if ($VerboseReporting) { &amp;quot;Files for successful resets = &amp;quot; + $successfiles.count
+}&lt;/p&gt;
+&lt;h1 id=&#34;build-arrays-of-unique-computernameusername-combinations&#34;&gt;Build arrays of unique computername+username combinations.&lt;/h1&gt;
+&lt;p&gt;$failurenames = @()
+$successnames = @()&lt;/p&gt;
+&lt;p&gt;foreach ($file in $failurefiles)
+{
+$computer = $($file.name -split &amp;lsquo;+&amp;rsquo;)[
+0
+] + &amp;quot;+&amp;quot; + $($file.name -split &amp;lsquo;+&amp;rsquo;)[
+1
+]
+if ($computer -notin $failurenames){ $failurenames += $computer
+}
+}
+if ($VerboseReporting) { &amp;quot;&lt;code&gt;nUnique Computer+User combinations for failed resets = &amp;amp;quot; + $failurenames.count } if ($VerboseReporting) { $failurenames ; &amp;amp;quot;&lt;/code&gt;n&amp;quot;
+}&lt;/p&gt;
+&lt;p&gt;foreach ($file in $successfiles)
+{
+$computer = $($file.name -split &amp;lsquo;+&amp;rsquo;)[
+0
+] + &amp;quot;+&amp;quot; + $($file.name -split &amp;lsquo;+&amp;rsquo;)[
+1
+]
+if ($computer -notin $successnames){ $successnames += $computer
+}
+}
+if ($VerboseReporting) { &amp;quot;Unique Computer+User combinations for successful resets = &amp;quot; + $successnames.count
+}
+if ($VerboseReporting) { $successnames ; &amp;quot;`n&amp;quot;
+}&lt;/p&gt;
+&lt;h1 id=&#34;delete-the-non-keepers-for-each-unique-name&#34;&gt;Delete the non-keepers for each unique name.&lt;/h1&gt;
+&lt;p&gt;$SuccessFileCounter = $FailureFileCounter = 0&lt;/p&gt;
+&lt;p&gt;foreach ($name in $failurenames)
+{
+$targets = $failurefiles | where { $&lt;em&gt;.Name -like ($name + &amp;quot;+*&amp;quot;)
+} | sort Name
+if ($targets.count -le $ArchivesToKeep) { continue
+}
+0..$($targets.count - $ArchivesToKeep - 1) |
+foreach { if (-not $DoNotDelete){remove-item $targets[$&lt;/em&gt;
+].fullname ; if($?){$FailureFileCounter++
+}
+}
+}
+}&lt;/p&gt;
+&lt;p&gt;foreach ($name in $successnames)
+{
+$targets = $successfiles | where { $&lt;em&gt;.Name -like ($name + &amp;quot;+*&amp;quot;)
+} | sort Name
+if ($targets.count -le $ArchivesToKeep) { continue
+}
+0..$($targets.count - $ArchivesToKeep - 1) |
+foreach { if (-not $DoNotDelete){remove-item $targets[$&lt;/em&gt;
+].fullname ; if($?){$SuccessFileCounter++
+}
+}
+}
+}&lt;/p&gt;
+&lt;h1 id=&#34;default-report&#34;&gt;Default Report&lt;/h1&gt;
+&lt;p&gt;[String
+] $SuccessFileCounter + &amp;quot; files deleted out of the set of &amp;quot; + [String
+] $successfiles.count + &amp;quot; successful reset files.&amp;quot;
+[String
+] $FailureFileCounter + &amp;quot; files deleted out of the set of &amp;quot; + [String
+] $failurefiles.count + &amp;quot; failure reset files.&amp;quot;
+&amp;quot;`n&amp;quot;&lt;/p&gt;
+&lt;p&gt;&amp;amp;nbsp;&lt;/p&gt;
+&lt;p&gt;[/code
+]&lt;/p&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -938,7 +1141,176 @@ cd %windir%&lt;/p&gt;</description>
       <description>&lt;p&gt;&lt;span style=&#34;font-size:13px;&#34;&gt; B&lt;/span&gt;&lt;span style=&#34;font-size:13px;&#34;&gt;elow is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely.  This is not my script, I received this script along with many others from the SANS SEC 505 course.  I have not altered it in any way.&lt;/span&gt;&lt;/p&gt;
 &lt;div&gt;
 &lt;p&gt;Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):&lt;/p&gt;
-&lt;p&gt;This script will recover the local administrator password that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate.&lt;/p&gt;</description>
+&lt;p&gt;This script will recover the local administrator password that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate.&lt;/p&gt;
+&lt;p&gt;Copy this text into a PowerShell Script called Recover_PasswordArchive.ps1&lt;/p&gt;
+&lt;p&gt;[code
+]&lt;/p&gt;
+&lt;p&gt;####################################################################################
+#.Synopsis&lt;/p&gt;
+&lt;h1 id=&#34;recover-the-plaintext-password-from-an-encrypted-file-originally&#34;&gt;Recover the plaintext password from an encrypted file originally&lt;/h1&gt;
+&lt;h1 id=&#34;created-with-the-companion-script-named-update-passwordarchiveps1&#34;&gt;created with the companion script named Update-PasswordArchive.ps1.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Description&lt;/p&gt;
+&lt;h1 id=&#34;recover-the-plaintext-password-from-an-encrypted-file-originally-1&#34;&gt;Recover the plaintext password from an encrypted file originally&lt;/h1&gt;
+&lt;h1 id=&#34;created-with-the-companion-script-named-update-passwordarchiveps1-the&#34;&gt;created with the companion script named Update-PasswordArchive.ps1. The&lt;/h1&gt;
+&lt;h1 id=&#34;file-is-encrypted-with-a-public-key-chosen-by-the-administrator-the&#34;&gt;file is encrypted with a public key chosen by the administrator. The&lt;/h1&gt;
+&lt;h1 id=&#34;password-generated-by-update-passwordarchiveps1-is-random-recovery&#34;&gt;password generated by Update-PasswordArchive.ps1 is random. Recovery&lt;/h1&gt;
+&lt;h1 id=&#34;of-the-encrypted-password-from-the-file-requires-possession-of-the&#34;&gt;of the encrypted password from the file requires possession of the&lt;/h1&gt;
+&lt;h1 id=&#34;private-key-corresponding-to-the-chosen-public-key-certificate&#34;&gt;private key corresponding to the chosen public key certificate.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Parameter PasswordArchivePath&lt;/p&gt;
+&lt;h1 id=&#34;the-local-or-unc-path-to-where-the-encrypted-password-files-are-kept&#34;&gt;The local or UNC path to where the encrypted password files are kept.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Parameter ComputerName&lt;/p&gt;
+&lt;h1 id=&#34;name-of-the-computer-with-the-local-account-whose-password-was-reset&#34;&gt;Name of the computer with the local account whose password was reset&lt;/h1&gt;
+&lt;h1 id=&#34;and-whose-password-was-encrypted-and-saved-to-a-file-the-computer&#34;&gt;and whose password was encrypted and saved to a file. The computer&lt;/h1&gt;
+&lt;h1 id=&#34;name-will-match-the-names-of-files-in-the-passwordarchivepath-this&#34;&gt;name will match the names of files in the PasswordArchivePath. This&lt;/h1&gt;
+&lt;h1 id=&#34;parameter-can-accept-a-computer-name-with-a-wildcard-in-it&#34;&gt;parameter can accept a computer name with a wildcard in it.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Parameter ShowAll&lt;/p&gt;
+&lt;h1 id=&#34;without-this-switch-only-the-most-recent-plaintext-password-is-shown&#34;&gt;Without this switch, only the most recent plaintext password is shown.&lt;/h1&gt;
+&lt;h1 id=&#34;with-this-switch-all-archived-passwords-for-the-computer-are-shown&#34;&gt;With this switch, all archived passwords for the computer are shown.&lt;/h1&gt;
+&lt;h1 id=&#34;this-might-be-necessary-when-the-passwords-of-multiple-local-user&#34;&gt;This might be necessary when the passwords of multiple local user&lt;/h1&gt;
+&lt;h1 id=&#34;accounts-are-being-managed-with-these-scripts&#34;&gt;accounts are being managed with these scripts.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Example&lt;/p&gt;
+&lt;h1 id=&#34;recover-passwordarchiveps1--computername-laptop47&#34;&gt;.\Recover-PasswordArchive.ps1 -ComputerName LAPTOP47&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;displays-in-plaintext-the-last-recorded-password-updated-on-laptop47&#34;&gt;Displays in plaintext the last recorded password updated on LAPTOP47.&lt;/h1&gt;
+&lt;h1 id=&#34;the-user-running-this-script-must-have-loaded-into-their-local-cache&#34;&gt;The user running this script must have loaded into their local cache&lt;/h1&gt;
+&lt;h1 id=&#34;the-certificate-and-private-key-corresponding-to-the-certificate-used&#34;&gt;the certificate AND private key corresponding to the certificate used&lt;/h1&gt;
+&lt;h1 id=&#34;to-originally-encrypt-the-password-archive-files-in-the-present&#34;&gt;to originally encrypt the password archive files in the present&lt;/h1&gt;
+&lt;h1 id=&#34;working-directory-a-smart-card-may-be-used-instead&#34;&gt;working directory. A smart card may be used instead.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Example&lt;/p&gt;
+&lt;h1 id=&#34;recover-passwordarchiveps1--passwordarchivepath-servershare--computername-wks&#34;&gt;.\Recover-PasswordArchive.ps1 -PasswordArchivePath \server\share -ComputerName WKS*&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;instead-of-the-present-working-directory-of-the-script-search-the&#34;&gt;Instead of the present working directory of the script, search the&lt;/h1&gt;
+&lt;h1 id=&#34;password-archive-files-located-in-servershare-another-local&#34;&gt;password archive files located in \server\share. Another local&lt;/h1&gt;
+&lt;h1 id=&#34;folder-can-be-specified-instead-of-a-unc-network-path-the-wildcard&#34;&gt;folder can be specified instead of a UNC network path. The wildcard&lt;/h1&gt;
+&lt;h1 id=&#34;in-the-computer-name-will-show-the-most-recent-password-updates-for&#34;&gt;in the computer name will show the most recent password updates for&lt;/h1&gt;
+&lt;h1 id=&#34;all-matching-computer-names-in-servershare&#34;&gt;all matching computer names in \server\share.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Example&lt;/p&gt;
+&lt;h1 id=&#34;recover-passwordarchiveps1--passwordarchivepath-servershare--computername-laptop47--showall&#34;&gt;.\Recover-PasswordArchive.ps1 -PasswordArchivePath \server\share -ComputerName LAPTOP47 -ShowAll&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;instead-of-showing-only-the-last-password-update-show-all-archived-passwords&#34;&gt;Instead of showing only the last password update, show all archived passwords&lt;/h1&gt;
+&lt;h1 id=&#34;in-the-servershare-folder-for-the-computer-named-laptop47&#34;&gt;in the \server\share folder for the computer named LAPTOP47.&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#Requires -Version 2.0&lt;/p&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;#.Notes&lt;/p&gt;
+&lt;h1 id=&#34;author-jason-fossen-enclave-consulting-http-wwwsansorgwindows-security&#34;&gt;Author: Jason Fossen, Enclave Consulting (http: //www.sans.org/windows-security/)&lt;/h1&gt;
+&lt;h1 id=&#34;version-10&#34;&gt;Version: 1.0&lt;/h1&gt;
+&lt;h1 id=&#34;updated-11nov2012&#34;&gt;Updated: 11.Nov.2012&lt;/h1&gt;
+&lt;h1 id=&#34;legal-public-domain-script-provided-as-is-with-no-warranties-or-guarantees-of&#34;&gt;LEGAL: PUBLIC DOMAIN. SCRIPT PROVIDED &amp;quot;AS IS&amp;quot; WITH NO WARRANTIES OR GUARANTEES OF&lt;/h1&gt;
+&lt;h1 id=&#34;any-kind-including-but-not-limited-to-merchantability-andor-fitness-for&#34;&gt;ANY KIND, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY AND/OR FITNESS FOR&lt;/h1&gt;
+&lt;h1 id=&#34;a-particular-purpose-all-risks-of-damage-remains-with-the-user-even-if&#34;&gt;A PARTICULAR PURPOSE. ALL RISKS OF DAMAGE REMAINS WITH THE USER, EVEN IF&lt;/h1&gt;
+&lt;h1 id=&#34;the-author-supplier-or-distributor-has-been-advised-of-the-possibility-of&#34;&gt;THE AUTHOR, SUPPLIER OR DISTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF&lt;/h1&gt;
+&lt;h1 id=&#34;any-such-damage-if-your-state-does-not-permit-the-complete-limitation-of&#34;&gt;ANY SUCH DAMAGE. IF YOUR STATE DOES NOT PERMIT THE COMPLETE LIMITATION OF&lt;/h1&gt;
+&lt;h1 id=&#34;liability-then-delete-this-file-since-you-are-now-prohibited-to-have-it&#34;&gt;LIABILITY, THEN DELETE THIS FILE SINCE YOU ARE NOW PROHIBITED TO HAVE IT.&lt;/h1&gt;
+&lt;p&gt;####################################################################################
+Param ($PasswordArchivePath = &amp;quot;.&amp;amp;quot;, $ComputerName = &amp;quot;$env:computername&amp;quot;,
+[Switch
+] $ShowAll)&lt;/p&gt;
+&lt;h1 id=&#34;construct-and-test-path-to-encrypted-password-files&#34;&gt;Construct and test path to encrypted password files.&lt;/h1&gt;
+&lt;p&gt;$PasswordArchivePath = $(resolve-path -path $PasswordArchivePath).path
+if ($PasswordArchivePath -notlike &amp;quot;*&amp;amp;quot;) { $PasswordArchivePath = $PasswordArchivePath + &amp;quot;&amp;amp;quot;
+}
+if (-not $(test-path -path $PasswordArchivePath)) { &amp;quot;&lt;code&gt;nERROR: Cannot find path: &amp;amp;quot; + $PasswordArchivePath + &amp;amp;quot;&lt;/code&gt;n&amp;quot; ; exit
+}&lt;/p&gt;
+&lt;h1 id=&#34;get-encrypted-password-files-and-sort-by-name-which-sorts-by-tick-number-ie-by-creation-timestamp&#34;&gt;Get encrypted password files and sort by name, which sorts by tick number, i.e., by creation timestamp.&lt;/h1&gt;
+&lt;p&gt;$files = @(dir ($PasswordArchivePath + &amp;quot;$ComputerName+&lt;em&gt;+&lt;/em&gt;+*&amp;quot;) | sort Name)
+if ($files.count -eq 0) { &amp;quot;&lt;code&gt;nERROR: No password archives for &amp;amp;quot; + $ComputerName + &amp;amp;quot;&lt;/code&gt;n&amp;quot; ; exit
+}&lt;/p&gt;
+&lt;h1 id=&#34;get-the-latest-archive-file-only-unless--showall-is-used&#34;&gt;Get the latest archive file only, unless -ShowAll is used.&lt;/h1&gt;
+&lt;p&gt;if (-not $ShowAll){ $files = @($files[
+-1
+])
+}&lt;/p&gt;
+&lt;h1 id=&#34;load-the-current-users-certificates-and-private-keys&#34;&gt;Load the current user&amp;rsquo;s certificates and private keys.&lt;/h1&gt;
+&lt;p&gt;$flags = new-object System.Security.Cryptography.X509Certificates.OpenFlags #ReadOnly
+$store = new-object System.Security.Cryptography.X509Certificates.X509Store #CurrentUser
+if (-not $? -or ($store.GetType().fullname -notlike &amp;quot;&lt;em&gt;X509Stor&lt;/em&gt;&amp;quot;)) { &amp;quot;&lt;code&gt;nERROR: Could not load your certificates and private keys.&lt;/code&gt;n&amp;quot; ; exit
+}
+$store.open($flags)
+$certstore = $store.Certificates
+$store.close()
+if ($certstore.count -eq 0) { &amp;quot;&lt;code&gt;nERROR: You have no certificates or private keys.&lt;/code&gt;n&amp;quot; ; exit
+}&lt;/p&gt;
+&lt;h1 id=&#34;process-encrypted-password-archive-files-and-output-objects&#34;&gt;Process encrypted password archive files and $output objects.&lt;/h1&gt;
+&lt;p&gt;foreach ($lastfile in $files) `
+{
+$output = ($output = &amp;quot; &amp;quot; | select-object ComputerName,FilePath,UserName,TimeStamp,Thumbprint,Valid,Password)&lt;/p&gt;
+&lt;p&gt;$output.ComputerName = $($lastfile.Name -split &amp;lsquo;+&amp;rsquo;)[
+0
+]
+$output.FilePath = $lastfile.fullname
+$output.UserName = $($lastfile.Name -split &amp;lsquo;+&amp;rsquo;)[
+1
+]
+$output.TimeStamp = [DateTime
+][Int64
+]$($lastfile.Name -split &amp;lsquo;+&amp;rsquo;)[
+2
+]
+$output.Valid = $false #Assume password recovery will fail.
+$output.Thumbprint = $($lastfile.Name -split &amp;lsquo;+&amp;rsquo;)[
+3
+]&lt;/p&gt;
+&lt;h1 id=&#34;check-for-password-reset-failure-files&#34;&gt;Check for password reset failure files.&lt;/h1&gt;
+&lt;p&gt;if ($output.Thumbprint -eq &amp;quot;PASSWORD-RESET-FAILURE&amp;quot;)
+{
+$output.Password = &amp;quot;ERROR: Try to use prior password(s) for this computer.&amp;quot;
+$output
+continue
+}&lt;/p&gt;
+&lt;h1 id=&#34;read-in-password-archive-binary-file&#34;&gt;Read in password archive binary file.&lt;/h1&gt;
+&lt;p&gt;[byte[]
+] $ciphertext = get-content -encoding byte -path $lastfile.fullname
+if (-not $?)
+{
+$output.Password = &amp;quot;ERROR: Failed to read &amp;quot; + $lastfile.fullname
+$output
+continue
+}&lt;/p&gt;
+&lt;h1 id=&#34;load-the-correct-certificate-and-test-for-possession-of-private-key&#34;&gt;Load the correct certificate and test for possession of private key.&lt;/h1&gt;
+&lt;p&gt;$certpriv = $certstore | where { $_.thumbprint -eq $output.thumbprint
+}
+if (-not $certpriv.hasprivatekey)
+{
+$output.Password = &amp;quot;ERROR: You do not have the private key for this certificate.&amp;quot;
+$output
+continue
+}&lt;/p&gt;
+&lt;h1 id=&#34;attempt-decryption-with-private-key&#34;&gt;Attempt decryption with private key.&lt;/h1&gt;
+&lt;p&gt;$plaintextout = $certpriv.privatekey.decrypt($ciphertext,$false) #Must be $false for my smart card to work.
+if (-not $?) { $output.Password = &amp;quot;ERROR: Decryption failed.&amp;quot;
+}
+else { $output.Password = ([char[]
+]$plaintextout -join &amp;quot;&amp;quot;)
+}&lt;/p&gt;
+&lt;h1 id=&#34;confirm-that-archive-file-name-matches-the-nonce-string-encrypted-into-the-file&#34;&gt;Confirm that archive file name matches the nonce string encrypted into the file.&lt;/h1&gt;
+&lt;h1 id=&#34;nonce-helps-to-thwart-attackers-and-can-be-used-for-troubleshooting-too&#34;&gt;Nonce helps to thwart attackers and can be used for troubleshooting too.&lt;/h1&gt;
+&lt;p&gt;if ($lastfile.name -like $output.Password.substring(0,
+60) + &amp;quot;*&amp;quot;)
+{
+$output.Password = $output.Password.substring(60) #Strip out the 60-char nonce.
+$output.Valid = $true
+}
+else
+{
+$output.Password = $output.Password.substring(60) #Strip out the 60-char nonce.
+$output.Password = &amp;quot;ERROR: Integrity check failure: &amp;quot; + $output.Password.substring(60) + &amp;quot; (&amp;quot; + $output.Password + &amp;quot;)&amp;quot;
+}
+$output
+}&lt;/p&gt;
+&lt;p&gt;&amp;amp;nbsp;&lt;/p&gt;
+&lt;p&gt;[/code
+]&lt;/p&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -1068,7 +1440,56 @@ cd %windir%&lt;/p&gt;</description>
 &lt;p&gt;OrgName=Customer&lt;/p&gt;
 &lt;p&gt;SkipUserData=YES&lt;/p&gt;
 &lt;p&gt;SkipTaskSequence=NO&lt;/p&gt;
-&lt;p&gt;TaskSequenceID=TASKSEQID&lt;/p&gt;</description>
+&lt;p&gt;TaskSequenceID=TASKSEQID&lt;/p&gt;
+&lt;p&gt;SkipPackageDisplay=YES&lt;/p&gt;
+&lt;p&gt;SkipLocaleSelection=NO&lt;/p&gt;
+&lt;p&gt;UILanguage=en-US&lt;/p&gt;
+&lt;p&gt;UserLocale=en-GB&lt;/p&gt;
+&lt;p&gt;KeyboardLocale=0809: 00000809&lt;/p&gt;
+&lt;p&gt;SystemLocale=en-US&lt;/p&gt;
+&lt;p&gt;SkipTimeZone=NO&lt;/p&gt;
+&lt;p&gt;TimeZoneName=GMT Standard Time&lt;/p&gt;
+&lt;p&gt;TimeZone=085&lt;/p&gt;
+&lt;p&gt;SkipBitLocker=YES&lt;/p&gt;
+&lt;p&gt;SkipSummary=YES&lt;/p&gt;
+&lt;p&gt;SkipCapture=YES&lt;/p&gt;
+&lt;p&gt;SkipAdminPassword=YES&lt;/p&gt;
+&lt;p&gt;SkipApplications=NO&lt;/p&gt;
+&lt;p&gt;SkipFinalSummary=NO&lt;/p&gt;
+&lt;p&gt;WsusServer=http: //wsus.domain.com&lt;/p&gt;
+&lt;p&gt;Home_page=http: //intranet.domain.com&lt;/p&gt;
+&lt;p&gt;FinishAction=SHUTDOWN&lt;/td&gt;&lt;/p&gt;
+&lt;td valign=&#34;top&#34; width=&#34;272&#34;&gt;Sets the Company Name during the deployment
+&lt;p&gt;Skips unneeded wizard pages&lt;/p&gt;
+&lt;p&gt;Skips unneeded wizard pages&lt;/p&gt;
+&lt;p&gt;The Windows product key to use (only required if using MAK keys)&lt;/p&gt;
+&lt;p&gt;Sets the deployment type&lt;/p&gt;
+&lt;p&gt;Skip the domain membership screen&lt;/p&gt;
+&lt;p&gt;\&lt;/p&gt;
+&lt;p&gt;Credentials to use to join computers to the domain&lt;/p&gt;
+&lt;p&gt;/&lt;/p&gt;
+&lt;p&gt;Do not perform a user state migration&lt;/p&gt;
+&lt;p&gt;Do not ask which task sequence to run&lt;/p&gt;
+&lt;p&gt;Defautl to the task sequenceID you created earlier&lt;/p&gt;
+&lt;p&gt;Don’t display a list of possible OS packages to install Ask which regional settings to configure&lt;/p&gt;
+&lt;p&gt;Set the default UI language to English&lt;/p&gt;
+&lt;p&gt;Set the default user locale to GB English&lt;/p&gt;
+&lt;p&gt;Set the default keyboard to UK&lt;/p&gt;
+&lt;p&gt;Ask which time zone the computer is in&lt;/p&gt;
+&lt;p&gt;Set the default time zone to GMT&lt;/p&gt;
+&lt;p&gt;Set the default time zone to GMT (legacy support)&lt;/p&gt;
+&lt;p&gt;Skip the installation of BitLocker&lt;/p&gt;
+&lt;p&gt;Skip the Summary screen before deployment starts&lt;/p&gt;
+&lt;p&gt;Skip the “Build and Capture” options during deployment&lt;/p&gt;
+&lt;p&gt;Don’t ask for a local admin password for new PCs&lt;/p&gt;
+&lt;p&gt;Do not request local admin password during OS deployment&lt;/p&gt;
+&lt;p&gt;Pre-sets the admin password to the value specified&lt;/p&gt;
+&lt;p&gt;Allows you to set the local WSUS server for updates&lt;/p&gt;
+&lt;p&gt;Sets the default IE homepage for all users of new computers&lt;/p&gt;
+&lt;p&gt;Tells the computer to shut down once task sequence is completed&lt;/td&gt;&lt;/p&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
     </item>
     
     <item>

@@ -11,7 +11,7 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.166.0">
+    <meta name="generator" content="Hugo 0.169.0">
     <title>
         
            
@@ -44,7 +44,52 @@ MachineObjectOU=ou=example,dc=domain,dc=com
 OrgName=Customer
 SkipUserData=YES
 SkipTaskSequence=NO
-TaskSequenceID=TASKSEQID">
+TaskSequenceID=TASKSEQID
+SkipPackageDisplay=YES
+SkipLocaleSelection=NO
+UILanguage=en-US
+UserLocale=en-GB
+KeyboardLocale=0809: 00000809
+SystemLocale=en-US
+SkipTimeZone=NO
+TimeZoneName=GMT Standard Time
+TimeZone=085
+SkipBitLocker=YES
+SkipSummary=YES
+SkipCapture=YES
+SkipAdminPassword=YES
+SkipApplications=NO
+SkipFinalSummary=NO
+WsusServer=http: //wsus.domain.com
+Home_page=http: //intranet.domain.com
+FinishAction=SHUTDOWN
+Sets the Company Name during the deployment Skips unneeded wizard pages
+Skips unneeded wizard pages
+The Windows product key to use (only required if using MAK keys)
+Sets the deployment type
+Skip the domain membership screen
+\
+Credentials to use to join computers to the domain
+/
+Do not perform a user state migration
+Do not ask which task sequence to run
+Defautl to the task sequenceID you created earlier
+Don’t display a list of possible OS packages to install Ask which regional settings to configure
+Set the default UI language to English
+Set the default user locale to GB English
+Set the default keyboard to UK
+Ask which time zone the computer is in
+Set the default time zone to GMT
+Set the default time zone to GMT (legacy support)
+Skip the installation of BitLocker
+Skip the Summary screen before deployment starts
+Skip the “Build and Capture” options during deployment
+Don’t ask for a local admin password for new PCs
+Do not request local admin password during OS deployment
+Pre-sets the admin password to the value specified
+Allows you to set the local WSUS server for updates
+Sets the default IE homepage for all users of new computers
+Tells the computer to shut down once task sequence is completed">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="article">
@@ -456,6 +501,10 @@ TaskSequenceID=TASKSEQID">
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/beyond-the-prompt-infrastructure-costs-of-scraping/">Beyond the Prompt: Infrastructure Costs of Scraping</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/why-phishing-defense-needs-software-engineers/">Why Phishing Defense Needs Software Engineers</a>
                     </li>
                 
@@ -477,10 +526,6 @@ TaskSequenceID=TASKSEQID">
                 
                     <li>
                         <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work-part-2/">How I Use LLMs for Security Work: Part 2</a>
                     </li>
                 
             </ul>

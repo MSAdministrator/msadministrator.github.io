@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Digital-Commons on Lets Automate It</title>
+		<link>https://letsautomate.it/tags/digital-commons/</link>
+		<description>Recent content in Digital-Commons on Lets Automate It</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 10 Nov 2026 11:00:00 -0600</lastBuildDate>
+		
+			<atom:link href="https://letsautomate.it/tags/digital-commons/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Beyond the Prompt: Infrastructure Costs of Scraping</title>
+				<link>https://letsautomate.it/article/beyond-the-prompt-infrastructure-costs-of-scraping/</link>
+				<pubDate>Tue, 10 Nov 2026 11:00:00 -0600</pubDate>
+				<guid>https://letsautomate.it/article/beyond-the-prompt-infrastructure-costs-of-scraping/</guid>
+				<description>&lt;p&gt;Earlier this year, I co-wrote (with &lt;a href=&#34;https://www.christiansonjs.com/&#34;&gt;J. Scott Christianson&lt;/a&gt;) a paper titled &lt;a href=&#34;https://letsautomate.it/article/beyond-the-prompt-social-costs-of-generative-ai/&#34;&gt;“Beyond the Prompt: The Social Costs of Generative Artificial Intelligence”&lt;/a&gt;. In this paper, we explored how generative artificial intelligence affects the digital commons (e.g., the internet), particularly the organizations and communities responsible for making information publicly available.&lt;/p&gt;&#xA;&lt;p&gt;One of the topics we discussed was scraping and the costs imposed on organizations around the world.&lt;/p&gt;&#xA;&lt;p&gt;But not all systems are created equal, and neither are the costs of operating them at scale.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

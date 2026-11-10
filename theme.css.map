@@ -1,9 +1,9 @@
 {
 	"version": 3,
 	"file": "theme.css",
-	"sourceRoot": "/Users/josh/_GitHub/blog",
+	"sourceRoot": "/Users/joshrickard/_GitHub/blog",
 	"sources": [
-		"/Users/josh/Library/Caches/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!lednerb/bilberry-hugo-theme/v4@v4.13.0/assets/sass/theme.scss",
+		"/Users/joshrickard/Library/Caches/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!lednerb/bilberry-hugo-theme/v4@v4.13.0/assets/sass/theme.scss",
 		"../../Library/Caches/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!lednerb/bilberry-hugo-theme/v4@v4.13.0/assets/sass/_vendor/normalize.scss",
 		"../../Library/Caches/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!lednerb/bilberry-hugo-theme/v4@v4.13.0/assets/sass/_vendor/skeleton.scss",
 		"../../Library/Caches/hugo_cache/modules/filecache/modules/pkg/mod/github.com/!lednerb/bilberry-hugo-theme/v4@v4.13.0/assets/sass/_vendor/flexslider.scss",

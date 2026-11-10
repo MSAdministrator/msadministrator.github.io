@@ -11,7 +11,7 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.166.0">
+    <meta name="generator" content="Hugo 0.169.0">
     <title>
         
            
@@ -263,6 +263,101 @@
         
     <div class="article-wrapper u-cf">
         
+            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://letsautomate.it/article/mdt-2012-installing-a-custom-dictionary-in-office-2010/">
+            Mdt 2012 Installing a Custom Dictionary in Office 2010
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2018-08-07</span>
+            
+        
+
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>So, some might not need this but thought I would share anyways.  I have created my new MDT 2012 Deployment Share and want to add Microsoft Office 2010 as an application, but I also need to customize that deployment of Office 2010 when I&rsquo;m deploying my new OS.  Here are the steps on how to do this, but also how to create a custom Office 2010 Install.</p>
+<ol>
+	<li>Once you've setup everything for you OS, go to the Applications folder on your Deployment Share and right click&gt;New Application</li>
+	<li>Once there, put in the relavent information including where your resource CD is located.</li>
+	<li>THen once you have done this, you will notice that there is an extra tab compared to other applications.  This is because Microsoft Deployment Toolkit recognizes that it's Office 2010 and gives you a few more options.</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/23/mdt-2012-installing-a-custom-dictionary-in-office-2010/attachment/50/" rel="attachment wp-att-140"><img class="alignnone size-full wp-image-140" alt="50" src="http://msadministrator.files.wordpress.com/2012/12/50.png" width="519" height="404" /></a></li>
+	<li>Click on the Office Products Tab and you should now see this screen:</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/23/mdt-2012-installing-a-custom-dictionary-in-office-2010/attachment/51/" rel="attachment wp-att-141"><img class="alignnone size-full wp-image-141" alt="51" src="http://msadministrator.files.wordpress.com/2012/12/51.png" width="519" height="427" /></a></li>
+	<li>Now click on the Office Customization Tool</li>
+	<li>You will be prompted with a warning box, please read and understand this.  Any Customizations you make are saved in a customization file and need to be moved to the appropriate folder within your Office 2010 source file.</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/23/mdt-2012-installing-a-custom-dictionary-in-office-2010/attachment/52/" rel="attachment wp-att-142"><img class="alignnone size-full wp-image-142" alt="52" src="http://msadministrator.files.wordpress.com/2012/12/52.png" width="393" height="153" /></a></li>
+	<li>Then the Office Customization Tool dialog box shows up.  You can do ton's of customizations but for this post it's all about adding a Custom Dictionary to Office 2010.</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/23/mdt-2012-installing-a-custom-dictionary-in-office-2010/attachment/54/" rel="attachment wp-att-143"><img class="alignnone size-full wp-image-143" alt="54" src="http://msadministrator.files.wordpress.com/2012/12/54.png" width="519" height="292" /></a></li>
+	<li>Once there select Add Files and go to where your .Dic file is at and make sure you select INSTALLLOCATION as the option.</li>
+	<li>Then click on Add Registry Entires</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/23/mdt-2012-installing-a-custom-dictionary-in-office-2010/attachment/55/" rel="attachment wp-att-144"><img class="alignnone size-full wp-image-144" alt="55" src="http://msadministrator.files.wordpress.com/2012/12/55.png" width="519" height="294" /></a></li>
+	<li>Add the Registry settings that you see in the image above</li>
+	<li>Here is a more detailed view of what you should see when you select Add... in the bottom corner:</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/23/mdt-2012-installing-a-custom-dictionary-in-office-2010/attachment/57/" rel="attachment wp-att-146"><img class="alignnone size-full wp-image-146" alt="57" src="http://msadministrator.files.wordpress.com/2012/12/57.png" width="519" height="281" /></a></li>
+	<li>Then select Remove Registry Entries, this is needed to remove any previous settings when Office 2010 Installs originally.</li>
+	<li><a href="http://msadministrator.wordpress.com/2012/12/23/mdt-2012-installing-a-custom-dictionary-in-office-2010/attachment/56/" rel="attachment wp-att-145"><img class="alignnone size-full wp-image-145" alt="56" src="http://msadministrator.files.wordpress.com/2012/12/56.png" width="519" height="291" /></a></li>
+	<li>That's it, now save your MSP File in the appropriate location and you should be good to go.</li>
+</ol>
+
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
             <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-11-of-11/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -431,6 +526,55 @@
 <p>SkipUserData=YES</p>
 <p>SkipTaskSequence=NO</p>
 <p>TaskSequenceID=TASKSEQID</p>
+<p>SkipPackageDisplay=YES</p>
+<p>SkipLocaleSelection=NO</p>
+<p>UILanguage=en-US</p>
+<p>UserLocale=en-GB</p>
+<p>KeyboardLocale=0809: 00000809</p>
+<p>SystemLocale=en-US</p>
+<p>SkipTimeZone=NO</p>
+<p>TimeZoneName=GMT Standard Time</p>
+<p>TimeZone=085</p>
+<p>SkipBitLocker=YES</p>
+<p>SkipSummary=YES</p>
+<p>SkipCapture=YES</p>
+<p>SkipAdminPassword=YES</p>
+<p>SkipApplications=NO</p>
+<p>SkipFinalSummary=NO</p>
+<p>WsusServer=http: //wsus.domain.com</p>
+<p>Home_page=http: //intranet.domain.com</p>
+<p>FinishAction=SHUTDOWN</td></p>
+<td valign="top" width="272">Sets the Company Name during the deployment
+<p>Skips unneeded wizard pages</p>
+<p>Skips unneeded wizard pages</p>
+<p>The Windows product key to use (only required if using MAK keys)</p>
+<p>Sets the deployment type</p>
+<p>Skip the domain membership screen</p>
+<p>\</p>
+<p>Credentials to use to join computers to the domain</p>
+<p>/</p>
+<p>Do not perform a user state migration</p>
+<p>Do not ask which task sequence to run</p>
+<p>Defautl to the task sequenceID you created earlier</p>
+<p>Don’t display a list of possible OS packages to install Ask which regional settings to configure</p>
+<p>Set the default UI language to English</p>
+<p>Set the default user locale to GB English</p>
+<p>Set the default keyboard to UK</p>
+<p>Ask which time zone the computer is in</p>
+<p>Set the default time zone to GMT</p>
+<p>Set the default time zone to GMT (legacy support)</p>
+<p>Skip the installation of BitLocker</p>
+<p>Skip the Summary screen before deployment starts</p>
+<p>Skip the “Build and Capture” options during deployment</p>
+<p>Don’t ask for a local admin password for new PCs</p>
+<p>Do not request local admin password during OS deployment</p>
+<p>Pre-sets the admin password to the value specified</p>
+<p>Allows you to set the local WSUS server for updates</p>
+<p>Sets the default IE homepage for all users of new computers</p>
+<p>Tells the computer to shut down once task sequence is completed</td></p>
+</tr>
+</tbody>
+</table>
 
         
             <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-10-of-11/" class="more">Continue reading</a>
@@ -822,82 +966,6 @@ Created a single additional selection profile – “WinPE Drivers” and config
 
 
     
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="https://letsautomate.it/article/mdt-2012-deployment-guide-step-by-step-5-of-11/">
-            Mdt 2012 Deployment Guide Step by Step 5 of 11
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2018-08-07</span>
-            
-        
-
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="https://letsautomate.it/author/josh-rickard/">Josh Rickard</a>
-                
-            </span>
-        
-    </div>
-
-    
-        <h1> Creating a Sysprep &amp; Capture Task Sequence</h1>
-The “Task Sequence” is the heart of the MDT deployment solution.  It is a list of steps which need to be taken to successfully deploy an Operating System.
-<p> </p>
-<p>Initially you need to create a “Sysprep and Capture” task sequence.  Go ahead and do this now.  You don’t need to worry too much about which choice of OS you make as it doesn’t matter<b>.  Make sure you select the “Sysprep and Capture” template!</b></p>
-
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="https://letsautomate.it/tags/archive/">Archive</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
 
     
     <div class="paginator">
@@ -927,6 +995,10 @@ The “Task Sequence” is the heart of the MDT deployment solution.  It is a l
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/beyond-the-prompt-infrastructure-costs-of-scraping/">Beyond the Prompt: Infrastructure Costs of Scraping</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/why-phishing-defense-needs-software-engineers/">Why Phishing Defense Needs Software Engineers</a>
                     </li>
                 
@@ -948,10 +1020,6 @@ The “Task Sequence” is the heart of the MDT deployment solution.  It is a l
                 
                     <li>
                         <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work-part-2/">How I Use LLMs for Security Work: Part 2</a>
                     </li>
                 
             </ul>

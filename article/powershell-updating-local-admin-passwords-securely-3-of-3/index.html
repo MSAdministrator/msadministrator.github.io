@@ -11,7 +11,7 @@
     <meta name="author" content="Josh Rickard">
     <meta name="description" content="Lets Automate It">
     <meta name="keywords" content="blog,powershell,security,pwsh,python,active,directory,grouppolicy,windows,microsoft">
-    <meta name="generator" content="Hugo 0.166.0">
+    <meta name="generator" content="Hugo 0.169.0">
     <title>
         
            
@@ -28,7 +28,37 @@
 	<meta property="og:title" content="Powershell Updating Local Admin Passwords Securely 3 of 3">
 	<meta property="og:description" content="Below is an example of how to remotely (using PowerShell) update and change the Local Administrator password securely. This is not my script, I received this script along with many others from the SANS SEC 505 course. I have not altered it in any way.
 Updating the Passwords of the Local Administrator on remote mahcines (You must have a Certificate either from your CA or another Certificate Authority):
-This script will remove older local administrator passwords that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate in (2 of 3).">
+This script will remove older local administrator passwords that you have created with the first part (1 of 3) which is decrypted by your Private Key Certificate in (2 of 3).
+Copy this text into a PowerShell Script called CleanUp_PasswordArchive.ps1
+[code ]
+#################################################################################### #.Synopsis
+Carefully delete only the correct password archive files previously created with the companion script named Update-PasswordArchive.ps1. #.Description
+Deletes older password archive files while retaining a chosen number (default = 5) of prior successful and failed archive files for each unique combination of computer and user (total of 10 files by default for each unique combination). Scheduling this script will help to maintain a reasonable number of password archive files. #.Parameter PasswordArchivePath
+The local or UNC path to where the encrypted password files are kept. #.Parameter ComputerName
+Name of the computer with the local account whose password was reset and whose password was encrypted and saved to a file. The computer name will match the names of files in the PasswordArchivePath. This parameter can accept a computer name with a wildcard in it. When specified, only the archives for that computer (or for those matching computers with a wildcard) will be cleaned up instead of the default, which is to clean up archive files for all computers. #.Parameter ArchivesToKeep
+The number of current and prior password archive files to keep for each combination of computer name and user name. A single computer might have multiple local user accounts whose passwords are managed by these scripts, so the clean up must handle this gracefully. The default is 5 (5 successful files &#43; 5 failures files = 10 files). #.Parameter VerboseReporting
+Switch to show verbose information. #.Parameter DoNotDelete
+Switch to do a -WhatIf dry run that will not actually delete any files. Use this switch along with -VerboseReporting for testing. #.Parameter DeleteAllPasswordArchives
+Switch to delete all password archive files without exception. #.Example
+.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share Deletes all but the last 5 password archive files for each computer and user combination. Also, deletes all but the last 5 failure-type files for each combination. Hence, if the last successful reset was six months ago, followed by many failures, the last 5 successful reset archive files will not be deleted. #.Example
+.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share -ComputerName WKS* Only cleans up the archive files for computers which match the &#34;WKS*&#34; file pattern. A full computer name can be specified, wildcards are not required. Regular expressions are not supported. #.Example
+.\CleanUp-PasswordArchive.ps1 -PasswordArchivePath \server\share -DoNotDelete -VerboseReporting No files will be deleted, but a verbose report of files discovered will be shown. #Requires -Version 2.0
+#.Notes
+Author: Jason Fossen, Enclave Consulting (http: //www.sans.org/windows-security/) Version: 1.0 Updated: 11.Nov.2012 LEGAL: PUBLIC DOMAIN. SCRIPT PROVIDED &#34;AS IS&#34; WITH NO WARRANTIES OR GUARANTEES OF ANY KIND, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE. ALL RISKS OF DAMAGE REMAINS WITH THE USER, EVEN IF THE AUTHOR, SUPPLIER OR DISTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF ANY SUCH DAMAGE. IF YOUR STATE DOES NOT PERMIT THE COMPLETE LIMITATION OF LIABILITY, THEN DELETE THIS FILE SINCE YOU ARE NOW PROHIBITED TO HAVE IT. #################################################################################### Param ($PasswordArchivePath = &#34;.&amp;quot;, $ComputerName = &#34;*&#34;, $ArchivesToKeep = 5, [Switch ] $VerboseReporting, [Switch ] $DoNotDelete, [Switch ] $DeleteAllPasswordArchives)
+Test access to path. if (Resolve-Path -Path $PasswordArchivePath) { $PasswordArchivePath = $(Resolve-Path -Path $PasswordArchivePath).Path } else { &#34;nERROR: Cannot resolve path to archive folder: $PasswordArchivePath n&#34; ; exit }
+Sanity check on $ArchivesToKeep if ($ArchivesToKeep -le 0) { &#34;nERROR: The -ArchivesToKeep argument must be 1 or larger.n&#34; ; exit }
+Get all matching files. $filter = $($ComputerName &#43; &#34;&#43;&#43;&#43;&#34;).Replace(&#34;**&#34;,&#34;*&#34;) $files = dir -Path $PasswordArchivePath -Filter $filter if ($VerboseReporting) { &#34;nTotal number of matching ($ComputerName) archive files = &amp;quot; &#43; $files.count $files | foreach { $_.fullname } &amp;quot;n&#34; }
+Maybe just delete them all. if ($DeleteAllPasswordArchives -and $DoNotDelete) { &#34;nERROR: Invalid combination of switches.n&#34; ; exit } if ($DeleteAllPasswordArchives -and $ComputerName -ne &#34;*&#34;) { &#34;nERROR: Invalid combination of switches.n&#34; ; exit } if ($DeleteAllPasswordArchives) { &#34;nDeleting all password archive files...n&#34; $files | foreach { remove-item $_ } exit }
+Separate successful vs. failed password reset files. $failurefiles = $files | where { $.Name -like &#34;*FAILURE&#34; } $successfiles = $files | where { $.Name -notlike &#34;*FAILURE&#34; } if ($VerboseReporting) { &#34;Files for failed resets = &#34; &#43; $failurefiles.count } if ($VerboseReporting) { &#34;Files for successful resets = &#34; &#43; $successfiles.count }
+Build arrays of unique computername&#43;username combinations. $failurenames = @() $successnames = @()
+foreach ($file in $failurefiles) { $computer = $($file.name -split ‘&#43;’)[ 0 ] &#43; &#34;&#43;&#34; &#43; $($file.name -split ‘&#43;’)[ 1 ] if ($computer -notin $failurenames){ $failurenames &#43;= $computer } } if ($VerboseReporting) { &#34;nUnique Computer&#43;User combinations for failed resets = &amp;quot; &#43; $failurenames.count } if ($VerboseReporting) { $failurenames ; &amp;quot;n&#34; }
+foreach ($file in $successfiles) { $computer = $($file.name -split ‘&#43;’)[ 0 ] &#43; &#34;&#43;&#34; &#43; $($file.name -split ‘&#43;’)[ 1 ] if ($computer -notin $successnames){ $successnames &#43;= $computer } } if ($VerboseReporting) { &#34;Unique Computer&#43;User combinations for successful resets = &#34; &#43; $successnames.count } if ($VerboseReporting) { $successnames ; &#34;`n&#34; }
+Delete the non-keepers for each unique name. $SuccessFileCounter = $FailureFileCounter = 0
+foreach ($name in $failurenames) { $targets = $failurefiles | where { $.Name -like ($name &#43; &#34;&#43;*&#34;) } | sort Name if ($targets.count -le $ArchivesToKeep) { continue } 0..$($targets.count - $ArchivesToKeep - 1) | foreach { if (-not $DoNotDelete){remove-item $targets[$ ].fullname ; if($?){$FailureFileCounter&#43;&#43; } } } }
+foreach ($name in $successnames) { $targets = $successfiles | where { $.Name -like ($name &#43; &#34;&#43;*&#34;) } | sort Name if ($targets.count -le $ArchivesToKeep) { continue } 0..$($targets.count - $ArchivesToKeep - 1) | foreach { if (-not $DoNotDelete){remove-item $targets[$ ].fullname ; if($?){$SuccessFileCounter&#43;&#43; } } } }
+Default Report [String ] $SuccessFileCounter &#43; &#34; files deleted out of the set of &#34; &#43; [String ] $successfiles.count &#43; &#34; successful reset files.&#34; [String ] $FailureFileCounter &#43; &#34; files deleted out of the set of &#34; &#43; [String ] $failurefiles.count &#43; &#34; failure reset files.&#34; &#34;`n&#34;
+&amp;nbsp;
+[/code ]">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="article">
@@ -540,6 +570,10 @@ foreach { if (-not $DoNotDelete){remove-item $targets[$</em>
                 
                 
                     <li>
+                        <a href="https://letsautomate.it/article/beyond-the-prompt-infrastructure-costs-of-scraping/">Beyond the Prompt: Infrastructure Costs of Scraping</a>
+                    </li>
+                
+                    <li>
                         <a href="https://letsautomate.it/article/why-phishing-defense-needs-software-engineers/">Why Phishing Defense Needs Software Engineers</a>
                     </li>
                 
@@ -561,10 +595,6 @@ foreach { if (-not $DoNotDelete){remove-item $targets[$</em>
                 
                     <li>
                         <a href="https://letsautomate.it/article/agentic-web/">The Agentic Web: A New Internet Built for Agents, Not Browsers</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://letsautomate.it/article/how-i-use-llms-for-security-work-part-2/">How I Use LLMs for Security Work: Part 2</a>
                     </li>
                 
             </ul>

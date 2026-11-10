@@ -3,24 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://letsautomate.it/article/</loc>
-    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/artificial-intelligence/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/author/</loc>
-    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/article/beyond-the-prompt-infrastructure-costs-of-scraping/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/digital-commons/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/infrastructure/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/infrastructure/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/author/josh-rickard/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/scraping/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/tags/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
+  </url><url>
+    <loc>https://letsautomate.it/categories/technology/</loc>
+    <lastmod>2026-11-10T11:00:00-06:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/automation/</loc>
     <lastmod>2026-10-29T12:00:00-05:00</lastmod>
   </url><url>
-    <loc>https://letsautomate.it/categories/</loc>
-    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
-  </url><url>
     <loc>https://letsautomate.it/tags/cti/</loc>
-    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/author/josh-rickard/</loc>
-    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/</loc>
     <lastmod>2026-10-29T12:00:00-05:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/categories/phishing/</loc>
@@ -33,9 +57,6 @@
     <lastmod>2026-10-29T12:00:00-05:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/software-engineering/</loc>
-    <lastmod>2026-10-29T12:00:00-05:00</lastmod>
-  </url><url>
-    <loc>https://letsautomate.it/tags/</loc>
     <lastmod>2026-10-29T12:00:00-05:00</lastmod>
   </url><url>
     <loc>https://letsautomate.it/tags/threat-intelligence/</loc>
